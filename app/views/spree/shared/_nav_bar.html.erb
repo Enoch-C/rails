@@ -1,0 +1,13 @@
+<nav class="navbar col-md-8 col-sm-9" id="top-nav-bar">
+  <ul class="nav navbar-nav" data-hook>
+    <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+    <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+    <li id="home-link" data-hook><%= link_to Spree.t(:home), spree.root_path %></li>
+  </ul>
+  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+    <!-- Don't remove search-bar, because devise-auth insert code before it. -->
+    <li id="search-bar" data-hook>
+      <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+    </li>
+  </ul>
+</nav>
