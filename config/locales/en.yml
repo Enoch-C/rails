@@ -20,4 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  spree:
+    items_cannot_be_shipped: Sorry, there is at least one product in your cart which can ONLY be shipped to USA address.
