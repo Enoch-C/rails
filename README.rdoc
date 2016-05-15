@@ -21,7 +21,6 @@ gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
 gem 'spree_tax_cloud', github: 'spree-contrib/spree_tax_cloud', branch: '3-1-stable'
 
-
 bin/spring stop
 bundle exec rake railties:install:migrations
 bundle exec rake db:migrate
@@ -32,7 +31,7 @@ rails g spree:auth:install
 rails g spree_gateway:install
 rails g spree_i18n:install
 rails g spree_social:install
-bundle exec rails g spree_tax_cloud:install
+rails g spree_tax_cloud:install
 
 * How to run the test suite
 

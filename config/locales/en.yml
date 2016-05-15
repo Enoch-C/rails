@@ -22,3 +22,4 @@
 en:
   spree:
     items_cannot_be_shipped: Sorry, there is at least one product in your cart which can ONLY be shipped to USA address.
+    shipping_flat_rate_per_two_items: Flat rate per two package items
