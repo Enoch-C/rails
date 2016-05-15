@@ -11,7 +11,7 @@ module Spree
       end
 
       def compute_package(package)
-        compute_from_quantity(package.contents.sum(&:quantity) / 2)
+        compute_from_quantity((package.contents.sum(&:quantity) + 1) / 2)
       end
 
       def compute_from_quantity(quantity)
