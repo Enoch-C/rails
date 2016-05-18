@@ -61,3 +61,20 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 end
+
+Spree::Core::Engine.add_routes do
+  namespace :admin, path: Spree.admin_path do
+    resources :promoters do
+      member do
+        # get :addresses
+        # put :addresses
+        # put :clear_api_key
+        # put :generate_api_key
+        get :items
+        get :orders
+        get :users
+      end
+      # resources :store_credits
+    end
+  end
+end

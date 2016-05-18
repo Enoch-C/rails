@@ -1,0 +1,21 @@
+<% content_for :sidebar do %>
+  <ul class="nav nav-pills nav-stacked" data-hook="admin_promoter_tab_options">
+    <li<%== ' class="active"' if current == :account %>>
+      <%= link_to_with_icon 'user', Spree.t(:"admin.promoter.account"), spree.edit_admin_promoter_path(@promoter) %>
+    </li>
+    <li<%== ' class="active"' if current == :orders %>>
+      <%= link_to_with_icon 'shopping-cart', Spree.t(:"admin.promoter.orders"), spree.orders_admin_promoter_path(@promoter) %>
+    </li>
+    <li<%== ' class="active"' if current == :items %>>
+      <%= link_to_with_icon 'edit', Spree.t(:"admin.promoter.items"), spree.items_admin_promoter_path(@promoter) %>
+    </li>
+    <li<%== ' class="active"' if current == :users %>>
+      <%= link_to_with_icon 'user', Spree.t(:"admin.promoter.users"), spree.users_admin_promoter_path(@promoter) %>
+    </li>
+    <% if false %>
+    <li<%== ' class="active"' if current == :store_credits %>>
+      <%= link_to_with_icon 'money', Spree.t(:"admin.promoter.store_credits"), spree.admin_promoter_store_credits_path(@promoter) %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

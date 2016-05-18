@@ -1,0 +1,40 @@
+<% content_for :page_title do %>
+  <%= link_to "#{@promoter.email}", edit_admin_promoter_url(@promoter) %> / <%= Spree.t(:"admin.promoter.binding_users") %>
+<% end %>
+
+<%= render partial: 'spree/admin/promoters/sidebar', locals: { current: :users } %>
+<%= render partial: 'spree/admin/promoters/user_page_actions' %>
+
+<fieldset data-hook="admin_promoter_order_history">
+  <%= paginate @users %>
+
+  <% if @users.any? %>
+    <%# TODO add search interface %>
+    <table class="table table-condensed table-bordered" id="listing_users" data-hook>
+      <thead>
+        <tr data-hook="admin_users_index_headers">
+          <th><%= sort_link @search, :email,   Spree.t(:email), {}, {title: 'email_title'} %></th>
+          <th><%= sort_link @search, :promoter_start,         Spree.t(:promoter_start), {}, {title: 'promoter_startr_title'} %></th>
+          <th><%= sort_link @search, :promoter_month_length,          Spree.t(:promoter_month_length), {}, {title: 'promoter_month_length_title'} %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+        <tr data-hook="admin_users_index_rows" class="">
+          <td class="order-number"><%= link_to user.email, edit_admin_user_path(user) %></td>
+          <td class="order-completed-at"><%= user.promoter_start %></td>
+          <td class="order-total"><%= user.promoter_month_length %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="alert alert-info no-objects-found">
+      <%= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::User)) %>,
+    </div>
+  <% end %>
+
+  <%= paginate @users %>
+</fieldset>
+
+<%= render 'spree/admin/promoters/lifetime_stats' %>

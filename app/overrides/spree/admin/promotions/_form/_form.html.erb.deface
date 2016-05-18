@@ -1,0 +1,5 @@
+<!-- insert_bottom 'div.col-md-6' -->
+<%= f.field_container :promoter, class: ['form-group'] do %>
+  <%= f.label :promoter %>
+  <%= f.collection_select(:promoter_id, @promoters, :id, :email, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2' }) %>
+<% end %>

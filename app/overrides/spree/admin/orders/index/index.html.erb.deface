@@ -1,0 +1,9 @@
+<!-- insert_before 'div.form-actions' -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= label_tag :q_promoter_id_eq, Spree.t(:promoter) %>
+      <%= f.collection_select(:promoter_id_eq, @promoters, :id, :email, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2' }) %>
+    </div>
+  </div>
+</div>

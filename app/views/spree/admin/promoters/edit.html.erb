@@ -1,0 +1,33 @@
+<% content_for :page_title do %>
+  <%= Spree.t(:editing_promoter) %> <%= @promoter.email %>
+<% end %>
+
+<%= render partial: 'spree/admin/promoters/sidebar', locals: { current: :account } %>
+<%= render partial: 'spree/admin/promoters/user_page_actions' %>
+
+<div data-hook="admin_promoter_edit_general_settings" class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <%= Spree.t(:general_settings) %>
+    </h1>
+  </div>
+
+  <div class="panel-body">
+    <div data-hook="admin_promoter_edit_form_header">
+      <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @promoter } %>
+    </div>
+
+    <div data-hook="admin_promoter_edit_form">
+      <%= form_for [:admin, @promoter], as: :promoter, url: spree.admin_promoter_url(@promoter), method: :put do |f| %>
+        <%= render partial: 'form', locals: { f: f } %>
+
+        <div data-hook="admin_promoter_edit_form_button">
+          <%= render partial: 'spree/admin/shared/edit_resource_links', locals: { collection_url: spree.admin_promoters_url } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+<%= render 'spree/admin/promoters/lifetime_stats' %>

@@ -1,0 +1,5 @@
+<% content_for :page_actions do %>
+  <% if false %>
+  <%= button_link_to Spree.t(:create_new_order), spree.new_admin_order_path(promoter_id: @promoter.id), class: "btn-success", icon: 'add' %>
+  <% end %>
+<% end %>
