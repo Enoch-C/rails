@@ -40,7 +40,6 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'Cool Choice <mailer@coolchoice.com>'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
