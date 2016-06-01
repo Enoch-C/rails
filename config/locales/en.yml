@@ -45,6 +45,9 @@ en:
         items: Items
         orders: Orders
         account: Account
+      order:
+        print_labels: Print Labels
+        print: Print
     order_mailer:
       confirm_promoter_email:
         subject: You have received Promotion Credit

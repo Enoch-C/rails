@@ -78,5 +78,11 @@ Spree::Core::Engine.add_routes do
       end
       # resources :store_credits
     end
+
+    resources :orders do
+      member do
+        get :labels
+      end
+    end
   end
 end

@@ -1,0 +1,349 @@
+Serving Size 1 Packet: 2.0
+Servings Per Container: 1
+# daily_value_append:
+#   '*: Percent Daily Values are based on a 2,000 calorie diet.
+#   '**': Daily Value not established.
+functions:
+  Anti-Aging:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 7
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Superoxide Dismutase (SOD):
+          Amount Per Serving: 10
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Beauty:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 1
+          unit: g
+          '% Daily Value': 0
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 1
+              unit: g
+              '% Daily Value': 2
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Protein:
+          Amount Per Serving: 1
+          unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Hydrolyzed Collagen:
+          Amount Per Serving: 1000
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Brain Care:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 1
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Citicoline:
+          Amount Per Serving: 250
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors.
+  Digestive Care:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Ganeden BC30 (Bacillus coagulans):
+          Amount Per Serving: 67
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Eye Care:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Lutein & Zeaxanthine Lutemax 20/20:
+          Amount Per Serving: 6
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber,Natural Flavors, Citric Acid
+  Heart Care:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Coenzyme Q10:
+          Amount Per Serving: 50
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Immune Care:
+      basic:
+        Calories:
+          Amount Per Serving: 3.42
+        Total Carbohydrate:
+          Amount Per Serving: 1.61
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 1.48
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Beta 1,3D Glucan Complex:
+          Amount Per Serving: 200
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Joint Care:
+      basic:
+        Calories:
+          Amount Per Serving: 0
+        Total Carbohydrate:
+          Amount Per Serving: 0
+          unit: g
+          '% Daily Value': 0
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 0
+              unit: g
+              '% Daily Value': 1
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Glucosamine Hydrochloride Green Grown:
+          Amount Per Serving: 1500
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Natural Flavors,  Non GMO Soluble Corn Fiber, Citric Acid
+  Liver Care:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 1
+          unit: g
+          '% Daily Value': 0
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 1
+              unit: g
+              '% Daily Value': 5
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Milk Thistle PE (Seed)(Sylibum marianum):
+          Amount Per Serving: 200
+          unit: mg
+          daily_value_append: '**'
+        Artichoke PE (Leaf)(Cynara scolymus):
+          Amount Per Serving: 200
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber,Natural Flavors.
+  Men's Vitality:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Tongkat Ali (Root)(Eurycoma Longifolia):
+          Amount Per Serving: 100
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Sleep Support:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 7
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Melatonin:
+          Amount Per Serving: 6
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+  Sleep Support:
+      basic:
+        Calories:
+          Amount Per Serving: 5
+        Total Carbohydrate:
+          Amount Per Serving: 2
+          unit: g
+          '% Daily Value': 1
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 2
+              unit: g
+              '% Daily Value': 6
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        L-Theanine:
+          Amount Per Serving: 100
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid

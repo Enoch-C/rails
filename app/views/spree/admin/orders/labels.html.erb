@@ -1,0 +1,56 @@
+<% supplement_facts = YAML.load_file('config/labels/supplement_facts.yml') %>
+
+<% @order.line_items.each do |line_item| %>
+  <h1><%= line_item.name %></h1>
+
+  <% calories_Amount_Per_Serving = 0 %>
+  <% total_Carbohydrate_Amount_Per_Serving = 0 %>
+  <% dietary_Fiber_Amount_Per_Serving = 0 %>
+  <% sugars_Amount_Per_Serving = 0 %>
+  <% sodium_Amount_Per_Serving = 0 %>
+  <% line_item.variant.option_values.each do |option_value| %>
+    <% calories_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Calories']['Amount Per Serving'] %>
+    <% total_Carbohydrate_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['Amount Per Serving'] %>
+    <% dietary_Fiber_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['carbohydrate']['Dietary Fiber']['Amount Per Serving'] %>
+    <% sugars_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['carbohydrate']['Sugars']['Amount Per Serving'] %>
+    <% sodium_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Sodium']['Amount Per Serving'] %>
+  <% end %>
+
+  <table>
+    <tr>
+      <td>Basic</td>
+    </tr>
+    <tr>
+      <td>Calories</td>
+    </tr>
+    <tr>
+      <td>Amount Per Serving</td>
+      <td><%= calories_Amount_Per_Serving %></td>
+    </tr>
+    <tr>
+      <td>Total Carbohydrate</td>
+      <td><%= total_Carbohydrate_Amount_Per_Serving %></td>
+    </tr>
+    <tr>
+      <td>Dietary Fiber</td>
+    </tr>
+    <tr>
+      <td>Amount Per Serving</td>
+      <td><%= dietary_Fiber_Amount_Per_Serving %></td>
+    </tr>
+    <tr>
+      <td>Sugars</td>
+    </tr>
+    <tr>
+      <td>Amount Per Serving</td>
+      <td><%= sugars_Amount_Per_Serving %></td>
+    </tr>
+    <tr>
+      <td>Sodium</td>
+    </tr>
+    <tr>
+      <td>Amount Per Serving</td>
+      <td><%= sodium_Amount_Per_Serving %></td>
+    </tr>
+  </table>
+<% end %>

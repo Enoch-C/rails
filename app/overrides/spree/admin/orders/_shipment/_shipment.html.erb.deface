@@ -1,0 +1,9 @@
+<!-- insert_before 'tr.edit-tracking' -->
+<tr>
+  <td colspan="5">
+    <%= Spree.t('admin.order.print_labels') %>
+  </td>
+  <td class="actions text-center">
+    <%= link_to_with_icon 'print', Spree.t('admin.order.print'), "labels", target: "_blank", class: 'btn btn-primary btn-sm', title: Spree.t('admin.order.print'), no_text: true, data: { shipment: shipment } %>
+  </td>
+</tr>
