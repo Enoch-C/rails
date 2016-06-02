@@ -11,6 +11,8 @@ module CoolChoiceStore
 
     config.function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', "Men's Vitality", 'Sleep Support', 'Stress Management']
     config.product_list = ["(USA only) *1 day* CoolChoice", "(USA only) *1 week* CoolChoice", "*1 month* CoolChoice"]
+    config.carbohydrate_divider = 300*100
+    config.fiber_divider = 25*100
 
     config.to_prepare do
       # Load application's model / class decorators

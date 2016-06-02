@@ -7,17 +7,15 @@ functions:
   Anti-Aging:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.76
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.78
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.65
               unit: g
-              '% Daily Value': 7
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -35,17 +33,15 @@ functions:
   Beauty:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 5.98
         Total Carbohydrate:
-          Amount Per Serving: 1
+          Amount Per Serving: 0.69
           unit: g
-          '% Daily Value': 0
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 1
+              Amount Per Serving: 0.56
               unit: g
-              '% Daily Value': 2
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -66,17 +62,15 @@ functions:
   Brain Care:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.29
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.56
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 1
+              Amount Per Serving: 1.48
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -94,17 +88,15 @@ functions:
   Digestive Care:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.65
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.73
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.60
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -122,17 +114,15 @@ functions:
   Eye Care:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.54
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.67
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.54
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -150,17 +140,15 @@ functions:
   Heart Care:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.53
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.67
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.53
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -182,13 +170,11 @@ functions:
         Total Carbohydrate:
           Amount Per Serving: 1.61
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
               Amount Per Serving: 1.48
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -206,17 +192,15 @@ functions:
   Joint Care:
       basic:
         Calories:
-          Amount Per Serving: 0
+          Amount Per Serving: 0.81
         Total Carbohydrate:
-          Amount Per Serving: 0
+          Amount Per Serving: 0.31
           unit: g
-          '% Daily Value': 0
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 0
+              Amount Per Serving: 0.17
               unit: g
-              '% Daily Value': 1
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -234,17 +218,15 @@ functions:
   Liver Care:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 2.99
         Total Carbohydrate:
-          Amount Per Serving: 1
+          Amount Per Serving: 1.41
           unit: g
-          '% Daily Value': 0
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 1
+              Amount Per Serving: 1.32
               unit: g
-              '% Daily Value': 5
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -266,17 +248,15 @@ functions:
   Men's Vitality:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.56
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.70
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.61
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
@@ -319,20 +299,18 @@ functions:
           unit: mg
           daily_value_append: '**'
       Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
-  Sleep Support:
+  Stress Management:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.59
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.70
           unit: g
-          '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.56
               unit: g
-              '% Daily Value': 6
               daily_value_append: '*'
             Sugars:
               Amount Per Serving: 0
