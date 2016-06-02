@@ -16,7 +16,8 @@ Spree.config do |config|
 end
 
 Spree.user_class = "Spree::User"
-
+config.admin_interface_logo = 'logo/logo.png'
+config.logo = 'logo/logo.png'
 config = Rails.application.config
 config.after_initialize do
   config.spree.calculators.shipping_methods << Spree::Calculator::Shipping::PerTwoItems
