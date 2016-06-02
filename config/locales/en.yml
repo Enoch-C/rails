@@ -43,6 +43,13 @@ en:
     cart_tableHeader_price: Price
     cart_tableHeader_quantity: QTY
     cart_tableHeader_totalPrice: Total
+    cart_summary_title: Cart Summary
+    cart_summary_subtotal: Subtotal 
+    cart_summary_shipping: Shipping
+    cart_summary_tax: Tax
+    cart_summary_total: Total
+    cart_summary_keepShopping: Keep Shopping
+    cart_summary_checkout: Checkout
     admin:
       promoter:
         store_credits: Store Credit
