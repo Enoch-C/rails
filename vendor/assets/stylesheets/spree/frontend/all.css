@@ -9,3 +9,12 @@
  *= require_tree .
  *= require spree/frontend/spree_social
 */
+
+
+#cart h1 {
+    height: 42px;
+    font-family: PingFangSC-Semibold;
+    font-size: 30px;
+    color: #474c5d;
+    text-align: center
+}
