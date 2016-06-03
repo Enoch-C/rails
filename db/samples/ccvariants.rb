@@ -23,7 +23,7 @@ Rails.application.config.product_list.each_with_index do |product_name, product_
       cost_price = 39.99
       sku = "ccsm3f"
     end
-    sku = sku + format('%04d', index + 1)
+    sku = sku + format('%02d', Rails.application.config.function_list.index(funcs[0])+1) + format('%02d', Rails.application.config.function_list.index(funcs[1])+1) + format('%02d', Rails.application.config.function_list.index(funcs[2])+1)
     unless Spree::Variant.find_by(sku: sku)
       Spree::Variant.create!(
       {
@@ -50,7 +50,7 @@ Rails.application.config.product_list.each_with_index do |product_name, product_
       cost_price = 39.99
       sku = "ccsm2f"
     end
-    sku = sku + format('%04d', index + 1)
+    sku = sku + '00' + format('%02d', Rails.application.config.function_list.index(funcs[0])+1) + format('%02d', Rails.application.config.function_list.index(funcs[1])+1)
     unless Spree::Variant.find_by(sku: sku)
       Spree::Variant.create!(
       {
@@ -77,7 +77,7 @@ Rails.application.config.product_list.each_with_index do |product_name, product_
       cost_price = 39.99
       sku = "ccsm1f"
     end
-    sku = sku + format('%04d', index + 1)
+    sku = sku + '0000' + format('%02d', Rails.application.config.function_list.index(funcs[0])+1)
     unless Spree::Variant.find_by(sku: sku)
       Spree::Variant.create!(
       {
