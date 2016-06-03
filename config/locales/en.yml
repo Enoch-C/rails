@@ -37,6 +37,19 @@ en:
     promoter_store_credit: Store Credit
     promoter_start: Binding Creation Time
     promoter_month_length: Binding Length(m)
+    shopping_cart: Cart
+    cart_tableHeader_title: Cart
+    cart_tableHeader_details: Product Details
+    cart_tableHeader_price: Price
+    cart_tableHeader_quantity: QTY
+    cart_tableHeader_totalPrice: Total
+    cart_summary_title: Cart Summary
+    cart_summary_subtotal: Subtotal 
+    cart_summary_shipping: Shipping
+    cart_summary_tax: Tax
+    cart_summary_total: Total
+    cart_summary_keepShopping: Keep Shopping
+    cart_summary_checkout: Checkout
     admin:
       promoter:
         store_credits: Store Credit
