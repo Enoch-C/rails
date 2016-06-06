@@ -138,3 +138,59 @@
     <div class="container"><a href="/checkout" style="border: 1px solid #fff" class="button">Add to Cart</a><a href="/checkout" style="background: #00b9ee" class="button">Checkout</a></div>
   </div>
 </div>
+
+<script src="/assets/vue.js"></script>
+<script>
+  var vm = new Vue({
+    el: '#cool-choice-home',
+    data: {
+      result: []
+    },
+    watch: {
+      'result': function(val) {
+        this.getSKU(val)
+        this.check_3_box(val)
+      }
+    },
+    methods: {
+      getSKU: function(res) {
+        //- var arr = ['eye', 'heart', 'joint', 'beauty', 'immune', 'sex', 'liver', 'brain', 'lung', 'digestive', 'energy', 'anti', 'relief', 'wish'].sort
+        //- var sorted_arr = ["anti", "beauty", "brain", "digestive", "energy", "eye", "heart", "immune", "joint", "liver", "lung", "relief", "sex", "wish"]
+        var hash = {
+          "anti": '01',
+          "beauty": '02',
+          "brain": '03',
+          "digestive": '04',
+          "energy": '05',
+          "eye": '06',
+          "heart": '07',
+          "immune": '08',
+          "joint": '09',
+          "liver": '10',
+          "lung": '11',
+          "relief": '12',
+          "sex": '13',
+          "wish": '14'
+        }
+        var num = res.slice().sort().map(function (x) { return hash[x] }).join('')
+        var sku = new Array(6 - num.length + 1).join('0') + num
+        console.log(sku)
+      },
+      check_3_box: function() {
+        var box = document.getElementsByClassName('checkbox')
+        if(this.result.length < 3) {
+          for (var i = 0; i < box.length; i++) {
+            box[i].disabled=false
+          }
+        }
+        else {
+          for (var i = 0; i < box.length; i++) {
+            if (!box[i].checked) {
+              box[i].disabled=true
+            }
+          }
+        }
+      }
+    }
+  })
+</script>
