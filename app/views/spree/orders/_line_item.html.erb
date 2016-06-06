@@ -1,0 +1,44 @@
+<% variant = line_item.variant %>
+
+<%= order_form.fields_for :line_items, line_item do |item_form| %>
+  <tr><td colspan=5><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
+  <tr style="height: 190px">
+    <td data-hook="cart_item_image" style="padding: 0 20px">
+      <div style="line-height: 100%;vertical-align: middle;">
+        <input type="checkbox" style="display: inline-block"/>
+        <div style="display: inline-block; margin: 0 24px;">
+          <% if variant.images.length == 0 %>
+            <%= link_to small_image(variant.product), variant.product %>
+          <% else %>
+            <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
+          <% end %>
+        </div>
+        <div style="display: inline-block; width: 340px; vertical-align: middle">
+          <div class="cool_choice_label"><%= link_to line_item.name, product_path(variant.product) %></div>
+          <div class="cool_choice_titles"><%= variant.options_text %></div>
+        </div>
+      </div>
+    </td>
+    <td data-hook="cart_item_description">
+      <div class="price"><%= line_item.single_money.to_html %></div>
+      <% if true #line_item.insufficient_stock? %>
+        <span class="out-of-stock">
+          <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
+        </span>
+      <% end %>
+    </td>
+    <td data-hook="cart_item_price"><span id="minus0" class="minus_plus">-</span><select name="tier" id="tier">
+                <option value="month">1 month</option>
+                <option value="week">1 week</option>
+                <option value="day">1 day</option>
+      </select><span id="plus0" class="minus_plus">+</span>
+      <%#= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
+    </td>
+    <td class="total_price" data-hook="cart_item_total">
+      <%= line_item.display_amount.to_html unless line_item.quantity.nil? %>
+    </td>
+    <td class="cart-item-delete" data-hook="cart_item_delete">
+      <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-minus-sign'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
+    </td>
+  </tr>
+<% end %>

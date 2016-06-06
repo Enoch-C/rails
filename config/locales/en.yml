@@ -41,7 +41,7 @@ en:
     cart_tableHeader_title: Cart
     cart_tableHeader_details: Product Details
     cart_tableHeader_price: Price
-    cart_tableHeader_quantity: QTY
+    cart_tableHeader_quantity: Qty
     cart_tableHeader_totalPrice: Total
     cart_summary_title: Cart Summary
     cart_summary_subtotal: Subtotal 

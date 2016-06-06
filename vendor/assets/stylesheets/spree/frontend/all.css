@@ -10,6 +10,13 @@
  *= require spree/frontend/spree_social
 */
 
+#cart * {
+    border: none;
+}
+
+#cart td {
+    vertical-align: middle;
+}
 
 #cart h1 {
     height: 42px;
@@ -51,14 +58,9 @@
 
 #cart select#tier {
   font-family: PingFangSC-Semibold;
-  font-size: 30px;
+  font-size: 16px;
   color: #787878;
-}
-
-#cart select#tier {
-  font-family: PingFangSC-Semibold;
-  font-size: 30px;
-  color: #787878;
+  border: 1px solid #ebebeb;
 }
 
 #cart .minus_plus {
@@ -98,14 +100,17 @@
   font-size: 16px;
   color: #787878;
   width: 150px;
-  height: 46px;
-  -moz-border-radius: 23px;
-  -webkit-border-radius: 23px;
+  padding: 11px 0;
+  border-radius: 23px;
   background-color: #fff;
   border: 1px solid #00b9ee;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #cart .roundButton.b1 {
   background-color: #00b9ee;
   color: white;
 }
+

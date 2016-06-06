@@ -1,70 +1,21 @@
 <% @body_id = 'cart' %>
+<div data-hook="cart_container">
 <h1><%= Spree.t(:cart_tableHeader_title)%></h1>
-<center style="width: 1100px;">
-  <table style="width: 1100px;border:1px solid #dedede">
-    <thead style="height: 60px">
-      <tr style="height: 60px">
-        <td style="padding: 0 0 0 60px; width: 550px"><%= Spree.t(:cart_tableHeader_details)%></td>
-        <td><%= Spree.t(:cart_tableHeader_price)%></td>
-        <td><%= Spree.t(:cart_tableHeader_quantity)%></td>
-        <td><%= Spree.t(:cart_tableHeader_totalPrice)%></td>
-        <td></td>
-      </tr>
-    </thead>
-    
 
-    <%# @order.line_items.each do |x| %>
-    <% 2.times do |x|%>
-    <tr><td colspan=5><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
-    <tr style="height: 190px">
-      <td style="padding: 0 20px">
-        <input type="checkbox"/>
-        <img class="item_image" src="" style="margin: 0 20px"/>
-        <div style="display: inline-block">
-        <div class="cool_choice_label">CoolChoice</div>
-        <div class="cool_choice_titles">Heart Care  Anti-Aging  Lung Care</div>
+  <% if @order.line_items.empty? %>
+    <div data-hook="empty_cart">
+      <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
+      <p><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>
+    </div>
+  <% else %>
+    <div data-hook="outside_cart_form">
+      <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+        <div data-hook="inside_cart_form">
+          <div data-hook="cart_items" class="table-responsive">
+            <%= render partial: 'form', locals: { order_form: order_form } %>
+          </div>
         </div>
-      </td>
-      <td>
-        <div class="price">$39.99</div>
-      </td>
-      <td><span id="minus0" class="minus_plus">-</span><select name="tier" id="tier">
-          <option value="month">1 month</option>
-          <option value="week">1 week</option>
-          <option value="day">1 day</option>
-  </select><span id="plus0" class="minus_plus">+</span></td>
-      <td>
-        <div class="total_price">$39.99</div>
-      </td>
-      <td style="width: 100px;text-align: center">x</td>
-    </tr>
-    <% end %>
-
-  </table>
-  <table style="width: 396px;float:right;border:1px solid #dedede;margin-top:10px">
-    <tr><td colspan=2 class="cart_summary_big" style="height:58px"><div><%= Spree.t(:cart_summary_title)%></div></td></tr>
-    <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
-    <tr>
-      <td class="cart_summary_dt"><%= Spree.t(:cart_summary_subtotal)%></td>
-      <td class="cart_summary_dd">$79.88</td>
-    </tr>
-    <tr>
-    <tr>
-      <td class="cart_summary_dt"><%= Spree.t(:cart_summary_shipping)%></td>
-      <td class="cart_summary_dd">$0.00</td>
-    </tr>
-      <td class="cart_summary_dt"><%= Spree.t(:cart_summary_tax)%></td>
-      <td class="cart_summary_dd">$0.20</td>
-    </tr>
-    <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
-    </tr>
-      <td class="cart_summary_dt" style="height: 54px"><%= Spree.t(:cart_summary_total)%></td>
-      <td class="cart_summary_dt" style="text-align: right; padding-right:20px">$80.18</td>
-    </tr>
-    <tr>
-      <td style="height: 85px"><center><button id="continue" class="roundButton"><%= Spree.t(:cart_summary_keepShopping)%></button></center></td>
-      <td ><center><button id="checkout" class="roundButton b1"><%= Spree.t(:cart_summary_checkout)%></button></center></td>
-    </tr>
-  </table>
-</center>
+      <% end %>
+  <% end %>
+</div>
 
