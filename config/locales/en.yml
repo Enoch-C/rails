@@ -67,3 +67,41 @@ en:
         store_credit_total: Total Store Credit
         summary: Your Account Summary
     gift: Gift
+    homepage:
+      title_proud: PROUD TO BE
+      title_introduce: Introducing the Personalized Supplements
+      title_free: FREE SHIPPING in United State
+      content_title_magic: 'The Magic Starts Here:'
+      content_title_choose: Choose 3 of the followings
+      content_function_eye: Eye Care
+      content_function_heart: Heart Care
+      content_function_joint: Joint Care
+      content_function_beauty: Beauty
+      content_function_immune: Immune Care
+      content_function_sex: Sexual Function
+      content_function_liver: Liver Care
+      content_function_brain: Brain Care
+      content_function_lung: Lung Care
+      content_function_digestive: Digestive Care
+      content_function_energy: Energy
+      content_function_anti: Anti-Aging
+      content_function_relief: Stress Relief
+      content_function_wish: My Wish
+      cool_simply: Simply Cool
+      cool_simply_line: One easy packet
+      cool_simply_line_2: 3-in-1 at once
+      cool_care: Cool Care
+      cool_care_line: Do something special
+      cool_care_line_2: for yourself & others
+      cool_ingredients: Cool Ingredients
+      cool_ingredients_line: No artificial ingredients
+      cool_ingredients_line_2: Freshly made-to-order
+      cool_ingredients_line_3: No unnecessary ingredients
+    header:
+      gift: GIFT
+      ingredient: INGREDIENT
+      about: ABOUT
+    gift:
+      title_cool: Cool Care
+      title_do: Do something special for someone you care
+

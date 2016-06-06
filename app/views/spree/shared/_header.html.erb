@@ -15,3 +15,24 @@
   </div>
   <% end %>
 </div>
+
+<% if false %>
+<header id="header">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="/assets/home/logo@2x.png">
+    </a>
+    <nav class="nav">
+      <a href="/gift"><%= Spree.t(:"header.gift") %></a>
+      <a href="/ingredient"><%= Spree.t(:"header.ingredient") %></a>
+      <a href="/about"><%= Spree.t(:"header.about") %></a>
+      <a href="/login">
+        <img src="/assets/home/icon-avatar@2x.png" class="avatar">
+      </a>
+      <a href="/cart">
+        <img src="/assets/home/button-cart@2x.png" class="cart">
+      </a>
+    </nav>
+  </div>
+</header>
+<% end %>
