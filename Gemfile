@@ -6,14 +6,13 @@ gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-1-stable'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
 gem 'spree_tax_cloud', github: 'spree-contrib/spree_tax_cloud', branch: '3-1-stable'
+
 # gem 'spree_braintree_vzero', github: 'spree-contrib/spree_braintree_vzero', branch: '3-1-stable'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 #gem 'pg', '~> 0.15'
-
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

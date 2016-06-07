@@ -1,4 +1,8 @@
 <!-- insert_bottom 'div#main-sidebar' -->
+<% if can? :admin, Spree::Promotion %>
+<% unless spree_current_user.has_spree_role?('shipping') %>
  <ul class="nav nav-sidebar">
    <%= tab *Spree::BackendConfiguration::PROMOTER_TABS, url: spree.admin_promoters_path, icon: 'user' %>
  </ul>
+ <% end %>
+ <% end %>
