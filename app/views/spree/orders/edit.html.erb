@@ -19,3 +19,47 @@
   <% end %>
 </div>
 
+<script>
+  var vm = new Vue({
+    el: '#cart',
+    data: {
+      order: {},
+      selected: "k",
+    },
+    watch: {
+      "selected": function() {
+        alert(this.selected);
+      }
+    },
+    methods: {
+      minus: function(index) {
+        var qty = this.order.line_items[index].quantity
+        if (qty > 1) {
+          this.order.line_items[index].quantity -= 1
+        }
+      },
+      plus: function(index) {
+        this.order.line_items[index].quantity += 1;
+      },
+      options: function(index) {
+        var qty = this.order.line_items[index].quantity
+          if (qty > 1) {
+            return [ {text: "months", value: "month"}, {text: "weeks", value: "week"}, {text: "days", value: "day"} ];
+          } else {
+            return [ {text: "month", value: "month"}, {text: "week", value: "week"}, {text: "day", value: "day"} ];
+          }
+      }
+    }
+  })
+
+  $.ajax({
+    url: '/api/v1/orders/<%= @order.number %>?order_token=<%= @order.guest_token %>',
+    error: function() {
+    },
+    success: function(data) {
+      vm.order = data
+    },
+    type: 'GET'
+  });
+
+</script>
