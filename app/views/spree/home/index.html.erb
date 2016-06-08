@@ -15,18 +15,23 @@
 <% end %>
 
 <% @body_id = 'home' %>
-<div id="cool-choice-home">
+<div id="cool-choice-home"  v-cloak>
   <div class="banner">
     <div class="container"><img src="/assets/home/page-1@2x.png" class="logo">
       <div class="title"><%= Spree.t(:"homepage.title_proud") %></div>
       <div class="sub-title"><%= Spree.t(:"homepage.title_introduce") %></div>
-      <div class="free"><%= Spree.t(:"homepage.title_free") %></div>
+      <div class="free">
+        <div class="circle"></div><%= Spree.t(:"homepage.title_free") %>
+        <div class="circle"></div>
+      </div>
     </div>
   </div>
   <div class="section-1">
     <div class="container">
       <div class="title"><%= Spree.t(:"homepage.content_title_magic") %></div>
-      <div class="sub-title"><%= Spree.t(:"homepage.content_title_choose") %></div>
+      <div class="sub-title">
+        <div class="line"></div><%= Spree.t(:"homepage.content_title_choose") %>
+        <div class="line"></div>
       <div class="content clearfix">
         <div class="choose-box eye">
           <label for="eye_box" class="choose-label"><img src="/assets/home/icon-eye@2x.png" class="img"/>
@@ -135,7 +140,29 @@
     </div>
   </div>
   <div class="section-3">
-    <div class="container"><a href="/checkout" style="border: 1px solid #fff" class="button">Add to Cart</a><a href="/checkout" style="background: #00b9ee" class="button">Checkout</a></div>
+    <div class="container"><img src="/assets/home/product@2x.png" class="bar">
+      <div class="func col-sm-3">
+        <div class="title">Choose 3 functions</div>
+        <div v-for="n in 3" :class="{'hover': result[n]}" :style="result[n] ? 'background: url(/assets/home/icon-'.concat(result[n],'@2x.png) center/100% no-repeat') : ''" class="box"><img src="/assets/home/icon_delet@2x.png" @click="result.splice(n, 1)" class="delete"></div>
+      </div>
+      <div class="qty col-sm-2">
+        <div class="title">QTY</div>
+        <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
+          <select v-model="qty">
+            <option>{{ num }} day</option>
+            <option>{{ num }} week</option>
+            <option>{{ num }} month</option>
+          </select><span @click="num++" class="math"> +</span>
+        </div>
+        <div v-if="qty.split(' ')[1] == 'day'" class="detail">1 pack/d</div>
+        <div v-if="qty.split(' ')[1] == 'week'" class="detail">7 packs/w</div>
+        <div v-if="qty.split(' ')[1] == 'month'" class="detail">30 packs/m</div>
+      </div>
+      <div class="total col-sm-2">
+        <div class="title">TOTAL</div>
+        <div class="usd">${{ sum }} USD</div>
+      </div><a href="/checkout" style="border: 1px solid #fff" class="button">Add to Cart</a><a href="/checkout" style="background: #00b9ee" class="button">Checkout</a>
+    </div>
   </div>
 </div>
 
@@ -143,7 +170,23 @@
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
+      num: 1,
+      qty: '1 week',
+      sum: 39.99,
       result: []
+    },
+    computed: {
+      type: function() {
+        return this.qty.split(' ')[1]
+      },
+      sum: function() {
+        var price = {
+          day: 3.99,
+          week: 13.99,
+          month: 39.99
+        }
+        return (price[this.type] * this.num).toFixed(2)
+      }
     },
     watch: {
       'result': function(val) {
@@ -173,7 +216,7 @@
         }
         var num = res.slice().sort().map(function (x) { return hash[x] }).join('')
         var sku = new Array(6 - num.length + 1).join('0') + num
-        console.log(sku)
+        //- console.log(sku)
       },
       check_3_box: function() {
         var box = document.getElementsByClassName('checkbox')
