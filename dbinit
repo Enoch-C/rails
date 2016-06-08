@@ -1,0 +1,35 @@
+
+R='\033[0;31m'
+N='\033[0m'
+
+echoo () {
+ printf "$R$*$N\n" 
+}
+
+echoo rake db:drop
+rake db:drop
+echoo bin/spring stop
+bin/spring stop
+echoo bundle exec rake railties:install:migrations
+bundle exec rake railties:install:migrations
+echoo bundle exec rake db:migrate
+bundle exec rake db:migrate
+echoo rails g spree:install --user_class=Spree::User --migrate=false --sample=false --seed=false
+rails g spree:install --user_class=Spree::User --migrate=false --sample=false --seed=false
+echoo bundle exec rake db:seed
+bundle exec rake db:seed
+echoo rails g spree:auth:install
+rails g spree:auth:install
+echoo rails g spree_gateway:install
+rails g spree_gateway:install
+echoo rails g spree_i18n:install
+rails g spree_i18n:install
+echoo rails g spree_social:install
+rails g spree_social:install
+echoo rails g spree_tax_cloud:install
+rails g spree_tax_cloud:install
+echoo rails g spree_braintree_vzero:install
+rails g spree_braintree_vzero:install
+
+echoo rake database_init:load
+rake database_init:load
