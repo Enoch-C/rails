@@ -24,6 +24,7 @@ Migrations have been run. Please run "rake database_init:load" by itself now.
     Spree::Sample.load_sample("ccstock")
     Spree::Sample.load_sample("ccstore_credit_categories")
     Spree::Sample.load_sample("ccvariants")
+    Spree::Role.find_or_create_by(name: 'shipping')
 
   end
 
