@@ -12,7 +12,7 @@ body
 //   .container
 //     position: relative
 //     .logo
-//       // background: url(/img/logo@2x.png)
+//       // background: url(/assets/logo@2x.png)
 //       display: block
 //       float: left
 //       margin-top: 16px
@@ -37,7 +37,7 @@ body
 
 #cool-choice-home
   .banner
-    background: url(/assets/home/bj_home_top.jpg)
+    background: url(/assets/home/bj_home_top.jpg) center no-repeat
     background-size: cover
     width: 100%
     height: 500px
@@ -58,10 +58,18 @@ body
         margin: 22px auto 0
       .free
         position: absolute
-        bottom: 0
+        bottom: 20px
         width: 100%
         font-size: 20px
         font-weight: 300
+        .circle
+          display: inline-block
+          width: 8px
+          height: 8px
+          border-radius: 50%
+          margin: 0 10px 2px
+          opacity: 0.5
+          background: #fff
   .section-1
     background: #f7f8fa
     text-align: center
@@ -74,6 +82,12 @@ body
       font-size: 25px
       font-weight: 300
       color: #919191
+      .line
+        display: inline-block
+        width: 40px
+        height: 2px
+        margin: 0 40px 8px
+        background: #dedede
     .content
       .choose-box
         float: left
@@ -144,14 +158,73 @@ body
         color: #a6a4a4
   .section-3
     background: #474c5d
-    .button
-      display: inline-block
-      width: 150px
-      margin: 35px 10px
-      height: 50px
-      line-height: 50px
-      border-radius: 25px
-      font-size: 20px
-      text-align: center
-      color: #fff
+    // height: 120px
+    color: #fff
+    .container
+      position: relative
+      // height: 120px
+      @media (max-width: 768px)
+        text-align: center
+      .bar
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 98px
+        @media (max-width: 768px)
+          display: none
+      .title
+        margin: 15px 0 10px
+        font-size: 16px
+        font-weight: 300
+        opacity: 0.5
+      .func
+        margin-left: 100px
+        @media (max-width: 768px)
+          margin-left: 0
+        .box
+          display: inline-block
+          width: 50px
+          height: 50px
+          border-radius: 50%
+          margin: 0 20px 20px 0
+          background: rgba(255, 255, 255, 0.2)
+          .delete
+            display: none
+            width: 50px
+            border-radius: 50%
+            background: rgba(0, 0, 0, 0.2)
+        .hover
+          &:hover
+            .delete
+              display: block
+      .qty
+        .select
+          margin-bottom: 10px
+          font-size: 16px
+          select
+            width: 87px
+            height: 28px
+            color: #474c5d
+          .math
+            cursor: pointer
+        .detail
+          font-size: 14px
+          color: #dedede
+      .total
+        .usd
+          font-size: 20px
+          font-weight: 300
+      .button
+        display: inline-block
+        width: 150px
+        margin: 35px 10px 20px
+        height: 50px
+        line-height: 50px
+        border-radius: 25px
+        font-size: 20px
+        text-align: center
+        color: #fff
 
+@media print
+  #main-sidebar
+    display: none

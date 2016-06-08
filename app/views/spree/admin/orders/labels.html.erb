@@ -16,9 +16,74 @@
     <% sodium_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Sodium']['Amount Per Serving'] %>
   <% end %>
 
+  <div id="label">
+    <div class="container">
+      <div class="print">
+        <div class="func"><img src="/assets/home/icon-relief@2x.png"><img src="/assets/home/icon-relief@2x.png" style="margin: 0 0.25cm"><img src="/assets/home/icon-relief@2x.png"></div>
+        <div class="line"></div>
+        <div class="box">
+          <table>
+            <caption>
+              <div class="title">Supplement Facts</div>
+              <div class="sub">Serving Size 1 Packet (2.0g)<br>Servings Per Container 1</div>
+            </caption>
+            <thead>
+              <tr>
+                <th width="66%"></th>
+                <th width="20%">Amount Per Serving</th>
+                <th width="14%">% Daily Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Calories</td>
+                <td><%= calories_Amount_Per_Serving %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Total Carbohydrate</td>
+                <td><%= total_Carbohydrate_Amount_Per_Serving %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="total">Dietary Fiber</td>
+                <td><%= dietary_Fiber_Amount_Per_Serving %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td class="total">Sugars</td>
+                <td><%= sugars_Amount_Per_Serving %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Sodium</td>
+                <td><%= sodium_Amount_Per_Serving %></td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tbody class="super">
+              <tr>
+                <td>Superoxide Dismutase (SOD)</td>
+                <td>10mg</td>
+                <td></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td colspan="3" class="memo">** Daily Value not established.<br>* Percent Daily Values are based on a 2,000 calorie diet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ingredients"><span class="title">INGREDIENTS</span>: Natural Plant Fibers and Extracts (Corn, Potato, Konjia, Tapioca, Chia Seed, Cucumber, Carrot, Spinach, Broccoli, Kale, Celery, Cauliflower, Brussels Sprout, Cabbage, Pea), Natural Flavor, Natural Vegetable Extract For Color.</div>
+      </div>
+    </div>
+  </div>
+
+  <% if false %>
   <table>
     <tr>
-      <td>Basic</td>
+      <td>Basi</td>
     </tr>
     <tr>
       <td>Calories</td>
@@ -53,4 +118,5 @@
       <td><%= sodium_Amount_Per_Serving %></td>
     </tr>
   </table>
+  <% end %>
 <% end %>

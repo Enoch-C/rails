@@ -1,0 +1,64 @@
+#label
+  font-size: 8px
+  .print
+    width: 7.5cm
+    height: 12cm
+    padding: 1.1cm 1.2cm
+    border: 1px solid
+  .func
+    img
+      width: 1.5cm
+  .line
+    width: 5cm
+    margin: 0.5cm 0 0.6cm
+    height: .5px
+    background: #000
+  .box
+    display: inline-block
+    border: .5px solid
+    padding: 2px
+    width: 5cm
+    table
+      table-layout: fixed
+      width: 4.8cm
+      // font-size: 9px
+      color: #000
+      caption
+        padding: 0
+        .title
+          line-height: 1.1
+          font-size: 20px
+          font-weight: 700
+      th,
+      td
+        border-top: 1px solid #888
+      tbody
+        .total
+          position: relative
+          padding-left: 6px
+          &:before
+            position: absolute
+            left: 0
+            top: -1px
+            width: 6px
+            height: 1px
+            background: #fff
+            content: ""
+        .memo
+          font-size: 6px
+      thead
+        border-top: 6px solid
+        border-bottom: 3px solid
+        font-size: 6px
+      .super
+        border-top: 6px solid
+        border-bottom: 6px solid
+  .ingredients
+    width: 5cm
+    // font-size: 9px
+    .title
+      font-weight: 700
+
+@media print
+  #main-sidebar
+    display: none
