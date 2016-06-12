@@ -10,12 +10,35 @@
   <% dietary_Fiber_Amount_Per_Serving = 0 %>
   <% sugars_Amount_Per_Serving = 0 %>
   <% sodium_Amount_Per_Serving = 0 %>
+  <% sodium_Daily_Value = 0 %>
+  <% protein_Amount_Per_Serving = 0 %>
+
+  <% extra = {} %>
+  <% other_Ingredients = '' %>
+
   <% line_item.variant.option_values.each do |option_value| %>
     <% calories_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Calories']['Amount Per Serving'] %>
     <% total_Carbohydrate_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['Amount Per Serving'] %>
     <% dietary_Fiber_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['carbohydrate']['Dietary Fiber']['Amount Per Serving'] %>
     <% sugars_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['carbohydrate']['Sugars']['Amount Per Serving'] %>
     <% sodium_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Sodium']['Amount Per Serving'] %>
+    <% sodium_Daily_Value += supplement_facts['functions'][option_value.name]['basic']['Sodium']['% Daily Value'] %>
+    <% if supplement_facts['functions'][option_value.name]['basic']['Protein'] %>
+      <% protein_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Protein']['Amount Per Serving'] %>
+    <% end %>
+
+    <% supplement_facts['functions'][option_value.name]['extra'].keys.each do |key| %>
+      <% if extra.has_key?(key) %>
+        <% extra[key]['Amount Per Serving'] += supplement_facts['functions'][option_value.name]['extra'][key]['Amount Per Serving'] %>
+      <% else %>
+        <% extra[key] = supplement_facts['functions'][option_value.name]['extra'][key] %>
+      <% end %>
+    <% end %>
+
+    <% if supplement_facts['functions'][option_value.name]['Other Ingredients'].size > other_Ingredients.size %>
+      <% other_Ingredients = supplement_facts['functions'][option_value.name]['Other Ingredients'] %>
+    <% end %>
+
   <% end %>
 
   <div id="label">
@@ -26,7 +49,7 @@
         <table>
           <caption>
             <div class="title">Supplement Facts</div>
-            <div class="sub">Serving Size 1 Packet (2.0g)<br>Servings Per Container 1</div>
+            <div class="sub">Serving Size 1 Packet (<%= supplement_facts['Serving Size 1 Packet'] %>g)<br>Servings Per Container <%= supplement_facts['Servings Per Container'] %></div>
           </caption>
           <thead>
             <tr>
@@ -38,36 +61,45 @@
           <tbody>
             <tr>
               <td>Calories</td>
-              <td><%= calories_Amount_Per_Serving %></td>
+              <td><%= calories_Amount_Per_Serving.round(1).to_s.chomp('.0') %></td>
               <td></td>
             </tr>
             <tr>
               <td>Total Carbohydrate</td>
-              <td><%= total_Carbohydrate_Amount_Per_Serving %></td>
-              <td></td>
+              <td><%= total_Carbohydrate_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+              <td><%= (total_Carbohydrate_Amount_Per_Serving/300*100).round(1).to_s.chomp('.0')+'%*' %></td>
             </tr>
             <tr>
               <td class="total">Dietary Fiber</td>
-              <td><%= dietary_Fiber_Amount_Per_Serving %></td>
-              <td></td>
+              <td><%= dietary_Fiber_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+              <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(1).to_s.chomp('.0')+'%*' %></td>
             </tr>
             <tr>
               <td class="total">Sugars</td>
-              <td><%= sugars_Amount_Per_Serving %></td>
+              <td><%= sugars_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
               <td></td>
             </tr>
+            <% if protein_Amount_Per_Serving > 0 %>
+            <tr>
+              <td>Protein</td>
+              <td><%= protein_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+              <td></td>
+            </tr>
+            <% end %>
             <tr>
               <td>Sodium</td>
-              <td><%= sodium_Amount_Per_Serving %></td>
-              <td></td>
+              <td><%= sodium_Amount_Per_Serving.round(1).to_s.chomp('.0') %> mg</td>
+              <td><%= sodium_Daily_Value.round(1).to_s.chomp('.0')+'%' %></td>
             </tr>
           </tbody>
           <tbody class="super">
+            <% extra.keys.each do |key| %>
             <tr>
-              <td>Superoxide Dismutase (SOD)</td>
-              <td>10mg</td>
-              <td></td>
+              <td><%= key %></td>
+              <td><%= extra[key]['Amount Per Serving'].round(1).to_s.chomp('.0') %> <%= extra[key]['unit'] %></td>
+              <td>**</td>
             </tr>
+            <% end %>
           </tbody>
           <tbody>
             <tr>
@@ -76,7 +108,7 @@
           </tbody>
         </table>
       </div>
-      <div class="ingredients"><span class="title">INGREDIENTS</span>: Natural Plant Fibers and Extracts (Corn, Potato, Konjia, Tapioca, Chia Seed, Cucumber, Carrot, Spinach, Broccoli, Kale, Celery, Cauliflower, Brussels Sprout, Cabbage, Pea), Natural Flavor, Natural Vegetable Extract For Color.</div>
+      <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
     </div>
   </div>
 
