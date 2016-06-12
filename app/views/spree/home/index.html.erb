@@ -32,6 +32,7 @@
       <div class="sub-title">
         <div class="line"></div><%= Spree.t(:"homepage.content_title_choose") %>
         <div class="line"></div>
+      </div>
       <div class="content clearfix">
         <div class="choose-box eye">
           <label for="eye_box" class="choose-label"><img src="/assets/home/icon-eye@2x.png" class="img"/>
@@ -186,38 +187,20 @@
           month: 39.99
         }
         return (price[this.type] * this.num).toFixed(2)
+      },
+      sku: function() {
+        var hash = ['', 'eye', 'heart', 'joint', 'beauty', 'immune', 'sex', 'liver', 'brain', 'lung', 'digestive', 'energy', 'anti', 'relief', 'wish'].sort()
+
+        var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
+        return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
       }
     },
     watch: {
       'result': function(val) {
-        this.getSKU(val)
         this.check_3_box(val)
       }
     },
     methods: {
-      getSKU: function(res) {
-        //- var arr = ['eye', 'heart', 'joint', 'beauty', 'immune', 'sex', 'liver', 'brain', 'lung', 'digestive', 'energy', 'anti', 'relief', 'wish'].sort
-        //- var sorted_arr = ["anti", "beauty", "brain", "digestive", "energy", "eye", "heart", "immune", "joint", "liver", "lung", "relief", "sex", "wish"]
-        var hash = {
-          "anti": '01',
-          "beauty": '02',
-          "brain": '03',
-          "digestive": '04',
-          "energy": '05',
-          "eye": '06',
-          "heart": '07',
-          "immune": '08',
-          "joint": '09',
-          "liver": '10',
-          "lung": '11',
-          "relief": '12',
-          "sex": '13',
-          "wish": '14'
-        }
-        var num = res.slice().sort().map(function (x) { return hash[x] }).join('')
-        var sku = new Array(6 - num.length + 1).join('0') + num
-        //- console.log(sku)
-      },
       check_3_box: function() {
         var box = document.getElementsByClassName('checkbox')
         if(this.result.length < 3) {
