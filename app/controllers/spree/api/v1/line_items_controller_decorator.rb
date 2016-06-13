@@ -17,6 +17,21 @@ Spree::Api::V1::LineItemsController.class_eval do
     end 
   end
 
+  def create
+    variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
+    @line_item = order.contents.add(
+        variant,
+        params[:line_item][:quantity] || 1,
+        line_item_params[:options] || {}
+    )
+
+    if @line_item.errors.empty?
+      respond_with(@line_item, status: 201, default_template: :show)
+    else
+      invalid_resource!(@line_item)
+    end
+  end
+
   #def update
     #@line_item = find_line_item
     #attributes = line_items_attributes
