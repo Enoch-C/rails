@@ -24,42 +24,107 @@
     el: '#cart',
     data: {
       order: {},
-      selected: "k",
+      selected: [],
+      options:[],
+      prices:[]
     },
-    watch: {
-      "selected": function() {
-        alert(this.selected);
-      }
+    computed: {
+      "price_total": function() {
+        var sum = 0.0;
+        this.prices.forEach(function(item){
+          sum += item.total;
+        })
+        return sum;
+      },
     },
     methods: {
-      minus: function(index) {
-        var qty = this.order.line_items[index].quantity
-        if (qty > 1) {
-          this.order.line_items[index].quantity -= 1
+      changeItem(rowId, event) {
+        var from = this.selected[rowId];
+        var to = event.target.value;
+        var a = to.split(".");
+        var qty = a[0];
+        var span = a[1];
+        var sku = this.order.line_items[rowId].variant.sku;
+        sku = sku.slice(0, 3) + span + sku.slice(4);
+        this.updateLineItem(rowId, sku, qty);
+        console.log(rowId + " from: " + this.selected[rowId] + " to: " + event.target.value)
+      },
+      updateAll: function() {
+        this.updatePrices();
+        this.updateOptions();
+      },
+      updatePrices: function() {
+        var that = this;
+        var a = [];
+        this.order.line_items.forEach(function(item){
+          var h = {};
+          h['single'] = item.single_display_amount;
+          h['total'] = (+h['single'].slice(1)) * item.quantity;
+          a.push(h)
+        })
+        this.prices = a;
+      },
+      updateOptions: function() {
+        var options = [];
+        var a = [];
+        var that = this;
+        this.order.line_items.forEach(function(item){
+          a.push(that.valueFromItem(item));
+          options.push(that.timespanOptionsFromItem(item));
+        })
+        this.selected = a;
+        this.options = options;
+      },
+      timespanOptionsFromItem: function(item) {
+        var t = ['month', 'week', 'day'];
+        var p1 = item.quantity;
+        if (p1 > 1) {
+          t = t.map(function(item){
+            return item + "s";
+          })
         }
+        return t.map(function(x){
+          return {text: p1 + " " + x, value: p1 + "." + x[0]};
+        })
+      },
+      valueFromItem: function(item) {
+        return item.quantity + "." + item.variant.sku[3]; // 11m, 3d
+      },
+      minus: function(index) {
+        var qty = this.order.line_items[index].quantity;
+        if (qty > 1) {
+          this.order.line_items[index].quantity -= 1;
+          this.updateAll();
+        }
+
       },
       plus: function(index) {
         this.order.line_items[index].quantity += 1;
+        this.updateAll();
       },
-      options: function(index) {
-        var qty = this.order.line_items[index].quantity
-          if (qty > 1) {
-            return [ {text: "months", value: "month"}, {text: "weeks", value: "week"}, {text: "days", value: "day"} ];
-          } else {
-            return [ {text: "month", value: "month"}, {text: "week", value: "week"}, {text: "day", value: "day"} ];
-          }
+      updateLineItem: function(index, sku, qty) {
+        $.ajax({
+          type: 'PUT',
+          url: '/api/v1/orders/' + this.order.number + '/line_items/' + this.order.line_items[index].id + '?line_item[sku]='+sku+'&line_item[quantity]='+qty+'&order_token=<%= @order.guest_token %>',
+          success: function(data) {
+            window.location.reload();
+          },
+        })
       }
+    },
+    ready: function() {
+      $.ajax({
+        url: '/api/v1/orders/<%= @order.number %>?order_token=<%= @order.guest_token %>',
+        error: function() {
+        },
+        success: function(data) {
+          vm.order = data;
+          vm.updateAll();
+        },
+        type: 'GET'
+      });
     }
   })
-
-  $.ajax({
-    url: '/api/v1/orders/<%= @order.number %>?order_token=<%= @order.guest_token %>',
-    error: function() {
-    },
-    success: function(data) {
-      vm.order = data
-    },
-    type: 'GET'
-  });
+  
 
 </script>
