@@ -102,6 +102,9 @@ en:
       bar_day: day
       bar_week: week
       bar_month: month
+      bar_days: days
+      bar_weeks: weeks
+      bar_months: months
       bar_pack_1: 1 pack/d
       bar_pack_2: 7 packs/w
       bar_pack_3: 30 packs/m

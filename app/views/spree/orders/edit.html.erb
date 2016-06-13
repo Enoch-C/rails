@@ -76,8 +76,8 @@
         this.options = options;
       },
       timespanOptionsFromItem: function(item) {
-        var t1 = ['<%= Spree.t(:bar_month) %>', '<%= Spree.t(:bar_week) %>', '<%= Spree.t(:bar_day) %>'];
-        var t2 = ['<%= Spree.t(:bar_months) %>', '<%= Spree.t(:bar_weeks) %>', '<%= Spree.t(:bar_days) %>'];
+        var t1 = ['<%= Spree.t(:"homepage.bar_month") %>', '<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_day") %>'];
+        var t2 = ['<%= Spree.t(:"homepage.bar_months") %>', '<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_days") %>'];
         var p1 = item.quantity;
         var t = t1
         if (p1 > 1) {
