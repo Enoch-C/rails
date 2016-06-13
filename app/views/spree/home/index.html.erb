@@ -143,26 +143,26 @@
   <div class="section-3">
     <div class="container"><img src="/assets/home/product@2x.png" class="bar">
       <div class="func col-sm-3">
-        <div class="title">Choose 3 functions</div>
+        <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
         <div v-for="n in 3" :class="{'hover': result[n]}" :style="result[n] ? 'background: url(/assets/home/icon-'.concat(result[n],'@2x.png) center/100% no-repeat') : ''" class="box"><img src="/assets/home/icon_delet@2x.png" @click="result.splice(n, 1)" class="delete"></div>
       </div>
       <div class="qty col-sm-2">
-        <div class="title">QTY</div>
+        <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
         <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
-          <select v-model="qty">
-            <option>{{ num }} day</option>
-            <option>{{ num }} week</option>
-            <option>{{ num }} month</option>
+          <select v-model="type">
+            <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option>
+            <option value="week">{{ num }} <%= Spree.t(:"homepage.bar_week") %></option>
+            <option value="month">{{ num }} <%= Spree.t(:"homepage.bar_month") %></option>
           </select><span @click="num++" class="math"> +</span>
         </div>
-        <div v-if="qty.split(' ')[1] == 'day'" class="detail">1 pack/d</div>
-        <div v-if="qty.split(' ')[1] == 'week'" class="detail">7 packs/w</div>
-        <div v-if="qty.split(' ')[1] == 'month'" class="detail">30 packs/m</div>
+        <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div>
+        <div v-if="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
+        <div v-if="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
       </div>
       <div class="total col-sm-2">
-        <div class="title">TOTAL</div>
-        <div class="usd">${{ sum }} USD</div>
-      </div><a href="/checkout" style="border: 1px solid #fff" class="button">Add to Cart</a><a href="/checkout" style="background: #00b9ee" class="button">Checkout</a>
+        <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
+        <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
+      </div><a href="/checkout" style="border: 1px solid #fff" class="button"><%= Spree.t(:"homepage.bar_cart") %></a><a href="/checkout" style="background: #00b9ee" class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
     </div>
   </div>
 </div>
@@ -172,14 +172,11 @@
     el: '#cool-choice-home',
     data: {
       num: 1,
-      qty: '1 week',
+      type: 'week',
       sum: 39.99,
       result: []
     },
     computed: {
-      type: function() {
-        return this.qty.split(' ')[1]
-      },
       sum: function() {
         var price = {
           day: 3.99,

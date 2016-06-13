@@ -97,6 +97,19 @@ en:
       cool_ingredients_line: No artificial ingredients
       cool_ingredients_line_2: Freshly made-to-order
       cool_ingredients_line_3: No unnecessary ingredients
+      bar_choose: Choose 3 functions
+      bar_qty: QTY
+      bar_day: day
+      bar_week: week
+      bar_month: month
+      bar_pack_1: 1 pack/d
+      bar_pack_2: 7 packs/w
+      bar_pack_3: 30 packs/m
+      bar_total: TOTAL
+      bar_sign: $
+      bar_unit: USD
+      bar_cart: Add to Cart
+      bar_checkout: Checkout
     header:
       gift: GIFT
       ingredient: INGREDIENT
