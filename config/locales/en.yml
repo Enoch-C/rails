@@ -105,3 +105,5 @@ en:
       title_cool: Cool Care
       title_do: Do something special for someone you care
       send_a_gift: Send a Gift
+    order_state:
+      message: Message
