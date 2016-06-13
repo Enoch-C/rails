@@ -76,12 +76,12 @@
         this.options = options;
       },
       timespanOptionsFromItem: function(item) {
-        var t = ['month', 'week', 'day'];
+        var t1 = ['<%= Spree.t(:bar_month) %>', '<%= Spree.t(:bar_week) %>', '<%= Spree.t(:bar_day) %>'];
+        var t2 = ['<%= Spree.t(:bar_months) %>', '<%= Spree.t(:bar_weeks) %>', '<%= Spree.t(:bar_days) %>'];
         var p1 = item.quantity;
+        var t = t1
         if (p1 > 1) {
-          t = t.map(function(item){
-            return item + "s";
-          })
+          t = t2 
         }
         return t.map(function(x){
           return {text: p1 + " " + x, value: p1 + "." + x[0]};

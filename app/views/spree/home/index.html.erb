@@ -196,9 +196,6 @@
 
         var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
         return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
-      },
-      quantity: function() {
-        return this.qty.split(" ")[0];
       }
     },
     watch: {
@@ -229,7 +226,7 @@
         if (this.validate()) {
           $.ajax({
             type: 'POST',
-            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.quantity + '&order_token=' + this.order_token,
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
               window.location.href = '/cart'
             },
@@ -240,7 +237,7 @@
         if (this.validate()) {
           $.ajax({
             type: 'POST',
-            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.quantity + '&order_token=' + this.order_token,
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
               window.location.href = '/checkout'
             },
