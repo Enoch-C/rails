@@ -1,49 +1,47 @@
 <% variant = line_item.variant %>
 
 <%= order_form.fields_for :line_items, line_item do |item_form| %>
-<tbody v-for="item in order.line_items">
   <tr><td colspan=5><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
   <tr style="height: 190px">
     <td data-hook="cart_item_image" style="padding: 0 20px">
       <div style="line-height: 100%;vertical-align: middle;">
         <input type="checkbox" style="display: inline-block"/>
         <div style="display: inline-block; margin: 0 24px;">
-          <template v-if="item.variant.images.length == 0">
           <% if variant.images.length == 0 %>
             <%= link_to small_image(variant.product), variant.product %>
-          <% end %>
-          </template>
-          <template v-else>
-          <% if variant.images.length != 0 %>
+          <% else %>
             <%= link_to image_tag(variant.images.first.attachment.url(:small)), variant.product %>
           <% end %>
-          </template>
         </div>
         <div style="display: inline-block; width: 340px; vertical-align: middle">
           <div class="cool_choice_label"><%= link_to line_item.name, product_path(variant.product) %></div>
-          <div class="cool_choice_titles">{{ item.variant.options_text }}</div>
+          <div class="cool_choice_titles"><%= variant.options_text %></div>
         </div>
       </div>
     </td>
     <td data-hook="cart_item_description">
-      <div class="price"><%= line_item.single_money.to_html %></div>
+      <div class="price">{{ prices[<%= line_item_counter %>].single }}</div>
       <% if true #line_item.insufficient_stock? %>
         <span class="out-of-stock">
           <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
         </span>
       <% end %>
     </td>
-    <td data-hook="cart_item_price"><button type='button' class="minus_plus" v-on:click="minus($index)">-</button><select name="tier" id="tier" value="3" v-model="selected">
-        <option v-for="option in options($index)" v-bind:value="options.value">{{ item.quantity }} {{ option.text }}</option>
-      </select><button type='button' class="minus_plus" v-on:click="plus($index)">+</button>
+    <td data-hook="cart_item_price">
+      <button type='button' class="minus_plus" v-on:click="minus(<%= line_item_counter %>)">-</button>
+      
+      <select name="tier" id="tier" v-model="selected[<%= line_item_counter %>]" @input="changeItem(<%= line_item_counter %>, $event)">
+        <option v-for="option in options[<%= line_item_counter %>]" v-bind:value="option.value">{{ option.text }}</option>
+      </select>
+      
+      <button type='button' class="minus_plus" v-on:click="plus(<%= line_item_counter %>)">+</button>
       <%#= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
     </td>
     <td class="total_price" data-hook="cart_item_total">
-      <%= line_item.display_amount.to_html unless line_item.quantity.nil? %>
+      {{ prices[<%= line_item_counter %>].total.toFixed(2) }}
     </td>
     <td class="cart-item-delete" data-hook="cart_item_delete">
       <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-minus-sign'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
     </td>
   </tr>
-</tbody>
 <% end %>

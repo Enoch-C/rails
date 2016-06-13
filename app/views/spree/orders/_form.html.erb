@@ -20,7 +20,7 @@
     <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
     <tr>
       <td class="cart_summary_dt"><%= Spree.t(:cart_summary_subtotal)%></td>
-      <td class="cart_summary_dd"><%= order_form.object.display_total %></td>
+      <td class="cart_summary_dd">{{ price_total.toFixed(2) }}</td>
     </tr>
     <tr>
     <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
@@ -36,7 +36,7 @@
     <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
     </tr>
       <td class="cart_summary_dt" style="height: 54px"><%= Spree.t(:cart_summary_total)%></td>
-      <td class="cart_summary_dt" style="text-align: right; padding-right:20px"><%= order_form.object.display_total %></td>
+      <td class="cart_summary_dt" style="text-align: right; padding-right:20px">{{ price_total.toFixed(2) }}</td>
     </tr>
     <tr>
       <td style="height: 85px" colspan=2><div style="width: 50%; display: inline-block;"><div style="text-align: center"><%= link_to Spree.t(:cart_summary_keepShopping), products_path, class: 'roundButton'%></div></div><div style="width: 50%; display: inline-block;"><div style="text-align: center"><%= button_tag class: 'roundButton b1', id: 'checkout-link', name: 'checkout' do %><%= Spree.t(:cart_summary_checkout) %><% end %></div></div></td>
