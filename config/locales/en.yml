@@ -44,7 +44,7 @@ en:
     cart_tableHeader_quantity: Qty
     cart_tableHeader_totalPrice: Total
     cart_summary_title: Cart Summary
-    cart_summary_subtotal: Subtotal 
+    cart_summary_subtotal: Subtotal
     cart_summary_shipping: Shipping
     cart_summary_tax: Tax
     cart_summary_total: Total
@@ -104,4 +104,4 @@ en:
     gift:
       title_cool: Cool Care
       title_do: Do something special for someone you care
-
+      send_a_gift: Send a Gift

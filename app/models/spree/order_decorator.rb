@@ -2,6 +2,16 @@ Spree::Order.class_eval do
   belongs_to :promoter, foreign_key: :promoter_id, class_name: "Spree::Promoter"
   self.whitelisted_ransackable_attributes.push('promoter_id')
 
+  checkout_flow do
+    go_to_state :message, if: ->(order) { order.special_instructions }
+    go_to_state :address
+    go_to_state :delivery, unless: ->(order) { order.special_instructions }
+    go_to_state :payment, if: ->(order) { order.payment_required? }
+    go_to_state :confirm, if: ->(order) { order.confirmation_required? }
+    go_to_state :complete
+    remove_transition from: :delivery, to: :confirm
+  end
+
   def deliver_order_confirmation_email
     Spree::OrderMailer.confirm_email(id).deliver_later
     update_column(:confirmation_delivered, true)

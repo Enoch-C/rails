@@ -63,11 +63,7 @@ Rails.application.routes.draw do
 end
 
 Spree::Core::Engine.add_routes do
-  get '/gift', to: 'orders#gift'
-  get '/backend', to: 'admin/root#shipping'
-  resources :shipping do
-    get :index
-  end
+  get '/gift', to: 'gift#index'
 
   namespace :admin, path: Spree.admin_path do
     resources :promoters do
