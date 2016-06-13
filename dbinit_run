@@ -1,0 +1,26 @@
+#!/usr/bin/expect
+set timeout 1000000
+spawn ./dbinit
+while 1 {
+  expect {
+    -re "Ynaqdh" {
+      send "a\n"
+    }
+
+    -re "Y/n" {
+      send "\n"
+    }
+
+    -re "Email" {
+      send "1@1.com\n"
+    }
+
+    -re "Password" {
+      send "111111\n"
+    }
+
+    eof {
+      break
+    }
+  }
+}

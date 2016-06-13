@@ -7,7 +7,8 @@ echoo () {
 }
 
 IFS=$'\n'
-for x in `cat <<'M' 
+commands=`cat <<'M' 
+rake db:drop
 bin/spring stop
 bundle exec rake railties:install:migrations
 bundle exec rake db:migrate
@@ -20,8 +21,16 @@ rails g spree_social:install
 rails g spree_tax_cloud:install
 rails g spree_braintree_vzero:install
 rake database_init:load
-M`; do
-echoo $x
-eval $x
+M`;
+
+n=1
+for x in $commands; do
+((n+=1))
 done
 
+i=1
+for x in $commands; do
+echoo "`printf %02d $i`/$n $x"
+eval $x
+((i+=1)) 
+done
