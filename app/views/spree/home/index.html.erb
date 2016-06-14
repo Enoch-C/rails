@@ -154,12 +154,12 @@
         <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
         <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
           <select v-model="type">
-            <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option>
+            <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
             <option value="week">{{ num }} <%= Spree.t(:"homepage.bar_week") %></option>
             <option value="month">{{ num }} <%= Spree.t(:"homepage.bar_month") %></option>
           </select><span @click="num++" class="math"> +</span>
         </div>
-        <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div>
+        <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
         <div v-if="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
         <div v-if="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
       </div>
@@ -176,7 +176,7 @@
     el: '#cool-choice-home',
     data: {
       num: 1,
-      type: 'week',
+      type: 'month',
       sum: 39.99,
       result: [],
       order_number: "<%= current_order.number %>",
@@ -230,7 +230,7 @@
             success: function(data) {
               window.location.href = '/cart'
             },
-          }) 
+          })
         }
       },
       action_checkout: function(event) {
@@ -241,7 +241,7 @@
             success: function(data) {
               window.location.href = '/checkout'
             },
-          }) 
+          })
         }
       }
     }
