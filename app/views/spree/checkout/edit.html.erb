@@ -1,0 +1,43 @@
+<% content_for :google_analytics do %>
+  <%= render partial: 'spree/shared/google_checkout.js', locals: { order: @order, step_number: (@order.checkout_steps.index(@order.state) + 1) } %>
+<% end %>
+
+<div id="checkout" data-hook>
+  <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
+
+  <div class="checkout-nav clearfix">
+    <div class="order-state active">
+      <div class="circle"></div>
+      <div class="state">Address</div>
+    </div>
+    <div style="margin: 0 190px" class="order-state">
+      <div class="circle"></div>
+      <div class="state">Delivery</div>
+    </div>
+    <div class="order-state">
+      <div class="circle"></div>
+      <div class="state">Payment</div>
+    </div>
+    <div class="line">
+      <div style="left: -5px" class="circle"></div>
+      <div style="left: 245px" class="circle"></div>
+      <div style="right: -5px" class="circle"></div>
+    </div>
+  </div>
+
+  <div class="row" data-hook="checkout_content">
+    <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
+      <%= form.hidden_field :state_lock_version %>
+      <%= render @order.state, form: form %>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  Spree.current_order_id = "<%= @order.number %>"
+  Spree.current_order_token = "<%= @order.guest_token %>"
+</script>
+
+<% if I18n.locale != :en %>
+  <%= javascript_include_tag 'jquery.validate/localization/messages_' + I18n.locale.to_s.downcase.gsub('-', '') %>
+<% end %>

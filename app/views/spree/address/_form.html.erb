@@ -1,0 +1,75 @@
+<% address_id = address_type.chars.first %>
+
+<div class="inner">
+  <%= form.label :firstname do %>
+    <%= Spree.t(:first_name) %>
+  <% end %>
+  <%= form.text_field :firstname %>
+
+  <%= form.label :lastname do %>
+    <%= Spree.t(:last_name) %>
+  <% end %>
+  <%= form.text_field :lastname %>
+
+  <%= form.label :address1 do %>
+    <%= Spree.t(:street_address) %>
+  <% end %>
+  <%= form.text_field :address1 %>
+
+  <%= form.label :address2, Spree.t(:street_address_2) %>
+  <%= form.text_field :address2 %>
+
+  <%= form.label :city do %>
+    <%= Spree.t(:city) %>
+  <% end %>
+  <%= form.text_field :city %>
+
+  <p class="form-group" id=<%="#{address_id}country" %>>
+    <%= form.label :country_id do %>
+      <%= Spree.t(:country) %><abbr class="required" title="required">*</abbr>
+    <% end %>
+    <span id=<%="#{address_id}country-selection" %>>
+      <%= form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required'} %>
+    </span>
+  </p>
+
+  <% if Spree::Config[:address_requires_state] %>
+    <p class="form-group" id=<%="#{address_id}state" %>>
+      <% have_states = !address.country.states.empty? %>
+      <%= form.label :state do %>
+        <%= Spree.t(:state) %><abbr class='required' title="required" id=<%="#{address_id}state-required"%>>*</abbr>
+      <% end %>
+
+      <%== state_elements = [
+         form.collection_select(:state_id, address.country.states,
+                            :id, :name,
+                            {:include_blank => true},
+                            {:class => have_states ? 'form-control required' : 'form-control hidden',
+                            :disabled => !have_states}) +
+         form.text_field(:state_name,
+                            :class => !have_states ? 'form-control required' : 'form-control hidden',
+                            :disabled => have_states)
+         ].join.gsub('"', "'").gsub("\n", "")
+      %>
+    </p>
+      <noscript>
+        <%= form.text_field :state_name, :class => 'form-control required' %>
+      </noscript>
+  <% end %>
+
+  <%= form.label :zipcode do %>
+    <%= Spree.t(:zip) %>
+  <% end %>
+  <%= form.text_field :zipcode %>
+
+  <%= form.label :phone do %>
+    <%= Spree.t(:phone) %>
+  <% end %>
+  <%= form.phone_field :phone %>
+
+  <% if Spree::Config[:alternative_shipping_phone] %>
+    <%= form.label :alternative_phone, Spree.t(:alternative_phone) %>
+    <%= form.phone_field :alternative_phone %>
+  <% end %>
+
+</div>

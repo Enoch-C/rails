@@ -1,0 +1,48 @@
+<div class="address-content clearfix">
+  <%= form.fields_for :bill_address do |bill_form| %>
+    <div class="billing col-sm-6">
+      <div class="title"><%= Spree.t(:billing_address) %></div>
+      <%= render :partial => 'spree/address/form', :locals => { :form => bill_form, :address_type => 'billing', :address => @order.bill_address } %>
+      <% if try_spree_current_user %>
+        <label for="save_user_address">
+        <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
+        <%= Spree.t(:save_my_address) %>
+      <% end %>
+      <% if @order.state == 'address' || !@order.email? %>
+        <%= form.label :email, class: 'title' %>
+        <%= form.text_field :email %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= form.fields_for :ship_address do |ship_form| %>
+    <div class="shipping col-sm-6">
+      <div class="title"><%= Spree.t(:shipping_address) %></div>
+      <label for="use_billing">
+        <input type="checkbox" id="use_billing" v-model="use_billing"> <%= Spree.t(:use_billing_address) %>
+      </label>
+      <div v-if="!use_billing">
+        <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="col-sm-6">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
+</div>
+
+<% if false %>
+<div class="well text-right form-buttons" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'btn btn-lg btn-success' %>
+</div>
+<% end %>
+
+<script>
+  new Vue({
+    el: '#checkout',
+    data: {
+      use_billing: true
+    }
+  })
+</script>

@@ -228,5 +228,86 @@ body
         text-align: center
         color: #fff
 
+#checkout
+  .checkout-nav
+    position: relative
+    width: 560px
+    margin: 38px auto 60px
+    .line
+      position: absolute
+      top: 5px
+      left: 30px
+      z-index: 1
+      width: 500px
+      height: 10px
+      background: #f6f6f6
+      .circle
+        position: absolute
+        width: 10px
+        height: 10px
+        border-radius: 50%
+        background: #dbdbdb
+    .order-state
+      position: relative
+      z-index: 2
+      float: left
+      // display: inline-block
+      width: 60px
+      color: #a6a4a4
+      text-align: center
+      font-size: 16px
+      font-weight: 300
+      cursor: pointer
+      .circle
+        visibility: hidden
+        width: 20px
+        height: 20px
+        margin: 0 auto 10px
+        border-radius: 50%
+        background: #00b9ee
+    .active
+      color: #00b9ee
+      .circle
+        visibility: visible
+  .address-content
+    .title
+      margin-top: 40px
+      font-size: 20px
+      font-weight: 600
+      color: #474c5d
+    label
+      display: block
+      margin: 20px 0 10px
+      font-size: 14px
+      color: #474c5d
+    input,
+    select
+      width: 400px
+      height: 45px
+      padding: 12px 0 11px 20px
+      border-radius: 3px
+      border: solid 1px #dedede
+      font-size: 16px
+      color: #787878
+      @media (max-width: 970px)
+        width: 100%
+    input[type="checkbox"]
+      width: 20px
+      height: 20px
+      padding: 0
+    .shipping
+  .button
+    display: block
+    width: 238px
+    height: 45px
+    margin: 40px 0
+    border-radius: 45px
+    border: 1px solid transparent
+    font-size: 16px
+    font-weight: 500
+    text-align: center
+    background: #00b9ee
+    color: #fff
+
 [v-cloak]
   display: none
