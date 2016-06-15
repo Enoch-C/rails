@@ -34,9 +34,14 @@
           line-height: 1.1
           font-size: 20px
           font-weight: 700
-      th,
       td
         border-top: 1px solid #888
+      th
+        text-align: center
+      thead
+        border-top: 6px solid
+        border-bottom: 3px solid
+        font-size: 6px
       tbody
         .total
           position: relative
@@ -51,10 +56,9 @@
             content: ""
         .memo
           font-size: 6px
-      thead
-        border-top: 6px solid
-        border-bottom: 3px solid
-        font-size: 6px
+      .basic
+        td:last-child
+          text-align: right
       .super
         border-top: 6px solid
         border-bottom: 6px solid
