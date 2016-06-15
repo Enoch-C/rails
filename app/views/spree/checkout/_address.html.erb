@@ -19,7 +19,7 @@
     <div class="shipping col-sm-6">
       <div class="title"><%= Spree.t(:shipping_address) %></div>
       <label for="use_billing">
-        <input type="checkbox" id="use_billing" v-model="use_billing"> <%= Spree.t(:use_billing_address) %>
+        <input type="checkbox" name="order[use_billing]" id="use_billing" v-model="use_billing" value="1"> <%= Spree.t(:use_billing_address) %>
       </label>
       <div v-if="!use_billing">
         <%= render :partial => 'spree/address/form', :locals => { :form => ship_form, :address_type => 'shipping', :address => @order.ship_address } %>
