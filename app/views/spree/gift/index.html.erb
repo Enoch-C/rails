@@ -1,17 +1,79 @@
 <% address_id = 'shipping'.chars.first %>
 
-<div data-hook="gift_container">
+<div data-hook="gift_container" id="gift">
   <p class="form-group" id=<%="#{address_id}country" %>>
     <%= label_tag :country_id do %>
       <%= Spree.t(:country) %>
     <% end %>
     <span id=<%="#{address_id}country-selection" %>>
-      <%= select_tag :country_id, options_from_collection_for_select(available_countries, :id, :name, "232"), :class => 'form-control required' %>
+      <%= select_tag :country_id, options_from_collection_for_select(available_countries, :id, :name, "232"), :class => 'form-control required', "v-model": "countryCode" %>
     </span>
   </p>
   <p>
-    <%= button_tag :send_a_gift do %>
+  <%= button_tag :send_a_gift, "v-on:click" => "sendAGift" do %>
       <%= Spree.t('gift.send_a_gift') %>
     <% end %>
   </p>
 </div>
+
+<script>
+  var vm = new Vue({
+    el: '#gift',
+    data: {
+      countryCode: "",
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
+      order_isGift: <%= current_order.special_instructions ? 'true' : 'false' %>
+    },
+    watch: {
+      countryCode: function() {
+        console.log(this.countryCode);
+      },
+    },
+    methods: {
+      sendAGift: function() {
+        var that = this
+        $.ajax({
+          type: 'POST',
+          url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + 'ccsm0000' + '&line_item[quantity]=' + 1 + '&order_token=' + this.order_token,
+          success: function(data) {
+            console.log(data);
+            $.ajax({
+              type: 'PUT',
+              url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
+              success: function(data) {
+                //window.location.href = '/checkout'
+                console.log(data)
+                window.location.href = '/checkout'
+              },
+              data: {
+                "order": {
+                  "email": "a@a.com",
+                  "ship_address_attributes": {
+                    "firstname": "ff",
+                    "lastname": "ff",
+                    "address1": "ff",
+                    "address2": "",
+                   "city": "dd",
+                    //"country_id": "48",
+                    //"state_id": "556",
+                    //"zipcode": "310023",
+                    "country_id": "232",
+                    "state_id": "3529",
+                    "zipcode": "92831",
+                    "phone": "448",
+                  }
+                }
+              }
+            });
+          },
+        })
+      }
+    },
+    ready: function(){
+      if (this.order_isGift) {
+        $('#link-to-cart').remove()
+      }
+    }
+  })
+</script>

@@ -110,6 +110,15 @@
             window.location.reload();
           },
         })
+      },
+      deleteLineItem: function(index) {
+        $.ajax({
+          type: 'DELETE',
+          url: '/api/v1/orders/' + this.order.number + '/line_items/' + this.order.line_items[index].id +'?order_token=<%= @order.guest_token %>',
+          success: function(data) {
+            window.location.reload();
+          }
+        })
       }
     },
     ready: function() {

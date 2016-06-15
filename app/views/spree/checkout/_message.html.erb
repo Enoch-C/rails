@@ -2,3 +2,20 @@
   <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>
+<script>
+  var vm = new Vue({
+    el: '#checkout',
+    data: {
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
+      order_isGift: <%= current_order.special_instructions ? 'true' : 'false' %>
+    },
+    methods: {
+    },
+    ready: function(){
+      if (this.order_isGift) {
+        $('#link-to-cart').remove()
+      }
+    }
+  })
+</script>

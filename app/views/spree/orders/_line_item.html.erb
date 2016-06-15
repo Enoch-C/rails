@@ -41,7 +41,7 @@
       {{ prices[<%= line_item_counter %>].total.toFixed(2) }}
     </td>
     <td class="cart-item-delete" data-hook="cart_item_delete">
-      <%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-minus-sign'), '#', class: 'delete', id: "delete_#{dom_id(line_item)}" %>
+      <button type='button' class="glyphicon glyphicon-minus-sign" style="border: none; background-color: transparent"  v-on:click="deleteLineItem(<%= line_item_counter %>)"></button>
     </td>
   </tr>
 <% end %>
