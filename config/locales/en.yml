@@ -21,6 +21,8 @@
 
 en:
   spree:
+    site_name: Cool Choice
+    payment_pop_desc: Personalized Nutritional Supplements
     apply_coupon_code: Apply Coupon Code
     binding_users: Binding Users
     items_cannot_be_shipped: Sorry, there is at least one product in your cart which can ONLY be shipped to USA address.
