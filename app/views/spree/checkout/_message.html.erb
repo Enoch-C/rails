@@ -1,6 +1,10 @@
 <div class="well text-right form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
-  <script>Spree.disableSaveOnClick();</script>
+  <input type="text" placeholder="recipient_name" v-model="recipient_name"></input><br>
+  <input type="text" placeholder="message" v-model="message"></input><br>
+  <input type="text" placeholder="your_name" v-model="my_name"></input><br>
+  <input type="text" placeholder="your_email" v-model="my_email"></input><br>
+  <input type="text" placeholder="recipient_email" v-model="recipient_email"></input><br>
+  <button type='button' class="btn btn-lg btn-success primary" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button>
 </div>
 <script>
   var vm = new Vue({
@@ -8,14 +12,52 @@
     data: {
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
-      order_isGift: <%= current_order.special_instructions ? 'true' : 'false' %>
+      recipient_name: "dummy recipient",
+      
+      message: "dummy message",
+      my_name: "dummy name",
+      my_email: "dummy email",
+      recipient_email: "dummy recipient email",
+      special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
+    },
+    computed: {
+      special_instructions: function() {
+        var h = this.special_instructions_hash
+        h["recipient_name"] = this.recipient_name
+        h["message"] = this.message
+        h["my_name"] = this.my_name
+        h["my_email"] = this.my_email
+        h["recipient_email"] = this.recipient_email
+        return h
+      }
     },
     methods: {
+      proceed: function(){
+        var that = this
+        $.ajax({
+          type: "PUT",
+          url: '/api/v1/orders/' + that.order_number + '?order_token=' + that.order_token,
+          success: function(data) {
+            console.log(data)
+            $.ajax({
+              type: "PUT",
+              url: '/api/v1/checkouts/' + that.order_number + '/next.json?order_token=' + that.order_token,
+              success: function(data) {
+                console.log(data)
+                window.location.href = '/checkout/'
+              },
+            })
+          },
+          data: {
+            "order": {
+              "special_instructions": JSON.stringify(this.special_instructions)
+            }
+          }
+        })
+      }
     },
     ready: function(){
-      if (this.order_isGift) {
-        $('#link-to-cart').remove()
-      }
+      $('#link-to-cart').remove()
     }
   })
 </script>
