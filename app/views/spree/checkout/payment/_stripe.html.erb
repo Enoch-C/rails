@@ -8,14 +8,14 @@
 <script
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= payment_method.preferred_publishable_key %>"
-  data-amount="<%= @order.total %>"
+  data-amount="<%= (@order.total * 100).to_i %>"
   data-name="<%= Spree.t(:site_name) %>"
   data-description="<%= Spree.t(:payment_pop_desc) %>"
   <% if I18n.locale == :"zh-CN" %>
   <%= 'data-alipay="true"' %>
   <% end %>
   data-image="/img/documentation/checkout/marketplace.png"
-  data-locale="auto">
+  data-locale="<%= I18n.locale %>">
 </script>
 
 <!-- <script>
