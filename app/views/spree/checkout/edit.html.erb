@@ -5,31 +5,46 @@
 <div id="checkout" data-hook>
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
-  <div class="checkout-nav clearfix">
-    <div class="order-state active">
-      <div class="circle"></div>
-      <div class="state">Address</div>
-    </div>
-    <div style="margin: 0 190px" class="order-state">
-      <div class="circle"></div>
-      <div class="state">Delivery</div>
-    </div>
-    <div class="order-state">
-      <div class="circle"></div>
-      <div class="state">Payment</div>
-    </div>
-    <div class="line">
-      <div style="left: -5px" class="circle"></div>
-      <div style="left: 245px" class="circle"></div>
-      <div style="right: -5px" class="circle"></div>
+  <div class="row" data-hook="checkout_header">
+    <div class="checkout-nav clearfix">
+      <div class="order-state active">
+        <div class="circle"></div>
+        <div class="state">Address</div>
+      </div>
+      <div style="margin: 0 190px" class="order-state">
+        <div class="circle"></div>
+        <div class="state">Delivery</div>
+      </div>
+      <div class="order-state">
+        <div class="circle"></div>
+        <div class="state">Payment</div>
+      </div>
+      <div class="line">
+        <div style="left: -5px" class="circle"></div>
+        <div style="left: 245px" class="circle"></div>
+        <div style="right: -5px" class="circle"></div>
+      </div>
     </div>
   </div>
 
   <div class="row" data-hook="checkout_content">
-    <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
-      <%= form.hidden_field :state_lock_version %>
-      <%= render @order.state, form: form %>
+    <div class="col-md-12" data-hook="checkout_form_wrapper">
+      <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
+        <%= form.hidden_field :state_lock_version %>
+        <% if @order.special_instructions && @order.state == "address" %>
+          <%= render "gift_address", form: form %>
+        <% else %>
+          <%= render @order.state, form: form %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <% if @order.state == 'confirm' %>
+      <div id="checkout-summary" data-hook="checkout_summary_box" class="col-md-3">
+        <%= render partial: 'summary', locals: { order: @order } %>
+      </div>
     <% end %>
+
   </div>
 </div>
 

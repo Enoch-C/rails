@@ -33,41 +33,35 @@
     methods: {
       sendAGift: function() {
         var that = this
+          /*
         $.ajax({
           type: 'POST',
+          //ccsm1f000003
+          //ccsm0000
           url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + 'ccsm0000' + '&line_item[quantity]=' + 1 + '&order_token=' + this.order_token,
           success: function(data) {
             console.log(data);
+            */
             $.ajax({
-              type: 'PUT',
-              url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
+              type: "PUT",
+              url: '/api/v1/orders/' + that.order_number + '?order_token=' + that.order_token,
               success: function(data) {
-                //window.location.href = '/checkout'
                 console.log(data)
                 window.location.href = '/checkout'
               },
               data: {
                 "order": {
-                  "email": "a@a.com",
-                  "ship_address_attributes": {
-                    "firstname": "ff",
-                    "lastname": "ff",
-                    "address1": "ff",
-                    "address2": "",
-                   "city": "dd",
-                    //"country_id": "48",
-                    //"state_id": "556",
-                    //"zipcode": "310023",
-                    "country_id": "232",
-                    "state_id": "3529",
-                    "zipcode": "92831",
-                    "phone": "448",
-                  }
+                  "email": "dummy@dummy.com",
+                  "special_instructions": JSON.stringify({
+                    "country_id": that.countryCode
+                  })
                 }
               }
-            });
+            })
+        /*
           },
         })
+        */
       }
     },
     ready: function(){

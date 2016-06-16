@@ -1,0 +1,133 @@
+
+<div class="well text-right form-buttons" data-hook="buttons">
+  <input type="text" placeholder="first_name" v-model="first_name"/><br>
+  <input type="text" placeholder="last_name" v-model="last_name"/><br>
+  <input type="text" placeholder="address" v-model="address"/><br>
+  <input type="text" placeholder="address_opt" v-model="address_opt"/><br>
+  <input type="text" placeholder="phone" v-model="phone"/><br>
+  <input type="text" placeholder="city" v-model="city"/><br>
+  <%= form.fields_for :bill_address do |bill_form| %>
+<span id=<%="bcountry-selection" %>>
+  <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
+
+      </span>
+  <% if Spree::Config[:address_requires_state] %>
+    <p class="form-group" id=<%="bstate" %>>
+      <%= bill_form.label :state do %>
+        <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
+      <% end %>
+
+      <%== state_elements = [
+         bill_form.collection_select(:state_id, @order.bill_address.country.states,
+                                                     :id, :name, {},
+                            {:"v-model" => "state_code"},
+                            )
+         ].join.gsub('"', "'").gsub("\n", "")
+      %>
+      </p>
+  <% end %>
+  <% end %>
+  <input type="text" placeholder="zip" v-model="zip"/><br>
+  <input type="checkbox" placeholder="save_address" v-model="save_address"/><br>
+  <button type='button' class="btn btn-lg btn-success primary" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button>
+</div>
+<script>
+  var vm = new Vue({
+    el: '#checkout',
+    data: {
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
+
+      first_name: "ff",
+      last_name: "ff",
+      address: "ff",
+      address_opt: "",
+      phone: "333",
+      city: "dd",
+      country_code: 0,
+      state_code: 0,
+      zip: "94102",
+      save_address: true,
+
+      special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
+
+    },
+    computed: {
+      bill_address: function() {
+        var h = {}
+        h["firstname"] = this.first_name
+        h["lastname"] = this.last_name
+        h["address1"] = this.address
+        h["address2"] = this.address_opt
+        h["phone"] = this.phone
+        h["city"] = this.city
+        h["country_id"] = this.country_code
+        h["state_id"] = this.state_code
+        h["zipcode"] = this.zip
+        return h
+      },
+      json: function() {
+        /*
+           To advance to the next state, delivery, the order will first need both a shipping and billing address.
+           Once valid address information has been submitted, the shipments and shipping rates available for this order will be returned inside a shipments key inside the order
+        */
+        var h = {
+            "order": {
+              "bill_address_attributes": this.bill_address,
+              "ship_address_attributes": this.bill_address,
+            }
+          }
+        console.log(h)
+        return h
+      }
+    },
+    methods: {
+      proceed2: function() {
+        console.log(2)
+        $.ajax({
+          type: "PUT",
+          url: '/api/v1/checkouts/' + this.order_number + '/next.json?order_token=' + this.order_token,
+          success: function(data) {
+            console.log(3)
+            console.log(data)
+            window.location.href = '/checkout/'
+          },
+          fail: function(data) {
+            console.log(4)
+          }
+        }) 
+      },
+      proceed: function(){
+        var that = this
+        $.ajax({
+          type: "PUT",
+          url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
+          success: function(data) {
+            console.log(data)
+            $.ajax({
+              type: "PUT",
+              url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
+              success: function(data) {
+                console.log(data)
+                console.log(1)
+                that.proceed2()
+              },
+              data: {
+                "order": {
+                  "1": {
+                    "selected_shipping_rate_id": "2",
+                    "id": "2"
+                  }
+                }
+              }
+            })
+          },
+          data: this.json
+        })
+      }
+    },
+    ready: function(){
+      $('#link-to-cart').remove()
+    }
+  })
+</script>
