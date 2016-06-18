@@ -14,7 +14,7 @@
           <%= Spree.t(:save_my_address) %>
         <% end %>
         <% if @order.state == 'address' || !@order.email? %>
-          <%= form.label :email, class: 'title' %>
+          <%= form.label :email, class: 'email' %>
           <%= form.text_field :email %>
         <% end %>
       <% end %>

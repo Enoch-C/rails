@@ -7,15 +7,15 @@
 
   <div class="row" data-hook="checkout_header">
     <div class="checkout-nav clearfix">
-      <div class="order-state active">
+      <div class="<%= @order.state == 'address' ? 'order-state active' : 'order-state' %>">
         <div class="circle"></div>
         <div class="state">Address</div>
       </div>
-      <div style="margin: 0 190px" class="order-state">
+      <div style="margin: 0 190px" class="<%= @order.state == 'delivery' ? 'order-state active' : 'order-state' %>">
         <div class="circle"></div>
         <div class="state">Delivery</div>
       </div>
-      <div class="order-state">
+      <div class="<%= @order.state == 'payment' ? 'order-state active' : 'order-state' %>">
         <div class="circle"></div>
         <div class="state">Payment</div>
       </div>
