@@ -1,3 +1,6 @@
+<div>
+  <a onclick="window.print()" class="button" style="font-size: 16px">print</a>
+</div>
 <% supplement_facts = YAML.load_file('config/labels/supplement_facts.yml') %>
 
 <% @order.line_items.each do |line_item| %>
@@ -9,6 +12,7 @@
   <% sodium_Amount_Per_Serving = 0 %>
   <% sodium_Daily_Value = 0 %>
   <% protein_Amount_Per_Serving = 0 %>
+  <% func_option = [] %>
 
   <% extra = {} %>
   <% other_Ingredients = '' %>
@@ -36,127 +40,94 @@
       <% other_Ingredients = supplement_facts['functions'][option_value.name]['Other Ingredients'] %>
     <% end %>
 
+    <% func_option.push(option_value.name) %>
+
   <% end %>
 
   <% sku = [line_item.variant.sku[6, 2], line_item.variant.sku[8, 2], line_item.variant.sku[10, 2]].map { |e| e.to_i } %>
   <% sku.delete(0) %>
-  <% hash = ["", "eye", "heart", "joint", "beauty", "immune", "sex", "liver", "brain", "lung", "digestive", "energy", "anti", "relief", "wish"].sort %>
+  <% hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"].sort %>
 
-  <div id="label">
-    <div class="print">
-      <div class="func">
-        <% sku.each do |x| -%>
-          <img src=<%= "/assets/home/icon-" + hash[x] + "@2x.png" -%>>
-        <% end -%>
+  <% num = line_item.quantity %>
+  <% while num > 0  do %>
+    <% num = num - 1 %>
+    <div id="label">
+      <div class="print">
+        <div class="func">
+          <% sku.each do |x| -%>
+            <img src=<%= "/assets/home/icon-" + hash[x] + "@2x.png" -%>>
+          <% end -%>
+          <div class="detail"><%= func_option.join(' + ') %></div>
+        </div>
+        <div class="box">
+          <table>
+            <caption>
+              <div class="title">Supplement Facts</div>
+              <div class="sub">Serving Size 1 Packet (<%= supplement_facts['Serving Size 1 Packet'] %>g)<br>Servings Per Container <%= supplement_facts['Servings Per Container'] %></div>
+            </caption>
+            <thead>
+              <tr>
+                <th width="66%"></th>
+                <th width="20%">Amount Per Serving</th>
+                <th width="15%">% Daily Value</th>
+              </tr>
+            </thead>
+            <tbody class="basic">
+              <tr>
+                <td>Calories</td>
+                <td><%= calories_Amount_Per_Serving.round(1).to_s.chomp('.0') %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Total Carbohydrate</td>
+                <td><%= total_Carbohydrate_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+                <td><%= (total_Carbohydrate_Amount_Per_Serving/300*100).round(1).to_s.chomp('.0')+'%*' %></td>
+              </tr>
+              <tr>
+                <td class="total">Dietary Fiber</td>
+                <td><%= dietary_Fiber_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+                <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(1).to_s.chomp('.0')+'%*' %></td>
+              </tr>
+              <tr>
+                <td class="total">Sugars</td>
+                <td><%= sugars_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+                <td></td>
+              </tr>
+              <% if protein_Amount_Per_Serving > 0 %>
+              <tr>
+                <td>Protein</td>
+                <td><%= protein_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+                <td></td>
+              </tr>
+              <% end %>
+              <tr>
+                <td>Sodium</td>
+                <td><%= sodium_Amount_Per_Serving.round(1).to_s.chomp('.0') %> mg</td>
+                <td><%= sodium_Daily_Value.round(1).to_s.chomp('.0')+'%' %></td>
+              </tr>
+            </tbody>
+            <tbody class="super">
+              <% extra.keys.each do |key| %>
+              <tr>
+                <td><%= key %></td>
+                <td><%= extra[key]['Amount Per Serving'].round(1).to_s.chomp('.0') %> <%= extra[key]['unit'] %></td>
+                <td>**</td>
+              </tr>
+              <% end %>
+            </tbody>
+            <tbody>
+              <tr>
+                <td colspan="3" class="memo">** Daily Value not established.<br>* Percent Daily Values are based on a 2,000 calorie diet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
       </div>
-      <div class="line"></div>
-      <div class="box">
-        <table>
-          <caption>
-            <div class="title">Supplement Facts</div>
-            <div class="sub">Serving Size 1 Packet (<%= supplement_facts['Serving Size 1 Packet'] %>g)<br>Servings Per Container <%= supplement_facts['Servings Per Container'] %></div>
-          </caption>
-          <thead>
-            <tr>
-              <th width="66%"></th>
-              <th width="20%">Amount Per Serving</th>
-              <th width="14%">% Daily Value</th>
-            </tr>
-          </thead>
-          <tbody class="basic">
-            <tr>
-              <td>Calories</td>
-              <td><%= calories_Amount_Per_Serving.round(1).to_s.chomp('.0') %></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Total Carbohydrate</td>
-              <td><%= total_Carbohydrate_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
-              <td><%= (total_Carbohydrate_Amount_Per_Serving/300*100).round(1).to_s.chomp('.0')+'%*' %></td>
-            </tr>
-            <tr>
-              <td class="total">Dietary Fiber</td>
-              <td><%= dietary_Fiber_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
-              <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(1).to_s.chomp('.0')+'%*' %></td>
-            </tr>
-            <tr>
-              <td class="total">Sugars</td>
-              <td><%= sugars_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
-              <td></td>
-            </tr>
-            <% if protein_Amount_Per_Serving > 0 %>
-            <tr>
-              <td>Protein</td>
-              <td><%= protein_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
-              <td></td>
-            </tr>
-            <% end %>
-            <tr>
-              <td>Sodium</td>
-              <td><%= sodium_Amount_Per_Serving.round(1).to_s.chomp('.0') %> mg</td>
-              <td><%= sodium_Daily_Value.round(1).to_s.chomp('.0')+'%' %></td>
-            </tr>
-          </tbody>
-          <tbody class="super">
-            <% extra.keys.each do |key| %>
-            <tr>
-              <td><%= key %></td>
-              <td><%= extra[key]['Amount Per Serving'].round(1).to_s.chomp('.0') %> <%= extra[key]['unit'] %></td>
-              <td>**</td>
-            </tr>
-            <% end %>
-          </tbody>
-          <tbody>
-            <tr>
-              <td colspan="3" class="memo">** Daily Value not established.<br>* Percent Daily Values are based on a 2,000 calorie diet.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
     </div>
-  </div>
-
-  <% if false %>
-  <table>
-    <tr>
-      <td>Basi</td>
-    </tr>
-    <tr>
-      <td>Calories</td>
-    </tr>
-    <tr>
-      <td>Amount Per Serving</td>
-      <td><%= calories_Amount_Per_Serving %></td>
-    </tr>
-    <tr>
-      <td>Total Carbohydrate</td>
-      <td><%= total_Carbohydrate_Amount_Per_Serving %></td>
-    </tr>
-    <tr>
-      <td>Dietary Fiber</td>
-    </tr>
-    <tr>
-      <td>Amount Per Serving</td>
-      <td><%= dietary_Fiber_Amount_Per_Serving %></td>
-    </tr>
-    <tr>
-      <td>Sugars</td>
-    </tr>
-    <tr>
-      <td>Amount Per Serving</td>
-      <td><%= sugars_Amount_Per_Serving %></td>
-    </tr>
-    <tr>
-      <td>Sodium</td>
-    </tr>
-    <tr>
-      <td>Amount Per Serving</td>
-      <td><%= sodium_Amount_Per_Serving %></td>
-    </tr>
-  </table>
   <% end %>
+
 <% end %>
 
 <link rel="stylesheet" href="/assets/print_label.css">
-<a onclick="window.print()" class="button">print</a>
+<!-- <script>x=<%= @order.to_json.html_safe%></script> -->
