@@ -40,89 +40,22 @@
         <div class="line"></div>
       </div>
       <div class="content clearfix">
-        <div class="choose-box eye">
-          <label for="eye_box" class="choose-label"><img src="/assets/home/icon-eye@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_eye") %></div>
-          </label>
-          <input type="checkbox" id="eye_box" value="eye" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box heart">
-          <label for="heart_box" class="choose-label"><img src="/assets/home/icon-heart@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_heart") %></div>
-          </label>
-          <input type="checkbox" id="heart_box" value="heart" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box joint">
-          <label for="joint_box" class="choose-label"><img src="/assets/home/icon-joint@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_joint") %></div>
-          </label>
-          <input type="checkbox" id="joint_box" value="joint" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box beauty">
-          <label for="beauty_box" class="choose-label"><img src="/assets/home/icon-beauty@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_beauty") %></div>
-          </label>
-          <input type="checkbox" id="beauty_box" value="beauty" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box immune">
-          <label for="immune_box" class="choose-label"><img src="/assets/home/icon-immune@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_immune") %></div>
-          </label>
-          <input type="checkbox" id="immune_box" value="immune" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box sex">
-          <label for="sex_box" class="choose-label"><img src="/assets/home/icon-sex@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_sex") %></div>
-          </label>
-          <input type="checkbox" id="sex_box" value="sex" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box liver">
-          <label for="liver_box" class="choose-label"><img src="/assets/home/icon-liver@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_liver") %></div>
-          </label>
-          <input type="checkbox" id="liver_box" value="liver" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box brain">
-          <label for="brain_box" class="choose-label"><img src="/assets/home/icon-brain@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_brain") %></div>
-          </label>
-          <input type="checkbox" id="brain_box" value="brain" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box lung">
-          <label for="lung_box" class="choose-label"><img src="/assets/home/icon-lung@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_lung") %></div>
-          </label>
-          <input type="checkbox" id="lung_box" value="lung" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box digestive">
-          <label for="digestive_box" class="choose-label"><img src="/assets/home/icon-digestive@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_digestive") %></div>
-          </label>
-          <input type="checkbox" id="digestive_box" value="digestive" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box energy">
-          <label for="energy_box" class="choose-label"><img src="/assets/home/icon-energy@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_energy") %></div>
-          </label>
-          <input type="checkbox" id="energy_box" value="energy" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box anti">
-          <label for="anti_box" class="choose-label"><img src="/assets/home/icon-anti@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_anti") %></div>
-          </label>
-          <input type="checkbox" id="anti_box" value="anti" v-model="result" class="checkbox"/>
-        </div>
-        <div class="choose-box relief">
-          <label for="relief_box" class="choose-label"><img src="/assets/home/icon-relief@2x.png" class="img"/>
-            <div class="text"><%= Spree.t(:"homepage.content_function_relief") %></div>
-          </label>
-          <input type="checkbox" id="relief_box" value="relief" v-model="result" class="checkbox"/>
-        </div>
+        <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
+        <% function_list.each do |function| %>
+          <div class="choose-box <%= function %>">
+            <label for="<%= function %>" class="choose-label"><img :src="'/assets/home/icon-'.concat('<%= function %>', '@2x.png')" class="img"/>
+              <div class="text">
+                <%= Spree.t('homepage.content_function_' + function) %>
+              </div>
+            </label>
+            <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox"/>
+          </div>
+        <% end %>
         <div class="choose-box wish">
           <label for="wish_box" class="choose-label"><img src="/assets/home/icon-wish@2x.png" class="img"/>
             <div class="text"><%= Spree.t(:"homepage.content_function_wish") %></div>
           </label>
-          <input type="checkbox" id="wish_box" value="wish" v-model="result" class="checkbox"/>
+          <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" />
         </div>
       </div>
     </div>
@@ -202,7 +135,7 @@
         return (price[this.type] * this.num).toFixed(2)
       },
       sku: function() {
-        var hash = ['', 'eye', 'heart', 'joint', 'beauty', 'immune', 'sex', 'liver', 'brain', 'lung', 'digestive', 'energy', 'anti', 'relief', 'wish'].sort()
+        var hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"]
 
         var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
         return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num

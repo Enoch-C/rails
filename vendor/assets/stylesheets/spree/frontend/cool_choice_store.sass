@@ -110,32 +110,34 @@ body
           right: 0
           width: 25px
           height: 25px
-      .eye
-        color: #678fc9
-      .heart
-        color: #eb5b4a
-      .joint
-        color: #9d97a1
-      .beauty
+      .Anti-Aging
+        color: #f16d8c
+      .Beauty
         color: #bb90cd
-      .immune
-        color: #75bc67
-      .sex
-        color: #ff97b4
-      .liver
-        color: #a54e70
-      .brain
+      .Brain_Care
         color: #3585ba
-      .lung
-        color: #61d092
-      .digestive
+      .Digestive_Care
         color: #fbbb4c
-      .energy
-        color: #6966a8
-      .anti
-        color: #ec586a
-      .relief
+      .Energy
         color: #62c0ef
+      .Eye_Care
+        color: #f0ca54
+      .Heart_Care
+        color: #eb5b4a
+      .Immune_Support
+        color: #75bc67
+      .Joint_Care
+        color: #7b6f9a
+      .Liver_Care
+        color: #678fc9
+      .Lung_Care
+        color: #61d092
+      .Mens_Vitality
+        color: #5979c3
+      .Sleep_Support
+        color: #7fadf0
+      .Stress_Management
+        color: #ff8793
       .wish
         color: #e6803b
   .section-2
@@ -275,12 +277,24 @@ body
       color: #00b9ee
       .circle
         visibility: visible
+  .button
+    display: inline-block
+    width: 238px
+    height: 45px
+    margin: 40px 0
+    border-radius: 45px
+    border: 1px solid transparent
+    font-size: 16px
+    font-weight: 500
+    text-align: center
+    background: #00b9ee
+    color: #fff
+  .title
+    margin: 40px 0 20px
+    font-size: 20px
+    font-weight: 600
+    color: #474c5d
   .address-content
-    .title
-      margin-top: 40px
-      font-size: 20px
-      font-weight: 600
-      color: #474c5d
     label
       display: block
       margin: 20px 0 10px
@@ -302,18 +316,47 @@ body
       height: 20px
       padding: 0
     .shipping
-  .button
-    display: block
-    width: 238px
-    height: 45px
-    margin: 40px 0
-    border-radius: 45px
-    border: 1px solid transparent
-    font-size: 16px
-    font-weight: 500
-    text-align: center
-    background: #00b9ee
-    color: #fff
+    .email
+      margin: 40px 0 10px
+      font-size: 20px
+      font-weight: 600
+  .delivery-content
+    .title
+      img
+        width: 38px
+        margin-right: 20px
+      .package
+        font-weight: 300
+    .delivery
+      border: 1px solid #dedede
+      padding: 0 20px
+      margin: 20px 0
+      table
+        table-layout: fixed
+        width: 100%
+        font-size: 16px
+        font-weight: 300
+        color: #787878
+        img
+          width: 110px
+          height: 110px
+          margin: 30px 15px 30px 40px
+        .text
+          display: inline-block
+          .func
+            font-weight: 600
+        thead
+          font-weight: 600
+          text-align: left
+          th
+            padding: 19px 0
+            &:first-child
+              padding-left: 40px
+        tbody
+          tr
+            border-top: .5px solid #dedede
+    .shipping-methods
+      list-style: none
 
 [v-cloak]
   display: none
