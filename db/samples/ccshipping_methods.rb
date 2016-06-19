@@ -11,14 +11,14 @@ shipping_category_global = Spree::ShippingCategory.find_or_create_by!(name: 'Glo
 
 tax_category = Spree::TaxCategory.find_by_name!("USA")
 
-unless Spree::ShippingMethod.find_by_name("Free Shipping") &&
+unless Spree::ShippingMethod.find_by_name("USPS") &&
   Spree::ShippingMethod.find_by_name("International Shipping") &&
   Spree::ShippingMethod.find_by_name("Shipping to China")
   Spree::ShippingMethod.create!([
     {
-      :name => "Free Shipping",
+      :name => "USPS",
       :zones => [usa],
-      :calculator => Spree::Calculator::Shipping::FlatRate.create!,
+      :calculator => Spree::Calculator::Shipping::PriceSack.create!,
       :shipping_categories => [shipping_category_usa, shipping_category_global],
       :tracking_url => "https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1=:tracking",
       :tax_category_id => tax_category.id
@@ -26,21 +26,21 @@ unless Spree::ShippingMethod.find_by_name("Free Shipping") &&
     {
       :name => "International Shipping",
       :zones => [global],
-      :calculator => Spree::Calculator::Shipping::PerTwoItems.create!,
+      :calculator => Spree::Calculator::Shipping::FlatRate.create!,
       :shipping_categories => [shipping_category_global],
       :tax_category_id => tax_category.id
     },
     {
       :name => "Shipping to China",
       :zones => [china],
-      :calculator => Spree::Calculator::Shipping::PerTwoItems.create!,
+      :calculator => Spree::Calculator::Shipping::FlatRate.create!,
       :shipping_categories => [shipping_category_china],
       :tax_category_id => tax_category.id
     }
   ])
 
   {
-    "Free Shipping" => [0, "USD"],
+    "USPS" => [0, "USD"],
     "International Shipping" => [17, "USD"],
     "Shipping to China" => [10, "USD"]
   }.each do |shipping_method_name, (price, currency)|
@@ -52,4 +52,15 @@ unless Spree::ShippingMethod.find_by_name("Free Shipping") &&
     shipping_method.calculator.save!
     shipping_method.save!
   end
+
+  shipping_method = Spree::ShippingMethod.find_by_name!("USPS")
+  shipping_method.calculator.preferences = {
+    minimal_amount: 0.01,
+    normal_amount: 3.99,
+    discount_amount: 0.00,
+    currency: "USD"
+  }
+  shipping_method.calculator.save!
+  shipping_method.save!
+
 end

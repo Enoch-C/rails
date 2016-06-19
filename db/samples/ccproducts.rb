@@ -11,7 +11,7 @@ products = [
   {
     :name => Rails.application.config.product_list[0],
     :shipping_category => shipping_category_usa,
-    :price => 3.99,
+    :price => 0.00,
     :sku => "ccsd0000"
   },
   {

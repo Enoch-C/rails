@@ -14,7 +14,7 @@ Rails.application.config.product_list.each_with_index do |product_name, product_
     sku = ""
     case product_index
     when 0
-      cost_price = 3.99
+      cost_price = 0.00
       sku = "ccsd3f"
     when 1
       cost_price = 13.99
@@ -41,7 +41,7 @@ Rails.application.config.product_list.each_with_index do |product_name, product_
     sku = ""
     case product_index
     when 0
-      cost_price = 3.99
+      cost_price = 0.00
       sku = "ccsd2f"
     when 1
       cost_price = 13.99
@@ -68,7 +68,7 @@ Rails.application.config.product_list.each_with_index do |product_name, product_
     sku = ""
     case product_index
     when 0
-      cost_price = 3.99
+      cost_price = 0.00
       sku = "ccsd1f"
     when 1
       cost_price = 13.99
