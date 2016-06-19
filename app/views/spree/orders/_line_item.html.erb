@@ -5,7 +5,7 @@
   <tr style="height: 190px">
     <td data-hook="cart_item_image" style="padding: 0 20px">
       <div style="line-height: 100%;vertical-align: middle;">
-        <input type="checkbox" style="display: inline-block"/>
+        <!-- <input type="checkbox" style="display: inline-block"/> -->
         <div style="display: inline-block; margin: 0 24px;">
           <% if variant.images.length == 0 %>
             <%= link_to small_image(variant.product), variant.product %>
@@ -29,11 +29,11 @@
     </td>
     <td data-hook="cart_item_price">
       <button type='button' class="minus_plus" v-on:click="minus(<%= line_item_counter %>)">-</button>
-      
+
       <select name="tier" id="tier" v-model="selected[<%= line_item_counter %>]" @input="changeItem(<%= line_item_counter %>, $event)">
         <option v-for="option in options[<%= line_item_counter %>]" v-bind:value="option.value">{{ option.text }}</option>
       </select>
-      
+
       <button type='button' class="minus_plus" v-on:click="plus(<%= line_item_counter %>)">+</button>
       <%#= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
     </td>

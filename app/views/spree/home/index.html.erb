@@ -88,15 +88,11 @@
       <div class="qty col-sm-2">
         <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
         <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
-          <% if I18n.locale != :en %>
-          <span class="type">{{ num + ' ' + types[1] }}</span>
-          <% else %>
           <select v-model="type" class="type">
             <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
             <option value="week">{{ num + ' ' + types[0] }}</option>
             <option value="month">{{ num + ' ' + types[1] }}</option>
           </select>
-          <% end %>
           <span @click="num++" class="math"> +</span>
         </div>
         <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->

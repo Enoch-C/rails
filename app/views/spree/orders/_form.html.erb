@@ -14,7 +14,7 @@
       <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
     </tbody>
   </table>
-  
+
   <table style="width: 396px;float:right;border:1px solid #dedede;margin-top:10px">
     <tr><td colspan=2 class="cart_summary_big" style="height:58px"><div><%= Spree.t(:cart_summary_title)%></div></td></tr>
     <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
@@ -22,6 +22,7 @@
       <td class="cart_summary_dt"><%= Spree.t(:cart_summary_subtotal)%></td>
       <td class="cart_summary_dd">{{ price_total.toFixed(2) }}</td>
     </tr>
+    <% if false %>
     <tr>
     <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
       <%= render "spree/orders/adjustments" %>
@@ -38,6 +39,7 @@
       <td class="cart_summary_dt" style="height: 54px"><%= Spree.t(:cart_summary_total)%></td>
       <td class="cart_summary_dt" style="text-align: right; padding-right:20px">{{ price_total.toFixed(2) }}</td>
     </tr>
+    <% end %>
     <tr>
       <td style="height: 85px" colspan=2><div style="width: 50%; display: inline-block;"><div style="text-align: center"><%= link_to Spree.t(:cart_summary_keepShopping), '/', class: 'roundButton'%></div></div><div style="width: 50%; display: inline-block;"><div style="text-align: center"><%= button_tag class: 'roundButton b1', id: 'checkout-link', name: 'checkout' do %><%= Spree.t(:cart_summary_checkout) %><% end %></div></div></td>
     </tr>

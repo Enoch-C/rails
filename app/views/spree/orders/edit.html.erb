@@ -5,7 +5,7 @@
   <% if @order.line_items.empty? %>
     <div data-hook="empty_cart">
       <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
-      <p><%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %></p>
+      <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default' %></p>
     </div>
   <% else %>
     <div data-hook="outside_cart_form">
@@ -76,12 +76,12 @@
         this.options = options;
       },
       timespanOptionsFromItem: function(item) {
-        var t1 = ['<%= Spree.t(:"homepage.bar_month") %>', '<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_day") %>'];
-        var t2 = ['<%= Spree.t(:"homepage.bar_months") %>', '<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_days") %>'];
+        var t1 = ['<%= Spree.t(:"homepage.bar_month") %>', '<%= Spree.t(:"homepage.bar_week") %>'];
+        var t2 = ['<%= Spree.t(:"homepage.bar_months") %>', '<%= Spree.t(:"homepage.bar_weeks") %>'];
         var p1 = item.quantity;
         var t = t1
         if (p1 > 1) {
-          t = t2 
+          t = t2
         }
         return t.map(function(x){
           return {text: p1 + " " + x, value: p1 + "." + x[0]};
@@ -134,6 +134,6 @@
       });
     }
   })
-  
+
 
 </script>
