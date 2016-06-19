@@ -1,5 +1,8 @@
 <% if current_order == nil%>
 <% current_order(create_order_if_necessary: true) %>
+<% elsif current_order.special_instructions%>
+<% current_order.empty!  %>
+<% current_order.update_attributes({:special_instructions => nil})%>
 <% end %>
 
 <% if false %>

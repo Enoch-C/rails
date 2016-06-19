@@ -1,8 +1,9 @@
 module Spree
   class GiftController < Spree::StoreController
 
-    def index 
-      order    = current_order(create_order_if_necessary: true)
+    def index
+      order = current_order(create_order_if_necessary: true)
+      order.empty!
       variant = Spree::Variant.find_by_sku("ccsm0000")
       quantity = 1 
       options  = params[:options] || {}
