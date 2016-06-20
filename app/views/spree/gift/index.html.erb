@@ -54,8 +54,9 @@
     },
     methods: {
       sendAGift: function() {
+        window.location.href = '/checkout'
+        /*
         var that = this
-          /*
         $.ajax({
           type: 'POST',
           //ccsm1f000003
@@ -63,7 +64,6 @@
           url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + 'ccsm0000' + '&line_item[quantity]=' + 1 + '&order_token=' + this.order_token,
           success: function(data) {
             console.log(data);
-            */
             $.ajax({
               type: "PUT",
               url: '/api/v1/orders/' + that.order_number + '?order_token=' + that.order_token,
@@ -79,7 +79,6 @@
                 }
               }
             })
-        /*
           },
         })
         */
