@@ -1,9 +1,9 @@
 <div>
   <p class='field' data-hook='coupon_code'>
     <%= form.label :coupon_code %>
-    <%= form.text_field :coupon_code, :class => 'form-control' %>
+    <%= form.text_field :coupon_code, {:class => 'form-control', "v-model" => "coupon" }%>
   </p>
-  <%= submit_tag Spree.t(:apply_coupon_code), class: 'btn btn-succes' %>
+  <%= submit_tag Spree.t(:apply_coupon_code), {class: 'btn btn-succes', :type=>"button", "v-on:click"=>"apply_coupon"} %>
 
   <%= render partial: 'summary', locals: { order: @order } %>
 
@@ -81,23 +81,32 @@
   var vm = new Vue({
     el: '#checkout',
     data: {
+      coupon: "",
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
       order_isGift: <%= current_order.special_instructions ? 'true' : 'false' %>
     },
+    watch: {
+      coupon: function() {
+        console.log(this.coupon)
+      }
+    },
     methods: {
-      apply_coupon: function(coupon_code){
+      apply_coupon: function(){
+        if (this.coupon == "") {
+          return
+        }
         $.ajax({
           type: "PUT",
-          url: '/api/v1/orders/' + that.order_number + '?order_token=' + that.order_token,
+          url: '/api/v1/orders/' + this.order_number + '/apply_coupon_code?order_token=' + this.order_token,
           success: function(data) {
-            console.log(data)
-            // add completion action here
+            window.location.reload();
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            alert("Coupon code invalid.")
           },
           data: {
-            "order": {
-              "coupon_code": coupon_code
-            }
+            "coupon_code": this.coupon
           }
         })
       }
