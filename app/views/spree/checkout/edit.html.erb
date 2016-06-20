@@ -7,22 +7,26 @@
 
   <div class="row" data-hook="checkout_header">
     <div class="checkout-nav clearfix">
-      <div class="<%= @order.state == 'address' ? 'order-state active' : 'order-state' %>">
-        <div class="circle"></div>
-        <div class="state">Address</div>
-      </div>
-      <div style="margin: 0 190px" class="<%= @order.state == 'delivery' ? 'order-state active' : 'order-state' %>">
-        <div class="circle"></div>
-        <div class="state">Delivery</div>
-      </div>
-      <div class="<%= @order.state == 'payment' ? 'order-state active' : 'order-state' %>">
-        <div class="circle"></div>
-        <div class="state">Payment</div>
-      </div>
+      <% states = @order.checkout_steps %>
+      <% items = states.each_with_index.map do |state, i| %>
+        <% style = 'left: ' + (660.0/(states.size-1)*i).to_s + 'px' %>
+        <% if states.index(state) < states.index(@order.state) %>
+          <a style="display:block" href="<%= checkout_state_path(state) %>">
+        <% end %>
+        <div style = "<%= style %>" class="<%= @order.state == state ? 'order-state active' : 'order-state' %>">
+          <div class="circle"></div>
+          <div class="state"><%= Spree.t(state) %></div>
+        </div>
+        <% if states.index(state) < states.index(@order.state) %>
+          </a>
+        <% end %>
+      <% end %>
+
       <div class="line">
-        <div style="left: -5px" class="circle"></div>
-        <div style="left: 245px" class="circle"></div>
-        <div style="right: -5px" class="circle"></div>
+        <% items = states.each_with_index.map do |state, i| %>
+          <% style = 'left: ' + (660.0/(states.size-1)*i).to_s + 'px' %>
+          <div style="<%= style %>" class="circle"></div>
+        <% end %>
       </div>
     </div>
   </div>
