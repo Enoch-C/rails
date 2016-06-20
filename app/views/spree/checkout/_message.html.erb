@@ -1,21 +1,71 @@
-<div class="well text-right form-buttons" data-hook="buttons">
-  <input type="text" placeholder="recipient_name" v-model="recipient_name"></input><br>
-  <input type="text" placeholder="message" v-model="message"></input><br>
-  <input type="text" placeholder="your_name" v-model="my_name"></input><br>
-  <input type="text" placeholder="your_email" v-model="my_email"></input><br>
-  <input type="text" placeholder="recipient_email" v-model="recipient_email"></input><br>
-  <button type='button' class="btn btn-lg btn-success primary" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button>
+<div id="gift-message">
+  <div class="container">
+    <div class="card">
+      <img src="/assets/checkout/product@2x.png" class="product">
+      <div class="word">
+        <img src="/assets/checkout/line.png" class="line">
+        <div class="this"><%= Spree.t(:'message.this') %></div>
+        <input type="text" placeholder="recipient_name" class="recipient_name" v-model="recipient_name"></input>
+        <textarea class="message" v-model="message"></textarea>
+        <div class="from"><%= Spree.t(:'message.from') %></div>
+        <input type="text" placeholder="your_name" class="your_name" v-model="my_name"></input><br>
+      </div>
+    </div>
+    <div class="detail">
+      <table>
+        <colgroup>
+          <col style="width: 50%;" />
+          <col style="width: 20%;" />
+          <col style="width: 20%;" />
+          <col style="width: 10%;" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th><%= Spree.t(:'message.detail') %></th>
+            <th><%= Spree.t(:price) %></th>
+            <th><%= Spree.t(:qty) %></th>
+            <th><%= Spree.t(:'message.total') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img src="/assets/checkout/img-product.png">
+              <%= Spree.t(:'message.coolchoice') %>
+            </td>
+            <td><%= Spree.t(:'message.price') %></td>
+            <td>1 month</td>
+            <td><%= Spree.t(:'message.price') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="text address-content">
+      <div class="col-sm-6">
+        <div class="title"><%= Spree.t(:'message.gift_from') %></div>
+        <label><%= Spree.t(:'message.your_email')%></label>
+        <input type="text" placeholder="your_email" v-model="my_email"></input><br>
+      </div>
+      <div class="col-sm-6">
+        <div class="title"><%= Spree.t(:'message.gift_to')%></div>
+        <label><%= Spree.t(:'message.email')%></label>
+        <input type="text" placeholder="recipient_email" v-model="recipient_email"></input><br>
+      </div>
+    </div>
+    <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
+  </div>
 </div>
+
 <script>
   var vm = new Vue({
     el: '#checkout',
     data: {
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
-      recipient_name: "dummy recipient",
-      
-      message: "dummy message",
-      my_name: "dummy name",
+      recipient_name: "Wang Jue",
+
+      message: "Add your message here (up to 100 characters)",
+      my_name: "=w=",
       my_email: "dummy email",
       recipient_email: "dummy recipient email",
       special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>

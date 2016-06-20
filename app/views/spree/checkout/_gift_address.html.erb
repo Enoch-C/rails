@@ -1,36 +1,51 @@
+<div class="text address-content clearfix">
+  <div class="title"><%= Spree.t(:billing_address) %></div>
+  <div class="col-sm-6">
+    <label><%= Spree.t(:first_name) %></label>
+    <input type="text" v-model="first_name"/>
+    <label><%= Spree.t(:last_name) %></label>
+    <input type="text" v-model="last_name"/>
+    <label><%= Spree.t(:street_address) %></label>
+    <input type="text" v-model="address"/>
+    <label><%= Spree.t(:street_address_2) %></label>
+    <input type="text" v-model="address_opt"/>
+    <label><%= Spree.t(:phone) %></label>
+    <input type="text" v-model="phone"/>
+  </div>
+  <div class="col-sm-6">
+    <label><%= Spree.t(:city) %></label>
+    <input type="text" placeholder="city" v-model="city"/>
+    <label><%= Spree.t(:country) %></label>
+    <%= form.fields_for :bill_address do |bill_form| %>
+    <span id=<%="bcountry-selection" %>>
+    <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
+    </span>
+    <% if Spree::Config[:address_requires_state] %>
+      <p class="form-group" id=<%="bstate" %>>
+        <%= bill_form.label :state do %>
+          <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
+        <% end %>
 
-<div class="well text-right form-buttons" data-hook="buttons">
-  <input type="text" placeholder="first_name" v-model="first_name"/><br>
-  <input type="text" placeholder="last_name" v-model="last_name"/><br>
-  <input type="text" placeholder="address" v-model="address"/><br>
-  <input type="text" placeholder="address_opt" v-model="address_opt"/><br>
-  <input type="text" placeholder="phone" v-model="phone"/><br>
-  <input type="text" placeholder="city" v-model="city"/><br>
-  <%= form.fields_for :bill_address do |bill_form| %>
-<span id=<%="bcountry-selection" %>>
-  <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
-
-      </span>
-  <% if Spree::Config[:address_requires_state] %>
-    <p class="form-group" id=<%="bstate" %>>
-      <%= bill_form.label :state do %>
-        <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
-      <% end %>
-
-      <%== state_elements = [
-         bill_form.collection_select(:state_id, @order.bill_address.country.states,
-                                                     :id, :name, {},
-                            {:"v-model" => "state_code"},
-                            )
-         ].join.gsub('"', "'").gsub("\n", "")
-      %>
+        <%== state_elements = [
+           bill_form.collection_select(:state_id, @order.bill_address.country.states,
+                                                       :id, :name, {},
+                              {:"v-model" => "state_code"},
+                              )
+           ].join.gsub('"', "'").gsub("\n", "")
+        %>
       </p>
-  <% end %>
-  <% end %>
-  <input type="text" placeholder="zip" v-model="zip"/><br>
-  <input type="checkbox" placeholder="save_address" v-model="save_address"/><br>
-  <button type='button' class="btn btn-lg btn-success primary" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button>
+    <% end %>
+    <% end %>
+    <label><%= Spree.t(:zip) %></label>
+    <input type="text" placeholder="zip" v-model="zip"/><br>
+    <label for="save_user_address">
+      <input type="checkbox" placeholder="save_address" v-model="save_address"/>
+      <%= Spree.t(:save_my_address) %>
+    </label>
+  </div>
 </div>
+<div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
+
 <script>
   var vm = new Vue({
     el: '#checkout',
@@ -95,7 +110,7 @@
           fail: function(data) {
             console.log(4)
           }
-        }) 
+        })
       },
       proceed: function(){
         var that = this
