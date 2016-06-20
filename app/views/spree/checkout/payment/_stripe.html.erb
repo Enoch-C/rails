@@ -7,6 +7,8 @@
 
 <script
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-email="<%= @order.email %>"
+  data-label="Pay Now"
   data-key="<%= payment_method.preferred_publishable_key %>"
   data-amount="<%= (@order.total * 100).to_i %>"
   data-name="<%= Spree.t(:site_name) %>"
