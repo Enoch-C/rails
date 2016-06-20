@@ -10,13 +10,9 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 Spree.config do |config|
-  config.admin_interface_logo = 'logo/logo.png'
-  config.logo = 'logo/logo.png'
+  # Example:
+  # Uncomment to stop tracking inventory levels in the application
+  # config.track_inventory_levels = false
 end
 
 Spree.user_class = "Spree::User"
-
-config = Rails.application.config
-config.after_initialize do
-  config.spree.calculators.shipping_methods << Spree::Calculator::Shipping::PerTwoItems
-end

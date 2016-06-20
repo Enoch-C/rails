@@ -1,8 +1,13 @@
 <% if current_order == nil%>
-<% current_order(create_order_if_necessary: true) %>
+  <% current_order(create_order_if_necessary: true) %>
 <% elsif current_order.special_instructions%>
-<% current_order.empty!  %>
-<% current_order.update_attributes({:special_instructions => nil})%>
+  <% current_order.empty!  %>
+  <% current_order.update_attributes({:special_instructions => nil})%>
+<% else %>
+<% sku = current_order.line_items.first.sku rescue nil %>
+  <% if sku && sku.slice(3, 1) == 'd' %>
+    <% current_order.empty! %>
+  <% end %>
 <% end %>
 
 <% if false %>
@@ -106,6 +111,7 @@
         <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
         <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
       </div><a v-on:click='action_addToCart' style="border: 1px solid #fff" class="button"><%= Spree.t(:"homepage.bar_cart") %></a><a v-on:click='action_checkout' style="background: #00b9ee" class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
+      <a v-on:click='action_trial' style="background: #00b9ee" class="button"><%= Spree.t(:"homepage.bar_checkout") %>+Trial</a>
     </div>
   </div>
 </div>
@@ -183,6 +189,26 @@
             success: function(data) {
               window.location.href = '/checkout'
             },
+          })
+        }
+      },
+      action_trial: function(event) {
+        if (this.validate()) {
+          var sku = this.sku
+          sku = sku.slice(0, 3) + 'd' + sku.slice(4)
+          var that = this
+          $.ajax({
+            type: 'PUT',
+            url: '/api/v1/orders/' + this.order_number + '/empty' + '?order_token=' + this.order_token,
+            success: function(data) {
+              $.ajax({
+                type: 'POST',
+                url: '/api/v1/orders/' + that.order_number + '/line_items?line_item[sku]=' + sku + '&line_item[quantity]=' + that.num + '&order_token=' + that.order_token,
+                success: function(data) {
+                  window.location.href = '/checkout'
+                },
+              })
+            }
           })
         }
       }
