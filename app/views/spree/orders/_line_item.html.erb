@@ -15,7 +15,7 @@
         </div>
         <div style="display: inline-block; width: 340px; vertical-align: middle">
           <div class="cool_choice_label"><%= link_to line_item.name, product_path(variant.product) %></div>
-          <div class="cool_choice_titles"><%= variant.options_text %></div>
+          <div class="cool_choice_titles"><%= variant.options_text.sub("Choice A: ", "").sub(", Choice B: ", " + ").sub(", and Choice C: ", " + ") %></div>
         </div>
       </div>
     </td>
