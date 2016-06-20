@@ -10,6 +10,7 @@ module Spree
 
         begin
           order.contents.add(variant, quantity, options)
+          order.update_attributes({:special_instructions => "{}"})
         rescue ActiveRecord::RecordInvalid => e
           error = e.record.errors.full_messages.join(", ")
         end
