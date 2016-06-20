@@ -9,3 +9,108 @@
  *= require_tree .
  *= require spree/frontend/spree_social
 */
+
+#cart * {
+    border: none;
+}
+
+#cart td {
+    vertical-align: middle;
+}
+
+#cart h1 {
+    height: 42px;
+    font-family: PingFangSC-Semibold;
+    font-size: 30px;
+    color: #474c5d;
+    text-align: center
+}
+
+#cart .item_image {
+  width: 110px;
+  height: 110px;
+}
+
+#cart .cool_choice_label {
+  font-family: PingFangSC-Light;
+  font-size: 16px;
+  color: #787878;
+}
+
+#cart .cool_choice_titles {
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #787878;
+}
+
+#cart .price {
+  font-family: PingFangSC-Light;
+  font-size: 16px;
+  color: #787878;
+}
+
+#cart .total_price {
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #474c5d;
+}
+
+
+#cart select#tier {
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #787878;
+  border: 1px solid #ebebeb;
+}
+
+#cart .minus_plus {
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #787878;
+  margin: 14px;
+}
+
+
+#cart .cart_summary_big {
+  font-family: PingFangSC-Semibold;
+  font-size: 20px;
+  color: #474c5d;
+  padding-left: 20px;
+}
+
+#cart .cart_summary_dt {
+  font-family: PingFangSC-Semibold;
+  font-size: 16px;
+  color: #474c5d;
+  height: 44px;
+  padding-left: 20px;
+}
+
+#cart .cart_summary_dd {
+  font-family: PingFangSC-Light;
+  font-size: 16px;
+  color: #787878;
+  text-align: right;
+  padding-right: 20px;
+}
+
+
+#cart .roundButton {
+  font-family: PingFangSC-Medium;
+  font-size: 16px;
+  color: #787878;
+  width: 150px;
+  padding: 11px 0;
+  border-radius: 23px;
+  background-color: #fff;
+  border: 1px solid #00b9ee;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#cart .roundButton.b1 {
+  background-color: #00b9ee;
+  color: white;
+}
+

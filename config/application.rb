@@ -8,19 +8,6 @@ Bundler.require(*Rails.groups)
 
 module CoolChoiceStore
   class Application < Rails::Application
-    
-    config.to_prepare do
-      # Load application's model / class decorators
-      Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
-      end
-
-      # Load application's view overrides
-      Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/*.rb")) do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
-      end
-    end
-
 
     config.function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', "Men's Vitality", 'Sleep Support', 'Stress Management']
     config.product_list = ["(USA only) *1 day* CoolChoice", "(USA only) *1 week* CoolChoice", "*1 month* CoolChoice"]
