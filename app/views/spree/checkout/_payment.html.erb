@@ -86,6 +86,21 @@
       order_isGift: <%= current_order.special_instructions ? 'true' : 'false' %>
     },
     methods: {
+      apply_coupon: function(coupon_code){
+        $.ajax({
+          type: "PUT",
+          url: '/api/v1/orders/' + that.order_number + '?order_token=' + that.order_token,
+          success: function(data) {
+            console.log(data)
+            // add completion action here
+          },
+          data: {
+            "order": {
+              "coupon_code": coupon_code
+            }
+          }
+        })
+      }
     },
     ready: function(){
       if (this.order_isGift) {
