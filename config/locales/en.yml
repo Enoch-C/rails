@@ -127,9 +127,22 @@ en:
     gift:
       title_cool: Cool Care
       title_do: Do something special for someone you care
-      send_a_gift: Send a Gift
+      send_a_gift: SEND A GIFT
       order: Place Your Order Online
       email: He/She Select Functions by E-mail
       gift: Receive the Gift and Your Care
+    message:
+      this: This is for
+      add: Add your message here (up to 100 characters)
+      from: From
+      detail: Gift details
+      total: Total
+      coolchoice: CoolChoice
+      price: $39.99
+      gift_from: Gift is From (Purchaser)
+      gift_to: Gift is to (Recipient)
+      name: Your Name
+      your_email: Your email address
+      email: Recipient email address
     order_state:
       message: Message

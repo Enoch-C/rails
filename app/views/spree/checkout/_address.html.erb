@@ -12,6 +12,7 @@
           <label for="save_user_address">
           <%= check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address) %>
           <%= Spree.t(:save_my_address) %>
+          </label>
         <% end %>
         <% if @order.state == 'address' || !@order.email? %>
           <%= form.label :email, class: 'email' %>
