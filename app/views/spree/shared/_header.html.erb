@@ -1,19 +1,12 @@
-<div id="coolchoice-header">
-  <header id="header" data-hook>
-    <div class="container">
-      <div class="row">
-        <figure id="logo" class="col-md-4 col-sm-3" data-hook>
-          <%= logo %>
-        </figure>
+<div id="coolchoice-header" style="border-bottom: 1px solid #dedede; height: 80px">
+  <header id="header" style="height: 100%" data-hook>
+    <div class="container"  style="height: 100%">
+      <div class="row" style="height: 100%">
+      <a href="/" style="float: left; height:100%"><span style="height: 100%; vertical-align:middle; display: inline-block"></span><img src='/assets/logo/logo@2x.png' style='width: 141px; height: 49px'/></a>
         <%= render :partial => 'spree/shared/nav_bar' %>
       </div>
     </div>
   </header>
-  <% if false %>
-  <div class="container">
-    <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-  </div>
-  <% end %>
 </div>
 
 <% if false %>
