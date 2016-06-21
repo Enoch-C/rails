@@ -124,6 +124,7 @@
       type: 'month',
       sum: 39.99,
       result: [],
+      processing: false, 
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>"
     },
@@ -168,35 +169,50 @@
         }
       },
       validate: function(event) {
+        if (this.processing) {
+          return false
+        }
         return this.sku.slice(6) != '000000'
       },
       action_addToCart: function(event) {
         if (this.validate()) {
+          this.processing = true
+          var that = this
           $.ajax({
             type: 'POST',
             url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
               window.location.href = '/cart'
             },
+            complete: function() {
+              console.log(that.processing)
+              that.processing = false
+            }
           })
         }
       },
       action_checkout: function(event) {
         if (this.validate()) {
+          this.processing = true
+          var that = this
           $.ajax({
             type: 'POST',
             url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
               window.location.href = '/checkout'
             },
+            complete: function() {
+              that.processing = false
+            }
           })
         }
       },
       action_trial: function(event) {
         if (this.validate()) {
+          this.processing = true
+          var that = this
           var sku = this.sku
           sku = sku.slice(0, 3) + 'd' + sku.slice(4)
-          var that = this
           $.ajax({
             type: 'PUT',
             url: '/api/v1/orders/' + this.order_number + '/empty' + '?order_token=' + this.order_token,
@@ -207,6 +223,9 @@
                 success: function(data) {
                   window.location.href = '/checkout'
                 },
+                complete: function() {
+                  that.processing = false
+                }
               })
             }
           })
