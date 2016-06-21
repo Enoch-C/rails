@@ -9,7 +9,10 @@
     <div class="checkout-nav clearfix">
       <% states = @order.checkout_steps %>
       <% items = states.each_with_index.map do |state, i| %>
-        <% style = 'left: ' + (660.0/(states.size-1)*i).to_s + 'px' %>
+        <% style = '' %>
+        <% unless i == 0 %>
+          <% style = 'margin-left: ' + ((720.0-72*states.size)/(states.size-1)).to_s + 'px' %>
+        <% end %>
         <% if states.index(state) < states.index(@order.state) %>
           <a style="display:block" href="<%= checkout_state_path(state) %>">
         <% end %>
@@ -21,10 +24,12 @@
           </a>
         <% end %>
       <% end %>
-
       <div class="line">
         <% items = states.each_with_index.map do |state, i| %>
-          <% style = 'left: ' + (660.0/(states.size-1)*i).to_s + 'px' %>
+          <% style = '' %>
+          <% unless i == 0 %>
+            <% style = 'left: ' + (((658.0-10*states.size)/(states.size-1))*i+10*i).to_s + 'px' %>
+          <% end %>
           <div style="<%= style %>" class="circle"></div>
         <% end %>
       </div>
