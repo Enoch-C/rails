@@ -73,6 +73,8 @@ en:
     GIFT: GIFT
     INGREDIENT: INGREDIENT
     ABOUT: ABOUT
+    LOGOUT: LOGOUT
+    SIGNIN: SIGN IN
     homepage:
       title_proud: PROUD TO BE
       title_introduce: Introducing the Personalized Supplements

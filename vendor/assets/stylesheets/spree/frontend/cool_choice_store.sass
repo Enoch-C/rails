@@ -103,14 +103,42 @@ body
   font-size: 20px
   font-weight: 600
   color: #474c5d
+.form-content
+  label
+    display: block
+    margin: 20px 0 10px
+    font-size: 14px
+    color: #474c5d
+  input,
+  select
+    width: 400px
+    height: 45px
+    padding: 12px 0 11px 20px
+    border-radius: 3px
+    border: solid 1px #dedede
+    font-size: 16px
+    color: #787878
+    @media (max-width: 970px)
+      width: 100%
+  input[type="checkbox"]
+    width: 20px
+    height: 20px
+    padding: 0
+  .button
+    width: 238px
+    padding: 0
+    border-radius: 45px
+    border: 0
+    color: #fff
 .button
   display: inline-block
   width: 238px
-  margin: 35px 10px 20px
   height: 45px
   line-height: 45px
   border-radius: 45px
-  font-size: 20px
+  border: 0
+  margin: 20px 0
+  font-size: 16px
   text-align: center
   color: #fff
   background: #00b9ee
@@ -218,14 +246,14 @@ input.button
         float: left
         position: relative
         width: 150px
-        height: 184px
-        margin: 38px 38px
+        height: 174px
+        margin: 38px 34px
         .choose-label
           position: absolute
           left: 0
-          width: 120px
+          width: 130px
           .img
-            width: 100%
+            width: 92%
           .text
             font-size: 20px
             margin-top: 20px
@@ -361,6 +389,7 @@ input.button
         height: 50px
         line-height: 50px
         border-radius: 25px
+        font-size: 20px
 #gift
   .banner
     background: url(/assets/gift/bj_gift_top.jpg) center no-repeat
@@ -560,43 +589,8 @@ input.button
       .circle
         visibility: visible
   .button
-    display: inline-block
-    width: 238px
-    height: 45px
-    margin: 40px 0
-    border-radius: 45px
-    border: 1px solid transparent
     font-size: 16px
-    font-weight: 500
-    text-align: center
-    background: #00b9ee
-    color: #fff
-  .title
-    margin: 40px 0 20px
-    font-size: 20px
-    font-weight: 600
-    color: #474c5d
-  .address-content
-    label
-      display: block
-      margin: 20px 0 10px
-      font-size: 14px
-      color: #474c5d
-    input,
-    select
-      width: 400px
-      height: 45px
-      padding: 12px 0 11px 20px
-      border-radius: 3px
-      border: solid 1px #dedede
-      font-size: 16px
-      color: #787878
-      @media (max-width: 970px)
-        width: 100%
-    input[type="checkbox"]
-      width: 20px
-      height: 20px
-      padding: 0
+  .form-content
     .shipping
     .email
       margin: 40px 0 10px

@@ -1,4 +1,4 @@
-<div class="text address-content clearfix">
+<div class="text form-content clearfix">
   <div class="title"><%= Spree.t(:billing_address) %></div>
   <div class="col-sm-6">
     <label><%= Spree.t(:first_name) %></label>
@@ -12,7 +12,7 @@
     <label><%= Spree.t(:phone) %></label>
     <input type="text" v-model="phone"/>
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-6" id="bcountry">
     <label><%= Spree.t(:city) %></label>
     <input type="text" placeholder="city" v-model="city"/>
     <label><%= Spree.t(:country) %></label>
