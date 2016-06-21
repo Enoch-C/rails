@@ -48,6 +48,14 @@ FAD37097-1F8E-41FE-B0F2-2FA1066389C1
 sk_test_iRRInJQkQei3jqLXqFUqkmwt
 pk_test_P6lLO39rtCtCrGFXmwruJyQ3
 
+5. Paypal
+API Username
+erp_api1.snapfit.com
+API Password
+Z8ADKHJAW6TSTDSV
+Signature
+AFcWxV21C7fd0v3bYYYRCpSSRl31ASip498mEPpXCGbyGLkLxoh0Rr3b
+
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)
