@@ -20,6 +20,7 @@ gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-1-stable'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-1-stable'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: '3-1-stable'
 gem 'spree_tax_cloud', github: 'spree-contrib/spree_tax_cloud', branch: '3-1-stable'
+gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 gem 'spree_braintree_vzero', github: 'spree-contrib/spree_braintree_vzero', branch: '3-1-stable'
 
 bin/spring stop
@@ -32,6 +33,7 @@ rails g spree_gateway:install
 rails g spree_i18n:install
 rails g spree_social:install
 rails g spree_tax_cloud:install
+rails g spree_paypal_express:install
 rails g spree_braintree_vzero:install
 
 rake database_init:load

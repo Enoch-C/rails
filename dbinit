@@ -3,11 +3,11 @@ R='\033[0;31m'
 N='\033[0m'
 
 echoo () {
- printf "$R$*$N\n" 
+ printf "$R$*$N\n"
 }
 
 IFS=$'\n'
-commands=`cat <<'M' 
+commands=`cat <<'M'
 rake db:drop
 bin/spring stop
 bundle exec rake railties:install:migrations
@@ -19,7 +19,7 @@ rails g spree_gateway:install
 rails g spree_i18n:install
 rails g spree_social:install
 rails g spree_tax_cloud:install
-rails g spree_braintree_vzero:install
+rails g spree_paypal_express:install
 rake database_init:load
 M`;
 
@@ -32,5 +32,5 @@ i=1
 for x in $commands; do
 echoo "`printf %02d $i`/$n $x"
 eval $x
-((i+=1)) 
+((i+=1))
 done
