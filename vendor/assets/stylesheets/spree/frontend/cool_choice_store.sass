@@ -33,7 +33,133 @@ body
 //           width: 30px
 //         .cart
 //           width: 25px
-
+.border-table
+  border: 1px solid #dedede
+  padding: 0 20px
+  margin: 20px 0
+  table
+    table-layout: fixed
+    width: 100%
+    font-size: 16px
+    font-weight: 300
+    color: #787878
+    img
+      width: 110px
+      height: 110px
+      margin: 30px 15px 30px 0px
+    .text
+      display: inline-block
+      .func
+        font-weight: 600
+    thead
+      font-weight: 600
+      text-align: left
+      th
+        padding: 19px 0
+    tbody
+      tr
+        border-top: .5px solid #dedede
+      td
+        padding: 20px 0
+.summary-table
+  width: 396px
+  border: 1px solid #dedede
+  padding: 0 20px
+  margin: 20px 0
+  table
+    table-layout: fixed
+    width: 100%
+    font-size: 16px
+    font-weight: 300
+    color: #787878
+    img
+      width: 110px
+      height: 110px
+      margin: 30px 15px 30px 0px
+    .text
+      display: inline-block
+      .func
+        font-weight: 600
+    thead
+      font-weight: 600
+      text-align: left
+      th
+        padding: 19px 0
+    tbody
+      border-top: .5px solid #dedede
+      td
+        padding: 20px 0
+        &:last-child
+          text-align: right
+        &:first-child
+          font-weight: 500
+          color: #474c5d
+      &:last-child
+        td:last-child
+          font-weight: 500
+          color: #474c5d
+.form-title
+  margin: 40px 0 20px
+  font-size: 20px
+  font-weight: 600
+  color: #474c5d
+.button
+  display: inline-block
+  width: 238px
+  margin: 35px 10px 20px
+  height: 45px
+  line-height: 45px
+  border-radius: 45px
+  font-size: 20px
+  text-align: center
+  color: #fff
+  background: #00b9ee
+input.button
+  line-height: 0
+#order_summary
+  .order-number
+    font-size: 18px
+    color: #474c5d
+    .number
+      font-size: 22px
+      font-weight: 500
+      color: #00b9ee
+  .order
+    margin: 40px 0
+  .summary-table
+    float: right
+#account
+  .account
+    width: 396px
+    margin: 60px auto 40px
+    text-align: center
+    thead
+      color: #474c5d
+      font-size: 20px
+    th
+      text-align: center
+    .email
+      font-weight: 500
+      color: #474c5d
+    .user-email
+      margin: 5px 0 22px
+    .edit,
+    .facebook
+      .button
+        width: auto
+        padding: 0 25px
+        height: 30px
+        line-height: 30px
+        margin: 8px 0
+        font-size: 16px
+    .facebook
+      .button
+        background: #678fc9
+  .order
+    table
+      tbody
+        td
+          padding: 40px 0
 #cool-choice-home
   .banner
     background: url(/assets/home/bj_home_top.jpg) center no-repeat
@@ -91,13 +217,13 @@ body
       .choose-box
         float: left
         position: relative
-        width: 160px
+        width: 150px
         height: 184px
-        margin: 38px 34px
+        margin: 38px 38px
         .choose-label
           position: absolute
           left: 0
-          width: 130px
+          width: 120px
           .img
             width: 100%
           .text
@@ -231,15 +357,10 @@ body
           font-size: 20px
           font-weight: 300
       .button
-        display: inline-block
         width: 150px
-        margin: 35px 10px 20px
         height: 50px
         line-height: 50px
         border-radius: 25px
-        font-size: 20px
-        text-align: center
-        color: #fff
 #gift
   .banner
     background: url(/assets/gift/bj_gift_top.jpg) center no-repeat

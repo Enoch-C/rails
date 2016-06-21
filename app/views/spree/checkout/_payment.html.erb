@@ -86,11 +86,6 @@
       order_token: "<%= current_order.guest_token %>",
       order_isGift: <%= current_order.special_instructions ? 'true' : 'false' %>
     },
-    watch: {
-      coupon: function() {
-        console.log(this.coupon)
-      }
-    },
     methods: {
       apply_coupon: function(){
         if (this.coupon == "") {
@@ -102,8 +97,8 @@
           success: function(data) {
             window.location.reload();
           },
-          error: function(xhr, textStatus, errorThrown) {
-            alert("Coupon code invalid.")
+          error: function(a,b,c) {
+            alert(a.responseJSON["error"])
           },
           data: {
             "coupon_code": this.coupon
