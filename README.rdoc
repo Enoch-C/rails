@@ -39,7 +39,14 @@ rake database_init:load
 After Init Settings:
 1. General Settings
 2. TaxCloud api_key
+278C5BF0
+FAD37097-1F8E-41FE-B0F2-2FA1066389C1
 3. Social api_key
+258525281167464
+41c802574264902011ac683bec9beab0
+4. Stripe
+sk_test_iRRInJQkQei3jqLXqFUqkmwt
+pk_test_P6lLO39rtCtCrGFXmwruJyQ3
 
 * How to run the test suite
 
