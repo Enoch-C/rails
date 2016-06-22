@@ -12,7 +12,6 @@
 !/log/.keep
 /tmp
 
-config/database.yml
 db/schema.rb
 .DS_Store
 config/unicorn.rb
