@@ -10,7 +10,7 @@
     <li id="home-link" data-hook><%= link_to Spree.t(:SIGNIN), spree.root_path %></li>
     <% end %>
     <li style="width:6px; padding-left: 3px"><a style="width:20px; border-left: 1px solid #ddd;margin:9px 0 0;"></a></li>
-    <li><a style="cursor: pointer; padding: 9px"><img src="/assets/home/button_cart@2x.png" style="display:inline-block; width: 27px; height: 34px;"></a></li>
+    <li><a style="cursor: pointer; padding: 9px" href="/cart"><img src="/assets/home/button_cart@2x.png" style="display:inline-block; width: 27px; height: 34px;"><% count = current_order.line_items.inject(0){|s, x| s+=x.quantity;s} rescue 0 ; if count != 0 && current_order.special_instructions == nil %><span style="background: none repeat scroll 0 0 #EB5B4A; color: white; border-radius: 8px;padding:0px 5px;font-size:10px;top:-10px;position:relative;"><%= count %></span><% end %></a></li>
 <%#= spree_current_user %>
   </ul>
 </nav>
