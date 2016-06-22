@@ -1,6 +1,6 @@
 <div id="account">
   <div class="container">
-    <div class="border-table account">
+    <div class="border-table account"  data-hook="account_summary">
       <table>
         <thead>
           <tr>
@@ -16,17 +16,28 @@
                 <a class="button" href="<%= spree.edit_account_path %>"><%= Spree.t(:edit) %></a>
               </div>
               <div class="facebook">
-                <a class="button">Add Facebook to sign in</a>
+                <div id="social-signin-links">
+                  <% if (!spree_current_user || !spree_current_user.user_authentications) && Spree::AuthenticationMethod.active_authentication_methods? %>
+                    <h4><%= Spree.t(:sign_in_through_one_of_these_services) %></h4>
+                  <% end %>
+                  <% Spree::AuthenticationMethod.available_for(@spree_user).each do |method| %>
+                    <% if method.active %>
+                      <a class="button" href="<%= spree.spree_user_omniauth_authorize_url(provider: method.provider) %>" id="<%= method.provider.to_url %>" title="<%= Spree.t(:sign_in_with, provider: method.provider) %>">
+                        <%= content_tag(:i, '', class: "icon-spree-#{method.provider.to_url}") %>
+                        Add Facebook to sign in
+                      </a>
+                    <% end %>
+                  <% end %>
+                </div>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-
     </div>
-    <div class="form-title"><%= Spree.t(:my_orders) %></div>
 
-    <div class="border-table order">
+    <div class="form-title"><%= Spree.t(:my_orders) %></div>
+    <div class="border-table order" data-hook="account_my_orders">
       <% if @orders.present? %>
         <table>
           <colgroup>
