@@ -93,14 +93,16 @@
       minus: function(index) {
         var qty = this.order.line_items[index].quantity;
         if (qty > 1) {
+          var sku = this.order.line_items[index].variant.sku;
           this.order.line_items[index].quantity -= 1;
-          this.updateAll();
+          this.updateLineItem(index, sku, this.order.line_items[index].quantity);
         }
 
       },
       plus: function(index) {
+        var sku = this.order.line_items[index].variant.sku;
         this.order.line_items[index].quantity += 1;
-        this.updateAll();
+        this.updateLineItem(index, sku, this.order.line_items[index].quantity);
       },
       updateLineItem: function(index, sku, qty) {
         $.ajax({
