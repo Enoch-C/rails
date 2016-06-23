@@ -149,3 +149,6 @@ en:
       email: Recipient email address
     order_state:
       message: Message
+    checkout:
+      credit_card: Credit Card
+      paypal: PayPal

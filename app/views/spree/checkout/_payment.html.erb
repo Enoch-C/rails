@@ -1,56 +1,27 @@
-<div>
-  <p class='field' data-hook='coupon_code'>
-    <%= form.label :coupon_code %>
-    <%= form.text_field :coupon_code, {:class => 'form-control', "v-model" => "coupon" }%>
-  </p>
-  <%= submit_tag Spree.t(:apply_coupon_code), {class: 'btn btn-succes', :type=>"button", "v-on:click"=>"apply_coupon"} %>
-
-  <%= render partial: 'summary', locals: { order: @order } %>
-
+<div class="payment">
+  <div :class="['credit-card', payment_method == '4' ? 'active' : '']" @click="payment_choose('4')">
+    <img class="tick" src="/assets/checkout/active@2x.png">
+    <div class="img">
+      <img src="/assets/checkout/icon-creditcard@2x.png" style="width: 53px">
+    </div>
+    <div class="text"><%= Spree.t(:"checkout.credit_card") %></div>
+  </div>
+  <div :class="['paypal', payment_method == '5' ? 'active' : '']" @click="payment_choose('5')">
+    <img class="tick" src="/assets/checkout/active@2x.png">
+    <div class="img">
+      <img src="/assets/checkout/icon-paypal@2x.png" style="width: 38px">
+    </div>
+    <div class="text"><%= Spree.t(:"checkout.paypal") %></div>
+  </div>
+</div>
+<div class="summary-table">
+  <%= render partial: 'summary', locals: { order: @order, form: form } %>
 </div>
 
-<div class="panel panel-default" id="payment" data-hook>
-  <div class="panel-heading">
-    <h3 class="panel-title"><%= Spree.t(:payment_information) %></h3>
-  </div>
-  <div class="panel-body" data-hook="checkout_payment_step">
-    <% if false %>
-    <% if @payment_sources.present? %>
-      <div class="card_options">
-        <%= radio_button_tag 'use_existing_card', 'yes', true %>
-        <label for="use_existing_card_yes">
-          <%= Spree.t(:use_existing_cc) %>
-        </label>
-        <%= radio_button_tag 'use_existing_card', 'no' %>
-        <label for="use_existing_card_no">
-          <%= Spree.t(:use_new_cc_or_payment_method) %>
-        </label>
-      </div>
-
-      <div id="existing_cards">
-        <p class="form-group" data-hook="existing_cards">
-          <table class="existing-credit-card-list">
-            <tbody>
-              <% @payment_sources.each do |card| %>
-                <tr id="<%= dom_id(card,'spree')%>" class="<%= cycle('even', 'odd') %>">
-                  <td><%= card.name %></td>
-                  <td><%= card.display_number %></td>
-                  <td><%= card.month %> / <%= card.year %></td>
-                  <td>
-                    <%= radio_button_tag "order[existing_card]", card.id, (card == @payment_sources.first), { class: "existing-cc-radio" }  %>
-                  </td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </p>
-      </div>
-    <% end %>
-    <% end %>
-
+<div class="" id="payment" data-hook>
     <%#= render partial: 'spree/checkout/payment/storecredit' %>
 
-    <ul class="list-group" id="payment-method-fields" data-hook>
+    <ul class="list-group" id="payment-method-fields" style="display: none" data-hook>
       <% @order.available_payment_methods.each do |method| %>
         <li class="list-group-item">
           <label>
@@ -73,7 +44,7 @@
   </div>
 </div>
 
-<div class="well text-right form-buttons" data-hook="buttons">
+<div class="well text-right form-buttons"  style="display: none" data-hook="buttons">
   <%= submit_tag Spree.t(:save_and_continue), class: 'btn btn-lg btn-success primary' %>
   <script>Spree.disableSaveOnClick();</script>
 </div>
@@ -81,6 +52,7 @@
   var vm = new Vue({
     el: '#checkout',
     data: {
+      payment_method: '4',
       coupon: "",
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
@@ -104,9 +76,15 @@
             "coupon_code": this.coupon
           }
         })
+      },
+      payment_choose: function(value) {
+        this.payment_method = value;
+        ($('#payment-methods li')).hide();
+        ($('#payment_method_' + value)).show();
       }
     },
     ready: function(){
+      document.getElementById("payment_method_4").getElementsByTagName('button')[0].className = "button"
       if (this.order_isGift) {
         $('#link-to-cart').remove()
       }

@@ -92,6 +92,7 @@ textarea
       border-top: .5px solid #dedede
       td
         padding: 20px 0
+        border: 0
         &:last-child
           text-align: right
         &:first-child
@@ -642,6 +643,54 @@ input.button
             border-top: .5px solid #dedede
     .shipping-methods
       list-style: none
+  .summary-table
+    table
+      border-top: solid .5px #dedede
+      tbody
+        border: 0
+  .payment
+    width: 400px
+    margin: 0 auto 40px
+    text-align: center
+    font-size: 0
+    >div
+      position: relative
+      display: inline-block
+      width: 120px
+      height: 120px
+      background: #f6f6f6
+      border: 1px solid #dedede
+      margin: 0 20px
+      vertical-align: top
+      &:hover
+        cursor: pointer
+      .tick
+        display: none
+        position: absolute
+        right: 0
+        top: 0
+        width: 40px
+      .img
+        height: 81px
+        &:before
+          display: inline-block
+          width: 0
+          height: 100%
+          content: ""
+          vertical-align: middle
+      .text
+        font-size: 16px
+        font-weight: 500
+        color: #474c5d
+    .active
+      background: #fff
+      border: 1px solid #00b9ee
+      &:hover
+        cursor: auto
+      .tick
+        display: block
+
+
 
 [v-cloak]
   display: none
