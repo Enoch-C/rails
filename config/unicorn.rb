@@ -1,6 +1,7 @@
 # config/unicorn.rb
 # Set environment to development unless something else is specified
 env = ENV["RAILS_ENV"] || "development"
+ENV["SECRET_KEY_BASE"] = "ce27ba703c751c115dca39241e6c7dbb4dafae47fed93c16faf8b997a53b95ead43300f103578b8fd863543dca6db710f84b8acbd579b954bfbcd3d0f9d9e225"
 
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete documentation.
 worker_processes 4
