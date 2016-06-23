@@ -46,7 +46,7 @@
         var span = a[1];
         var sku = this.order.line_items[rowId].variant.sku;
         sku = sku.slice(0, 3) + span + sku.slice(4);
-        this.updateLineItem(rowId, sku, qty);
+        this.updateLineItem(rowId, sku, qty, true);
         console.log(rowId + " from: " + this.selected[rowId] + " to: " + event.target.value)
       },
       updateAll: function() {
@@ -95,19 +95,19 @@
         if (qty > 1) {
           var sku = this.order.line_items[index].variant.sku;
           this.order.line_items[index].quantity -= 1;
-          this.updateLineItem(index, sku, this.order.line_items[index].quantity);
+          this.updateLineItem(index, sku, this.order.line_items[index].quantity, false);
         }
 
       },
       plus: function(index) {
         var sku = this.order.line_items[index].variant.sku;
         this.order.line_items[index].quantity += 1;
-        this.updateLineItem(index, sku, this.order.line_items[index].quantity);
+        this.updateLineItem(index, sku, this.order.line_items[index].quantity, false);
       },
-      updateLineItem: function(index, sku, qty) {
+      updateLineItem: function(index, sku, qty, skuChanged) {
         $.ajax({
           type: 'PUT',
-          url: '/api/v1/orders/' + this.order.number + '/line_items/' + this.order.line_items[index].id + '?line_item[sku]='+sku+'&line_item[quantity]='+qty+'&order_token=<%= @order.guest_token %>',
+          url: '/api/v1/orders/' + this.order.number + '/line_items/' + this.order.line_items[index].id + '?line_item[sku]='+sku+'&line_item[quantity]='+ qty + '&skuChanged='+ skuChanged +'&order_token=<%= @order.guest_token %>',
           success: function(data) {
             window.location.reload();
           },

@@ -1,20 +1,30 @@
 Spree::Api::V1::LineItemsController.class_eval do
 
   def update
-    @line_item = find_line_item
-    @order.contents.remove_line_item(@line_item)
-    variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
-    @line_item = order.contents.add(
-              variant,
-              params[:line_item][:quantity] || 1,
-              #line_item_params[:options] || {}
-              {}
-          )
-    if @line_item.errors.empty?
-      respond_with(@line_item, default_template: :show)
-    else
-      invalid_resource!(@line_item)
-    end 
+    if params[:skuChanged] == "true"
+      @line_item = find_line_item
+      @order.contents.remove_line_item(@line_item)
+      variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
+      @line_item = @order.contents.add(
+                variant,
+                params[:line_item][:quantity] || 1,
+                #line_item_params[:options] || {}
+                {}
+            )
+      if @line_item.errors.empty?
+        respond_with(@line_item, default_template: :show)
+      else
+        invalid_resource!(@line_item)
+      end 
+    else 
+      @line_item = find_line_item
+      if @order.contents.update_cart(line_items_attributes)
+        @line_item.reload
+        respond_with(@line_item, default_template: :show)
+      else
+        invalid_resource!(@line_item)
+      end
+    end
   end
 
   def create
