@@ -57,9 +57,14 @@
       </tbody>
     <% end %>
 
+    <tr>
+      <td><%= form.text_field :coupon_code, {:class => 'form-control', "v-model" => "coupon" }%></td>
+      <td><%= submit_tag Spree.t(:apply_coupon_code), {class: 'btn btn-succes', :type=>"button", "v-on:click"=>"apply_coupon"} %></td>
+    </tr>
+
     <tr data-hook="order_total">
       <td><strong><%= Spree.t(:total) %>:</strong></td>
-      <td><strong><span id='summary-order-total' class="lead text-primary"><%= order.display_total.to_html %></span></strong></td>
+      <td><strong><span id='summary-order-total' class=""><%= order.display_total.to_html %></span></strong></td>
     </tr>
 
     <% if order.using_store_credit? %>

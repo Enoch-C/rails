@@ -3,24 +3,25 @@ set timeout 1000000
 spawn ./dbinit
 while 1 {
   expect {
-    -re "Ynaqdh" {
-      send "a\n"
+    "\\\[Ynaqdh\\\] $" {
+      send "a\r"
     }
 
-    -re "Y/n" {
-      send "\n"
+    "\\\[Y/n\\\] $" {
+      send "\r"
     }
 
-    -re "Email" {
-      send "1@1.com\n"
+    "Email \\\[spree@example.com\\\]: $" {
+      send "1@1.com\r"
     }
 
-    -re "Password" {
-      send "111111\n"
+    "Password \\\[spree123\\\]: $" {
+      send "111111\r"
     }
 
     eof {
-      break
+      exit
     }
   }
+
 }

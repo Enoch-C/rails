@@ -40,8 +40,6 @@
     <div class="container" data-hook="checkout_form_wrapper">
       <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
         <%= form.hidden_field :state_lock_version %>
-        <%= @order.special_instructions %><br>
-        <%= @order.state %>
         <% if @order.special_instructions && @order.state == "address" %>
           <%= render "gift_address", form: form %>
         <% else %>

@@ -5,34 +5,6 @@ body
     #content
       padding: 0
 
-// #header
-//   background: #fff
-//   height: 80px
-//   .container
-//     position: relative
-//     .logo
-//       // background: url(/assets/logo@2x.png)
-//       display: block
-//       float: left
-//       margin-top: 16px
-//       img
-//         width: 140px
-//         height: 48px
-//     .nav
-//       position: absolute
-//       right: 0
-//       a
-//         display: inline-block
-//         height: 80px
-//         line-height: 80px
-//         margin: 0 20px
-//         font-size: 20px
-//         font-weight: 300
-//         color: #474c5d
-//         .avatar
-//           width: 30px
-//         .cart
-//           width: 25px
 input,
 textarea
   outline: none
@@ -92,6 +64,7 @@ textarea
       border-top: .5px solid #dedede
       td
         padding: 20px 0
+        border: 0
         &:last-child
           text-align: right
         &:first-child
@@ -200,7 +173,7 @@ input.button
           padding: 40px 0
 #cool-choice-home
   .banner
-    background: url(/assets/home/bj_home_top.jpg) center no-repeat
+    background: image-url("home/bj_home_top.jpg") center no-repeat
     background-size: cover
     width: 100%
     height: 500px
@@ -336,6 +309,7 @@ input.button
     color: #fff
     .container
       position: relative
+      margin-top: 15px
       // height: 120px
       @media (max-width: 768px)
         text-align: center
@@ -343,11 +317,11 @@ input.button
         position: absolute
         bottom: 0
         left: 0
-        width: 98px
+        width: 87px
         @media (max-width: 768px)
           display: none
       .title
-        margin: 15px 0 10px
+        margin: 0 0 10px
         font-size: 16px
         font-weight: 300
         opacity: 0.5
@@ -394,15 +368,32 @@ input.button
         .usd
           font-size: 20px
           font-weight: 300
-      .button
+      .cart
+        display: inline-block
         width: 150px
-        height: 50px
-        line-height: 50px
+      .trail
+        display: inline-block
+        width: 172px
+        margin: 17px 0 0 30px
+        vertical-align: top
+        font-size: 16px
+        font-weight: 300
+        line-height: 1.8
+        &:hover
+          cursor: pointer
+        .line
+          display: inline-block
+          border-bottom: solid 1px #00b9ee
+      .button
+        width: 100%
+        height: 40px
+        line-height: 40px
         border-radius: 25px
+        margin: 0 0 10px
         font-size: 20px
 #gift
   .banner
-    background: url(/assets/gift/bj_gift_top.jpg) center no-repeat
+    background: image-url("gift/bj_gift_top.jpg") center no-repeat
     background-size: cover
     width: 100%
     height: 500px
@@ -477,7 +468,7 @@ input.button
     width: 700px
     height: 400px
     margin: 40px auto
-    background: url(/assets/gift/bj_gift_card.jpg)
+    background: image-url("gift/bj_gift_card.jpg")
     .product
       position: absolute
       left: 120px
@@ -642,6 +633,54 @@ input.button
             border-top: .5px solid #dedede
     .shipping-methods
       list-style: none
+  .summary-table
+    table
+      border-top: solid .5px #dedede
+      tbody
+        border: 0
+  .payment
+    width: 400px
+    margin: 0 auto 40px
+    text-align: center
+    font-size: 0
+    >div
+      position: relative
+      display: inline-block
+      width: 120px
+      height: 120px
+      background: #f6f6f6
+      border: 1px solid #dedede
+      margin: 0 20px
+      vertical-align: top
+      &:hover
+        cursor: pointer
+      .tick
+        display: none
+        position: absolute
+        right: 0
+        top: 0
+        width: 40px
+      .img
+        height: 81px
+        &:before
+          display: inline-block
+          width: 0
+          height: 100%
+          content: ""
+          vertical-align: middle
+      .text
+        font-size: 16px
+        font-weight: 500
+        color: #474c5d
+    .active
+      background: #fff
+      border: 1px solid #00b9ee
+      &:hover
+        cursor: auto
+      .tick
+        display: block
+
+
 
 [v-cloak]
   display: none

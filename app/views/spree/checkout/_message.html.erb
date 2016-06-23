@@ -1,9 +1,9 @@
 <div id="gift-message">
   <div class="container">
     <div class="card">
-      <img src="/assets/checkout/product@2x.png" class="product">
+      <%= image_tag("checkout/product@2x.png", class: "product") %>
       <div class="word">
-        <img src="/assets/checkout/line.png" class="line">
+        <%= image_tag("checkout/line.png", class: "line") %>
         <div class="this"><%= Spree.t(:'message.this') %></div>
         <input type="text" placeholder="recipient_name" class="recipient_name" v-model="recipient_name"></input>
         <textarea class="message" v-model="message"></textarea>
@@ -30,7 +30,7 @@
         <tbody>
           <tr>
             <td>
-              <img src="/assets/checkout/img-product.png">
+              <%= image_tag("checkout/img-product.png") %>
               <%= Spree.t(:'message.coolchoice') %>
             </td>
             <td><%= Spree.t(:'message.price') %></td>
