@@ -111,9 +111,18 @@
         <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
         <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
       </div>
-      <a v-on:click='action_addToCart' style="border: 1px solid #fff; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
-      <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
-      <a v-on:click='action_trial' style="background: #00b9ee" class="button"><%= Spree.t(:"homepage.bar_checkout") %>+Trial</a>
+      <div class="cart">
+        <a v-on:click='action_addToCart' style="border: 1px solid #fff; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
+        <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
+      </div>
+      <div @click="action_trial" class="trail">
+        <div class="line">
+          <%= Spree.t(:"homepage.bar_pay") %>
+        </div>
+        <div class="line">
+          <%= Spree.t(:"homepage.bar_for") %> <span style="font-weight: 500"><%= Spree.t(:"homepage.bar_1_day") %></span> <%= Spree.t(:"homepage.bar_US") %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -126,7 +135,7 @@
       type: 'month',
       sum: 39.99,
       result: [],
-      processing: false, 
+      processing: false,
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>"
     },

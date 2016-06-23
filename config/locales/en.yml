@@ -123,6 +123,10 @@ en:
       bar_unit: USD
       bar_cart: Add to Cart
       bar_checkout: Checkout
+      bar_pay: Pay $3.99 shipping
+      bar_for: for
+      bar_1_day: 1 day trail
+      bar_US:  (US only)
     header:
       gift: GIFT
       ingredient: INGREDIENT
