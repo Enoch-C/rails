@@ -11,7 +11,7 @@
         </span>
         <%= button_tag :send_a_gift, "v-on:click" => "sendAGift" do %>
           <%= Spree.t('gift.send_a_gift') %>
-          <img src="/assets/gift/shape@2x.png">
+          <%= image_tag("gift/shape@2x.png") %>
         <% end %>
       </div>
     </div>
@@ -19,17 +19,17 @@
   <div class="section-2">
     <div class="container">
       <div class="para col-xs-4">
-        <div class="img"><img src="/assets/gift/icon-order.png"></div>
+        <div class="img"><%= image_tag("gift/icon-order.png") %></div>
         <div class="title"><%= Spree.t(:'gift.order') %></div>
         <p><%= Spree.t(:'homepage.cool_simply_line') %><br><%= Spree.t(:'homepage.cool_simply_line_2') %></p>
       </div>
       <div class="para col-xs-4">
-        <div class="img"><img src="/assets/gift/icon-email.png"></div>
+        <div class="img"><%= image_tag("gift/icon-email.png") %></div>
         <div class="title"><%= Spree.t(:'gift.email') %></div>
         <p><%= Spree.t(:'homepage.cool_care_line') %><br><%= Spree.t(:'homepage.cool_care_line_2') %></p>
       </div>
       <div class="para col-xs-4">
-        <div class="img"><img src="/assets/gift/icon-gift.png"></div>
+        <div class="img"><%= image_tag("gift/icon-gift.png") %></div>
         <div class="title"><%= Spree.t(:'gift.gift') %></div>
         <p><%= Spree.t(:'homepage.cool_ingredients_line') %><br><%= Spree.t(:'homepage.cool_ingredients_line_2') %></p>
       </div>
