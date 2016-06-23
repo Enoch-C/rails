@@ -51,9 +51,7 @@
         <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
         <% function_list.each do |function| %>
           <div class="choose-box <%= function %>">
-            <label for="<%= function %>" class="choose-label">
-              <%= image_tag "home/icon-#{function}@2x.png", class: "img" %>
-              <!-- # <img :src="'/assets/home/icon-'.concat('<%= function %>', '@2x.png')" class="img"/> -->
+            <label for="<%= function %>" class="choose-label"><img :src="'/assets/home/icon-'.concat('<%= function %>', '@2x.png')" class="img"/>
               <div class="text">
                 <%= Spree.t('homepage.content_function_' + function) %>
               </div>
