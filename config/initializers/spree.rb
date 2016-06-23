@@ -12,6 +12,7 @@
 Spree.config do |config|
   config.admin_interface_logo = 'logo/logo.png'
   config.logo = 'logo/logo.png'
+  config.allow_guest_checkout = false
 end
 
 Spree.user_class = "Spree::User"
