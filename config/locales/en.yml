@@ -21,6 +21,7 @@
 
 en:
   spree:
+    ok: OK
     message: Message
     site_name: Cool Choice
     payment_pop_desc: Personalized Nutritional Supplements
