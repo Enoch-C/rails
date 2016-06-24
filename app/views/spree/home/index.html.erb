@@ -76,7 +76,7 @@
     <div class="container"><%= image_tag("home/product@2x.png", class: "bar") %>
       <div class="func col-sm-3">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
-        <div v-for="n in 3" :class="{'hover': result[n]}" :style="result[n] ? 'background: url(/assets/home/icon-'.concat(result[n],'@2x.png) center/100% no-repeat') : ''" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
+        <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
       </div>
       <div class="qty col-sm-2">
         <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>

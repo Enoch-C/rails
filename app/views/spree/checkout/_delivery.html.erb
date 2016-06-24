@@ -4,7 +4,7 @@
       <%= form.fields_for :shipments do |ship_form| %>
         <div class="shipment">
           <div class="stock-location title" data-hook="stock-location">
-            <img src="/assets/checkout/page-1@2x.png" >
+            <%= image_tag("checkout/page-1@2x.png") %>
             <span class="package"><%= Spree.t(:package_from) %></span>
             <%= ship_form.object.stock_location.name %>
           </div>
