@@ -10,7 +10,7 @@ Spree::OrderMailer.class_eval do
     @order = order.respond_to?(:id) ? order : Spree::Order.find(order)
     si = @order.special_instructions
     subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
-    subject += "Dear #{si['recipient_name']}, #{Spree.t(order_mailer.confirm_gift_email.subject)} #{si['my_name']}!"
+    subject += "Dear #{si['recipient_name']}, #{Spree.t('order_mailer.confirm_gift_email.subject')} #{si['my_name']}!"
     mail(to: si['recipient_email'], from: from_address, subject: subject)
   end
 end
