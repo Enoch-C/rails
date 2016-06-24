@@ -10,7 +10,7 @@ module CoolChoiceStore
   class Application < Rails::Application
 
     config.function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Care', 'Joint Care', 'Liver Care', 'Lung Care', "Men's Vitality", 'Sleep Support', 'Stress Relief']
-    config.product_list = ["Cool Choice Trial Pack (US only)", "Cool Choice 7-Pack (US only)", "Cool Choice 30-Pack (US only)"]
+    config.product_list = ["Cool Choice Trial Pack (US only)", "Cool Choice 7-Pack (US only)", "Cool Choice 30-Pack"]
     config.carbohydrate_divider = 300*100
     config.fiber_divider = 25*100
 
