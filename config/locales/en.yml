@@ -159,3 +159,49 @@ en:
     checkout:
       credit_card: Credit Card
       paypal: PayPal
+    ingredient:
+      title: 'COOL CHOICE'
+      sub-title: 'Personalized Nutritional Supplements'
+      function_Anti-Aging: Anti-Aging
+      function_Beauty: Beauty Care
+      function_Brain_Care: Brain Care
+      function_Digestive_Care: Digestive Care
+      function_Energy: Energy
+      function_Eye_Care: Eye Care
+      function_Heart_Care: Heart Care
+      function_Immune_Support: Immune Care
+      function_Joint_Care: Joint Care
+      function_Liver_Care: Liver Care
+      function_Lung_Care: Lung Care
+      function_Mens_Vitality: Men's Vitality
+      function_Sleep_Support: Sleep Support
+      function_Stress_Management: Stress Management
+      ingredient_Anti-Aging: SOD
+      ingredient_Beauty: Bioactive Collagen Peptides
+      ingredient_Brain_Care: Citicoline
+      ingredient_Digestive_Care: GanedenBC30 PROBIOTIC
+      ingredient_Energy: Green Tea Polyphenols and Egcg
+      ingredient_Eye_Care: Lutein & Zeaxanthin
+      ingredient_Heart_Care: Co-Enzyme Q10
+      ingredient_Immune_Support: Beta-Glucan
+      ingredient_Joint_Care: Glucosamine
+      ingredient_Liver_Care: Milk Thistle and Artichoke Extracts
+      ingredient_Lung_Care: Vital respiration D-16
+      ingredient_Mens_Vitality: Eurycoma
+      ingredient_Sleep_Support: Melatonin
+      ingredient_Stress_Management: L-Theanine
+      help_Anti-Aging: Helps protect cells from damage
+      help_Beauty: Helps promote youthful skin
+      help_Brain_Care: Helps promote memory health
+      help_Digestive_Care: Helps support gut health
+      help_Energy: Provides healthy boost
+      help_Eye_Care: Helps protect & promote healthy vision
+      help_Heart_Care: Helps support cardiovascular health
+      help_Immune_Support: Supports & enhances the immune sysytem
+      help_Joint_Care: Helps build & repair cartilage
+      help_Liver_Care: Helps remove toxins
+      help_Lung_Care: Helps support efficient respiration
+      help_Mens_Vitality: Helps improve performance
+      help_Sleep_Support: Helps support restful sleep
+      help_Stress_Management: Helps support efficient respiration
+      more: MORE

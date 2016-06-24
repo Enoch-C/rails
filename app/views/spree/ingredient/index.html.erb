@@ -1,0 +1,62 @@
+<div id="ingredient">
+  <div class="container clearfix">
+    <div class="title"><%= Spree.t(:"ingredient.title") %></div>
+    <div class="sub-title">
+      <div class="line"></div><%= Spree.t(:"ingredient.sub-title") %>
+      <div class="line"></div>
+    </div>
+    <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
+    <% function_list.each do |function| %>
+      <div class="col-sm-4 function <%= function %>">
+        <div class="inner">
+          <div class="name">
+            <%= Spree.t('ingredient.function_' + function) %> - <span class="ingredient"><%= Spree.t('ingredient.ingredient_' + function) %></span>
+          </div>
+          <div class="detail"><%= Spree.t('ingredient.help_' + function) %></div>
+          <div class="more">
+            <%= Spree.t(:"ingredient.more") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
+          </div>
+          <img src="<%= asset_path 'ingredient/icon_'.concat(function).concat('.png') %>" class="icon">
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="more-overlay">
+    <% function_list.each do |function| %>
+      <div id="<%= function %>">
+        <a class="close" @click="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
+        <img src="<%= asset_path 'home/icon-'.concat(function).concat('@2x.png') %>" class="icon">
+        <div class="title"><%= Spree.t(:"ingredient.more") %></div>
+        <div class="sub-title"><%= Spree.t('ingredient.help_' + function) %></div>
+        <p>The human body is made up of millions of cells working together in order to perform all our daily functions. When we are young, our body’s cells are in a period of growth and development and performing at optimal levels. As we age, the cells in our body breakdown which slows bodily function and performance. Superoxide Dismutase (SOD) is a powerful anti-aging & anti-oxidant supplement which helps protect and repair cells from damage and rapid aging.
+    Each serving contains 10 milligrams (14,000 IU) of natural SOD extracted from melons.</p>
+        <ul>
+          <li><%= Spree.t(:"ingredient.more") %></li>
+          <li><%= Spree.t(:"ingredient.more") %></li>
+          <li><%= Spree.t(:"ingredient.more") %></li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+<script>
+  $(".inner").click(function() {
+    $(this).addClass('active')
+    var id = $(this).parent().attr("class").split(' ')[2]
+    $("#" + id).show()
+    $(".more-overlay").show()
+  })
+  var vm = new Vue({
+    el: '#ingredient',
+    data: {
+    },
+    methods: {
+      close: function () {
+        $(".more-overlay").hide()
+        $(".more-overlay>div").hide()
+        $(".function>.inner").removeClass('active')
+      }
+    }
+  })
+</script>
