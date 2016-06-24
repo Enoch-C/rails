@@ -1,0 +1,122 @@
+
+<% @body_id = 'home' %>
+<div id="cool-choice-home"  v-cloak>
+  <div class="section-1" style="padding: 0 0 230px 0">
+    <div class="container">
+      <div class="title"><%= Spree.t(:"homepage.content_title_magic") %></div>
+      <div class="sub-title">
+        <div class="line"></div><%= Spree.t(:"homepage.content_title_choose") %>
+        <div class="line"></div>
+      </div>
+      <div class="content clearfix">
+        <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
+        <% function_list.each do |function| %>
+          <div class="choose-box <%= function %>">
+            <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), class: "img") %>
+              <div class="text">
+                <%= Spree.t('homepage.content_function_' + function) %>
+              </div>
+            </label>
+            <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox"/>
+          </div>
+        <% end %>
+        <div class="choose-box wish">
+          <label for="wish_box" class="choose-label"><%= image_tag("home/icon-wish@2x.png", class: "img") %>
+            <div class="text"><%= Spree.t(:"homepage.content_function_wish") %></div>
+          </label>
+          <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-3" style="height: 120px">
+    <div class="container" style="height: 120px;margin:0;padding:0;"><%= image_tag("home/product@2x.png", class: "bar") %>
+      <div class="func col-sm-3" style="margin-top:15px">
+        <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
+        <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
+      </div>
+      <div class="cart" style="height: 100%; float: right;vertical-align: middle;margin-right: 64px">
+        <span style="height: 100%; vertical-align: middle; display: inline-block"></span><a v-on:click='action_checkout' class="button" style="margin: 0; padding: 0; width: 120px"><%= Spree.t(:ok) %></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var vm = new Vue({
+    el: '#cool-choice-home',
+    data: {
+      num: 1,
+      type: 'month',
+      sum: 39.99,
+      result: [],
+      processing: false,
+      order_number: "<%= @order.number %>",
+      order_token: "<%= @order.guest_token %>",
+      qty: <%= @order.line_items.first.quantity rescue 1 %>
+    },
+    computed: {
+      types: function() {
+        return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
+      },
+      sum: function() {
+        var price = {
+          day: 3.99,
+          week: 13.99,
+          month: 39.99
+        }
+        return (price[this.type] * this.num).toFixed(2)
+      },
+      sku: function() {
+        var hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"]
+
+        var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
+        return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
+      }
+    },
+    watch: {
+      'result': function(val) {
+        this.check_3_box(val)
+      }
+    },
+    methods: {
+      check_3_box: function() {
+        var box = document.getElementsByClassName('checkbox')
+        if(this.result.length < 3) {
+          for (var i = 0; i < box.length; i++) {
+            box[i].disabled=false
+          }
+        }
+        else {
+          for (var i = 0; i < box.length; i++) {
+            if (!box[i].checked) {
+              box[i].disabled=true
+            }
+          }
+        }
+      },
+      validate: function(event) {
+        if (this.processing) {
+          return false
+        }
+        return this.sku.slice(6) != '000000'
+      },
+      action_checkout: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var that = this
+          $.ajax({
+            type: 'POST',
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&gift=true&order_token=' + this.order_token,
+            success: function(data) {
+              window.location.href = '/gift/my_address?token=' + order_token
+            },
+            complete: function() {
+              that.processing = false
+            }
+          })
+        }
+      },
+    }
+  })
+</script>

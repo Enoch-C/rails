@@ -15,6 +15,16 @@ module Spree
           error = e.record.errors.full_messages.join(", ")
         end
     end
-  end
     
+    def my_gift
+        order_token = params[:token]
+      @order = Spree::Order.find_by_guest_token(order_token)
+    end
+
+    def my_gift_shipping_address
+      order_token = params[:token]
+      @order = Spree::Order.find_by_guest_token(order_token)
+    end
+    
+  end
 end

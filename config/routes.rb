@@ -64,6 +64,8 @@ end
 
 Spree::Core::Engine.add_routes do
   get '/gift', to: 'gift#index'
+  get '/gift/my_gift', to: 'gift#my_gift'
+  get '/gift/my_address', to: 'gift#my_gift_shipping_address'
 
   namespace :admin, path: Spree.admin_path do
     resources :promoters do

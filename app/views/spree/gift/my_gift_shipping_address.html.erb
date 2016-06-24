@@ -1,0 +1,129 @@
+      <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
+
+<div class="text form-content clearfix">
+  <div class="title"><%= Spree.t(:shipping_address) %></div>
+  <div class="col-sm-6">
+    <label><%= Spree.t(:first_name) %></label>
+    <input type="text" v-model="first_name"/>
+    <label><%= Spree.t(:last_name) %></label>
+    <input type="text" v-model="last_name"/>
+    <label><%= Spree.t(:street_address) %></label>
+    <input type="text" v-model="address"/>
+    <label><%= Spree.t(:street_address_2) %></label>
+    <input type="text" v-model="address_opt"/>
+    <label><%= Spree.t(:phone) %></label>
+    <input type="text" v-model="phone"/>
+  </div>
+  <div class="col-sm-6" id="bcountry">
+    <label><%= Spree.t(:city) %></label>
+    <input type="text" placeholder="city" v-model="city"/>
+    <label><%= Spree.t(:country) %></label>
+    <%= form.fields_for :ship_address do |ship_form| %>
+    <span id=<%="bcountry-selection" %>>
+    <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
+    </span>
+    <% if Spree::Config[:address_requires_state] %>
+      <p class="form-group" id=<%="bstate" %>>
+        <%= ship_form.label :state do %>
+          <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
+        <% end %>
+
+        <%== state_elements = [
+           ship_form.collection_select(:state_id, @order.ship_address.country.states,
+                                                       :id, :name, {},
+                              {:"v-model" => "state_code"},
+                              )
+           ].join.gsub('"', "'").gsub("\n", "")
+        %>
+      </p>
+    <% end %>
+    <% end %>
+    <label><%= Spree.t(:zip) %></label>
+    <input type="text" placeholder="zip" v-model="zip"/><br>
+    <label for="save_user_address">
+      <input type="checkbox" placeholder="save_address" v-model="save_address"/>
+      <%= Spree.t(:save_my_address) %>
+    </label>
+  </div>
+</div>
+<div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
+<% end %>
+
+<script>
+  var vm = new Vue({
+    el: '#content',
+    data: {
+      order_number: "<%= @order.number %>",
+      order_token: "<%= @order.guest_token %>",
+
+      first_name: "ff",
+      last_name: "ff",
+      address: "ff",
+      address_opt: "",
+      phone: "333",
+      city: "dd",
+      country_code: 0,
+      state_code: 0,
+      zip: "94102",
+      save_address: true,
+
+      special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
+
+    },
+    computed: {
+      ship_address: function() {
+        var h = {}
+        h["firstname"] = this.first_name
+        h["lastname"] = this.last_name
+        h["address1"] = this.address
+        h["address2"] = this.address_opt
+        h["phone"] = this.phone
+        h["city"] = this.city
+        h["country_id"] = this.country_code
+        h["state_id"] = this.state_code
+        h["zipcode"] = this.zip
+        return h
+      },
+      json: function() {
+        /*
+           To advance to the next state, delivery, the order will first need both a shipping and shiping address.
+           Once valid address information has been submitted, the shipments and shipping rates available for this order will be returned inside a shipments key inside the order
+        */
+        var h = {
+            "order": {
+              "ship_address_attributes": this.ship_address,
+            }
+          }
+        return h
+      }
+    },
+    methods: {
+      proceed2: function() {
+        $.ajax({
+          type: "PUT",
+          url: '/api/v1/checkouts/' + this.order_number + '/next.json?order_token=' + this.order_token,
+          success: function(data) {
+            console.log(data)
+            window.location.href = '/checkout/'
+          },
+          fail: function(data) {
+            console.log(4)
+          }
+        })
+      },
+      proceed: function(){
+        $.ajax({
+          type: "PUT",
+          url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
+          success: function(data) {
+            
+          },
+          data: this.json
+        })
+      }
+    },
+    ready: function(){
+      $('#link-to-cart').remove()
+    }
+  })
+</script>
