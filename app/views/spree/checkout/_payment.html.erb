@@ -1,18 +1,32 @@
+<% paypal_value = 0 %>
+<% stripe_value = 0 %>
+<% @order.available_payment_methods.each do |method| %>
+  <% if method.method_type == 'paypal' %>
+  <% paypal_value = method.id %>
+  <% elsif method.method_type == 'stripe' %>
+  <% stripe_value = method.id %>
+  <% end %>
+<% end %>
+
 <div class="payment">
-  <div :class="['credit-card', payment_method == '4' ? 'active' : '']" @click="payment_choose('4')">
+  <% if stripe_value != 0 %>
+  <div :class="['credit-card', payment_method == <%= stripe_value %> ? 'active' : '']" @click="payment_choose(<%= stripe_value %>)">
     <%= image_tag("checkout/active@2x.png", class: "tick") %>
     <div class="img">
       <%= image_tag("checkout/icon-creditcard@2x.png", width: "53") %>
     </div>
     <div class="text"><%= Spree.t(:"checkout.credit_card") %></div>
   </div>
-  <div :class="['paypal', payment_method == '5' ? 'active' : '']" @click="payment_choose('5')">
+  <% end %>
+  <% if paypal_value != 0 %>
+  <div :class="['paypal', payment_method == <%= paypal_value %> ? 'active' : '']" @click="payment_choose(<%= paypal_value %>)">
     <%= image_tag("checkout/active@2x.png", class: "tick") %>
     <div class="img">
       <%= image_tag("checkout/icon-paypal@2x.png", width: "38") %>
     </div>
     <div class="text"><%= Spree.t(:"checkout.paypal") %></div>
   </div>
+  <% end %>
 </div>
 <div class="summary-table">
   <%= render partial: 'summary', locals: { order: @order, form: form } %>
@@ -21,7 +35,7 @@
 <div class="" id="payment" data-hook>
     <%#= render partial: 'spree/checkout/payment/storecredit' %>
 
-    <ul class="list-group" id="payment-method-fields" style="display: none" data-hook>
+    <ul class="list-group" id="payment-method-fields" :style="<%= paypal_value %> && <%= stripe_value %> ? 'display: none' : ''" data-hook>
       <% @order.available_payment_methods.each do |method| %>
         <li class="list-group-item">
           <label>
@@ -41,7 +55,6 @@
         </li>
       <% end %>
     </ul>
-  </div>
 </div>
 
 <div class="well text-right form-buttons"  style="display: none" data-hook="buttons">
@@ -52,7 +65,7 @@
   var vm = new Vue({
     el: '#checkout',
     data: {
-      payment_method: '4',
+      payment_method: <%= stripe_value %>,
       coupon: "",
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
@@ -84,7 +97,9 @@
       }
     },
     ready: function(){
-      document.getElementById("payment_method_4").getElementsByTagName('button')[0].className = "button"
+      if (<%= stripe_value %>) {
+        document.getElementById("payment_method_<%= stripe_value %>").getElementsByTagName('button')[0].className = "button"
+      }
       if (this.order_isGift) {
         $('#link-to-cart').remove()
       }
