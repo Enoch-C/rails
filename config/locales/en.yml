@@ -21,6 +21,7 @@
 
 en:
   spree:
+    thank_you_for_your_order: Thank you for your purchase. Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is freshly made, especially for you!
     message: Message
     site_name: Cool Choice
     payment_pop_desc: Personalized Nutritional Supplements
@@ -80,8 +81,8 @@ en:
       title_introduce: Introducing the Personalized Supplements
       title_free: FREE SHIPPING in United State
       title_worldwide: WORLDWIDE shipping
-      content_title_magic: 'The Magic Starts Here:'
-      content_title_choose: Choose up to 3 of the followings
+      content_title_magic: Naturally made... just for you
+      content_title_choose: Simply choose up to 3 fresh supplements
       content_function_Anti-Aging: Aging
       content_function_Beauty: Beauty
       content_function_Brain_Care: Brain
@@ -97,17 +98,16 @@ en:
       content_function_Sleep_Support: Sleep
       content_function_Stress_Management: Stress
       content_function_wish: My Wish
-      cool_simply: Simply Cool
-      cool_simply_line: One easy packet
-      cool_simply_line_2: 3-in-1 at once
+      cool_simply: Cool Choice
+      cool_simply_line: 3 supplements
+      cool_simply_line_2: 1 easy package
       cool_care: Cool Care
-      cool_care_line: Do something special
-      cool_care_line_2: for yourself & others
+      cool_care_line: Give a gift to
+      cool_care_line_2: someone special
       cool_ingredients: Cool Ingredients
-      cool_ingredients_line: No artificial ingredients
+      cool_ingredients_line: 100% All-Natural
       cool_ingredients_line_2: Freshly made-to-order
-      cool_ingredients_line_3: No unnecessary ingredients
-      bar_choose: Choose up to 3 functions
+      bar_choose: Choose up to 3 supplements
       bar_qty: QTY
       bar_day: day
       bar_week: week
@@ -133,11 +133,11 @@ en:
       about: ABOUT
     gift:
       title_cool: Cool Care
-      title_do: Do something special for someone you care
+      title_do: Show you care by giving a gift...
       send_a_gift: SEND A GIFT
-      order: Place Your Order Online
-      email: He/She Select Functions by E-mail
-      gift: Receive the Gift and Your Care
+      order: Purchase a gift for a loved one
+      email: They select their supplement choices by Email
+      gift: Show you care
     message:
       this: This is for
       add: Add your message here (up to 100 characters)
