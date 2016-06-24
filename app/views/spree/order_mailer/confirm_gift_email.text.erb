@@ -1,0 +1,5 @@
+Dear <%= @order.special_instructions['recipient_name'] %>,
+
+<%= Spree.t(order_mailer.confirm_gift_email.subject) + @order.special_instructions['my_name']) %>
+
+https://coolchoice.com/gift/my_gift?token=<%= @order.guest_token%>

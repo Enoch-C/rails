@@ -13,6 +13,10 @@ Spree::Order.class_eval do
   end
 
   def deliver_order_confirmation_email
+    if special_instructions
+      Spree::OrderMailer.confirm_gift_email(id).deliver_later
+    end
+
     Spree::OrderMailer.confirm_email(id).deliver_later
     update_column(:confirmation_delivered, true)
 

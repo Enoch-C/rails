@@ -71,6 +71,8 @@ en:
         subject: You have received Promotion Credit
         store_credit_total: Total Store Credit
         summary: Your Account Summary
+      confirm_gift_email:
+        subject: you received a gift from
     gift: Gift
     GIFT: GIFT
     INGREDIENT: INGREDIENT
