@@ -8,6 +8,8 @@ body
 input,
 textarea
   outline: none
+textarea
+  resize: none
 .border-table
   border: 1px solid #dedede
   padding: 0 20px
@@ -125,6 +127,53 @@ textarea
     color: #fff
 input.button
   line-height: 0
+.wish-lay
+  display: none
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.3)
+  text-align: center
+  &:before
+    display: inline-block
+    width: 0
+    height: 100%
+    content: ""
+    vertical-align: middle
+  .wish-list
+    position: relative
+    display: inline-block
+    width: 800px
+    height: 500px
+    background: image-url("home/wish_bj.jpg") center/100% no-repeat
+    color: #474c5d
+    vertical-align: middle
+    .title
+      margin-top: 85px
+      font-size: 22px
+      font-weight: 500
+    .sub-title
+      font-size: 16px
+    textarea
+      display: block
+      width: 500px
+      height: 220px
+      margin: 30px auto 0
+      border-radius: 3px
+      border: solid 1px #dedede
+    .close
+      display: inline-block
+      position: absolute
+      right: 0
+      top: 0
+      padding: 40px
+      img
+        width: 24px
+    .button
+      width: 130px
+      margin-right: -365px
 .more-overlay
   display: none
   position: fixed
@@ -135,7 +184,13 @@ input.button
   text-align: center
   background: rgba(0, 0, 0, 0.3)
   overflow-y: scroll
-  >div
+  >.close
+    position: absolute
+    left: 0
+    top: 0
+    width: 45%
+    min-height: 100%
+  .view
     display: none
     position: absolute
     padding: 6% 8%
@@ -332,15 +387,27 @@ input.button
       .choose-box
         float: left
         position: relative
-        width: 150px
+        width: 180px
         height: 174px
-        margin: 38px 34px
-        .choose-label
+        margin: 38px 20px
+        .information
           position: absolute
           left: 0
-          width: 130px
+          top: 0
+          width: 30px
+          height: 40px
+          font-size: 30px
+          font-family: ACaslonPro
+          font-style: italic
+          font-weight: 500
+          &:hover
+            cursor: pointer
+        .choose-label
+          position: absolute
+          left: 20px
+          width: 140px
           .img
-            width: 92%
+            width: 85%
           .text
             font-size: 20px
             margin-top: 20px
@@ -381,6 +448,9 @@ input.button
       .wish
         color: #e6803b
   .section-2
+    text-align: center
+    // height: 361px
+    margin: 40px auto 20px
     .more
       left: 20px
       bottom: 20px
@@ -389,9 +459,6 @@ input.button
       img
         width: 13px
         margin-left: 7px
-    text-align: center
-    // height: 361px
-    margin: 40px auto 140px
     .para
       .img
         height: 178px
@@ -413,6 +480,14 @@ input.button
         font-weight: 300
         color: #a6a4a4
   .section-3
+    background: #f7f8fa
+    text-align: center
+    padding: 60px 0 120px
+    margin-bottom: 60px
+    img
+      width: 600px
+      height: 81px
+  .section-4
     position: fixed
     bottom: 0
     width: 100%
@@ -660,8 +735,6 @@ input.button
         position: absolute
         border: 0
         background: transparent
-      textarea
-        resize: none
   .detail
     border: 1px solid #dedede
     padding: 0 20px
