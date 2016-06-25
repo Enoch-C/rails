@@ -138,7 +138,7 @@
     <%= image_tag("home/group-20@2x.png") %>
   </div>
   <div class="section-4">
-    <div class="container"><%= image_tag("home/product@2x.png", class: "bar") %>
+    <div class="container"><% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
       <div class="func col-sm-3">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
         <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>

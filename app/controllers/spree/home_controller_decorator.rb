@@ -6,7 +6,7 @@ module Spree
       unless params[:wish] == ""
         Spree::OrderMailer.confirm_wish_email(params[:wish]).deliver_later
       end
-      render :index
+      redirect_to  spree.root_path
     end
 
   end
