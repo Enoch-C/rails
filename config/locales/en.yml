@@ -29,7 +29,8 @@ en:
     message: Message
     site_name: Cool Choice
     payment_pop_desc: Personalized Nutritional Supplements
-    apply_coupon_code: Apply Coupon Code
+    apply: Apply
+    coupon_code: Coupon Code
     binding_users: Binding Users
     items_cannot_be_shipped: Sorry, there is at least one product in your cart which can ONLY be shipped to USA address.
     shipping_flat_rate_per_two_items: Flat rate per two package items

@@ -58,8 +58,8 @@
     <% end %>
 
     <tr>
-      <td><%= form.text_field :coupon_code, {:class => 'form-control', "v-model" => "coupon" }%></td>
-      <td><%= submit_tag Spree.t(:apply_coupon_code), {class: 'btn btn-succes', :type=>"button", "v-on:click"=>"apply_coupon"} %></td>
+      <td><%= form.text_field :coupon_code, {:class => 'form-control', "v-model" => "coupon", :placeholder => Spree.t('coupon_code') }%></td>
+      <td><%= submit_tag Spree.t(:apply), {class: 'btn btn-succes', :type=>"button", "v-on:click"=>"apply_coupon"} %></td>
     </tr>
 
     <tr data-hook="order_total">
