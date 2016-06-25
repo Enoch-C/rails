@@ -148,9 +148,9 @@ en:
       message: Add your medssage here (up to 100 characters)
       yourname: Your Name
     message:
-      this: This is for
+      this: Dear
       add: Add your message here (up to 100 characters)
-      from: From
+      from: Regards,
       detail: Gift details
       total: Total
       coolchoice: CoolChoice
