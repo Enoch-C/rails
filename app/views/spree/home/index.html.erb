@@ -132,11 +132,13 @@
   <!-- popup wish list -->
   <div class="wish-lay">
     <div class="wish-list">
-      <div class="title"><%= Spree.t(:"homepage.your_wish") %></div>
-      <div class="sub-title"><%= Spree.t(:"homepage.we_are") %></div>
-      <textarea></textarea>
-      <a class="close" @click="close_wish"><%= image_tag("ingredient/button-off@2x.png") %></a>
-      <a class="button"><%= Spree.t(:"homepage.submit") %></a>
+      <form id="wish-list" action="/index/wish" accept-charset="UTF-8" method="POST" novalidate="novalidate">
+        <div class="title"><%= Spree.t(:"homepage.your_wish") %></div>
+        <div class="sub-title"><%= Spree.t(:"homepage.we_are") %></div>
+        <textarea name="wish"></textarea>
+        <a class="close" @click="close_wish"><%= image_tag("ingredient/button-off@2x.png") %></a>
+        <button type="submit" class="button"><%= Spree.t(:"homepage.submit") %></button>
+      </form>
     </div>
   </div>
 </div>
