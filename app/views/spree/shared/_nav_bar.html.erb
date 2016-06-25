@@ -1,12 +1,12 @@
 <nav class="navbar col-md-8 col-sm-9" id="top-nav-bar" style="float: right; height: 100%; margin: 0">
 <span style="height: 100%; vertical-align: middle;display: inline-block;"></span><ul class="nav navbar-nav" style="float: none;display: inline-block; vertical-align: middle;" data-hook>
-    <li id="home-link" data-hook><%= link_to Spree.t(:GIFT), spree.gift_path %></li>
+<li id="home-link" data-hook><%= link_to Spree.t(:GIFT), spree.gift_path, {:style=>"min-width: 100px"} %></li>
     <li id="home-link" data-hook><%= link_to Spree.t(:INGREDIENT), spree.ingredient_path %></li>
     <% if current_spree_user %>
     <li id="home-link" data-hook><%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; display:inline-block; width: 32px; height: 32px;"}), spree.account_path, style:"padding: 9px" %>
     <li id="home-link" data-hook><%= link_to Spree.t(:LOGOUT), spree.logout_path %></li>
     <% else %>
-    <li id="home-link" data-hook><%= link_to Spree.t(:SIGNIN), spree.login_path %></li>
+    <li id="home-link" data-hook><%= link_to Spree.t(:SIGNIN), spree.login_path, {:style=>"min-width: 100px"} %></li>
     <% end %>
     <% if !(current_order.special_instructions != nil || current_order.line_items.first.variant.sku.slice(3,1) == 'd' rescue false) %>
     <li style="width:6px; padding-left: 3px"><a style="width:20px; border-left: 1px solid #ddd;margin:9px 0 0;"></a></li>

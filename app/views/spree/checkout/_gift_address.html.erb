@@ -1,5 +1,5 @@
 <div class="text form-content clearfix">
-  <div class="title"><%= Spree.t(:billing_address) %></div>
+  <div class="title" style="font-weight: 600; font-size: 20px"><%= Spree.t(:billing_address) %></div>
   <div class="col-sm-6">
     <label><%= Spree.t(:first_name) %><abbr class="required" title="required">*</abbr></label>
     <input type="text" v-model="first_name" name="first_name" id="first_name" required/>
@@ -93,23 +93,18 @@
               "ship_address_attributes": this.bill_address,
             }
           }
-        console.log(h)
         return h
       }
     },
     methods: {
       proceed2: function() {
-        console.log(2)
         $.ajax({
           type: "PUT",
           url: '/api/v1/checkouts/' + this.order_number + '/next.json?order_token=' + this.order_token,
           success: function(data) {
-            console.log(3)
-            console.log(data)
             window.location.href = '/checkout/'
           },
           fail: function(data) {
-            console.log(4)
           }
         })
       },
@@ -123,13 +118,10 @@
           type: "PUT",
           url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
           success: function(data) {
-            console.log(data)
             $.ajax({
               type: "PUT",
               url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
               success: function(data) {
-                console.log(data)
-                console.log(1)
                 that.proceed2()
               },
               data: {

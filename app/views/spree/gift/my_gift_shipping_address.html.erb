@@ -1,23 +1,23 @@
       <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
 
 <div class="text form-content clearfix">
-  <div class="title"><%= Spree.t(:shipping_address) %></div>
+  <div class="title" style="font-weight: 600; font-size: 20px"><%= Spree.t(:shipping_address) %></div>
   <div class="col-sm-6">
-    <label><%= Spree.t(:first_name) %></label>
-    <input type="text" v-model="first_name"/>
-    <label><%= Spree.t(:last_name) %></label>
-    <input type="text" v-model="last_name"/>
-    <label><%= Spree.t(:street_address) %></label>
-    <input type="text" v-model="address"/>
+    <label><%= Spree.t(:first_name) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="first_name" id="first_name" name="first_name" required/>
+    <label><%= Spree.t(:last_name) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="last_name" name="last_name" required/>
+    <label><%= Spree.t(:street_address) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="address" name="address" required/>
     <label><%= Spree.t(:street_address_2) %></label>
     <input type="text" v-model="address_opt"/>
-    <label><%= Spree.t(:phone) %></label>
-    <input type="text" v-model="phone"/>
+    <label><%= Spree.t(:phone) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="phone" name="phone" required/>
   </div>
   <div class="col-sm-6" id="bcountry">
-    <label><%= Spree.t(:city) %></label>
-    <input type="text" placeholder="city" v-model="city"/>
-    <label><%= Spree.t(:country) %></label>
+    <label><%= Spree.t(:city) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="city" required/>
+    <label><%= Spree.t(:country) %><abbr class="required" title="required">*</abbr></label>
     <%= form.fields_for :ship_address do |ship_form| %>
     <span id=<%="bcountry-selection" %>>
     <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
@@ -31,17 +31,17 @@
         <%== state_elements = [
            ship_form.collection_select(:state_id, @order.ship_address.country.states,
                                                        :id, :name, {},
-                              {:"v-model" => "state_code"},
+                              {:"v-model" => "state_code", :"class" => "required"},
                               )
            ].join.gsub('"', "'").gsub("\n", "")
         %>
       </p>
     <% end %>
     <% end %>
-    <label><%= Spree.t(:zip) %></label>
-    <input type="text" placeholder="zip" v-model="zip"/><br>
+    <label><%= Spree.t(:zip) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="zip" name="zip" required/><br>
     <label for="save_user_address">
-      <input type="checkbox" placeholder="save_address" v-model="save_address"/>
+      <input type="checkbox" placeholder="save_address" v-model="save_address" required/>
       <%= Spree.t(:save_my_address) %>
     </label>
   </div>
@@ -50,21 +50,22 @@
 <% end %>
 
 <script>
+  var validator = $("#checkout_form_complete").validate();
   var vm = new Vue({
     el: '#content',
     data: {
       order_number: "<%= @order.number %>",
       order_token: "<%= @order.guest_token %>",
 
-      first_name: "ff",
-      last_name: "ff",
-      address: "ff",
+      first_name: "",
+      last_name: "",
+      address: "",
       address_opt: "",
-      phone: "333",
-      city: "dd",
+      phone: "",
+      city: "",
       country_code: 0,
       state_code: 0,
-      zip: "94102",
+      zip: "",
       save_address: true,
 
       special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
@@ -98,25 +99,16 @@
       }
     },
     methods: {
-      proceed2: function() {
-        $.ajax({
-          type: "PUT",
-          url: '/api/v1/checkouts/' + this.order_number + '/next.json?order_token=' + this.order_token,
-          success: function(data) {
-            console.log(data)
-            window.location.href = '/checkout/'
-          },
-          fail: function(data) {
-            console.log(4)
-          }
-        })
-      },
       proceed: function(){
+        if (!validator.form()){
+          validator.focusInvalid()
+          return
+        }
         $.ajax({
           type: "PUT",
           url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
           success: function(data) {
-            
+            window.location.href = '/gift/my_gift_completion'
           },
           data: this.json
         })

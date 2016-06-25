@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="section-3" style="height: 120px">
-    <div class="container" style="height: 120px;margin:0;padding:0;"><%= image_tag("home/product@2x.png", class: "bar") %>
+    <div class="container" style="height: 120px;"><%= image_tag("home/product@2x.png", class: "bar") %>
       <div class="func col-sm-3" style="margin-top:15px">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
         <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
