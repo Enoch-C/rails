@@ -1,21 +1,21 @@
 <div class="text form-content clearfix">
   <div class="title"><%= Spree.t(:billing_address) %></div>
   <div class="col-sm-6">
-    <label><%= Spree.t(:first_name) %></label>
-    <input type="text" v-model="first_name"/>
-    <label><%= Spree.t(:last_name) %></label>
-    <input type="text" v-model="last_name"/>
-    <label><%= Spree.t(:street_address) %></label>
-    <input type="text" v-model="address"/>
+    <label><%= Spree.t(:first_name) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="first_name" name="first_name" id="first_name" required/>
+    <label><%= Spree.t(:last_name) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="last_name" name="last_name" required/>
+    <label><%= Spree.t(:street_address) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="address" name="address" required/>
     <label><%= Spree.t(:street_address_2) %></label>
-    <input type="text" v-model="address_opt"/>
-    <label><%= Spree.t(:phone) %></label>
-    <input type="text" v-model="phone"/>
+    <input type="text" v-model="address_opt" name="address_opt"/>
+    <label><%= Spree.t(:phone) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" v-model="phone" name="text" required/>
   </div>
   <div class="col-sm-6" id="bcountry">
-    <label><%= Spree.t(:city) %></label>
-    <input type="text" placeholder="city" v-model="city"/>
-    <label><%= Spree.t(:country) %></label>
+    <label><%= Spree.t(:city) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" placeholder="city" v-model="city" name="city" required/>
+    <label><%= Spree.t(:country) %><abbr class="required" title="required">*</abbr></label>
     <%= form.fields_for :bill_address do |bill_form| %>
     <span id=<%="bcountry-selection" %>>
     <%= bill_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
@@ -29,17 +29,17 @@
         <%== state_elements = [
            bill_form.collection_select(:state_id, @order.bill_address.country.states,
                                                        :id, :name, {},
-                              {:"v-model" => "state_code"},
+                                                       {:"v-model" => "state_code", :"class" => "required"},
                               )
            ].join.gsub('"', "'").gsub("\n", "")
         %>
       </p>
     <% end %>
     <% end %>
-    <label><%= Spree.t(:zip) %></label>
-    <input type="text" placeholder="zip" v-model="zip"/><br>
+    <label><%= Spree.t(:zip) %><abbr class="required" title="required">*</abbr></label>
+    <input type="text" placeholder="zip" v-model="zip" name="zip" required/><br>
     <label for="save_user_address">
-      <input type="checkbox" placeholder="save_address" v-model="save_address"/>
+      <input type="checkbox" placeholder="save_address" v-model="save_address" name="save_address" required/>
       <%= Spree.t(:save_my_address) %>
     </label>
   </div>
@@ -47,21 +47,22 @@
 <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
 
 <script>
+  var validator = $("#checkout_form_address").validate();
   var vm = new Vue({
     el: '#checkout',
     data: {
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
 
-      first_name: "ff",
-      last_name: "ff",
-      address: "ff",
-      address_opt: "",
-      phone: "333",
-      city: "dd",
-      country_code: 0,
-      state_code: 0,
-      zip: "94102",
+      first_name: "<%= current_spree_user.bill_address.firstname rescue "" %>",
+      last_name: "<%= current_spree_user.bill_address.lastname rescue "" %>",
+      address: "<%= current_spree_user.bill_address.address1 rescue "" %>",
+      address_opt: "<%= current_spree_user.bill_address.address2 rescue "" %>",
+      phone: "<%= current_spree_user.bill_address.phone rescue "" %>",
+      city: "<%= current_spree_user.bill_address.city rescue "" %>",
+      country_code: <%= current_spree_user.bill_address.country_id rescue 0 %>,
+      state_code: <%= current_spree_user.bill_address.state_id rescue 0 %>,
+      zip: "<%= current_spree_user.bill_address.zipcode rescue "" %>",
       save_address: true,
 
       special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
@@ -113,6 +114,10 @@
         })
       },
       proceed: function(){
+        if (!validator.form()){
+          validator.focusInvalid()
+          return
+        }
         var that = this
         $.ajax({
           type: "PUT",
