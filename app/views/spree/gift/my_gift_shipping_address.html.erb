@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
+  <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_address" } do |form| %>
 
   <div class="text form-content clearfix">
     <div class="title" style="font-weight: 600; font-size: 20px"><%= Spree.t(:shipping_address) %></div>
@@ -15,16 +15,16 @@
       <label><%= Spree.t(:phone) %><abbr class="required" title="required">*</abbr></label>
       <input type="text" v-model="phone" name="phone" required/>
     </div>
-    <div class="col-sm-6" id="bcountry">
+    <div class="col-sm-6" id="scountry">
       <label><%= Spree.t(:city) %><abbr class="required" title="required">*</abbr></label>
       <input type="text" v-model="city" required/>
       <label><%= Spree.t(:country) %><abbr class="required" title="required">*</abbr></label>
       <%= form.fields_for :ship_address do |ship_form| %>
-      <span id=<%="bcountry-selection" %>>
+      <span id=<%="scountry-selection" %>>
       <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
       </span>
       <% if Spree::Config[:address_requires_state] %>
-        <p class="form-group" id=<%="bstate" %>>
+        <p class="form-group" id=<%="sstate" %>>
           <%= ship_form.label :state do %>
             <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
           <% end %>
