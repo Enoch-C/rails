@@ -28,16 +28,19 @@ Spree::Api::V1::LineItemsController.class_eval do
   end
 
   def create
-    variant = nil
 
     if params[:gift]
       order.line_items.each{|item|
         order.contents.remove_line_item(item)
       }
-      variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
-    else
-      variant = Spree::Variant.find(params[:line_item][:variant_id])
     end 
+
+    variant = nil
+    if params[:line_item][:variant_id]
+      variant = Spree::Variant.find(params[:line_item][:variant_id])
+    elsif params[:line_item][:sku]
+      variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
+    end
 
     @line_item = order.contents.add(
         variant,
