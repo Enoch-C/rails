@@ -19,12 +19,6 @@
             <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox cb_<%= i+1 %>"/>
           </div>
         <% end %>
-        <div class="choose-box wish">
-          <label for="wish_box" class="choose-label"><%= image_tag("home/icon-wish@2x.png", class: "img") %>
-            <div class="text"><%= Spree.t(:"homepage.content_function_wish") %></div>
-          </label>
-          <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" />
-        </div>
       </div>
     </div>
   </div>
@@ -48,7 +42,7 @@
         <div v-if="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
         <div v-if="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
       </div>
-      <div class="cart" style="height: 100%; float: right;vertical-align: middle;margin-right: 64px">
+      <div class="cart" style="height: 100%; float: right;vertical-align: middle;margin-right: 64px" v-if="result.length">
         <span style="height: 100%; vertical-align: middle; display: inline-block"></span><a v-on:click='action_checkout' class="button" style="margin: 0; padding: 0; width: 120px"><%= Spree.t(:ok) %></a>
       </div>
     </div>
@@ -113,9 +107,24 @@
       sum: 39.99,
       result: [],
       processing: false,
-      order_number: "<%= @order.number %>",
-      order_token: "<%= @order.guest_token %>",
-      qty: <%= @order.line_items.first.quantity rescue 1 %>
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
+      mutallyExclusives: {
+        5: {
+          on_image: "<%= image_url("home/icon-Energy@2x.png") %>",
+          on_color: "#62c0ef",
+          off_image: "<%= image_url("home/icon_energy_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+        13: {
+          on_image: "<%= image_url("home/icon-Sleep_Support@2x.png") %>",
+          on_color: "#7fadf0",
+          off_image: "<%= image_url("home/icon_sleep_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+      },
+      disabledFeatures: [],
+      theSKU: ""
     },
     computed: {
       types: function() {
@@ -133,15 +142,64 @@
         var hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"]
 
         var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
-        return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
+        this.theSKU = 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
+        return this.theSKU
+      },
+      keys: function() {
+        return Object.keys(this.mutallyExclusives).map(function(i){return +i})
       }
     },
+
     watch: {
+      theSKU: function(value, oldValue) {
+        var a1 = this.features()
+        var a2 = this.keys.slice(0)
+
+        var flag = true
+        for (var i=0; i<a1.length; i++) {
+          var t = a1[i]
+          var index = a2.indexOf(t)
+          if (index > -1) {
+            a2.splice(index, 1)
+            this.disabledFeatures = a2
+            flag = false
+            break
+          }
+        }
+        if (flag) {
+          this.disabledFeatures = []
+        }
+      },
+      disabledFeatures: function() {
+        var that = this
+        this.keys.forEach(function(item){
+          if (that.disabledFeatures.includes(item)) {
+            that.disableItem(item)
+          } else {
+            that.enableItem(item)
+          }
+        })
+      },
       'result': function(val) {
+        this.sku
         this.check_3_box(val)
       }
     },
     methods: {
+      disableItem: function(index) {
+        document.getElementById("image_"+index).src = this.mutallyExclusives[index].off_image
+        document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].off_color
+        document.getElementsByClassName("cb_"+index)[0].disabled = true
+
+      },
+      enableItem: function(index) {
+        document.getElementById("image_"+index).src = this.mutallyExclusives[index].on_image
+        document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].on_color
+        document.getElementsByClassName("cb_"+index)[0].disabled = false
+      },
+      features: function(s) {
+        return [+this.sku.slice(6,8), +this.sku.slice(8,10), +this.sku.slice(10,12)]
+      },
       check_3_box: function() {
         var box = document.getElementsByClassName('checkbox')
         if(this.result.length < 3) {
@@ -163,15 +221,32 @@
         }
         return this.sku.slice(6) != '000000'
       },
+      action_addToCart: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var that = this
+          $.ajax({
+            type: 'POST',
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
+            success: function(data) {
+              window.location.href = '<%= cart_path %>'
+            },
+            complete: function() {
+              console.log(that.processing)
+              that.processing = false
+            }
+          })
+        }
+      },
       action_checkout: function(event) {
         if (this.validate()) {
           this.processing = true
           var that = this
           $.ajax({
             type: 'POST',
-            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&gift=true&order_token=' + this.order_token,
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
-              window.location.href = '<%= gift_path %>/my_address?token=' + that.order_token
+              window.location.href = '<%= checkout_path %>'
             },
             complete: function() {
               that.processing = false
@@ -179,6 +254,35 @@
           })
         }
       },
+      action_trial: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var that = this
+          var sku = this.sku
+          sku = sku.slice(0, 3) + 'd' + sku.slice(4)
+          $.ajax({
+            type: 'PUT',
+            url: '/api/v1/orders/' + this.order_number + '/empty' + '?order_token=' + this.order_token,
+            success: function(data) {
+              $.ajax({
+                type: 'POST',
+                url: '/api/v1/orders/' + that.order_number + '/line_items?line_item[sku]=' + sku + '&line_item[quantity]=' + that.num + '&order_token=' + that.order_token,
+                success: function(data) {
+                  window.location.href = '<%= checkout_path %>'
+                },
+                complete: function() {
+                  that.processing = false
+                }
+              })
+            }
+          })
+        }
+      },
+      action_select: function(index) {
+        if (this.disabledFeatures.includes(index)) {
+          alert("We do not recommend mixing this supplement with one of your previous choices. For your safety, please pick an alternative.")
+        }
+      }
     }
   })
 </script>
