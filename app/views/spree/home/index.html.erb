@@ -36,16 +36,17 @@
         <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
         <% function_list.each_with_index do |function, i| %>
           <div class="choose-box <%= function %>">
-          <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), {"class"=> "img", "id" => "image_#{i+1}", "v-on:click" => "action_select(#{i+1})"}) %>
+            <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), {"class"=> "img", "id" => "image_#{i+1}", "v-on:click" => "action_select(#{i+1})"}) %>
               <div class="text" id="text_<%= i+1 %>">
                 <%= Spree.t('homepage.content_function_' + function) %>
               </div>
             </label>
+            <div class="information">i</div>
             <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox cb_<%= i+1 %>"/>
           </div>
         <% end %>
         <div class="choose-box wish">
-          <label for="wish_box" class="choose-label"><%= image_tag("home/icon-wish@2x.png", class: "img") %>
+          <label for="wish_box" class="choose-label" @click="open_wish"><%= image_tag("home/icon-wish@2x.png", class: "img") %>
             <div class="text"><%= Spree.t(:"homepage.content_function_wish") %></div>
           </label>
           <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" />
@@ -88,6 +89,9 @@
     </div>
   </div>
   <div class="section-3">
+    <%= image_tag("home/group-20@2x.png") %>
+  </div>
+  <div class="section-4">
     <div class="container"><%= image_tag("home/product@2x.png", class: "bar") %>
       <div class="func col-sm-3">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
@@ -125,9 +129,69 @@
       </div>
     </div>
   </div>
+  <!-- popup wish list -->
+  <div class="wish-lay">
+    <div class="wish-list">
+      <div class="title"><%= Spree.t(:"homepage.your_wish") %></div>
+      <div class="sub-title"><%= Spree.t(:"homepage.we_are") %></div>
+      <textarea></textarea>
+      <a class="close" @click="close_wish"><%= image_tag("ingredient/button-off@2x.png") %></a>
+      <a class="button"><%= Spree.t(:"homepage.submit") %></a>
+    </div>
+  </div>
+</div>
+
+<!-- popup ingredient details -->
+<div class="more-overlay">
+  <div class="close"></div>
+  <% url_list = ['http://extramel.com/', 'http://www.gelita.com/en/products/verisol', 'http://cognizin.com/', nil, nil, 'http://www.lutemax2020.com/', nil, 'http://nutriscienceusa.com/beta-glucan/', 'http://greengrownglucosamine.com/', nil, nil, nil, nil, 'http://www.suntheanine.com/
+'] %>
+  <% function_list.each_with_index do |function, index| %>
+    <div id="<%= 'ingredient_' + function %>" class="view">
+      <a class="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
+      <img src="<%= asset_path 'home/icon-'.concat(function).concat('@2x.png') %>" class="icon">
+      <div class="title"><%= Spree.t('ingredient.function_' + function) %></div>
+      <div class="sub-title"><%= Spree.t('ingredient.help_' + function) %></div>
+      <p><%= Spree.t('ingredient.detail_' + function) %></p>
+      <p><%= Spree.t('ingredient.contains_' + function) %></p>
+      <ul>
+        <li><%= Spree.t('ingredient.more1_' + function) %></li>
+        <li><%= Spree.t('ingredient.more2_' + function) %></li>
+        <li><%= Spree.t('ingredient.more3_' + function) %></li>
+        <% if function == 'Lung_Care' %>
+        <li><%= Spree.t('ingredient.more4_' + function) %></li>
+        <% end %>
+      </ul>
+      <% if url_list[index] %>
+        <p><a href="<%= url_list[index] %>" target="_blank"><%= Spree.t(:learn_more) %></a></p>
+      <% end %>
+      <% if function == 'Sleep_Support' %>
+        <p style="font-size: 12px"><%= Spree.t('ingredient.caution1_' + function) %><br><%= Spree.t('ingredient.caution2_' + function) %></p>
+      <% end %>
+      <p style="font-size: 10px; margin-top: 0"><%= Spree.t('ingredient.warning1') %><br><%= Spree.t('ingredient.warning2') %></p>
+    </div>
+  <% end %>
 </div>
 
 <script>
+  //ingredient popup
+  $("#section-1 .information").click(function() {
+    $("body").append($(".more-overlay"))
+    $("body").css("overflow","hidden")
+
+    var id = $(this).parent().attr("class").split(' ')[1]
+    $(".more-overlay>.close").show()
+    $("#ingredient_" + id).show()
+    $("body>.more-overlay").show()
+    $(".more-overlay>.close").height(document.getElementById("ingredient_" + id).offsetHeight)
+  })
+  $(".more-overlay .close").click(function() {
+    $(".more-overlay").hide()
+    $(".more-overlay>div").hide()
+    $(".function>.inner").removeClass('active')
+    $("body").css("overflow","scroll")
+  })
+
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
@@ -178,15 +242,12 @@
         return Object.keys(this.mutallyExclusives).map(function(i){return +i})
       }
     },
-    
+
     watch: {
       theSKU: function(value, oldValue) {
-        console.log(oldValue)
-        console.log(value)
-
         var a1 = this.features()
         var a2 = this.keys.slice(0)
-        
+
         var flag = true
         for (var i=0; i<a1.length; i++) {
           var t = a1[i]
@@ -195,7 +256,7 @@
             a2.splice(index, 1)
             this.disabledFeatures = a2
             flag = false
-            break 
+            break
           }
         }
         if (flag) {
@@ -203,7 +264,6 @@
         }
       },
       disabledFeatures: function() {
-        console.log("disabling:" + this.disabledFeatures)
         var that = this
         this.keys.forEach(function(item){
           if (that.disabledFeatures.includes(item)) {
@@ -219,11 +279,17 @@
       }
     },
     methods: {
+      close_wish: function() {
+        $(".wish-lay").hide()
+      },
+      open_wish: function() {
+        $(".wish-lay").show()
+      },
       disableItem: function(index) {
         document.getElementById("image_"+index).src = this.mutallyExclusives[index].off_image
         document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].off_color
         document.getElementsByClassName("cb_"+index)[0].disabled = true
-        
+
       },
       enableItem: function(index) {
         document.getElementById("image_"+index).src = this.mutallyExclusives[index].on_image

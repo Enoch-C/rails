@@ -24,11 +24,12 @@
     <% end %>
   </div>
   <div class="more-overlay">
+    <div class="close"></div>
     <% url_list = ['http://extramel.com/', 'http://www.gelita.com/en/products/verisol', 'http://cognizin.com/', nil, nil, 'http://www.lutemax2020.com/', nil, 'http://nutriscienceusa.com/beta-glucan/', 'http://greengrownglucosamine.com/', nil, nil, nil, nil, 'http://www.suntheanine.com/
 '] %>
     <% function_list.each_with_index do |function, index| %>
-      <div id="<%= function %>">
-        <a class="close" @click="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
+      <div id="<%= function %>" class="view">
+        <a class="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
         <img src="<%= asset_path 'home/icon-'.concat(function).concat('@2x.png') %>" class="icon">
         <div class="title"><%= Spree.t('ingredient.function_' + function) %></div>
         <div class="sub-title"><%= Spree.t('ingredient.help_' + function) %></div>
@@ -61,20 +62,16 @@
 
     $(this).addClass("active")
     var id = $(this).parent().attr("class").split(' ')[2]
+    $(".more-overlay>.close").show()
     $("#" + id).show()
     $("body>.more-overlay").show()
+    $(".more-overlay>.close").height(document.getElementById(id).offsetHeight)
   })
-  var vm = new Vue({
-    el: '#ingredient',
-    data: {
-    },
-    methods: {
-      close: function () {
-        $(".more-overlay").hide()
-        $(".more-overlay>div").hide()
-        $(".function>.inner").removeClass('active')
-        $("body").css("overflow","scroll")
-      }
-    }
+
+  $(".more-overlay .close").click(function() {
+    $(".more-overlay").hide()
+    $(".more-overlay>div").hide()
+    $(".function>.inner").removeClass('active')
+    $("body").css("overflow","scroll")
   })
 </script>

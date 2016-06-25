@@ -25,6 +25,9 @@ module Spree
       order_token = params[:token]
       @order = Spree::Order.find_by_guest_token(order_token)
     end
+
+    def my_gift_completion
+    end
     
   end
 end

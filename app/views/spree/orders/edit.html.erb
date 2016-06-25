@@ -1,13 +1,12 @@
 <% @body_id = 'cart' %>
 <div data-hook="cart_container">
-<h1><%= Spree.t(:cart_tableHeader_title)%></h1>
 
   <% if @order.line_items.empty? %>
-    <div data-hook="empty_cart">
-      <div class="alert alert-info"><%= Spree.t(:your_cart_is_empty) %></div>
-      <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default' %></p>
-    </div>
+
+    <div style="text-align: center; margin-top: 200px"><p style="font-weight: 600; font-size:22px; line-height: 1.14">YOUR SHOPPING CART IS EMPTY</p><p style="color: #474c5d">Your gift is preparing! Every Cool Choice order is freshly made, especially for you!</p><p><%= link_to Spree.t(:keep_shopping), root_path, class: 'roundButton b1', style: 'margin-top:30px' %></p><div>
+
   <% else %>
+    <h1><%= Spree.t(:cart_tableHeader_title)%></h1>
     <div data-hook="outside_cart_form">
       <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
         <div data-hook="inside_cart_form">
