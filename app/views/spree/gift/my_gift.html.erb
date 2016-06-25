@@ -107,8 +107,8 @@
       sum: 39.99,
       result: [],
       processing: false,
-      order_number: "<%= current_order.number %>",
-      order_token: "<%= current_order.guest_token %>",
+      order_number: "<%= @order.number %>",
+      order_token: "<%= @order.guest_token %>",
       mutallyExclusives: {
         5: {
           on_image: "<%= image_url("home/icon-Energy@2x.png") %>",
