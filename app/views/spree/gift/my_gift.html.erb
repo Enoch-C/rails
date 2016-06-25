@@ -1,7 +1,18 @@
-
-<% @body_id = 'home' %>
 <div id="cool-choice-home"  v-cloak>
-  <div class="section-1" style="padding: 0 0 230px 0">
+  <div class="banner">
+    <div class="container">
+      <%= image_tag("home/page-1@2x.png", class: "logo") %>
+      <div class="title"><%= Spree.t(:"homepage.title_proud") %></div>
+      <div class="sub-title"><%= Spree.t(:"homepage.title_introduce") %></div>
+      <div class="free">
+        <div class="circle"></div><%= Spree.t(:"homepage.title_free") %>
+        <div class="circle"></div><br />
+        <div class="circle"></div><%= Spree.t(:"homepage.title_worldwide") %>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  <div id="section-1" class="section-1" style="padding-bottom: 140px">
     <div class="container">
       <div class="title"><%= Spree.t(:"homepage.content_title_magic") %></div>
       <div class="sub-title">
@@ -10,14 +21,15 @@
       </div>
       <div class="content clearfix">
         <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
-        <% function_list.each do |function| %>
+        <% function_list.each_with_index do |function, i| %>
           <div class="choose-box <%= function %>">
-            <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), class: "img") %>
-              <div class="text">
+            <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), {"class"=> "img", "id" => "image_#{i+1}", "v-on:click" => "action_select(#{i+1})"}) %>
+              <div class="text" id="text_<%= i+1 %>">
                 <%= Spree.t('homepage.content_function_' + function) %>
               </div>
             </label>
-            <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox"/>
+            <div class="information">i</div>
+            <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox cb_<%= i+1 %>"/>
           </div>
         <% end %>
         <div class="choose-box wish">
@@ -29,11 +41,25 @@
       </div>
     </div>
   </div>
-  <div class="section-3" style="height: 120px">
-    <div class="container" style="height: 120px;"><%= image_tag("home/product@2x.png", class: "bar") %>
-      <div class="func col-sm-3" style="margin-top:15px">
+
+  <div class="section-4">
+    <div class="container"><%= image_tag("home/product@2x.png", class: "bar") %>
+      <div class="func col-sm-3">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
         <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
+      </div>
+      <div class="qty col-sm-2">
+        <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
+        <div class="select">
+          <select v-model="type" class="type">
+            <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
+            <!-- <option value="week">{{ num + ' ' + types[0] }}</option> -->
+            <option value="month">{{ num + ' ' + types[1] }}</option>
+          </select>
+        </div>
+        <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
+        <div v-if="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
+        <div v-if="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
       </div>
       <div class="cart" style="height: 100%; float: right;vertical-align: middle;margin-right: 64px">
         <span style="height: 100%; vertical-align: middle; display: inline-block"></span><a v-on:click='action_checkout' class="button" style="margin: 0; padding: 0; width: 120px"><%= Spree.t(:ok) %></a>
@@ -42,7 +68,56 @@
   </div>
 </div>
 
+<!-- popup ingredient details -->
+<div class="more-overlay">
+  <div class="close"></div>
+  <% url_list = ['http://extramel.com/', 'http://www.gelita.com/en/products/verisol', 'http://cognizin.com/', nil, nil, 'http://www.lutemax2020.com/', nil, 'http://nutriscienceusa.com/beta-glucan/', 'http://greengrownglucosamine.com/', nil, nil, nil, nil, 'http://www.suntheanine.com/
+'] %>
+  <% function_list.each_with_index do |function, index| %>
+    <div id="<%= 'ingredient_' + function %>" class="view">
+      <a class="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
+      <img src="<%= asset_path 'home/icon-'.concat(function).concat('@2x.png') %>" class="icon">
+      <div class="title"><%= Spree.t('ingredient.function_' + function) %></div>
+      <div class="sub-title"><%= Spree.t('ingredient.help_' + function) %></div>
+      <p><%= Spree.t('ingredient.detail_' + function) %></p>
+      <p><%= Spree.t('ingredient.contains_' + function) %></p>
+      <ul>
+        <li><%= Spree.t('ingredient.more1_' + function) %></li>
+        <li><%= Spree.t('ingredient.more2_' + function) %></li>
+        <li><%= Spree.t('ingredient.more3_' + function) %></li>
+        <% if function == 'Lung_Care' %>
+        <li><%= Spree.t('ingredient.more4_' + function) %></li>
+        <% end %>
+      </ul>
+      <% if url_list[index] %>
+        <p><a href="<%= url_list[index] %>" target="_blank"><%= Spree.t(:learn_more) %></a></p>
+      <% end %>
+      <% if function == 'Sleep_Support' %>
+        <p style="font-size: 12px"><%= Spree.t('ingredient.caution1_' + function) %><br><%= Spree.t('ingredient.caution2_' + function) %></p>
+      <% end %>
+      <p style="font-size: 10px; margin-top: 0"><%= Spree.t('ingredient.warning1') %><br><%= Spree.t('ingredient.warning2') %></p>
+    </div>
+  <% end %>
+</div>
 <script>
+  //ingredient popup
+  $("#section-1 .information").click(function() {
+    $("body").append($(".more-overlay"))
+    $("body").css("overflow","hidden")
+
+    var id = $(this).parent().attr("class").split(' ')[1]
+    $(".more-overlay>.close").show()
+    $("#ingredient_" + id).show()
+    $("body>.more-overlay").show()
+    $(".more-overlay>.close").height(document.getElementById("ingredient_" + id).offsetHeight)
+  })
+  $(".more-overlay .close").click(function() {
+    $(".more-overlay").hide()
+    $(".more-overlay>div").hide()
+    $(".function>.inner").removeClass('active')
+    $("body").css("overflow","auto")
+  })
+
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
