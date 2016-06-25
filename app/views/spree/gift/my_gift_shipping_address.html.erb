@@ -1,53 +1,55 @@
-      <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
+<div class="container">
+  <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
 
-<div class="text form-content clearfix">
-  <div class="title" style="font-weight: 600; font-size: 20px"><%= Spree.t(:shipping_address) %></div>
-  <div class="col-sm-6">
-    <label><%= Spree.t(:first_name) %><abbr class="required" title="required">*</abbr></label>
-    <input type="text" v-model="first_name" id="first_name" name="first_name" required/>
-    <label><%= Spree.t(:last_name) %><abbr class="required" title="required">*</abbr></label>
-    <input type="text" v-model="last_name" name="last_name" required/>
-    <label><%= Spree.t(:street_address) %><abbr class="required" title="required">*</abbr></label>
-    <input type="text" v-model="address" name="address" required/>
-    <label><%= Spree.t(:street_address_2) %></label>
-    <input type="text" v-model="address_opt"/>
-    <label><%= Spree.t(:phone) %><abbr class="required" title="required">*</abbr></label>
-    <input type="text" v-model="phone" name="phone" required/>
-  </div>
-  <div class="col-sm-6" id="bcountry">
-    <label><%= Spree.t(:city) %><abbr class="required" title="required">*</abbr></label>
-    <input type="text" v-model="city" required/>
-    <label><%= Spree.t(:country) %><abbr class="required" title="required">*</abbr></label>
-    <%= form.fields_for :ship_address do |ship_form| %>
-    <span id=<%="bcountry-selection" %>>
-    <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
-    </span>
-    <% if Spree::Config[:address_requires_state] %>
-      <p class="form-group" id=<%="bstate" %>>
-        <%= ship_form.label :state do %>
-          <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
-        <% end %>
+  <div class="text form-content clearfix">
+    <div class="title" style="font-weight: 600; font-size: 20px"><%= Spree.t(:shipping_address) %></div>
+    <div class="col-sm-6">
+      <label><%= Spree.t(:first_name) %><abbr class="required" title="required">*</abbr></label>
+      <input type="text" v-model="first_name" id="first_name" name="first_name" required/>
+      <label><%= Spree.t(:last_name) %><abbr class="required" title="required">*</abbr></label>
+      <input type="text" v-model="last_name" name="last_name" required/>
+      <label><%= Spree.t(:street_address) %><abbr class="required" title="required">*</abbr></label>
+      <input type="text" v-model="address" name="address" required/>
+      <label><%= Spree.t(:street_address_2) %></label>
+      <input type="text" v-model="address_opt"/>
+      <label><%= Spree.t(:phone) %><abbr class="required" title="required">*</abbr></label>
+      <input type="text" v-model="phone" name="phone" required/>
+    </div>
+    <div class="col-sm-6" id="bcountry">
+      <label><%= Spree.t(:city) %><abbr class="required" title="required">*</abbr></label>
+      <input type="text" v-model="city" required/>
+      <label><%= Spree.t(:country) %><abbr class="required" title="required">*</abbr></label>
+      <%= form.fields_for :ship_address do |ship_form| %>
+      <span id=<%="bcountry-selection" %>>
+      <%= ship_form.collection_select :country_id, available_countries, :id, :name, {}, {:class => 'form-control required', :'v-model' => 'country_code'} %>
+      </span>
+      <% if Spree::Config[:address_requires_state] %>
+        <p class="form-group" id=<%="bstate" %>>
+          <%= ship_form.label :state do %>
+            <%= Spree.t(:state) %><abbr class='required' title="required">*</abbr>
+          <% end %>
 
-        <%== state_elements = [
-           ship_form.collection_select(:state_id, @order.ship_address.country.states,
-                                                       :id, :name, {},
-                              {:"v-model" => "state_code", :"class" => "required"},
-                              )
-           ].join.gsub('"', "'").gsub("\n", "")
-        %>
-      </p>
-    <% end %>
-    <% end %>
-    <label><%= Spree.t(:zip) %><abbr class="required" title="required">*</abbr></label>
-    <input type="text" v-model="zip" name="zip" required/><br>
-    <label for="save_user_address">
-      <input type="checkbox" placeholder="save_address" v-model="save_address" required/>
-      <%= Spree.t(:save_my_address) %>
-    </label>
+          <%== state_elements = [
+             ship_form.collection_select(:state_id, @order.ship_address.country.states,
+                                                         :id, :name, {},
+                                {:"v-model" => "state_code", :"class" => "required"},
+                                )
+             ].join.gsub('"', "'").gsub("\n", "")
+          %>
+        </p>
+      <% end %>
+      <% end %>
+      <label><%= Spree.t(:zip) %><abbr class="required" title="required">*</abbr></label>
+      <input type="text" v-model="zip" name="zip" required/><br>
+      <label for="save_user_address">
+        <input type="checkbox" placeholder="save_address" v-model="save_address" required/>
+        <%= Spree.t(:save_my_address) %>
+      </label>
+    </div>
   </div>
+  <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
+  <% end %>
 </div>
-<div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
-<% end %>
 
 <script>
   var validator = $("#checkout_form_complete").validate();
