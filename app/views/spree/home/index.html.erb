@@ -167,10 +167,10 @@
       </div>
       <div @click="action_trial" class="trail" v-if="result.length">
         <div class="line">
-          <%= Spree.t(:"homepage.bar_pay") %>
+          <span style="font-weight: 500"><%= Spree.t(:"homepage.trial_pack") %></span>
         </div>
-        <div class="line">
-          <%= Spree.t(:"homepage.bar_for") %> <span style="font-weight: 500"><%= Spree.t(:"homepage.bar_1_day") %></span> <%= Spree.t(:"homepage.bar_US") %>
+        <div class="line_below">
+          <span style="font-weight: 100; font-size: 10px"><%= Spree.t(:"homepage.trial_pack_desc") %></span>
         </div>
       </div>
     </div>

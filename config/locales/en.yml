@@ -141,10 +141,8 @@ en:
       bar_unit: USD
       bar_cart: Add to Cart
       bar_checkout: Checkout
-      bar_pay: Pay $3.99 shipping
-      bar_for: for
-      bar_1_day: 1 day trail
-      bar_US:  (US only)
+      trial_pack: Free Trial Pack
+      trial_pack_desc: '* US only & shipping applies'
       your_wish: YOUR WISHLIST
       we_are: We are continually making new supplements. Tell us what you want most to help us.
       submit: Submit
