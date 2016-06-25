@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body style="margin: 0">
+    <table id="backgroundTable" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; background: #F7F7F7; margin: 0; padding: 0; width: 100% !important; line-height: 100% !important; font-size: 16px; color: #595959;">
+      <tr>
+        <td valign="top">
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr>
+              <td valign="top" style="padding: 10px 10px 18px;">
+                <table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="background: white; box-shadow: 5px 5px 1px rgba(0,0,0,.08); max-width: 860px; min-width: 300px; border: 1px solid #BFBFBF;">
+                  <tr>
+                    <td height="80" style="padding: 30px;">
+                      <div style="text-align: right; margin-bottom: 20px;"><img src="http://www.snapfit.com/img/email/shop/logo@2x.png" alt="SnapFit" title="SnapFit" width="100" height="50"/></div>
+                      <div style="padding: 0 10px; line-height: 1.3;">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                          <tr>
+                            <td>
+                              <div style="padding: 0 20px;">
+                                <p>Dear {% if billing_address.name %} {{ billing_address.name }}{% endif %},</p>
+                                <p>Thanks for purchasing some fiber goodness! Our hope is that you fall in love with fiber – that's why we made SnapFit tasty, non-GMO, natural, gluten-free and kosher.</p>
+                                <p>This email is to confirm your recent order:</p>
+                              </div>
+                              <div style="border-top: 1px solid #AEAEAE; padding: 0 20px; margin-top: 20px;">
+                                <div style="font-size: 22px; color: #4CB3E6; font-weight: lighter; letter-spacing: 2px; margin: 20px 0;">Order</div>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="padding: 0 20px;">{% for line in line_items %}
+                          <tr>
+                            <td><img src="{{ line.line_item | img_url: 'small' }}" width="150" style="margin-right: 20px"/></td>
+                            <td>{{ line.title }}</td>
+                            <td style="color: #797979;">{{ line.price  | money }}/box</td>
+                            <td style="color: #797979;">{{ line.quantity }}</td>
+                            <td style="color: #797979; text-align: right;">{{ line.line_price  | money }}</td>
+                          </tr> {% endfor %}
+                        </table>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" style="padding: 0 20px; margin-top: 20px; line-height: 2;">{% if discounts %}
+                          <tr>
+                            <td style="border-bottom: 1px dashed #AEAEAE;">Discounts:</td>
+                            <td style="text-align: right; border-bottom: 1px dashed #AEAEAE;">{{ discounts_savings | money }}</td>
+                          </tr> {% endif %}
+                          <tr>
+                            <td style="border-bottom: 1px dashed #AEAEAE;">Subtotal:</td>
+                            <td style="text-align: right; border-bottom: 1px dashed #AEAEAE;">{{ subtotal_price | money }}</td>
+                          </tr>{% for tax_line in tax_lines %}
+                          <tr>
+                            <td style="border-bottom: 1px dashed #AEAEAE;">{{ tax_line.title }}:</td>
+                            <td style="text-align: right; border-bottom: 1px dashed #AEAEAE;">{{ tax_line.price | money }}</td>
+                          </tr>{% endfor %} {% if requires_shipping %}
+                          <tr>
+                            <td style="border-bottom: 1px dashed #AEAEAE;">Shipping:</td>
+                            <td style="text-align: right; border-bottom: 1px dashed #AEAEAE;">{{ shipping_price | money }}</td>
+                          </tr>{% endif %}
+                          <tr>
+                            <td style="">Total:</td>
+                            <td style="text-align: right;">{{ total_price | money }}</td>
+                          </tr>
+                        </table>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                          <tr>
+                            <td>
+                              <div style="border-top: 1px solid #AEAEAE; padding: 0 20px; margin: 20px 0;">
+                                <div style="font-size: 22px; color: #4CB3E6; font-weight: lighter; letter-spacing: 2px; margin: 20px 0;">Billing information</div>{% if requires_shipping and shipping_address %}
+                                <p><b>Shipping address:</b></p>
+                                <p>{{ shipping_address.name }}<br/>{{ shipping_address.street }}<br/>{{ shipping_address.city }}<br/>{{ shipping_address.province }}
+                                  {{ shipping_address.zip }}<br/>{{ shipping_address.country }}
+                                </p>{% endif %}
+                                {% if billing_address %}
+                                <p><b>Billing address:</b></p>
+                                <p>{{ billing_address.name }}<br/>{{ billing_address.street }}<br/>{{ billing_address.city }}<br/>{{ billing_address.province }}
+                                  {{ billing_address.zip }}<br/>{{ billing_address.country }}
+                                </p>{% endif %}
+                              </div>
+                              <div style="border-top: 1px solid #AEAEAE; padding: 0 20px; margin-top: 20px;">
+                                <div style="font-size: 22px; color: #4CB3E6; font-weight: lighter; letter-spacing: 2px; margin: 20px 0;">Questions about your order?</div><a href="http://www.snapfit.com/contact/" target="_blank" style="display: block; height: 50px; width: 220px; background: #4CB3E6; color: white; line-height: 50px; text-align: center; text-decoration: none;">CONTACT US</a>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" style="padding: 40px 40px; line-height: 1.2; font-size: 11px; color: white; background: #5D5D5D;">
+                      <div style="font-size: 22px; font-weight: lighter; letter-spacing: 2px;">Let's be friends</div>
+                      <div style="margin-top: 30px;"><a href="https://www.facebook.com/pages/SnapFit/1476914185929291?fref=ts" target="_blank" style="display: inline-block; margin-right: 3%; margin-bottom: 5px;"><img src="http://www.snapfit.com/img/email/shop/ic_facebook@2x.png" width="46" height="46"/></a><a href="https://twitter.com/SnapfitInc" target="_blank" style="display: inline-block; margin-right: 3%; margin-bottom: 5px;"><img src="http://www.snapfit.com/img/email/shop/ic_twitter@2x.png" width="46" height="46"/></a><a href="http://instagram.com/snapfitinc" target="_blank" style="display: inline-block; margin-right: 3%; margin-bottom: 5px;"><img src="http://www.snapfit.com/img/email/shop/ic_instagram@2x.png" width="46" height="46"/></a><a href="http://shop.snapfit.com/" target="_blank" style="display: inline-block; margin-right: 3%; margin-bottom: 5px;"><img src="http://www.snapfit.com/img/email/shop/ic_cart@2x.png" width="46" height="46"/></a><a href="http://blog.snapfit.com/" target="_blank" style="display: inline-block;"><img src="http://www.snapfit.com/img/email/shop/ic_feedback@2x.png" width="46" height="46"/></a></div>
+                      <div style="margin-top: 20px;"><a href="https://twitter.com/hashtag/SnapFit" target="_blank" style="color: white; font-size: 18px; margin-right: 15px; font-weight: lighter; letter-spacing: 1px; text-decoration: none; display: inline-block;">#snapfit</a><a href="https://twitter.com/hashtag/fithappens" target="_blank" style="color: white; font-size: 18px; margin-right: 15px; font-weight: lighter; letter-spacing: 1px; text-decoration: none; display: inline-block;">#fithappens</a><a href="https://twitter.com/hashtag/t15challenge" target="_blank" style="color: white; font-size: 18px; margin-right: 10px; font-weight: lighter; letter-spacing: 1px; text-decoration: none; display: inline-block;">#t15challenge</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td valign="top" style="padding: 30px; font-size: 14px; line-height: 1.5;">P.S. We may send you emails (here and there), but we promise they'll be awesome(giveaways, recipes, you know... cool stuff).<br/><br/>This email was sent to you by SnapFit. To ensure delivery to your inbox(not bulk or junk folders), you can add<a href="mailto:support@snapfit.com" style="padding: 0 5px; color: gray;">support@snapfit.com</a>to your address book or safe list.</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -21,6 +21,9 @@
 
 en:
   spree:
+    cart:
+      empty: YOUR SHOPPING CART IS EMPTY
+      empty_detail: You're only a few steps from making a cool choice. What are you waiting for? Add some products to cart!
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
     sign_in_through_one_of_these_services: 'Sign in with'
     home: Cool Choice Home
@@ -154,6 +157,8 @@ en:
       recipient_name: recipient name
       message: Add your medssage here (up to 100 characters)
       yourname: Your Name
+      congrat: Congratulations
+      after_congrat: Your gift is preparing! Every Cool Choice order is freshly made, especially for you!
     message:
       this: Dear
       add: Add your message here (up to 100 characters)

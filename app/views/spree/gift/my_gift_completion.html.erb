@@ -1,3 +1,3 @@
   <div id="cart">
-  <div style="text-align: center; margin-top: 100px"><%= image_tag 'home/icon_gift@2x.png' %><p style="font-weight: 600; font-size:22px; line-height: 1.14">Congratulations</p><p style="color: #474c5d">You're only a few steps from making a cool choice. What are you waiting for? Add some products to cart!</p><p><%= link_to Spree.t(:home), root_path, class: 'roundButton b1', style: 'margin-top:30px; padding-left: 20px; padding-right:20px; width:auto' %></p><div>
+  <div style="text-align: center; margin-top: 100px"><%= image_tag 'home/icon_gift@2x.png' %><p style="font-weight: 600; font-size:22px; line-height: 1.14"><%= Spree.t('gift.congrat') %></p><p style="color: #474c5d"><%= Spree.t('gift.after_congrat') %></p><p><%= link_to Spree.t(:home), root_path, class: 'roundButton b1', style: 'margin-top:30px; padding-left: 20px; padding-right:20px; width:auto' %></p><div>
     </div>
