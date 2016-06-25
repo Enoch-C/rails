@@ -12,9 +12,11 @@
                 <%= content_tag(:i, '', class: "icon-spree-#{user_authentication.provider.to_url}-circled") %>
                 <%= user_authentication.provider %>
               </div>
+              <%= if false %>
               <div class="uid col-xs-5 col-md-3">
                 <%= user_authentication.uid %>
               </div>
+              <% end %>
               <div class="col-xs-2 text-center">
                 <%= link_to user_authentication, data: { confirm: "#{Spree.t(:remove_authentication_option_confirmation)}" }, method: :delete, class: 'btn btn-default' do %>
                   <%= content_tag(:span, '', class: 'glyphicon glyphicon-minus-sign') %>
