@@ -167,10 +167,9 @@ en:
       paypal: PayPal
     ingredient:
       title: 'SAFE AND NATURAL INGREDIENTS'
-      sub-title: 'We use only high-quality ingredients, sourced from reputable suppliers and
-		backed by third-party testing.'
+      sub-title: 'We use only high-quality ingredients, sourced from reputable suppliers and backed by third-party testing.'
       function_Anti-Aging: Anti-Aging
-      function_Beauty: Beauty Care
+      function_Beauty: Beauty
       function_Brain_Care: Brain Care
       function_Digestive_Care: Digestive Care
       function_Energy: Energy
@@ -182,33 +181,109 @@ en:
       function_Lung_Care: Lung Care
       function_Mens_Vitality: Men's Vitality
       function_Sleep_Support: Sleep Support
-      function_Stress_Management: Stress Management
-      ingredient_Anti-Aging: SOD
-      ingredient_Beauty: Bioactive Collagen Peptides
-      ingredient_Brain_Care: Citicoline
-      ingredient_Digestive_Care: GanedenBC30 PROBIOTIC
-      ingredient_Energy: Green Tea Polyphenols and Egcg
-      ingredient_Eye_Care: Lutein & Zeaxanthin
-      ingredient_Heart_Care: Co-Enzyme Q10
-      ingredient_Immune_Support: Beta-Glucan
-      ingredient_Joint_Care: Glucosamine
-      ingredient_Liver_Care: Milk Thistle and Artichoke Extracts
-      ingredient_Lung_Care: Vital respiration D-16
-      ingredient_Mens_Vitality: Eurycoma
-      ingredient_Sleep_Support: Melatonin
-      ingredient_Stress_Management: L-Theanine
-      help_Anti-Aging: Helps protect cells from damage
-      help_Beauty: Helps promote youthful skin
-      help_Brain_Care: Helps promote memory health
-      help_Digestive_Care: Helps support gut health
-      help_Energy: Provides healthy boost
-      help_Eye_Care: Helps protect & promote healthy vision
-      help_Heart_Care: Helps support cardiovascular health
-      help_Immune_Support: Supports & enhances the immune sysytem
-      help_Joint_Care: Helps build & repair cartilage
-      help_Liver_Care: Helps remove toxins
-      help_Lung_Care: Helps support efficient respiration
-      help_Mens_Vitality: Helps improve performance
-      help_Sleep_Support: Helps support restful sleep
-      help_Stress_Management: Helps support efficient respiration
+      function_Stress_Management: Stress Relief
+      ingredient_Anti-Aging: SUPEROXIDE DISMUTASE (SOD)
+      ingredient_Beauty: BIOACTIVE COLLAGEN PEPTIDES
+      ingredient_Brain_Care: CITICOLINE
+      ingredient_Digestive_Care: PROBIOTIC
+      ingredient_Energy: GREEN TEA POLYPHENOLS and EGCG
+      ingredient_Eye_Care: LUTEIN & ZEAXANTHIN
+      ingredient_Heart_Care: CO-ENZYME Q10
+      ingredient_Immune_Support: BETA-GLUCAN
+      ingredient_Joint_Care: GLUCOSAMINE
+      ingredient_Liver_Care: MILK THISTLE AND ARTICHOKE EXTRACTS
+      ingredient_Lung_Care: VITAL RESPIRATION D-16
+      ingredient_Mens_Vitality: EURYCOMA
+      ingredient_Sleep_Support: MELATONIN
+      ingredient_Stress_Management: L-THEANINE
+      help_Anti-Aging: HELPS REPAIR CELL DAMAGE
+      help_Beauty: HELPS PROMOTE YOUTHFUL SKIN
+      help_Brain_Care: HELPS PROMOTE MEMORY HEALTH
+      help_Digestive_Care: HELPS SUPPORT DIGESTIVE HEALTH
+      help_Energy: PROVIDES HEALTHY BOOST
+      help_Eye_Care: HELPS PROTECT & PROMOTE HEALTHY VISION
+      help_Heart_Care: HELPS SUPPORT CARDIOVASCULAR HEALTH
+      help_Immune_Support: SUPPORTS & ENHANCES THE IMMUNE SYSYTEM
+      help_Joint_Care: HELPS BUILD & REPAIR CARTILAGE
+      help_Liver_Care: HELPS REMOVE TOXINS
+      help_Lung_Care: HELPS SUPPORT EFFICIENT RESPIRATION
+      help_Mens_Vitality: HELPS IMPROVE PERFORMANCE
+      help_Sleep_Support: HELPS SUPPORT RESTFUL SLEEP
+      help_Stress_Management: HELPS PROMOTE RELAXATION WITHOUT DROWSINESS
+      detail_Anti-Aging: 'Thanks to trillions of cells that work together in harmony, our bodies are able to perform their daily functions. When we are young, our bodies’ cells are in a period of growth and development, and their   performance is optimal. As we age, however, our cells break down, inhibiting bodily functions. Superoxide Dismutase (SOD) is a potent anti-aging and anti-oxidant supplement that helps to protect and repair cells from age-related damage.'
+      detail_Beauty: The skin is the largest organ of the body, and it performs a number of vital functions. Not only does our skin hold in fluids to prevent dehydration, but it also acts as a barrier from harmful microbes, allows us to feel (thanks to nerves found in the epidermis), and assists in regulating our body temperature. Unfortunately, every day our skin is victim to chemicals, pollutants, UV radiation, stress, and/or poor nutrition. These harmful factors cause our skin to become less healthy over time, thus losing its firmness, moisture, and elasticity, and resulting in wrinkles and fine lines. Bioactive collagen peptides help to improve overall skin health, increasing the effectiveness of the skin at performing its essential functions and reducing wrinkles and fine lines.
+      detail_Brain_Care: When we are young, our brains are like sponges, processing information efficiently and storing it in the form of memories. Due to aging, our brains become less effective, and we experience a decline in our ability to store and recall information. This is caused by the degeneration of brain cells (called neurons), which communicate through a dense web of synaptic connections. As we age, the ability of synapses to transmit information diminishes. In order to function properly, the brain needs an energy source to keep the synapses working efficiently. Citicoline aids in this by supporting brain signaling and improving memory health.
+      detail_Digestive_Care: Our stomachs are home to trillions of beneficial microorganisms called probiotics, which are essential for our bodies to function properly. Poor diet, illness, and antibiotic medications reduce the number of beneficial probiotics in our stomachs, inhibiting our ability to efficiently digest food and fight disease. The probiotic Bacillus Coagulans can be supplemented to replenish our stores of probiotics, thereby improving digestive health and immune functions.
+      detail_Energy: ' '
+      detail_Eye_Care: It goes without saying that we are attached at the hip with our cell phones, tablets, and other devices. We take them everywhere we go and interact with them constantly. These devices, however, emit blue light, damaging our eyes and causing poor vision over time. Natural Lutein and Zeaxanthin help protect and repair our damaged eyes by acting as a filter to block the damaging light from these devices and providing nutritional support for visual health and acuity.
+      detail_Heart_Care: Like all of our organs, the heart needs energy to function properly. As we age, the heart’s source of energy declines, causing various cardiovascular conditions. Co-Q10, derived from a natural fermentation process, helps support cardiovascular health by supplying the heart with a source of energy.
+      detail_Immune_Support: As we age, our bodies are exposed to bacteria and viruses that cause illness. A healthy body develops immunity to help fight off these sickness-causing organisms, but poor diet, stress, and infection weaken our bodies’ immune systems. In order to combat this, beta-glucan (produced through natural fermentation) helps modulate the body’s immune defense system, increasing its ability to fight illness.
+      detail_Joint_Care: The human body is a hyper-complex vehicle, and just like we regularly change the oil in our cars, we need to re-lubricate our joints in order to cause minimal stress. Friction and physical stress are the greatest in our joints, caused from running, walking, and any form of physical activity. To address joint issues (such as arthritis), glucosamine can be supplemented to help keep our joints in good shape by helping to build and repair cartilage—the tissue that cushions the joints.
+      detail_Liver_Care: Alcohol consumption, exposure to pollutants, viruses, excessive fat, and poor diet put an extraordinary amount of strain on the liver. These factors can damage the liver to the point that it stops functioning properly, eventually causing it to fail altogether. While there is no substitute for proper diet, exercise, and a healthy lifestyle to maintain healthy liver function, certain supplements may help our livers to function optimally. Milk thistle and artichoke extracts help to improve liver function and repair liver damage.
+      detail_Lung_Care: Our lungs serve as a filter in our bodies, allowing the essentials to enter (like oxygen, for example), while keeping the unnecessary out (like dust and dirt). Our organic proprietary herbal blend aids our lungs by helping renew the cells that filter out the bad, keeping them working at optimum capacity, and promoting efficient oxygen intake and respiratory performance.
+      detail_Mens_Vitality: A common side-effect of aging in men is decreased sexual performance. Malaysian ginseng extract, a rare herb from Southeast Asia, is a natural way to combat this issue. It has been shown to enhance energy, sexual performance, stamina, and libido, as well as naturally raise the body’s testosterone levels.
+      detail_Sleep_Support: Have you ever woken up in the morning and already felt tired? This is because your body did not get the amount and quality sleep that it needs. While it is well known that the body requires a full 6 to 8 hours of sleep per night in order to function properly, it must not be overlooked that the quality of sleep is also very important. When taken before bedtime*, melatonin can be used to help support and improve the quality of sleep**.
+      detail_Stress_Management: The world is filled with stress, especially in this day and age. Work deadlines, exams, job interviews, traffic, and financial struggles are just some of the many stressors that the modern world has to offer. Constant stress affects our body in a variety of negative ways, causing us to get sick, gain weight, struggle with depression, and even become victim of heart disease. L-theanine helps improve learning performance, focus, and mental clarity, promoting concentration and helping to reduce stress, restlessness, nervousness, and irritability.
+
+      contains_Anti-Aging: Each serving contains 10 milligrams (14,000 IU) of natural SOD, extracted from melons.
+      contains_Beauty: Each serving contains 1,000 milligrams of bioactive collagen peptides, sourced from beef.
+      contains_Brain_Care: Each serving contains 250 milligrams of Citicoline.
+      contains_Digestive_Care: Each serving contains 1 billion active and shelf-stable probiotic Bacillus Coagulans microorganisms.
+      contains_Energy: ' '
+      contains_Eye_Care: Each serving contains 7 milligrams of lutein and zeaxanthin blend extracted from Marigold.
+      contains_Heart_Care: Each serving contains 50 milligrams of Co-Q10.
+      contains_Immune_Support: Each serving contains 200 milligrams of 1-3-Beta-Glucan, produced by natural fermentation.
+      contains_Joint_Care: Each serving contains 1,500 milligrams of Glucosamine from a pure vegetable, non-allergenic source.
+      contains_Liver_Care: Each serving contains 400 milligrams of combined milk thistle and artichoke extracts.
+      contains_Lung_Care: Each serving contains 250 milligrams of organic proprietary herbal blend.
+      contains_Mens_Vitality: Each serving contains 100 milligrams of Malaysian ginseng extract.
+      contains_Sleep_Support: Each serving contains 6 milligrams of melatonin.
+      contains_Stress_Management: Each serving contains 100 milligrams of pure L-theanine from green tea.
+      more1_Anti-Aging: SOD B Extramel® is clinically proven to promote a sense of well-being through the maintenance of optimal mental and physical performances.
+      more1_Beauty: Natural aging processes, stress, pollution, UV radiation, harmful chemicals, and poor nutrition all contribute to loss of skin firmness, moisture, and elasticity, resulting in wrinkles and dryness. Collagen peptides help reduce skin wrinkles and improve skin elasticity.
+      more1_Brain_Care: Cool Choice Brain Care provides high quality, pure, natural, and stable cognizin citicoline, an essential brain health ingredient that provides nutritional support for attention, focus, and brain energy.
+      more1_Digestive_Care: Probiotic supports digestive health and function.
+      more1_Energy: Cool Choice Energy packs all the benefits of green tea in one small serving.
+      more1_Eye_Care:	Blue light emitted from electronic devices (computers, HD TV, smart phones, tablets, energy-saving lightbulbs, etc.) damages the eyes. The average American is exposed to about 10-12 hours of blue light per day. Lutein and zeaxanthin act as primary filter against high-energy blue light and help protect against oxidative stress and inflammation.
+      more1_Heart_Care: Cool Choice Heart Care contains soluble Co-Enzyme Q10 (Co-Q10) to help support heart health. As we age, the amount of Co-Q10 in the body declines. Supplementation can increase the levels of Co-Q10 in the body.
+      more1_Immune_Support: Beta-glucan naturally modulates the body’s immune response and helps maintain overall health and wellness. It helps strengthen the body’s immune defense.
+      more1_Joint_Care: Cool Choice provides premium quality, USP-Grade vegetable glucosamine for joint health and support. Glucosamine is in the fluid that cushions joints. It stimulates the repair and formation of cartilage.
+      more1_Liver_Care: Cool Choice Liver Care contains milk thistle, extracted using non-harmful chemicals to help protect against alcohol, pollutants, and toxins to maintain liver health.
+      more1_Lung_Care: Cool Choice Lung Care helps promote healthy respiration through a unique blend of herbs that support oxygen intake and efficient utilization of the respiratory system. This proprietary herbal blend has antibacterial and anti-inflammatory properties which help keep lungs moist to reduce cough and other difficulties during respiration.
+      more1_Mens_Vitality: Cool Choice Men’s Vitality contains eurycoma longifolia extract (Tonkat Ali or Malaysian ginseng), a rare herb found in Southeast Asia, for vigor and vitality.
+      more1_Sleep_Support: Melatonin normalizes sleep patterns, day/night rhythms, and protects the immune system from stress. As we age, natural levels of melatonin decline, affecting normal sleep patterns.
+      more1_Stress_Management: Research suggests that L-theanine helps improve learning performance, focus, and mental clarity, promote concentration, improve sleep quality, reduce normal PMS symptoms, reduce the side effects of caffeine, and support the immune system.
+      more2_Anti-Aging: Clinical studies show that a one-month supplementation with SOD B Extramel® significantly boosts daily performances by improving stress relief, sleep quality, cognitive functions, and physical tone.
+      more2_Beauty: Collagen peptides also help retain and increase skin moisture and slow the formation of wrinkles.
+      more2_Brain_Care: Cognizin citicoline supports focus and attention. It helps promote healthy brain function by supplying the brain with the energy it needs to stay sharp and active.
+      more2_Digestive_Care: Probiotic supports immune health and function and protein utilization.
+      more2_Energy: Green Tea extract contains concentrated polyphenols, EGCG (epigallocatechin-3-gallate) and caffeine to help boost energy.
+      more2_Eye_Care: Lutein and zeaxanthin are the only carotenoids located in the eye (macula). Lutemax 20/20 - Lutein and zeaxanthin isomers protect against oxidative stress and inflammation.
+      more2_Heart_Care: Studies have shown that Co-Q10 helps in preserving heart health and can reduce negative side effects of medications, such as statin drugs.
+      more2_Immune_Support: Beta-glucan also helps to stabilize cell membranes and stimulate protein synthesis.
+      more2_Joint_Care: Studies have shown that glucosamine helps in reducing osteoarthritis symptoms.
+      more2_Liver_Care: Milk thistle stabilizes the cell membrane and stimulates protein synthesis, while accelerating regeneration of damaged liver cells and reducing inflammation.
+      more2_Lung_Care: Cool Choice Lung Care helps support healthy respiration by promoting secretion of fluids, moistening the lungs to control cough due to dry lungs.
+      more2_Mens_Vitality: Eurycoma longifolia extract contains eurypeptides, which are known to enhance energy, sexual performance, stamina, and libido. Users have reported an increase in energy and endurance.
+      more2_Sleep_Support: Melatonin is a natural anti-oxidant, which helps the body fight against free-radicals that cause damage.
+      more2_Stress_Management: L-theanine promotes a sense of relaxation, reduces stress and restlessness, helps ease nervousness and irritability, and gently soothes tension away.  It works to suppress glucocorticoids, which give the body and mind a feeling of “stress”.
+      more3_Anti-Aging: Cool Choice Anti-Aging uses the highest source of natural, bioactive antioxidant Superoxide Dismutase (SOD, 14,000 IU/g), extracted from melons.
+      more3_Beauty: Cool Choice Beauty Care provides bioactive, optimized collagen peptides for healthy, youthful skin.
+      more3_Brain_Care: Citicoline supports brain signaling, brain DNA synthesis, and repair.
+      more3_Digestive_Care: Cool Choice Digestive Care delivers 1 billion active and shelf-stable probiotic Bacillus coagulans microorganisms per serving for digestive health and immune support, as part of a balanced and healthy lifestyle.
+      more3_Energy: Green Tea actives help support mental stimulation and energy and have powerful anti-oxidant activity.
+      more3_Eye_Care: Cool Choice Eye Care provides natural carotenoids to support eye health—lutein and zeaxanthin from marigold extract—in the same 5:1 ratio as found in nature.
+      more3_Heart_Care: Co-Q10 provides energy at the cellular level. It can help lower blood pressure and enhance heart functions.
+      more3_Immune_Support: Cool Choice Immune Care contains fermented, high purity, and high bioavailable 1, 3-beta-glucan for immune support.
+      more3_Joint_Care: Glucosamine also has anti-inflammatory properties.
+      more3_Liver_Care: Artichoke leaf extract is high in biologically active compounds and serves as an antioxidant, which helps remove harmful toxins from the liver.
+      more3_Lung_Care: Cool Choice Lung Care works as an antioxidant and anti-inflammatory, inhibiting vascular permeability and improving overall vitality.
+      more3_Mens_Vitality: It also helps to naturally raise the body’s testosterone levels.
+      more3_Sleep_Support: Cool Choice Sleep Support provides melatonin to help promote a healthy sleeping pattern. Melatonin is released from the pineal gland, which normalizes the regulation of sleep.
+      more3_Stress_Management: Cool Choice Stress Management contains pure, natural L-theanine, a patented amino acid for stress and well-being, mental relaxation and focus without drowsiness. It is GRAS affirmed by FDA (meaning “generally recognized as safe”) for use in food and beverages.
+      more4_Lung_Care: Cool Choice Lung Care is a certified organic herbal blend that helps support oxygen intake and ensures efficient utilization of the respiratory system.
+      caution1_Sleep_Support: '*  Cool Choice recommends taking the melatonin supplement only before going to sleep.'
+      caution2_Sleep_Support: '** Warning: May cause drowsiness. Use caution when operating a car or dangerous machinery.'
       more: MORE
+      warning1: These statements have not been evaluated by the FDA. These products are not intended to treat, cure, or prevent any disease.
+      warning2: 'Warning: Pregnant or lactating women and people with known medical conditions and/or taking medications should consult with a healthcare practitioner before taking any dietary supplements.'
