@@ -59,13 +59,13 @@
     <div class="text form-content">
       <div class="col-sm-6">
         <div class="form-title"><%= Spree.t(:'message.gift_from') %></div>
-        <label><%= Spree.t(:'message.your_email')%></label>
+        <label><%= Spree.t(:'message.your_email')%><abbr class="required" title="required">*</abbr></label>
         <input type="text" placeholder="" v-model="my_email"></input><br>
       </div>
       <div class="col-sm-6">
         <div class="form-title"><%= Spree.t(:'message.gift_to')%></div>
-        <label><%= Spree.t(:'message.email')%></label>
-        <input type="text" placeholder="" v-model="recipient_email"></input><br>
+        <label><%= Spree.t(:'message.email')%><abbr class="required" title="required">*</abbr></label>
+        <input type="text" placeholder="" v-model="recipient_email" required></input><br>
       </div>
     </div>
     <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
@@ -73,6 +73,7 @@
 </div>
 
 <script>
+  var validator = $("#checkout_form_message").validate();
   var vm = new Vue({
     el: '#checkout',
     data: {
@@ -82,7 +83,7 @@
 
       message: "",
       my_name: "",
-      my_email: "",
+      my_email: "<%= current_spree_user.email rescue "" %>",
       recipient_email: "",
       special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
     },
@@ -99,6 +100,10 @@
     },
     methods: {
       proceed: function(){
+        if (!validator.form()) {
+          validator.focusInvalid()
+          return
+        }
         var that = this
         $.ajax({
           type: "PUT",
