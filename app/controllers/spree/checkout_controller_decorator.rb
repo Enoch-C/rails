@@ -5,7 +5,6 @@ module Spree
     private
 
     def ensure_stripe_checkout
-      puts params
       if params[:stripeToken]
         stripe = PaymentMethod.find_by_type("Spree::Gateway::StripeGateway")
         unless params[:payment_source]
@@ -18,8 +17,7 @@ module Spree
         params.delete(:stripeTokenType)
         params.delete(:stripeEmail)
       end
-      puts params
-
     end
+
   end
 end
