@@ -34,14 +34,14 @@
       </div>
       <div class="content clearfix">
         <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
-        <% function_list.each do |function| %>
+        <% function_list.each_with_index do |function, i| %>
           <div class="choose-box <%= function %>">
-            <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), class: "img") %>
-              <div class="text">
+          <label for="<%= function %>" class="choose-label"><%= image_tag('home/icon-'.concat(function).concat('@2x.png'), {"class"=> "img", "id" => "image_#{i+1}", "v-on:click" => "action_select(#{i+1})"}) %>
+              <div class="text" id="text_<%= i+1 %>">
                 <%= Spree.t('homepage.content_function_' + function) %>
               </div>
             </label>
-            <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox"/>
+            <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox cb_<%= i+1 %>"/>
           </div>
         <% end %>
         <div class="choose-box wish">
@@ -137,7 +137,23 @@
       result: [],
       processing: false,
       order_number: "<%= current_order.number %>",
-      order_token: "<%= current_order.guest_token %>"
+      order_token: "<%= current_order.guest_token %>",
+      mutallyExclusives: {
+        5: {
+          on_image: "<%= image_url("home/icon-Energy@2x.png") %>",
+          on_color: "#62c0ef",
+          off_image: "<%= image_url("home/icon_energy_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+        13: {
+          on_image: "<%= image_url("home/icon-Sleep_Support@2x.png") %>",
+          on_color: "#7fadf0",
+          off_image: "<%= image_url("home/icon_sleep_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+      },
+      disabledFeatures: [],
+      theSKU: ""
     },
     computed: {
       types: function() {
@@ -155,15 +171,68 @@
         var hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"]
 
         var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
-        return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
+        this.theSKU = 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
+        return this.theSKU
+      },
+      keys: function() {
+        return Object.keys(this.mutallyExclusives).map(function(i){return +i})
       }
     },
+    
     watch: {
+      theSKU: function(value, oldValue) {
+        console.log(oldValue)
+        console.log(value)
+
+        var a1 = this.features()
+        var a2 = this.keys.slice(0)
+        
+        var flag = true
+        for (var i=0; i<a1.length; i++) {
+          var t = a1[i]
+          var index = a2.indexOf(t)
+          if (index > -1) {
+            a2.splice(index, 1)
+            this.disabledFeatures = a2
+            flag = false
+            break 
+          }
+        }
+        if (flag) {
+          this.disabledFeatures = []
+        }
+      },
+      disabledFeatures: function() {
+        console.log("disabling:" + this.disabledFeatures)
+        var that = this
+        this.keys.forEach(function(item){
+          if (that.disabledFeatures.includes(item)) {
+            that.disableItem(item)
+          } else {
+            that.enableItem(item)
+          }
+        })
+      },
       'result': function(val) {
+        this.sku
         this.check_3_box(val)
       }
     },
     methods: {
+      disableItem: function(index) {
+        document.getElementById("image_"+index).src = this.mutallyExclusives[index].off_image
+        document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].off_color
+        document.getElementsByClassName("cb_"+index)[0].disabled = true
+        
+      },
+      enableItem: function(index) {
+        document.getElementById("image_"+index).src = this.mutallyExclusives[index].on_image
+        document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].on_color
+        document.getElementsByClassName("cb_"+index)[0].disabled = false
+      },
+      features: function(s) {
+        return [+this.sku.slice(6,8), +this.sku.slice(8,10), +this.sku.slice(10,12)]
+      },
       check_3_box: function() {
         var box = document.getElementsByClassName('checkbox')
         if(this.result.length < 3) {
@@ -240,6 +309,11 @@
               })
             }
           })
+        }
+      },
+      action_select: function(index) {
+        if (this.disabledFeatures.includes(index)) {
+          alert("We do not recommend mixing this supplement with one of your previous choices. For your safety, please pick an alternative.")
         }
       }
     }

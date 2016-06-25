@@ -5,13 +5,16 @@
       <div class="word">
         <%= image_tag("checkout/line.png", class: "line") %>
         <div class="this"><%= Spree.t(:'message.this') %></div>
-        <input type="text" placeholder="recipient_name" class="recipient_name" v-model="recipient_name"></input>
-        <textarea class="message" v-model="message"></textarea>
+        <input type="text" placeholder="<%= Spree.t('gift.recipient_name') %>" class="recipient_name" v-model="recipient_name"></input>
+        <textarea class="message" placeholder="<%= Spree.t('gift.message') %>" v-model="message"></textarea>
         <div class="from"><%= Spree.t(:'message.from') %></div>
-        <input type="text" placeholder="your_name" class="your_name" v-model="my_name"></input><br>
+        <input type="text" placeholder="<%= Spree.t('gift.yourname') %>" class="your_name" v-model="my_name"></input><br>
       </div>
     </div>
     <div class="detail">
+
+      <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+
       <table>
         <colgroup>
           <col style="width: 50%;" />
@@ -30,26 +33,39 @@
         <tbody>
           <tr>
             <td>
-              <%= image_tag("checkout/img-product.png") %>
-              <%= Spree.t(:'message.coolchoice') %>
+              <div style="line-height: 100%;vertical-align: middle;">
+                <div style="display: inline-block; margin: 0 24px;">
+                  <% line_item = @order.line_items.first; variant = line_item.variant; if variant.images.length == 0 %>
+                    <%= small_image(variant.product) %>
+                  <% else %>
+                    <%= image_tag(variant.images.first.attachment.url(:small)) %>
+                  <% end %>
+                </div>
+                <div style="display: inline-block; width: 340px; vertical-align: middle">
+                  <div class="cool_choice_label"><%= line_item.name %></div>
+                  <div class="cool_choice_titles"><%= variant.options_text.sub("Choice A: ", "").sub(", Choice B: ", " + ").sub(", and Choice C: ", " + ") %></div>
+                </div>
+              </div>
             </td>
-            <td><%= Spree.t(:'message.price') %></td>
-            <td>1 month</td>
-            <td><%= Spree.t(:'message.price') %></td>
+            <td>$<%= variant.price %></td>
+            <td>1 Month</td>
+            <td>$39.99</td>
           </tr>
         </tbody>
       </table>
+      <% end %>
+
     </div>
     <div class="text form-content">
       <div class="col-sm-6">
         <div class="form-title"><%= Spree.t(:'message.gift_from') %></div>
         <label><%= Spree.t(:'message.your_email')%></label>
-        <input type="text" placeholder="your_email" v-model="my_email"></input><br>
+        <input type="text" placeholder="" v-model="my_email"></input><br>
       </div>
       <div class="col-sm-6">
         <div class="form-title"><%= Spree.t(:'message.gift_to')%></div>
         <label><%= Spree.t(:'message.email')%></label>
-        <input type="text" placeholder="recipient_email" v-model="recipient_email"></input><br>
+        <input type="text" placeholder="" v-model="recipient_email"></input><br>
       </div>
     </div>
     <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
@@ -62,12 +78,12 @@
     data: {
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
-      recipient_name: "Wang Jue",
+      recipient_name: "",
 
-      message: "Add your message here (up to 100 characters)",
-      my_name: "=w=",
-      my_email: "dummy email",
-      recipient_email: "dummy recipient email",
+      message: "",
+      my_name: "",
+      my_email: "",
+      recipient_email: "",
       special_instructions_hash: <%= JSON.parse(@order.special_instructions).to_json.html_safe %>
     },
     computed: {

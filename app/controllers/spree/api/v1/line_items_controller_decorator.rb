@@ -35,7 +35,7 @@ Spree::Api::V1::LineItemsController.class_eval do
     end 
 
     variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
-    @line_item = @order.contents.add(
+    @line_item = order.contents.add(
         variant,
         params[:line_item][:quantity] || 1,
         line_item_params[:options] || {}
