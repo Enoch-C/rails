@@ -117,6 +117,9 @@
         $.ajax({
           type: "PUT",
           url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
+          error: function(data) {
+            alert(data.responseJSON["errors"].join("\n") )
+          },
           success: function(data) {
             $.ajax({
               type: "PUT",

@@ -52,7 +52,7 @@
 </div>
 
 <script>
-  var validator = $("#checkout_form_complete").validate();
+  var validator = $("#checkout_form_address").validate();
   var vm = new Vue({
     el: '#content',
     data: {
@@ -111,6 +111,9 @@
           url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
           success: function(data) {
             window.location.href = '<%= gift_path %>/my_gift_completion'
+          },
+          error: function(data) {
+            alert(data.responseJSON["errors"].join("\n") )
           },
           data: this.json
         })
