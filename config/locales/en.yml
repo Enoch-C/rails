@@ -74,12 +74,15 @@ en:
       confirm_gift_email:
         subject: you received a gift from
     gift: Gift
-    GIFT: GIFT
-    INGREDIENT: INGREDIENT
+    GIFT: GIVE AS A GIFT
+    INGREDIENT: INGREDIENTS
     ABOUT: ABOUT
     LOGOUT: LOGOUT
     SIGNIN: SIGN IN
     homepage:
+      personalize_now: Personalized Now
+      give_as_a_gift: Give as a gift
+      learn_more: Learn more
       title_proud: PROUD TO BE
       title_introduce: Introducing the Personalized Supplements
       title_free: FREE SHIPPING in United State
@@ -131,13 +134,13 @@ en:
       bar_1_day: 1 day trail
       bar_US:  (US only)
     header:
-      gift: GIFT
-      ingredient: INGREDIENT
+      gift: GIVE AS A GIFT
+      ingredient: INGREDIENTS
       about: ABOUT
     gift:
       title_cool: Cool Care
       title_do: Show you care by giving a gift...
-      send_a_gift: SEND A GIFT
+      send_a_gift: PURCHASE AS A GIFT
       order: Purchase a gift for a loved one
       email: They select their supplement choices by Email
       gift: Show you care
@@ -160,8 +163,9 @@ en:
       credit_card: Credit Card
       paypal: PayPal
     ingredient:
-      title: 'COOL CHOICE'
-      sub-title: 'Personalized Nutritional Supplements'
+      title: 'SAFE AND NATURAL INGREDIENTS'
+      sub-title: 'We use only high-quality ingredients, sourced from reputable suppliers and
+		backed by third-party testing.'
       function_Anti-Aging: Anti-Aging
       function_Beauty: Beauty Care
       function_Brain_Care: Brain Care

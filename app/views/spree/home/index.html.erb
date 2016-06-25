@@ -55,27 +55,36 @@
   </div>
   <div class="section-2">
     <div class="container">
-      <a style="display:block" href="#section-1">
         <div class="para col-xs-4">
           <div class="img"><%= image_tag("home/icon-simply.png") %></div>
           <div class="title"><%= Spree.t(:"homepage.cool_simply") %></div>
           <p><%= Spree.t(:"homepage.cool_simply_line") %><br><%= Spree.t(:"homepage.cool_simply_line_2") %></p>
+          <a style="display:block" href="#section-1">
+            <div class="more">
+              <%= Spree.t(:"homepage.personalize_now") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
+            </div>
+          </a>
         </div>
-      </a>
-      <a style="display:block" href="<%= spree.gift_path %>">
         <div class="para col-xs-4">
           <div class="img"><%= image_tag("home/icon-care.png") %></div>
           <div class="title"><%= Spree.t(:"homepage.cool_care") %></div>
           <p><%= Spree.t(:"homepage.cool_care_line") %><br><%= Spree.t(:"homepage.cool_care_line_2") %></p>
+          <a style="display:block" href="<%= spree.gift_path %>">
+            <div class="more">
+              <%= Spree.t(:"homepage.give_as_a_gift") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
+            </div>
+          </a>
         </div>
-      </a>
-      <a style="display:block" href="<%= spree.root_path %>">
         <div class="para col-xs-4">
           <div class="img"><%= image_tag("home/icon-ingredients.png") %></div>
           <div class="title"><%= Spree.t(:"homepage.cool_ingredients") %></div>
           <p><%= Spree.t(:"homepage.cool_ingredients_line") %><br><%= Spree.t(:"homepage.cool_ingredients_line_2") %></p>
+          <a style="display:block" href="<%= spree.ingredient_path %>">
+            <div class="more">
+              <%= Spree.t(:"homepage.learn_more") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
+            </div>
+          </a>
         </div>
-      </a>
     </div>
   </div>
   <div class="section-3">
