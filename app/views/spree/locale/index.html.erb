@@ -5,6 +5,7 @@
         <label for="switch_to_locale" class="sr-only">
           <%= Spree.t(:'i18n.language') %>
         </label>
+        <%= image_tag('home/icon_earth@2x.png', {:style => "width: 32px; height: 32px;"}) %>
         <%= select_tag(:switch_to_locale,
           options_for_select(available_locales_options, I18n.locale),
           class: 'form-control') %>
