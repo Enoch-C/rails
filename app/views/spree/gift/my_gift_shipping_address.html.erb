@@ -2,7 +2,7 @@
   <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_address" } do |form| %>
 
   <div class="text form-content clearfix">
-    <div class="title" style="font-weight: 600; font-size: 20px"><%= Spree.t(:shipping_address) %></div>
+    <div class="title" style="font-weight: 600; font-size: 20px; margin-top: 60px"><%= Spree.t(:shipping_address) %></div>
     <div class="col-sm-6">
       <label><%= Spree.t(:first_name) %><abbr class="required" title="required">*</abbr></label>
       <input type="text" v-model="first_name" id="first_name" name="first_name" required/>
