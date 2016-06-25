@@ -11,14 +11,14 @@
 <% end %>
 
 <style type="text/css" media="screen">
-   @font-face { font-family: Face; src: url(<%= URI::parse(image_url("home/KomikaTitle-Paint.ttf")).path.html_safe %>); } 
+   @font-face { font-family: Face; src: url(<%= URI::parse(image_url("home/KomikaTitle-Paint.ttf")).path.html_safe %>); }
 </style>
 <% @body_id = 'home' %>
 <div id="cool-choice-home"  v-cloak>
 
   <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-  <script type="text/javascript" src="slick/slick.min.js"></script> 
+  <script type="text/javascript" src="slick/slick.min.js"></script>
 
   <div class="carousel">
   <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj1@2x.png")).path.html_safe %>) center no-repeat;">
@@ -30,7 +30,7 @@
     </div>
     <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj2@2x.png")).path.html_safe %>) center no-repeat;width:1440px;height:500px;">
       <div class="container" id="cart">
-        <div class="title" style="margin-top: 100px"><%= Spree.t(:"homepage.page2_title") %></div>
+        <div class="title" style="margin-top: 200px"><%= Spree.t(:"homepage.page2_title") %></div>
         <div class="sub-title"><%= Spree.t(:"homepage.page2_title2") %></div>
         <%= link_to Spree.t(:give_as_a_gift), gift_path, class: 'roundButton b1', style: 'margin-top:30px' %>
       </div>
