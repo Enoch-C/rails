@@ -21,9 +21,8 @@
 
 en:
   spree:
-    cart:
-      empty: YOUR SHOPPING CART IS EMPTY
-      empty_detail: You're only a few steps from making a cool choice. What are you waiting for? Add some products to cart!
+    cart_empty: YOUR SHOPPING CART IS EMPTY
+    cart_empty_detail: You're only a few steps from making a cool choice. What are you waiting for? Add some products to cart!
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
     sign_in_through_one_of_these_services: 'Sign in with'
     home: Cool Choice Home
