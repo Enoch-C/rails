@@ -29,8 +29,8 @@ Spree::Api::V1::LineItemsController.class_eval do
 
   def create
     if params[:gift]
-      @order.line_items.each{|item|
-        @order.contents.remove_line_item(item)
+      order.line_items.each{|item|
+        order.contents.remove_line_item(item)
       }
     end 
 
