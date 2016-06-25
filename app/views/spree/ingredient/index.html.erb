@@ -44,10 +44,13 @@
 </div>
 <script>
   $(".inner").click(function() {
-    $(this).addClass('active')
+    $("body").append($(".more-overlay"))
+    $("body").css("overflow","hidden")
+
+    $(this).addClass("active")
     var id = $(this).parent().attr("class").split(' ')[2]
     $("#" + id).show()
-    $(".more-overlay").show()
+    $("body>.more-overlay").show()
   })
   var vm = new Vue({
     el: '#ingredient',
@@ -58,6 +61,7 @@
         $(".more-overlay").hide()
         $(".more-overlay>div").hide()
         $(".function>.inner").removeClass('active')
+        $("body").css("overflow","scroll")
       }
     }
   })
