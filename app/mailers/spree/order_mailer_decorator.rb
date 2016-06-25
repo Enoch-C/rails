@@ -8,9 +8,9 @@ Spree::OrderMailer.class_eval do
 
   def confirm_gift_email(order, resend = false)
     @order = order.respond_to?(:id) ? order : Spree::Order.find(order)
-    si = @order.special_instructions
+    si = eval(@order.special_instructions)
     subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
-    subject += "Dear #{si['recipient_name']}, #{Spree.t('order_mailer.confirm_gift_email.subject')} #{si['my_name']}!"
-    mail(to: si['recipient_email'], from: from_address, subject: subject)
+    subject += "Dear #{si[:recipient_name]}, #{Spree.t('order_mailer.confirm_gift_email.subject')} #{si[:my_name]}!"
+    mail(to: si[:recipient_email], from: from_address, subject: subject)
   end
 end

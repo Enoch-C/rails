@@ -1,5 +1,6 @@
-Dear <%= @order.special_instructions['recipient_name'] %>,
+<% si = eval(@order.special_instructions) %>
+Dear <%= si[:recipient_name] %>,
 
-<%= Spree.t('order_mailer.confirm_gift_email.subject') + ' ' + @order.special_instructions['my_name'] %>
+<%= Spree.t('order_mailer.confirm_gift_email.subject') + ' ' + si[:my_name] %>
 
-https://coolchoice.com/gift/my_gift?token=<%= @order.guest_token%>
+<%= Rails.application.config.webhost %>/gift/my_gift?token=<%= @order.guest_token%>
