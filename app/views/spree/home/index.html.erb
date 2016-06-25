@@ -348,7 +348,7 @@
             type: 'POST',
             url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
-              window.location.href = '/cart'
+              window.location.href = '<%= cart_path %>'
             },
             complete: function() {
               console.log(that.processing)
@@ -365,7 +365,7 @@
             type: 'POST',
             url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
             success: function(data) {
-              window.location.href = '/checkout'
+              window.location.href = '<%= checkout_path %>'
             },
             complete: function() {
               that.processing = false
@@ -387,7 +387,7 @@
                 type: 'POST',
                 url: '/api/v1/orders/' + that.order_number + '/line_items?line_item[sku]=' + sku + '&line_item[quantity]=' + that.num + '&order_token=' + that.order_token,
                 success: function(data) {
-                  window.location.href = '/checkout'
+                  window.location.href = '<%= checkout_path %>'
                 },
                 complete: function() {
                   that.processing = false

@@ -115,7 +115,7 @@
               url: '/api/v1/checkouts/' + that.order_number + '/next.json?order_token=' + that.order_token,
               success: function(data) {
                 console.log(data)
-                window.location.href = '/checkout/'
+                window.location.href = '<%= checkout_path %>'
               },
             })
           },

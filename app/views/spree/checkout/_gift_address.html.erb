@@ -102,7 +102,7 @@
           type: "PUT",
           url: '/api/v1/checkouts/' + this.order_number + '/next.json?order_token=' + this.order_token,
           success: function(data) {
-            window.location.href = '/checkout/'
+            window.location.href = '<%= checkout_path %>'
           },
           fail: function(data) {
           }

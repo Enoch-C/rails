@@ -110,7 +110,7 @@
           type: "PUT",
           url: '/api/v1/orders/' + this.order_number + '?order_token=' + this.order_token,
           success: function(data) {
-            window.location.href = '/gift/my_gift_completion'
+            window.location.href = '<%= gift_path %>/my_gift_completion'
           },
           data: this.json
         })
