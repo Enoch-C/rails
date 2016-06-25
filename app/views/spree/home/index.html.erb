@@ -12,6 +12,27 @@
 
 <style type="text/css" media="screen">
    @font-face { font-family: Face; src: url(<%= URI::parse(image_url("home/KomikaTitle-Paint.ttf")).path.html_safe %>); }
+   .dots{
+     position: absolute;
+     bottom: -25px;
+     display: block;
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     list-style: none;
+     text-align: center;
+   }
+   .dots li button {
+      display: block;
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background-color: white;
+   }
 </style>
 <% @body_id = 'home' %>
 <div id="cool-choice-home"  v-cloak>
@@ -20,12 +41,18 @@
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
   <script type="text/javascript" src="slick/slick.min.js"></script>
 
-  <div class="carousel">
+  <div class="carousel" style="margin:0">
   <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj1@2x.png")).path.html_safe %>) center no-repeat;">
   <div class="container">
         <%= image_tag("home/page-1@2x.png", class: "logo") %>
         <div class="title"><%= Spree.t(:"homepage.title_proud") %></div>
         <div class="sub-title"><%= Spree.t(:"homepage.title_introduce") %></div>
+        <div class="free">
+            <div class="circle"></div><%= Spree.t(:"homepage.title_free") %>
+            <div class="circle"></div><br />
+            <div class="circle"></div><%= Spree.t(:"homepage.title_worldwide") %>
+            <div class="circle"></div>
+        </div>
       </div>
     </div>
     <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj2@2x.png")).path.html_safe %>) center no-repeat;width:1440px;height:500px;">
@@ -43,6 +70,7 @@
       </div>
     </div>
   </div>
+  <div id="dotsHere" style="position: relative; top: -35px"></div>
   <div id="section-1" class="section-1">
     <div class="container">
       <div class="title"><%= Spree.t(:"homepage.content_title_magic") %></div>
@@ -412,6 +440,7 @@
         cssEase: 'linear',
         autoplay: true,
         autoplaySpeed: 2000,
+        appendDots: "#dotsHere",
       });
     }
   })
