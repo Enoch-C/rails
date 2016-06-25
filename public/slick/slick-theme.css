@@ -154,9 +154,9 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
-    padding: 5px;
+    width: 10px;
+    height: 10px;
+    padding: 0px;
 
     cursor: pointer;
 
@@ -164,6 +164,8 @@
     border: 0;
     outline: none;
     background: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus
@@ -185,20 +187,22 @@
     top: 0;
     left: 0;
 
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
 
-    content: '•';
+    content: '';
     text-align: center;
 
-    opacity: .25;
+    opacity: 0.1;
     color: black;
 
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    border-radius: 5px;
+    background-color: white;
+
+
 }
 .slick-dots li.slick-active button:before
 {
-    opacity: .75;
+    opacity: 1;
     color: black;
 }
