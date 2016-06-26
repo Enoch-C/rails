@@ -21,6 +21,7 @@
 
 en:
   spree:
+    alert_mutual_exclusive: We do not recommend mixing this supplement with one of your previous choices. For your safety, please pick an alternative.
     cart_empty: YOUR SHOPPING CART IS EMPTY
     cart_empty_detail: You're only a few steps from making a cool choice. What are you waiting for? Add some products to cart!
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
