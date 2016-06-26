@@ -28,7 +28,7 @@
                   <tr class="stock-item">
                     <td class="item-image">
                       <%= mini_image(item.variant) %>
-                      <div class="text"><%= item.variant.name %><br><span class="func"><%= item.variant.options_text.sub("Choice A: ", "").sub(", Choice B: ", " + ").sub(", and Choice C: ", " + ") %></span></div>
+                      <div class="text"><%= item.variant.name %><br><span class="func"><%= item.variant.options_text %></span></div>
                     </td>
                     <td class="item-price"><%= display_price(item.variant) %></td>
                     <% type = item.quantity > 1 ? {"d"=>Spree.t(:"homepage.bar_days"), "w"=>Spree.t(:"homepage.bar_weeks"), "m"=>Spree.t(:"homepage.bar_months")} : {"d"=>Spree.t(:"homepage.bar_day"), "w"=>Spree.t(:"homepage.bar_week"), "m"=>Spree.t(:"homepage.bar_month")} %>

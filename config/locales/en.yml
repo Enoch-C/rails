@@ -73,6 +73,8 @@ en:
         print_labels: Print Labels
         print: Print
     order_mailer:
+      confirm_email:
+        thanks: Thanks for purchasing Cool Choice! Our hope is that you fall in love with Personalized Nutritional Supplements.'
       confirm_promoter_email:
         subject: You have received Promotion Credit
         store_credit_total: Total Store Credit

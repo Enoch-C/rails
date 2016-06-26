@@ -58,6 +58,15 @@ Z8ADKHJAW6TSTDSV
 Signature
 AFcWxV21C7fd0v3bYYYRCpSSRl31ASip498mEPpXCGbyGLkLxoh0Rr3b
 
+Username:
+tian_api1.snapfit.com
+Password:
+EEZZB8R3P2YWYL55
+Signature:
+AFcWxV21C7fd0v3bYYYRCpSSRl31AFBDiSvNg3uLRJT33RvCjleBozW.
+erp-buyer@snapfit.com
+12345678
+
 * How to run the test suite
 
 * Services (job queues, cache servers, search engines, etc.)

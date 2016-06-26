@@ -1,0 +1,28 @@
+<!-- You can override this template to design your own header. -->
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="background: white; box-shadow: 5px 5px 1px rgba(0,0,0,.08); max-width: 860px; min-width: 300px; border: 1px solid #BFBFBF;">
+  <tr>
+    <td class="center" align="center">
+      <center>
+
+        <table class="container">
+          <tr>
+            <td class="wrapper last">
+
+              <table class="twelve columns">
+                <tr>
+                  <td class="twelve sub-columns last">
+                    <%= link_to spree.root_url, class: 'template-label' do %>
+                      <%= image_tag Spree::Config.logo, class: 'logo', alt: Spree::Store.current.name, title: Spree::Store.current.name %>
+                    <% end %>
+                  </td>
+                  <td class="expander"></td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+        </table>
+
+      </center>
+    </td>
+  </tr>

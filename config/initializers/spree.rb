@@ -10,8 +10,8 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 Spree.config do |config|
-  config.admin_interface_logo = 'logo/logo.png'
-  config.logo = 'logo/logo.png'
+  config.admin_interface_logo = 'logo/logo@2x.png'
+  config.logo = 'logo/logo_s.png'
   config.allow_guest_checkout = false
 end
 
