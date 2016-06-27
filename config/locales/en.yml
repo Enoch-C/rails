@@ -73,6 +73,9 @@ en:
       order:
         print_labels: Print Labels
         print: Print
+    shipment_mailer:
+      shipped_email:
+        thanks: Thank you for ordering from Cool Choice!
     order_mailer:
       confirm_reg_email:
         instructions: This is to confirm that your account is now created.
@@ -166,7 +169,7 @@ en:
       email: They select their supplement choices by Email
       gift: Show you care
       recipient_name: recipient name
-      message: Add your medssage here (up to 100 characters)
+      message: Add your message here (up to 100 characters)
       yourname: Your Name
       congrat: Congratulations
       after_congrat: Your gift is preparing! Every Cool Choice order is freshly made, especially for you!

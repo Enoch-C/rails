@@ -1,26 +1,29 @@
 <% si = eval(@order.special_instructions) %>
-
-<table class="row header" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; background: #F7F7F7; margin: 0; padding: 0; width: 100% !important; line-height: 100% !important; font-size: 16px; color: #595959;">
   <tr>
     <td>
-      <div class="card">
-        <%= image_tag("#{Rails.application.config.webhost}/checkout/singlepackage_n@2x.png", class: "product") %>
-        <div class="word">
-          <%= image_tag("#{Rails.application.config.webhost}/checkout/line@2x.png", class: "line") %>
-          <div class="this"><%= Spree.t(:'message.this') %></div>
-          <input type="text" value="<%= si[:recipient_name] %>" class="recipient_name" v-model="recipient_name"></input>
-          <textarea class="message" value="<%= si[:message] %>" v-model="message"></textarea>
-          <div class="from"><%= Spree.t(:'message.from') %></div>
-          <input type="text" value="<%= si[:my_name] %>" class="your_name" v-model="my_name"></input><br>
+      <div class="card" style="position: relative; margin-left: 30px; width: 700px; height: 400px; background: image-url(<%= "#{Rails.application.config.webhost}/assets/gift/bj_gift_card.jpg" %>)">
+        <%= image_tag("#{Rails.application.config.webhost}/assets/checkout/singlepackage_n@2x.png", style: "position: absolute; left: 130px; bottom: 64px; width: 67px") %>
+        <div style="position: absolute; top: 100px; right: 116px; width: 316px; height: 211px; font-family: AngsanaNew; font-style: italic; color: #474c5d">
+          <%= image_tag("#{Rails.application.config.webhost}/assets/checkout/line@2x.png", style: "position: absolute; width: 316px; top: 40px; right: 0") %>
+          <div style="font-size: 24px; line-height: 50px; padding-left: 10px"><%= Spree.t(:'message.this') %></div>
+          <div style="position: absolute; right: 73px; top: 15px; width: 200px; font-size: 20px; text-align: center"><%= si[:recipient_name] %></div>
+          <div style="overflow-y: scroll; position: absolute; top: 43px; right: 0; width: 100%; height: 130px; line-height: 42px; font-size: 20px; color: #a6a4a4"><%= si[:message] %></div>
+          <div style="position: absolute; bottom: 0; right: 143px; font-size: 24px"><%= Spree.t(:'message.from') %></div>
+          <div style="position: absolute; right: 0; bottom: 0; width: 140px; font-size: 20px; text-align: center"><%= si[:my_name] %></div><br>
         </div>
       </div>
     </td>
   </tr>
   <tr>
-    <td>
+    <td style="padding: 30px;">
       <p class="lede">
         Dear <%= si[:recipient_name] %>,
       </p>
+      <p><%= si[:message] %></p>
+      <br>
+      <p><%= Spree.t(:'message.from') %></p>
+      <p><%= si[:my_name] %></p>
+      <br><br>
       <p>
         <%= Spree.t('order_mailer.confirm_gift_email.instructions') %>
       </p>
@@ -30,4 +33,3 @@
     </td>
     <td class="expander"></td>
   </tr>
-</table>
