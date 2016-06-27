@@ -1,0 +1,33 @@
+<% si = eval(@order.special_instructions) %>
+
+<table class="row header" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; background: #F7F7F7; margin: 0; padding: 0; width: 100% !important; line-height: 100% !important; font-size: 16px; color: #595959;">
+  <tr>
+    <td>
+      <div class="card">
+        <%= image_tag("#{Rails.application.config.webhost}/checkout/singlepackage_n@2x.png", class: "product") %>
+        <div class="word">
+          <%= image_tag("#{Rails.application.config.webhost}/checkout/line@2x.png", class: "line") %>
+          <div class="this"><%= Spree.t(:'message.this') %></div>
+          <input type="text" value="<%= si[:recipient_name] %>" class="recipient_name" v-model="recipient_name"></input>
+          <textarea class="message" value="<%= si[:message] %>" v-model="message"></textarea>
+          <div class="from"><%= Spree.t(:'message.from') %></div>
+          <input type="text" value="<%= si[:my_name] %>" class="your_name" v-model="my_name"></input><br>
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p class="lede">
+        Dear <%= si[:recipient_name] %>,
+      </p>
+      <p>
+        <%= Spree.t('order_mailer.confirm_gift_email.instructions') %>
+      </p>
+      <p>
+        <a href="<%= Rails.application.config.webhost %>/gift/my_gift?token=<%= @order.guest_token%>"><%= Spree.t('order_mailer.confirm_gift_email.get') %></a>
+      </p>
+    </td>
+    <td class="expander"></td>
+  </tr>
+</table>

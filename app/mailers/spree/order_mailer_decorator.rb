@@ -22,4 +22,10 @@ Spree::OrderMailer.class_eval do
       format.html { render html: wish.html_safe }
     end
   end
+
+  def confirm_reg_email(email, resend = false)
+    subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
+    subject += "Welcome to Cool Choice"
+    mail(to: email, from: from_address, subject: subject)
+  end
 end

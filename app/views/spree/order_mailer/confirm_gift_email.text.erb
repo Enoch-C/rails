@@ -3,4 +3,6 @@ Dear <%= si[:recipient_name] %>,
 
 <%= Spree.t('order_mailer.confirm_gift_email.subject') + ' ' + si[:my_name] %>
 
+<%= Spree.t('order_mailer.confirm_gift_email.instructions') %>
+
 <%= Rails.application.config.webhost %>/gift/my_gift?token=<%= @order.guest_token%>
