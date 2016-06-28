@@ -1,0 +1,29 @@
+#faq_page {
+    background: #EDEDED;
+    padding-bottom: 60px;
+}
+#faq_page .main {
+    min-height: 900px;
+}
+#faq_page .main .container {
+    margin-top: 20px;
+    background: white;
+    padding-bottom: 20px;
+}
+#faq_page .title {
+    color: #0088cc;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+#faq_page .q {
+    font-size: 16px;
+    color: #0088cc;
+    font-weight: 400;
+}
+#faq_page #footer {
+    margin-top: 20px;
+}
+#faq_page #footer .top {
+    display: none;
+}

@@ -73,6 +73,8 @@ Spree::Core::Engine.add_routes do
 
   get 'localization', to: 'localization#index'
 
+  get 'faq', to: 'faq#index'
+
   namespace :admin, path: Spree.admin_path do
     resources :promoters do
       member do
