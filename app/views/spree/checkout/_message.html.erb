@@ -5,10 +5,10 @@
       <div class="word">
         <%= image_tag("checkout/line@2x.png", class: "line") %>
         <div class="this"><%= Spree.t(:'message.this') %></div>
-        <input type="text" placeholder="<%= Spree.t('gift.recipient_name') %>" class="recipient_name" v-model="recipient_name"></input>
-        <textarea class="message" placeholder="<%= Spree.t('gift.message') %>" v-model="message"></textarea>
+        <input type="text" placeholder="<%= Spree.t('gift.recipient_name') %>" class="recipient_name" v-model="recipient_name" id='rname'></input>
+        <textarea id='gmessage' class="message" placeholder="<%= Spree.t('gift.message') %>" v-model="message"></textarea>
         <div class="from"><%= Spree.t(:'message.from') %></div>
-        <input type="text" placeholder="<%= Spree.t('gift.yourname') %>" class="your_name" v-model="my_name"></input><br>
+        <input id='sname' type="text" placeholder="<%= Spree.t('gift.yourname') %>" class="your_name" v-model="my_name"></input><br>
       </div>
     </div>
     <div class="detail">
@@ -65,7 +65,7 @@
       <div class="col-sm-6">
         <div class="form-title"><%= Spree.t(:'message.gift_to')%></div>
         <label><%= Spree.t(:'message.email')%><abbr class="required" title="required">*</abbr></label>
-        <input type="text" placeholder="" v-model="recipient_email" required></input><br>
+        <input id="remail" type="text" placeholder="" v-model="recipient_email" required></input><br>
       </div>
     </div>
     <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
@@ -95,13 +95,26 @@
         h["my_name"] = this.my_name
         h["my_email"] = this.my_email
         h["recipient_email"] = this.recipient_email
+        h["country_id"] = this.special_instructions_hash["country_id"]
         return h
       }
     },
     methods: {
       proceed: function(){
+        if ($('#rname')[0].value.length == 0) {
+          alert("<%= Spree.t(:gift_message_error1) %>")
+          return
+        }
+        if ($('#gmessage')[0].value.length == 0 || $('#gmessage')[0].value.length > 100 ) {
+          alert("<%= Spree.t(:gift_message_error2) %>")
+          return
+        }
+        if ($('#sname')[0].value.length == 0) {
+          alert("<%= Spree.t(:gift_message_error3) %>")
+          return
+        }
         if (!validator.form()) {
-          validator.focusInvalid()
+          document.getElementById("remail").focus();
           return
         }
         var that = this
