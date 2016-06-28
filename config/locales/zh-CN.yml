@@ -1,127 +1,430 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 zh-CN:
   spree:
-    site_name: Cool Choice
-    payment_pop_desc: 支持 国际信用卡 和 支付宝
-    apply_coupon_code: Apply Coupon Code
-    binding_users: Binding Users
-    items_cannot_be_shipped: Sorry, there is at least one product in your cart which can ONLY be shipped to USA address.
-    shipping_flat_rate_per_two_items: Flat rate per two package items
-    phone: Phone
-    promoter: Promoter
-    promoters: Promoters
-    percent: Percent
-    secret: Secret
-    new_promoter: Add New Promoter
-    first_name: First Name
-    last_name: Last Name
-    editing_promoter: Editing Promoter
-    promoter_store_credit: Store Credit
-    promoter_start: Binding Creation Time
-    promoter_month_length: Binding Length(m)
-    shopping_cart: Cart
-    cart_tableHeader_title: Cart
-    cart_tableHeader_details: Product Details
-    cart_tableHeader_price: Price
-    cart_tableHeader_quantity: Qty
-    cart_tableHeader_totalPrice: Total
-    cart_summary_title: Cart Summary
-    cart_summary_subtotal: Subtotal
-    cart_summary_shipping: Shipping
-    cart_summary_tax: Tax
-    cart_summary_total: Total
-    cart_summary_keepShopping: Keep Shopping
-    cart_summary_checkout: Checkout
-    admin:
-      promoter:
-        store_credits: Store Credit
-        binding_users: Binding Users
-        users: Users
-        items: Items
-        orders: Orders
-        account: Account
-      order:
-        print_labels: Print Labels
-        print: Print
-    order_mailer:
-      confirm_promoter_email:
-        subject: You have received Promotion Credit
-        store_credit_total: Total Store Credit
-        summary: Your Account Summary
-    gift: Gift
     homepage:
-      title_proud: PROUD TO BE
-      title_introduce: Introducing the Personalized Supplements
-      title_free: FREE SHIPPING in United State
-      content_title_magic: 'The Magic Starts Here:'
-      content_title_choose: Choose up to 3 of the followings
-      content_function_eye: Eye Care
-      content_function_heart: Heart Care
-      content_function_joint: Joint Care
-      content_function_beauty: Beauty
-      content_function_immune: Immune Care
-      content_function_sex: Sexual Function
-      content_function_liver: Liver Care
-      content_function_brain: Brain Care
-      content_function_lung: Lung Care
-      content_function_digestive: Digestive Care
-      content_function_energy: Energy
-      content_function_anti: Anti-Aging
-      content_function_relief: Stress Relief
-      content_function_wish: My Wish
-      cool_simply: Simply Cool
-      cool_simply_line: One easy packet
-      cool_simply_line_2: 3-in-1 at once
-      cool_care: Cool Care
-      cool_care_line: Do something special
-      cool_care_line_2: for yourself & others
-      cool_ingredients: Cool Ingredients
-      cool_ingredients_line: No artificial ingredients
-      cool_ingredients_line_2: Freshly made-to-order
-      cool_ingredients_line_3: No unnecessary ingredients
-      bar_choose: Choose up to 3 functions
-      bar_qty: QTY
-      bar_day: day
-      bar_week: week
-      bar_month: month
-      bar_days: days
-      bar_weeks: weeks
-      bar_months: months
-      bar_pack_1: 1 pack/d
-      bar_pack_2: 7 packs/w
-      bar_pack_3: 30 packs/m
-      bar_total: TOTAL
+      page2_title: 一流的关心/特别关心
+      page2_title2: 为你关心的人做些特别的事情
+      page3_title: 我们为您制作
+      page3_title2: 采用最好的原料
+      page3_title31: 源自
+      page3_title32: 和更多的 ...
+      personalize_now: 个性化开始
+      give_as_a_gift: 作为礼物赠送
+      learn_more: 了解更多
+      title_proud: 自豪使命
+      title_introduce: 介绍个性化的补充品
+      title_free: 美国免运费
+      title_worldwide: 全球运送
+      content_title_magic: 自然制造... 只为你
+      content_title_choose: 简单选择3种新的补充品
+      content_function_Anti-Aging: 抗衰老
+      content_function_Beauty: 美容护理
+      content_function_Brain_Care: 脑元保健
+      content_function_Digestive_Care: 肠道消化
+      content_function_Energy: 能量
+      content_function_Eye_Care: 眼部护理
+      content_function_Heart_Care: 心脏保健
+      content_function_Immune_Support: 免疫保健
+      content_function_Joint_Care: 关节保健
+      content_function_Liver_Care: 肝保健
+      content_function_Lung_Care: 肺保健
+      content_function_Mens_Vitality: 男性保健品
+      content_function_Sleep_Support: 睡眠保健
+      content_function_Stress_Management: 减压
+      cool_simply: Cool Choice
+      cool_simply_line: 3种补充品
+      cool_simply_line_2: 一个简单包裹
+      cool_care: 一流的关心/特别关心
+      cool_care_line: 把礼物送与
+      cool_care_line_2: 特别的人
+      cool_ingredients: 一流的原料
+      cool_ingredients_line: 100% 纯天然
+      cool_ingredients_line_2: 新鲜出炉-to-定制
+      bar_choose: 选出三种补充品
+      bar_qty: 质量
+      bar_day: 日
+      bar_week: 周
+      bar_month: 月
+      bar_days: 日
+      bar_weeks: 周
+      bar_months: 月
+      bar_pack_1: 1 包/日
+      bar_pack_2: 7 包/周 (仅限美国)
+      bar_pack_3: 30 包/月
+      bar_total: 合计
       bar_sign: $
-      bar_unit: USD
-      bar_cart: Add to Cart
-      bar_checkout: Checkout
+      bar_unit: usd
+      bar_cart: 增加到购物车
+      bar_checkout: 结算
+      trial_pack: 免邮费包裹
+      trial_pack_desc:  '* 仅限美国 & 航运适用'
+      your_wish: 你的愿望清单
+      we_are: 我们会持续研发新的补充品. 告诉我们你最想要什么.
+      submit: 提交
+    ingredient:
+      title: '安全并且自然的原料'
+      sub-title: '我们只采用高质量的原料, 来源于著名供应商并且拥有第三方测试支持.'
+      function_Anti-Aging: 抗衰老
+      function_Beauty: 美容护理
+      function_Brain_Care: 脑元保健
+      function_Digestive_Care: 肠道消化
+      function_Energy: 能量
+      function_Eye_Care: 眼部护理
+      function_Heart_Care: 心脏保健
+      function_Immune_Support: 免疫保健
+      function_Joint_Care: 关节保健
+      function_Liver_Care: 肝保健
+      function_Lung_Care: 肺保健
+      function_Mens_Vitality: 男性保健品
+      function_Sleep_Support: 睡眠保健
+      function_Stress_Management: 减压
+      ingredient_Anti-Aging: SOD
+      ingredient_Beauty: 胶原蛋白生物活性肽
+      ingredient_Brain_Care: 胞二磷胆碱
+      ingredient_Digestive_Care: 益生菌GANADENBC30
+      ingredient_Energy: 南非醉茄提取物
+      ingredient_Eye_Care: 叶黄素和玉米黄质
+      ingredient_Heart_Care: 辅酶CQ10
+      ingredient_Immune_Support: 葡聚糖
+      ingredient_Joint_Care: 氨基葡萄糖
+      ingredient_Liver_Care: 奶蓟草和洋蓟提取物
+      ingredient_Lung_Care: 肺保护植物草本配方
+      ingredient_Mens_Vitality: 东革
+      ingredient_Sleep_Support: 褪黑素
+      ingredient_Stress_Management: L-茶氨酸
+      help_Anti-Aging: 逆转时光，无惧衰老
+      help_Beauty: 胶原驻颜，强韧肌肤本质
+      help_Brain_Care: 脑力充电站
+      help_Digestive_Care: 活化肠道葆青春
+      help_Energy: 精力浓缩弹
+      help_Eye_Care: 眼睛的天然防辐射保护盾
+      help_Heart_Care: 心脏的能量加油泵
+      help_Immune_Support: 身体的免疫卫士
+      help_Joint_Care: 关节的天然润滑保护剂
+      help_Liver_Care: 排毒加修复，肝脏更健康
+      help_Lung_Care: 肺部过滤清洁器
+      help_Mens_Vitality: '天然“伟哥”，提升男性魅力'
+      help_Sleep_Support: 调节睡眠，提高睡眠质量
+      help_Stress_Management: 提神醒脑，轻松缓压
+      detail_Anti-Aging: '人体是由数以百万计的细胞一起工作，以便我们能完成所有的日常职能。当我们年轻的时候，我们的身体细胞正处于生长发育期，处于最佳状态。随着我们年龄的增长，我们体内的细胞进入了一个衰老的过程，它表现在身体机能和机能的各个方面的下降。超氧化物歧化酶(SOD)，是一种强大的抗衰老补充成分，有助于保护和修复细胞的损伤和快速老化。'
+      detail_Beauty: '皮肤是身体最大的器官，每天我们的皮肤会直接或间接接触: 化学物质——乳液、化妆、古龙香水;污染物，汽车尾气，香烟的烟雾;有害的紫外线辐射。压力和营养不良也会影响皮肤的健康。'
+      detail_Brain_Care: '当我们年轻时，我们的大脑就像一块海绵，能够轻易吸收我们能找到的所有信息并储存在我们的记忆中。我们一次性学习几种语言，适合在很年轻的时候，这就是一个众所周知的事实。当我们变老，我们开始越来越难记住一些名字或事情，我们记忆或回忆信息的能力下降是大脑老化的其中一种表现。我们记忆信息的能力随着岁月的流逝而逐渐衰退。大脑细胞通信(大脑信号)通过一系列称为神经元的网络来传递信息。随着年龄增长，大脑神经元传递信息的能力减弱。这时，大脑就需要一种能量，以帮助迅速启动脑细胞并保持神经元的工作效率。'
+      detail_Digestive_Care: '我们的肠道内有许多有益的微生物，它们被称为益生菌。它们在肠道中能够促进食物被良好地消化，也帮助我们的身体抵抗疾病的能力，提高我们的免疫力。不良的饮食习惯和疾病，尤其是我们有时不得不服用的抗生素，会大大减少我们肠道内益生菌的数量，导致一些胃肠不适，以及因免疫力下降而使我们更容易受到病菌侵袭。'
+      detail_Energy: '现代社会的工作、学习、运动等等日常活动都会耗费我们的精力，常常会让我们感到筋疲力尽，疲累不堪。在这时，我们就会去咖啡店买杯咖啡，或者花时间去泡一杯浓茶，以此来提神醒脑、补充精力。
+南非醉茄提取物其实是更好的选择。只要每日补充南非醉茄，就能时时充满能量，省去花在咖啡店和泡茶上的时间，用更多的时间去完成自己的生活列表。'
+      detail_Eye_Care: '我们日常常用的设备，如手机、ipad、电脑，游戏设备如X-BOX、游戏基地、任天堂游戏机等已经成为我们最好的朋友。无论我们去哪里，我们都会随身携带它们，我们不断的与它们保持在线互动，我们的生活中已经不能没有它们。然而，这些设备发出蓝色的光，会损害我们的眼睛，导致我们最终视力低下。'
+      detail_Heart_Care: '心脏需要能量才能正常工作。随着年龄的增长，精力的下降会引起各种心血管疾病。'
+      detail_Immune_Support: '随着我们的成长，我们的身体不断暴露在微生物环境中，这会使我们生病。一个正常健康的身体免疫力的发展，帮助击退这些疾病的致病微生物。不良的饮食、压力和感染会使我们身体的免疫系统变得虚弱。为了消除这些免疫隐患，Cool Choice推出了β葡聚糖免疫保健产品。'
+      detail_Joint_Care: '人体就像一个汽车引擎，我们需要定期更换机油，以保证汽车发动机的运转，使其能够有效地润滑运动部件，使它们平稳地运动，并对零件没有任何压力。没有润滑，引擎将失去性能，并终将崩溃。人体有许多运动器官，其中，关节的摩擦和压力是最大的。跑步、散步、和任何形式的活动，都容易损伤我们的关节。如果我们无法定期正确地润滑关节，与关节相关的许多疾病，包括关节炎等，最终会找上我们。为了解决这个问题，Cool Choice推荐您选择氨基葡萄糖进行关节护理。'
+      detail_Liver_Care: '过度饮酒，某些类型的病毒，以及摄入过多的脂肪和不良的饮食习惯都会给肝脏造成很大压力。这些因素最终伤害肝脏，导致肝脏停止正常运作。如果不纠正的话，肝脏可能最终停止运作、衰败。假如没有适当的饮食和运动来保持肝脏功能健康，某些补充剂也可以帮助消除这些毒素。'
+      detail_Lung_Care: '我们的肺就好像身体的空气净化器，吸入氧气，把空气中的灰尘、污垢等脏物过滤。
+空气净化器需要定期更换滤网或者清洗，否则就容易积攒灰尘，影响机器的运行性能。
+肺也是如此。Cool Choice专有的有机草本配方，能够需对肺泡进行清洁和更新，保证肺部的健康，确保肺部良好的工作能力。'
+      detail_Mens_Vitality: ' '
+      detail_Sleep_Support: '我们不能认为，身体仅仅需要一个完整的6到8小时高质量的睡眠，这样我们就可以在白天正常工作。这是不够的，身体所需足够的睡眠时间，但保证睡眠质量也是非常重要的。你有没有经历过有时醒来，仍然感觉疲倦不堪？这是因为你的身体没有得到所需要的高质量的睡眠。这可能是因为你担心第二天的考试，你与爱人在睡前的亲密，或者你因为第二天一早有事，害怕睡过头迟到。不管原因是什么，它都会影响你一天的工作质量，影响你最佳水平的发挥。'
+      detail_Stress_Management: '这个世界充满了压力。要努力完成学业，准备考试，要去面试工作，交通驾驶、限期完成工作，或者限期交缴账单等等，都是现代生活带来的许多压力。恒定的压力会影响我们的身体，在许多不同的方面使我们的免疫力低下，导致生病、体重增加、精神抑郁等。'
+      contains_Anti-Aging: '每份Cool Choice抗衰老补充产品含有10毫克从甜瓜中提取的超氧化物歧化酶(SOD)。'
+      contains_Beauty: '这些有害的影响使我们的皮肤失去原有年轻的坚固，水分和弹性，导致皱纹和细纹。胶原蛋白生物活性肽有助于减少皱纹和细纹，帮助修复和恢复皮肤的正常水分，坚固，和弹性。我们使用的是1000mg从牛肉中提取的胶原蛋白生物活性肽。'
+      contains_Brain_Care: '每份Cool Choice脑元保健产品含250毫克胞二磷胆碱，有助于在这一过程中通过帮助支持大脑信号，提高记忆功能健康。'
+      contains_Digestive_Care: '为了帮助促进健康的肠道，每67毫克就包含10亿耐储存的活性益生菌结芽孢杆菌，帮助支持健康的肠道。'
+      contains_Energy: '每份Cool Choice能量保健品含有500毫克的南非醉茄提取物。'
+      contains_Eye_Care: '每天7毫克从万寿菊中提取的的叶黄素和玉米黄质混合物，就能作为一个过滤器，阻挡从这些设备中发射的有害光线，有助于保护和修复我们受损的眼睛。'
+      contains_Heart_Care: '每份Cool Choice中含有200毫克自然发酵的辅酶q，有助于心血管健康的支持，为心脏提供能量的来源。'
+      contains_Immune_Support: '200毫克的β葡聚糖，能够在人体内自然发酵，它可以帮助调节人体的免疫防御，帮助增强人体抵抗疾病的能力或缩短其发病的持续时间。'
+      contains_Joint_Care: '纯植物提取的1500毫克氨基葡萄糖，有助于保护我们的关节功能，有效地帮助生产或修复软骨组织。软骨组织能够帮助缓冲人体运动中关节所承受的压力与摩擦。'
+      contains_Liver_Care: '550毫克的奶蓟草和洋蓟提取物有助于消除有害的毒素，也能帮助修复肝损伤。'
+      contains_Lung_Care: '每份Cool Choice含有250毫克专有的有机草本配方，其中包含：麦冬、五味子、黄芪、人身、干姜厚朴、甘草。'
+      contains_Mens_Vitality: '这是一种采用最天然的提高性能的方式，采用的是从人参中提取的100毫克的东革成分。'
+      contains_Sleep_Support: '6毫克的褪黑激素就能帮助、提高睡眠质量。'
+      contains_Stress_Management: '每份Cool Choice减压保健品含100毫克提取自绿茶的纯茶氨酸，它有助于提升学习效率、集中力、提神醒脑，并有助于减轻压力、缓解精神紧张与烦躁、改善易怒。'
+      more1_Anti-Aging: 'Cool Choice抗衰老补充产品是从自然界中含SOD量最高的(SOD，14000 IU / g)甜瓜中提取的。'
+      more1_Beauty: 'Cool Choice美容护理提供了健康、年轻的皮肤生物活性，以及优化的胶原蛋白多肽。'
+      more1_Brain_Care: 'Cool Choice大脑保健产品提供胞二磷胆碱，它是对大脑健康和提高记忆力必不可少的化合物。'
+      more1_Digestive_Care: '每份Cool Choice肠道消化保健产品，提供10亿耐储存的活性益生菌结芽孢杆菌，有助于体内环境的健康与平衡，促进肠道的健康消化功能。'
+      more1_Energy: 'Cool Choice能量保健品浓缩南非醉茄精华于每一小包中。'
+      more1_Eye_Care: 'Cool Choice眼部护理产品提供了天然类胡萝卜素：从万寿菊提取的混合物中，叶黄素和玉米黄质以5:1的比例存在，这是在自然界中发现的支持眼睛健康的天然成分。叶黄素和玉米黄质是唯一的位于眼睛的类胡萝卜素(黄斑)。'
+      more1_Heart_Care: 'Cool Choice心脏护理包含可溶性辅酶Q10(Co-Q10)来帮助支持心脏健康。随着年龄的增长，辅酶Q10在体内的含量下降。补充Cool Choice心脏护理可以增加体内辅酶Q10的含量水平。'
+      more1_Immune_Support: 'Cool Choice免疫保健产品中含发酵的高纯度、高生物利用度的1，3葡聚糖免疫支持。'
+      more1_Joint_Care: 'Cool Choice关节护理取自于优质的、USP级纯植物的氨基葡萄糖。葡萄糖胺液能够缓冲关节，促进软骨的修复和形成。'
+      more1_Liver_Care: 'Cool Choice肝脏护理产品包含牛奶蓟，提取自无害的化学物，能够帮助保护和维护肝脏健康。'
+      more1_Lung_Care: 'Cool Choice肺部保健品利用一种能够支持人体更好地吸氧，促进呼吸更有效的特制草本混合物，使我们的呼吸更加健康。这种草本混合物具有抗菌和抗发炎的特性，有助于保持肺部湿润，以减少呼吸时的咳嗽及其他症状。'
+      more1_Mens_Vitality: 'Cool Choice男性保健品中含有东革阿里提取物(Tonkat阿里或马来西亚人参)，这是生长在东南亚的，极具生机与活力的天然罕见药草。'
+      more1_Sleep_Support: 'Cool Choice睡眠保健品的褪黑素能帮助开启健康的睡眠模式。褪黑素是松果体释放的，能够实现睡眠调节功能。'
+      more1_Stress_Management: 'Cool Choice减压保健品含有纯粹、天然的L-茶氨酸，它能缓解压力、释放幸福感，使人精神放松，精神专注，不嗜睡。它是被证实的GRAS（一般公认安全），是由FDA批准的能用于食品和饮料的。'
+      more2_Anti-Aging: '临床证明，SOD B Extramel®通过维护、优化人的心理和生理机能表现，促进幸福感。'
+      more2_Beauty: '自然衰老过程，压力、污染、紫外线辐射和营养不良都会导致的皮肤失去紧致、水分和弹性，导致皱纹和干燥。'
+      more2_Brain_Care: '胞二磷胆碱能提供大脑保持敏锐活跃所需的能量，促进大脑健康。'
+      more2_Digestive_Care: '益生菌有助于促进健康的肠道消化功能。'
+      more2_Energy: '南非醉茄包含甾内酯，生物碱，脂肪酸，胆碱，和氨基酸，以帮助提高能量和浓度，并尽量减少疲劳。'
+      more2_Eye_Care: '发蓝光的电子设备(电脑、高清电视、智能手机、平板电脑等)会给眼睛造成极大压力。美国人平均暴露在一天中大约有10 - 12小时暴露在这种有害光线下。叶黄素和玉米黄质能够有效过滤、阻挡这些有害蓝光，减缓、防止氧化应激和炎症。'
+      more2_Heart_Care: '研究表明，辅酶Q10有助于保护心脏健康，并能降低药物的负面副作用，如他汀类药物。'
+      more2_Immune_Support: '葡聚糖能自然调节人体的免疫反应，帮助保持整体健康和健康。'
+      more2_Joint_Care: '研究表明，氨基葡萄糖有助于减少骨关节炎症状。'
+      more2_Liver_Care: '牛奶蓟能够稳定细胞膜，促进蛋白质的合成，加速受损肝细胞的再生。'
+      more2_Lung_Care: 'Cool Choice肺部保健品有助于通​​过促进体液分泌，滋润肺部，控制因肺部干燥产生的咳嗽，支持肺部健康呼吸。'
+      more2_Mens_Vitality: '东革阿里提取物中含有名为eurypeptides的成分，它能用来增强能量，提升性能、耐力和性欲。用户的反馈报告指出，它能增加能量以及耐力。'
+      more2_Sleep_Support: '褪黑素实现恢复正常的睡眠模式，调节昼夜规律，并保护免疫系统免受压力。随着年龄增长，褪黑素的自然释放水平下降，因此会扰乱正常的睡眠模式。'
+      more2_Stress_Management: '研究表明，L-茶氨酸有助于提高学习成绩，集中注意力，使思维清晰，提高睡眠质量，减少正常的PMS症状，减少咖啡因的副作用，有助于身体免疫系统。'
+      more3_Anti-Aging: '临床研究表明，通过一个月补充SOD B Extramel®，能通过改善缓解压力，睡眠质量，显著提高日常认知功能和身体状况。'
+      more3_Beauty: '胶原蛋白肽有助于减少皮肤皱纹，提高皮肤弹性。胶原蛋白肽也有助于保持和增加皮肤水分，减缓皱纹的形成。'
+      more3_Brain_Care: '胞二磷胆碱支持大脑信号传递，大脑DNA合成和修复。'
+      more3_Digestive_Care: '益生菌支持免疫功能和蛋白质的利用率。'
+      more3_Energy: '南非醉茄有助于支持精神刺激和精力。'
+      more3_Eye_Care: '叶黄素和玉米黄质也存在于深绿色叶类蔬菜、橙色水果和蔬菜和鱼（鲑鱼，沙丁鱼，鲑鱼）。'
+      more3_Heart_Care: '辅酶Q10能为心脏细胞提供能量。它可以帮助降低心脏血压，增强心脏功能。'
+      more3_Immune_Support: '葡聚糖也有助于稳定细胞膜，促进人体蛋白质合成。'
+      more3_Joint_Care: '葡萄糖胺也有抗炎作用。'
+      more3_Liver_Care: '洋蓟叶提取物富含活性生物化合物，它作为一种抗氧化剂，能够帮助清除肝脏毒素。'
+      more3_Lung_Care: 'Cool Choice肺部保健品是一种抗氧化剂和抗炎剂，能抑制血管通透性，改善肺部整体活力。'
+      more3_Mens_Vitality: '它还有助于提高身体的自然的睾丸激素水平。'
+      more3_Sleep_Support: '褪黑素是一种天然的抗氧化剂，帮助身体对抗会造成损害的自由基。'
+      more3_Stress_Management: 'L-茶氨酸促进意识放松，减轻压力和不安，有助于缓解紧张和烦躁，缓缓释放紧张情绪。它的工作原理是抑制糖皮质激素这种会给身体和心灵产生“压力”感的物质。'
+      more4_Lung_Care: 'Cool Choice肺部保健品是经过认证的有机草本配方，有助于支持氧气的摄入量，并确保呼吸系统的有效利用。'
+      caution1_Sleep_Support: '*  Cool Choice 建议只能在睡前食用褪黑激素增补产品.'
+      caution2_Sleep_Support: '** 警告: 可能引起睡意. 正在开车或操作高危机械请注意安全.'
+      more: 更多
+      warning1: 上述评价不是由FDA做出的.上述产品不是用作诊断治疗、治愈和预防某些疾病的药品.
+      warning2: '警告: 孕妇或哺乳期妇女以及患有疾病或正在进行药物治疗的人如要食用此膳食补充品请提前咨询保健医生.'
     header:
-      gift: GIFT
-      ingredient: INGREDIENT
-      about: ABOUT
+      gift: 作为礼物
+      ingredient: 成分
+      about: 关于
     gift:
       title_cool: Cool Care
-      title_do: Do something special for someone you care
-      send_a_gift: Send a Gift
+      title_do: 通过给予礼物来表明你的关心...
+      send_a_gift: 想礼物一样购买
+      order: 为你所爱的购买一份礼物
+      email: 他们通过邮件选择补充品
+      gift: 展现你的关心
+      recipient_name: 收件人姓名
+      message: 这里填写您的信息 (不超过100字符)
+      yourname: 您的姓名
+      congrat: 祝福
+      after_congrat: 您的礼物正在准备! 每一个 Cool Choice 订购都新鲜出炉，精心定制, 尤其是你!
+    message:
+      this: 亲爱的
+      add: 这里填写您的信息 (不超过100个字符)
+      from: 来自
+      detail: 礼物详情
+      tota: 合计
+      coolchoice: 私人订制/特别关心
+      price: $39.99
+      gift_from: 礼物来自 (购买者)
+      gift_to: 礼物要送给 (收件人)
+      name: 您的姓名
+      your_email: 您的邮箱地址
+      email: 接收者邮箱地址
     order_state:
-      message: Message
+      message: 信息
+    checkout:
+      credit_card: 信用卡
+      paypal: PayPal
+    admin:
+      promoter:
+        store_credits: 商店积分
+        binding_users: 绑定用户
+        users: users
+        items: items
+        orders: orders
+        account: account
+      order:
+        print_labels: 价格标签
+        print: 价格
+    shipment_mailer:
+      shipped_email:
+        thanks: '谢谢订购 Cool Choice!'
+    order_mailer:
+      confirm_reg_email:
+        instructions: 确认您的账目已经生成.
+        thanks: 谢谢您成为 Cool Choice的顾客! 我们将为您提供身体所需的健康、新鲜、自然的补充，尽量减少麻烦.
+      confirm_email:
+        thanks: 感谢购买Cool Choice! 我们希望您爱上这个性化的营养补充.
+      confirm_promoter_email:
+        subject: 你刚刚通过大使计划收到佣金
+        store_credit_total: 总佣金
+        summary: 结算
+      confirm_gift_email:
+        subject: 您收到礼物，来自
+        instructions: '请找到下面的链接来得到您的礼物:'
+        get: 接收礼物
+    gift: 礼物
+    gift: 作为礼物
+    about: 关于
+    logout: 注销
+    signin: 登陆
+    alert_mutual_exclusive: 我们不建议把这个选择和任何一个您之前的选择混合.所以出于您的健康考作出可替代的选择.
+    cart_empty: 您的购物车是空的
+    cart_empty_detail: 只需几步就可以实现Cool Choice. 还在等什么? 去为你的购物车添加些商品吧!
+    you_have_signed_in_with_these_services: '你已经使用以下方式登录：'
+    sign_in_through_one_of_these_services: '登录通过：'
+    home: Cool Choice 首页
+    thank_you_for_your_order: "谢谢你的购买. 请注意光照、温度、湿度以及保存日期等条件.每一个 Cool Choice 订购都新鲜出炉，精心定制, 尤其是你!"
+    ok: ok
+    message: 信息
+    site_name: Cool Choice
+    payment_pop_desc: 个性化的营养补充
+    apply: 使用
+    coupon_code: 优惠券码
+    binding_users: 绑定用户
+    items_cannot_be_shipped: 对不起，购物车里的商品，有至少一个是只能被运送到美国的.
+    shipping_flat_rate_per_two_items: 每两个商品统一收取费用
+    phone: '手机/电话'
+    promoter: 大使
+    promoters: 大使
+    percent: 百分比
+    secret: 密钥
+    new_promoter: 增加新的促销信息
+    first_name: 名
+    last_name: 姓
+    editing_promoter: 编辑促销信息
+    promoter_store_credit: 商店积分
+    promoter_start: 绑定创建时间
+    promoter_month_length: 绑定时间
+    shopping_cart: 购物车
+    cart_tableheader_title: 购物车
+    cart_tableheader_details: 产品详情
+    cart_tableheader_price: 价格
+    cart_tableheader_quantity: 质量
+    cart_tableheader_totalprice: 数量
+    cart_summary_title: 购物车总计
+    cart_summary_subtotal: 小计
+    cart_summary_shipping: 运送
+    cart_summary_tax: 费用
+    cart_summary_total: 合计
+    cart_summary_keepshopping: 继续购物
+    cart_summary_checkout: 结账
+    address_verification_failed: 地址认证失败
+    cart_item_cannot_be_made: TaxCloud::CartItem cannot be made from this item.
+    ensure_one_valid_stock_location: 请确保您购买的商品有一个有效地址以便确定您税费的由来.
+    standard_taxcloud_tic: 应该采用Tax Cloud TIC 标准的五位数格式
+    tax_cloud: Tax Cloud
+    tax_cloud_settings: TaxCloud 运行
+    tax_cloud_taxability_codes: 税收代码
+    tax_cloud_api_login_and_key: API 键入登陆
+    taxcloud_api_login_id: Tax Cloud AP登陆 ID
+    taxcloud_api_key: Tax Cloud API 密码
+    taxcloud_shipping_tic: Tax Cloud 运送 TIC
+    tax_cloud_tic: Tax Cloud TIC
+    usps_user: 美国邮政用户 ID
+    usps_user_id: 美国邮政 API 用户 ID
+    zip_plus_4: Zip +4
+    paypal:
+      already_refunded: "这次付款已经被退还，交易终止."
+      no_payment_via_admin_backend: "这时候您还不能通过后台管理向PayPal账户索款."
+      transaction: "PayPal 交易"
+      payer_id: "支付者 ID"
+      transaction_id: "交易 ID"
+      token: "Token"
+      refund: "退款"
+      refund_amount: "退款金额"
+      original_amount: "原始金额: %{amount}"
+      refund_successful: "PayPal 退款成功"
+      refund_unsuccessful: "PayPal退款不成功"
+      actions:
+        refund: "退款"
+      flash:
+        cancel: "不想用PayPal? 没问题."
+        connection_failed: "不能连接到PayPal."
+        generic_error: "PayPal 支付失败. %{reasons}"
+    payment_has_been_cancelled: 支付已被取消
+    complete_skrill_checkout: 在进行下一步之前请先进行skrill认证
+    skrill: Skrill
+    skrill_transaction: 交易
+    skrill_customer_id: 顾客 ID
+    skrill_transaction_id: 交易 ID
+    skrill_payment_type: 支付方式
+    skrill_payment_currency: 支付货币
+    log_entry:
+      braintree:
+        message: Message
+        status: 身份
+        cc_token: Braintree信用卡令牌
+        customer_id: Braintree 顾客 ID
+        cvv_result: 信用卡验证码 Result
+        avs_result_title: AVS result
+        avs_result:
+          message: Message
+          street_match: 街道地址匹配
+          postal_match: 详细地址
+      stripe:
+        message: Message
+        charge_id: Stripe Charge ID
+        card_id: Stripe Card ID
+        cvv_result: CVV Result
+        cvc_check: CVC Check
+        address_zip_check: 邮编地址验证
+    environment: 运行环境
+    user_was_not_valid: 用户无效.
+    add_another_service: ":增加另外一种登陆方式"
+    authentications:
+      destroy: '验证方式被完全毁坏.'
+    back_to_authentication_methods_list: "返回验证方式列表"
+    edit_social_method: "编辑社交验证方式"
+    new_social_method: 新的验证方式"
+    no_authentication_methods_found: "没有发现验证方式"
+    one_more_step: '只差最后一步来完成通过 %{kind} 注册'
+    remove_authentication_option_confirmation: "确定要移除该验证方式吗?"
+    sign_into_account: "您可以登陆到该账户"
+    sign_in_through_one_of_these_services: "通过以下帮助中的一个进行登陆"
+    social_api_key: "密钥"
+    social_api_secret: "密钥"
+    social_authentication_methods: "社交验证方式"
+    social_authentication_methods_description: "设置认证方式"
+    social_provider: "Social Provider"
+    please_confirm_your_email: "请确认邮件地址进行下一步"
+    sign_in_with: "登陆 %{provider}"
+    you_have_signed_in_with_these_services: "您已经通过以下帮助进行进行登陆"
+    admin_login: "管理员登陆"
+    change_your_password: "更改密码"
+  devise:
+    omniauth_callbacks:
+      success: "成功使用 %{kind} 登录."
+    confirmations:
+      confirmed: 您的账户被确认之后会成功登陆.
+      send_instructions: 您会在几分钟之内会收到一份电子邮件来确认账户.
+    failure:
+      inactive: 现在您的账户仍然没有被激活.
+      invalid: 无效的邮件或密码.
+      invalid_token: 无效的认证.
+      locked: 账户被锁定.
+      timeout: '本次登陆过期，请重新登录.'
+      unauthenticated: 在进行下去之前请先登陆和注册.
+      unconfirmed: 在继续之前请该先确认您的账户.
+    mailer:
+      confirmation_instructions:
+        subject: 确认指令
+      reset_password_instructions:
+        subject: 密码重置指令
+      unlock_instructions:
+        subject: 解锁指令
+      confirmation_instructions:
+        subject: 确认指令
+    oauth_callbacks:
+      failure: '不能从%{kind}授权登录，因为%{reason}.'
+      success: '成功授权登录%{kind}.'
+    unlocks:
+      send_instructions: 几分钟之内会收到关于如何解锁账户的邮件.
+      unlocked: 账户成功解锁. 已登陆.
+    passwords:
+      spree_user:
+        cannot_be_blank: 密码不能为空.
+        no_token: "如果没有收到密码重置邮件您将不能访问该页面.如果您收到了密码重置邮件，那么请确认你使用网址链接的完整性."
+        send_instruction: 几分钟之内，您将收到关于重置密码指令的邮件.
+        updated: 密码已成功修改，现在您已登陆.
+      destroyed: 您的账户已被成功取消，希望下次再见.
+      inactive_signed_up: '您已经成功注册. 但是我们不能通过因为您的账户 %{reason}.'
+      signed_up: 欢迎!您已成功注册.
+      updated: 您的账户已成功更新.
+    user_sessions:
+      signed_in: 成功登陆.
+      signed_out: 成功推出.
+      already_signed_in: 已登陆.
+      already_signed_out: 已退出.
+  errors:
+    messages:
+      already_confirmed: 已被确认
+      email_is_invalid: 邮件地址不能为空
+      not_found: 没有找到
+      not_locked: 没有被锁定
+      not_saved:
+        one: '在保存 %{resource} 时出现了 1 个错误:'
+        other: '在保存 %{resource} 时，出现了 %{count} 个错误:'
