@@ -51,12 +51,6 @@ namespace :unicorn do
   end
 end
 
-namespace :bundle do
-  task :install do
-    run "bundle install"
-  end
-end
-
 after "deploy:restart", "unicorn:restart"
 
 namespace :images do
