@@ -65,7 +65,7 @@
       address_opt: "",
       phone: "",
       city: "",
-      country_code: 0,
+      country_code: <%= @order.ship_address.country_id %>,
       state_code: 0,
       zip: "",
       save_address: true,
@@ -121,6 +121,7 @@
     },
     ready: function(){
       $('#link-to-cart').remove()
+      $('#order_ship_address_attributes_country_id')[0].disabled = true
     }
   })
 </script>
