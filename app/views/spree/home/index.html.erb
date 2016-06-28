@@ -42,31 +42,37 @@
   <script type="text/javascript" src="slick/slick.min.js"></script>
 
   <div class="carousel" style="margin:0">
-  <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj1.jpg")).path.html_safe %>) center no-repeat;">
-  <div class="container">
-        <%= image_tag("home/page-1@2x.png", class: "logo") %>
-        <div class="title"><%= Spree.t(:"homepage.title_proud") %></div>
-        <div class="sub-title"><%= Spree.t(:"homepage.title_introduce") %></div>
-        <div class="free">
-            <div class="circle"></div><%= Spree.t(:"homepage.title_free") %>
-            <div class="circle"></div><br />
-            <div class="circle"></div><%= Spree.t(:"homepage.title_worldwide") %>
-            <div class="circle"></div>
+    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj1.jpg")).path.html_safe %>) center no-repeat;">
+      <div class="container">
+        <div class="text">
+          <div class="num">1</div>
+          <div class="title"><%= Spree.t(:"homepage.banner_1_title") %></div>
+          <div class="sub-title"><%= Spree.t(:"homepage.banner_1_sub_title") %></div>
+          <a class="button"><%= Spree.t(:"homepage.button_1") %></a>
+          <a class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
     </div>
     <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj2.jpg")).path.html_safe %>) center no-repeat;width:1440px;height:500px;">
       <div class="container" id="cart">
-        <div class="title" style="margin-top: 200px"><%= Spree.t(:"homepage.page2_title") %></div>
-        <div class="sub-title"><%= Spree.t(:"homepage.page2_title2") %></div>
-        <%= link_to Spree.t(:give_as_a_gift), gift_path, class: 'roundButton b1', style: 'margin-top:30px' %>
+        <div class="text">
+          <div class="num">2</div>
+          <div class="title"><%= Spree.t(:"homepage.banner_2_title") %></div>
+          <div class="sub-title"><%= Spree.t(:"homepage.banner_2_sub_title") %></div>
+          <a class="button"><%= Spree.t(:"homepage.button_1") %></a>
+          <a class="button"><%= Spree.t(:"homepage.button_2") %></a>
+        </div>
       </div>
     </div>
     <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj3.jpg")).path.html_safe %>) center no-repeat;width:1440px;height:500px;">
-      <div class="container" style="position: relative; left: 120px;padding-top:120px">
-        <div class="title" style="font-family: Face; font-size: 56px"><%= Spree.t(:"homepage.page3_title") %></div>
-        <div class="sub-title" style="font-family: Face; font-size: 34px"><%= Spree.t(:"homepage.page3_title2") %></div>
-        <div class="sub-title" style="font-size: 20px;margin-top:50px"><%= Spree.t(:"homepage.page3_title31") %><%= image_tag "home/kerry-white.png", {:style=>"display: inline-block;margin:0 15px"} %><%= Spree.t(:"homepage.page3_title32") %></div>
+      <div class="container">
+        <div class="text">
+          <div class="num">3</div>
+          <div class="title"><%= Spree.t(:"homepage.banner_3_title") %></div>
+          <div class="sub-title" style="width: 509px"><%= Spree.t(:"homepage.banner_3_sub_title") %></div>
+          <a class="button"><%= Spree.t(:"homepage.button_1") %></a>
+          <a class="button"><%= Spree.t(:"homepage.button_2") %></a>
+        </div>
       </div>
     </div>
   </div>
