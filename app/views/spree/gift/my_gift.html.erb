@@ -181,8 +181,10 @@
         })
       },
       'result': function(val) {
-        this.sku
         this.check_3_box(val)
+        if (this.result.length < 3) {
+          this.sku
+        }
       }
     },
     methods: {
@@ -204,7 +206,9 @@
         var box = document.getElementsByClassName('checkbox')
         if(this.result.length < 3) {
           for (var i = 0; i < box.length; i++) {
-            box[i].disabled=false
+            if (!this.disabledFeatures.includes(i+1)) {
+              box[i].disabled=false
+            }
           }
         }
         else {
@@ -239,7 +243,7 @@
       },
       action_select: function(index) {
         if (this.disabledFeatures.includes(index)) {
-          alert("We do not recommend mixing this supplement with one of your previous choices. For your safety, please pick an alternative.")
+          alert("<%= Spree.t(:alert_mutual_exclusive) %>")
         }
       }
     }

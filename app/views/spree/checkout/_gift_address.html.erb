@@ -119,7 +119,6 @@
             window.location.href = '<%= checkout_path %>'
           },
           error: function(data) {
-
           }
         })
       },
@@ -141,7 +140,7 @@
               url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
 
               error: function(data) {
-            },
+              },
               success: function(data) {
                 that.proceed2()
               },
