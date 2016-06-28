@@ -1,0 +1,33 @@
+<% continents = {
+  'NORTH AMERICA'=>["English (US)"],
+  'LATIN AMERICA'=>["Español (Chile)", "Español", "Español", "Português (BR)", ],
+  'EUROPE, MIDDLE EAST, AND AFRICA'=>["Български (БГ)", "Català", "Čeština (CS)", "Danish", "Deutsch (Schweiz)", "Deutsch (DE)", "Eesti keel", "فارسی(fa)", "Suomi", "Français (FR)", "Italiano (IT)", "Latvijas (LV)", "Norsk", "Nederlands (NL)", "Polski (PL)", "Português (PT)", "Romanian (RO)", "Russian", "Slovenčina", "Slovenščina (SL)", "Svenska (SE)", "Ukrainian", "English (UK)"],
+  'ASIA PACIFIC'=>["English (Australia)", "日本語 (ja-JP)", "English (New Zealand)", "Indonesian (ID)", "한국어 (KO)", "ภาษาไทย (TH)", "tiếng Việt (VN)", "中文(简体)", "中文 (繁體)" ]
+} %>
+
+<% all_options = [["Български (БГ)", :bg], ["Català", :ca], ["Čeština (CS)", :cs], ["Danish", :da], ["Deutsch (Schweiz)", :"de-CH"], ["Deutsch (DE)", :de], ["English (Australia)", :"en-AU"], ["English (UK)", :"en-GB"], ["English (UK)", :"en-IN"], ["English (New Zealand)", :"en-NZ"], ["Español (Chile)", :"es-CL"], ["Español", :"es-EC"], ["Español", :"es-MX"], ["Español", :es], ["Eesti keel", :et], ["فارسی(fa)", :fa], ["Suomi", :fi], ["Français (FR)", :fr], ["Indonesian (ID)", :id], ["Italiano (IT)", :it], ["日本語 (ja-JP)", :ja], ["한국어 (KO)", :ko], ["Latvijas (LV)", :lv], ["Norsk", :nb], ["Nederlands (NL)", :nl], ["Polski (PL)", :pl], ["Português (BR)", :"pt-BR"], ["Português (PT)", :pt], ["Romanian (RO)", :ro], ["Russian", :ru], ["Slovenčina", :sk], ["Slovenščina (SL)", :"sl-SI"], ["Svenska (SE)", :sv], ["ภาษาไทย (TH)", :th], ["Türkçe (TR)", :tr], ["Ukrainian", :uk], ["tiếng Việt (VN)", :vi], ["中文(简体)", :"zh-CN"], ["中文 (繁體)", :"zh-TW"], ["English (US)", :en]] %>
+
+<div id="localization">
+  <div class="container">
+    <div class="title">Select language.</div>
+    <% continents.each do |continent, options| %>
+      <div class="col-sm-3">
+        <div class="continent"><%= continent %></div>
+        <% available_locales_options.each do |option| %>
+        <% if options.include?(option[0]) %>
+          <div class="locales-option" value="<%= option[1] %>">
+            <%= option[0] %>
+          </div>
+        <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+<script>
+  $(".locales-option").click(function() {
+    window.location.href="/" + $(this).attr('value')
+  })
+</script>
+

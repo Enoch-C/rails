@@ -71,6 +71,8 @@ Spree::Core::Engine.add_routes do
 
   get '/ingredient', to: 'ingredient#index'
 
+  get 'localization', to: 'localization#index'
+
   namespace :admin, path: Spree.admin_path do
     resources :promoters do
       member do
