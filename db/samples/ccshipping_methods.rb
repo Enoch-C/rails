@@ -34,7 +34,7 @@ unless Spree::ShippingMethod.find_by_name("USPS") &&
       :name => "Shipping to China",
       :zones => [china],
       :calculator => Spree::Calculator::Shipping::FlatRate.create!,
-      :shipping_categories => [shipping_category_china],
+      :shipping_categories => [shipping_category_global],
       :tax_category_id => tax_category.id
     }
   ])
