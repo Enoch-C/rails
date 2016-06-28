@@ -82,6 +82,19 @@
         h["zipcode"] = this.zip
         return h
       },
+      ship_address: function() {
+        var h = {}
+        h["firstname"] = this.first_name
+        h["lastname"] = this.last_name
+        h["address1"] = this.address
+        h["address2"] = this.address_opt
+        h["phone"] = this.phone
+        h["city"] = this.city
+        h["country_id"] = this.special_instructions_hash["country_id"]
+        h["state_id"] = 0 
+        h["zipcode"] = this.zip
+        return h
+      },
       json: function() {
         /*
            To advance to the next state, delivery, the order will first need both a shipping and billing address.
@@ -89,8 +102,9 @@
         */
         var h = {
             "order": {
+              "dummy_ship_address": true,
               "bill_address_attributes": this.bill_address,
-              "ship_address_attributes": this.bill_address,
+              "ship_address_attributes": this.ship_address,
             }
           }
         return h
@@ -104,7 +118,8 @@
           success: function(data) {
             window.location.href = '<%= checkout_path %>'
           },
-          fail: function(data) {
+          error: function(data) {
+
           }
         })
       },
@@ -124,6 +139,9 @@
             $.ajax({
               type: "PUT",
               url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
+
+              error: function(data) {
+            },
               success: function(data) {
                 that.proceed2()
               },
