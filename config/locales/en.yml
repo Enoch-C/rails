@@ -79,6 +79,14 @@ en:
     LOGOUT: LOGOUT
     SIGNIN: SIGN IN
     homepage:
+      banner_1_title: YOUR CHOICE
+      banner_2_title: YOUR MIX
+      banner_3_title: YOUR HEALTH
+      banner_1_sub_title: Choose up to 3 premium supplements
+      banner_2_sub_title: Cool Choice creates your personalized supplement blend, just for YOU
+      banner_3_sub_title: Once a day, enjoy your tasty Cool Choice beverage
+      button_1: Why Cool Choice
+      button_2: Customize and Buy
       page2_title: Cool Care
       page2_title2: Give a gift to someone special
       page3_title: WE COOK FOR YOU
