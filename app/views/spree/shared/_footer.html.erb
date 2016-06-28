@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/assets/footer.css">
+<div id="footer">
+  <div class="container">
+    <div class="copyright">Copyright © 2015 SnapFit Inc. All rights reserved.</div>
+    <div class="right-part">
+      <div class="social">
+        <a href="https://www.facebook.com/pages/SnapFit/1476914185929291?fref=ts" target="_blank" class="facebook"></a>
+        <a href="https://twitter.com/SnapfitInc" target="_blank" class="twitter"></a>
+        <a href="http://instagram.com/snapfitinc" target="_blank" class="instagram"></a>
+        <a href="mailto:support@snapfit.com" target="_blank" class="email"></a>
+      </div>
+      <div class="links"><a href="/faq/">About</a><a href="/privacy/">Privacy Policy</a><a class="jobs">Jobs</a></div>
+      <div class="language closed">
+        <div class="list">
+          <a href="http://www.snapfit.cn/" class="lan">
+            <div class="text">简体中文</div>
+          </a>
+          <div class="lan current"><i class="earth"></i><a href="http://www.snapfit.com/" class="text">English</a><i class="arr"></i></div>
+        </div>
+      </div>
+      <div class="job-frame">
+        <div class="title">Join the SnapFit Team</div>
+        <div class="line">Please write email to<a href="mailto:christian@snapfit.com">Christian Graversen</a>or<a href="mailto:brianna@snapfit.com">Brianna Garmon</a></div>Application Form:<a href="/files/Job_Application_for_houly_empolyee.docx">Job Application for houly empolyee</a>
+        <div class="remove glyphicon glyphicon-remove"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    // $('#footer .language').on('click', function(event) {
+    //   var el = this;
+    //   $(el).removeClass('closed');
+    //   $(document.body).one('click', function() {
+    //     $(el).addClass('closed');
+    //   });
+    //   event.stopPropagation();
+    // });
+
+    $('#footer .jobs').on('click', function() {
+      $('#footer .job-frame').show();
+    });
+    $('#footer .remove').on('click', function() {
+      $('#footer .job-frame').hide();
+    });
+
+  })();
+</script>
