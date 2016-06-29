@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div class="section-4">
+  <div class="section-4" v-if="result.length == 3">
     <div class="container"><%= image_tag("home/product@2x.png", class: "bar") %>
       <div class="func col-sm-3">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
@@ -81,6 +81,18 @@
   <% end %>
 </div>
 <script>
+  Array.prototype.clone = function() {
+    return this.slice(0)
+  }
+  Array.prototype.and = function(a) {
+    var t = this.clone()
+    a.forEach(function(item){
+      if (!t.includes(item)) {
+        t.push(item)
+      }
+    })
+    return t
+  }
   //ingredient popup
   $("#section-1 .information").click(function() {
     $("body").append($(".more-overlay"))
@@ -109,11 +121,17 @@
       processing: false,
       order_number: "<%= @order.number %>",
       order_token: "<%= @order.guest_token %>",
-      mutallyExclusives: {
+      mutuallyExclusiveItems: {
         5: {
           on_image: "<%= image_url("home/icon-Energy@2x.png") %>",
           on_color: "#62c0ef",
           off_image: "<%= image_url("home/icon_energy_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+        12: {
+          on_image: "<%= image_url("home/icon-Mens_Vitality@2x.png") %>",
+          on_color: "#5979C3",
+          off_image: "<%= image_url("home/icon_sex_gray@2x.png") %>",
           off_color: "#e4e4e4",
         },
         13: {
@@ -123,6 +141,7 @@
           off_color: "#e4e4e4",
         },
       },
+      mutuallyExclusives: [[5, 12], [5, 13]],
       disabledFeatures: [],
       theSKU: ""
     },
@@ -145,34 +164,35 @@
         this.theSKU = 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
         return this.theSKU
       },
-      keys: function() {
-        return Object.keys(this.mutallyExclusives).map(function(i){return +i})
-      }
     },
 
     watch: {
       theSKU: function(value, oldValue) {
         var a1 = this.features()
-        var a2 = this.keys.slice(0)
-
-        var flag = true
-        for (var i=0; i<a1.length; i++) {
-          var t = a1[i]
-          var index = a2.indexOf(t)
-          if (index > -1) {
-            a2.splice(index, 1)
-            this.disabledFeatures = a2
-            flag = false
-            break
+        var tDisabledFeatures = []
+        for (var i=0; i<this.mutuallyExclusives.length; i++){
+          var a2 = this.mutuallyExclusives[i].clone()
+          loop:
+          for (var j=0; j<a1.length; j++) {
+            var t = a1[j]
+            var index = a2.indexOf(t)
+            if (index > -1) {
+              a2.splice(index, 1)
+              tDisabledFeatures = tDisabledFeatures.and(a2)
+              console.log(tDisabledFeatures)
+              break loop
+            }
           }
         }
-        if (flag) {
-          this.disabledFeatures = []
-        }
+        this.disabledFeatures = tDisabledFeatures
       },
       disabledFeatures: function() {
         var that = this
-        this.keys.forEach(function(item){
+        var a = []
+        this.mutuallyExclusives.forEach(function(ta){
+          a = a.and(ta)
+        })
+        a.forEach(function(item){
           if (that.disabledFeatures.includes(item)) {
             that.disableItem(item)
           } else {
@@ -189,14 +209,14 @@
     },
     methods: {
       disableItem: function(index) {
-        document.getElementById("image_"+index).src = this.mutallyExclusives[index].off_image
-        document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].off_color
+        document.getElementById("image_"+index).src = this.mutuallyExclusiveItems[index].off_image
+        document.getElementById("text_"+index).style.color = this.mutuallyExclusiveItems[index].off_color
         document.getElementsByClassName("cb_"+index)[0].disabled = true
 
       },
       enableItem: function(index) {
-        document.getElementById("image_"+index).src = this.mutallyExclusives[index].on_image
-        document.getElementById("text_"+index).style.color = this.mutallyExclusives[index].on_color
+        document.getElementById("image_"+index).src = this.mutuallyExclusiveItems[index].on_image
+        document.getElementById("text_"+index).style.color = this.mutuallyExclusiveItems[index].on_color
         document.getElementsByClassName("cb_"+index)[0].disabled = false
       },
       features: function(s) {
