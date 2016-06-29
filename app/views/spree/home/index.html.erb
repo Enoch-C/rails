@@ -49,7 +49,7 @@
           <div class="title"><%= Spree.t(:"homepage.banner_1_title") %></div>
           <div class="sub-title"><%= Spree.t(:"homepage.banner_1_sub_title") %></div>
           <a class="button"><%= Spree.t(:"homepage.button_1") %></a>
-          <a class="button"><%= Spree.t(:"homepage.button_2") %></a>
+          <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
     </div>
@@ -60,7 +60,7 @@
           <div class="title"><%= Spree.t(:"homepage.banner_2_title") %></div>
           <div class="sub-title"><%= Spree.t(:"homepage.banner_2_sub_title") %></div>
           <a class="button"><%= Spree.t(:"homepage.button_1") %></a>
-          <a class="button"><%= Spree.t(:"homepage.button_2") %></a>
+          <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
     </div>
@@ -69,9 +69,9 @@
         <div class="text">
           <div class="num">3</div>
           <div class="title"><%= Spree.t(:"homepage.banner_3_title") %></div>
-          <div class="sub-title" style="width: 509px"><%= Spree.t(:"homepage.banner_3_sub_title") %></div>
+          <div class="sub-title"><%= Spree.t(:"homepage.banner_3_sub_title") %></div>
           <a class="button"><%= Spree.t(:"homepage.button_1") %></a>
-          <a class="button"><%= Spree.t(:"homepage.button_2") %></a>
+          <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
     </div>
@@ -107,42 +107,14 @@
       </div>
     </div>
   </div>
-  <div class="section-2">
+  <div class="small-banner" style="background: url(<%= URI::parse(image_url("home/bj2@2x.png")).path.html_safe %>) center no-repeat;">
     <div class="container">
-        <div class="para col-xs-4">
-          <div class="img"><%= image_tag("home/icon-simply.png") %></div>
-          <div class="title"><%= Spree.t(:"homepage.cool_simply") %></div>
-          <p><%= Spree.t(:"homepage.cool_simply_line") %><br><%= Spree.t(:"homepage.cool_simply_line_2") %></p>
-          <a style="display:block" href="#section-1">
-            <div class="more">
-              <%= Spree.t(:"homepage.personalize_now") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
-            </div>
-          </a>
-        </div>
-        <div class="para col-xs-4">
-          <div class="img"><%= image_tag("home/icon-care.png") %></div>
-          <div class="title"><%= Spree.t(:"homepage.cool_care") %></div>
-          <p><%= Spree.t(:"homepage.cool_care_line") %><br><%= Spree.t(:"homepage.cool_care_line_2") %></p>
-          <a style="display:block" href="<%= spree.gift_path %>">
-            <div class="more">
-              <%= Spree.t(:"homepage.give_as_a_gift") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
-            </div>
-          </a>
-        </div>
-        <div class="para col-xs-4">
-          <div class="img"><%= image_tag("home/icon-ingredients.png") %></div>
-          <div class="title"><%= Spree.t(:"homepage.cool_ingredients") %></div>
-          <p><%= Spree.t(:"homepage.cool_ingredients_line") %><br><%= Spree.t(:"homepage.cool_ingredients_line_2") %></p>
-          <a style="display:block" href="<%= spree.ingredient_path %>">
-            <div class="more">
-              <%= Spree.t(:"homepage.learn_more") %><%= image_tag("ingredient/icon-arrow@2x.png") %>
-            </div>
-          </a>
-        </div>
+      <div class="text">
+        <div class="title"><%= Spree.t(:"homepage.page2_title") %></div>
+        <div class="sub-title"><%= Spree.t(:"homepage.page2_title2") %></div>
+        <a href="<%= spree.gift_path %>" class="button"><%= Spree.t(:"homepage.give_as_a_gift") %></a>
+      </div>
     </div>
-  </div>
-  <div class="section-3">
-    <%= image_tag("home/group-20@2x.png") %>
   </div>
   <div class="section-4" v-if="result.length">
     <div class="container"><% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>

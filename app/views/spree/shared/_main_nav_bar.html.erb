@@ -1,6 +1,6 @@
 <div id="main-nav-bar" class="navbar" style="float: right; height: 100%"><span style="display: inline-block; vertical-align:middle;height:100%"></span>
   <% if SpreeI18n::Config.available_locales.many? %>
-  <%= image_tag('home/icon_earth@2x.png', {:style => "width: 32px; height: 32px;"}) %>
+  <a href="<%= spree.localization_path %>"><%= image_tag('home/icon_earth@2x.png', {:style => "width: 32px; height: 32px;"}) %></a>
   <% end %>
   <ul class="nav navbar-nav navbar-right" style="float:none !important;display: inline-block; vertical-align: middle" data-hook>
   </ul>
