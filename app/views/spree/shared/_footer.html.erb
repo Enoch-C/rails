@@ -1,6 +1,5 @@
 <div id="footer">
   <div class="container">
-    <div class="copyright">© 2016 Cool Choice Inc., All rights reserved</div>
     <div class="right-part">
       <div class="social">
         <a href="https://www.facebook.com/MyCoolChoice" target="_blank" class="facebook"></a>
@@ -8,13 +7,21 @@
         <a href="http://instagram.com/mycoolchoice" target="_blank" class="instagram"></a>
         <a href="mailto:help@coolchoice.com" target="_blank" class="email"></a>
       </div>
-      <div class="links"><a href="/faq/">About</a><a href="/privacy/">Privacy Policy</a><a class="jobs">Jobs</a></div>
+      <div class="links">
+        <a href="<%= spree.faq_path %>">FAQ</a>
+        <a href="<%= spree.return_path %>"><%= Spree.t('return.name') %></a>
+        <a href="<%= spree.privacy_path %>"><%= Spree.t('privacy.name') %></a>
+        <a href="<%= spree.terms_path %>"><%= Spree.t('tANDc.name') %></a>
+        <a class="jobs">Jobs</a>
+      </div>
       <div class="job-frame">
         <div class="title">Join the Cool Choice Team</div>
         <div class="line">Please write email to<a href="mailto:help@coolchoice.com">us</a></div>
         <div class="remove glyphicon glyphicon-remove"></div>
       </div>
     </div>
+    <div class="copyright">© 2016 Cool Choice Inc., All rights reserved</div>
+
   </div>
 </div>
 <script>

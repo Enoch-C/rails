@@ -75,7 +75,9 @@ Spree::Core::Engine.add_routes do
   get 'localization', to: 'localization#index'
 
   get 'faq', to: 'faq#index'
-  get 'T&C', to: 'terms#index'
+  get 'terms', to: 'terms#index'
+  get 'privacy', to: 'privacy#index'
+  get 'return', to: 'return#index'
 
   namespace :admin, path: Spree.admin_path do
     resources :promoters do

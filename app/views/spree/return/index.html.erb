@@ -1,0 +1,16 @@
+<div id="article">
+  <div class="container">
+    <div class="title-img">
+      <div class="line"></div>
+      <%= image_tag("tandc/icon-term@2x.png") %>
+      <div class="line"></div>
+    </div>
+    <div class="title"><%= Spree.t(:'return.title') %></div>
+    <div class="li">
+      <p><%= Spree.t(:'return.at') %> <b><a href="mailto:help@coolchoice.com">help@coolchoice.com</a></b>
+      <%= Spree.t(:'return.call') %><b>714-871-1668.</b></p>
+    </div>
+  </div>
+  <%= render partial: 'spree/shared/footer' %>
+
+</div>
