@@ -102,7 +102,7 @@
           <label for="wish_box" class="choose-label" @click="open_wish"><%= image_tag("home/icon-wish@2x.png", class: "img") %>
             <div class="text"><%= Spree.t(:"homepage.content_function_wish") %></div>
           </label>
-          <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" />
+          <!-- <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" /> -->
         </div>
       </div>
     </div>
@@ -230,6 +230,12 @@
     $(".more-overlay>div").hide()
     $(".function>.inner").removeClass('active')
     $("body").css("overflow","auto")
+  })
+
+  //toggle checkbox
+  $(".choose-box label").click(function() {
+    var id = $(this).attr('for')
+    $("#" + id).toggle()
   })
 
   var vm = new Vue({
