@@ -1,5 +1,17 @@
 en:
   spree:
+    why_page:
+      title1: "3 CLICKS TO THE RIGHT ONE…"
+      para1: "With over 500 possible combinations, Cool Choice eliminates the confusion and makes it easy for you. All you have to do is pick three health icons and we take care of the rest. It's that easy!"
+      title2: "OVER SUPPLEMENTATION CAN HARM…"
+      para2: "Supplements have upper limits(UL) that should not be exceeded to avoiding potentially threatening side effects, Cool Choice guards against over supplementation to achieve the desired beneficial effects safely."
+      title3: "NO FILLERS, CHEMICALS AND CAPSULE ITSELF…"
+      para3: "Tablets and capsules contain excipients and chemicals that prevent dispersion and breakdown—which are not what your body needs.
+Cool Choice comes in a fresh and clean powder form, providing your body with exactly what it needs for optimum health."
+      title4: "FRESHLY MADE TO ORDER…"
+      para4: "Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is freshly made, especially for you!"
+      title5: "NATURAL…"
+      para5: "Cool Choice is made with natural ingredients and contains no preservatives, questionable additives, artificial colors, artificial flavors, or artificial sweeteners."
     gift_message_error1: Please enter recipient name.
     gift_message_error2: Please leave a message up to 100 characters.
     gift_message_error3: Please enter your name.
