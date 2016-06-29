@@ -1,0 +1,332 @@
+---
+es_EC:
+  spree:
+    address_verification_failed: Error de verificación de direcciones
+    cart_item_cannot_be_made: Artículo de compras no se puede hacer a partir de este artículo
+    ensure_one_valid_stock_location: Asegúrese de que tiene al menos una Ubicación de Stock de almacén con dirección válida para su origen fiscal.
+    standard_taxcloud_tic: debe ser en formato de cinco dígitos estándar de Tax Cloud TIC
+    tax_cloud: Tax Cloud
+    tax_cloud_settings: Configuraciones de TaxCloud
+    tax_cloud_taxability_codes: Códigos de gravabilidad
+    tax_cloud_api_login_and_key: Acceso y clave de API
+    taxcloud_api_login_id: ID de acceso de Tax Cloud API
+    taxcloud_api_key: Clave de Tax Cloud API
+    taxcloud_shipping_tic: TIC de envío de Tax Cloud
+    tax_cloud_tic: Tax Cloud TIC
+    usps_user: ID de usuario de USPS
+    usps_user_id: ID de usuario de USPS API
+    zip_plus_4: Zip +4
+    alert_mutual_exclusive: No se recomienda mezclar este suplemento con una de sus opciones anteriores. Para su seguridad, por favor, elija una alternativa.
+    cart_empty: SU CESTA ESTÁ VACÍA
+    cart_empty_detail: Está a solo unos pasos de hacer una opción genial. ¿Qué está esperando? ¡Añada algunos productos a la cesta!
+    you_have_signed_in_with_these_services: 'Ha iniciado sesión con:'
+    sign_in_through_one_of_these_services: 'Iniciar sesión con'
+    home: Cool Choice - Inicio
+    thank_you_for_your_order: Gracias por su compra. Los suplementos son sensibles a la luz, el calor y la humedad, y pierden efectividad con el tiempo. ¡Cada orden de Cool Choice está recién hecha, especialmente para usted!
+    ok: OK
+    message: Mensaje
+    site_name: Cool Choice
+    payment_pop_desc: Suplementos nutricionales personalizadas
+    apply: Aplicar
+    coupon_code: Código promocional
+    binding_users: Uniendo a los usuarios
+    items_cannot_be_shipped: Lo sentimos, en la cesta hay por lo menos un producto que solo puede ser enviado a una dirección de los EEUU.
+    shipping_flat_rate_per_two_items: Tarifa plana por dos elementos en paquete
+    phone: Teléfono
+    promoter: Promotor
+    promoters: Promotores
+    percent: Porciento
+    secret: Secreto
+    new_promoter: Añadir nuevo promotor
+    first_name: Nombre
+    last_name: Apellido
+    editing_promoter: Edición de promotor
+    promoter_store_credit: Almacenar crédito
+    promoter_start: Vincular tiempo de creación
+    promoter_month_length: Vincular longitud(m)
+    shopping_cart: Cesta
+    cart_tableHeader_title: Cesta
+    cart_tableHeader_details: Detalles del producto
+    cart_tableHeader_price: Precio
+    cart_tableHeader_quantity: Cantidad
+    cart_tableHeader_totalPrice: Total
+    cart_summary_title: Resumen de la cesta
+    cart_summary_subtotal: Subtotal
+    cart_summary_shipping: Envío
+    cart_summary_tax: Tasa
+    cart_summary_total: Total
+    cart_summary_keepShopping: Siga comprando
+    cart_summary_checkout: Caja
+    admin:
+      promoter:
+        store_credits: Almacenar crédito
+        binding_users: Uniendo a los usuarios
+        users: Usuarios
+        items: Artículos
+        orders: Órdenes
+        account: Cuenta
+      order:
+        print_labels: Imprimir etiquetas
+        print: Imprimir
+    shipment_mailer:
+      shipped_email:
+        thanks: ¡Gracias por ordenar de Cool Choice!
+    order_mailer:
+      confirm_reg_email:
+        instructions: Esto es para confirmar que su cuenta se ha creado.
+        thanks: ¡Gracias por ser cliente de Cool Choice! Ponemos a su disposición los suplementos seguros, frescos y naturales que su cuerpo merece, menos la molestia.
+      confirm_email:
+        thanks: ¡Gracias por comprar Cool Choice! Esperamos que usted se enamore de nuestros suplementos nutricionales personalizados.
+      confirm_promoter_email:
+        subject: Ha recibido un Crédito promocional.
+        store_credit_total: Crédito total almacenado
+        summary: Resumen de su cuenta
+      confirm_gift_email:
+        subject: ha recibido un regalo de
+        instructions: 'Por favor, encontrar el siguiente enlace para obtener su regalo:'
+        get: Obtener Mi regalo
+    gift: Regalo
+    GIFT: DAR COMO REGALO
+    INGREDIENT: INGREDIENTES
+    ABOUT: ACERCA DE
+    LOGOUT: CERRAR SESIÓN
+    SIGNIN: INICIAR SESIÓN
+    homepage:
+      page2_title: Cool Care
+      page2_title2: Haga algo especial para alguien a quien tenga cariño
+      page3_title: NOSOTROS COCINAMOS PARA USTED
+      page3_title2: usando los mejores ingredientes
+      page3_title31: PROVENIENTE DE
+      page3_title32: Y MÁS...
+      personalize_now: Personalizado/a ahora mismo
+      give_as_a_gift: Dé como un regalo
+      learn_more: Sepa más
+      title_proud: ORGULLOSO DE SER
+      title_introduce: Presentación de los suplementos personalizados
+      title_free: ENVÍO GRATIS en los Estados Unidos
+      title_worldwide: Envío en TODO EL MUNDO
+      content_title_magic: Hecho con productos naturales... Justamente para usted
+      content_title_choose: Simplemente elija hasta 3 suplementos frescos
+      content_function_Anti-Aging: Anti-envejecimiento
+      content_function_Beauty: Belleza
+      content_function_Brain_Care: Cuidado del cerebro
+      content_function_Digestive_Care: Cuidado de la digestión
+      content_function_Energy: Energía
+      content_function_Eye_Care: Cuidado de los ojos
+      content_function_Heart_Care: Cuidado del corazón
+      content_function_Immune_Support: Cuidado del sistema inmunológico
+      content_function_Joint_Care: Cuidado articular
+      content_function_Liver_Care: Cuidado del hígado
+      content_function_Lung_Care: Cuidado del pulmón
+      content_function_Mens_Vitality: Vitalidad masculina
+      content_function_Sleep_Support: Ayuda para el sueño
+      content_function_Stress_Management: Alivio del estrés
+      content_function_wish: Mi deseo
+      cool_simply: Cool Choice
+      cool_simply_line: 3 suplementos
+      cool_simply_line_2: 1 paquete fácil
+      cool_care: Cool Care
+      cool_care_line: Dé un regalo a
+      cool_care_line_2: alguien especial
+      cool_ingredients: Cool Ingredients
+      cool_ingredients_line: Todo es 100% Natural
+      cool_ingredients_line_2: Recién hecho para la orden
+      bar_choose: Elija hasta 3 suplementos
+      bar_qty: CANTIDAD
+      bar_day: día
+      bar_week: semana
+      bar_month: mes
+      bar_days: días
+      bar_weeks: semanas
+      bar_months: meses
+      bar_pack_1: 1 paquete/día
+      bar_pack_2: 7 paquetes/semana (SOLO para los EEUU)
+      bar_pack_3: 30 paquetes/mes
+      bar_total: TOTAL
+      bar_sign: $
+      bar_unit: USD
+      bar_cart: Añadir a la cesta
+      bar_checkout: Caja
+      trial_pack: Paquete de prueba gratuito
+      trial_pack_desc: '* solo para los EEUU y se aplica al envío'
+      your_wish: SU LISTA DE DESEOS
+      we_are: Estamos preparando continuamente nuevos suplementos. Díganos lo que quiere más para ayudarnos.
+      submit: Enviar
+    header:
+      gift: DAR COMO REGALO
+      ingredient: INGREDIENTES
+      about: ACERCA DE
+    gift:
+      title_cool: Cool Care
+      title_do: Muestre su cariño al dar un regalo...
+      send_a_gift: COMPRAR COMO UN REGALO
+      order: Compre un regalo para un ser querido
+      email: Ellos seleccionan sus opciones de suplementos por correo electrónico
+      gift: Muestre su cariño
+      recipient_name: nombre del destinatario
+      message: Añada su mensaje aquí (hasta 100 caracteres)
+      yourname: Su nombre
+      congrat: Felicidades
+      after_congrat: ¡Su regalo se está preparando! ¡Cada orden de Cool Choice está recién hecha, especialmente para usted!
+    message:
+      this: Querido/a
+      add: Añada su mensaje aquí (hasta 100 caracteres)
+      from: De
+      detail: Detalles del regalo
+      total: Total
+      coolchoice: CoolChoice
+      price: $39.99
+      gift_from: El regalo es de (Comprador)
+      gift_to: El regalo es para (Destinatario)
+      name: Su nombre
+      your_email: Su dirección de correo electrónico
+      email: La dirección de correo electrónico del destinatario
+    order_state:
+      message: Mensaje
+    checkout:
+      credit_card: Tarjeta de crédito
+      paypal: PayPal
+    ingredient:
+      title: 'INGREDIENTES NATURALES Y SEGUROS'
+      sub-title: 'Utilizamos solo ingredientes de alta calidad procedentes de proveedores de confianza y respaldados por pruebas de terceros.'
+      function_Anti-Aging: Anti-envejecimiento
+      function_Beauty: Belleza
+      function_Brain_Care: Cuidado del cerebro
+      function_Digestive_Care: Cuidado de la digestión
+      function_Energy: Energía
+      function_Eye_Care: Cuidado de los ojos
+      function_Heart_Care: Cuidado del corazón
+      function_Immune_Support: Cuidado del sistema inmunológico
+      function_Joint_Care: Cuidado articular
+      function_Liver_Care: Cuidado del hígado
+      function_Lung_Care: Cuidado del pulmón
+      function_Mens_Vitality: Vitalidad masculina
+      function_Sleep_Support: Ayuda para el sueño
+      function_Stress_Management: Alivio del estrés
+      caution1_Sleep_Support: '* Cool Choice recomienda tomar el suplemento de melatonina solo antes de ir a dormir.'
+      caution2_Sleep_Support: '** Advertencia: Puede causar somnolencia. Tenga cuidado al operar un vehículo o utilizar maquinaria peligrosa. '
+      more: MÁS
+      warning1: Estas declaraciones no han sido evaluadas por la FDA. Estos productos no están destinados a tratar, curar o prevenir cualquier enfermedad.
+      warning2: 'Advertencia: Las mujeres embarazadas o lactantes y personas con condiciones médicas conocidas y/o tomando medicamentos deben consultar con un profesional de la salud antes de tomar cualquier suplemento dietético.'
+    paypal:
+      already_refunded: "Este pago ha sido devuelto y no se tomará otra acción sobre él."
+      no_payment_via_admin_backend: "En estos momentos no es posible cargar cuentas de PayPal a través del backend de administración."
+      transaction: "Transacción de PayPal"
+      payer_id: "ID de pagador"
+      transaction_id: "ID de transacción"
+      token: "Token"
+      refund: "Reembolso"
+      refund_amount: "Cantidad"
+      original_amount: "Cantidad original: %{amount}"
+      refund_successful: "Reembolso de PayPal exitoso"
+      refund_unsuccessful: "Reembolso de PayPal fallido"
+      actions:
+        refund: "Reembolso"
+      flash:
+        cancel: "¿No desea usar PayPal? No hay problema."
+        connection_failed: "No se puede conectar a PayPal."
+        generic_error: "PayPal fallido. %{reasons}"
+    payment_has_been_cancelled: El pago ha sido cancelado.
+    complete_skrill_checkout: Por favor complete la comprobación de Skrill antes de continuar
+    skrill: Skrill
+    skrill_transaction: Transacción
+    skrill_customer_id: ID de cliente
+    skrill_transaction_id: ID de transacción
+    skrill_payment_type: Tipo de pago
+    skrill_payment_currency: Divisa de pago
+    log_entry:
+      braintree:
+        message: Mensaje
+        status: Estado
+        cc_token: Token de tarjeta de crédito Braintree
+        customer_id: ID de cliente de Braintree
+        cvv_result: Resultado de CVV
+        avs_result_title: Resultado de AVS
+        avs_result:
+          message: Mensaje
+          street_match: Coincidencia de calle
+          postal_match: Coincidencia postal
+      stripe:
+        message: Mensaje
+        charge_id: ID de cargo Stripe
+        card_id: ID de tarjeta Stripe
+        cvv_result: Resultado de CVV
+        cvc_check: Verificación de CVC
+        address_zip_check: Verificación de ZIP de dirección
+    environment: Entorno
+    user_was_not_valid: El usuario no fue válido.
+    add_another_service: "Añada otro servicio con el que iniciar sesión:"
+    authentications:
+      destroy: 'Método de autenticación destruido con éxito.'
+    back_to_authentication_methods_list: "Volver a la lista de métodos de autenticación"
+    edit_social_method: "Editar el método de autenticación social"
+    new_social_method: "Nuevo método de autenticación"
+    no_authentication_methods_found: "No se han encontrado métodos de autenticación"
+    one_more_step: 'Un paso más para completar su registro desde %{kind}'
+    remove_authentication_option_confirmation: "¿Está seguro que desea eliminar este método de autenticación?"
+    sign_into_account: "Puede iniciar sesión a esta cuenta usando:"
+    sign_in_through_one_of_these_services: "Iniciar sesión a través de uno de estos servicios:"
+    social_api_key: "Clave de API"
+    social_api_secret: "Secreto de API"
+    social_authentication_methods: "Métodos de autenticación social"
+    social_authentication_methods_description: "Configurar métodos de autenticación OAuth"
+    social_provider: "Proveedor social"
+    please_confirm_your_email: "Por favor confirme su dirección de correo electrónico para continuar"
+    sign_in_with: "Iniciar sesión con %{provider}"
+    you_have_signed_in_with_these_services: "Usted ha iniciado sesión con estos servicios"
+    admin_login: "Acceso de Administrador"
+    change_your_password: "Cambie su contraseña"
+  devise:
+    omniauth_callbacks:
+      success: "Usted ha iniciado sesión con su cuenta %{kind}."
+    confirmations:
+      confirmed: Su cuenta se ha confirmado con éxito. Ahora ha iniciado sesión.
+      send_instructions: En algunos minutos recibirá un mensaje de correo electrónico con instrucciones sobre cómo confirmar su cuenta.
+    failure:
+      inactive: Su cuenta no está activada todavía.
+      invalid: Dirección de correo electrónico o contraseña no válida.
+      invalid_token: Token de autenticación no válido.
+      locked: Su cuenta está bloqueada.
+      timeout: 'Su sesión ha caducado, vuelva a iniciar sesión para continuar.'
+      unauthenticated: Es necesario iniciar sesión o registrarse antes de continuar.
+      unconfirmed: Tiene que confirmar su cuenta antes de continuar.
+    mailer:
+      confirmation_instructions:
+        subject: Confirmación de instrucciones
+      reset_password_instructions:
+        subject: Instrucciones para restablecer la contraseña
+      unlock_instructions:
+        subject: Instrucciones de desbloqueo
+      confirmation_instructions:
+        subject: Confirmación de instrucciones
+    oauth_callbacks:
+      failure: 'No es posible autorizarle de %{kind} porque %{reason}.'
+      success: 'Autorizado con éxito de la cuenta %{kind}.'
+    unlocks:
+      send_instructions: En algunos minutos recibirá un mensaje de correo electrónico con instrucciones sobre cómo desbloquear su cuenta.
+      unlocked: Su cuenta ha sido desbloqueada con éxito. Ahora ha iniciado sesión.
+    passwords:
+      spree_user:
+        cannot_be_blank: La contraseña no puede estar en blanco.
+        no_token: "No se puede acceder a esta página sin venir de un mensaje para restablecer la contraseña. Si viene de un mensaje para restablecer la contraseña, por favor asegúrese de utilizar la URL completa proporcionada."
+        send_instructions: En algunos minutos recibirá un mensaje de correo electrónico con instrucciones para restablecer la contraseña.
+        updated: Su contraseña se ha cambiado con éxito. Ahora ha iniciado sesión.
+    user_registrations:
+      destroyed: ¡Adiós! Su cuenta se ha cancelado con éxito. Esperamos volver a verle pronto.
+      inactive_signed_up: "Usted se ha registrado con éxito. Sin embargo, no se ha podido iniciar sesión, ya que su cuenta %{reason}."
+      signed_up: ¡Bienvenido! Usted se ha registrado con éxito.
+      updated: Usted ha actualizado su cuenta con éxito.
+    user_sessions:
+      signed_in: Se ha registrado con éxito.
+      signed_out: Ha finalizado la sesión con éxito.
+      already_signed_in: Ya se ha iniciado la sesión.
+      already_signed_out: Ya se ha cerrado la sesión.
+  errors:
+    messages:
+      already_confirmed: ya ha sido confirmado/a
+      email_is_invalid: La dirección de correo electrónico no puede estar en blanco
+      Not_found: no encontrado
+      not_locked: no fue bloqueado/a
+      not_saved:
+        one: '1 error ha prohibido este %{resource} de guardarse:'
+        other: '%{count} errores han prohibido este %{resource} de guardarse:'

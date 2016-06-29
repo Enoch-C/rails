@@ -1,0 +1,332 @@
+---
+fr:
+  spree:
+    address_verification_failed: Échec de la vérification de l'adresse
+    cart_item_cannot_be_made: CartItem ne peut pas être obtenu à partir de cet élément.
+    ensure_one_valid_stock_location: Veuillez vous assurer que vous avez au moins un lieu d'emplacement du stock avec une adresse valide pour votre origine fiscale.
+    standard_taxcloud_tic: devrait être sous la forme à cinq chiffres standard de Tax Cloud TIC
+    tax_cloud: Tax Cloud
+    tax_cloud_settings: Paramètres de TaxCloud
+    tax_cloud_taxability_codes: Codes à caractère imposable
+    tax_cloud_api_login_and_key: Connexion et Clé API
+    taxcloud_api_login_id: Identifiant de connexion Tax Cloud API
+    taxcloud_api_key: Clé Tax Cloud API
+    taxcloud_shipping_tic: Expédition TIC Tax Cloud
+    tax_cloud_tic: Tax Cloud TIC
+    usps_user: Identifiant USPS de l'utilisateur
+    usps_user_id: Identifiant USPS API de l'utilisateur
+    zip_plus_4: Zip +4
+    alert_mutual_exclusive: Nous ne recommandons pas de mélanger ce supplément avec l'un de vos choix précédents. Pour votre sécurité, veuillez choisir une alternative.
+    cart_empty: VOTRE PANIER D'ACHAT EST VIDE
+    cart_empty_detail: Vous êtes seulement à quelques pas de faire un choix sympa. Qu'attendez-vous ? Ajoutez certains produits au panier !
+    you_have_signed_in_with_these_services: "Vous vous êtes connecté avec:"
+    sign_in_through_one_of_these_services: "Connectez-vous avec"
+    home: Accueil de Cool Choice
+    thank_you_for_your_order: Merci pour votre achat. Les suppléments sont sensibles à la lumière, à la chaleur et à l'humidité, et perdent de leur efficacité au fil du temps. Chaque commande de Cool Choice est fraîchement préparée, spécialement pour vous !
+    ok: OK
+    message: Message
+    nom_site: Cool Choice
+    payment_pop_desc: Suppléments nutritifs personnalisés
+    apply: Appliquer
+    coupon_code: Code Promo
+    binding_users: Lier les utilisateurs
+    items_cannot_be_shipped: Désolé, il y a au moins un produit dans votre panier qui ne peut être expédié QU'À une adresse aux États-Unis.
+    shipping_flat_rate_per_two_items: Forfait selon des éléments à deux paquets
+    phone: Téléphone
+    promoter: Promoteur
+    promoters: Promoteurs
+    percent: Pourcentage
+    secret: Secret
+    new_promoter: Ajouter un nouveau promoteur
+    first_name: Prénom
+    last_name: Nom de famille
+    editing_promoter: Modification du Promoteur
+    promoter_store_credit: Crédit en magasin
+    promoter_start: Lier la date de création
+    promoter_month_length: Longueur de liaison (m)
+    shopping_cart: Panier
+    cart_tableHeader_title: Panier
+    cart_tableHeader_details: Détails sur le produit
+    cart_tableHeader_price: Prix
+    cart_tableHeader_quantity: Quantité
+    cart_tableHeader_totalPrice: Total
+    cart_summary_title: Résumé du panier
+    cart_summary_subtotal: Total partiel
+    cart_summary_shipping: Livraison
+    cart_summary_tax: Tax
+    cart_summary_total: Total
+    cart_summary_keepShopping: Continuez vos achats
+    cart_summary_checkout: Vérifier
+    admin:
+      promoter:
+        store_credits: Crédit en magasin
+        binding_users: Lier les utilisateurs
+        users: Utilisateurs
+        items: Articles
+        orders: Commandes
+        account: Compte
+      order:
+        print_labels: Impression d'étiquettes
+        print: Imprimer
+    shipment_mailer:
+      shipped_email:
+        merci: Merci d'avoir commandé chez Cool Choice !
+    order_mailer:
+      confirm_reg_email:
+        Instructions: Ceci est pour confirmer que votre compte est maintenant créé.
+        thanks: Merci d'être un client de Cool Choice ! Nous vous fournissons les suppléments sûrs, frais et naturels que votre corps mérite ... sans les tracas.
+      confirm_email:
+        thanks: Merci d'avoir acheté Cool Choice ! Notre espoir est que vous tombiez sous le charme de nos suppléments nutritifs personnalisés.
+      confirm_promoter_email:
+        subjet: Vous avez reçu un Crédit de Promotion
+        store_credit_total: Crédit en magasin total
+        summary: Résumé de votre compte
+      confirm_gift_email:
+        subjet: vous avez reçu un cadeau de
+        instructions: "Veuillez trouver le lien ci-dessous pour obtenir votre cadeau:"
+        get: Obtenir mon cadeau
+    gift: Cadeau
+    GIFT: DONNEZ COMME CADEAU
+    INGREDIENTS: INGRÉDIENTS
+    ABOUT: À PROPOS
+    LOGOUT: SE DÉCONNECTER
+    SIGNIN: SE CONNECTER
+    homepage:
+      page2_title: Soins Cool
+      page2_title2: Faites quelque chose de spécial pour quelqu'un que vous aimez
+      page3_title: NOUS CUISINONS POUR VOUS
+      page3_title2: en utilisant les meilleurs ingrédients
+      page3_title31: PROVENANT DE
+      page3_title32: ET PLUS ...
+      personalize_now: Maintenant personnalisé
+      give_as_a_gift: Offrir comme cadeau
+      learn_more: En savoir plus
+      title_proud: FIER D'ÊTRE
+      title_introduce: Présentation des suppléments personnalisés
+      title_free: LIVRAISON GRATUITE aux États-Unis
+      title_worldwide: expédition MONDIALE
+      content_title_magic: Naturellement conçu ... juste pour vous
+      content_title_choose: Il suffit de choisir jusqu'à 3 suppléments frais
+      content_function_Anti-Aging: Anti-vieillissement
+      content_function_Beauty: Beauté
+      content_function_Brain_Care: Soins du cerveau
+      content_function_Digestive_Care: Soins de l'appareil digestif
+      content_function_Energy: Énergie
+      content_function_Eye_Care: Soins des yeux
+      content_function_Heart_Care: Soins du cœur
+      content_function_Immune_Support: Soins immunitaires
+      content_function_Joint_Care: Soins des articulations
+      content_function_Liver_Care: Soins du foie
+      content_function_Lung_Care: Soins des poumons
+      content_function_Mens_Vitality: Vitalité masculine
+      content_function_Sleep_Support: Support de sommeil
+      content_function_Stress_Management: Soulagement du stress
+      content_function_wish: Mon souhait
+      cool_simply: Cool Choice
+      cool_simply_line: 3 suppléments
+      cool_simply_line_2: 1 paquet facile
+      cool_care: Soins cool
+      cool_care_line: Offrez un cadeau à
+      cool_care_line_2: quelqu'un de spécial
+      cool_ingredients: Ingrédients sympas
+      cool_ingredients_line: 100% tout naturel
+      cool_ingredients_line_2: fraîchement conçu pour être commandé
+      bar_choose: Choisissez jusqu'à 3 suppléments
+      bar_qty: QUANTITÉ
+      bar_day: jour
+      bar_week: semaine
+      bar_month: mois
+      bar_days: jours
+      bar_weeks: semaines
+      bar_months: mois
+      bar_pack_1: 1 paquet / j
+      bar_pack_2: 7 paquets / semaine (ÉTAT-UNIS UNIQUEMENT)
+      bar_pack_3: 30 paquets / m
+      bar_total: TOTAL
+      bar_sign: $
+      bar_unit: USD
+      bar_cart: Ajoutez au panier
+      bar_checkout: Caisse
+      trial_pack: Paquet d'essai gratuit
+      trial_pack_desc: "* États-Unis seulement et l'expédition s'applique"
+      your_wish: VOTRE LISTE DE SOUHAITS
+      we_are: Nous concevons en permanence de nouveaux suppléments. Dites-nous ce que vous voulez de plus pour nous aider.
+      submit: Soumettre
+    header:
+      gift: DONNEZ COMME CADEAU
+      ingredient: INGRÉDIENTS
+      about: À PROPOS
+    gift:
+      title_cool: Soins Cool
+      title_do: Montrez que vous êtes concerné en donnant un cadeau ...
+      send_a_gift: ACHETEZ COMME CADEAU
+      order: Achetez un cadeau pour un être cher
+      email: Ils choisissent leurs options de suppléments par courriel
+      cadeau: Montrez que vous êtes concerné
+      recipient_name: nom du destinataire
+      message: Ajoutez votre message ici (jusqu'à 100 caractères)
+      yourname: Votre nom
+      congrat: Félicitations
+      after_congrat: Votre cadeau est en train d’être préparé ! Chaque commande de Cool Choice est fraîchement préparée, spécialement pour vous !
+    message:
+      this: Cher
+      add: Ajoutez votre message ici (jusqu'à 100 caractères)
+      from: De
+      detail: Détails sur les cadeaux
+      total: Total
+      coolchoice: CoolChoice
+      price: $39.99
+      gift_from: Le cadeau provient de (Acheteur)
+      gift_to: Le cadeau est pour (Destinataire)
+      name: Votre nom
+      your_email: Votre adresse de courriel
+      email: adresse de courriel du destinataire
+    order_state:
+      message: Message
+    checkout:
+      credit_card: Carte de crédit
+      paypal: PayPal
+    ingredient:
+      title: "INGRÉDIENTS SÛRS ET NATURELS"
+      sub-title: "Nous utilisons uniquement des ingrédients de haute qualité, provenant de fournisseurs réputés et appuyés par des tests tiers."
+      function_Anti-Aging: Anti-vieillissement
+      function_Beauty: Beauté
+      function_Brain_Care: Soins du cerveau
+      function_Digestive_Care: Soins de l'appareil digestif
+      function_Energy: Énergie
+      function_Eye_Care: Soins des yeux
+      function_Heart_Care: Soins du cœur
+      function_Immune_Support: Soins immunitaires
+      function_Joint_Care: Soins des articulations
+      function_Liver_Care: Soins du foie
+      function_Lung_Care: Soins des poumons
+      Mens_Vitality: Vitalité masculine
+      function_Sleep_Support: Support de sommeil
+      function_Stress_Management: Soulagement du stress
+      caution1_Sleep_Support: "* Cool Choice recommande de prendre le supplément de mélatonine seulement avant d'aller dormir."
+      caution2_Sleep_Support: "** Attention: Cela peut causer de la somnolence. Faites preuve de prudence lors de l'utilisation d'une voiture ou des machines dangereuses."
+      more: PLUS
+      warning1: Ces déclarations n'ont pas été évaluées par la FDA. Ces produits n'ont pas pour vocation de traiter, guérir ou prévenir une maladie quelconque.
+      warning2: "Attention: Les femmes enceintes ou les femmes qui allaitent et les personnes ayant des conditions médicales connues et / ou prenant des médicaments devraient consulter un professionnel de la santé, avant de prendre des suppléments alimentaires."
+    paypal:
+      already_refunded: "Ce paiement a été remboursé et aucune autre mesure ne peut être prise à son sujet."
+      no_payment_via_admin_backend: "Vous ne pouvez pas facturer de comptes PayPal par le biais de l’arrière-plan de l'administrateur en ce moment."
+      transaction: "Transaction de PayPal"
+      payer_id: "Identifiant du payeur"
+      transaction_id: "Identifiant de la transaction"
+      token: "Jeton"
+      refund: "Remboursement"
+      refund_amount: "Montant"
+      original_amount: "Montant initial: %{amount}"
+      refund_successful: "Remboursement PayPal réussi"
+      refund_unsuccessful: "Échec du remboursement PayPal"
+      actions:
+        refund: "Remboursement"
+      flash:
+        cancel: "Vous ne voulez pas utiliser PayPal ? Aucun problème rencontré."
+        connection_failed: "Impossible de se connecter à PayPal."
+        generic_error: "PayPal a échoué. %{reasons}"
+    payment_has_been_cancelled: Le paiement a été annulé.
+    complete_skrill_checkout: Veuillez compléter la vérification de Skrill avant de continuer
+    skrill: Skrill
+    skrill_transaction: Transaction
+    skrill_customer_id: Identifiant du client
+    skrill_transaction_id: Identifiant de la transaction
+    skrill_payment_type: Type de paiement
+    skrill_payment_currency: Monnaie de paiement
+    log_entry:
+      braintree:
+        message: Message
+        status: Statut
+        cc_token: Jeton de Carte de crédit Braintree
+        customer_id: Identifiant du client Braintree
+        cvv_result: Résultat CVV
+        avs_result_title: Résultat AVS
+        avs_result:
+          message: Message
+          street_match: Correspondance de rue
+          postal_match: Correspondance postale
+      stripe:
+        message: Message
+        charge_id: Identifiant de frais de Stripe
+        card_id: Identifiant de carte de Stripe
+        cvv_result: Résultat CVV
+        cvc_check: Vérification CVC
+        address_zip_check: Vérification de l'adresse postale
+    environment: Environnement
+    user_was_not_valid: l'utilisateur n'était pas valide.
+    add_another_service: "Ajouter un autre service avec lequel se connecter signer:"
+    authentications:
+      destroy: "Méthode d'authentification détruite avec succès."
+    back_to_authentication_methods_list: "Retour à la liste des méthodes d'authentification"
+    edit_social_method: "Modification de la méthode d'authentification sociale"
+    new_social_method: "Nouvelle méthode d'authentification"
+    no_authentication_methods_found: "Aucune méthode d'authentification trouvée"
+    one_more_step: 'Une étape de plus pour terminer votre inscription à partir de % {type}'
+    remove_authentication_option_confirmation: "Êtes-vous sûr de vouloir supprimer cette méthode d'authentification?"
+    sign_into_account: "Vous pouvez vous connecter à ce compte en utilisant :"
+    sign_in_through_one_of_these_services: "Connectez-vous à travers l'un de ces services :"
+    social_api_key: "Clé API"
+    social_api_secret: "Secret API"
+    social_authentication_methods: "Méthodes d'authentification sociale"
+    social_authentication_methods_description: "Configurer les méthodes d'authentification OAuth"
+    social_provider: "Fournisseur social"
+    please_confirm_your_email: "Veuillez confirmer votre adresse de courriel pour continuer"
+    sign_in_with: "Connectez-vous avec %{provider}"
+    you_have_signed_in_with_these_services: "Vous vous êtes connecté avec ces services"
+    admin_login: "Connexion de l'administrateur"
+    change_your_password: "Changez votre mot de passe"
+  devise:
+      omniauth_callbacks:
+        success: "Vous êtes maintenant connecté à votre compte %{kind}."
+    confirmations:
+      confirmed: Votre compte a été confirmé avec succès. Vous êtes maintenant connecté.
+      send_instructions: Vous recevrez un courriel avec les instructions à suivre pour confirmer votre compte en quelques minutes.
+    failure:
+      inactive: Votre compte n'est pas encore activé.
+      invalid: Courriel ou mot de passe invalide.
+      invalid_token: Jeton d'authentication invalide.
+      locked: Votre compte est verrouillé.
+      timeout: 'Votre session a expiré, veuillez vous reconnecter pour pouvoir continuer.'
+      unauthenticated: Vous devez vous connecter ou vous inscrire avant de continuer.
+      unconfirmed: Vous devez confirmer votre compte avant de continuer.
+    mailer:
+      confirmation_instructions:
+        subject: Instructions de confirmation
+      reset_password_instructions:
+        subjet: Instructions de réinitialisation du mot de passe
+      unlock_instructions:
+        subjet: Instructions de déverouillage
+      confirmation_instructions:
+        subject: Instructions de confirmation
+    oauth_callbacks:
+      failure: 'Impossible de vous autoriser depuis % {kind} parce que %{reason}'.
+      success: 'Autorisé avec succès depuis le compte % {kind}.'
+    unlocks:
+      send_instructions: Vous recevrez un courriel avec les instructions à suivre pour déverrouiller votre compte en quelques minutes.
+      unlocked: Votre compte a été déverrouillé avec succès. Vous êtes maintenant connecté.
+    passwords:
+      spree_user:
+        cannot_be_blank: Votre mot de passe ne peut pas être vide.
+        no_token: "Vous ne pouvez pas accéder à cette page sans partir d'un courriel de réinitialisation de mot de passe. Si vous ne venez pas d'un courriel de réinitialisation de mot de passe, veuillez vous assurer que vous avez utilisé l'URL complète fournie."
+        send_instructions: Vous recevrez un email avec les instructions pour réinitialiser votre mot de passe en quelques minutes.
+        updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté.
+    user_registrations:
+      destroyed: Au revoir ! Votre compte a bien été annulé avec succès. Au plaisir de vous revoir bientôt.
+      inactive_signed_up: "Vous vous êtes inscrit avec succès. Cependant, nous ne pouvions pas vous connecter parce que votre compte est %{reason} ."
+      signed_up: Bienvenue ! Vous vous êtes inscrit avec succès.
+      updated: Vous avez mis à jour votre compte avec succès.
+    user_sessions:
+      signed_in: Connecté avec succès.
+      signed_out: Déconnecté avec succès.
+      already_signed_in: Déjà connecté.
+      already_signed_out: Déjà déconnecté.
+  errors:
+    messages :
+      already_confirmed: était déjà confirmé
+      email_is_invalid: L'adresse de courriel ne peut pas être vide
+      not_found: pas trouvé
+      not_locked: n'était pas verrouillé
+      not_saved:
+        un: '1 erreur a empêché que ce %{resource} soit enregistré: '
+        other: '%{count} erreurs ont empêché que ce %{resource} soit enregistré:'

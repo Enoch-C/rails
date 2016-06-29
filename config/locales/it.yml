@@ -1,0 +1,332 @@
+---
+it:
+  spree:
+    address_verification_failed: Verifica dell’Indirizzo non riuscita
+    cart_item_cannot_be_made: CarrelloMerce non può essere fatto da questo articolo.
+    ensure_one_valid_stock_location: Assicurarsi di avere almeno una Locazione di Magazzino con un indirizzo valido per la propria tassazione originaria.
+    standard_taxcloud_tic: dovrebbe essere nel formato standard a cinque-cifre Tax Cloud TIC
+    tax_cloud: Tax Cloud
+    tax_cloud_settings: Impostazioni TaxCloud
+    tax_cloud_taxability_codes: Codici di Tassabilità
+    tax_cloud_api_login_and_key: Login e chiave API
+    taxcloud_api_login_id: ID di Login Tax Cloud API
+    taxcloud_api_key: Chiave Tax Cloud API
+    taxcloud_shipping_tic: Spedizione Tax Cloud TIC
+    tax_cloud_tic: Tax Cloud TIC
+    usps_user: ID Utente USPS
+    usps_user_id: ID Utente USPS API
+    zip_plus_4: Cap +4
+    alert_mutual_exclusive: Consigliamo di non mischiare questo integratore con quello scelto in precedenza. Per la tua sicurezza, scegline uno alternativo.
+    cart_empty: IL TUO CARRELLO DELLA SPESA È VUOTO
+    cart_empty_detail: Sei a pochi passi da Cool Choice. Che cosa stai aspettando? Aggiungi alcuni prodotti al carrello!
+    you_have_signed_in_with_these_services: 'Ti sei registrato con:'
+    sign_in_through_one_of_these_services: 'Registrato con'
+    home: Cool Choice Pagina Iniziale
+    thank_you_for_your_order: Grazie per l’acquisto. Gli integratori sono sensibili alla luce, al calore, e all’umidità e perdono di efficacia nel tempo. Ogni ordine Cool Choice e fatto al momento, apposta per te!
+    ok: OK
+    message: Messaggio
+    site_name: Cool Choice
+    payment_pop_desc: Integratori Nutrizionali personalizzati
+    apply: Applica
+    coupon_code: Codice Coupon
+    binding_users: Legatura Utente
+    items_cannot_be_shipped: Spiacenti, c’è almeno un prodotto nel tuo carrello che può essere spedito SOLTANTO a un indirizzo USA.
+    shipping_flat_rate_per_two_items: Tasso fisso per due articoli confezionati
+    phone: Telefono
+    promoter: Promotore
+    promoters: Promotori
+    percent: Percentuale
+    secret: Segreto
+    new_promoter: Aggiungi nuovo promotore
+    first_name: Nome
+    last_name: Cognome
+    editing_promoter: Modifica promotore
+    promoter_store_credit: Credito Magazzino
+    promoter_start: Tempo di Creazione Legatura
+    promoter_month_length: Lunghezza Legatura(m)
+    shopping_cart: Carrello
+    cart_tableHeader_title: Carrello
+    cart_tableHeader_details: Dettagli del Prodotto
+    cart_tableHeader_price: Prezzo
+    cart_tableHeader_quantity: Qtà
+    cart_tableHeader_totalPrice: Totale
+    cart_summary_title: Sommario Carrello
+    cart_summary_subtotal: Subtotale
+    cart_summary_shipping: Spedizione
+    cart_summary_tax: Tasse
+    cart_summary_total: Totale
+    cart_summary_keepShopping: Continua con gli Acquisti
+    cart_summary_checkout: Esci
+    admin:
+      promoter:
+        store_credits: Credito Magazzino
+        binding_users: Legame Utenti
+        users: Utenti
+        items: Articoli
+        orders: Ordini
+        account: Account
+      order:
+        print_labels: Stampa Etichette
+        print: Stampa
+    shipment_mailer:
+      shipped_email:
+        thanks: Grazie per aver ordinate da Cool Choice!
+    order_mailer:
+      confirm_reg_email:
+        instructions: Questo è per confermare che il tuo account ora è stato creato.
+        thanks: Grazie per essere diventato un cliente Cool Choice! Ti forniremo integratori sicuri, freschi e naturali necessari al tuo corpo … meno il fastidio.
+      confirm_email:
+        thanks: Grazie per aver acquistato Cool Choice! Speriamo che tu ti innamori dei nostri Integratori Nutrizionali personalizzati.
+      confirm_promoter_email:
+        subject: Hi ricevuto un Credito Promozionale
+        store_credit_total: Credito Totale Magazzino
+        summary: Sommario del tuo Account
+      confirm_gift_email:
+        subject: hai ricevuto un regalo da
+        instructions: 'Segui il link qui di seguito per ottenere il tuo regalo:'
+        get: Il mio Regalo
+    gift: Regalo
+    GIFT: FAI UN REGALO
+    INGREDIENT: INGREDIENTI
+    ABOUT: A PROPOSITO DI
+    LOGOUT: ESCI
+    SIGNIN: ENTRA
+    homepage:
+      page2_title: Buona cura
+      page2_title2: Fai qualcosa di special per qualcuno che tis ta a cuore
+      page3_title: CUCINIAMO PER TE
+      page3_title2: usando gli ingredienti migliori
+      page3_title31: ORIGINATO DA
+      page3_title32: E ALTRO ...
+      personalize_now: Personalizza ora
+      give_as_a_gift: Fai un regalo
+      learn_more: Per saperne di più
+      title_proud: ORGOGLIOSI DI ESSERLO
+      title_introduce: Presentazione degli Integratori personalizzati
+      title_free: SPEDIZIONE GRATUITA negli Stati Uniti
+      title_worldwide: spedizione IN TUTTO IL MONDO
+      content_title_magic: Fatti in modo naturale... proprio per te
+      content_title_choose: Basta scegliere 3 integratori freschi
+      content_function_Anti-Aging: Anti-Invecchiamento
+      content_function_Beauty: Bellezza
+      content_function_Brain_Care: Cura delle funzioni cerebrali
+      content_function_Digestive_Care: Cura delle funzioni digestive
+      content_function_Energy: Energia
+      content_function_Eye_Care: Cura degli Occhi
+      content_function_Heart_Care: Cura del Cuore
+      content_function_Immune_Support: Cura del Sistema Immunitario
+      content_function_Joint_Care: Cura delle Articolazioni
+      content_function_Liver_Care: Cura del Fegato
+      content_function_Lung_Care: Cura dei Polmoni
+      content_function_Mens_Vitality: Funzioni erettili
+      content_function_Sleep_Support: Per favorire il Sonno
+      content_function_Stress_Management: Sollievo dallo Stress
+      content_function_wish: I miei desideri
+      cool_simply: Cool Choice
+      cool_simply_line: 3 integratori
+      cool_simply_line_2: 1 pacchetto facile
+      cool_care: Cura Cool
+      cool_care_line: Fai un regalo a
+      cool_care_line_2: una persona speciale
+      cool_ingredients: Ingredienti Cool
+      cool_ingredients_line: 100% Naturali
+      cool_ingredients_line_2: Fatti al momento su ordinazione
+      bar_choose: Scegli fino a 3 integratori
+      bar_qty: Qtà
+      bar_day: giorno
+      bar_week: settimana
+      bar_month: mese
+      bar_days: giorni
+      bar_weeks: settimane
+      bar_months: mesi
+      bar_pack_1: 1 confezione/d
+      bar_pack_2: 7 confezioni/w (US ONLY)
+      bar_pack_3: 30 confezioni/m
+      bar_total: TOTALE
+      bar_sign: $
+      bar_unit: USD
+      bar_cart: Aggiungi al carrello
+      bar_checkout: Esci
+      trial_pack: Confezione di prova
+      trial_pack_desc: '* solo US & spedizione'
+      your_wish: LA TUA LISTA DEI DESIDERI
+      we_are: Stiamo mettendo continuamente a punto nuovi integratori. Dicci in che cosa vorresti che ti aiutassimo maggiormente.
+      submit: Inoltra
+    header:
+      gift: FAI UN REGALO
+      ingredient: INGREDIENTI
+      about: A PROPOSITO DI
+    gift:
+      title_cool: Cura Cool
+      title_do: Mostra la tua attenzione facendo un regalo...
+      send_a_gift: ACQUISTA COME REGALO
+      order: Aquista un regalo per una persona cara
+      email: Selezionano la scelta degli integratori per Email
+      gift: mostra la tua attenzione
+      recipient_name: Nome del destinatario
+      message: Aggiungi qui il tuo messaggio (fino a 100 caratteri)
+      yourname: Il tuo nome
+      congrat: Congratulazioni
+      after_congrat: il tuo regalo è in preparazione! Ogni ordine Cool Choice è fatto al momento, proprio per te!
+    message:
+      this: Caro/a
+      add: Aggiungi qui il tuo messaggio (fino a 100 caratteri)
+      from: da
+      detail: dettagli regalo
+      total: Totale
+      coolchoice: CoolChoice
+      price: $39.99
+      gift_from: Regalato da (Acquirente)
+      gift_to: Regalo per (Destinatario)
+      name: Il tuo nome
+      your_email: il tuo indirizzo email
+      email: Indirizzo email del destinatario
+    order_state:
+      message: Messaggio
+    checkout:
+      credit_card: Carta di Credito
+      paypal: PayPal
+    ingredient:
+      title: 'INGREDIENTI SICURI E NATURALI'
+      sub-title: 'Usiamo solo ingredienti di alta qualità, acquistati da fornitori selezionati e referenziati con verifiche di terza parte.'
+      function_Anti-Aging: Anti-invecchiamento
+      function_Beauty: Bellezza
+      function_Brain_Care: Cura delle funzioni cerebrali
+      function_Digestive_Care: Cura delle funzioni digestive
+      function_Energy: Energia
+      function_Eye_Care: Cura degli Occhi
+      function_Heart_Care: Cura del Cuore
+      function_Immune_Support: Cura del Sistema immunitario
+      function_Joint_Care: Cura delle Articolazioni
+      function_Liver_Care: Cura del Fegato
+      function_Lung_Care: Cura dei Polmoni
+      function_Mens_Vitality: Funzioni erettili
+      function_Sleep_Support: Per favorire il sonno
+      function_Stress_Management: Sollievo dallo stress
+      caution1_Sleep_Support: '*  Cool Choice raccomanda di prendere l’integratore di melatonina solo prima di andare a dormire.'
+      caution2_Sleep_Support: '** Avvertenza: Può causare sonnolenza. Prestare attenzione quando si è alla guida di un’auto o si utilizzano macchinari utensili pericolosi.'
+      more: ALTRO
+      warning1: Questi integratori non sono stati valutati dalla FDA. Questi prodotti non intendono sostituire trattamenti, cure o costituire prevenzione di qualsivoglia malattia.
+      warning2: 'Avvertenza: Le donne incinte o in allattamento e le persone affette da patologie note o che stanno assumendo medicinali dovrebbero consultare il proprio medico di fiducia o lo specialista di riferimento prima di assumere qualsiasi integratore alimentare.'
+    paypal:
+      already_refunded: "Questo pagamento è stato rimborsato e non è possibile effettuare nessuna altra azione."
+      no_payment_via_admin_backend: "Impossibile utilizzare gli account PayPal attraverso il terminale amministrativo in questo momento."
+      transaction: "Transazione PayPal "
+      payer_id: "ID Pagante"
+      transaction_id: "ID Transazione"
+      token: "Gettone"
+      refund: "Rimborso"
+      refund_amount: "Importo"
+      original_amount: "Importo originario: %{amount}"
+      refund_successful: "Rimborso PayPal riuscito"
+      refund_unsuccessful: "Rimborso PayPal non riuscito"
+      actions:
+        refund: "Rimborso"
+      flash:
+        cancel: "Non vuoi utilizzare PayPal? Nessun problema."
+        connection_failed: "Impossibile connettersi a PayPal."
+        generic_error: "PayPal non riuscito. %{reasons}"
+    payment_has_been_cancelled: Il pagamento è stato annullato.
+    complete_skrill_checkout: Completare il checkout Skrill prima di continuare
+    skrill: Skrill
+    skrill_transaction: Transazione
+    skrill_customer_id: ID Cliente
+    skrill_transaction_id: ID Transazione
+    skrill_payment_type: Tipo di Pagamento
+    skrill_payment_currency: Valuta di Pagamento
+    log_entry:
+      braintree:
+        message: Messaggio
+        status: Stato
+        cc_token: Gettone Carta di Credito Braintree
+        customer_id: ID Cliente Braintree
+        cvv_result: Risultato CVV
+        avs_result_title: Risultato AVS
+        avs_result:
+          message: Messaggio
+          street_match: Abbinamento Indirizzo
+          postal_match: Abbinamento postale
+      stripe:
+        message: Messaggio
+        charge_id: ID di Addebito Stripe
+        card_id: ID Carta Stripe
+        cvv_result: Risultato CVV
+        cvc_check: Verifica CVC
+        address_zip_check: Verifica CAP postale
+    environment: Ambiente
+    user_was_not_valid: Utente non valido.
+    add_another_service: "Aggiungi un altro servizio per registrarti con:"
+    authentications:
+      destroy: 'Metodo di autenticazione distrutto con successo.'
+    back_to_authentication_methods_list: "Torna alla Lista di Metodi di Autenticazione"
+    edit_social_method: "Modifica Metodo di autenticazione Sociale."
+    new_social_method: "Nuovo Metodo di Autenticazione"
+    no_authentication_methods_found: "Nessun Metodo di Autenticazione trovato"
+    one_more_step: 'Ancora un passo per completare la tua registrazione da %{kind}'
+    remove_authentication_option_confirmation: "Sicuro di voler rimuovere questo metodo di autenticazione?"
+    sign_into_account: "Puoi registrarti in questo account utilizzando:"
+    sign_in_through_one_of_these_services: "Registrati mediante uno di questi servizi:"
+    social_api_key: "Chiave API"
+    social_api_secret: "Segreto API"
+    social_authentication_methods: "Metodi di Autenticazione Sociale"
+    social_authentication_methods_description: "Imposta Metodi di Autenticazione OAuth "
+    social_provider: "Operatore Sociale"
+    please_confirm_your_email: "Confermare l’indirizzo email per continuare"
+    sign_in_with: "Accedere con %{provider}"
+    you_have_signed_in_with_these_services: "Ti sei registrato con questi Servizi"
+    admin_login: "Login Amministratore"
+    change_your_password: "Cambia la Password"
+  devise:
+    omniauth_callbacks:
+      success: "Ora sei registrato nel tuo %{kind} account."
+    confirmations:
+      confirmed: Il tuo account è stato confermato. Ora sei registrato.
+      send_instructions: Riceverai una email con le istruzioni su come cofermare il tuo account entro pochi minuti.
+    failure:
+      inactive: Il tuo account non è ancora stato attivato.
+      invalid: Email o password non valida.
+      invalid_token: Gettone di autenticazione non valido.
+      locked: Il tuo account è bloccato.
+      timeout: 'La tua sessione è scaduta, accedi di nuovo per continuare.'
+      unauthenticated: Devi accedere o registrarti prima di continuare.
+      unconfirmed: Devi confermare il tuo account prima di continuare.
+    mailer:
+      confirmation_instructions:
+        subject: Istruzioni di conferma
+      reset_password_instructions:
+        subject: Istruzioni per resettare la password
+      unlock_instructions:
+        subject: Istruzioni per sbloccare
+      confirmation_instructions:
+        subject: Istruzioni di conferma
+    oauth_callbacks:
+      failure: 'Impossibile ricevere autorizzazione da %{kind} a causa di %{reason}.'
+      success: 'Autorizzato con successo da %{kind} account.'
+    unlocks:
+      send_instructions: Riceverai una mail con le istruzioni sul modo per sbloccare il tuo account in pochi minuti.
+      unlocked: Il tuo account è stato sbloccato con successo. Ora sei registrato.
+    passwords:
+      spree_user:
+        cannot_be_blank: La password non può essere vuota.
+        no_token: "Impossibile accedere a questa pagina senza provenire da una email per la reimpostazione della password. Se vieni da una email per la reimpostazione della password, assicurati di utilizzare l’intero URL fornito."
+        send_instructions: Riceverai una email con le istruzioni su come resettare la password tra pochi minuti.
+        updated: La tua password è stata modificata con successo. Ora sei registrato.
+    user_registrations:
+      destroyed: Ciao! Il tuo account è stato cancellato con successo. Speriamo di rivederti presto.
+      inactive_signed_up: 'Ti sei registrato con successo. Tuttavia, non possiamo farti accedere perché il tuo account è %{reason}.'
+      signed_up: Benvenuto! Ti sei registrato con successo.
+      updated: Hai aggiornato il tuo account con successo.
+    user_sessions:
+      signed_in: Registrato con successo.
+      signed_out: Uscito con successo.
+      already_signed_in: Già registrato.
+      already_signed_out: Già uscito.
+  errors:
+    messages:
+      already_confirmed: già stato confermato
+      email_is_invalid: L’indirizzo Email non può essere vuoto
+      not_found: non trovato
+      not_locked: non era stato bloccato
+      not_saved:
+        one: '1 errore ha impedito che questo %{resource} fosse salvato:'
+        other: '%{count} errori hanno impedito che questo %{resource} fosse salvato:'

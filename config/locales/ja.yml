@@ -1,0 +1,332 @@
+---
+ja:
+  spree:
+    address_verification_failed: アドレス検証に失敗しました
+    cart_item_cannot_be_made: タックスクラウド カートの商品はこの商品から作れません。
+    ensure_one_valid_stock_location: 税元のための有効なアドレスを少なくとも一つ持っているか確認して下さい。
+    Standard_taxcloud_tic: 標準タックスクラウドTIC五桁の番号フォームでなくてはなりません
+    tax_cloud: タックスクラウド
+    tax_cloud_settings: タックスクラウドのセッティング
+    tax_cloud_taxability_codes: 課税コード
+    tax_cloud_api_login_and_key: API ログインとキー
+    taxcloud_api_login_id: タックスクラウドAPIログインID
+    taxcloud_api_key: タックスクラウドAPIキー
+    taxcloud_shipping_tic: タックスクラウド発送TIC
+    tax_cloud_tic: タックスクラウドTIC
+    usps_user: USPSユーザーID
+    usps_user_id: USPSＡＰＩユーザーID
+    zip_plus_4: ジップ +4
+    alert_mutual_exclusive: このサプリメントとあなたが前で選んだものとの混合をおススメしません。安全のために、別の物をお選び下さい。
+    cart_empty: あなたのショッピングカートは空です
+    cart_empty_detail: ゆっくりと進むめば、クールチョイスが出来ます。さあ、迷う必要はありません。カートに商品を追加します!
+    you_have_signed_in_with_these_services: 'サインインしました：'
+    sign_in_through_one_of_these_services: 'サインイン'
+    home: クールチョイスのホームページ
+    thank_you_for_your_order: ご購入ありがとうございました！サプリメントは、光・熱・湿気に敏感であり、時間をかけて有効性を失います。すべてはクールチョイスのために新たに作られました、特にあなたのために作りました！
+    ok: OK
+    message: メッセージ
+    site_name: クールチョイス
+    payment_pop_desc: パーソナライズされたサプリメント
+    apply: 適用
+    coupon_code: クーポンコード
+    binding_users: バインディングユーザー
+    items_cannot_be_shipped: 申し訳ありません、カートの中にアメリカの住所にしか発送できない商品が入っています。
+    shipping_flat_rate_per_two_items: 二つのパッケージアイテムの平均料金
+    phone: 電話
+    promoter: プロモーター
+    promoters: 推奨者
+    percent: パーセント
+    secret: シークレット
+    new_promoter: 新しい推奨者を加える
+    first_name: 名前
+    last_name: 名字
+    editing_promoter: 推奨者を編集する
+    promoter_store_credit: ストアクレジット
+    promoter_start: バインディング作成時間
+    promoter_month_length: バインディングの長さ（m）
+    shopping_cart: カート
+    cart_tableHeader_title: カート
+    cart_tableHeader_details: 商品の詳細
+    cart_tableHeader_price: 価格
+    cart_tableHeader_quantity: 数量
+    cart_tableHeader_totalPrice: 合計
+    cart_summary_title: カートの内容
+    cart_summary_subtotal: 小計
+    cart_summary_shipping: 送料
+    cart_summary_tax: 税
+    cart_summary_total: 合計
+    cart_summary_keepShopping: 買い物を続ける
+    cart_summary_checkout: お支払い
+    admin:
+      promoter:
+        store_credits: ストアクレジット
+        binding_users: バインディングユーザー
+        users: ユーザー
+        items: アイテム
+        orders: 注文
+        account: アカウント
+      order:
+        print_labels: ラベルをプリントする
+        print: プリント
+    shipment_mailer:
+      shipped_email:
+        thanks: クールからご注文していただきありがとうございました！
+    order_mailer:
+      confirm_reg_email:
+        instructions: カウント作成確認中。
+        thanks: クールチョイスのお選びいただきありがとうございます！我々は安全で、新鮮で天然なサプリメントをあなたのボディーに提供致します。
+      confirm_email:
+        thanks: クールチョイスでのご購入ありがとうございます！あなたにパーソナライズされたサプリメントに恋される事を我々は望んでいます。
+      confirm_promoter_email:
+        subject: プロモーションクレジット
+        store_credit_total: 全店舗クレジット
+        summary: アカウントの概要
+      confirm_gift_email:
+        Subject: から贈り物を受取りました
+        instructions: '贈り物をゲットするために下のリンクを確認して下さい：'
+        get: 贈り物をゲットする
+    gift: 贈り物
+    GIFT: 贈り物として贈る
+    INGREDIENT: 素材
+    ABOUT: 我々について
+    LOGOUT: ログアウト
+    SIGNIN: サインイン
+    homepage:
+      page2_title: クールケア
+      page2_title2: 気になる人のために特別なケアを行なう
+      page3_title: 我々はあなたのために調理します
+      page3_title2: 最高の素材を使用します
+      page3_title31: 入手先
+      page3_title32: その他いろいろ…
+      personalize_now: パーソナライズする　
+      give_as_a_gift: 贈り物として贈る
+      learn_more: もっと見る
+      title_proud: 誇りに思うことは
+      title_introduce: パーソナライズしたサプリメントを紹介できることです。
+      title_free: アメリカ国内は送料無料
+      title_worldwide: 全世界に発送
+      content_title_magic: 自然の作りを…あなただけのために
+      content_title_choose: お気軽に３つまでの新鮮なサプリメントをお選び下さい
+      content_function_Anti-Aging: アンチエイジング
+      content_function_Beauty: ビューティー
+      content_function_Brain_Care: 脳のケア
+      content_function_Digestive_Care: 消化器のケア
+      content_function_Energy: エネルギー
+      content_function_Eye_Care: 目のケア
+      content_function_Heart_Care: 心臓のケア
+      content_function_Immune_Support: 免疫のケア
+      content_function_Joint_Care: 関節のケア
+      content_function_Liver_Care: 肝臓のケア
+      content_function_Lung_Care: 肺のケア
+      content_function_Mens_Vitality: 男性の活力
+      content_function_Sleep_Support: 睡眠サポート
+      content_function_Stress_Management: ストレス減少
+      content_function_wish: 私の願い
+      cool_simply: クールチョイス
+      cool_simply_line: ３つのサプリメント
+      cool_simply_line_2: 1つからパッケージします
+      cool_care: クールケア
+      cool_care_line: 贈り物として贈る
+      cool_care_line_2: 特別な誰かに
+      cool_ingredients: クールの素材
+      cool_ingredients_line: 100% オールナチュラル
+      cool_ingredients_line_2: 新鮮なオーダーメイド
+      bar_choose: 最大3つまでサプリメントを選んで下さい
+      bar_qty: 数量
+      Bar_day: 日
+      Bar_week: 周
+      Bar_month: 月
+      Bar_days: 日
+      Bar_weeks: 周
+      Bar_months: 月
+      bar_pack_1: 1パック/日
+      bar_pack_2: 7 パック/周 (アメリカのみ)
+      bar_pack_3: 30 パック/月
+      bar_total: 合計
+      bar_sign: $
+      bar_unit: 米ドル
+      bar_cart: カートに入れる
+      bar_checkout: お支払い
+      trial_pack: 無料お試し
+      trial_pack_desc: '* アメリカのみ & 送料適用'
+      your_wish: お気に入りリスト
+      we_are: 我々は絶えず新しいサプリメントを作っています。お客様が欲しいものを我々に教えて下さい。
+      submit: 送信
+    header:
+      gift: 贈り物として贈る
+      ingＦredient: 素材
+      about: 我々について
+    gift:
+      title_cool: クールケア
+      title_do: 贈り物を贈ってあなたの気持ちを表現してみてはいかがですか？
+      send_a_gift: 贈り物として購入する
+      order: 愛する人のために贈り物を購入します
+      email: 電子メールでサプリメントを選びます
+      gift: あなたの気持ちを表現します
+      Recipient_name: 受信者名
+      message: ここにあなたのメッセージを加えて下さい（100文字まで）
+      yourname: お名前
+      congrat: おめでとうございます！
+      after_congrat: 贈り物が準備できました！すべてはクールチョイスのオーダーのために新たに作られました、特にあなたのために作りました！
+    message:
+      this: 様　
+      add: ここにあなたのメッセージを加えて下さい（100文字まで）
+      from: 差出人
+      detail: 贈り物の詳細
+      total: 合計
+      coolchoice: クールチョイス
+      price: $39.99ドル
+      gift_from: （購入者）さんからの贈り物です
+      gift_to: 贈り物は（受信者）さん宛ての物です
+      name: お名前
+      your_email: あなたの電子メールアドレス
+      email: 受信者の電子メールアドレス
+    order_state:
+      message: メッセージ
+    checkout:
+      credit_card: クレジットカード
+      paypal: ペイパル
+    ingredient:
+      title: '安全で自然な素材'
+      sub-title: '我々は、評判のよい供給元から仕入れた、高品質の素材だけを使用し、第三者の検査によって品質を保証しています。'
+      function_Anti-Aging: アンチエイジング
+      function_Beauty: ビューティー
+      function_Brain_Care: 脳ケア
+      function_Digestive_Care: 消化器ケア
+      function_Energy: エネルギー
+      function_Eye_Care: 目のケア
+      function_Heart_Care: 心臓のケア
+      function_Immune_Support: 免疫のケア
+      function_Joint_Care: 関節のケア
+      function_Liver_Care: 肝臓のケア
+      function_Lung_Care: 肺のケア
+      function_Mens_Vitality: 男性の活力
+      function_Sleep_Support: 睡眠サポート
+      function_Stress_Management: ストレス減少
+      caution1_Sleep_Support: '*  クールチョイスは、メラトニンサプリメントは寝る前にだけ摂取する事を推奨しています。'
+      caution2_Sleep_Support: '** 警告：眠気を起こすことがあります。車の運転や危険機械を操作する際にはご注意下さい。'
+      more: 詳細...
+      warning1: これらの声明はFDAからは評価されていません。これらの商品は、任意の病気の予防や治療を目的としたものではありません。
+      warning2: '警告：妊娠または授乳中の女性、治療条件や服用している薬がある方は、サプリメントを服用する前に医師に相談して下さい。'
+    paypal:
+      already_refunded: "この支払は返金されており、これ以上のアクションは実行されません。"
+      no_payment_via_admin_backend: "アドミンバックエンドを介している時はペイパルアカウントにチャージする事は出来ません。"
+      transaction: "ペイパル取引タイプ"
+      payer_id: "支払者ID"
+      transaction_id: "取引ID"
+      token: "トークン"
+      refund: "返金"
+      refund_amount: "金額"
+      original_amount: "元の金額：%{amount}"
+      refund_successful: "ペイパルの返金成功"
+      refund_unsuccessful: "ペイパルの返金失敗"
+      actions:
+        refund: "返金"
+      flash:
+        cancel: "ペイパルを使用したくないですか? 問題ありません。"
+        connection_failed: "ペイパルに接続できません。"
+        generic_error: "ペイパル失敗。%{reasons}"
+    payment_has_been_cancelled: 支払がキャンセルされました。
+    complete_skrill_checkout: 続行する前にスクリルのチェックアウトを完了して下さい
+    skrill: スクリル
+    skrill_transaction: 取引
+    skrill_customer_id: カスタマーID
+    skrill_transaction_id: 取引ID
+    skrill_payment_type: 支払いタイプ
+    skrill_payment_currency: 支払い通貨
+    log_entry:
+      braintree:
+        message: メッセージ
+        status: ステータス
+        cc_token: ブレインツリークレジットカード
+        customer_id: ブレインツリーカスタマーID
+        cvv_result: CVV結果
+        avs_result_title: AVS結果
+        avs_result:
+          message: メッセージ
+          street_match: ストリートマッチ
+          postal_match: ポータルマッチ
+      stripe:
+        message: メッセージ
+        charge_id: ストライプ・チャージID
+        card_id: ストライプ・カードID
+        cvv_result: CVV結果
+        cvc_check: CVCチェック
+        address_zip_check: アドレスジップチェック
+    environment: 環境
+    user_was_not_valid: ユーザーが無効です。
+    add_another_service: "他のサービスを追加してサインインする："
+    authentications:
+      destroy: '認証方法の破棄に成功しました。'
+    back_to_authentication_methods_list: "認証方法リストに戻る"
+    edit_social_method: "ソシアル認証方法を編集する"
+    new_social_method: "新しい認証方法"
+    no_authentication_methods_found: "認証方法が見つかりません"
+    one_more_step: 'さらにステップして %{kind} からあなたの登録を確認します'
+    remove_authentication_option_confirmation: "この認証方法を削除する事に同意しますか？"
+    sign_into_account: "このアカウントを使用してサインインできます："
+    sign_in_through_one_of_these_services: "サインインしていずれかのサービスにアクセスして下さい："
+    social_api_key: "API キー"
+    social_api_secret: "APIシークレット"
+    social_authentication_methods: "ソシアル認証方法"
+    social_authentication_methods_description: "オー オース認証方法をセットアップする"
+    social_provider: 「ソシアルプロバイダー"
+    please_confirm_your_email: "メールアドレスを確認して続けて下さい"
+    sign_in_with: " %{provider} ログインする"
+    you_have_signed_in_with_these_services: "これらのサービスにログイン出来ます"
+    admin_login: "管理者ログイン"
+    change_your_password: "パスワードを変更する"
+  devise:
+    omniauth_callbacks:
+      success: "現在 %{kind} のアカウンとでサインインしています。"
+    confirmations:
+      confirmed: アカウントが正常に更新されました。サインイン中。
+      send_instructions: あなたのアカウントを確認する方法について手順を記載した電子メールが数分で届きます。
+    failure:
+      inactive: あなたのアカウントはまだアクティブ化されていません。
+      invalid: 電子メールかパスワードが無効です。
+      invalid_token: 認証トークンが無効です。
+      locked: アカウントがロックされています。
+      timeout: ’セッションの時間が切れました、もう一度サインインし直して続けて下さい。’
+      unauthenticated: 続ける前にサインインかサインアップが必要です。
+      unconfirmed: 続ける前に、アカウントを確認する必要があります。
+    mailer:
+      confirmation_instructions:
+        subject: 確認手順
+      reset_password_instructions:
+        subject: パスワードのリセット手順
+      unlock_instructions:
+        subject: ロックを解除する手順
+      confirmation_instructions:
+        subject: 確認手順
+    oauth_callbacks:
+      failure: ' %{reason} のため %{kind} からあなたを承認できませんでした。'
+      success: ' %{kind} アカウントから承認が成功しました。'
+    unlocks:
+      send_instructions: あなたのアカウントのロックを解除する方法についての電子メールが数分で届きます。
+      unlocked: あなたのアカウントはロック解除されました。サインイン中。
+    passwords:
+      spree_user:
+        cannot_be_blank: パスワードを入力する必要があります。
+        no_token: "パスワードをリセットした確認の電子メールが届くまで、このページにはアクセスできません。パスワードをリセットし確認の電子メール受取れる事ができるなら、完全なURLlを使用して提供されている事を確認して下さい。"
+        send_instructions: パスワードを再設定する方法を記載した電子メールが数分で届きます。
+        updated: パスワードが正常に変更されました。サインイン中
+    user_registrations:
+      destroyed: バイバイ！アカウントが正常にキャンセルされました。またのお越しをお待ちしています。
+      inactive_signed_up: 'あなたは正常にサインアップ出来ました。しかし、アカウントの %{reason} でサインインできませんでした。'
+      signed_up: ようこそ！正常にサインアップ出来ました。
+      updated: アカウントが正常に更新されました。
+    user_sessions:
+      signed_in: サインイン出来ました。
+      signed_out: サインアウトしました。
+      already_signed_in: 既にサインインしています。
+      already_signed_out: 既にサインアウトしました。
+  errors:
+    messages:
+      already_confirmed: 確認済み
+      email_is_invalid: 電子メールアドレスは入力が必要です
+      Not_found: 見つかりません
+      Not_locked: ロックされていません
+      not_saved:
+        one: '一エラーのため、この %{resource} を保存する事が禁止されました：'
+        other: '%{count} エラのため、この %{resource} を保存する事が禁止されました：'
