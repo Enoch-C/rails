@@ -778,56 +778,44 @@ input.button
         font-weight: 300
         color: #a6a4a4
 #why
-  .section-1
-    text-align: left
-    background: #f7f8fa
+  .text
+    display: inline-block
+    width: 400px
     height: 350px
-    .para-left
-      float: left
-      margin: 65px auto 65px 113px
-      img
-        max-width: 350px
-    .para-right
-      float: right
-      margin: 65px 113px 65px auto
-      .title
-        max-width: 391px
-        font-size: 30px
-        font-weight: 500
-        letter-spacing: -0.9px
-        color: #474c5d
+    margin-left: 80px
+    &:before
+      display: inline-block
+      width: 0
+      height: 100%
+      content: ""
+      vertical-align: middle
+    .middle
+      display: inline-block
+      vertical-align: middle
+      width: 360px
       p
-        margin-top: 11px
-        max-width: 391px
+        text-align: justify
+        line-height: 1.6
         font-size: 16px
-        font-weight: 300
-        line-height: 1.56
         color: #787878
+      .title
+        width: 380px
+        margin-bottom: 11px
+        font-size: 30px
+        color: #474c5d
+  .img
+    img
+      width: 585px
+  .section-1,
   .section-2
-    text-align: left
     height: 350px
-    background: #ffffff
-    .para-left
-      float: left
-      margin: 65px auto 65px 113px
-      .title
-        max-width: 391px
-        font-size: 30px
-        font-weight: 500
-        letter-spacing: -0.9px
-        color: #474c5d
-      p
-        margin-top: 11px
-        max-width: 391px
-        font-size: 16px
-        font-weight: 300
-        line-height: 1.56
-        color: #787878
-    .para-right
-      float: right
-      margin: 65px 113px 65px auto
-      img
-        max-width: 350px
+  .para-left
+    float: left
+  .para-right
+    float: right
+  .section-1
+    background: #f7f8fa
+
 
 #gift-message
   .card
