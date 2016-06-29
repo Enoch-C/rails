@@ -16,9 +16,9 @@ en:
     gift_message_error1: Please enter recipient name.
     gift_message_error2: Please leave a message up to 100 characters.
     gift_message_error3: Please enter your name.
-    alert_mutual_exclusive: We do not recommend mixing this supplement with one of your previous choices. For your safety, please pick an alternative.
+    alert_mutual_exclusive: We do not recommend mixing this supplement with one of your previous choices. Please pick an alternative.
     cart_empty: YOUR SHOPPING CART IS EMPTY
-    cart_empty_detail: You're only a few steps from making a Cool Choice. Add some products to your cart!
+    cart_empty_detail: You're only a few steps away from making a Cool Choice. Add some products to your cart!
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
     sign_in_through_one_of_these_services: 'Sign in with'
     home: Cool Choice Home
@@ -96,7 +96,7 @@ en:
       banner_2_title: YOUR MIX
       banner_3_title: YOUR HEALTH
       banner_1_sub_title: Choose 3 premium supplements
-      banner_2_sub_title: Cool Choice creates your personalized supplement blend, just for YOU
+      banner_2_sub_title: Cool Choice creates your personalized supplement blend, just for you
       banner_3_sub_title: Once a day, enjoy your tasty Cool Choice beverage
       button_1: Why Cool Choice
       button_2: Customize and Buy
@@ -114,7 +114,7 @@ en:
       title_free: Worldwide Shipping
       title_worldwide: Free shipping in the U.S.
       content_title_magic: Naturally made... just for you
-      content_title_choose: Simply choose 3 healthy supplements
+      content_title_choose: Simply choose 3 premium supplements
       content_function_Anti-Aging: Anti-Aging
       content_function_Beauty: Beauty
       content_function_Brain_Care: Brain Care
@@ -195,7 +195,7 @@ en:
       credit_card: Credit Card
       paypal: PayPal
     ingredient:
-      title: 'SAFE AND NATURAL INGREDIENTS'
+      title: 'THE BEST NATURAL INGREDIENTS'
       sub-title: 'We use only high-quality ingredients, sourced from reputable suppliers and backed by third-party testing.'
       function_Anti-Aging: Anti-Aging
       function_Beauty: Beauty
@@ -243,7 +243,7 @@ en:
       detail_Beauty: The skin is the largest organ of the body, and it performs a number of vital functions. Not only does our skin hold in fluids to prevent dehydration, but it also acts as a barrier from harmful microbes, allows us to feel (thanks to nerves found in the epidermis), and assists in regulating our body temperature. Unfortunately, every day our skin is victim to chemicals, pollutants, UV radiation, stress, and/or poor nutrition. These harmful factors cause our skin to become less healthy over time, thus losing its firmness, moisture, and elasticity, and resulting in wrinkles and fine lines. Bioactive collagen peptides help to improve overall skin health, increasing the effectiveness of the skin at performing its essential functions and reducing wrinkles and fine lines.
       detail_Brain_Care: When we are young, our brains are like sponges, processing information efficiently and storing it in the form of memories. Due to aging, our brains become less effective, and we experience a decline in our ability to store and recall information. This is caused by the degeneration of brain cells (called neurons), which communicate through a dense web of synaptic connections. As we age, the ability of synapses to transmit information diminishes. In order to function properly, the brain needs an energy source to keep the synapses working efficiently. Citicoline aids in this by supporting brain signaling and improving memory health.
       detail_Digestive_Care: Our stomachs are home to trillions of beneficial microorganisms called probiotics, which are essential for our bodies to function properly. Poor diet, illness, and antibiotic medications reduce the number of beneficial probiotics in our stomachs, inhibiting our ability to efficiently digest food and fight disease. The probiotic Bacillus Coagulans can be supplemented to replenish our stores of probiotics, thereby improving digestive health and immune functions.
-      detail_Energy: While our modern world boasts many incredible amenities and opportunities, it can at times be draining, both mentally and physically. In order to keep up with the hustle and bustle of our day-to-day lives, we could all benefit from having some extra energy. Ashwagandha has been used for thousands of years to boost energy and concentration. The positive benefits it provides makes it the perfect replacement for the daily cup of coffee, allowing us to skip the line at the local coffee shop and have more time and energy to spend on work or school—as well as with loved ones.
+      detail_Energy: "While our modern world boasts many incredible amenities and opportunities, it can at times be draining, both mentally and physically. In order to keep up with the hustle and bustle of our day-to-day lives, we could all benefit from having some extra energy. Ashwagandha has been used for thousands of years to boost energy and concentration. The positive benefits it provides makes it the perfect replacement for the daily cup of coffee, allowing us to skip the line at the local coffee shop and have more time and energy to spend on work or school—as well as with loved ones."
       detail_Eye_Care: It goes without saying that we are attached at the hip with our cell phones, tablets, and other devices. We take them everywhere we go and interact with them constantly. These devices, however, emit blue light, damaging our eyes and causing poor vision over time. Natural Lutein and Zeaxanthin help protect and repair our damaged eyes by acting as a filter to block the damaging light from these devices and providing nutritional support for visual health and acuity.
       detail_Heart_Care: Like all of our organs, the heart needs energy to function properly. As we age, the heart’s source of energy declines, causing various cardiovascular conditions. Co-Q10, derived from a natural fermentation process, helps support cardiovascular health by supplying the heart with a source of energy.
       detail_Immune_Support: As we age, our bodies are exposed to bacteria and viruses that cause illness. A healthy body develops immunity to help fight off these sickness-causing organisms, but poor diet, stress, and infection weaken our bodies’ immune systems. In order to combat this, beta-glucan (produced through natural fermentation) helps modulate the body’s immune defense system, increasing its ability to fight illness.
@@ -257,7 +257,7 @@ en:
       contains_Beauty: Each serving contains 1,000 milligrams of bioactive collagen peptides, sourced from beef.
       contains_Brain_Care: Each serving contains 250 milligrams of Citicoline.
       contains_Digestive_Care: Each serving contains 1 billion active and shelf-stable probiotic Bacillus Coagulans microorganisms.
-      contains_Energy: Each serving contains 500 milligrams of ashwagandha powder.
+      contains_Energy: Each serving contains 500 milligrams of ashwagandha extract.
       contains_Eye_Care: Each serving contains 7 milligrams of lutein and zeaxanthin blend extracted from Marigold.
       contains_Heart_Care: Each serving contains 50 milligrams of Co-Q10.
       contains_Immune_Support: Each serving contains 200 milligrams of 1-3-Beta-Glucan, produced by natural fermentation.
@@ -316,7 +316,7 @@ en:
       warning1: These statements have not been evaluated by the FDA. These products are not intended to treat, cure, or prevent any disease.
       warning2: 'Warning: Pregnant or lactating women and people with known medical conditions and/or taking medications should consult with a healthcare practitioner before taking any dietary supplements.'
     faq:
-      frequently: Frequently Asked Questions (F.A.Q.)
+      frequently: Frequently Asked Questions
       q1: What is a dietary supplement?
       a1_1: 'According to the FDA, a dietary supplement is “a product intended for ingestion that contains a "dietary ingredient" intended to add further nutritional value to, or to supplement, the diet. A "dietary ingredient" may be one, or any combination, of the following substances:'
       a1_2_1: a vitamin
