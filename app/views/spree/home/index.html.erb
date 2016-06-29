@@ -94,7 +94,7 @@
                 <%= Spree.t('homepage.content_function_' + function) %>
               </div>
             </label>
-            <div class="information">i</div>
+            <%= image_tag('home/i@2x.png', class: 'information') %>
             <input type="checkbox" id="<%= function %>" value="<%= function %>" v-model="result" class="checkbox cb_<%= i+1 %>"/>
           </div>
         <% end %>
