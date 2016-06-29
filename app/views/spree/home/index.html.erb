@@ -172,8 +172,7 @@
 <!-- popup ingredient details -->
 <div class="more-overlay">
   <div class="close"></div>
-  <% url_list = ['http://extramel.com/', 'http://www.gelita.com/en/products/verisol', 'http://cognizin.com/', nil, nil, 'http://www.lutemax2020.com/', nil, 'http://nutriscienceusa.com/beta-glucan/', 'http://greengrownglucosamine.com/', nil, nil, nil, nil, 'http://www.suntheanine.com/
-'] %>
+  <% url_list = ['http://extramel.com/', 'http://www.gelita.com/en/products/verisol', 'http://cognizin.com/', nil, nil, 'http://www.lutemax2020.com/', nil, 'http://nutriscienceusa.com/beta-glucan/', 'http://greengrownglucosamine.com/', nil, nil, nil, nil, 'http://www.suntheanine.com/'] %>
   <% function_list.each_with_index do |function, index| %>
     <div id="<%= 'ingredient_' + function %>" class="view">
       <a class="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
@@ -234,8 +233,10 @@
 
   //toggle checkbox
   $(".choose-box label").click(function() {
-    var id = $(this).attr('for')
-    $("#" + id).toggle()
+    if (vm.result.length < 3) {
+      var id = $(this).attr('for')
+      $("#" + id).toggle()
+    }
   })
 
   var vm = new Vue({

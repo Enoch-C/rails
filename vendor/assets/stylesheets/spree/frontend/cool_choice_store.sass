@@ -9,6 +9,26 @@ body
     #content
       padding: 0
 
+
+#header_nav
+  li
+    white-space: nowrap
+@media (max-width: 768px)
+  #header_nav
+    li
+      font-size: 12px
+@media (min-width: 769px) and (max-width: 992px)
+  #header_nav
+    li
+      font-size: 12px
+      a
+        padding-left: 4px
+        padding-right: 4px
+  #main-nav-bar
+    .nav
+      display: none !important
+
+
 input,
 textarea
   outline: none
@@ -525,6 +545,8 @@ input.button
         width: 180px
         height: 174px
         margin: 38px 20px
+        &.selected
+          background: image-url('/assets/home/i@2x-c02f278402ad2109be8b9f2ad7baea5804940a8e9f228334bc8829f1d49f6a1f.png') right 0 no-repeat
         .information
           position: absolute
           left: 0
@@ -549,6 +571,10 @@ input.button
           right: 0
           width: 25px
           height: 25px
+        input.disabled
+          pointer-events: none
+          color: #AAA
+          background: #F5F5F5
       .Anti-Aging
         color: #f16d8c
       .Beauty
