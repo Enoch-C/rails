@@ -277,8 +277,8 @@ fr:
     admin_login: "Connexion de l'administrateur"
     change_your_password: "Changez votre mot de passe"
   devise:
-      omniauth_callbacks:
-        success: "Vous êtes maintenant connecté à votre compte %{kind}."
+    omniauth_callbacks:
+      success: "Vous êtes maintenant connecté à votre compte %{kind}."
     confirmations:
       confirmed: Votre compte a été confirmé avec succès. Vous êtes maintenant connecté.
       send_instructions: Vous recevrez un courriel avec les instructions à suivre pour confirmer votre compte en quelques minutes.
@@ -300,7 +300,7 @@ fr:
       confirmation_instructions:
         subject: Instructions de confirmation
     oauth_callbacks:
-      failure: 'Impossible de vous autoriser depuis % {kind} parce que %{reason}'.
+      failure: 'Impossible de vous autoriser depuis % {kind} parce que %{reason}.'
       success: 'Autorisé avec succès depuis le compte % {kind}.'
     unlocks:
       send_instructions: Vous recevrez un courriel avec les instructions à suivre pour déverrouiller votre compte en quelques minutes.

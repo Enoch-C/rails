@@ -249,7 +249,7 @@ de:
       stripe:
         message: Nachricht
         charge_id: Stripe-Gebühr-ID
-        card_id: Stripe-Karten-ID:
+        card_id: Stripe-Karten-ID
         cvv_result: CVV-Ergebnis
         cvc_check: CVC-Prüfung
         address_zip_check: Adressenprüfung PLZ
