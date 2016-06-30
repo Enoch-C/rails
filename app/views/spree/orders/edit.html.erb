@@ -3,7 +3,7 @@
 
   <% if @order.line_items.empty? %>
 
-    <div style="text-align: center; margin-top: 200px"><p style="font-weight: 600; font-size:22px; line-height: 1.14"><%= Spree.t(:cart_empty) %></p><p style="color: #474c5d"><%= Spree.t(:cart_empty_detail) %></p><p><%= link_to Spree.t(:keep_shopping), root_path+"#section-1", class: 'roundButton b1', style: 'margin-top:30px' %></p><div>
+    <div style="text-align: center; margin-top: 200px"><p style="font-weight: 600; font-size:22px; line-height: 1.14"><%= Spree.t(:cart_empty) %></p><p style="color: #474c5d"><%= Spree.t(:cart_empty_detail) %></p><p><%= link_to Spree.t(:cart_summary_keepShopping), root_path+"#section-1", class: 'roundButton b1', style: 'margin-top:30px' %></p><div>
 
   <% else %>
     <h1><%= Spree.t(:cart_tableHeader_title)%></h1>

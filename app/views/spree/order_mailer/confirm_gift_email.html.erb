@@ -28,7 +28,7 @@
         <%= Spree.t('order_mailer.confirm_gift_email.instructions') %>
       </p>
       <p>
-        <a href="<%= Rails.application.config.webhost %>/gift/my_gift?token=<%= @order.guest_token%>"><%= Spree.t('order_mailer.confirm_gift_email.get') %></a>
+        <a href="<%= Rails.application.config.webhost %>/gift/my_gift?id=<%= @order.number %>"><%= Spree.t('order_mailer.confirm_gift_email.get') %></a>
       </p>
     </td>
     <td class="expander"></td>
