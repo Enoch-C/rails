@@ -87,7 +87,7 @@
         <% if url_list[index] %>
         <p>
         <% url_list[index].each_with_index do |pdf, index| %>
-          <a style="margin: 0 10px" href="<%= "slick/pdfs/#{pdf}" %>" target="_blank"><%= Spree.t('studies_and_reports.clinic_study') + " " + (index+1).to_s %></a>
+          <a style="margin: 0 10px" href="<%= "#{Rails.application.config.webhost}/slick/pdfs/#{pdf}" %>" target="_blank"><%= Spree.t('studies_and_reports.clinic_study') + " " + (index+1).to_s %></a>
         <% end %>
         </p>
         <% end %>
