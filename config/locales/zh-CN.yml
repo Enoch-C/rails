@@ -14,8 +14,8 @@ zh-CN:
       title2: "过量危及健康"
       para2: "保健品中的营养成分都有每日服用的上限，超出了会对身体造成危害及可能产生的副作用。Cool Choice个性化配方，确保每一种组合的营养成分均不超标，为您的健康补充安全适度的营养。"
       title3: "无胶囊、无化学添加、无填充剂"
-      para3: 常见的片剂和胶囊，含有人体所不需要的辅料及化学物质，长期服用不利于健康。Cool Choice选择最健康的纤维基冲剂形式，为您的身体提供最健康的营养补充。
-      para3_2: Cool Choice comes in a fresh and clean powder form, providing your body with exactly what it needs for optimum health.
+      para3: 常见的片剂和胶囊，含有人体所不需要的辅料及化学物质，长期服用不利于健康。
+      para3_2: Cool Choice选择最健康的纤维基冲剂形式，为您的身体提供最健康的营养补充。
       title4: "新鲜定制"
       para4: "保健品中的有效成分会受光线、热度、潮湿等因素的影响，逐渐失效。Cool Choice按定单生产，新鲜更健康！"
       title5: "天然原料"
@@ -367,7 +367,7 @@ zh-CN:
     order_state:
       message: 信息
     checkout:
-      credit_card: 信用卡
+      credit_card: 信用卡和支付宝
       paypal: PayPal
     admin:
       promoter:
