@@ -224,7 +224,7 @@
   Array.prototype.and = function(a) {
     var t = this.clone()
     a.forEach(function(item){
-      if (!t.includes(item)) {
+      if (!(t.indexOf(item) > -1)) {
         t.push(item)
       }
     })
@@ -347,7 +347,7 @@
           a = a.and(ta)
         })
         a.forEach(function(item){
-          if (that.disabledFeatures.includes(item)) {
+          if (that.disabledFeatures.indexOf(item) > -1) {
             that.disableItem(item)
           } else {
             that.enableItem(item)
@@ -463,7 +463,7 @@
         }
       },
       action_select: function(index) {
-        if (this.disabledFeatures.includes(index+1)) {
+        if (this.disabledFeatures.indexOf(index+1) > -1) {
           alert("<%= Spree.t(:alert_mutual_exclusive) %>")
         }
       }
