@@ -1,7 +1,7 @@
 en:
   spree:
     head_bar:
-      WHY_COOL_CHOICE: WHY COOL CHOICE
+      WHY_COOL_CHOICE: WHY US
       GIFT: GIFT
       INGREDIENTS: INGREDIENTS
     footer_bar:
@@ -11,7 +11,7 @@ en:
       email_us: Email us
     studies_and_reports:
       clinic_study: Clinic Study
-    WHY_COOL_CHOICE: WHY COOL CHOICE
+    WHY_COOL_CHOICE: WHY US
     why_page:
       title1: "3 CLICKS TO THE RIGHT ONE…"
       para1: "With over 500 possible combinations, Cool Choice eliminates the confusion and makes it easy for you. All you have to do is pick three health icons and we take care of the rest. It's that easy!"

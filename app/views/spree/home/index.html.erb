@@ -146,7 +146,7 @@
         <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
       </div>
       <div class="cart" v-show="result.length == 3">
-        <a v-on:click='action_addToCart' style="border: 1px solid #fff; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
+        <a v-on:click='action_addToCart' style="border: 1px solid #3acced; color: #3acced; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
         <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
       </div>
       <div @click="action_trial" class="trail"  v-show="result.length == 3">
