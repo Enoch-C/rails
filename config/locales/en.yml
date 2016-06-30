@@ -1,5 +1,7 @@
 en:
   spree:
+    studies_and_reports:
+      clinic_study: Clinic Study
     WHY_COOL_CHOICE: WHY COOL CHOICE
     why_page:
       title1: "3 CLICKS TO THE RIGHT ONE…"

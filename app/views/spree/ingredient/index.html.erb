@@ -60,8 +60,14 @@
   <%= render partial: 'spree/shared/footer' %>
   <div class="more-overlay">
     <div class="close"></div>
-    <% url_list = ['http://extramel.com/', 'http://www.gelita.com/en/products/verisol', 'http://cognizin.com/', nil, nil, 'http://www.lutemax2020.com/', nil, 'http://nutriscienceusa.com/beta-glucan/', 'http://greengrownglucosamine.com/', nil, nil, nil, nil, 'http://www.suntheanine.com/
-'] %>
+    <% url_list = [
+      ['SOD-B-Cell-Aging-Prevention.pdf'], nil,
+      ['2016 Cognizin Overview Brochur.pdf'], nil,
+      ['KSM-66_Benefits_Applications.pdf','SCIENTIFIC STUDIES_KSM-66.pdf'], nil, nil,
+      ['Beta Glucan Study - Enhanced P.pdf','Beta Glucan Study -Quantificat.pdf','BetaGlucanDecreasesEpisodesofCommonChildhoodIllness.pdf'],
+      ['GreenGrown 4pgprint.pdf','GreenGrown-Developing_Loyal_.pdf','Joint Health and Glucosamine.pdf'], nil,
+      ['D16 literature review.pdf'], nil,
+      ['melatonin.pdf'], nil] %>
     <% function_list.each_with_index do |function, index| %>
       <div id="<%= function %>" class="view">
         <a class="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
@@ -79,7 +85,11 @@
           <% end %>
         </ul>
         <% if url_list[index] %>
-          <p><a href="<%= url_list[index] %>" target="_blank"><%= Spree.t(:learn_more) %></a></p>
+        <p>
+        <% url_list[index].each_with_index do |pdf, index| %>
+          <a style="margin: 0 10px" href="<%= "slick/pdfs/#{pdf}" %>" target="_blank"><%= Spree.t('studies_and_reports.clinic_study') + " " + (index+1).to_s %></a>
+        <% end %>
+        </p>
         <% end %>
         <% if function == 'Sleep_Support' %>
           <p style="font-size: 12px"><%= Spree.t('ingredient.caution1_' + function) %><br><%= Spree.t('ingredient.caution2_' + function) %></p>
