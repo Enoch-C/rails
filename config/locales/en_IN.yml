@@ -1,13 +1,25 @@
-en_IN:
+en:
   spree:
+    head_bar:
+      WHY_COOL_CHOICE: WHY COOL CHOICE
+      GIFT: GIFT
+      INGREDIENTS: INGREDIENTS
+    footer_bar:
+      contact: Contact
+      contact_us: Contact Us
+      call_us: Call us
+      email_us: Email us
+    studies_and_reports:
+      clinic_study: Clinic Study
+    WHY_COOL_CHOICE: WHY COOL CHOICE
     why_page:
       title1: "3 CLICKS TO THE RIGHT ONE…"
       para1: "With over 500 possible combinations, Cool Choice eliminates the confusion and makes it easy for you. All you have to do is pick three health icons and we take care of the rest. It's that easy!"
       title2: "OVER SUPPLEMENTATION CAN HARM…"
       para2: "Supplements have upper limits(UL) that should not be exceeded to avoiding potentially threatening side effects, Cool Choice guards against over supplementation to achieve the desired beneficial effects safely."
       title3: "NO FILLERS, CHEMICALS AND CAPSULE ITSELF…"
-      para3: "Tablets and capsules contain excipients and chemicals that prevent dispersion and breakdown—which are not what your body needs.
-Cool Choice comes in a fresh and clean powder form, providing your body with exactly what it needs for optimum health."
+      para3: Tablets and capsules contain excipients and chemicals that prevent dispersion and breakdown—which are not what your body needs.
+      para3_2: Cool Choice comes in a fresh and clean powder form, providing your body with exactly what it needs for optimum health.
       title4: "FRESHLY MADE TO ORDER…"
       para4: "Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is freshly made, especially for you!"
       title5: "NATURAL…"
@@ -15,9 +27,9 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
     gift_message_error1: Please enter recipient name.
     gift_message_error2: Please leave a message up to 100 characters.
     gift_message_error3: Please enter your name.
-    alert_mutual_exclusive: We do not recommend mixing this supplement with one of your previous choices. For your safety, please pick an alternative.
+    alert_mutual_exclusive: We do not recommend mixing this supplement with one of your previous choices. Please pick an alternative.
     cart_empty: YOUR SHOPPING CART IS EMPTY
-    cart_empty_detail: You're only a few steps from making a Cool Choice. Add some products to your cart!
+    cart_empty_detail: You're only a few steps away from making a Cool Choice. Add some products to your cart!
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
     sign_in_through_one_of_these_services: 'Sign in with'
     home: Cool Choice Home
@@ -94,8 +106,8 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       banner_1_title: YOUR CHOICE
       banner_2_title: YOUR MIX
       banner_3_title: YOUR HEALTH
-      banner_1_sub_title: Choose up to 3 premium supplements
-      banner_2_sub_title: Cool Choice creates your personalized supplement blend, just for YOU
+      banner_1_sub_title: Choose 3 premium supplements
+      banner_2_sub_title: Cool Choice creates your personalized supplement blend, just for you
       banner_3_sub_title: Once a day, enjoy your tasty Cool Choice beverage
       button_1: Why Cool Choice
       button_2: Customize and Buy
@@ -113,7 +125,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       title_free: Worldwide Shipping
       title_worldwide: Free shipping in the U.S.
       content_title_magic: Naturally made... just for you
-      content_title_choose: Simply choose up to 3 healthy supplements
+      content_title_choose: Simply choose 3 premium supplements
       content_function_Anti-Aging: Anti-Aging
       content_function_Beauty: Beauty
       content_function_Brain_Care: Brain Care
@@ -138,7 +150,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       cool_ingredients: Cool Ingredients
       cool_ingredients_line: Freshly made-to-order
       cool_ingredients_line_2: No unnecessary ingredients
-      bar_choose: Choose up to 3 supplements
+      bar_choose: Choose 3 supplements
       bar_qty: QTY
       bar_day: day
       bar_week: week
@@ -194,7 +206,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       credit_card: Credit Card
       paypal: PayPal
     ingredient:
-      title: 'SAFE AND NATURAL INGREDIENTS'
+      title: 'THE BEST NATURAL INGREDIENTS'
       sub-title: 'We use only high-quality ingredients, sourced from reputable suppliers and backed by third-party testing.'
       function_Anti-Aging: Anti-Aging
       function_Beauty: Beauty
@@ -242,7 +254,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       detail_Beauty: The skin is the largest organ of the body, and it performs a number of vital functions. Not only does our skin hold in fluids to prevent dehydration, but it also acts as a barrier from harmful microbes, allows us to feel (thanks to nerves found in the epidermis), and assists in regulating our body temperature. Unfortunately, every day our skin is victim to chemicals, pollutants, UV radiation, stress, and/or poor nutrition. These harmful factors cause our skin to become less healthy over time, thus losing its firmness, moisture, and elasticity, and resulting in wrinkles and fine lines. Bioactive collagen peptides help to improve overall skin health, increasing the effectiveness of the skin at performing its essential functions and reducing wrinkles and fine lines.
       detail_Brain_Care: When we are young, our brains are like sponges, processing information efficiently and storing it in the form of memories. Due to aging, our brains become less effective, and we experience a decline in our ability to store and recall information. This is caused by the degeneration of brain cells (called neurons), which communicate through a dense web of synaptic connections. As we age, the ability of synapses to transmit information diminishes. In order to function properly, the brain needs an energy source to keep the synapses working efficiently. Citicoline aids in this by supporting brain signaling and improving memory health.
       detail_Digestive_Care: Our stomachs are home to trillions of beneficial microorganisms called probiotics, which are essential for our bodies to function properly. Poor diet, illness, and antibiotic medications reduce the number of beneficial probiotics in our stomachs, inhibiting our ability to efficiently digest food and fight disease. The probiotic Bacillus Coagulans can be supplemented to replenish our stores of probiotics, thereby improving digestive health and immune functions.
-      detail_Energy: While our modern world boasts many incredible amenities and opportunities, it can at times be draining, both mentally and physically. In order to keep up with the hustle and bustle of our day-to-day lives, we could all benefit from having some extra energy. Ashwagandha has been used for thousands of years to boost energy and concentration. The positive benefits it provides makes it the perfect replacement for the daily cup of coffee, allowing us to skip the line at the local coffee shop and have more time and energy to spend on work or school—as well as with loved ones.
+      detail_Energy: "While our modern world boasts many incredible amenities and opportunities, it can at times be draining, both mentally and physically. In order to keep up with the hustle and bustle of our day-to-day lives, we could all benefit from having some extra energy. Ashwagandha has been used for thousands of years to boost energy and concentration. The positive benefits it provides makes it the perfect replacement for the daily cup of coffee, allowing us to skip the line at the local coffee shop and have more time and energy to spend on work or school—as well as with loved ones."
       detail_Eye_Care: It goes without saying that we are attached at the hip with our cell phones, tablets, and other devices. We take them everywhere we go and interact with them constantly. These devices, however, emit blue light, damaging our eyes and causing poor vision over time. Natural Lutein and Zeaxanthin help protect and repair our damaged eyes by acting as a filter to block the damaging light from these devices and providing nutritional support for visual health and acuity.
       detail_Heart_Care: Like all of our organs, the heart needs energy to function properly. As we age, the heart’s source of energy declines, causing various cardiovascular conditions. Co-Q10, derived from a natural fermentation process, helps support cardiovascular health by supplying the heart with a source of energy.
       detail_Immune_Support: As we age, our bodies are exposed to bacteria and viruses that cause illness. A healthy body develops immunity to help fight off these sickness-causing organisms, but poor diet, stress, and infection weaken our bodies’ immune systems. In order to combat this, beta-glucan (produced through natural fermentation) helps modulate the body’s immune defense system, increasing its ability to fight illness.
@@ -256,7 +268,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       contains_Beauty: Each serving contains 1,000 milligrams of bioactive collagen peptides, sourced from beef.
       contains_Brain_Care: Each serving contains 250 milligrams of Citicoline.
       contains_Digestive_Care: Each serving contains 1 billion active and shelf-stable probiotic Bacillus Coagulans microorganisms.
-      contains_Energy: Each serving contains 500 milligrams of ashwagandha powder.
+      contains_Energy: Each serving contains 500 milligrams of ashwagandha extract.
       contains_Eye_Care: Each serving contains 7 milligrams of lutein and zeaxanthin blend extracted from Marigold.
       contains_Heart_Care: Each serving contains 50 milligrams of Co-Q10.
       contains_Immune_Support: Each serving contains 200 milligrams of 1-3-Beta-Glucan, produced by natural fermentation.
@@ -315,7 +327,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       warning1: These statements have not been evaluated by the FDA. These products are not intended to treat, cure, or prevent any disease.
       warning2: 'Warning: Pregnant or lactating women and people with known medical conditions and/or taking medications should consult with a healthcare practitioner before taking any dietary supplements.'
     faq:
-      frequently: Frequently Asked Questions (F.A.Q.)
+      frequently: Frequently Asked Questions
       q1: What is a dietary supplement?
       a1_1: 'According to the FDA, a dietary supplement is “a product intended for ingestion that contains a "dietary ingredient" intended to add further nutritional value to, or to supplement, the diet. A "dietary ingredient" may be one, or any combination, of the following substances:'
       a1_2_1: a vitamin
@@ -354,22 +366,25 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       a13_1: Cool Choice is the first-ever personalized supplement line. Due to the uniqueness and     personalization of each supplement order, returns and refunds are not accepted.
       a13_2: However, if you are unhappy with your purchase, we will gladly replace your order with another choice (one time only) or credit your account for the purchase fee to be used towards any future orders. Shipping and handling fees may apply to a replacement package.
       a13_3: 'If you have further questions, please contact us at: '
-      a13_4: help@coolchoice.com
-      a13_5: .
-    policy:
+      a13_4: '.'
+    return:
+      name: Return Policy
+      title: Cool Choice Return Policy
       at: At SnapFit, Inc., we are committed to providing you with the highest quality products, and making your health and wellness our number one priority. Similarly, all of our products are custom-formulated for the individual. For this reason, we maintain strict quality control standards and do not re-use or re-sell anything once it ships from our warehouse. This is entirely to ensure your health and safety. As a result, once an order ships from our warehouse, all sales are final. This is part of the reason why we are so transparent about our products—we love our products and believe you will too! If you have any concerns, we’re always happy to help. You can reach us at
-      call: help@coolchoice.com, or by giving us a call at 714-871-1668.
+      call: ', or by giving us a call at '
     privacy:
+      name: Privacy Policy
+      title: Cool Choice Privacy Statement
       p1: SnapFit, Inc. respects the privacy needs and concerns of our customers. That is why how we handle any personal information, such as your name, address, email address or phone number ("Personal Information") that you provide to us is important to us. To earn your trust, we respect your privacy in handling Personal Information relating to you and your transactions with us, whether at our Call Center or through www.coolchoice.com or one of our related Internet web sites ("Sites"). This Privacy Statement describes the Personal Information we gather about you, what we do with it, the safeguards we have in place to protect it, and how you can control our use of it. By using the Sites, the user agrees, without limitation or qualification, to be bound by this Privacy Statement.
       p2: When you provide Personal Information at our Stores, our Call Centers, and our Sites, you are consenting to the manner in which SnapFit, Inc. will collect, use, disclose and otherwise manage your Personal Information, as set out below.
       p3: Who May Use the Sites The Sites are not intended or designed to attract users under the age of 18. We do not collect Personal Information from any person we know to be under the age of 18. If you are under 18, we ask that you not send us any Personal Information.
       p4: The Sites are intended for users from the United States and those not governed by privacy policies of other countries. Users from the European Union are advised not to disclose Personal Information to SnapFit, Inc. Information sent to us will be housed on servers located in the state of California, in the United States. Do not send us information unless you consent to the application of U.S law and to the use and disclosure of your information consistent with this Privacy Statement.
       p5: 'Collection and Use of Personal Information We may collect Personal Information that you provide us when you:'
-      p6_1: Purchase, order, return, exchange or request certain information about our products and services;
-      p6_2: Contact a Call Center or customer service desk;
-      p6_3: Visit or register with our Sites or participate in another feature of our Sites,
-      p6_4: Enter into a contest or sweepstakes or respond to one of our surveys; or
-      p6_5: Provide us with comments or suggestions.
+      p6_1: 1. Purchase, order, return, exchange or request certain information about our products and services;
+      p6_2: 2. Contact a Call Center or customer service desk;
+      p6_3: 3. Visit or register with our Sites or participate in another feature of our Sites,
+      p6_4: 4. Enter into a contest or sweepstakes or respond to one of our surveys; or
+      p6_5: 5. Provide us with comments or suggestions.
       p7: We may also collect Personal Information about you from our Service Providers who provide us with e-commerce related services related to the Sites.
       p8: Shopping at Cool Choice When you purchase products and services online on our site, and you use a credit or debit card for any of your purchases, we will collect your credit or debit card information and keep a history of your purchases. We use this information to process your orders and to better assist you when you visit or call us. We may also ask for your zip code as well, to help us improve our product and service offerings to your area.
       p9: When you return previously purchased merchandise or request a refund or exchange, you may be asked to give your name, address, phone number and show information that identifies you, such as your driver's license. We collect this information to help prevent fraud.
@@ -399,6 +414,7 @@ Cool Choice comes in a fresh and clean powder form, providing your body with exa
       p33: 'Last Updated: June 22, 2016'
       p34: Copyright © 2016 SnapFit, Inc. All rights reserved
     tANDc:
+      name: "Terms & Conditions"
       title: Terms & Conditions for CoolChoice website
       please: PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE USING THIS WEB SITE. YOUR USE OF THIS WEB SITE CONFIRMS YOUR UNCONDITIONAL ACCEPTANCE OF THE FOLLOWING TERMS AND CONDITIONS. IF YOU DO NOT ACCEPT THESE TERMS AND CONDITIONS, DO NOT USE THIS WEB SITE.
       p1: 1. Products, Content and Specifications. All features, content, specifications, products and prices of products and services described or depicted on this Web site, www.coolchoice.com (this "Web Site"), are subject to change at any time without notice. Certain weights, measures and similar descriptions are approximate and are provided for convenience purposes only. SnapFit, Inc., which operates this Web Site pursuant to agreements with SnapFit, Inc. (SnapFit, Inc., "we" or "us"), make all reasonable efforts to accurately display the attributes of products, including the applicable colors; however, the actual color you see will depend on your computer system, and we cannot guarantee that your computer will accurately display such colors. The inclusion of any products or services on this Web Site at a particular time does not imply or warrant that these products or services will be available at any time. It is your responsibility to ascertain and obey all applicable local, state, federal and international laws (including minimum age requirements) in regard to the possession, use and sale of any item purchased from this Web Site. By placing an order, you represent that the products ordered will be used only in a lawful manner.

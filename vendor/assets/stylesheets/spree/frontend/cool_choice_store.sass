@@ -21,10 +21,18 @@ body
 #header_nav
   li
     white-space: nowrap
+    a
+      text-overflow: ellipsis
+      max-width: 170px
+      overflow: hidden
 @media (max-width: 768px)
   #header_nav
     li
       font-size: 12px
+      a
+        text-overflow: ellipsis
+        max-width: 125px
+        overflow: hidden
 @media (min-width: 769px) and (max-width: 992px)
   #header_nav
     li
@@ -32,6 +40,9 @@ body
       a
         padding-left: 4px
         padding-right: 4px
+        text-overflow: ellipsis
+        max-width: 125px
+        overflow: hidden
   #main-nav-bar
     .nav
       display: none !important

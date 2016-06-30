@@ -1,6 +1,10 @@
 ---
 it:
   spree:
+    head_bar:
+      WHY_COOL_CHOICE: PERCHÉ COOL CHOICE
+      GIFT: REGALO
+      INGREDIENTS: INGREDIENTI
     address_verification_failed: Verifica dell’Indirizzo non riuscita
     cart_item_cannot_be_made: CarrelloMerce non può essere fatto da questo articolo.
     ensure_one_valid_stock_location: Assicurarsi di avere almeno una Locazione di Magazzino con un indirizzo valido per la propria tassazione originaria.

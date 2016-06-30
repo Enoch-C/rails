@@ -1,5 +1,9 @@
 en:
   spree:
+    head_bar:
+      WHY_COOL_CHOICE: WHY COOL CHOICE
+      GIFT: GIFT
+      INGREDIENTS: INGREDIENTS
     footer_bar:
       contact: Contact
       contact_us: Contact Us

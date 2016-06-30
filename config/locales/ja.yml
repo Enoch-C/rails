@@ -1,6 +1,10 @@
 ---
 ja:
   spree:
+    head_bar:
+      WHY_COOL_CHOICE: なぜ COOL CHOICE
+      GIFT: 贈り物
+      INGREDIENTS: 成分分量
     address_verification_failed: アドレス検証に失敗しました
     cart_item_cannot_be_made: タックスクラウド カートの商品はこの商品から作れません。
     ensure_one_valid_stock_location: 税元のための有効なアドレスを少なくとも一つ持っているか確認して下さい。

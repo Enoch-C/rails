@@ -1,6 +1,10 @@
 ---
 de:
   spree:
+    head_bar:
+      WHY_COOL_CHOICE: WARUM COOL CHOICE
+      GIFT: GESCHENK
+      INGREDIENTS: ZUTATEN
     address_verification_failed: Adressprüfung ist fehlgeschlagen
     cart_item_cannot_be_made: Warenkorbartikel kann nicht aus diesem Artikel erstellt werden.
     ensure_one_valid_stock_location: Bitte stellen Sie sicher, dass Sie mindestens ein Lager-Standort haben mit einer gültigen Adresse für Ihren Steuerherkunfstort haben.

@@ -1,6 +1,10 @@
 ---
 fr:
   spree:
+    head_bar:
+      WHY_COOL_CHOICE: POURQUOI COOL CHOICE
+      GIFT: CADEAU
+      INGREDIENTS: INGRÉDIENTS
     address_verification_failed: Échec de la vérification de l'adresse
     cart_item_cannot_be_made: CartItem ne peut pas être obtenu à partir de cet élément.
     ensure_one_valid_stock_location: Veuillez vous assurer que vous avez au moins un lieu d'emplacement du stock avec une adresse valide pour votre origine fiscale.
