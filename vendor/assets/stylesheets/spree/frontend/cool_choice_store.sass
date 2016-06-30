@@ -505,8 +505,6 @@ input.button
           &:hover
             transition: 0.3s
             opacity: 1
-          &:last-child
-            color: #004c97
   .small-banner
     background-size: cover
     width: 100%
@@ -546,6 +544,7 @@ input.button
   .section-1
     background: #f7f8fa
     text-align: center
+    position: relative
     .title
       margin-top: 28px
       font-size: 20px
@@ -561,6 +560,24 @@ input.button
         height: 2px
         margin: 0 40px 8px
         background: #dedede
+    .why
+      position: absolute
+      right: 0
+      top: 40px
+      color: #00b9ee
+      .bulb
+        position: absolute
+        left: 17px
+        bottom: 10px
+        width: 40px
+      .why-bar
+        width: 291px
+        height: 51px
+        line-height: 51px
+        padding-left: 40px
+        box-shadow: 0 4px 4px 0 rgba(222, 222, 222, 0.38)
+        font-size: 20px
+        font-weight: 500
     .content
       .choose-box
         float: left
@@ -569,7 +586,7 @@ input.button
         height: 174px
         margin: 38px 20px
         &.selected
-          background: image-url('/assets/home/tick.png') 95% 0/18px no-repeat
+          background: image-url('home/tick.png') 95% 0/18px no-repeat
         .information
           position: absolute
           left: 0

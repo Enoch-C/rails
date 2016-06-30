@@ -48,7 +48,6 @@
           <div class="num">1</div>
           <div class="title"><%= Spree.t(:"homepage.banner_1_title") %></div>
           <div class="sub-title"><%= Spree.t(:"homepage.banner_1_sub_title") %></div>
-          <a href="<%= spree.why_path %>" class="button"><%= Spree.t(:"homepage.button_1") %></a>
           <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
@@ -59,7 +58,6 @@
           <div class="num">2</div>
           <div class="title"><%= Spree.t(:"homepage.banner_2_title") %></div>
           <div class="sub-title"><%= Spree.t(:"homepage.banner_2_sub_title") %></div>
-          <a href="<%= spree.why_path %>" class="button"><%= Spree.t(:"homepage.button_1") %></a>
           <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
@@ -70,7 +68,6 @@
           <div class="num">3</div>
           <div class="title"><%= Spree.t(:"homepage.banner_3_title") %></div>
           <div class="sub-title"><%= Spree.t(:"homepage.banner_3_sub_title") %></div>
-          <a href="<%= spree.why_path %>" class="button"><%= Spree.t(:"homepage.button_1") %></a>
           <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
         </div>
       </div>
@@ -86,6 +83,10 @@
         <div class="line"></div><%= Spree.t(:"homepage.content_title_choose") %>
         <div class="line"></div>
       </div>
+      <a class="why" href="<%= spree.why_path %>">
+        <img src="<%= asset_path 'home/icon-bulb@2x.png'%>" class="bulb">
+        <div class="why-bar"><%= Spree.t(:"homepage.button_1") %></div>
+      </a>
       <div class="content clearfix">
         <template v-for="feature in feature_list">
           <div :class="['choose-box', feature, {'selected': ~result.indexOf(feature)}]">
