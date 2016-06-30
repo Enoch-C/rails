@@ -20,7 +20,7 @@
     <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
     <tr>
       <td class="cart_summary_dt"><%= Spree.t(:cart_summary_subtotal)%></td>
-      <td class="cart_summary_dd">{{ price_total.toFixed(2) }}</td>
+      <td class="cart_summary_dd">${{ price_total.toFixed(2) }}</td>
     </tr>
     <% if false %>
     <tr>

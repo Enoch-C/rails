@@ -15,7 +15,7 @@
         </div>
         <div style="display: inline-block; width: 340px; vertical-align: middle">
           <div class="cool_choice_label"><%= line_item.name %></div>
-          <div class="cool_choice_titles"><%= variant.options_text.sub("Choice A: ", "").sub(", Choice B: ", " + ").sub(", and Choice C: ", " + ") %></div>
+          <div class="cool_choice_titles"><%= variant.options_text %></div>
         </div>
       </div>
     </td>
@@ -38,7 +38,7 @@
       <%#= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
     </td>
     <td class="total_price" data-hook="cart_item_total">
-      {{ prices[<%= line_item_counter %>].total.toFixed(2) }}
+      ${{ prices[<%= line_item_counter %>].total.toFixed(2) }}
     </td>
     <td class="cart-item-delete" data-hook="cart_item_delete">
       <button type='button' class="glyphicon glyphicon-minus-sign" style="border: none; background-color: transparent"  v-on:click="deleteLineItem(<%= line_item_counter %>)"></button>
