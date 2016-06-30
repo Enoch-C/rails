@@ -37,7 +37,7 @@
       },
     },
     methods: {
-      changeItem(rowId, event) {
+      changeItem: function(rowId, event) {
         var from = this.selected[rowId];
         var to = event.target.value;
         var a = to.split(".");
