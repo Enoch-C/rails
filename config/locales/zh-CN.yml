@@ -186,8 +186,8 @@ zh-CN:
       cool_ingredients: 一流的原料
       cool_ingredients_line: 100% 纯天然
       cool_ingredients_line_2: 新鲜出炉-to-定制
-      bar_choose: 选出三种补充品
-      bar_qty: 质量
+      bar_choose: 您的选择
+      bar_qty: 数量
       bar_day: 日
       bar_week: 周
       bar_month: 月
@@ -400,9 +400,9 @@ zh-CN:
     about: 关于
     logout: 注销
     signin: 登陆
-    alert_mutual_exclusive: 我们不建议把这个选择和任何一个您之前的选择混合.所以出于您的健康考作出可替代的选择.
+    alert_mutual_exclusive: 我们不建议把这个选择和之前您的选择混合，所以出于您的健康考虑，请选择其它功能。
     cart_empty: 您的购物车是空的
-    cart_empty_detail: 只需几步就可以实现Cool Choice. 还在等什么? 去为你的购物车添加些商品吧!
+    cart_empty_detail: 只需几步就可以完成订制。还在等什么? 开始订制吧!
     you_have_signed_in_with_these_services: '你已经使用以下方式登录：'
     sign_in_through_one_of_these_services: '登录通过：'
     home: Cool Choice 首页
@@ -432,7 +432,7 @@ zh-CN:
     cart_tableheader_title: 购物车
     cart_tableheader_details: 产品详情
     cart_tableheader_price: 价格
-    cart_tableheader_quantity: 质量
+    cart_tableheader_quantity: 数量
     cart_tableheader_totalprice: 数量
     cart_summary_title: 购物车总计
     cart_summary_subtotal: 小计
