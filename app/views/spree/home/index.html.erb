@@ -463,7 +463,7 @@
         }
       },
       action_select: function(index) {
-        if (this.disabledFeatures.includes(index)) {
+        if (this.disabledFeatures.includes(index+1)) {
           alert("<%= Spree.t(:alert_mutual_exclusive) %>")
         }
       }
