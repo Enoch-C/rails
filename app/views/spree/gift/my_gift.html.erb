@@ -248,11 +248,11 @@
     methods: {
       tick_or_not: function(feature) {
         var index = this.feature_list.indexOf(feature) + 1
-        if (this.disabledFeatures.includes(index)) {
+        if (this.disabledFeatures.indexOf(index) > -1) {
           alert("<%= Spree.t(:alert_mutual_exclusive) %>")
           return
         }
-       
+
         if (~this.result.indexOf(feature)) {
           this.result.$remove(feature)
         }
