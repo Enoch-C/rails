@@ -848,9 +848,9 @@ input.button
 #why
   .text
     display: inline-block
-    width: 400px
+    width: 40%
     height: 350px
-    margin-left: 80px
+    margin: 0 3%
     &:before
       display: inline-block
       width: 0
@@ -860,7 +860,7 @@ input.button
     .middle
       display: inline-block
       vertical-align: middle
-      width: 360px
+      width: 90%
       p
         text-align: justify
         line-height: 1.6
@@ -877,10 +877,14 @@ input.button
   .section-1,
   .section-2
     height: 350px
+    >.container
+      position: relative
   .para-left
-    float: left
+    position: absolute
+    left: 0
   .para-right
-    float: right
+    position: absolute
+    right: 0
   .section-1
     background: #f7f8fa
 
