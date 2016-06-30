@@ -121,7 +121,7 @@
       </div>
     </div>
   </div>
-  <div class="section-4" v-if="result.length">
+  <div class="section-4" v-show="result.length">
     <div class="container"><% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
       <div class="func col-sm-3">
         <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
@@ -138,18 +138,18 @@
           <span @click="num++" class="math"> +</span>
         </div>
         <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
-        <div v-if="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
-        <div v-if="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
+        <div v-show="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
+        <div v-show="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
       </div>
       <div class="total col-sm-2">
         <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
         <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
       </div>
-      <div class="cart" v-if="result.length == 3">
+      <div class="cart" v-show="result.length == 3">
         <a v-on:click='action_addToCart' style="border: 1px solid #fff; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
         <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
       </div>
-      <div @click="action_trial" class="trail"  v-if="result.length == 3">
+      <div @click="action_trial" class="trail"  v-show="result.length == 3">
         <div class="line">
           <span style="font-weight: 500"><%= Spree.t(:"homepage.trial_pack") %></span>
         </div>
