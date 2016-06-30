@@ -9,17 +9,17 @@ zh-CN:
       clinic_study: Clinic Study
     WHY_COOL_CHOICE: WHY COOL CHOICE
     why_page:
-      title1: "3 CLICKS TO THE RIGHT ONE…"
-      para1: "With over 500 possible combinations, Cool Choice eliminates the confusion and makes it easy for you. All you have to do is pick three health icons and we take care of the rest. It's that easy!"
-      title2: "OVER SUPPLEMENTATION CAN HARM…"
-      para2: "Supplements have upper limits(UL) that should not be exceeded to avoiding potentially threatening side effects, Cool Choice guards against over supplementation to achieve the desired beneficial effects safely."
-      title3: "NO FILLERS, CHEMICALS AND CAPSULE ITSELF…"
-      para3: Tablets and capsules contain excipients and chemicals that prevent dispersion and breakdown—which are not what your body needs.
+      title1: 定制如此简单
+      para1: "在超过500种的功能组合中，您所要做的，就是选择三项所需健康功能，Cool Choice排除了所有可能冲突的组合，定制如此简单！"
+      title2: "过量危及健康"
+      para2: "保健品中的营养成分都有每日服用的上限，超出了会对身体造成危害及可能产生的副作用。Cool Choice个性化配方，确保每一种组合的营养成分均不超标，为您的健康补充安全适度的营养。"
+      title3: "无胶囊、无化学添加、无填充剂"
+      para3: 常见的片剂和胶囊，含有人体所不需要的辅料及化学物质，长期服用不利于健康。Cool Choice选择最健康的纤维基冲剂形式，为您的身体提供最健康的营养补充。
       para3_2: Cool Choice comes in a fresh and clean powder form, providing your body with exactly what it needs for optimum health.
-      title4: "FRESHLY MADE TO ORDER…"
-      para4: "Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is freshly made, especially for you!"
-      title5: "NATURAL…"
-      para5: "Cool Choice is made with natural ingredients and contains no preservatives, questionable additives, artificial colors, artificial flavors, or artificial sweeteners."
+      title4: "新鲜定制"
+      para4: "保健品中的有效成分会受光线、热度、潮湿等因素的影响，逐渐失效。Cool Choice按定单生产，新鲜更健康！"
+      title5: "天然原料"
+      para5: "Cool Choice使用纯天然原料，不含防腐剂、人工色素、甜味剂等，一切都是天然的选择，只为您的健康！"
     gift_message_error1: Please enter recipient name.
     gift_message_error2: Please leave a message up to 100 characters.
     gift_message_error3: Please enter your name.
@@ -138,18 +138,18 @@ zh-CN:
       p19: '19. Additional Assistance. If you do not understand any of the foregoing Terms and Conditions or if you have any questions or comments, we invite you to contact us at Cool Choice, Marketing Department – 1376 E. Valencia Dr., Fullerton CA 92831, Attn: Privacy Manager or e-mail us at help@coolchoice.com. Alternatively, you may call us at 1-714-871-1668.'
       these: These Terms and Conditions were last updated on June 22, 2016.
     homepage:
-      banner_1_title: YOUR CHOICE
-      banner_2_title: YOUR MIX
-      banner_3_title: YOUR HEALTH
-      banner_1_sub_title: Choose 3 premium supplements
-      banner_2_sub_title: Cool Choice creates your personalized supplement blend, just for you
-      banner_3_sub_title: Once a day, enjoy your tasty Cool Choice beverage
-      button_1: Why Cool Choice
-      button_2: Customize and Buy
+      banner_1_title: 您的选择
+      banner_2_title: 您的组合
+      banner_3_title: 您的健康
+      banner_1_sub_title: 选取三种所需功能
+      banner_2_sub_title: Cool Choice为您量身定做
+      banner_3_sub_title: 每日一包，尽享美味健康
+      button_1: 选择Cool Choice的理由
+      button_2: 开始定制
+      content_function_wish: 我的心愿
 
-
-      page2_title: 一流的关心/特别关心
-      page2_title2: 为你关心的人做些特别的事情
+      page2_title: 关爱之选
+      page2_title2: 为爱，赠予健康
       page3_title: 我们为您制作
       page3_title2: 采用最好的原料
       page3_title31: 源自
@@ -161,22 +161,22 @@ zh-CN:
       title_introduce: 介绍个性化的补充品
       title_free: 美国免运费
       title_worldwide: 全球运送
-      content_title_magic: 自然制造... 只为你
-      content_title_choose: 简单选择3种新的补充品
-      content_function_Anti-Aging: 抗衰老
-      content_function_Beauty: 美容护理
-      content_function_Brain_Care: 脑元保健
-      content_function_Digestive_Care: 肠道消化
-      content_function_Energy: 能量
-      content_function_Eye_Care: 眼部护理
-      content_function_Heart_Care: 心脏保健
-      content_function_Immune_Support: 免疫保健
-      content_function_Joint_Care: 关节保健
-      content_function_Liver_Care: 肝保健
-      content_function_Lung_Care: 肺保健
-      content_function_Mens_Vitality: 男性保健品
-      content_function_Sleep_Support: 睡眠保健
-      content_function_Stress_Management: 减压
+      content_title_magic: 量身定制天然保健品
+      content_title_choose: 选择您所需的三种功能
+      content_function_Anti-Aging: 延缓衰老
+      content_function_Beauty: 美容养颜
+      content_function_Brain_Care: 益智健脑
+      content_function_Digestive_Care: 肠道健康
+      content_function_Energy: 补充能量
+      content_function_Eye_Care: 保护视力
+      content_function_Heart_Care: 心血管健康
+      content_function_Immune_Support: 增强免疫
+      content_function_Joint_Care: 关节保护
+      content_function_Liver_Care: 排毒护肝
+      content_function_Lung_Care: 清肺养肺
+      content_function_Mens_Vitality: 男性活力
+      content_function_Sleep_Support: 改善睡眠
+      content_function_Stress_Management: 舒缓压力
       cool_simply: Cool Choice
       cool_simply_line: 3种补充品
       cool_simply_line_2: 一个简单包裹
@@ -208,26 +208,26 @@ zh-CN:
       we_are: 我们会持续研发新的补充品. 告诉我们你最想要什么.
       submit: 提交
     head_bar:
-      WHY_COOL_CHOICE: WHY COOL CHOICE
-      GIFT: GIFT
-      INGREDIENTS: INGREDIENTS
+      WHY_COOL_CHOICE: 选择的理由
+      GIFT: 为爱赠礼
+      INGREDIENTS: 天然原料
     ingredient:
-      title: '安全并且自然的原料'
-      sub-title: '我们只采用高质量的原料, 来源于著名供应商并且拥有第三方测试支持.'
-      function_Anti-Aging: 抗衰老
-      function_Beauty: 美容护理
-      function_Brain_Care: 脑元保健
-      function_Digestive_Care: 肠道消化
-      function_Energy: 能量
-      function_Eye_Care: 眼部护理
-      function_Heart_Care: 心脏保健
-      function_Immune_Support: 免疫保健
-      function_Joint_Care: 关节保健
-      function_Liver_Care: 肝保健
-      function_Lung_Care: 肺保健
-      function_Mens_Vitality: 男性保健品
-      function_Sleep_Support: 睡眠保健
-      function_Stress_Management: 减压
+      title: '最好的天然原料'
+      sub-title: '我们甄选全美顶级供应商，只采用最高品质的天然原料，原料均通过第三方权威实验室测试。'
+      function_Anti-Aging: 延缓衰老
+      function_Beauty: 美容养颜
+      function_Brain_Care: 益智健脑
+      function_Digestive_Care: 肠道健康
+      function_Energy: 补充能量
+      function_Eye_Care: 保护视力
+      function_Heart_Care: 心血管健康
+      function_Immune_Support: 增强免疫
+      function_Joint_Care: 关节保护
+      function_Liver_Care: 排毒护肝
+      function_Lung_Care: 清肺养肺
+      function_Mens_Vitality: 男性活力
+      function_Sleep_Support: 改善睡眠
+      function_Stress_Management: 舒缓压力
       ingredient_Anti-Aging: SOD
       ingredient_Beauty: 胶原蛋白生物活性肽
       ingredient_Brain_Care: 胞二磷胆碱
@@ -340,12 +340,12 @@ zh-CN:
       ingredient: 成分
       about: 关于
     gift:
-      title_cool: Cool Care
-      title_do: 通过给予礼物来表明你的关心...
-      send_a_gift: 想礼物一样购买
-      order: 为你所爱的购买一份礼物
-      email: 他们通过邮件选择补充品
-      gift: 展现你的关心
+      title_cool: 关爱之选
+      title_do: 为爱，赠予健康
+      send_a_gift: 为爱赠礼
+      order: 为爱的人购买一份礼物
+      email: 对方收到邮件，定制自己所需的功能
+      gift: 我们为您送达心意
       recipient_name: 收件人姓名
       message: 这里填写您的信息 (不超过100字符)
       yourname: 您的姓名
@@ -397,8 +397,6 @@ zh-CN:
         subject: 您收到礼物，来自
         instructions: '请找到下面的链接来得到您的礼物:'
         get: 接收礼物
-    gift: 礼物
-    gift: 作为礼物
     about: 关于
     logout: 注销
     signin: 登陆

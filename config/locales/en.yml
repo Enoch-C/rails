@@ -100,8 +100,8 @@ en:
     GIFT: GIVE AS A GIFT
     INGREDIENT: INGREDIENTS
     ABOUT: ABOUT
-    LOGOUT: LOGOUT
-    SIGNIN: SIGN IN
+    logout: LOGOUT
+    signin: SIGN IN
     homepage:
       banner_1_title: YOUR CHOICE
       banner_2_title: YOUR MIX

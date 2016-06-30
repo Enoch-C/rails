@@ -6,9 +6,9 @@
   <li data-hook><%= link_to Spree.t(:'head_bar.INGREDIENTS'), spree.ingredient_path %></li>
   <% if current_spree_user %>
   <li data-hook><%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; display:inline-block; width: 32px; height: 32px;"}), spree.account_path, style:"padding: 9px" %>
-  <li data-hook><%= link_to Spree.t(:LOGOUT), spree.logout_path %></li>
+  <li data-hook><%= link_to Spree.t(:logout), spree.logout_path %></li>
   <% else %>
-  <li data-hook><%= link_to Spree.t(:SIGNIN), spree.login_path %></li>
+  <li data-hook><%= link_to Spree.t(:signin), spree.login_path %></li>
   <% end %>
   <% if !(current_order.special_instructions != nil || current_order.line_items.first.variant.sku.slice(3,1) == 'd' rescue false) %>
   <li style="width:6px; padding-left: 3px"><a style="width:20px; border-left: 1px solid #ddd;margin:9px 0 0;"></a></li>

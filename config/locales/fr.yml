@@ -93,8 +93,8 @@ fr:
     GIFT: DONNEZ COMME CADEAU
     INGREDIENTS: INGRÉDIENTS
     ABOUT: À PROPOS
-    LOGOUT: SE DÉCONNECTER
-    SIGNIN: SE CONNECTER
+    logout: SE DÉCONNECTER
+    signin: SE CONNECTER
     homepage:
       page2_title: Soins Cool
       page2_title2: Faites quelque chose de spécial pour quelqu'un que vous aimez

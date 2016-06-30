@@ -93,8 +93,8 @@ ja:
     GIFT: 贈り物として贈る
     INGREDIENT: 素材
     ABOUT: 我々について
-    LOGOUT: ログアウト
-    SIGNIN: サインイン
+    logout: ログアウト
+    signin: サインイン
     homepage:
       page2_title: クールケア
       page2_title2: 気になる人のために特別なケアを行なう

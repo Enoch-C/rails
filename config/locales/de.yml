@@ -93,8 +93,8 @@ de:
     GIFT: ALS GESCHENK VERSCHENKEN
     INGREDIENT: INHALTSSTOFFE
     ABOUT: ÜBER
-    LOGOUT: AUSLOGGEN
-    SIGNIN: EINLOGGEN
+    logout: AUSLOGGEN
+    signin: EINLOGGEN
     homepage:
       page2_title: Cool Care
       page2_title2: Tun Sie etwas Besonderes für jemanden, den Sie mögen

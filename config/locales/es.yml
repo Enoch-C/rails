@@ -93,8 +93,8 @@ es_CL:
     GIFT: DAR COMO REGALO
     INGREDIENT: INGREDIENTES
     ABOUT: ACERCA DE
-    LOGOUT: CERRAR SESIÓN
-    SIGNIN: INICIAR SESIÓN
+    logout: CERRAR SESIÓN
+    signin: INICIAR SESIÓN
     homepage:
       page2_title: Cool Care
       page2_title2: Haga algo especial para alguien a quien tenga cariño

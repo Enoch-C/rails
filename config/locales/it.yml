@@ -93,8 +93,8 @@ it:
     GIFT: FAI UN REGALO
     INGREDIENT: INGREDIENTI
     ABOUT: A PROPOSITO DI
-    LOGOUT: ESCI
-    SIGNIN: ENTRA
+    logout: ESCI
+    signin: ENTRA
     homepage:
       page2_title: Buona cura
       page2_title2: Fai qualcosa di special per qualcuno che tis ta a cuore
