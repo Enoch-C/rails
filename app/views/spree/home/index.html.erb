@@ -89,14 +89,14 @@
       </a>
       <div class="content clearfix">
         <template v-for="feature in feature_list">
-          <div :class="['choose-box', feature, {'selected': ~result.indexOf(feature)}]">
-            <div class="choose-label" @click="tick_or_not(feature)">
-              <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)" @click="action_select($index)"}">
+          <div :class="['choose-box', feature, {'selected': ~result.indexOf(feature)}]" @click="tick_or_not(feature)">
+            <div class="choose-label">
+              <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)" @click="action_select($index)">
               <div class="text" :id="'text_' + ($index + 1)">
                 {{t[$index]}}
               </div>
             </div>
-            <img src="<%= asset_path 'home/i@2x.png'%>" class="information" @click="show(feature)">
+            <img src="<%= asset_path 'home/i@2x.png'%>" class="information" @click.stop="show(feature)">
             <input type="checkbox" :id="feature" :value="feature" class="checkbox" :class="'cb_' + ($index + 1)"/>
           </div>
         </template>
