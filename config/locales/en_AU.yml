@@ -29,7 +29,7 @@ en_AU:
     gift_message_error3: Please enter your name.
     alert_mutual_exclusive: We do not recommend mixing this supplement with one of your previous choices. Please pick an alternative.
     cart_empty: YOUR SHOPPING CART IS EMPTY
-    cart_empty_detail: You're only a few steps away from making a Cool Choice. Add some products to your cart!
+    cart_empty_detail: You're only a few steps away from making a Cool Choice. 
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
     sign_in_through_one_of_these_services: 'Sign in with'
     home: Cool Choice Home
@@ -66,7 +66,7 @@ en_AU:
     cart_summary_shipping: Shipping
     cart_summary_tax: Tax
     cart_summary_total: Total
-    cart_summary_keepShopping: Keep Shopping
+    cart_summary_keepShopping: Keep Customizing
     cart_summary_checkout: Checkout
     admin:
       promoter:
