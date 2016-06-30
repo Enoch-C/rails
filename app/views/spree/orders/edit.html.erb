@@ -44,7 +44,12 @@
         var qty = a[0];
         var span = a[1];
         var sku = this.order.line_items[rowId].variant.sku;
-        sku = sku.slice(0, 3) + span + sku.slice(4);
+        if (sku[3] == 'm') {
+          sku = sku.slice(0, 3) + 'w' + sku.slice(4);
+        }
+        else {
+          sku = sku.slice(0, 3) + 'm' + sku.slice(4);
+        }
         this.updateLineItem(rowId, sku, qty, true);
         console.log(rowId + " from: " + this.selected[rowId] + " to: " + event.target.value)
       },
@@ -87,7 +92,21 @@
         })
       },
       valueFromItem: function(item) {
-        return item.quantity + "." + item.variant.sku[3]; // 11m, 3d
+        var t1 = ['<%= Spree.t(:"homepage.bar_month") %>', '<%= Spree.t(:"homepage.bar_week") %>',  '<%= Spree.t(:"homepage.bar_day") %>'];
+        var t2 = ['<%= Spree.t(:"homepage.bar_months") %>', '<%= Spree.t(:"homepage.bar_weeks") %>',  '<%= Spree.t(:"homepage.bar_days") %>'];
+        var p1 = item.quantity;
+        var t = t1
+        if (p1 > 1) {
+          t = t2
+        }
+
+        if (item.variant.sku[3] == 'm') {
+          return item.quantity + "." + t[0]; // 11m, 3d
+        } else if (item.variant.sku[3] == 'w') {
+          return item.quantity + "." + t[1]; // 11m, 3d
+        } else {
+          return item.quantity + "." + t[2]; // 11m, 3d
+        }
       },
       minus: function(index) {
         var qty = this.order.line_items[index].quantity;
