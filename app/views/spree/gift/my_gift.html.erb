@@ -303,7 +303,7 @@
             type: 'POST',
             url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&gift=true&order_token=' + this.order_token,
             success: function(data) {
-              window.location.href = '<%= gift_path %>/my_address?token=' + that.order_token
+              window.location.href = '<%= gift_path %>/my_address?id=' + that.order_number
             },
             complete: function() {
               that.processing = false

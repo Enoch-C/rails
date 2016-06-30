@@ -17,13 +17,13 @@ module Spree
     end
     
     def my_gift
-      order_token = params[:token]
-      @order = Spree::Order.find_by_guest_token(order_token)
+      order_number = params[:id]
+      @order = Spree::Order.find_by_number(order_number)
     end
 
     def my_gift_shipping_address
-      order_token = params[:token]
-      @order = Spree::Order.find_by_guest_token(order_token)
+      order_number = params[:id]
+      @order = Spree::Order.find_by_number(order_number)
     end
 
     def my_gift_completion
