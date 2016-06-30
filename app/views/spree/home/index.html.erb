@@ -91,7 +91,7 @@
         <template v-for="feature in feature_list">
           <div :class="['choose-box', feature, {'selected': ~result.indexOf(feature)}]" @click="tick_or_not(feature)">
             <div class="choose-label">
-              <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)" @click="action_select($index)">
+              <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)">
               <div class="text" :id="'text_' + ($index + 1)">
                 {{t[$index]}}
               </div>
@@ -357,6 +357,12 @@
     },
     methods: {
       tick_or_not: function(feature) {
+        var index = this.feature_list.indexOf(feature) + 1
+        if (this.disabledFeatures.includes(index)) {
+          alert("<%= Spree.t(:alert_mutual_exclusive) %>")
+          return
+        }
+        
         if (~this.result.indexOf(feature)) {
           this.result.$remove(feature)
         }
@@ -462,11 +468,6 @@
           })
         }
       },
-      action_select: function(index) {
-        if (this.disabledFeatures.indexOf(index+1) > -1) {
-          alert("<%= Spree.t(:alert_mutual_exclusive) %>")
-        }
-      }
     },
     ready: function() {
       $('.carousel').slick({
