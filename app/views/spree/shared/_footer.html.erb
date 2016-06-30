@@ -12,11 +12,12 @@
         <a href="<%= spree.return_path %>"><%= Spree.t('return.name') %></a>
         <a href="<%= spree.privacy_path %>"><%= Spree.t('privacy.name') %></a>
         <a href="<%= spree.terms_path %>"><%= Spree.t('tANDc.name') %></a>
-        <a class="jobs">Jobs</a>
+        <a class="jobs"><%= Spree.t('footer_bar.contact') %></a>
       </div>
       <div class="job-frame">
-        <div class="title">Join the Cool Choice Team</div>
-        <div class="line">Please write email to<a href="mailto:help@coolchoice.com">us</a></div>
+        <div class="title"><%= Spree.t('footer_bar.contact_us') %></div>
+        <div class="line"><%= Spree.t('footer_bar.email_us') %>: <a href="mailto:help@coolchoice.com">help@coolchoice.com</a></div>
+        <div class="line"><%= Spree.t('footer_bar.call_us') %>: <b>+1 (714) 871-1668</b></div>
         <div class="remove glyphicon glyphicon-remove"></div>
       </div>
     </div>

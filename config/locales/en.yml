@@ -1,5 +1,10 @@
 en:
   spree:
+    footer_bar:
+      contact: Contact
+      contact_us: Contact Us
+      call_us: Call us
+      email_us: Email us
     studies_and_reports:
       clinic_study: Clinic Study
     WHY_COOL_CHOICE: WHY COOL CHOICE
