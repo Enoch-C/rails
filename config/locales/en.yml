@@ -355,8 +355,7 @@ en:
       a13_1: Cool Choice is the first-ever personalized supplement line. Due to the uniqueness and     personalization of each supplement order, returns and refunds are not accepted.
       a13_2: However, if you are unhappy with your purchase, we will gladly replace your order with another choice (one time only) or credit your account for the purchase fee to be used towards any future orders. Shipping and handling fees may apply to a replacement package.
       a13_3: 'If you have further questions, please contact us at: '
-      a13_4: help@coolchoice.com
-      a13_5: .
+      a13_4: '.'
     return:
       name: Return Policy
       title: Cool Choice Return Policy

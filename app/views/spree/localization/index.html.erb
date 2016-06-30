@@ -16,6 +16,7 @@
         <% available_locales_options.each do |option| %>
         <% if options.include?(option[0]) %>
           <div class="locales-option" value="<%= option[1] %>">
+            <%= image_tag("localization/" + all_options.index(option).to_s + '.svg') %>
             <%= option[0] %>
           </div>
         <% end %>
