@@ -5,7 +5,9 @@
         <% if order.has_step?("address") %>
           <th><%= Spree.t(:billing_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></th>
           <% if order.has_step?("delivery") %>
+            <% unless @order.special_instructions %>
             <th><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></th>
+            <% end %>
             <th><%= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless order.completed? %></th>
           <% end %>
         <% end %>
@@ -21,7 +23,9 @@
         <% if order.has_step?("address") %>
           <td><%= render 'spree/shared/address', address: order.bill_address %></td>
           <% if order.has_step?("delivery") %>
+            <% unless @order.special_instructions %>
             <td><%= render 'spree/shared/address', address: order.ship_address %></td>
+            <% end %>
             <td>
               <div class="delivery">
                 <% order.shipments.each do |shipment| %>
@@ -33,7 +37,7 @@
               </div>
               <%= render 'spree/shared/shipment_tracking', order: order if order.shipped? %>
             </td>
-          <% end %>
+        <% end %>
         <% end %>
         <% if false %>
         <% if order.has_step?("payment") %>
