@@ -79,9 +79,8 @@
         <ul>
           <li><%= Spree.t('ingredient.more1_' + function) %></li>
           <li><%= Spree.t('ingredient.more2_' + function) %></li>
-          <li><%= Spree.t('ingredient.more3_' + function) %></li>
-          <% if function == 'Lung_Care' %>
-          <li><%= Spree.t('ingredient.more4_' + function) %></li>
+          <% unless Spree.t('ingredient.more3_' + function) == ' ' %>
+          <li><%= "#{Spree.t('ingredient.more3_' + function)}" %></li>
           <% end %>
         </ul>
         <% if url_list[index] %>
@@ -90,6 +89,9 @@
           <a style="margin: 0 10px" href="<%= "#{Rails.application.config.webhost}/slick/pdfs/#{pdf}" %>" target="_blank"><%= Spree.t('studies_and_reports.clinic_study') + " " + (index+1).to_s %></a>
         <% end %>
         </p>
+        <% end %>
+        <% unless Spree.t('ingredient.trademark_' + function) == ' ' %>
+          <p style="font-size: 12px"><%= Spree.t('ingredient.trademark_' + function) %></p>
         <% end %>
         <% if function == 'Sleep_Support' %>
           <p style="font-size: 12px"><%= Spree.t('ingredient.caution1_' + function) %><br><%= Spree.t('ingredient.caution2_' + function) %></p>

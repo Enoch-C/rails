@@ -1,0 +1,336 @@
+---
+ko:
+  spree:
+    head_bar:
+      WHY_COOL_CHOICE: 이유 COOL CHOICE
+      GIFT: 선물
+      INGREDIENTS: 성분
+    address_verification_failed: 주소조회실패
+    cart_item_cannot_be_made: 이아이템은장바구니에담을수없습니다.
+    ensure_one_valid_stock_location: 원래세금에유효한주소가있는입고처를적어도하나가지고있다는것을
+    standard_taxcloud_tic: 표준택스클라우드 TIC다섯자리에는다음과같은형식이있어야합니다
+    tax_cloud: 택스클라우드
+    tax_cloud_settings: 택스클라우드세팅
+    tax_cloud_taxability_codes: 과세대상코드
+    tax_cloud_api_login_and_key: API 로그인및키
+    taxcloud_api_login_id: 택스클라우드응용프로그램인터페이스(API) 로그인ID
+    taxcloud_api_key: 택스클라우드응용프로그램인터페이스(API) 키
+    taxcloud_shipping_tic: 택스클라우드배송 TIC
+    tax_cloud_tic: 택스클라우드 TIC
+    usps_user: 미국우정공사(USPS) 사용자 ID
+    usps_user_id: 미국우정공사(USPS) 응용프로그램인터페이스(API)사용자 ID
+    zip_plus_4: 우편번호 +4
+    alert_mutual_exclusive: 이 보조제를 이전의 선택과 혼합하는 것은 권장되 지않습니다.안전을 위해서 다른 옵션을 선택하십시오.
+    cart_empty: 쇼핑 카트가 비었습니다
+    cart_empty_detail: 당신의 멋진 선택까지 불과 몇 단계 남지 않았습니다.무엇을 기다리고 있습니까?장바구니에 제품을 담으십시오!
+    you_have_signed_in_with_these_services: '당신은 서명했다:'
+    sign_in_through_one_of_these_services: '서명했다:'
+    home: 쿨쵸이스 홈
+    thank_you_for_your_order: 구입해주셔서 감사합니다.보조제는 빛, 열 및 습기에 민감하며 시간이 지나면 효과가 감소합니다.모든 쿨쵸이스주문은 특별히 당신을 위해서 신선하게 만듭니다!
+    ok: 예
+    message: 메시지
+    site_name: 쿨쵸이스
+    payment_pop_desc: 개인 맞춤 영양제
+    apply: 적용
+    coupon_code: 쿠폰코드
+    binding_users: 바인 딩사 용자
+    items_cannot_be_shipped: 죄송하지만 카트에 미국 주소로만 배달되는 상품이 최소 한개 있습니다.
+    shipping_flat_rate_per_two_items: 2개의 패키지 아이템당 고정 요금
+    phone: 전화
+    promoter: 프로모터
+    promoters: 프로모터들
+    percent: 퍼센트
+    secret: 비밀번호
+    new_promoter: 새로운 프로모터 추가
+    first_name: 이름
+    last_name: 성
+    editing_promoter: 프로모터 편집
+    promoter_store_credit: 매장크레 딕트
+    promoter_start: 바인딩 생성 시간
+    promoter_month_length: 바인딩 길이(미터)
+    shopping_cart: 카트
+    cart_tableHeader_title: 카트
+    cart_tableHeader_details: 제품 설명
+    cart_tableHeader_price: 가격
+    cart_tableHeader_quantity: 수량
+    cart_tableHeader_totalPrice: 합계
+    cart_summary_title: 카트합계
+    cart_summary_subtotal: 소계
+    cart_summary_shipping: 배송
+    cart_summary_tax: 세금
+    cart_summary_total: 합계
+    cart_summary_keepShopping: 쇼핑 계속
+    cart_summary_checkout: 체크아웃
+    admin:
+      promoter:
+        store_credits: 매장 크레딕트
+        binding_users: 바인 딩사 용자
+        users: 사용자
+        items: 품목
+        orders: 주문
+        account: 계정
+      order:
+        print_labels: 인쇄레이블
+        print: 인쇄
+    shipment_mailer:
+      shipped_email:
+        thanks: 쿨쵸이스에서 주문해 주셔서 감사합니다!
+    order_mailer:
+      confirm_reg_email:
+        instructions: 이것은 계정이 새로 만들어졌다는 것을 확인하기위한 것입니다.
+        thanks: 쿨쵸이스 고객이 되어주셔서 감사합니다!우리는 당신의 몸에맞는,를뺀 안전하고 신선한 천연 보충제만을 제공합니다.
+      confirm_email:
+        thanks: 쿨쵸이스를 구입해주셔서 감사합니다!우리는 당신이 개인 맞춤 영양제와 사랑에 빠지기를 원합니다.
+      confirm_promoter_email:
+        subject: 당신은 프로모션 크레딕트를 받았습니다
+        store_credit_total: 매장 크레딕트합계
+        summary: 계정 합계
+      confirm_gift_email:
+        subject: 로부터 선물을 받았습니다.
+        instructions: '선물을 받기위해서는 아래의링크를 누르십시오:'
+        get: 내선물받기
+    gift: 선물
+    GIFT: 선불로 제공
+    INGREDIENT: 성분
+    ABOUT: 대략
+    LOGOUT: 로그아웃
+    SIGNIN: 로그인
+    homepage:
+      page2_title: 쿨케어
+      page2_title2: 당신의 소중한 사람에게 특별이 벤트를 하십시오
+      page3_title: 최고의 성분을 사용하여
+      page3_title2: 당신을 위해 요리합니다
+      page3_title31: 원산지
+      page3_title32: 그리고 그이상...
+      personalize_now: 지금 당신에게 맞추십시오
+      give_as_a_gift: 선불로 제공
+      learn_more: 더 많은 것을 배웁니다
+      title_proud: 사용기한
+      title_introduce: 개인 맞춤 영양제 지침
+      title_free: 미국내에서는 무료 배송
+      title_worldwide: 세계로 배송됨
+      content_title_magic: 당신을위해서... 천연 재료로만 들었습니다
+      content_title_choose: 간단하게 3종류의 영양제를 선택하십시오
+      content_function_Anti-Aging: 안티에이징
+      content_function_Beauty: 아름다움
+      content_function_Brain_Care: 두뇌케어
+      content_function_Digestive_Care: 소화케어
+      content_function_Energy: 에너지
+      content_function_Eye_Care: 아이케어
+      content_function_Heart_Care: 심장케어
+      content_function_Immune_Support: 면역케어
+      content_function_Joint_Care: 관절케어
+      content_function_Liver_Care: 간케어
+      content_function_Lung_Care: 폐케어
+      content_function_Mens_Vitality: 남성의활력
+      content_function_Sleep_Support: 수면보조
+      content_function_Stress_Management: 스트레스경감
+      content_function_wish: 나의선택
+      cool_simply: 쿨쵸이스
+      cool_simply_line: 세종류의 영양제
+      cool_simply_line_2: 하나의 포장
+      cool_care: 쿨케어
+      cool_care_line: 당신에게 소중한 사람에게
+      cool_care_line_2: 선물을 하십시오
+      cool_ingredients: 쿨성분
+      cool_ingredients_line: 100% 천연
+      cool_ingredients_line_2: 주문시 신선하게 제조
+      bar_choose: 세종류까지의 영양제를 선택하십시오
+      bar_qty: 수량
+      bar_day: 일
+      bar_week: 주
+      bar_month: 달
+      bar_days: 일
+      bar_weeks: 주
+      bar_months: 달
+      bar_pack_1: 1팩/일
+      bar_pack_2: 7팩/주(미국만해당)
+      bar_pack_3: 30팩/월
+      bar_total: 합계
+      bar_sign:  $
+      bar_unit: US 달러
+      bar_cart: 카트에추가
+      bar_checkout: 체크아웃
+      trial_pack: 무료사용팩
+      trial_pack_desc: '*미국만해당&배송적용'
+      your_wish: 위시리스트
+      we_are: 우리는 지속적으로 새로운 영양제를 만듭니다.당신에게 가장 도움이되는 것을 우리에게 말씀하십시오.
+      submit: 승인
+    header:
+      gift: 선불로 제공
+      ingredient: 성분
+      about: 대략
+    gift:
+      title_cool: 쿨케어
+      title_do: 선물을할때관심을 표현하십시오...
+      send_a_gift: 선물로구입
+      order: 사랑하는 사람에게 선물을 구입
+      email: 그들은 그들의 영양제를 전자 메일로 선택합니다
+      gift: 관심을 표현하십시오.
+      recipient_name: 수령자이름
+      message: 여기에 당신의 메시지를 추가하십시오(100자까지)
+      yourname: 이름
+      congrat: 축하합니다.
+      after_congrat: 당신의 선물이 준비되었습니다!모든 쿨쵸이스주문은 특별히 당신을 위해서 신선하게 만듭니다!
+    message:
+      this: 받는 사람
+      add: 여기에 당신의 메시지를 추가하십시오(100자까지)
+      from: 보내는 사람
+      detail: 선물내용
+      total: 합계
+      coolchoice: 쿨쵸이스
+      price: 39.99달러
+      gift_from: 선물보내는사람(구매자)
+      gift_to: 선물받는사람(수령자)
+      name: 이름
+      your_email: 당신의전자메일주소
+      email: 수령자전자메일주소
+    order_state:
+      message: 메시지
+    checkout:
+      credit_card: 신용카드
+      paypal: 페이팔
+    ingredient:
+      title: '안전한 천연 영양자'
+      sub-title: '우리는 평판이 좋은 공급자의 타사테스트에 의해 검증받은 고품질성분만 사용합니다.'
+      function_Anti-Aging: 안티에이징
+      function_Beauty: 아름다움
+      function_Brain_Care: 두뇌케어
+      function_Digestive_Care: 소화케어
+      function_Energy: 에너지
+      function_Eye_Care: 아이케어
+      function_Heart_Care: 심장케어
+      function_Immune_Support: 면역케어
+      function_Joint_Care: 관절케어
+      function_Liver_Care: 간케어
+      function_Lung_Care: 폐케어
+      function_Mens_Vitality: 남성의활력
+      function_Sleep_Support: 수면보조
+      function_Stress_Management: 스트레스경감
+      caution1_Sleep_Support: '*  쿨쵸이스는 멜라토닌 영양제는 취침전에만 복용할 것을 권장합니다.'
+      caution2_Sleep_Support: '** 경고:졸음을 유도할 수 있습니다.자동차 또는 위험한기계를 작동할때는 주의해야합니다.'
+      more: 그외
+      warning1: 기술된 내용은 식의약청에 의해 검증된것이 아닙니다.
+      warning2: '경고:임신중 또는 모유를 먹이는여성, 알려진질환을 가지고 있 거나/있으면서.'
+    paypal:
+      already_refunded: "이 결제는 환불되었습니다. 그래서, 어떤 추가 조치도 할 수 없습니다."
+      no_payment_via_admin_backend: "이번에는 관리인 후단부를 통해 페이팔계정에 청구할 수 없습니다."
+      transaction: "페이팔거래"
+      payer_id: "페이팔 ID"
+      transaction_id: "거래 ID"
+      token: "토큰"
+      refund: "환불"
+      refund_amount: "금액"
+      original_amount: "원래금액: %{amount}"
+      refund_successful: "페이팔 환불 성공"
+      refund_unsuccessful: "페이팔 환불 실패"
+      actions:
+        refund: "환불"
+      flash:
+        cancel: "페이팔 사용을 원치않습니까?문제 없습니다."
+        connection_failed: "페이팔에 연결할 수 없습니다."
+        generic_error: "%{reasons} 때문에 페이팔에 실패했습니다"
+    payment_has_been_cancelled: 결제가취소되었습니다.
+    complete_skrill_checkout: 계속하기전에스크릴체크아웃을완료하십시오.
+    skrill: 스크릴
+    skrill_transaction: 거래
+    skrill_customer_id: 고객 ID
+    skrill_transaction_id: 거래 ID
+    skrill_payment_type: 결제유형
+    skrill_payment_currency: 결제통화
+    log_entry:
+      braintree:
+        message: 메시지
+        status: 상태
+        cc_token: 브레인트리신용카드토큰
+        customer_id: 브레인트리고객 ID
+        cvv_result: 카드검증값결과
+        avs_result_title: 신용카드의청구지주소인증시스템결과
+        avs_result:
+          message: 메시지
+          street_match: 도로주소일치
+          postal_match: 우편번호일치
+      stripe:
+        message: 메시지
+        charge_id: 스트라이프차지 ID
+        card_id: 스트라이프카드 ID
+        cvv_result: 카드검증값결과
+        cvc_check: 카드고유번호확인
+        address_zip_check: 주소우편번호확인
+    environment: 환경
+    user_was_not_valid: 사용자 가올 바르지 않습니다.
+    add_another_service: "로그인할 다른 서비스 추가"
+    authentications:
+      destroy: '인증 방법을 성공적으로 제거했습니다.'
+    back_to_authentication_methods_list: "본인 인증 방법 목록으로 돌아가기"
+    edit_social_method: "사회적 본인 인증 방법 편집"
+    new_social_method: "새로운 본인 인증 방법"
+    no_authentication_methods_found: "본인 인증 방법이 없음"
+    one_more_step: '%{kind}로부터 등록 완료까지 한 단계 남음'
+    remove_authentication_option_confirmation: "이인증 방법을 제거하시겠습니까?"
+    sign_into_account: "다음과 같은 방법을 사용하여 이계정에 로그인 할수있습니다."
+    sign_in_through_one_of_these_services: "이서비스중 하나를 통하여 로그인"
+    social_api_key: "응용프로그램 인터페이스 키(API Key)"
+    social_api_secret: "응용프로그램 인터페이스 비밀번호(API Secret)"
+    social_authentication_methods: "사회적 본인 인증 방법"
+    social_authentication_methods_description: "오쓰 인증 방법 셋업"
+    social_provider: "사회적 공급자"
+    please_confirm_your_email: "계속하기 위해서는 전자메일 주소를 확인하십시오"
+    sign_in_with: "%{provider}로 로그인"
+    you_have_signed_in_with_these_services: "이 서비스로 로그인했습니다"
+    admin_login: "관리자 로그인"
+    change_your_password: "비밀번호를 변경하십시오"
+  devise:
+    omniauth_callbacks:
+      success: "%{kind} 계정에 로그인했습니다."
+    confirmations:
+      confirmed: 계정이 성공적으로 확인되었습니다.이제 로그인되었습니다.
+      send_instructions: 계정 확인 방법지침이 제공된 전자메일을 몇분 후에 받게됩니다.
+    failure:
+      inactive: 계정이 아직활성화되 지않았습니다.
+      invalid: 전자메일 또는 암호가 잘못되었습니다.
+      invalid_token: 인증토큰이 잘못되었습니다.
+      locked: 계정 이잠겼습니다.
+      timeout: '세션이 만료되었습니다. 계속하기 위해서는 로그인을 다시해주십시오.'
+      unauthenticated: 계속하기전에 로인인 또는 가입해야합니다.
+      unconfirmed: 계속하기전에 계정을 확인해야합니다.
+    mailer:
+      confirmation_instructions:
+        subject: 확인지침
+      reset_password_instructions:
+        subject: 비밀번호 재설정지침
+      unlock_instructions:
+        subject: 잠금 해제 지침
+      confirmation_instructions:
+        subject: 확인 지침
+    oauth_callbacks:
+      failure: '%{kind}로부터%{reason} 때문에 승인을 받을수없습니다.'
+      success: '%{kind} 계정으로부터 성공적으로 승인을 받았습니다.'
+    unlocks:
+      send_instructions: 잠금 해제 지침이 제공된 전자메일을 몇 분후에 받게됩니다.
+      unlocked: 계정이 성공적으로 감금해제되었습니다.이제 로그인되었습니다.
+    passwords:
+      spree_user:
+        cannot_be_blank: 비밀번호를 빈칸으로 두어서는 안됩니다.
+        no_token: "이페이지에 접근하려면 비밀번호 재설정 전자메일에서 이페이지로 접근해야합니다.비밀번호 재설정 전자메일에서 접근하지 않았다면 제공된 전체 URL을 기입해야합니다."
+        send_instructions: 비밀번호 재설정 지침이 제공된 전자메일을 몇 분후에 받게됩니다.
+        updated: 비밀번호 가성공적을 변경되었습니다.이제 로그인되었습니다.
+    user_registrations:
+      destroyed: 안녕히가십시오!계정이 성공적으로 삭제되었습니다.또 만나기를 바랍니다.
+      inactive_signed_up: '가입되었습니다.하지만 %{reason} 때문에 로그인 할수없습니다.'
+      signed_up: 환영합니다!가입되었습니다.
+      updated: 계정을 성공적으로 업데이트했습니다.
+    user_sessions:
+      signed_in: 로그인되었습니다.
+      signed_out: 로그아웃되었습니다.
+      already_signed_in: 이미 로그인 상태입니다.
+      already_signed_out: 이미 로그아웃되었습니다.
+  errors:
+    messages:
+      already_confirmed: 이미 확인했습니다
+      email_is_invalid: 전자메일 주소는 빈칸으로 두어서는 안됩니다
+      not_found: 없습니다
+      not_locked: 잠기지 않았습니다
+      not_saved:
+        one: '1 에러때문에 %{resource}를 저장할수 없었음:'
+        other: '%{count} 에러때문에 %{resource} 를저장 할수없습니다:'
