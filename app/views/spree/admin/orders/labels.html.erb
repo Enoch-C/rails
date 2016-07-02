@@ -57,7 +57,7 @@
       <div class="print">
         <div class="func">
           <% sku.each do |x| -%>
-            <img src=<%= "/assets/home/icon-" + hash[x] + "@2x.png" -%>>
+            <img src="<%= asset_path "home/icon-" + hash[x] + "@2x.png" -%>">
           <% end -%>
           <div class="detail"><%= func_option.join(' + ') %></div>
         </div>
