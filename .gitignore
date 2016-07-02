@@ -13,5 +13,6 @@
 /tmp
 
 db/schema.rb
+db/development.sqlite3
 .DS_Store
 /pids
