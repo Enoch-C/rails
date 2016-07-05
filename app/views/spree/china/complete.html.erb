@@ -1,0 +1,29 @@
+<% content_for :google_analytics do %>
+  <% if order_just_completed?(@order) %>
+    <%= render partial: 'spree/shared/google_purchase.js', locals: { order: @order } %>
+  <% end %>
+<% end %>
+
+<fieldset id="order_summary" data-hook>
+  <div class="container">
+    <div class="order-number">
+      <%= Spree.t(:order) %>
+      <span class="number"><%= @order.number %></span>
+    </div>
+    <% if order_just_completed?(@order) %>
+      <strong><%= Spree.t(:thank_you_for_your_order) %></strong>
+    <% end %>
+
+    <div id="order" class="clearfix" data-hook>
+      <%= render partial: 'spree/shared/order_details', locals: { order: @order } %>
+
+      <br class="clear" />
+
+    </div>
+  </div>
+</fieldset>
+
+<script>
+  Spree.current_order_id = "<%= @order.number %>"
+  Spree.current_order_token = "<%= @order.guest_token %>"
+</script>

@@ -63,6 +63,11 @@ Rails.application.routes.draw do
 end
 
 Spree::Core::Engine.add_routes do
+  get '/china', to: 'china#index'
+  patch '/china/checkout', to: 'china#checkout'
+  patch '/china/pay', to: 'china#pay'
+  patch '/china/complete', to: 'china#complete'
+  get '/china/login', to: 'china#login'
   get '/why', to: 'why#index'
   get '/gift', to: 'gift#index'
   get '/gift/my_gift', to: 'gift#my_gift'

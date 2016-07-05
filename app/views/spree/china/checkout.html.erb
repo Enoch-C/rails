@@ -1,0 +1,51 @@
+<% @body_id = 'Address' %>
+<div>
+  <div class="container" >
+    <div id="errorMessageDiv" style="display:none;">请填写所有必填栏*</div>
+
+    <%= form_for @order, url: china_pay_path, html: { }  do |form| %>
+    <div class="row form-content">
+      <div class="col-sm-6" >
+        <div class="" id="billing" data-hook>
+          <input name="id" value="<%= @order.id %>" hidden="hidden" />
+          <div class="form-title">
+            收货地址
+          </div>
+          <div class="">
+            收件人：
+            <input name="name" value="<%= "#{@order.bill_address.lastname}#{@order.bill_address.firstname}"  if @order.bill_address %>" required></input>*
+            <br/>
+            省市区：
+            <div data-toggle="distpicker">
+              <select name="province" data-province="<%= "#{@province[@order.bill_address.state.name]}"  if @order.bill_address %>" required></select>*
+              <select name="city" data-city="<%= "#{@order.bill_address.city}"  if @order.bill_address %>" required></select>*
+              <select name="sub" data-district="<%= "#{@order.bill_address.address2}"  if @order.bill_address %>"></select>
+            </div>
+            <br/>
+            具体地址：
+            <input name="street" value="<%= "#{@order.bill_address.address1}"  if @order.bill_address %>" required></input>*
+            <br/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="" data-hook="buttons">
+      <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  Spree.current_order_id = "<%= @order.number %>"
+  Spree.current_order_token = "<%= @order.guest_token %>"
+  var form = document.getElementById('edit_order_' + "<%= @order.id %>"); // form has to have ID: <form id="formID">
+  form.noValidate = true;
+  form.addEventListener('submit', function(event) { // listen for form submitting
+          if (!event.target.checkValidity()) {
+              event.preventDefault(); // dismiss the default functionality
+              document.getElementById('errorMessageDiv').style.display = 'block'; // error message
+          }
+      }, false);
+</script>

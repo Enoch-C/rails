@@ -1,3 +1,5 @@
+<% unless request.path.start_with?("/zh-CN/china") %>
+
 <div id="coolchoice-header" style="border-bottom: 1px solid #dedede; height: 80px">
   <header id="header" style="height: 100%" data-hook>
     <div class="container"  style="height: 100%">
@@ -8,3 +10,4 @@
     </div>
   </header>
 </div>
+<% end %>

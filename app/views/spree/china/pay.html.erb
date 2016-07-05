@@ -1,0 +1,47 @@
+<% @body_id = 'Pay' %>
+<%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
+
+<div class="summary-table">
+  <%= render partial: 'summary', locals: { order: @order } %>
+</div>
+
+  <div class="container" >
+    <%= form_for @order, url: china_complete_path, html: { }  do |form| %>
+      <input name="id" value="<%= @order.id %>" hidden="hidden" />
+      <div class="" id="payment" data-hook>
+
+        <ul class="list-group" id="payment-method-fields" style="display: none" data-hook>
+          <% @order.available_payment_methods.each do |method| %>
+          <% if method.method_type == 'stripe' %>
+            <li class="list-group-item">
+              <label>
+                <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
+                <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
+              </label>
+            </li>
+            <% end %>
+            <% end %>
+        </ul>
+
+          <ul class="nav" id="payment-methods" data-hook>
+            <% @order.available_payment_methods.each do |method| %>
+            <% if method.method_type == 'stripe' %>
+              <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook>
+                <fieldset>
+                  <%= render :partial => "stripe", :locals => { :payment_method => method } %>
+                </fieldset>
+              </li>
+              <% end %>
+            <% end %>
+          </ul>
+      </div>
+    <div class="" data-hook="buttons">
+      <%= submit_tag Spree.t(:save_and_continue), :class => 'button', :style => "display: none;"  %>
+    </div>
+<% end %>
+</div>
+
+<script>
+  Spree.current_order_id = "<%= @order.number %>"
+  Spree.current_order_token = "<%= @order.guest_token %>"
+</script>

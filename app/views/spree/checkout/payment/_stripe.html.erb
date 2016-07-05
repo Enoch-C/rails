@@ -1,9 +1,6 @@
 <!-- <%= render "spree/checkout/payment/gateway", payment_method: payment_method %> -->
 
 <!-- <script type="text/javascript" src="https://js.stripe.com/v2/"></script> -->
-<script type="text/javascript">
-  Stripe.setPublishableKey("<%= payment_method.preferred_publishable_key %>");
-</script>
 
 <script
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
