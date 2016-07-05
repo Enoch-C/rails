@@ -42,7 +42,7 @@
   <script type="text/javascript" src="slick/slick.min.js"></script>
 
   <div class="carousel" style="margin:0">
-    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj1.jpg")).path.html_safe %>) center no-repeat;">
+    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj1.jpg")).path.html_safe %>) center no-repeat; background-size: cover">
       <div class="container">
         <div class="text">
           <div class="num">1</div>
@@ -52,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj2.jpg")).path.html_safe %>) center no-repeat;width:1440px;height:500px;">
+    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj2.jpg")).path.html_safe %>) center no-repeat; background-size: cover">
       <div class="container" id="cart">
         <div class="text">
           <div class="num">2</div>
@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj3.jpg")).path.html_safe %>) center no-repeat;width:1440px;height:500px;">
+    <div class="banner" style="background: url(<%= URI::parse(image_url("home/bj3.jpg")).path.html_safe %>) center no-repeat; background-size: cover">
       <div class="container">
         <div class="text">
           <div class="num">3</div>
@@ -78,19 +78,19 @@
   <div id="section-1" class="section-1">
     <div class="container">
       <div class="title"><%= Spree.t(:"homepage.content_title_magic") %></div>
-      <br>
       <div class="sub-title">
         <div class="line"></div><%= Spree.t(:"homepage.content_title_choose") %>
         <div class="line"></div>
       </div>
       <a class="why" href="<%= spree.why_path %>">
         <img src="<%= asset_path 'home/icon-bulb@2x.png'%>" class="bulb">
-        <div class="why-bar"><%= Spree.t(:"homepage.button_1") %></div>
+        <div class="why-bar hidden-xs"><%= Spree.t(:"homepage.button_1") %></div>
+        <div class="why-bar visible-xs-block"><%= Spree.t(:"head_bar.WHY_COOL_CHOICE") %></div>
       </a>
       <div class="content clearfix">
         <template v-for="feature in feature_list">
-          <div :class="['choose-box', feature, {'selected': ~result.indexOf(feature)}]" @click="tick_or_not(feature)">
-            <div class="choose-label">
+          <div :class="['choose-box', feature]" @click="tick_or_not(feature)">
+            <div :class="['choose-label', {'selected': ~result.indexOf(feature)}]">
               <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)">
               <div class="text" :id="'text_' + ($index + 1)">
                 {{t[$index]}}
@@ -112,7 +112,7 @@
     </div>
   </div>
 
-  <div class="small-banner" style="background: url(<%= URI::parse(image_url("home/bj2@2x.png")).path.html_safe %>) center no-repeat;">
+  <div class="small-banner">
     <div class="container">
       <div class="text">
         <div class="title"><%= Spree.t(:"homepage.page2_title") %></div>
@@ -122,39 +122,52 @@
     </div>
   </div>
   <div class="section-4" v-show="result.length">
-    <div class="container"><% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
-      <div class="func col-sm-3">
-        <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
-        <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
-      </div>
-      <div class="qty col-sm-2">
-        <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
-        <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
-          <select v-model="type" class="type">
-            <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
-            <option value="week">{{ num + ' ' + types[0] }}</option>
-            <option value="month">{{ num + ' ' + types[1] }}</option>
-          </select>
-          <span @click="num++" class="math"> +</span>
+    <div class="container">
+      <% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
+      <div class="customize">
+        <div class="func">
+          <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
+          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
         </div>
-        <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
-        <div v-show="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
-        <div v-show="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
-      </div>
-      <div class="total col-sm-2">
-        <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
-        <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
-      </div>
-      <div class="cart" v-show="result.length == 3">
-        <a v-on:click='action_addToCart' style="border: 1px solid #3acced; color: #3acced; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
-        <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
-      </div>
-      <div @click="action_trial" class="trail"  v-show="result.length == 3">
-        <div class="line">
-          <span style="font-weight: 500"><%= Spree.t(:"homepage.trial_pack") %></span>
+        <div class="qty">
+          <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
+          <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
+            <select v-model="type" class="type">
+              <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
+              <option value="week">{{ num + ' ' + types[0] }}</option>
+              <option value="month">{{ num + ' ' + types[1] }}</option>
+            </select>
+            <span @click="num++" class="math"> +</span>
+          </div>
+          <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
+          <div v-show="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
+          <div v-show="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
         </div>
-        <div class="line_below">
-          <span style="font-weight: 100; font-size: 10px"><%= Spree.t(:"homepage.trial_pack_desc") %></span>
+        <div class="total">
+          <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
+          <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
+        </div>
+      </div>
+      <div v-show="result.length == 3" class="buy">
+        <div class="cart">
+          <a v-on:click='action_addToCart' style="border: 1px solid #3acced; color: #3acced; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
+          <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
+        </div>
+        <div @click="action_trial" class="trail">
+          <div class="hidden-xs">
+            <div class="line">
+              <span><%= Spree.t(:"homepage.trial_pack") %></span>
+            </div>
+            <div class="line-below">
+              <span><%= Spree.t(:"homepage.trial_pack_desc") %></span>
+            </div>
+          </div>
+          <div class="visible-xs-block">
+            <div class="line">
+              <span><%= Spree.t(:"homepage.trial_pack") %></span>
+              <span class="line-below"><%= Spree.t(:"homepage.trial_pack_desc") %></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -167,9 +180,11 @@
       <form id="wish-list" action="/index/wish" accept-charset="UTF-8" method="POST" novalidate="novalidate">
         <div class="title"><%= Spree.t(:"homepage.your_wish") %></div>
         <div class="sub-title"><%= Spree.t(:"homepage.we_are") %></div>
-        <textarea name="wish"></textarea>
+        <div class="wish-content">
+          <textarea name="wish"></textarea>
+          <button type="submit" class="button"><%= Spree.t(:"homepage.submit") %></button>
+        </div>
         <a class="close" @click="close_wish"><%= image_tag("ingredient/button-off@2x.png") %></a>
-        <button type="submit" class="button"><%= Spree.t(:"homepage.submit") %></button>
       </form>
     </div>
   </div>
@@ -335,7 +350,7 @@
             if (index > -1) {
               a2.splice(index, 1)
               tDisabledFeatures = tDisabledFeatures.and(a2)
-              console.log(tDisabledFeatures)
+              // console.log(tDisabledFeatures)
               break loop
             }
           }
@@ -424,7 +439,7 @@
               window.location.href = '<%= cart_path %>'
             },
             complete: function() {
-              console.log(that.processing)
+              // console.log(that.processing)
               that.processing = false
             }
           })

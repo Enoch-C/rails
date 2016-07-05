@@ -168,6 +168,11 @@ textarea
     background: #3acced
     text-decoration: none
     color: #fff
+  @media (max-width: 768px)
+    width: 178px
+    height: 35px
+    line-height: 35px
+    margin: 10px 0
 input.button
   line-height: 0
 .wish-lay
@@ -179,6 +184,8 @@ input.button
   height: 100%
   background: rgba(0, 0, 0, 0.3)
   text-align: center
+  font-size: 0
+  z-index: 3
   &:before
     display: inline-block
     width: 0
@@ -190,24 +197,35 @@ input.button
     display: inline-block
     width: 800px
     height: 500px
-    background: image-url("home/wish_bj.jpg") center/100% no-repeat
+    background: image-url("home/wish_bj.jpg") center no-repeat
+    background-size: cover
     border-radius: 3px
     border: solid 1px #dedede
     color: #474c5d
     vertical-align: middle
+    @media (max-width: 768px)
+      width: 100%
+      height: 100%
     .title
       margin-top: 85px
       font-size: 22px
       font-weight: 500
     .sub-title
       font-size: 16px
-    textarea
-      display: block
+    .wish-content
       width: 500px
-      height: 220px
       margin: 30px auto 0
-      border-radius: 3px
-      border: solid 1px #dedede
+      text-align: right
+      font-size: 14px
+      @media (max-width: 768px)
+        width: 80%
+      textarea
+        width: 100%
+        height: 220px
+        border-radius: 3px
+        border: solid 1px #dedede
+      .button
+        width: 130px
     .close
       display: inline-block
       position: absolute
@@ -216,9 +234,6 @@ input.button
       padding: 40px
       img
         width: 24px
-    .button
-      width: 130px
-      margin-right: -365px
 .more-overlay
   display: none
   position: fixed
@@ -236,6 +251,8 @@ input.button
     top: 0
     width: 45%
     min-height: 100%
+    @media (max-width: 768px)
+      display: none
   .view
     display: none
     position: absolute
@@ -246,6 +263,8 @@ input.button
     top: 0
     background: #fff
     opacity: 1
+    @media (max-width: 768px)
+      width: 100%
     .close
       display: inline-block
       position: absolute
@@ -463,6 +482,8 @@ input.button
     height: 500px
     text-align: center
     color: #fff
+    @media (max-width: 768px)
+      height: 220px
     .container
       height: 100%
       position: relative
@@ -485,19 +506,30 @@ input.button
           border-radius: 20px
           border: solid 1px #fff
           line-height: 39px
+          @media (max-width: 768px)
+            width: 17px
+            height: 17px
+            line-height: 17px
+            font-size: 10px
         .title
           font-size: 64px
           font-family: Face
           letter-spacing: 0
+          @media (max-width: 768px)
+            font-size: 24px
         .sub-title
           width: 383px
           font-size: 22px
           font-weight: 300
           letter-spacing: -0.2px
           margin: 22px auto 0
+          @media (max-width: 768px)
+            width: 177px
+            font-size: 10px
+            margin: 0 auto
         .button
           width: 196px
-          margin: 31px 15px 0
+          margin-top: 31px
           background: #f7f8fa
           opacity: 0.8
           color: #00b9ee
@@ -505,15 +537,23 @@ input.button
           &:hover
             transition: 0.3s
             opacity: 1
+          @media (max-width: 768px)
+            width: 130px
+            font-size: 12px
+            margin-top: 16px
   .small-banner
+    background: image-url("home/bj2@2x.png") center no-repeat
     background-size: cover
     width: 100%
     height: 300px
     text-align: center
     color: #fff
+    @media (max-width: 768px)
+      height: 150px
     .container
       height: 100%
       position: relative
+      font-size: 0
       &:before
         display: inline-block
         width: 0
@@ -525,87 +565,121 @@ input.button
         vertical-align: middle
         text-align: center
         color: #fff
-        .num
-          display: inline-block
-          width: 39px
-          height: 39px
-          border-radius: 20px
-          border: solid 1px #fff
-          line-height: 39px
         .title
           font-size: 64px
           letter-spacing: 0
+          @media (max-width: 768px)
+            font-size: 30px
         .sub-title
           width: 383px
           font-size: 22px
           font-weight: 300
           letter-spacing: -0.2px
           margin: 0px auto 20px
+          @media (max-width: 768px)
+            width: auto
+            margin: 0 auto
+            font-size: 14px
   .section-1
     background: #f7f8fa
     text-align: center
     position: relative
     .title
-      margin-top: 28px
+      margin: 28px auto 10px
       font-size: 20px
       font-weight: 300
       color: #a6a4a4
+      @media (max-width: 768px)
+        margin: 26px auto 0
+        font-size: 12px
     .sub-title
       font-size: 25px
       font-weight: 300
       color: #919191
+      @media (max-width: 768px)
+        margin: 0 -15px
+        font-size: 14px
       .line
         display: inline-block
         width: 40px
         height: 2px
         margin: 0 40px 8px
         background: #dedede
+        @media (max-width: 768px)
+          width: 15px
+          margin: 0 7px 4px
     .why
       position: absolute
       right: 0
       top: 40px
       color: #00b9ee
+      @media (max-width: 768px)
+        top: -11px
       .bulb
         position: absolute
         left: 17px
         bottom: 10px
         width: 40px
+        @media (max-width: 768px)
+          width: 20px
+          left: -10px
+          bottom: 0
       .why-bar
         width: 291px
         height: 51px
         line-height: 51px
-        padding-left: 40px
+        padding-left: 77px
         box-shadow: 0 4px 4px 0 rgba(222, 222, 222, 0.38)
         background: #fff
         text-transform: uppercase
         letter-spacing: -0.8px
         font-size: 20px
         font-weight: 500
+        text-align: left
+        @media (max-width: 768px)
+          width: 91px
+          height: 30px
+          line-height: 30px
+          padding-left: 19px
+          font-size: 14px
     .content
       .choose-box
         float: left
         position: relative
-        width: 180px
+        width: 20%
         height: 174px
-        margin: 38px 20px
-        &.selected
-          background: image-url('home/tick.png') 95% 0/18px no-repeat
+        padding: 0 4%
+        margin: 20px 0
+        @media (max-width: 768px)
+          width: 33.33%
+          height: auto
+          min-height: 100px
         .information
           position: absolute
-          left: 0
+          left: 10%
           top: 0
-          width: 25px
+          width: 12%
+          min-width: 18px
           &:hover
             cursor: pointer
         .choose-label
-          position: absolute
-          left: 20px
-          width: 140px
+          min-width: 140px
+          &.selected
+            background: image-url('home/tick.png') 95% 0/18px no-repeat
+            @media (max-width: 768px)
+              background-size: 12px
+          @media (max-width: 768px)
+            min-width: 100px
           .img
-            width: 85%
+            width: 80%
+            @media (max-width: 768px)
+              width: 70%
           .text
             font-size: 20px
-            margin-top: 20px
+            margin: 20px auto 0
+            @media (max-width: 768px)
+              font-size: 14px
+              margin: 10px auto 0
         input
           visibility: hidden
           position: absolute
@@ -647,45 +721,6 @@ input.button
         color: #ff8793
       .wish
         color: #e6803b
-  .section-2
-    text-align: center
-    // height: 361px
-    margin: 40px auto 20px
-    .more
-      left: 20px
-      bottom: 20px
-      font-size: 16px
-      color: #474c5d
-      img
-        width: 13px
-        margin-left: 7px
-    .para
-      .img
-        height: 178px
-        text-align: center
-        &:before
-          display: inline-block
-          width: 0
-          height: 100%
-          content: ""
-          vertical-align: bottom
-      .title
-        margin: 16px auto 10px
-        font-size: 25px
-        font-weight: 500
-        color: #474c5d
-      p
-        font-family: Helvetica
-        font-size: 20px
-        font-weight: 300
-        color: #a6a4a4
-  .section-3
-    background: #f7f8fa
-    text-align: center
-    padding: 60px 0 120px
-    img
-      width: 600px
-      height: 81px
   .section-4
     position: fixed
     bottom: 0
@@ -695,120 +730,175 @@ input.button
     // height: 120px
     color: #000000
     z-index: 2
-    .container
+    >.container
       position: relative
       margin-top: 15px
       // height: 120px
-      @media (max-width: 768px)
-        text-align: center
-      .bar
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 44px
-        opacity: 0.9
-        @media (max-width: 768px)
-          display: none
-      .title
-        margin: 0 0 10px
-        font-size: 16px
-        font-weight: 300
-        opacity: 0.5
-      .func
-        margin-left: 100px
-        @media (max-width: 768px)
-          margin-left: 0
-        .box
-          display: inline-block
-          width: 50px
-          height: 50px
-          border-radius: 50%
-          margin: 0 20px 20px 0
-          background: rgba(255, 255, 255, 0.2)
-          .delete
-            display: none
-            width: 50px
-            border-radius: 50%
-            background: rgba(0, 0, 0, 0.2)
-        .hover
-          &:hover
-            .delete
-              display: block
-        .bg-Anti-Aging
-          background: image-url("home/icon-Anti-Aging@2x.png") center/100% no-repeat
-        .bg-Beauty
-          background: image-url("home/icon-Beauty@2x.png") center/100% no-repeat
-        .bg-Brain_Care
-          background: image-url("home/icon-Brain_Care@2x.png") center/100% no-repeat
-        .bg-Digestive_Care
-          background: image-url("home/icon-Digestive_Care@2x.png") center/100% no-repeat
-        .bg-Energy
-          background: image-url("home/icon-Energy@2x.png") center/100% no-repeat
-        .bg-Eye_Care
-          background: image-url("home/icon-Eye_Care@2x.png") center/100% no-repeat
-        .bg-Heart_Care
-          background: image-url("home/icon-Heart_Care@2x.png") center/100% no-repeat
-        .bg-Immune_Support
-          background: image-url("home/icon-Immune_Support@2x.png") center/100% no-repeat
-        .bg-Joint_Care
-          background: image-url("home/icon-Joint_Care@2x.png") center/100% no-repeat
-        .bg-Liver_Care
-          background: image-url("home/icon-Liver_Care@2x.png") center/100% no-repeat
-        .bg-Lung_Care
-          background: image-url("home/icon-Lung_Care@2x.png") center/100% no-repeat
-        .bg-Mens_Vitality
-          background: image-url("home/icon-Mens_Vitality@2x.png") center/100% no-repeat
-        .bg-Sleep_Support
-          background: image-url("home/icon-Sleep_Support@2x.png") center/100% no-repeat
-        .bg-Stress_Management
-          background: image-url("home/icon-Stress_Management@2x.png") center/100% no-repeat
-      .qty
-        .select
-          margin-bottom: 10px
-          font-size: 16px
-          .type
-            display: inline-block
-            width: 103px
-            height: 28px
-            line-height: 28px
-            border-radius: 3px
-            text-align: center
-            vertical-align: center
-            color: #474c5d
-            background: #fff
-          .math
-            cursor: pointer
-        .detail
-          font-size: 14px
-          color: #000000
-          opacity: 0.5
-      .total
-        .usd
-          font-size: 20px
-          font-weight: 300
-      .cart
-        display: inline-block
-        width: 150px
-      .trail
-        display: inline-block
-        width: 172px
-        margin: 17px 0 0 30px
-        vertical-align: top
-        font-size: 16px
-        font-weight: 300
-        line-height: 1.8
-        &:hover
-          cursor: pointer
-        .line
-          display: inline-block
-          border-bottom: solid 1px #00b9ee
-      .button
+      @media (max-width: 992px)
         width: 100%
-        height: 40px
-        line-height: 40px
-        border-radius: 25px
-        margin: 0 0 10px
-        font-size: 20px
+        padding: 0
+      .customize
+        float: left
+        width: 60%
+        @media (max-width: 992px)
+          width: 100%
+          padding-left: 10px
+        .title
+          margin: 0 0 10px
+          font-size: 16px
+          font-weight: 300
+          opacity: 0.5
+          text-transform: uppercase
+          @media (max-width: 768px)
+            font-size: 12px
+        .func
+          width: 50%
+          float: left
+          @media (max-width: 768px)
+            width: 40%
+          .box
+            display: inline-block
+            width: 50px
+            height: 50px
+            border-radius: 50%
+            margin: 0 20px 20px 0
+            background: rgba(255, 255, 255, 0.2)
+            @media (max-width: 768px)
+              width: 30px
+              height: 30px
+              margin: 0
+              &:nth-child(3)
+                margin: 0 10px
+            .delete
+              display: none
+              width: 50px
+              border-radius: 50%
+              background: rgba(0, 0, 0, 0.2)
+              @media (max-width: 768px)
+                width: 100%
+                margin: 0
+          .hover
+            &:hover
+              .delete
+                display: block
+          .bg-Anti-Aging
+            background: image-url("home/icon-Anti-Aging@2x.png") center/100% no-repeat
+          .bg-Beauty
+            background: image-url("home/icon-Beauty@2x.png") center/100% no-repeat
+          .bg-Brain_Care
+            background: image-url("home/icon-Brain_Care@2x.png") center/100% no-repeat
+          .bg-Digestive_Care
+            background: image-url("home/icon-Digestive_Care@2x.png") center/100% no-repeat
+          .bg-Energy
+            background: image-url("home/icon-Energy@2x.png") center/100% no-repeat
+          .bg-Eye_Care
+            background: image-url("home/icon-Eye_Care@2x.png") center/100% no-repeat
+          .bg-Heart_Care
+            background: image-url("home/icon-Heart_Care@2x.png") center/100% no-repeat
+          .bg-Immune_Support
+            background: image-url("home/icon-Immune_Support@2x.png") center/100% no-repeat
+          .bg-Joint_Care
+            background: image-url("home/icon-Joint_Care@2x.png") center/100% no-repeat
+          .bg-Liver_Care
+            background: image-url("home/icon-Liver_Care@2x.png") center/100% no-repeat
+          .bg-Lung_Care
+            background: image-url("home/icon-Lung_Care@2x.png") center/100% no-repeat
+          .bg-Mens_Vitality
+            background: image-url("home/icon-Mens_Vitality@2x.png") center/100% no-repeat
+          .bg-Sleep_Support
+            background: image-url("home/icon-Sleep_Support@2x.png") center/100% no-repeat
+          .bg-Stress_Management
+            background: image-url("home/icon-Stress_Management@2x.png") center/100% no-repeat
+        .qty
+          width: 25%
+          float: left
+          @media (max-width: 768px)
+            width: 40%
+          .select
+            margin-bottom: 10px
+            font-size: 16px
+            @media (max-width: 768px)
+              font-size: 14px
+            .type
+              display: inline-block
+              width: 103px
+              height: 28px
+              line-height: 28px
+              border-radius: 3px
+              text-align: center
+              vertical-align: center
+              color: #474c5d
+              background: #fff
+              @media (max-width: 768px)
+                width: 81px
+            .math
+              cursor: pointer
+          .detail
+            font-size: 14px
+            color: #000000
+            opacity: 0.5
+            @media (max-width: 768px)
+              font-size: 12px
+        .total
+          width: 25%
+          float: left
+          @media (max-width: 768px)
+            width: 20%
+          .usd
+            font-size: 20px
+            font-weight: 300
+            @media (max-width: 768px)
+              font-size: 14px
+      .buy
+        display: inline-block
+        width: 40%
+        @media (max-width: 992px)
+          display: block
+          width: 100%
+          border-top: solid 1px #dedede
+          clear: left
+          text-align: center
+        .cart
+          display: inline-block
+          width: 150px
+          @media (max-width: 992px)
+            width: 100%
+        .trail
+          display: inline-block
+          width: 172px
+          margin: 17px 0 0 30px
+          vertical-align: top
+          font-size: 16px
+          font-weight: 300
+          line-height: 1.8
+          &:hover
+            cursor: pointer
+          @media (max-width: 992px)
+            width: auto
+            margin: 0 auto 22px
+          .line
+            font-weight: 500
+            display: inline-block
+            border-bottom: solid 1px #00b9ee
+            @media (max-width: 768px)
+              font-size: 12px
+          .line-below
+            font-weight: 100
+            font-size: 10px
+        .button
+          width: 150px
+          height: 40px
+          line-height: 40px
+          border-radius: 25px
+          margin: 0 0 10px
+          font-size: 20px
+          @media (max-width: 992px)
+            font-size: 14px
+            width: 120px
+            height: 35px
+            line-height: 35px
+            margin: 20px 15px 10px
+
 #gift
   .banner
     background: image-url("gift/bj_gift_top.jpg") center no-repeat
