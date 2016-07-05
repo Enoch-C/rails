@@ -99,7 +99,7 @@ module Spree
         end
 
         if @order.completed?
-          @order.state = "payment"
+          @order.state = "complete"
           @order.save!
           @current_order = nil
           flash.notice = Spree.t(:order_processed_successfully)
