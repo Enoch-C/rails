@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module CoolChoiceStore
   class Application < Rails::Application
 
-    config.customer_service_names = ["菁菁"]
+    config.customer_service_names = ["青青"]
     config.customer_service_wechat = ["Coolchoice11"]
     config.customer_service_wechat_icon = ["http://o9vmi10q5.bkt.clouddn.com/head_qingqing@2x.png"]
     config.customer_service_wechat_qrcode = ["http://o9vmi10q5.bkt.clouddn.com/qrcode_qingqing@2x.png"]
