@@ -7,7 +7,7 @@
             <% unless @order.special_instructions %>
             <th><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></th>
             <% end %>
-            <th><%= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless order.completed? %></th>
+            <th><%= Spree.t(:'summary_table.shipping_method') %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless order.completed? %></th>
           <% end %>
         <% end %>
         <% if false %>
@@ -29,7 +29,7 @@
                 <% order.shipments.each do |shipment| %>
                   <div>
                     <i class='fa fa-truck'></i>
-                    <%= Spree.t(:shipment_details, stock_location: shipment.stock_location.name, shipping_method: shipment.selected_shipping_rate.name) %>
+                    <%= Spree.t(:shipment_details, stock_location: shipment.stock_location.name, shipping_method: "空运至中国") %>
                   </div>
                 <% end %>
               </div>
@@ -114,7 +114,7 @@
 
       <% order.shipments.group_by { |s| s.selected_shipping_rate.name }.each do |name, shipments| %>
         <tr data-hook='shipment-row'>
-          <td class="text-muted"><%= Spree.t(:shipping) %>: <strong><%= name %></strong></td>
+          <td class="text-muted"><%= Spree.t(:'summary_table.shipping') %></td>
           <td><span><%= Spree::Money.new(shipments.sum(&:discounted_cost), currency: order.currency).to_html %></span></td>
         </tr>
       <% end %>

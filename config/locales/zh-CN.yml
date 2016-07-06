@@ -1,5 +1,10 @@
 zh-CN:
   spree:
+    order_processed_successfully: 已成功定制
+    subtotal: 商品金额
+    summary_table:
+      shipping_method: 配送方式
+      shipping: 运费
     footer_bar:
       contact: Contact
       contact_us: Contact Us
@@ -158,11 +163,11 @@ zh-CN:
       give_as_a_gift: 作为礼物赠送
       learn_more: 了解更多
       title_proud: 自豪使命
-      title_introduce: 介绍个性化的补充品
+      title_introduce: 介绍私人定制保健品
       title_free: 美国免运费
       title_worldwide: 全球运送
-      content_title_magic: 量身定制天然保健品
-      content_title_choose: 选择您所需的三种功能
+      content_title_magic: 美国私人定制保健品
+      content_title_choose: 点击图标选择您所需的三种功能
       content_function_Anti-Aging: 延缓衰老
       content_function_Beauty: 美容养颜
       content_function_Brain_Care: 益智健脑
@@ -388,7 +393,7 @@ zh-CN:
         instructions: 确认您的账目已经生成.
         thanks: 谢谢您成为 Cool Choice的顾客! 我们将为您提供身体所需的健康、新鲜、自然的补充，尽量减少麻烦.
       confirm_email:
-        thanks: 感谢购买Cool Choice! 我们希望您爱上这个性化的营养补充.
+        thanks: 感谢购买Cool Choice! 我们希望您爱上私人定制保健品.
       confirm_promoter_email:
         subject: 你刚刚通过大使计划收到佣金
         store_credit_total: 总佣金
@@ -406,11 +411,11 @@ zh-CN:
     you_have_signed_in_with_these_services: '你已经使用以下方式登录：'
     sign_in_through_one_of_these_services: '登录通过：'
     home: Cool Choice 首页
-    thank_you_for_your_order: "谢谢你的购买. 请注意光照、温度、湿度以及保存日期等条件.每一个 Cool Choice 订购都新鲜出炉，精心定制, 尤其是你!"
+    thank_you_for_your_order: "我们将在48小时内为您新鲜定制，并通过国际物流空运给您，敬请期待！"
     ok: ok
     message: 信息
     site_name: Cool Choice
-    payment_pop_desc: 个性化的营养补充
+    payment_pop_desc: 私人定制保健品
     apply: 使用
     coupon_code: 优惠券码
     binding_users: 绑定用户
@@ -435,7 +440,7 @@ zh-CN:
     cart_tableheader_quantity: 数量
     cart_tableheader_totalprice: 数量
     cart_summary_title: 购物车总计
-    cart_summary_subtotal: 小计
+    cart_summary_subtotal: 商品金额
     cart_summary_shipping: 运送
     cart_summary_tax: 费用
     cart_summary_total: 合计

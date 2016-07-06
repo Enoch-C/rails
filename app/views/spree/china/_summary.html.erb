@@ -29,7 +29,7 @@
 
     <% if order.shipments.any? %>
       <tr data-hook="shipping_total">
-        <td><%= Spree.t(:shipping) %>:</td>
+        <td><%= Spree.t(:'summary_table.shipping') %>:</td>
         <td><%= Spree::Money.new(order.shipments.to_a.sum(&:cost), currency: order.currency).to_html %></td>
       </tr>
 

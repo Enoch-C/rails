@@ -8,13 +8,30 @@
 
 <fieldset id="order_summary" data-hook>
   <div class="container">
+    <% if order_just_completed?(@order) %>
+    <div style="text-align:center">
+      <img style="width:63px;" src="<%= "#{Rails.application.config.customer_service_wechat_icon[0]}" %>">
+      <img style="width:64px;" src="<%= "#{Rails.application.config.customer_service_wechat_qrcode[0]}" %>">
+    </div>
+    <br/>
+    <div class="order-number">
+      <span class="number" style="font-size:16px"><%= "尊敬的#{@order.bill_address.lastname}#{@order.bill_address.firstname}，" %></span>
+    </div>
+    <br/>
+    <strong><%= "我是您的私人健康管家#{Rails.application.config.customer_service_names[0]}，很荣幸为您服务。您的私人保健品将在48小时内由美国洛杉矶Cool Choice总部定制完成并空运给您。" %></strong>
+    <br/>
+    <br/>
+
+    <strong><%= "有关Cool Choice的任何问题，您都可以与我联系。我的微信号是：#{Rails.application.config.customer_service_wechat[0]}，您也可以直接访问全球官网 www.coolchoice.com 查询更多信息。" %></strong>
+    <br/>
+    <br/>
+    <br/>
+    <p>以下是您本次的订单信息：</p>
+    <% end %>
     <div class="order-number">
       <%= Spree.t(:order) %>
-      <span class="number"><%= @order.number %></span>
+      <span style="font-size:14px"><%= @order.number %></span>
     </div>
-    <% if order_just_completed?(@order) %>
-      <strong><%= Spree.t(:thank_you_for_your_order) %></strong>
-    <% end %>
 
     <div id="order" class="clearfix" data-hook>
       <%= render partial: 'order_details', locals: { order: @order } %>
