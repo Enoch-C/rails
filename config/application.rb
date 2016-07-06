@@ -13,6 +13,7 @@ module CoolChoiceStore
     config.customer_service_wechat = ["Coolchoice11"]
     config.customer_service_wechat_icon = ["http://o9vmi10q5.bkt.clouddn.com/head_qingqing@2x.png"]
     config.customer_service_wechat_qrcode = ["http://o9vmi10q5.bkt.clouddn.com/qrcode_qingqing@2x.png"]
+    config.customer_service_email = ["qingqing@coolchoice.com"]
     config.function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Care', 'Joint Care', 'Liver Care', 'Lung Care', "Men's Vitality", 'Sleep Support', 'Stress Relief']
     config.product_list = ["Cool Choice Trial Pack (US only)", "Cool Choice 7-Pack (US only)", "Cool Choice 30-Pack"]
     config.carbohydrate_divider = 300*100
