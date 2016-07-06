@@ -61,7 +61,7 @@
       <div class="customize">
         <div class="func">
           <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
-          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
+          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("http://o9vmi10q5.bkt.clouddn.com/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
         </div>
         <div class="qty">
           <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
@@ -125,20 +125,20 @@
     <%= Spree.t(:'homepage.content_function_Stress_Management').to_json.html_safe %>
   ]
   var path =[
-    "<%= asset_path 'home/icon-Anti-Aging@2x.png' %>",
-    "<%= asset_path 'home/icon-Beauty@2x.png' %>",
-    "<%= asset_path 'home/icon-Brain_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Digestive_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Energy@2x.png' %>",
-    "<%= asset_path 'home/icon-Eye_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Heart_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Immune_Support@2x.png' %>",
-    "<%= asset_path 'home/icon-Joint_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Liver_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Lung_Care@2x.png' %>",
-    "<%= asset_path 'home/icon-Mens_Vitality@2x.png' %>",
-    "<%= asset_path 'home/icon-Sleep_Support@2x.png' %>",
-    "<%= asset_path 'home/icon-Stress_Management@2x.png' %>"
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Anti-Aging@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Beauty@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Brain_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Digestive_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Energy@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Eye_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Heart_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Immune_Support@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Joint_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Liver_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Lung_Care@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Mens_Vitality@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Sleep_Support@2x.png' %>",
+    "<%= 'http://o9vmi10q5.bkt.clouddn.com/icon-Stress_Management@2x.png' %>"
   ]
 
   var vm = new Vue({
@@ -154,21 +154,21 @@
       processing: false,
       mutuallyExclusiveItems: {
         5: {
-          on_image: "<%= image_url("home/icon-Energy@2x.png") %>",
+          on_image: "<%= image_url("http://o9vmi10q5.bkt.clouddn.com/icon-Energy@2x.png") %>",
           on_color: "#62c0ef",
-          off_image: "<%= image_url("home/icon_energy_grey@2x.png") %>",
+          off_image: "<%= image_url("http://o9vmi10q5.bkt.clouddn.com/icon_energy_grey@2x.png") %>",
           off_color: "#e4e4e4",
         },
         12: {
-          on_image: "<%= image_url("home/icon-Mens_Vitality@2x.png") %>",
+          on_image: "<%= image_url("http://o9vmi10q5.bkt.clouddn.com/icon-Mens_Vitality@2x.png") %>",
           on_color: "#5979C3",
-          off_image: "<%= image_url("home/icon_sex_gray@2x.png") %>",
+          off_image: "<%= image_url("http://o9vmi10q5.bkt.clouddn.com/icon_sex_gray@2x.png") %>",
           off_color: "#e4e4e4",
         },
         13: {
-          on_image: "<%= image_url("home/icon-Sleep_Support@2x.png") %>",
+          on_image: "<%= image_url("http://o9vmi10q5.bkt.clouddn.com/icon-Sleep_Support@2x.png") %>",
           on_color: "#7fadf0",
-          off_image: "<%= image_url("home/icon_sleep_grey@2x.png") %>",
+          off_image: "<%= image_url("http://o9vmi10q5.bkt.clouddn.com/icon_sleep_grey@2x.png") %>",
           off_color: "#e4e4e4",
         },
       },
