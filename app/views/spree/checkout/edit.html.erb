@@ -5,7 +5,7 @@
 <div id="checkout" data-hook>
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
-  <div class="row" data-hook="checkout_header">
+  <div class="" data-hook="checkout_header">
     <div class="checkout-nav clearfix">
       <% states = @order.checkout_steps %>
       <% items = states.each_with_index.map do |state, i| %>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div class="row" data-hook="checkout_content">
+  <div class="" data-hook="checkout_content">
     <div class="container" data-hook="checkout_form_wrapper">
       <%= form_for @order, url: update_checkout_path(@order.state), html: { id: "checkout_form_#{@order.state}" } do |form| %>
         <%= form.hidden_field :state_lock_version %>

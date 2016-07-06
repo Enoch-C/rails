@@ -9,7 +9,7 @@
             <%= ship_form.object.stock_location.name %>
           </div>
 
-          <div class="delivery">
+          <div class="delivery border-table hidden-xs">
             <table class="stock-contents" data-hook="stock-contents">
               <colgroup>
                 <col style="width: 60%;" />
@@ -38,8 +38,21 @@
               </tbody>
             </table>
           </div>
+          <div class="row visible-xs-block xs-border-table">
+            <% ship_form.object.manifest.each do |item| %>
+              <div class="item clearfix">
+                <div class="item-image"><%= small_image(item.variant) %></div>
+                <div class="item-detail">
+                  <div class="text"><%= item.variant.name %><br><span class="func"><%= item.variant.options_text %></span></div>
+                  <div class="price"><%= display_price(item.variant) %></div>
+                  <% type = item.quantity > 1 ? {"d"=>Spree.t(:"homepage.bar_days"), "w"=>Spree.t(:"homepage.bar_weeks"), "m"=>Spree.t(:"homepage.bar_months")} : {"d"=>Spree.t(:"homepage.bar_day"), "w"=>Spree.t(:"homepage.bar_week"), "m"=>Spree.t(:"homepage.bar_month")} %>
+                  <div class="qty"><%= item.quantity %><%= ' ' + type[item.variant.sku[3]] %></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
 
-          <div class="stock-shipping-method-title title"><%= Spree.t(:shipping_method) %></div>
+          <div class="stock-shipping-method-title form-title"><%= Spree.t(:shipping_method) %></div>
           <ul class="list-group shipping-methods">
             <% ship_form.object.shipping_rates.each do |rate| %>
               <li class="shipping-method">
@@ -97,6 +110,9 @@
 
 <br />
 
-<div class="text-right" data-hook="buttons">
+<div class="hidden-xs text-right" data-hook="buttons">
+  <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
+</div>
+<div class="visible-xs-block text-left" data-hook="buttons">
   <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
 </div>

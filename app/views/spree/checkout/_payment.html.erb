@@ -13,7 +13,7 @@
   <div :class="['credit-card', payment_method == <%= stripe_value %> ? 'active' : '']" @click="payment_choose(<%= stripe_value %>)">
     <%= image_tag("checkout/active@2x.png", class: "tick") %>
     <div class="img">
-      <%= image_tag("checkout/icon-creditcard@2x.png", width: "53") %>
+      <%= image_tag("checkout/icon-creditcard@2x.png", class: "icon-credit") %>
     </div>
     <div class="text"><%= Spree.t(:"checkout.credit_card") %></div>
   </div>
@@ -22,7 +22,7 @@
   <div :class="['paypal', payment_method == <%= paypal_value %> ? 'active' : '']" @click="payment_choose(<%= paypal_value %>)">
     <%= image_tag("checkout/active@2x.png", class: "tick") %>
     <div class="img">
-      <%= image_tag("checkout/icon-paypal@2x.png", width: "38") %>
+      <%= image_tag("checkout/icon-paypal@2x.png", class: "icon-paypal") %>
     </div>
     <div class="text"><%= Spree.t(:"checkout.paypal") %></div>
   </div>

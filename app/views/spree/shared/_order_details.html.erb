@@ -1,4 +1,4 @@
-<div class="border-table steps">
+<div class="border-table steps hidden-xs">
   <table>
     <thead>
       <tr>
@@ -35,7 +35,7 @@
                   </div>
                 <% end %>
               </div>
-              <%= render 'spree/shared/shipment_tracking', order: order if order.shipped? %>
+
             </td>
         <% end %>
         <% end %>
@@ -54,8 +54,48 @@
     </tbody>
   </table>
 </div>
+<div class="visible-xs-block xs-border-table">
+  <div class="item clearfix">
+    <% if order.has_step?("address") %>
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="steps-title"><%= Spree.t(:billing_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></div>
+          <div class="steps-content"><%= render 'spree/shared/address', address: order.bill_address %></div>
+        </div>
+      </div>
+      <% if order.has_step?("delivery") %>
+        <% unless @order.special_instructions %>
+        <div class="col-xs-6">
+          <div class="steps-title"><%= Spree.t(:shipping_address) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:address) unless order.completed? %></div>
+          <div class="steps-content"><%= render 'spree/shared/address', address: order.ship_address %></div>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <% if order.has_step?("address") %>
+  <% if order.has_step?("delivery") %>
+    <div class="item clearfix">
+      <div class="col-xs-6">
+        <div class="row">
+          <div class="steps-title"><%= Spree.t(:shipments) %> <%= link_to "(#{Spree.t(:edit)})", checkout_state_path(:delivery) unless order.completed? %></div>
+          <div class="steps-content">
+            <% order.shipments.each do |shipment| %>
+              <div>
+                <i class='fa fa-truck'></i>
+                <%= Spree.t(:shipment_details, stock_location: shipment.stock_location.name, shipping_method: shipment.selected_shipping_rate.name) %>
+              </div>
+            <% end %>
+            <%= render 'spree/shared/shipment_tracking', order: order if order.shipped? %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>
 
-<div class="border-table order">
+<div class="border-table order hidden-xs">
   <table id='line-items' data-hook="order_details">
     <col width="15%" valign="middle" halign="center">
     <col width="40%" valign="middle">
@@ -95,6 +135,31 @@
       <% end %>
     </tbody>
   </table>
+</div>
+<div class="visible-xs-block xs-border-table">
+  <% order.line_items.each do |item| %>
+    <div class="item clearfix">
+      <div class="item-image">
+        <% if item.variant.images.length == 0 %>
+          <%= small_image(item.variant.product) %>
+        <% else %>
+          <%= image_tag(item.variant.images.first.attachment.url(:small)) %>
+        <% end %>
+      </div>
+      <div class="item-detail">
+        <div class="text">
+          <%= item.variant.product.name %><br>
+          <span class="func">
+            <%= truncated_product_description(item.variant.product) %>
+            <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
+          </span>
+        </div>
+        <div class="price"><%= item.single_money.to_html %></div>
+        <% type = item.quantity > 1 ? {"d"=>Spree.t(:"homepage.bar_days"), "w"=>Spree.t(:"homepage.bar_weeks"), "m"=>Spree.t(:"homepage.bar_months")} : {"d"=>Spree.t(:"homepage.bar_day"), "w"=>Spree.t(:"homepage.bar_week"), "m"=>Spree.t(:"homepage.bar_month")} %>
+        <div class="qty"><%= item.quantity %><%= ' ' + type[item.variant.sku[3]] %></div>
+      </div>
+    </div>
+  <% end %>
 </div>
 
 <div class="summary-table">
