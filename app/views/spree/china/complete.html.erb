@@ -7,11 +7,10 @@
 <% end %>
 
 <fieldset id="order_summary" data-hook>
-  <div class="container">
+  <div class="container" id="china-complete">
     <% if order_just_completed?(@order) %>
     <div style="text-align:center">
       <img style="width:63px;" src="<%= "#{Rails.application.config.customer_service_wechat_icon[0]}" %>">
-      <img style="width:64px;" src="<%= "#{Rails.application.config.customer_service_wechat_qrcode[0]}" %>">
     </div>
     <br/>
     <div class="order-number">
@@ -26,6 +25,8 @@
     <br/>
     <br/>
     <br/>
+    <img style="width:100px;" src="<%= "#{Rails.application.config.customer_service_wechat_qrcode[0]}" %>">
+    <p>长按识别二维码加微信</p>
     <p>以下是您本次的订单信息：</p>
     <% end %>
     <div class="order-number">
