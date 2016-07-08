@@ -269,7 +269,7 @@
         if (this.validate()) {
           this.processing = true
           var that = this
-          window.location.href = '<%= "#{china_login_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
+          window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
           that.processing = false
         }
       },

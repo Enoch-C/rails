@@ -7,7 +7,7 @@ module Spree
       @promoter_email = params["p"]
     end
 
-    def login
+    def checkout
       @order = Spree::Order.new
       @order.promoter = Spree::Promoter.find_by_email(params["p"])
 
@@ -35,22 +35,17 @@ module Spree
       @order.save!
     end
 
-    def checkout
+    def pay
+      @order = Spree::Order.find(params[:id])
+
       phone = "86" + params["mobile"]
       user = Spree::User.find_or_create_by("email": "#{phone}@coolchoice.com")
       user.password = user.email + "3?~0vo"
       user.save!
-      @order = Spree::Order.find(params[:id])
       @order.associate_user!(user)
-      @order.save!
-      @province = provinces.invert
-    end
 
-    def pay
-      @order = Spree::Order.find(params[:id])
       name = params["name"]
       state = provinces[params["province"].to_sym]
-
       address = Spree::Address.new
       address.firstname = name[1,name.size-1]
       address.lastname = name[0]

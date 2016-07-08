@@ -1,7 +1,6 @@
-<% if false %>
 <div class="shipping">
-  <div class="name">收件人：<span class="phone">18262392410</span></div>
-  <div class="address">收货地址：</div>
+  <div class="name">收件人：<%= @order.ship_address.lastname %><%= @order.ship_address.firstname %><span class="phone"><%= @order.ship_address.phone %></span></div>
+  <div class="address">收货地址：<%= @order.ship_address.state.name %> <%= @order.ship_address.city %> <%= @order.ship_address.address2 %><br/><%= @order.ship_address.address1 %></div>
 </div>
 <div class="china-item row">
   <div class="clearfix">
@@ -9,13 +8,13 @@
       <%= image_tag("china/package.png")%>
     </div>
     <div class="item-details">
-      <div class="fun">美容养颜 美容养颜 美容养颜 <br>6g/包</div>
-      <div class="qty">x1</div>
-      <div class="price">$39.99</div>
+      <div class="fun"><%= @order.line_items[0].variant.options_text %> <br>6g/包 * 30包 * 1盒</div>
+      <div class="qty">x<%= @order.line_items[0].quantity %></div>
+      <div class="price">$<%= @order.line_items[0].quantity * @order.line_items[0].price %></div>
     </div>
   </div>
-  <div class="fee">邮费<span>$5.00</span></div>
-  <div class="total">总计<span>$44.99</span></div>
+  <div class="fee">邮费<span><%= Spree::Money.new(@order.shipments.to_a.sum(&:cost), currency: @order.currency).to_html %></span></div>
+  <div class="total">总计<span><%= @order.display_total.to_html %></span></div>
 </div>
 <div class="plane">
   <div class="line"></div>
@@ -23,8 +22,7 @@
   <div class="line"></div>
 </div>
 <p>订单确认后，美国加利福尼亚Cool Choice总部在48小时之内完成定制并发货，经国际物流（空运）及清关后送到您手中，时间约20天左右。</p>
-<% end %>
-
+<% if false %>
 <div class="border-table steps">
   <table>
     <thead>
@@ -171,3 +169,4 @@
     </tbody>
   </table>
 </div>
+<% end %>
