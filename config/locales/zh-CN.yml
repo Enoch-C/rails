@@ -1,5 +1,9 @@
 zh-CN:
   spree:
+    confirm_promoter_parent_email:
+      subject1: 你的大使
+      subject2: 收到佣金
+      subject3: 的大使
     order_processed_successfully: 已成功定制
     subtotal: 商品金额
     summary_table:

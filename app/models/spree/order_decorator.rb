@@ -20,12 +20,15 @@ Spree::Order.class_eval do
     Spree::OrderMailer.confirm_email(id).deliver_later
     update_column(:confirmation_delivered, true)
 
-    order_promoter = nil
-    promotions.each do |p|
-      if p.promoter
-        order_promoter = p.promoter
+    order_promoter = self.promoter
+    unless order_promoter
+      promotions.each do |p|
+        if p.promoter
+          order_promoter = p.promoter
+        end
       end
     end
+
     if user.order_count == 1
       if order_promoter
         user.promoter = order_promoter
@@ -62,6 +65,16 @@ Spree::Order.class_eval do
         self.save
         if credit_amount > 0
           Spree::OrderMailer.confirm_promoter_email(user.promoter, credit_amount).deliver_later
+          user.promoter.parent
+          if user.promoter.parent
+            Spree::OrderMailer.confirm_promoter_parent_email(user.promoter, credit_amount).deliver_later
+            if user.promoter.parent.parent
+              Spree::OrderMailer.confirm_promoter_parent_parent_email(user.promoter, credit_amount).deliver_later
+              if user.promoter.parent.parent.parent
+                Spree::OrderMailer.confirm_promoter_parent_parent_parent_email(user.promoter, credit_amount).deliver_later
+              end
+            end
+          end
         end
       else
         # outdate bind

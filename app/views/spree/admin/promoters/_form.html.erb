@@ -55,4 +55,38 @@
     <% end %>
   </div>
 
+
+  <div class="col-md-6">
+    <%= f.field_container :identity, class: ['form-group'] do %>
+      <%= f.label :identity, Spree.t(:promoter_identity) %>
+      <%= f.text_field :identity, :class => 'form-control' %>
+      <%= error_message_on :promoter, :identity %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.field_container :payment, class: ['form-group'] do %>
+      <%= f.label :payment, Spree.t(:promoter_payment) %>
+      <%= f.text_field :payment, :class => 'form-control' %>
+      <%= error_message_on :promoter, :payment %>
+    <% end %>
+  </div>
+
+
+  <div class="col-md-6">
+    <%= f.field_container :parent_email, class: ['form-group'] do %>
+      <%= f.label :parent_email, Spree.t(:promoter_parent_email) %>
+      <%= f.text_field :parent_email, :class => 'form-control' %>
+      <%= error_message_on :promoter, :parent_email %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.field_container :note, class: ['form-group'] do %>
+      <%= f.label :note, Spree.t(:promoter_note) %>
+      <%= f.text_area :note, :class => 'form-control' %>
+      <%= error_message_on :promoter, :note %>
+    <% end %>
+  </div>
+
 </div>

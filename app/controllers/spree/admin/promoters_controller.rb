@@ -81,7 +81,7 @@ module Spree
       private
 
       def promoter_params
-        params.require(:promoter).permit(:phone, :secret, :email, :first_name, :last_name, :percent)
+        params.require(:promoter).permit(:phone, :secret, :email, :first_name, :last_name, :percent, :parent_id, :payment, :note, :identity, :parent_email)
       end
 
       # Allow different formats of json data to suit different ajax calls

@@ -4,10 +4,12 @@ module Spree
     skip_before_filter  :verify_authenticity_token
 
     def index
+      @promoter_email = params["p"]
     end
 
     def login
       @order = Spree::Order.new
+      @order.promoter = Spree::Promoter.find_by_email(params["p"])
 
       variant = nil
       if params[:line_item][:variant_id]

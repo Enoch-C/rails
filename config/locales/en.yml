@@ -1,5 +1,10 @@
 en:
   spree:
+    confirm_promoter_parent_email:
+      subject1: your promoter
+      subject2: has received Promotion Credit
+      subject3: "'s promoter"
+    identity: Identity
     head_bar:
       WHY_COOL_CHOICE: Why Cool Choice
       GIFT: Send a Gift

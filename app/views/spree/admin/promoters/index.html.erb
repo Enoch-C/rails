@@ -41,6 +41,14 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label Spree.t(:identity) %>
+            <%= f.text_field :identity_cont, :class => 'form-control' %>
+          </div>
+        </div>
+      </div>
       <div data-hook="admin_pormoters_index_search_buttons" class="form-actions">
         <%= button Spree.t(:search), 'search' %>
       </div>
