@@ -128,13 +128,6 @@ textarea
   margin: 20px 0
   @media (max-width: 768px)
     width: 300px
-  .summary-title
-    padding: 15px
-    font-size: 20px
-    font-weight: 500
-    @media (max-width: 768px)
-      padding: 10px 0
-      font-size: 16px
   table
     table-layout: fixed
     width: 100%
@@ -145,6 +138,16 @@ textarea
     @media (max-width: 768px)
       margin-bottom: 10px
       font-size: 14px
+    caption
+      color: #474c5d
+      padding: 15px 0
+      font-size: 20px
+      font-weight: 500
+      border-bottom: .5px solid #dedede
+      margin-bottom: 10px
+      @media (max-width: 768px)
+        padding: 10px 0
+        font-size: 16px
     img
       width: 110px
       height: 110px
@@ -153,15 +156,10 @@ textarea
       display: inline-block
       .func
         font-weight: 600
-    thead
-      font-weight: 600
-      text-align: left
-      th
-        padding: 19px 0
     tbody
-      border-top: .5px solid #dedede
+      // border-top: .5px solid #dedede
       td
-        padding: 20px 0
+        padding: 10px 0
         border: 0
         @media (max-width: 768px)
           padding: 5px 0
@@ -174,16 +172,20 @@ textarea
         tr:last-child
           font-weight: 500
           color: #474c5d
-      @media (max-width: 768px)
-        &:first-child
-          td
-            padding-top: 15px
+      // &:first-child
+      //   td
+      //     padding-top: 20px
+      // @media (max-width: 768px)
+      //   &:first-child
+      //     td
+      //       padding-top: 15px
 .form-title
   margin: 40px 0 20px
   font-size: 20px
   font-weight: 600
   color: #474c5d
   @media (max-width: 768px)
+    margin: 25px 0 10px
     font-size: 16px
 .form-content
   label
@@ -512,19 +514,19 @@ input.button
       text-align: center
 #account
   .account
-    width: 396px
     margin: 60px auto 40px
-    text-align: center
-    thead
-      color: #474c5d
-      font-size: 20px
-    th
+    caption,
+    td
       text-align: center
+    td
+      font-weight: 400
     .email
       font-weight: 500
-      color: #474c5d
     .user-email
-      margin: 5px 0 22px
+      font-weight: 300
+      margin: 5px 0 20px
+      @media (max-width: 768px)
+        margin-bottom: 5px
     .edit,
     .facebook
       .button
@@ -534,6 +536,8 @@ input.button
         line-height: 30px
         margin: 8px 0
         font-size: 16px
+        @media (max-width: 768px)
+          font-size: 14px
     .facebook
       .button
         background: #678fc9
@@ -544,6 +548,31 @@ input.button
       tbody
         td
           padding: 40px 0
+  .form-title
+    @media (max-width: 768px)
+      padding-left: 20px
+  .xs-border-table
+    .order
+      border-bottom: 1px solid #dedede
+      padding: 0 12px
+      font-size: 14px
+      font-weight: 300
+      color: #787878
+      .col-1
+        font-weight: 500
+      .col-1,
+      .col-2
+        padding: 0 8px
+        width: 50%
+        float: left
+      .order-num
+        padding: 10px 0
+        border-bottom: solid .5px #dedede
+        a
+          color: #00b9ee
+          font-size: 16px
+      .order-details
+        margin: 10px 0
 // #coolchoice-header
 //   display: none
 
@@ -979,6 +1008,8 @@ input.button
     height: 500px
     text-align: center
     color: #fff
+    @media (max-width: 768px)
+      height: 220px
     .container
       height: 100%
       position: relative
@@ -986,10 +1017,16 @@ input.button
         margin-top: 141px
         font-size: 60px
         font-weight: 500
+        @media (max-width: 768px)
+          margin-top: 56px
+          font-size: 30px
       .sub-title
         font-size: 25px
         font-weight: 300
         margin: 0 auto 40px
+        @media (max-width: 768px)
+          margin: 0 auto 20px
+          font-size: 14px
       .gift
         display: inline-block
         border-radius: 3px
@@ -1002,6 +1039,10 @@ input.button
           width: 259px
           height: 60px
           font-size: 16px
+          @media (max-width: 768px)
+            width: 150px
+            height: 35px
+            font-size: 12px
         select
           font-weight: 300
           background: rgba(255, 255, 255, 0.8)
@@ -1017,12 +1058,17 @@ input.button
           img
             width: 15px
             margin-left: 21px
+            @media (max-width: 768px)
+              display: none
   .section-2
     text-align: center
     // height: 361px
     margin: 40px auto 20px
+    @media (max-width: 768px)
+      margin: 20px auto
     .para
       .img
+        position: relative
         height: 153px
         text-align: center
         &:before
@@ -1031,60 +1077,104 @@ input.button
           height: 100%
           content: ""
           vertical-align: bottom
+        .icon-order
+          width: 125px
+        .icon-email
+          width: 110px
+        .icon-gift
+          width: 118px
+        .arrow
+          position: absolute
+          right: 100%
+          top: 55%
+          width: 28px
+          &:last-child
+            left: 100%
+        @media (max-width: 768px)
+          height: 65px
+          .icon-order
+            width: 60px
+          .icon-email
+            width: 50px
+          .icon-gift
+            width: 60px
+          .arrow
+            width: 15px
       .title
         max-width: 300px
         margin: 31px auto 10px
         font-size: 25px
         font-weight: 500
         color: #474c5d
-      p
-        font-family: Helvetica
-        font-size: 20px
-        font-weight: 300
-        color: #a6a4a4
+        @media (max-width: 768px)
+          max-width: 118px
+          margin-top: 10px
+          font-size: 12px
 #why
-  .text
-    display: inline-block
-    width: 40%
-    height: 350px
-    margin: 0 3%
-    &:before
-      display: inline-block
-      width: 0
-      height: 100%
-      content: ""
-      vertical-align: middle
-    .middle
-      display: inline-block
-      vertical-align: middle
-      width: 90%
-      p
-        text-align: justify
-        line-height: 1.6
-        font-size: 16px
-        color: #787878
-      .title
-        width: 380px
-        margin-bottom: 11px
-        font-size: 30px
-        color: #474c5d
-  .img
-    img
-      width: 585px
-  .section-1,
-  .section-2
-    height: 350px
+  .section
+    background: #f7f8fa
     >.container
       position: relative
-  .para-left
-    position: absolute
-    left: 0
-  .para-right
-    position: absolute
-    right: 0
-  .section-1
-    background: #f7f8fa
-
+      height: 350px
+      .img
+        height: 100%
+        position: absolute
+        left: 0
+        margin: 0 3%
+        img
+          width: 350px
+        &:before
+          display: inline-block
+          width: 0
+          height: 100%
+          content: ""
+          vertical-align: middle
+      .text
+        position: absolute
+        right: 0
+        // display: inline-block
+        width: 40%
+        height: 100%
+        margin: 0 3%
+        &:before
+          display: inline-block
+          width: 0
+          height: 100%
+          content: ""
+          vertical-align: middle
+        .middle
+          display: inline-block
+          vertical-align: middle
+          width: 90%
+        p
+          text-align: justify
+          line-height: 1.6
+          font-size: 16px
+          color: #787878
+        .title
+          width: 106%
+          margin-bottom: 11px
+          font-size: 30px
+          color: #474c5d
+      @media (max-width: 768px)
+        height: 220px
+        .img
+          img
+            width: 165px
+        .text
+          width: 50%
+          .title
+            font-size: 16px
+          p
+            line-height: 1.4
+            font-size: 10px
+    &:nth-child(even)
+      background: #fff
+      .img
+        right: 0
+        left: auto
+      .text
+        left: 0
 
 #gift-message
   .card
@@ -1092,54 +1182,52 @@ input.button
     width: 700px
     height: 400px
     margin: 40px auto
-    background: image-url("gift/bj_gift_card.jpg")
-    .product
-      position: absolute
-      left: 130px
-      bottom: 64px
-      width: 67px
+    background: image-url("gift/giftcard.jpg") center/100%
+    @media (max-width: 768px)
+      width: 300px
+      height: 171.4px
     .word
       position: absolute
-      top: 100px
-      right: 116px
-      width: 316px
-      height: 211px
+      top: 25%
+      right: 16%
+      width: 45%
+      height: 53%
       font-family: AngsanaNew
       font-style: italic
       color: #474c5d
-      .line
-        position: absolute
-        width: 316px
-        top: 40px
-        right: 0
+      font-size: 20px
+      line-height: 2.1
+      @media (max-width: 768px)
+        font-size: 12px
+        line-height: 1.45
       .this
         font-size: 24px
-        line-height: 50px
-        padding-left: 10px
+        // line-height: 50px
+        padding-left: 1%
+        @media (max-width: 768px)
+          font-size: 16px
       .recipient_name
-        right: 73px
-        top: 10px
-        width: 200px
-        font-size: 20px
+        right: 26%
+        top: 0
+        width: 60%
         text-align: center
       .message
-        top: 43px
+        top: 20%
         right: 0
         width: 100%
-        height: 130px
-        line-height: 42px
-        font-size: 20px
+        height: 63%
         color: #a6a4a4
       .from
         position: absolute
         bottom: 0
-        right: 143px
+        right: 35%
         font-size: 24px
+        @media (max-width: 768px)
+          font-size: 16px
       .your_name
         right: 0
         bottom: 0
-        width: 140px
-        font-size: 20px
+        width: 34%
         text-align: center
       input,
       textarea
@@ -1147,31 +1235,6 @@ input.button
         border: 0
         background: transparent
   .detail
-    border: 1px solid #dedede
-    padding: 0 20px
-    margin: 20px 0
-    table
-      table-layout: fixed
-      width: 100%
-      font-size: 16px
-      font-weight: 300
-      color: #787878
-      img
-        width: 110px
-        height: 110px
-        margin: 30px 15px 30px 0px
-      .text
-        display: inline-block
-        .func
-          font-weight: 600
-      thead
-        font-weight: 600
-        text-align: left
-        th
-          padding: 19px 0
-      tbody
-        tr
-          border-top: .5px solid #dedede
 #checkout
   .checkout-nav
     position: relative
@@ -1243,7 +1306,6 @@ input.button
       list-style: none
   .summary-table
     table
-      border-top: solid .5px #dedede
       tbody
         border: 0
   .payment
