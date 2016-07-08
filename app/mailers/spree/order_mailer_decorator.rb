@@ -55,4 +55,11 @@ Spree::OrderMailer.class_eval do
     subject += "Welcome to Cool Choice"
     mail(to: email, from: from_address, subject: subject)
   end
+
+  def confirm_email_to_staff(order, resend = false)
+    @order = order.respond_to?(:id) ? order : Spree::Order.find(order)
+    subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
+    subject += "#{Spree::Store.current.name} #{Spree.t('order_mailer.confirm_email.subject')} ##{@order.number}"
+    mail(to: "orders@coolchoice.com", from: from_address, subject: subject)
+  end
 end
