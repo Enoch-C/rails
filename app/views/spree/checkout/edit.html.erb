@@ -6,7 +6,7 @@
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
   <div class="" data-hook="checkout_header">
-    <div class="checkout-nav clearfix">
+    <div class="checkout-nav clearfix hidden-xs">
       <% states = @order.checkout_steps %>
       <% items = states.each_with_index.map do |state, i| %>
         <% style = '' %>
@@ -29,6 +29,34 @@
           <% style = '' %>
           <% unless i == 0 %>
             <% style = 'left: ' + (((658.0-10*states.size)/(states.size-1))*i+10*i).to_s + 'px' %>
+          <% end %>
+          <div style="<%= style %>" class="circle"></div>
+        <% end %>
+      </div>
+    </div>
+    <div class="checkout-nav clearfix visible-xs-block">
+      <% states = @order.checkout_steps %>
+      <% items = states.each_with_index.map do |state, i| %>
+        <% style = '' %>
+        <% unless i == 0 %>
+          <% style = 'margin-left: ' + ((320.0-53*states.size)/(states.size-1)).to_s + 'px' %>
+        <% end %>
+        <% if states.index(state) < states.index(@order.state) %>
+          <a style="display:block" href="<%= checkout_state_path(state) %>">
+        <% end %>
+        <div style = "<%= style %>" class="<%= @order.state == state ? 'order-state active' : 'order-state' %>">
+          <div class="circle"></div>
+          <div class="state"><%= Spree.t('spree.'+state) %></div>
+        </div>
+        <% if states.index(state) < states.index(@order.state) %>
+          </a>
+        <% end %>
+      <% end %>
+      <div class="line">
+        <% items = states.each_with_index.map do |state, i| %>
+          <% style = '' %>
+          <% unless i == 0 %>
+            <% style = 'left: ' + (((277.0-10*states.size)/(states.size-1))*i+10*i).to_s + 'px' %>
           <% end %>
           <div style="<%= style %>" class="circle"></div>
         <% end %>
