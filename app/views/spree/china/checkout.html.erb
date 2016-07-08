@@ -1,11 +1,57 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
 <% self.title = "Address" %>
 <% @body_id = 'Address' %>
-<div>
+<div id="china-checkout">
   <div class="container" >
     <div id="errorMessageDiv" style="display:none;">请填写所有必填栏*</div>
 
     <%= form_for @order, url: china_pay_path, html: { }  do |form| %>
+    <% if false %>
+    <div class="china-address">
+      <div class="china-form">
+        <div class="china-label">收件人</div>
+        <div class="china-input">
+          <input name="name" placeholder="姓名" value="<%= "#{@order.bill_address.lastname}#{@order.bill_address.firstname}"  if @order.bill_address %>" required></input>
+        </div>
+      </div>
+      <div class="china-form">
+        <div class="china-label">联系方式</div>
+        <div class="china-input">
+          <input name="mobile" placeholder="手机号" style="width:70%" type="tel" pattern=".{11,11}" required></input>
+        </div>
+      </div>
+      <div data-toggle="distpicker">
+        <div class="china-form">
+          <div class="china-label">省</div>
+          <div class="china-input">
+            <select placeholder="姓名" name="province" data-province="<%= "#{@province[@order.bill_address.state.name]}"  if @order.bill_address %>" required></select>
+          </div>
+        </div>
+        <div class="china-form">
+          <div class="china-label">市</div>
+          <div class="china-input">
+            <select placeholder="姓名" name="city" data-city="<%= "#{@order.bill_address.city}"  if @order.bill_address %>" required></select>
+          </div>
+        </div>
+        <div class="china-form">
+          <div class="china-label">区</div>
+          <div class="china-input">
+            <select placeholder="姓名" name="sub" data-district="<%= "#{@order.bill_address.address2}"  if @order.bill_address %>"></select>
+          </div>
+        </div>
+      </div>
+      <div class="china-form">
+        <div class="china-label">详细地址</div>
+        <div class="china-input">
+          <input placeholder="如楼层 门牌号" name="street" value="<%= "#{@order.bill_address.address1}"  if @order.bill_address %>" required></input>
+        </div>
+      </div>
+      <div class="next-step" data-hook="buttons">
+        <%= submit_tag '下一步' %>
+      </div>
+    </div>
+    <% end %>
+
     <div class="row form-content">
       <div class="col-sm-6" >
         <div class="" id="billing" data-hook>
@@ -31,10 +77,10 @@
         </div>
       </div>
     </div>
-
     <div class="" data-hook="buttons">
       <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
     </div>
+
     <% end %>
   </div>
 </div>

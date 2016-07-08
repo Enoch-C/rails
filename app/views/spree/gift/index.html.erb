@@ -20,15 +20,19 @@
   <div class="section-2">
     <div class="container">
       <div class="para col-xs-4">
-        <div class="img"><%= image_tag("gift/icon-order.png") %></div>
+        <div class="img"><%= image_tag("gift/icon-order.png", class: "icon-order") %></div>
         <div class="title"><%= Spree.t(:'gift.order') %></div>
       </div>
       <div class="para col-xs-4">
-        <div class="img"><%= image_tag("gift/icon-email.png") %></div>
+        <div class="img">
+          <%= image_tag("gift/icon-email.png", class: "icon-email") %>
+          <%= image_tag("gift/icon-arrow@2x.png", class: "arrow") %>
+          <%= image_tag("gift/icon-arrow@2x.png", class: "arrow") %>
+        </div>
         <div class="title"><%= Spree.t(:'gift.email') %></div>
       </div>
       <div class="para col-xs-4">
-        <div class="img"><%= image_tag("gift/icon-gift.png") %></div>
+        <div class="img"><%= image_tag("gift/icon-gift.png", class: "icon-gift") %></div>
         <div class="title"><%= Spree.t(:'gift.gift') %></div>
       </div>
     </div>
@@ -48,7 +52,7 @@
     },
     watch: {
       countryCode: function() {
-        console.log(this.countryCode);
+        // console.log(this.countryCode);
       },
     },
     methods: {
