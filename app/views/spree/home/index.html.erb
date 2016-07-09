@@ -91,6 +91,7 @@
         <template v-for="feature in feature_list">
           <div :class="['choose-box', feature]" @click="tick_or_not(feature)">
             <div :class="['choose-label', {'selected': ~result.indexOf(feature)}]">
+              <%= image_tag("home/tick.png", class: "check") %>
               <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)">
               <div class="text" :id="'text_' + ($index + 1)">
                 {{t[$index]}}

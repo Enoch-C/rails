@@ -40,6 +40,7 @@
         <template v-for="feature in feature_list">
           <div :class="['choose-box', feature]" @click="tick_or_not(feature)">
             <div :class="['choose-label', {'selected': ~result.indexOf(feature)}]">
+              <%= image_tag("home/tick.png", class: "check") %>
               <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)">
               <div class="text" :id="'text_' + ($index + 1)">
                 {{t[$index]}}
@@ -61,7 +62,10 @@
       <div class="customize">
         <div class="func">
           <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
-          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("https://basaio.b0.upaiyun.com/coolchoice/images/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
+          <div v-for="(i, func) in result" class="box">
+            <img class="icon" :src="'https://basaio.b0.upaiyun.com/coolchoice/images/icon-' + func + '@2x.png'">
+            <img src="https://basaio.b0.upaiyun.com/coolchoice/images/icon_delet@2x.png" class="delete" @click="result.splice(i, 1)">
+          </div>
         </div>
         <div class="qty">
           <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>

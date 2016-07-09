@@ -957,10 +957,17 @@ input.button
             cursor: pointer
         .choose-label
           min-width: 140px
-          &.selected
-            background: image-url('home/tick.png') 95% 0/18px no-repeat
+          position: relative
+          .check
+            display: none
+            width: 18px
+            position: absolute
+            right: 0
+            top: 0
+          &.selected .check
+            display: block
             @media (max-width: 768px)
-              background-size: 12px
+              width: 12px
           @media (max-width: 768px)
             min-width: 100px
           .img
@@ -1056,6 +1063,7 @@ input.button
             border-radius: 50%
             margin: 0 20px 20px 0
             background: rgba(255, 255, 255, 0.2)
+            position: relative
             @media (max-width: 768px)
               width: 30px
               height: 30px
@@ -1067,13 +1075,16 @@ input.button
               width: 50px
               border-radius: 50%
               background: rgba(0, 0, 0, 0.2)
+              position: absolute
+              left: 0
+              top: 0
               @media (max-width: 768px)
                 width: 100%
                 margin: 0
-          .hover
-            &:hover
-              .delete
-                display: block
+            .icon
+              width: 100%
+            &:hover .delete
+              display: block
           .bg-Anti-Aging
             background: image-url("home/icon-Anti-Aging@2x.png") center/100% no-repeat
           .bg-Beauty
