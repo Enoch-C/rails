@@ -4,7 +4,7 @@
 <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
 <div id="china-pay">
-  <div v-if="!paid">
+  <div class="unpaid">
     <div class="china-item clearfix">
       <div class="item-image">
         <%= image_tag("china/package.png")%>
@@ -34,36 +34,39 @@
       <div class="line"></div>
     </div>
     <p style="margin: 0 20px">订单确认后，美国加利福尼亚Cool Choice总部在48小时之内完成定制并发货，经国际物流（空运）及清关后送到您手中，时间约20天左右。</p>
-    <div class="next-step">
-      <div class="total">总计： <%= @order.display_total.to_html %></div>
-        <%= form_for @order, url: china_complete_path, html: { }  do |form| %>
-          <input name="id" value="<%= @order.id %>" hidden="hidden" />
-            <ul class="list-group" id="payment-method-fields" style="display: none" data-hook>
+  </div>
+  <div class="next-step">
+    <div class="total">总计： <%= @order.display_total.to_html %></div>
+      <%= form_for @order, url: china_complete_path, html: { }  do |form| %>
+        <input name="id" value="<%= @order.id %>" hidden="hidden" />
+          <ul class="list-group" id="payment-method-fields" style="display: none" data-hook>
+            <% @order.available_payment_methods.each do |method| %>
+            <% if method.method_type == 'stripe' %>
+              <li class="list-group-item">
+                <label>
+                  <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
+                  <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
+                </label>
+              </li>
+              <% end %>
+              <% end %>
+          </ul>
+            <ul class="nav" id="payment-methods" data-hook>
               <% @order.available_payment_methods.each do |method| %>
               <% if method.method_type == 'stripe' %>
-                <li class="list-group-item">
-                  <label>
-                    <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
-                    <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
-                  </label>
+                <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook="buttons">
+                  <fieldset>
+                    <%= render :partial => "stripe", :locals => { :payment_method => method } %>
+                  </fieldset>
                 </li>
                 <% end %>
-                <% end %>
+              <% end %>
             </ul>
-              <ul class="nav" id="payment-methods" data-hook>
-                <% @order.available_payment_methods.each do |method| %>
-                <% if method.method_type == 'stripe' %>
-                  <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook="buttons">
-                    <fieldset>
-                      <%= render :partial => "stripe", :locals => { :payment_method => method } %>
-                    </fieldset>
-                  </li>
-                  <% end %>
-                <% end %>
-              </ul>
-        <% end %>
-
-    </div>
+      <% end %>
+  </div>
+  <div class="then">
+    <%= image_tag("china/clock.png")%><br>
+    订单确认中……请耐心等待
   </div>
 
 </div>
@@ -74,6 +77,13 @@
   $().ready(function () {
     if ($("#payment-methods button")) {
       $("#payment-methods button").attr("class", "pay-button")
+      $("#payment-methods button").click(function() {
+        $(".then").show()
+        $(".unpaid").hide()
+        $(".next-step")[0].style.visibility="hidden"
+        $(this).css({"background": "#dedede", "visibility": "hidden"})
+      })
     }
   })
+
 </script>
