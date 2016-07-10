@@ -69,6 +69,7 @@
     <% @promoters.each do |promoter|%>
       <tr id="<%= spree_dom_id promoter %>" data-hook="admin_promoters_index_rows">
         <td class='user_email'><%=link_to promoter.email, edit_admin_promoter_url(promoter) %></td>
+        <td><%= promoter.store_credit %></td>
         <td data-hook="admin_promoters_index_row_actions" class="actions actions-2 text-right">
           <%= link_to_edit promoter, :no_text => true %>
           <%= link_to_delete promoter, :no_text => true %>
