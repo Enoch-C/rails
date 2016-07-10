@@ -3,9 +3,6 @@
 <% @body_id = 'Address' %>
 <div id="china-checkout">
   <div class="container" >
-    <div id="errorMessageDiv" style="display:none;">请填写所有必填栏*</div>
-    <div id="errorMessageDiv2" style="display:none;">请输入11位手机号码*</div>
-
     <%= form_for @order, url: china_pay_path, html: { }  do |form| %>
 
     <div class="china-address">
@@ -95,15 +92,15 @@
   var form = document.getElementById('edit_order_' + "<%= @order.id %>"); // form has to have ID: <form id="formID">
   form.noValidate = true;
   form.addEventListener('submit', function(event) { // listen for form submitting
-          if (!event.target.checkValidity()) {
-              event.preventDefault(); // dismiss the default functionality
+    if (!event.target.checkValidity()) {
+      event.preventDefault(); // dismiss the default functionality
 
-              console.log(event.target)
-              if (event.target == mobile) {
-                document.getElementById('errorMessageDiv2').style.display = 'block'; // error message
-              }
-              document.getElementById('errorMessageDiv').style.display = 'block'; // error message
-          }
-      }, false);
+      if (mobile.value.length !== 11) {
+        window.alert('请输入11位手机号码*')
+      } else {
+        window.alert('请填写所有必填栏*')
+      }
+    }
+  }, false);
 
 </script>
