@@ -1,5 +1,21 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+
 <% @order = Spree::Order.find(params["order_id"]) %>
+<script>
+(function(window, location) {
+history.replaceState(null, document.title, location.pathname+"#!/history");
+history.pushState(null, document.title, location.pathname);
+
+window.addEventListener("popstate", function() {
+  if(location.hash === "#!/history") {
+    history.replaceState(null, document.title, location.pathname);
+    setTimeout(function(){
+      location.replace("<%= Rails.application.config.webhost %>" + "/zh-CN/china?p=" + "<%= @order.promoter.email %>");
+    },0);
+  }
+}, false);
+}(window, location));
+</script>
 <% self.title = "Complete" %>
 
 <fieldset id="order_summary" data-hook>
