@@ -1,5 +1,5 @@
 module Spree
-  Spree::OrderMailer.class_eval do
+  Spree::BaseMailer.class_eval do
     def mail(headers = {}, &block)
       if headers[:to].start_with?("86") && headers[:to].end_with?("@coolchoice.com")
         headers[:subject] += "手机#{headers[:to][2,11]}"
