@@ -24,9 +24,8 @@ module Spree
           nil || {}
       )
 
-      if @line_item.errors.empty?
-        respond_with(@line_item, status: 201, default_template: :show)
-      else
+      unless @line_item.errors.empty?
+        puts @line_item.error_messages
         invalid_resource!(@line_item)
       end
 
@@ -73,11 +72,11 @@ module Spree
       @order.set_shipments_cost
       @order.apply_free_shipping_promotions
 
-      packages = @order.shipments.map(&:to_package)
-      @differentiator = Spree::Stock::Differentiator.new(@order, packages)
-      @differentiator.missing.each do |variant, quantity|
-        @order.contents.remove(variant, quantity)
-      end
+      # packages = @order.shipments.map(&:to_package)
+      # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
+      # @differentiator.missing.each do |variant, quantity|
+      #   @order.contents.remove(variant, quantity)
+      # end
       @order.state = "payment"
       @order.update_totals
       @order.persist_totals
