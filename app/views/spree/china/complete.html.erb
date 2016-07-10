@@ -10,7 +10,7 @@ window.addEventListener("popstate", function() {
   if(location.hash === "#!/history") {
     history.replaceState(null, document.title, location.pathname);
     setTimeout(function(){
-      location.replace("<%= Rails.application.config.webhost %>" + "/zh-CN/china?p=" + "<%= @order.promoter.email %>");
+      location.replace("<%= Rails.application.config.webhost %>" + "/zh-CN/china?p=" + "<%= @order.promoter.email if @order.promoter %>");
     },0);
   }
 }, false);
