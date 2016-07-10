@@ -65,8 +65,9 @@ end
 Spree::Core::Engine.add_routes do
   get '/china', to: 'china#index'
   get '/china/checkout', to: 'china#checkout'
-  patch '/china/pay', to: 'china#pay'
-  patch '/china/complete', to: 'china#complete'
+  get '/china/pay', to: 'china#pay'
+  patch '/china/processpay', to: 'china#processpay'
+  get '/china/complete', to: 'china#complete'
   get '/why', to: 'why#index'
   get '/gift', to: 'gift#index'
   get '/gift/my_gift', to: 'gift#my_gift'

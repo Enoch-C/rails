@@ -8,7 +8,7 @@
       <%= image_tag("china/package.png")%>
     </div>
     <div class="item-details">
-      <div class="fun"><%= @order.line_items[0].variant.options_text %> <br>6g/包 * 30包 * 1盒</div>
+      <div class="fun"><%= @order.line_items[0].variant.options_text_cn %> <br>6g/包 * 30包 * 1盒</div>
       <div class="qty">x<%= @order.line_items[0].quantity %></div>
       <div class="price">$<%= @order.line_items[0].quantity * @order.line_items[0].price %></div>
     </div>
@@ -98,7 +98,7 @@
           <td data-hook="order_item_description">
             <h4><%= item.variant.product.name %></h4>
             <%= truncated_product_description(item.variant.product) %>
-            <%= "(" + item.variant.options_text + ")" unless item.variant.option_values.empty? %>
+            <%= "(" + item.variant.options_text_cn + ")" unless item.variant.option_values.empty? %>
           </td>
           <% type = item.quantity > 1 ? {"d"=>Spree.t(:"homepage.bar_days"), "w"=>Spree.t(:"homepage.bar_weeks"), "m"=>Spree.t(:"homepage.bar_months")} : {"d"=>Spree.t(:"homepage.bar_day"), "w"=>Spree.t(:"homepage.bar_week"), "m"=>Spree.t(:"homepage.bar_month")} %>
           <td data-hook="order_item_qty"><%= item.quantity %><%= ' ' + type[item.variant.sku[3]] %></td>

@@ -3,10 +3,11 @@
 <% @body_id = 'Address' %>
 <div id="china-checkout">
   <div class="container" >
-    <%= form_for @order, url: china_pay_path, html: { }  do |form| %>
-
+    <form id="checkout-form" method="get" action="<%= spree.china_pay_path %>" accept-charset="UTF-8">
     <div class="china-address">
-      <input name="id" value="<%= @order.id %>" hidden="hidden" />
+      <input name="promoter_email" value="<%= @promoter_email %>" hidden="hidden" />
+      <input name="sku" value="<%= @sku %>" hidden="hidden" />
+      <input name="num" value="<%= @num %>" hidden="hidden" />
       <div class="china-form">
         <div class="china-label">收件人*</div>
         <div class="china-input">
@@ -80,16 +81,14 @@
       <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
     </div>
 <% end %>
-    <% end %>
+    </form>
   </div>
 </div>
 
 <script>
-  Spree.current_order_id = "<%= @order.number %>"
-  Spree.current_order_token = "<%= @order.guest_token %>"
   var mobile = document.getElementById("mobile"); // form has to have ID: <form id="formID">
 
-  var form = document.getElementById('edit_order_' + "<%= @order.id %>"); // form has to have ID: <form id="formID">
+  var form = document.getElementById("checkout-form"); // form has to have ID: <form id="formID">
   form.noValidate = true;
   form.addEventListener('submit', function(event) { // listen for form submitting
     if (!event.target.checkValidity()) {

@@ -10,7 +10,7 @@
         <%= image_tag("china/package.png")%>
       </div>
       <div class="item-details">
-        <div class="fun"><%= @order.line_items[0].variant.options_text unless @order.line_items[0].variant.option_values.empty? %> <br>6g/包 * 30包 * 1盒</div>
+        <div class="fun"><%= @order.line_items[0].variant.options_text_cn unless @order.line_items[0].variant.option_values.empty? %> <br>6g/包 * 30包 * 1盒</div>
         <div class="qty">x<%= @order.line_items[0].quantity %></div>
         <div class="price">$<%= @order.line_items[0].price %></div>
         <div class="total">$<%= @order.line_items[0].quantity * @order.line_items[0].price %></div>
@@ -37,7 +37,7 @@
   </div>
   <div class="next-step">
     <div class="total">总计： <%= @order.display_total.to_html %></div>
-      <%= form_for @order, url: china_complete_path, html: { }  do |form| %>
+      <%= form_for @order, url: china_processpay_path, html: { }  do |form| %>
         <input name="id" value="<%= @order.id %>" hidden="hidden" />
           <ul class="list-group" id="payment-method-fields" style="display: none" data-hook>
             <% @order.available_payment_methods.each do |method| %>

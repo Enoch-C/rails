@@ -1,6 +1,6 @@
 module Spree
   class ChinaController < Spree::StoreController
-    before_action :ensure_stripe_checkout, only: [:complete]
+    before_action :ensure_stripe_checkout, only: [:processpay]
     skip_before_filter  :verify_authenticity_token
 
     def index
@@ -8,34 +8,15 @@ module Spree
     end
 
     def checkout
-      @order = Spree::Order.new
-      @order.promoter = Spree::Promoter.find_by_email(params["p"])
-
-      variant = nil
-      if params[:line_item][:variant_id]
-        variant = Spree::Variant.find(params[:line_item][:variant_id])
-      elsif params[:line_item][:sku]
-        variant = Spree::Variant.find_by_sku(params[:line_item][:sku])
-      end
-
-      @line_item = @order.contents.add(
-          variant,
-          params[:line_item][:quantity] || 1,
-          nil || {}
-      )
-
-      unless @line_item.errors.empty?
-        puts @line_item.error_messages
-        invalid_resource!(@line_item)
-      end
-
-      @line_item.save!
-      @order.state = "address"
-      @order.save!
+      @promoter_email = params["p"]
+      @sku = params[:line_item][:sku]
+      @num = params[:line_item][:quantity]
     end
 
     def pay
-      @order = Spree::Order.find(params[:id])
+      @order = Spree::Order.new
+
+      @order.promoter = Spree::Promoter.find_by_email(params["promoter_email"])
 
       phone = "86" + params["mobile"]
       user = Spree::User.find_or_create_by("email": "#{phone}@coolchoice.com")
@@ -43,10 +24,19 @@ module Spree
       user.save!
       @order.associate_user!(user)
 
+      variant = Spree::Variant.find_by_sku(params["sku"])
+      @line_item = @order.contents.add(
+          variant,
+          params["num"] || 1,
+          {}
+      )
+
+      @order.next!
+
       name = params["name"]
       state = provinces[params["province"].to_sym]
       address = Spree::Address.new
-      address.firstname = name[1,name.size-1]
+      address.firstname = (name[1,name.size-1] == '' ? name[0] : name[1,name.size-1])
       address.lastname = name[0]
       address.address1 = params["street"]
       address.address2 = params["sub"]
@@ -55,63 +45,179 @@ module Spree
       address.zipcode = "110000"
       address.state_id = Spree::State.find_by_name(state).id
       address.country_id = Spree::Country.find_by_name("China").id
-      unless address.same_as?(@order.bill_address)
-        address.save
-        @order.bill_address_id = address.id
-        @order.ship_address_id = address.id
+      # unless address.same_as?(@order.bill_address)
+      #   address.save
+      #   @order.bill_address_id = address.id
+      #   @order.ship_address_id = address.id
+      # end
+      # @order.update_line_item_prices!
+      # @order.create_tax_charge!
+      # @order.persist_user_address!
+      params[:order] = {
+    :bill_address_attributes=>{
+      :firstname=>address.firstname,
+      :lastname=>address.lastname,
+      :address1=>address.address1,
+      :address2=>address.address2,
+      :city=>address.city,
+      :phone=>address.phone,
+      :zipcode=>address.zipcode,
+      :state_id=>address.state_id,
+      :country_id=>address.country_id
+    },
+    :ship_address_attributes=>{
+      :firstname=>address.firstname,
+      :lastname=>address.lastname,
+      :address1=>address.address1,
+      :address2=>address.address2,
+      :city=>address.city,
+      :phone=>address.phone,
+      :zipcode=>address.zipcode,
+      :state_id=>address.state_id,
+      :country_id=>address.country_id
+    }
+  }
+      if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
+        # packages = @order.shipments.map(&:to_package)
+        # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
+        @order.next
+      else
+        invalid_resource!(@order)
       end
-      @order.update_line_item_prices!
-      @order.create_tax_charge!
-      @order.persist_user_address!
 
-      packages = @order.shipments.map(&:to_package)
-      @differentiator = Spree::Stock::Differentiator.new(@order, packages)
-      @order.state = "delivery"
-      @order.create_proposed_shipments
-      @order.send(:ensure_available_shipping_rates)
-      @order.set_shipments_cost
-      @order.apply_free_shipping_promotions
+      @order.next
+
+
+      # @shipment = @order.shipments.create(stock_location_id: Spree::StockLocation.first.id)
+      # @order.contents.add(variant, params["num"], {shipment: @shipment})
+      # @shipment.reload
+      # @shipmdent.save!
+
+      # @shipment.address = @order.ship_address
+
+      # shipment[selected_shipping_rate_id]=162&shipment[unlock]=yes
+      #
+      # if params[:shipment] && !params[:shipment].empty?
+      #   params.require(:shipment).permit(permitted_shipment_attributes)
+      # else
+      #   {}
+      # end
+      # @shipment.update_attributes_and_order(shipment_params)
+
+      # @order.send(:ensure_available_shipping_rates)
+      # @order.set_shipments_cost
+      # @order.apply_free_shipping_promotions
+      # @shipment.save!
+
+
+      # packages = @order.shipments.map(&:to_package)
+      # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
+      # @ord1er.state = "delivery"
+      # @order.create_proposed_shipments
+      # @order.send(:ensure_available_shipping_rates)
+      # @order.set_shipments_cost
+      # @order.apply_free_shipping_promotions
 
       # packages = @order.shipments.map(&:to_package)
       # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
       # @differentiator.missing.each do |variant, quantity|
       #   @order.contents.remove(variant, quantity)
       # end
-      @order.state = "payment"
-      @order.update_totals
-      @order.persist_totals
-      @order.ensure_line_item_variants_are_not_discontinued
-      @order.ensure_line_items_are_in_stock
+      # @order.state = "payment"
+      # @order.update_totals
+      # @order.persist_totals
+      # @order.ensure_line_item_variants_are_not_discontinued
+      # @order.ensure_line_items_are_in_stock
       @order.save!
     end
 
     def complete
+      @order
+    end
+
+    def processpay
+
       @order = Spree::Order.find(params[:id])
 
       if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
-        unless @order.next
-          flash[:error] = @order.errors.full_messages.join("\n")
-          redirect_to(china_pay_path) && return
-        end
-
-        if @order.completed?
-          @order.state = "complete"
-          @order.save!
-          @current_order = nil
-          flash.notice = Spree.t(:order_processed_successfully)
-          flash['order_completed'] = true
-        else
-          flash[:error] = @order.errors.full_messages.join("\n")
-          redirect_to(china_pay_path) && return
+        if @order.completed? || @order.next
+          puts "here paid!!! #{@order.state}"
+          if @order.respond_to?(:"after_#{@order.state}", true)
+            puts "after_#{@order.state}"
+            @order.send(:"after_#{@order.state}")
+          end
         end
       else
-        flash[:error] = @order.errors.full_messages.join("\n")
-        redirect_to(china_pay_path) && return
+        invalid_resource!(@order)
       end
+
+      @order.save!
+      redirect_to :controller => 'china', :action => 'complete', :order_id => @order.id
+
+
+
+      # if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
+      #   unless @order.next
+      #     flash[:error] = @order.errors.full_messages.join("\n")
+      #     redirect_to(china_pay_path) && return
+      #   end
+      #
+      #   if @order.completed?
+      #     @order.state = "complete"
+      #     @order.save!
+      #     @current_order = nil
+      #     flash.notice = Spree.t(:order_processed_successfully)
+      #     flash['order_completed'] = true
+      #   else
+      #     flash[:error] = @order.errors.full_messages.join("\n")
+      #     redirect_to(china_pay_path) && return
+      #   end
+      # else
+      #   flash[:error] = @order.errors.full_messages.join("\n")
+      #   redirect_to(china_pay_path) && return
+      # end
     end
 
 
     private
+
+    def mine_includes
+      {
+        order: {
+          bill_address: {
+            state: {},
+            country: {},
+          },
+          ship_address: {
+            state: {},
+            country: {},
+          },
+          adjustments: {},
+          payments: {
+            order: {},
+            payment_method: {},
+          },
+        },
+        inventory_units: {
+          line_item: {
+            product: {},
+            variant: {},
+          },
+          variant: {
+            product: {},
+            default_price: {},
+            option_values: {
+              option_type: {},
+            },
+          },
+        },
+      }
+    end
+
+    def invalid_resource!(resource)
+      @resource = resource
+      render "spree/api/errors/invalid_resource", status: 422
+    end
 
     def provinces
     {

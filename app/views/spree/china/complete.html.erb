@@ -1,14 +1,9 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+<% @order = Spree::Order.find(params["order_id"]) %>
 <% self.title = "Complete" %>
-<% content_for :google_analytics do %>
-  <% if order_just_completed?(@order) %>
-    <%= render partial: 'spree/shared/google_purchase.js', locals: { order: @order } %>
-  <% end %>
-<% end %>
 
 <fieldset id="order_summary" data-hook>
   <div class="container" id="china-complete">
-    <% if order_just_completed?(@order) %>
     <div style="text-align:center">
       <img style="width:63px;" src="<%= "#{Rails.application.config.customer_service_wechat_icon[0]}" %>">
     </div>
@@ -17,7 +12,7 @@
       <span class="number" style="font-size:16px"><%= "尊敬的#{@order.bill_address.lastname}#{@order.bill_address.firstname}，" %></span>
     </div>
     <br/>
-    <strong><%= "我是您的私人健康管家#{Rails.application.config.customer_service_names[0]}，很荣幸为您服务。您的定制保健品将在2个工作日内由美国洛杉矶Cool Choice总部定制完成并空运给您。" %></strong>
+    <strong><%= "我是您的私人健康管家#{Rails.application.config.customer_service_names[0]}，很荣幸为您服务。您的定制保健品将在48小时内由美国洛杉矶Cool Choice总部定制完成并空运给您。" %></strong>
     <br/>
     <br/>
 
@@ -27,7 +22,6 @@
     <br/>
     <img style="width:100px; display: block; margin: 10px auto" src="<%= "#{Rails.application.config.customer_service_wechat_qrcode[0]}" %>">
     <p>以下是您本次的订单信息：</p>
-    <% end %>
     <div class="order-number">
       <%= Spree.t(:order) %>
       <span style="font-size:14px"><%= @order.number %></span>
