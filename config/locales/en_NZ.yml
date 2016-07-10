@@ -1,5 +1,10 @@
 en_NZ:
   spree:
+    confirm_promoter_parent_email:
+      subject1: your promoter
+      subject2: has received Promotion Credit
+      subject3: "'s promoter"
+    identity: Identity
     head_bar:
       WHY_COOL_CHOICE: Why Cool Choice
       GIFT: Send a Gift
@@ -233,7 +238,7 @@ en_NZ:
       ingredient_Joint_Care: GLUCOSAMINE
       ingredient_Liver_Care: MILK THISTLE AND ARTICHOKE EXTRACTS
       ingredient_Lung_Care: BOTANICAL LUNG SUPPORT BLEND
-      ingredient_Mens_Vitality: EURYCOMA
+      ingredient_Mens_Vitality: ASHWAGANDHA, GRAPE and APPLE EXTRACTS
       ingredient_Sleep_Support: MELATONIN
       ingredient_Stress_Management: L-THEANINE
       help_Anti-Aging: HELPS REPAIR CELL DAMAGE
@@ -257,11 +262,11 @@ en_NZ:
       detail_Energy: "While our modern world boasts many incredible amenities and opportunities, it can at times be draining, both mentally and physically. In order to keep up with the hustle and bustle of our day-to-day lives, we could all benefit from having some extra energy. Ashwagandha has been used for thousands of years to boost energy and concentration. The positive benefits it provides makes it the perfect replacement for the daily cup of coffee, allowing us to skip the line at the local coffee shop and have more time and energy to spend on work or school—as well as with loved ones."
       detail_Eye_Care: "It goes without saying that we are attached at the hip with our cell phones, tablets, and other devices. We take them everywhere we go and interact with them constantly. These devices, however, emit blue light, damaging our eyes and causing poor vision over time. Natural lutein and zeaxanthin help protect and repair our damaged eyes by acting as a filter to block the damaging light from these devices and providing nutritional support for visual health and acuity."
       detail_Heart_Care: "Like all of our organs, the heart needs energy to function properly. As we age, the heart’s source of energy declines, causing various cardiovascular conditions. Co-Q10, derived from a natural fermentation process, helps support cardiovascular health by supplying the heart with a source of energy."
-      detail_Immune_Support: "As we age, our bodies are exposed to bacteria and viruses that cause illness. A healthy body develops immunity to help fight off these sickness-causing organisms, but poor diet, stress, and infection weaken our bodies’ immune systems. In order to combat this, Wellmune® supplies beta-glucan to help modulate the body’s immune defense system, increasing its ability to fight illness."
+      detail_Immune_Support: "As we age, our bodies are exposed to bacteria and viruses that cause illness. A healthy body develops immunity to help fight off these sickness-causing organisms, but poor diet, stress, and infection weaken our bodies’ immune systems. In order to combat this, beta-glucan (produced through natural fermentation) helps modulate the body’s immune defense system, increasing its ability to fight illness."
       detail_Joint_Care: "The human body is a hyper-complex vehicle, and just like we regularly change the oil in our cars, we need to re-lubricate our joints in order to minimize stress. Friction and physical stress are the greatest in our joints, caused by running, walking, and any form of physical activity. To address joint issues (such as arthritis), GreenGrown® glucosamine can be supplemented to help keep our joints in good shape by helping to build and repair cartilage—the tissue that cushions the joints."
       detail_Liver_Care: "Alcohol consumption, exposure to pollutants, viruses, excessive fat, and poor diet put an extraordinary amount of strain on the liver. These factors can damage the liver to the point that it stops functioning properly, eventually causing it to fail altogether. While there is no substitute for proper diet, exercise, and a healthy lifestyle to maintain healthy liver function, certain supplements may help our livers to function optimally. Milk thistle and artichoke extracts help to improve liver function and repair liver damage."
       detail_Lung_Care: "Our lungs serve as a filter in our bodies, allowing the essentials to enter (like oxygen), while keeping the unnecessary out (like dust and dirt). Our organic proprietary herbal blend aids our lungs by helping renew the cells that filter out the bad, keeping them working at optimum capacity, and promoting efficient oxygen intake and respiratory performance."
-      detail_Mens_Vitality: "A common side-effect of aging in men is decreased sexual performance. Malaysian ginseng extract, a rare herb from Southeast Asia, is a natural way to combat this issue. It has been shown to enhance energy, sexual performance, stamina, and libido, as well as naturally raise the body’s testosterone levels."
+      detail_Mens_Vitality: "A common side-effect of aging in men is decreased sexual performance. Cool Choice Men’s Vitality contains a synergistic combination of natural full spectrum Ashwagandha root extract and Grape and Apple Polyphenols to help improve sexual function, ignite performance and boost testosterone levels in men as well as provide energy and stamina."
       detail_Sleep_Support: "Have you ever woken up in the morning, already feeling tired? This is because your body did not get the amount of quality sleep that it needs. While it is well known that the body requires a full 6-8 hours of sleep per night in order to function properly, it must not be overlooked that the quality of sleep is also very important. When taken before bedtime*, melatonin is used to help support and improve the quality of sleep**."
       detail_Stress_Management: "The world is filled with stress, especially in this day and age. Work deadlines, exams, job interviews, traffic, and financial struggles are just some of the many stressors that the modern world has to offer. Constant stress affects our body in a variety of negative ways, causing us to get sick, gain weight, struggle with depression, and even fall victim to heart disease. Suntheanine® contains L-theanine to help improve learning performance, focus, and mental clarity, promote concentration, and help to reduce stress, restlessness, nervousness, and irritability."
       contains_Anti-Aging: "Each serving contains 10 milligrams (14,000 IU) of natural SOD Extramel®, extracted from melons."
@@ -271,11 +276,11 @@ en_NZ:
       contains_Energy: "Each serving contains 500 milligrams of organic KSM-66® ashwagandha extract."
       contains_Eye_Care: "Each serving contains 7 milligrams of Lutemax 2020™, a lutein and zeaxanthin blend extracted from marigold."
       contains_Heart_Care: "Each serving contains 50 milligrams of Co-Q10."
-      contains_Immune_Support: "Each serving contains 200 milligrams of Wellmune®, consisting of natural beta-1, 3/1, 6-glucan, derived from a highly purified yeast strain (Saccharomyces cerevisiae)."
+      contains_Immune_Support: "Each serving contains 200 milligrams of 1-3-Beta-Glucan, produced by natural fermentation."
       contains_Joint_Care: "Each serving contains 1,500 milligrams of GreenGrown® glucosamine from a pure vegetable, non-allergenic source."
       contains_Liver_Care: "Each serving contains 400 milligrams of combined milk thistle and artichoke extracts."
       contains_Lung_Care: "Each serving contains 250 milligrams of our organic proprietary herbal blend, which consists of: Ophiopogon japonicus, Schizandra chinensis, Astragalus membranaceus, Panax ginseng, Zingiberis officinalis, and Glycyrrhiza uralensis."
-      contains_Mens_Vitality: "Each serving contains 100 milligrams of Eurycoma longifolia extract."
+      contains_Mens_Vitality: "Each serving contains 250 mg of full spectrum Ashwagandha Root Extract KSM-66 and 250 mg ViNitrox Grape and Apple Extracts."
       contains_Sleep_Support: "Each serving contains 6 milligrams of melatonin."
       contains_Stress_Management: "Each serving contains 100 milligrams of pure Suntheanine® from green tea."
       more1_Anti-Aging: "SOD B Extramel® is clinically proven to promote a sense of well-being through the maintenance of optimal mental and physical performances. "
@@ -285,11 +290,11 @@ en_NZ:
       more1_Energy: "Studies show that KSM-66® ashwagandha helps support normal levels of vigor, performance, mental stimulation, and energy."
       more1_Eye_Care:	"Blue light emitted from electronic devices (computers, HD TV, smart phones, tablets, energy-saving lightbulbs, etc.) damages the eyes. The average American is exposed to 10-12 hours of blue light per day. Lutein and zeaxanthin, the actives in Lutemax 2020™, act as primary filter against high-energy blue light and help protect against oxidative stress and inflammation."
       more1_Heart_Care: "Cool Choice Heart Care contains soluble Co-Enzyme Q10 (Co-Q10) to help support heart health. As we age, the amount of Co-Q10 in the body declines. Supplementation can increase the levels of Co-Q10 in the body."
-      more1_Immune_Support: "Wellmune® beta-glucan naturally helps strengthen the body’s immune defense by modulating the body’s immune response, helping to maintain overall health and wellness."
+      more1_Immune_Support: "Beta-glucan naturally modulates the body’s immune response and helps maintain overall health and wellness. It helps strengthen the body’s immune defense."
       more1_Joint_Care: "Cool Choice provides premium quality, USP-Grade vegetable glucosamine from GreenGrown® for joint support. "
       more1_Liver_Care: "Cool Choice Liver Care contains milk thistle, extracted using non-harmful chemicals to help protect against alcohol, pollutants, and toxins to maintain liver health."
       more1_Lung_Care: "Cool Choice Lung Care helps promote healthy respiration through a unique blend of herbs that support oxygen intake and efficient utilization of the respiratory system. This proprietary herbal blend has antibacterial and anti-inflammatory properties, which help keep the lungs moist to reduce cough and other difficulties during respiration."
-      more1_Mens_Vitality: "Cool Choice Men’s Vitality contains Eurycoma longifolia extract (Tonkat Ali or Malaysian ginseng), a rare herb found in Southeast Asia, for vigor and vitality. "
+      more1_Mens_Vitality: "Ashwagandha KSM-66 extract helps improve sexual function and testosterone levels in men and increase strength and endurance."
       more1_Sleep_Support: "Melatonin normalizes sleep patterns, day/night rhythms, and protects the immune system from stress. As we age, natural levels of melatonin decline, affecting normal sleep patterns."
       more1_Stress_Management: "Research suggests that L-theanine helps improve learning performance, focus, and mental clarity, and helps to promote concentration, improve sleep quality, reduce normal PMS symptoms, reduce the side effects of caffeine, and support the immune system."
       more2_Anti-Aging: "Clinical studies show that a one-month supplementation with SOD B Extramel® significantly boosts daily performances by improving stress relief, sleep quality, cognitive functions, and physical tone."
@@ -299,11 +304,11 @@ en_NZ:
       more2_Energy: "KSM-66® ashwagandha extract contains steroidal lactones, alkaloids, fatty acids, choline, and amino acids to help boost energy and concentration while minimizing fatigue."
       more2_Eye_Care: "Lutein and zeaxanthin are the only carotenoids located in the eye (macula). Lutemax 2020™ contains both lutein and zeaxanthin isomers, helping to protect against oxidative stress and inflammation."
       more2_Heart_Care: "Studies have shown that Co-Q10 helps in preserving heart health and can reduce negative side effects of medications, such as statin drugs."
-      more2_Immune_Support: "Wellmune® beta-glucan also helps to stabilize cell membranes and stimulate protein synthesis."
+      more2_Immune_Support: "Beta-glucan also helps to stabilize cell membranes and stimulate protein synthesis."
       more2_Joint_Care: "Studies have shown that GreenGrown® glucosamine helps in reducing osteoarthritis symptoms through its anti-inflammatory properties."
       more2_Liver_Care: "Milk thistle stabilizes the cell membrane and stimulates protein synthesis, while accelerating regeneration of damaged liver cells and reducing inflammation."
       more2_Lung_Care: "Cool Choice Lung Care helps support healthy respiration by promoting secretion of fluids, moistening the lungs to control cough due to dry lungs."
-      more2_Mens_Vitality: "Eurycoma longifolia extract contains eurypeptides, which are known to enhance energy, sexual performance, stamina, and libido. Users have reported an increase in energy and endurance."
+      more2_Mens_Vitality: "ViNitrox™ increases nitric oxide production and vasodilation. Vasodilation is linked to the production of nitric oxide."
       more2_Sleep_Support: "Melatonin is a natural anti-oxidant, which helps the body fight against free-radicals that cause damage."
       more2_Stress_Management: "Suntheanine® promotes a sense of relaxation, reduces stress and restlessness, helps ease nervousness and irritability, and gently soothes tension away. It works to suppress glucocorticoids, which give the body and mind a “stress” sensation."
       more3_Anti-Aging: "Cool Choice Anti-Aging uses the highest quality natural, bioactive antioxidant Superoxide Dismutase (SOD, 14,000 IU/g), extracted from melons."
@@ -313,11 +318,11 @@ en_NZ:
       more3_Energy: " "
       more3_Eye_Care: "Cool Choice Eye Care contains Lutemax 2020™, which provides lutein and zeaxanthin (natural carotenoids that support eye health) in the same 5:1 ratio as found in nature. "
       more3_Heart_Care: "Co-Q10 provides energy at the cellular level. It can help lower blood pressure and enhance heart functions. "
-      more3_Immune_Support: "Cool Choice Immune Care contains high purity and highly bioavailable beta-1, 3/1, 6-glucan for immune support, sourced from the cell wall of Saccharomyces cerevisiae yeast."
+      more3_Immune_Support: "Cool Choice Immune Care contains fermented, high purity, and high bioavailable 1, 3-beta-glucan for immune support."
       more3_Joint_Care: "Glucosamine is in the fluid that cushions joints and it stimulates the repair and formation of cartilage."
       more3_Liver_Care: "Artichoke leaf extract is high in biologically active compounds and serves as an antioxidant, which helps remove harmful toxins from the liver."
       more3_Lung_Care: "Cool Choice Lung Care works as an antioxidant and anti-inflammatory, inhibiting vascular permeability and improving overall vitality."
-      more3_Mens_Vitality: "Cool Choice Men’s Vitality helps to naturally raise the body’s testosterone levels."
+      more3_Mens_Vitality: "These actives also help improve circulation and provide powerful anti-oxidant and anti-inflammatory effects."
       more3_Sleep_Support: " "
       more3_Stress_Management: "Cool Choice Stress Management contains pure, natural L-theanine from Suntheanine®, a patented amino acid for stress and well-being, mental relaxation, and focus without drowsiness. It is GRAS affirmed by the FDA (“generally recognized as safe”) for use in food and beverages."
       caution1_Sleep_Support: '*  Cool Choice recommends taking the melatonin supplement only before going to sleep.'
@@ -329,7 +334,7 @@ en_NZ:
       trademark_Energy: "KSM-66® is a registered trademark of KSM66 Ashwaganda."
       trademark_Eye_Care: "Lutemax 2020™ is a registered trademark of OmniActive Health Technologies."
       trademark_Heart_Care: " "
-      trademark_Immune_Support: "Wellmune® is a registered trademark of Kerry Group."
+      trademark_Immune_Support: " "
       trademark_Joint_Care: "GreenGrown® is a registered trademark of Ethical Nutrition."
       trademark_Liver_Care: " "
       trademark_Lung_Care: " "
