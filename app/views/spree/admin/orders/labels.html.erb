@@ -60,6 +60,7 @@
             <img src="<%= asset_path "home/icon-" + hash[x] + "@2x.png" -%>">
           <% end -%>
           <div class="detail"><%= func_option.join(' + ') %></div>
+          <div class="lot">LOT <%= line_item.variant.sku.upcase %></div>
         </div>
         <div class="box">
           <table>
@@ -77,43 +78,43 @@
             <tbody class="basic">
               <tr>
                 <td>Calories</td>
-                <td><%= calories_Amount_Per_Serving.round(1).to_s.chomp('.0') %></td>
+                <td><%= calories_Amount_Per_Serving.round(0).to_s.chomp('.0') %></td>
                 <td></td>
               </tr>
               <tr>
                 <td>Total Carbohydrate</td>
-                <td><%= total_Carbohydrate_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
-                <td><%= (total_Carbohydrate_Amount_Per_Serving/300*100).round(1).to_s.chomp('.0')+'%*' %></td>
+                <td><%= total_Carbohydrate_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
+                <td><%= (total_Carbohydrate_Amount_Per_Serving/300*100).round(0).to_s.chomp('.0')+'%*' %></td>
               </tr>
               <tr>
                 <td class="total">Dietary Fiber</td>
-                <td><%= dietary_Fiber_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
-                <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(1).to_s.chomp('.0')+'%*' %></td>
+                <td><%= dietary_Fiber_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
+                <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(0).to_s.chomp('.0')+'%*' %></td>
               </tr>
               <tr>
                 <td class="total">Sugars</td>
-                <td><%= sugars_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+                <td><%= sugars_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
                 <td></td>
               </tr>
               <% if protein_Amount_Per_Serving > 0 %>
               <tr>
                 <td>Protein</td>
-                <td><%= protein_Amount_Per_Serving.round(1).to_s.chomp('.0') %> g</td>
+                <td><%= protein_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
                 <td></td>
               </tr>
               <% end %>
               <tr>
                 <td>Sodium</td>
-                <td><%= sodium_Amount_Per_Serving.round(1).to_s.chomp('.0') %> mg</td>
-                <td><%= sodium_Daily_Value.round(1).to_s.chomp('.0')+'%' %></td>
+                <td><%= sodium_Amount_Per_Serving.round(0).to_s.chomp('.0') %> mg</td>
+                <td><%= sodium_Daily_Value.round(0).to_s.chomp('.0')+'%' %></td>
               </tr>
             </tbody>
             <tbody class="super">
               <% extra.keys.each do |key| %>
               <tr>
                 <td><%= key %></td>
-                <td><%= extra[key]['Amount Per Serving'].round(1).to_s.chomp('.0') %> <%= extra[key]['unit'] %></td>
-                <td>**</td>
+                <td><%= extra[key]['Amount Per Serving'].round(0).to_s.chomp('.0') %> <%= extra[key]['unit'] %></td>
+                <td class="last-child">**&nbsp</td>
               </tr>
               <% end %>
             </tbody>
@@ -125,6 +126,7 @@
           </table>
         </div>
         <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
+        <div class="ingredients"><span class="title">MIXING INSTRUCTIONS</span>: Pour contents of packet into 4 fl oz (120 ml) of water. Mix and enjoy!</div>
       </div>
     </div>
   <% end %>

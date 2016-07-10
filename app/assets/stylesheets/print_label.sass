@@ -15,20 +15,29 @@
       width: 9mm
       margin-right: 4mm
     .detail
-      margin: 2mm 0 4mm
+      margin: 2mm 0 0mm
       font-size: 1.5mm
       font-family: arial
       color: #757679
+    .lot
+      font-weight: bold
+      margin: 0 1mm 0 0
+      font-size: 1.5mm
+      font-family: arial
+      color: #757679
+      text-align: right
   .box
     display: inline-block
     border: .5px solid
-    padding: 2px
+    padding: 1px
     table
       table-layout: fixed
       width: 48mm
       // font-size: 9px
       border-collapse: collapse
       color: #000
+      .sub
+        line-height: 1.2
       caption
         padding: 0
         text-align: left
@@ -36,7 +45,8 @@
           line-height: 1.1
           font-size: 5mm
           font-weight: 700
-          font-family: times
+          font-family: "Franklin Gothic Heavy"
+          letter-spacing: 2.2px
       td
         border-top: 1px solid #888
       th
@@ -65,8 +75,11 @@
       .super
         border-top: 1.5mm solid
         border-bottom: 1.5mm solid
+        td:last-child
+          text-align: right
   .ingredients
-    // font-size: 9px
+    font-size: 7px
+    line-height: 1.1
     .title
       font-weight: 700
 

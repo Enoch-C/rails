@@ -1,5 +1,5 @@
 Serving Size 1 Packet: 2.0
-Servings Per Container: 1
+Servings Per Container: 30
 # daily_value_append:
 #   '*: Percent Daily Values are based on a 2,000 calorie diet.
 #   '**': Daily Value not established.
@@ -29,7 +29,7 @@ functions:
           Amount Per Serving: 10
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Beauty:
       basic:
         Calories:
@@ -58,7 +58,7 @@ functions:
           Amount Per Serving: 1000
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Brain Care:
       basic:
         Calories:
@@ -84,7 +84,7 @@ functions:
           Amount Per Serving: 250
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors.
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Digestive Care:
       basic:
         Calories:
@@ -110,7 +110,7 @@ functions:
           Amount Per Serving: 67
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Eye Care:
       basic:
         Calories:
@@ -136,7 +136,7 @@ functions:
           Amount Per Serving: 6
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber,Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Heart Care:
       basic:
         Calories:
@@ -162,7 +162,7 @@ functions:
           Amount Per Serving: 50
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Immune Care:
       basic:
         Calories:
@@ -188,7 +188,7 @@ functions:
           Amount Per Serving: 200
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Joint Care:
       basic:
         Calories:
@@ -214,7 +214,7 @@ functions:
           Amount Per Serving: 1500
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Natural Flavors,  Non GMO Soluble Corn Fiber, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Liver Care:
       basic:
         Calories:
@@ -244,7 +244,7 @@ functions:
           Amount Per Serving: 200
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber,Natural Flavors.
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Men's Vitality:
       basic:
         Calories:
@@ -270,7 +270,7 @@ functions:
           Amount Per Serving: 100
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Sleep Support:
       basic:
         Calories:
@@ -298,7 +298,7 @@ functions:
           Amount Per Serving: 6
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Stress Management:
       basic:
         Calories:
@@ -324,4 +324,4 @@ functions:
           Amount Per Serving: 100
           unit: mg
           daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
