@@ -1,20 +1,26 @@
-<nav class="navbar col-lg-10 col-md-10 col-sm-9" id="top-nav-bar" style="float: right; height: 100%; margin: 0">
-<span style="height: 100%; vertical-align: middle;display: inline-block;"></span>
-<ul id="header_nav" class="nav navbar-nav" style="float: none;display: inline-block; vertical-align: middle;" data-hook>
-  <li data-hook><%= link_to Spree.t(:'head_bar.WHY_COOL_CHOICE'), spree.why_path %></li>
-  <li data-hook><%= link_to Spree.t(:'head_bar.GIFT'), spree.gift_path %></li>
-  <li data-hook><%= link_to Spree.t(:'head_bar.INGREDIENTS'), spree.ingredient_path %></li>
+<div class="navbar-collapse collapse nav-bar">
+  <%= link_to Spree.t(:'head_bar.WHY_COOL_CHOICE'), spree.why_path %>
+  <%= link_to Spree.t(:'head_bar.GIFT'), spree.gift_path %>
+  <%= link_to Spree.t(:'head_bar.INGREDIENTS'), spree.ingredient_path %>
   <% if current_spree_user %>
-  <li data-hook><%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; display:inline-block; width: 32px; height: 32px;"}), spree.account_path, style:"padding: 9px" %>
-  <li data-hook><%= link_to Spree.t(:logout), spree.logout_path %></li>
+  <%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; width: 30px"}), spree.account_path %>
+  <%= link_to Spree.t(:logout), spree.logout_path %>
   <% else %>
-  <li data-hook><%= link_to Spree.t(:signin), spree.login_path %></li>
+  <%= link_to Spree.t(:signin), spree.login_path %>
   <% end %>
   <% if !(current_order.special_instructions != nil || current_order.line_items.first.variant.sku.slice(3,1) == 'd' rescue false) %>
-  <li style="width:6px; padding-left: 3px"><a style="width:20px; border-left: 1px solid #ddd;margin:9px 0 0;"></a></li>
-  <li><a style="cursor: pointer; padding: 9px" href="<%= spree.cart_path %>"><%= image_tag 'home/button_cart@2x.png', {:style => "display:inline-block; width: 27px; height: 34px;"} %><% count = current_order.line_items.inject(0){|s, x| s+=x.quantity;s} rescue 0 ; if count != 0 && current_order.special_instructions == nil %><span style="background: none repeat scroll 0 0 #EB5B4A; color: white; border-radius: 8px;padding:0px 5px;font-size:10px;top:-10px;position:relative;"><%= count %></span><% end %></a></li>
+  <a style="cursor: pointer; position: relative; text-decoration: none" href="<%= spree.cart_path %>">
+    <%= image_tag 'home/button_cart@2x.png', {:style => "width: 25px"} %>
+    <% count = current_order.line_items.inject(0){|s, x| s+=x.quantity;s} rescue 0 ; if count != 0 && current_order.special_instructions == nil %>
+    <span class="cart-num"><%= count %></span>
+  <% end %>
+  </a>
   <%#= spree_current_user %>
   <% end %>
-</ul>
-<%= render :partial => 'spree/shared/main_nav_bar' %>
-</nav>
+  <% if SpreeI18n::Config.available_locales.many? %>
+  <a href="<%= spree.localization_path %>"><%= image_tag('home/icon_earth@2x.png', {:style => "width: 32px"}) %></a>
+  <% end %>
+</div>
+<a class="navbar-toggle" data-toggle="collapse" data-target="#header .nav-bar">
+  <i class="glyphicon glyphicon-menu-hamburger"></i>
+</a>

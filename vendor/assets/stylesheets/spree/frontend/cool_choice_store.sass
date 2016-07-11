@@ -18,35 +18,35 @@ body
       a
         font-size: 12px
         margin-right: 10px
-#header_nav
-  li
-    white-space: nowrap
-    font-size: 12px
-    a
-      text-overflow: ellipsis
-      max-width: 200px
-      overflow: hidden
-@media (max-width: 768px)
-  #header_nav
-    li
-      font-size: 12px
-      a
-        text-overflow: ellipsis
-        max-width: 125px
-        overflow: hidden
-@media (min-width: 769px) and (max-width: 992px)
-  #header_nav
-    li
-      font-size: 12px
-      a
-        padding-left: 4px
-        padding-right: 4px
-        text-overflow: ellipsis
-        max-width: 125px
-        overflow: hidden
-  #main-nav-bar
-    .nav
-      display: none !important
+// #header_nav
+//   li
+//     white-space: nowrap
+//     font-size: 12px
+//     a
+//       text-overflow: ellipsis
+//       max-width: 200px
+//       overflow: hidden
+// @media (max-width: 768px)
+//   #header_nav
+//     li
+//       font-size: 12px
+//       a
+//         text-overflow: ellipsis
+//         max-width: 125px
+//         overflow: hidden
+// @media (min-width: 769px) and (max-width: 992px)
+//   #header_nav
+//     li
+//       font-size: 12px
+//       a
+//         padding-left: 4px
+//         padding-right: 4px
+//         text-overflow: ellipsis
+//         max-width: 125px
+//         overflow: hidden
+//   #main-nav-bar
+//     .nav
+//       display: none !important
 
 
 input,
@@ -765,10 +765,51 @@ input.button
           font-size: 16px
       .order-details
         margin: 10px 0
-// #coolchoice-header
-//   display: none
-
+#coolchoice-header
+  position: relative
+  height: 81px
+  border-bottom: solid 1px #dedede
+  // display: none
+  .navbar-toggle
+    margin-top: 20px
+  .nav-bar
+    position: absolute
+    top: 0
+    right: 15px
+    a
+      display: inline-block
+      padding: 0 10px
+      line-height: 80px
+      font-size: 14px
+      font-weight: 300
+      text-transform: uppercase
+      color: #474c5d
+      .cart-num
+        position: relative
+        right: 11px
+        top: -17px
+        display: inline-block
+        width: 16px
+        height: 16px
+        line-height: 16px
+        border-radius: 8px
+        text-align: center
+        font-size: 12px
+        font-weight: 500
+        color: #fff
+        background: #eb5b4a
+  @media (max-width: 767px)
+    .nav-bar
+      top: 81px
+      width: 100%
+      background: #fff
+      text-align: center
+      z-index: 1
+      box-shadow: 0 1px 1px rgba(0,0,0,.1)
+      a
+        display: block
 #cool-choice-home
+  // visibility: hidden
   .banner
     background-size: cover
     width: 100%
@@ -1049,7 +1090,7 @@ input.button
           margin: 0 0 10px
           font-size: 16px
           font-weight: 300
-          opacity: 0.5
+          // opacity: 0.5
           text-transform: uppercase
           @media (max-width: 768px)
             font-size: 12px
