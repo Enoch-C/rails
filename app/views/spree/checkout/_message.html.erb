@@ -1,75 +1,87 @@
-<div id="gift-message">
-  <div class="container">
-    <div class="card">
-      <%= image_tag("checkout/singlepackage_n@2x.png", class: "product") %>
-      <div class="word">
-        <%= image_tag("checkout/line@2x.png", class: "line") %>
-        <div class="this"><%= Spree.t(:'message.this') %></div>
-        <input type="text" placeholder="<%= Spree.t('gift.recipient_name') %>" class="recipient_name" v-model="recipient_name" id='rname'></input>
-        <textarea id='gmessage' class="message" placeholder="<%= Spree.t('gift.message') %>" v-model="message"></textarea>
-        <div class="from"><%= Spree.t(:'message.from') %></div>
-        <input id='sname' type="text" placeholder="<%= Spree.t('gift.yourname') %>" class="your_name" v-model="my_name"></input><br>
-      </div>
+<div id="gift-message" class="row">
+  <div class="card">
+    <div class="word">
+      <div class="this"><%= Spree.t(:'message.this') %></div>
+      <input type="text" placeholder="<%= Spree.t('gift.recipient_name') %>" class="recipient_name" v-model="recipient_name" id='rname'></input>
+      <textarea id='gmessage' class="message" placeholder="<%= Spree.t('gift.message') %>" v-model="message"></textarea>
+      <div class="from"><%= Spree.t(:'message.from') %></div>
+      <input id='sname' type="text" placeholder="<%= Spree.t('gift.yourname') %>" class="your_name" v-model="my_name"></input><br>
     </div>
-    <div class="detail">
-
-      <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
-
-      <table>
-        <colgroup>
-          <col style="width: 50%;" />
-          <col style="width: 20%;" />
-          <col style="width: 20%;" />
-          <col style="width: 10%;" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th><%= Spree.t(:'message.detail') %></th>
-            <th><%= Spree.t(:price) %></th>
-            <th><%= Spree.t(:qty) %></th>
-            <th><%= Spree.t(:'message.total') %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="item-image">
-              <div style="line-height: 100%;vertical-align: middle;">
-                <div style="display: inline-block; margin: 0 24px;">
-                  <% line_item = @order.line_items.first; variant = line_item.variant; if variant.images.length == 0 %>
-                    <%= small_image(variant.product) %>
-                  <% else %>
-                    <%= image_tag(variant.images.first.attachment.url(:small)) %>
-                  <% end %>
-                </div>
-                <div style="display: inline-block; width: 340px; vertical-align: middle">
-                  <div class="cool_choice_label"><%= line_item.name %></div>
-                  <div class="cool_choice_titles"><%= variant.options_text %></div>
-                </div>
-              </div>
-            </td>
-            <td>$<%= variant.price %></td>
-            <td>1 <%= Spree.t(:month) %></td>
-            <td>$39.99</td>
-          </tr>
-        </tbody>
-      </table>
-      <% end %>
-
-    </div>
-    <div class="text form-content">
-      <div class="col-sm-6">
-        <div class="form-title"><%= Spree.t(:'message.gift_from') %></div>
-        <label><%= Spree.t(:'message.your_email')%><abbr class="required" title="required">*</abbr></label>
-        <input type="text" placeholder="" v-model="my_email"></input><br>
-      </div>
-      <div class="col-sm-6">
-        <div class="form-title"><%= Spree.t(:'message.gift_to')%></div>
-        <label><%= Spree.t(:'message.email')%><abbr class="required" title="required">*</abbr></label>
-        <input id="remail" type="text" placeholder="" v-model="recipient_email" required></input><br>
-      </div>
-    </div>
-    <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
   </div>
+  <div class="border-table hidden-xs">
+
+    <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+
+    <table>
+      <colgroup>
+        <col style="width: 50%;" />
+        <col style="width: 20%;" />
+        <col style="width: 20%;" />
+        <col style="width: 10%;" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th><%= Spree.t(:'message.detail') %></th>
+          <th><%= Spree.t(:price) %></th>
+          <th><%= Spree.t(:qty) %></th>
+          <th><%= Spree.t(:'message.total') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item-image">
+            <div style="line-height: 100%;vertical-align: middle;">
+              <div style="display: inline-block; margin: 0 24px;">
+                <% line_item = @order.line_items.first; variant = line_item.variant; if variant.images.length == 0 %>
+                  <%= small_image(variant.product) %>
+                <% else %>
+                  <%= image_tag(variant.images.first.attachment.url(:small)) %>
+                <% end %>
+              </div>
+              <div style="display: inline-block; width: 340px; vertical-align: middle">
+                <div class="cool_choice_label"><%= line_item.name %></div>
+                <div class="cool_choice_titles"><%= variant.options_text %></div>
+              </div>
+            </div>
+          </td>
+          <td>$<%= variant.price %></td>
+          <td>1 <%= Spree.t(:month) %></td>
+          <td>$39.99</td>
+        </tr>
+      </tbody>
+    </table>
+    <% end %>
+  </div>
+  <div class="visible-xs-block xs-border-table">
+    <div class="item clearfix">
+      <div class="item-image">
+        <% line_item = @order.line_items.first; variant = line_item.variant; if variant.images.length == 0 %>
+          <%= small_image(variant.product) %>
+        <% else %>
+          <%= image_tag(variant.images.first.attachment.url(:small)) %>
+        <% end %>
+      </div>
+      <div class="item-detail">
+        <div class="text"><%= line_item.name %><br><span class="func"><%= variant.options_text %></span></div>
+        <div class="price">$<%= variant.price %></div>
+        <div class="qty">1 <%= Spree.t(:month) %></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text form-content">
+    <div class="col-sm-6">
+      <div class="form-title"><%= Spree.t(:'message.gift_from') %></div>
+      <label><%= Spree.t(:'message.your_email')%><abbr class="required" title="required">*</abbr></label>
+      <input type="text" placeholder="" v-model="my_email"></input><br>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-title"><%= Spree.t(:'message.gift_to')%></div>
+      <label><%= Spree.t(:'message.email')%><abbr class="required" title="required">*</abbr></label>
+      <input id="remail" type="text" placeholder="" v-model="recipient_email" required></input><br>
+    </div>
+  </div>
+  <div class="col-sm-6"><button type='button' class="button" v-on:click="proceed"><%= Spree.t(:save_and_continue)%></button></div>
 </div>
 
 <script>
@@ -80,7 +92,6 @@
       order_number: "<%= current_order.number %>",
       order_token: "<%= current_order.guest_token %>",
       recipient_name: "",
-
       message: "",
       my_name: "",
       my_email: "<%= current_spree_user.email rescue "" %>",
