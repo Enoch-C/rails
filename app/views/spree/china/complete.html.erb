@@ -3,8 +3,8 @@
 <% @order = Spree::Order.find(params["order_id"]) %>
 <script>
 (function(window, location) {
-history.replaceState(null, document.title, location.pathname+"#!/history");
-history.pushState(null, document.title, location.pathname);
+history.replaceState(null, document.title, location.pathname+"?order_id="+"<%= @order.id %>"+"#!/history");
+history.pushState(null, document.title, location.pathname+"?order_id="+"<%= @order.id %>");
 
 window.addEventListener("popstate", function() {
   if(location.hash === "#!/history") {
