@@ -26,7 +26,7 @@
 </style>
 <% self.title = "Home" %>
 <% @body_id = 'home' %>
-<div id="cool-choice-home"  v-cloak>
+<div id="cool-choice-home" v-cloak class="china">
 
   <div id="section-1" class="section-1">
     <div class="container">
@@ -56,25 +56,26 @@
   </div>
 
 
-  <div class="section-4" v-show="result.length">
+  <div class="section-4" v-show="result.length" :class="{ 'state-inform': result.length < 3 }">
     <div class="container">
       <% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
       <div class="customize">
         <div class="func">
-          <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
+          <div class="title" v-if="result.length < 3">请再选择 <span> {{3 - result.length}} </span> 种功能</div>
+          <div class="title" v-if="result.length === 3">你的选择</div>
           <div v-for="(i, func) in result" class="box">
             <img class="icon" :src="'https://basaio.b0.upaiyun.com/coolchoice/images/icon-' + func + '@2x.png'">
             <img src="https://basaio.b0.upaiyun.com/coolchoice/images/icon_delet@2x.png" class="delete" @click="result.splice(i, 1)">
           </div>
+          <div v-for="i in (3 - result.length)" class="box empty">
+          </div>
         </div>
         <div class="qty">
           <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
-          <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math" style="padding:13px">-</span>
-            <select v-model="type" class="type" disabled="disabled" style="width:65px">
-              <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
-              <option value="month">{{ num + ' ' + types[1] }}</option>
-            </select>
-            <span @click="num++" class="math" style="padding:13px"> +</span>
+          <div class="select">
+            <span @click="num &gt; 1 ? num-- : ''" class="math">-</span><!--
+         --><div class="type-unit">{{ num + ' ' + types[1] }}</div><!--
+         --><span @click="num++" class="math"> +</span>
           </div>
           <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
           <div v-show="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
