@@ -65,8 +65,8 @@
       ['2016 Cognizin Overview Brochur.pdf'], nil,
       ['KSM-66_Benefits_Applications.pdf','SCIENTIFIC STUDIES_KSM-66.pdf'], nil, nil,
       ['Beta Glucan Study - Enhanced P.pdf','Beta Glucan Study -Quantificat.pdf','BetaGlucanDecreasesEpisodesofCommonChildhoodIllness.pdf'],
-      ['GreenGrown 4pgprint.pdf','GreenGrown-Developing_Loyal_.pdf','Joint Health and Glucosamine.pdf'], nil,
-      ['D16 literature review.pdf'], nil,
+      ['GreenGrown-Developing_Loyal_.pdf','Joint Health and Glucosamine.pdf'], nil,
+      ['D16 literature review.pdf'], ['KSM-66_Summary description', 'ViNitrox Clinical Study'],
       ['melatonin.pdf'], nil] %>
     <% function_list.each_with_index do |function, index| %>
       <div id="<%= function %>" class="view">
@@ -96,7 +96,7 @@
         <% if function == 'Sleep_Support' %>
           <p style="font-size: 12px"><%= Spree.t('ingredient.caution1_' + function) %><br><%= Spree.t('ingredient.caution2_' + function) %></p>
         <% end %>
-        <p style="font-size: 10px; margin-top: 0"><%= Spree.t('ingredient.warning1') %><br><%= Spree.t('ingredient.warning2') %></p>
+        <p style="font-size: 10px; border: 1px solid"><%= Spree.t('ingredient.warning1') %></p><p style="font-size: 10px;"><%= Spree.t('ingredient.warning2') %></p>
       </div>
     <% end %>
   </div>

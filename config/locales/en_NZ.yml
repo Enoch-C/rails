@@ -241,7 +241,7 @@ en_NZ:
       ingredient_Immune_Support: BETA-GLUCAN
       ingredient_Joint_Care: GLUCOSAMINE
       ingredient_Liver_Care: MILK THISTLE AND ARTICHOKE EXTRACTS
-      ingredient_Lung_Care: BOTANICAL LUNG SUPPORT BLEND
+      ingredient_Lung_Care: BOSWELLIA EXTRACT and QUINCE EXTRACT
       ingredient_Mens_Vitality: ASHWAGANDHA, GRAPE and APPLE EXTRACTS
       ingredient_Sleep_Support: MELATONIN
       ingredient_Stress_Management: L-THEANINE
@@ -269,7 +269,7 @@ en_NZ:
       detail_Immune_Support: "As we age, our bodies are exposed to bacteria and viruses that cause illness. A healthy body develops immunity to help fight off these sickness-causing organisms, but poor diet, stress, and infection weaken our bodies’ immune systems. In order to combat this, beta-glucan (produced through natural fermentation) helps modulate the body’s immune defense system, increasing its ability to fight illness."
       detail_Joint_Care: "The human body is a hyper-complex vehicle, and just like we regularly change the oil in our cars, we need to re-lubricate our joints in order to minimize stress. Friction and physical stress are the greatest in our joints, caused by running, walking, and any form of physical activity. To address joint issues (such as arthritis), GreenGrown® glucosamine can be supplemented to help keep our joints in good shape by helping to build and repair cartilage—the tissue that cushions the joints."
       detail_Liver_Care: "Alcohol consumption, exposure to pollutants, viruses, excessive fat, and poor diet put an extraordinary amount of strain on the liver. These factors can damage the liver to the point that it stops functioning properly, eventually causing it to fail altogether. While there is no substitute for proper diet, exercise, and a healthy lifestyle to maintain healthy liver function, certain supplements may help our livers to function optimally. Milk thistle and artichoke extracts help to improve liver function and repair liver damage."
-      detail_Lung_Care: "Our lungs serve as a filter in our bodies, allowing the essentials to enter (like oxygen), while keeping the unnecessary out (like dust and dirt). Our organic proprietary herbal blend aids our lungs by helping renew the cells that filter out the bad, keeping them working at optimum capacity, and promoting efficient oxygen intake and respiratory performance."
+      detail_Lung_Care: "Our lungs serve as a filter in our bodies, allowing the essentials to enter (like oxygen), while keeping the unnecessary out (like dust and dirt). Pollutants or unnecessary particles may hinder the respiratory system from working optimally. Cool Choice Lung Care contains an all-natural herbal formula that promotes healthy respiration while coping with environmental pollutants."
       detail_Mens_Vitality: "A common side-effect of aging in men is decreased sexual performance. Cool Choice Men’s Vitality contains a synergistic combination of natural full spectrum Ashwagandha root extract and Grape and Apple Polyphenols to help improve sexual function, ignite performance and boost testosterone levels in men as well as provide energy and stamina."
       detail_Sleep_Support: "Have you ever woken up in the morning, already feeling tired? This is because your body did not get the amount of quality sleep that it needs. While it is well known that the body requires a full 6-8 hours of sleep per night in order to function properly, it must not be overlooked that the quality of sleep is also very important. When taken before bedtime*, melatonin is used to help support and improve the quality of sleep**."
       detail_Stress_Management: "The world is filled with stress, especially in this day and age. Work deadlines, exams, job interviews, traffic, and financial struggles are just some of the many stressors that the modern world has to offer. Constant stress affects our body in a variety of negative ways, causing us to get sick, gain weight, struggle with depression, and even fall victim to heart disease. Suntheanine® contains L-theanine to help improve learning performance, focus, and mental clarity, promote concentration, and help to reduce stress, restlessness, nervousness, and irritability."
@@ -283,8 +283,8 @@ en_NZ:
       contains_Immune_Support: "Each serving contains 200 milligrams of 1-3-Beta-Glucan, produced by natural fermentation."
       contains_Joint_Care: "Each serving contains 1,500 milligrams of GreenGrown® glucosamine from a pure vegetable, non-allergenic source."
       contains_Liver_Care: "Each serving contains 400 milligrams of combined milk thistle and artichoke extracts."
-      contains_Lung_Care: "Each serving contains 250 milligrams of our organic proprietary herbal blend, which consists of: Ophiopogon japonicus, Schizandra chinensis, Astragalus membranaceus, Panax ginseng, Zingiberis officinalis, and Glycyrrhiza uralensis."
-      contains_Mens_Vitality: "Each serving contains 250 mg of full spectrum Ashwagandha Root Extract KSM-66 and 250 mg ViNitrox Grape and Apple Extracts."
+      contains_Lung_Care: "Each serving contains 200 milligrams of AlvioLife®."
+      contains_Mens_Vitality: "Each serving contains 250 mg of full spectrum Ashwagandha Root Extract KSM-66® and 250 mg ViNitrox™, Grape and Apple Extracts"
       contains_Sleep_Support: "Each serving contains 6 milligrams of melatonin."
       contains_Stress_Management: "Each serving contains 100 milligrams of pure Suntheanine® from green tea."
       more1_Anti-Aging: "SOD B Extramel® is clinically proven to promote a sense of well-being through the maintenance of optimal mental and physical performances. "
@@ -297,9 +297,9 @@ en_NZ:
       more1_Immune_Support: "Beta-glucan naturally modulates the body’s immune response and helps maintain overall health and wellness. It helps strengthen the body’s immune defense."
       more1_Joint_Care: "Cool Choice provides premium quality, USP-Grade vegetable glucosamine from GreenGrown® for joint support. "
       more1_Liver_Care: "Cool Choice Liver Care contains milk thistle, extracted using non-harmful chemicals to help protect against alcohol, pollutants, and toxins to maintain liver health."
-      more1_Lung_Care: "Cool Choice Lung Care helps promote healthy respiration through a unique blend of herbs that support oxygen intake and efficient utilization of the respiratory system. This proprietary herbal blend has antibacterial and anti-inflammatory properties, which help keep the lungs moist to reduce cough and other difficulties during respiration."
-      more1_Mens_Vitality: "Ashwagandha KSM-66 extract helps improve sexual function and testosterone levels in men and increase strength and endurance."
-      more1_Sleep_Support: "Melatonin normalizes sleep patterns, day/night rhythms, and protects the immune system from stress. As we age, natural levels of melatonin decline, affecting normal sleep patterns."
+      more1_Lung_Care: "AlvioLife® is a proprietary blend of Boswellia Extract (oleo-gum resin) and Quince extract (fruit) which helps maintain clear airways and sooths respiratory issues."
+      more1_Mens_Vitality: "Ashwagandha KSM-66® extract helps improve sexual function and testosterone levels in men and increase strength and endurance."
+      more1_Sleep_Support: "Cool Choice Sleep Support provides melatonin to help promote a healthy sleeping pattern. Melatonin is released from the pineal gland, which normalizes the regulation of sleep."
       more1_Stress_Management: "Research suggests that L-theanine helps improve learning performance, focus, and mental clarity, and helps to promote concentration, improve sleep quality, reduce normal PMS symptoms, reduce the side effects of caffeine, and support the immune system."
       more2_Anti-Aging: "Clinical studies show that a one-month supplementation with SOD B Extramel® significantly boosts daily performances by improving stress relief, sleep quality, cognitive functions, and physical tone."
       more2_Beauty: "Verisol® also helps to retain and increase skin moisture and slow the formation of wrinkles."
@@ -311,9 +311,9 @@ en_NZ:
       more2_Immune_Support: "Beta-glucan also helps to stabilize cell membranes and stimulate protein synthesis."
       more2_Joint_Care: "Studies have shown that GreenGrown® glucosamine helps in reducing osteoarthritis symptoms through its anti-inflammatory properties."
       more2_Liver_Care: "Milk thistle stabilizes the cell membrane and stimulates protein synthesis, while accelerating regeneration of damaged liver cells and reducing inflammation."
-      more2_Lung_Care: "Cool Choice Lung Care helps support healthy respiration by promoting secretion of fluids, moistening the lungs to control cough due to dry lungs."
+      more2_Lung_Care: "AlvioLife® helps support a health respiratory system and alleviate irritation of the airways by modulating action of molecules called leukotrienes."
       more2_Mens_Vitality: "ViNitrox™ increases nitric oxide production and vasodilation. Vasodilation is linked to the production of nitric oxide."
-      more2_Sleep_Support: "Melatonin is a natural anti-oxidant, which helps the body fight against free-radicals that cause damage."
+      more2_Sleep_Support: "Melatonin normalizes sleep patterns, day/night rhythms, and protects the immune system from stress. As we age, natural levels of melatonin decline, affecting normal sleep patterns."
       more2_Stress_Management: "Suntheanine® promotes a sense of relaxation, reduces stress and restlessness, helps ease nervousness and irritability, and gently soothes tension away. It works to suppress glucocorticoids, which give the body and mind a “stress” sensation."
       more3_Anti-Aging: "Cool Choice Anti-Aging uses the highest quality natural, bioactive antioxidant Superoxide Dismutase (SOD, 14,000 IU/g), extracted from melons."
       more3_Beauty: "Cool Choice Beauty Care provides bioactive, optimized collagen peptides for healthy, youthful skin. "
@@ -325,9 +325,9 @@ en_NZ:
       more3_Immune_Support: "Cool Choice Immune Care contains fermented, high purity, and high bioavailable 1, 3-beta-glucan for immune support."
       more3_Joint_Care: "Glucosamine is in the fluid that cushions joints and it stimulates the repair and formation of cartilage."
       more3_Liver_Care: "Artichoke leaf extract is high in biologically active compounds and serves as an antioxidant, which helps remove harmful toxins from the liver."
-      more3_Lung_Care: "Cool Choice Lung Care works as an antioxidant and anti-inflammatory, inhibiting vascular permeability and improving overall vitality."
+      more3_Lung_Care: "AlvioLife® has been proven affective to relieve respiratory symptoms through in vitro, in vivo, and human studies."
       more3_Mens_Vitality: "These actives also help improve circulation and provide powerful anti-oxidant and anti-inflammatory effects."
-      more3_Sleep_Support: " "
+      more3_Sleep_Support: "Melatonin is a natural anti-oxidant, which helps the body fight against free-radicals that cause damage."
       more3_Stress_Management: "Cool Choice Stress Management contains pure, natural L-theanine from Suntheanine®, a patented amino acid for stress and well-being, mental relaxation, and focus without drowsiness. It is GRAS affirmed by the FDA (“generally recognized as safe”) for use in food and beverages."
       caution1_Sleep_Support: '*  Cool Choice recommends taking the melatonin supplement only before going to sleep.'
       caution2_Sleep_Support: '** Warning: May cause drowsiness. Use caution when operating a car or dangerous machinery.'
@@ -341,13 +341,13 @@ en_NZ:
       trademark_Immune_Support: " "
       trademark_Joint_Care: "GreenGrown® is a registered trademark of Ethical Nutrition."
       trademark_Liver_Care: " "
-      trademark_Lung_Care: " "
-      trademark_Mens_Vitality: " "
+      trademark_Lung_Care: "AlvioLife® is a registered trademark of PL Thomas - Laila Nutra, LLC.  International Patents Pending."
+      trademark_Mens_Vitality: "KSM-66® is a registered trademark of KSM66 Ashwaganda. ViNitrox™ is a registered trademark of Nexira."
       trademark_Sleep_Support: " "
       trademark_Stress_Management: "Suntheanine® is a registered trademark of Taiyo International."
       more: MORE
-      warning1: These statements have not been evaluated by the FDA. These products are not intended to treat, cure, or prevent any disease.
-      warning2: 'Warning: Pregnant or lactating women and people with known medical conditions and/or taking medications should consult with a healthcare practitioner before taking any dietary supplements.'
+      warning1: "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease."
+      warning2: "Not intended for use by pregnant or nursing women. If you are taking any medications or have any medical conditions or allergies, consult your doctor before using any nutritional supplements. Discontinue use and consult your doctor if any adverse reactions occur. Not intended for use by persons under the age of 18. Not suitable for children."
     faq:
       frequently: Frequently Asked Questions
       q1: What is a dietary supplement?

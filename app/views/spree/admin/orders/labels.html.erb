@@ -60,7 +60,7 @@
             <img src="<%= asset_path "home/icon-" + hash[x] + "@2x.png" -%>">
           <% end -%>
           <div class="detail"><%= func_option.join(' + ') %></div>
-          <div class="lot">LOT <%= line_item.variant.sku.upcase %></div>
+          <div class="lot">LOT <%= @order.completed_at.year-2000 %><%= @order.completed_at.yday() %></div>
         </div>
         <div class="box">
           <table>
