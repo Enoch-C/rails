@@ -1,9 +1,13 @@
 zh-CN:
   spree:
     confirm_promoter_parent_email:
-      subject1: 你的大使
-      subject2: 收到佣金
+      subject1: 您的大使
+      subject2: 收到奖励
       subject3: 的大使
+      thanks: 在此衷心感谢您的有效推广，让我们共同努力把最好的健康带给每个人！
+      dear_customer1: "亲爱的 Cool Choice 健康大使:"
+      dear_customer2: "亲爱的 Cool Choice 健康合伙人:"
+      from: "此笔订单的直接推广方是您的大使:"
     order_processed_successfully: 已成功定制
     subtotal: 商品金额
     summary_table:
@@ -399,9 +403,9 @@ zh-CN:
       confirm_email:
         thanks: 感谢购买Cool Choice! 我们希望您爱上私人定制保健品.
       confirm_promoter_email:
-        subject: 你刚刚通过大使计划收到佣金
-        store_credit_total: 总佣金
-        summary: 结算
+        subject: 您刚刚通过大使计划收到奖励
+        store_credit_total: 您的历史推广奖励总计
+        summary: 我们高兴的通知您，由于您的努力推广，您刚刚获得一笔推广奖励，金额为
       confirm_gift_email:
         subject: 您收到礼物，来自
         instructions: '请找到下面的链接来得到您的礼物:'

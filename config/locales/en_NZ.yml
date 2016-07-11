@@ -4,6 +4,10 @@ en_NZ:
       subject1: your promoter
       subject2: has received Promotion Credit
       subject3: "'s promoter"
+      thanks: Thanks for your business！
+      dear_customer1: "Dear Cool Choice Partner:"
+      dear_customer2: "Dear Cool Choice Partner Pro:"
+      from: "The order is sold by your sub partner:"
     identity: Identity
     head_bar:
       WHY_COOL_CHOICE: Why Cool Choice

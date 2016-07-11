@@ -1,6 +1,15 @@
 Spree::OrderMailer.class_eval do
   def confirm_promoter_email(promoter, credit_amount, resend = false)
     @promoter = promoter
+    @credit_amount = credit_amount
+    subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
+    subject += "#{Spree::Store.current.name}: #{Spree.t('order_mailer.confirm_promoter_email.subject')} - $#{credit_amount}"
+    mail(to: @promoter.email, from: from_address, subject: subject)
+  end
+
+  def confirm_promoter_pro_email(promoter, credit_amount, resend = false)
+    @promoter = promoter
+    @credit_amount = credit_amount
     subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
     subject += "#{Spree::Store.current.name}: #{Spree.t('order_mailer.confirm_promoter_email.subject')} - $#{credit_amount}"
     mail(to: @promoter.email, from: from_address, subject: subject)
@@ -10,27 +19,21 @@ Spree::OrderMailer.class_eval do
     @promoter = promoter
     subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
     subject += "#{Spree::Store.current.name}: #{Spree.t('confirm_promoter_parent_email.subject1')} #{@promoter.first_name} #{@promoter.last_name} #{Spree.t('confirm_promoter_parent_email.subject2')} - $#{credit_amount}"
-    mail(to: @promoter.parent.email, from: from_address, subject: subject) do |format|
-      format.text { render plain: subject }
-    end
+    mail(to: @promoter.parent.email, from: from_address, subject: subject)
   end
 
   def confirm_promoter_parent_parent_email(promoter, credit_amount, resend = false)
     @promoter = promoter
     subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
     subject += "#{Spree::Store.current.name}: #{Spree.t('confirm_promoter_parent_email.subject1')} #{@promoter.first_name} #{@promoter.last_name} #{Spree.t('confirm_promoter_parent_email.subject3')} #{@promoter.parent.first_name} #{@promoter.parent.last_name} #{Spree.t('confirm_promoter_parent_email.subject2')} - $#{credit_amount}"
-    mail(to: @promoter.parent.parent.email, from: from_address, subject: subject) do |format|
-      format.text { render plain: subject }
-    end
+    mail(to: @promoter.parent.parent.email, from: from_address, subject: subject)
   end
 
   def confirm_promoter_parent_parent_parent_email(promoter, credit_amount, resend = false)
     @promoter = promoter
     subject = (resend ? "[#{Spree.t(:resend).upcase}] " : '')
     subject += "#{Spree::Store.current.name}: #{Spree.t('confirm_promoter_parent_email.subject1')} #{@promoter.first_name} #{@promoter.last_name} #{Spree.t('confirm_promoter_parent_email.subject3')} #{@promoter.parent.first_name} #{@promoter.parent.last_name} #{Spree.t('confirm_promoter_parent_email.subject3')} #{@promoter.parent.first_name} #{@promoter.parent.last_name} #{Spree.t('confirm_promoter_parent_email.subject2')} - $#{credit_amount}"
-    mail(to: @promoter.parent.parent.parent.email, from: from_address, subject: subject) do |format|
-      format.text { render plain: subject }
-    end
+    mail(to: @promoter.parent.parent.parent.email, from: from_address, subject: subject)
   end
 
   def confirm_gift_email(order, resend = false)

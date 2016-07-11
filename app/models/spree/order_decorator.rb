@@ -59,15 +59,23 @@ Spree::Order.class_eval do
             end
           end
         end
+        if user.promoter.children.count > 0
+          credit_amount += credit_amount/2.5
+        end
         user.promoter.store_credit += credit_amount
         self.promoter = user.promoter
         user.promoter.save
         user.save
         self.save
         if credit_amount > 0
-          Spree::OrderMailer.confirm_promoter_email(user.promoter, credit_amount).deliver_later
-          user.promoter.parent
+          if user.promoter.children.count > 0
+            Spree::OrderMailer.confirm_promoter_pro_email(user.promoter, credit_amount).deliver_later
+          else
+            Spree::OrderMailer.confirm_promoter_email(user.promoter, credit_amount).deliver_later
+          end
           if user.promoter.parent
+            user.promoter.parent.store_credit += credit_amount/2.5
+            user.promoter.parent.save
             Spree::OrderMailer.confirm_promoter_parent_email(user.promoter, credit_amount).deliver_later
             if user.promoter.parent.parent
               Spree::OrderMailer.confirm_promoter_parent_parent_email(user.promoter, credit_amount).deliver_later
@@ -76,6 +84,7 @@ Spree::Order.class_eval do
               end
             end
           end
+
         end
       else
         # outdate bind
