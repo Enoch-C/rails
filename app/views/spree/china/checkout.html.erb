@@ -50,37 +50,6 @@
         <%= submit_tag '下一步' %>
       </div>
     </div>
-
-<% if false %>
-    <div class="row form-content">
-      <div class="col-sm-6" >
-        <div class="" id="billing" data-hook>
-          <input name="id" value="<%= @order.id %>" hidden="hidden" />
-          <div class="form-title">
-            收货地址
-          </div>
-          <div class="">
-            收件人：
-            <input style="width:95%" name="name" value="<%= "#{@order.bill_address.lastname}#{@order.bill_address.firstname}"  if @order.bill_address %>" required></input>*
-            <br/>
-            省市区：
-            <div data-toggle="distpicker">
-              <select style="width:95%" name="province" data-province="<%= "#{@province[@order.bill_address.state.name]}"  if @order.bill_address %>" required></select>*
-              <select style="width:95%" name="city" data-city="<%= "#{@order.bill_address.city}"  if @order.bill_address %>" required></select>*
-              <select style="width:95%" name="sub" data-district="<%= "#{@order.bill_address.address2}"  if @order.bill_address %>"></select>
-            </div>
-            <br/>
-            具体地址：
-            <input style="width:95%" name="street" value="<%= "#{@order.bill_address.address1}"  if @order.bill_address %>" required></input>*
-            <br/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="" data-hook="buttons">
-      <%= submit_tag Spree.t(:save_and_continue), :class => 'button' %>
-    </div>
-<% end %>
     </form>
   </div>
 </div>
@@ -89,17 +58,20 @@
   var mobile = document.getElementById("mobile"); // form has to have ID: <form id="formID">
 
   var form = document.getElementById("checkout-form"); // form has to have ID: <form id="formID">
+  var formDisabled = false
   form.noValidate = true;
   form.addEventListener('submit', function(event) { // listen for form submitting
+    if (formDisabled) return
     if (!event.target.checkValidity()) {
-      event.preventDefault(); // dismiss the default functionality
-
       if (mobile.value.length !== 11) {
         window.alert('请输入11位手机号码*')
       } else {
         window.alert('请填写所有必填栏*')
       }
+      event.preventDefault(); // dismiss the default functionality
+      return
     }
+    formDisabled = true
   }, false);
 
 </script>
