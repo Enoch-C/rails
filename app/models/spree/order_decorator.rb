@@ -12,6 +12,11 @@ Spree::Order.class_eval do
     remove_transition from: :delivery, to: :confirm
   end
 
+  def generate_order_number
+   self.number = "R#{Time.now.to_i}#{Array.new(5){rand(9)}.join}" if self.number.blank?
+   self.number
+  end
+
   def deliver_order_confirmation_email
     if special_instructions
       Spree::OrderMailer.confirm_gift_email(id).deliver_later

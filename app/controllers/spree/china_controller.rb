@@ -15,6 +15,7 @@ module Spree
 
     def pay
       @order = Spree::Order.new
+      @order.generate_order_number
       @order.save!
 
       @order.promoter = Spree::Promoter.find_by_email(params["promoter_email"])
