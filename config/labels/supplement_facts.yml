@@ -25,7 +25,7 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Superoxide Dismutase (SOD):
+        Superoxide Dismutase:
           Amount Per Serving: 10
           unit: mg
           daily_value_append: '**'
@@ -46,9 +46,6 @@ functions:
             Sugars:
               Amount Per Serving: 0
               unit: g
-        Protein:
-          Amount Per Serving: 1
-          unit: g
         Sodium:
           Amount Per Serving: 0
           unit: mg
@@ -106,8 +103,34 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Ganeden BC30 (Bacillus coagulans):
+        Bacillus coagulans:
           Amount Per Serving: 67
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+  Energy:
+      basic:
+        Calories:
+          Amount Per Serving: 2.99
+        Total Carbohydrate:
+          Amount Per Serving: 1.26
+          unit: g
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 1.21
+              unit: g
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Ashwagandha Root Extract:
+          Amount Per Serving: 500
           unit: mg
           daily_value_append: '**'
       Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
@@ -132,7 +155,7 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Lutein & Zeaxanthine Lutemax 20/20:
+        Lutein & Zeaxanthin:
           Amount Per Serving: 6
           unit: mg
           daily_value_append: '**'
@@ -184,7 +207,7 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Beta 1,3D Glucan Complex:
+        Beta 1,3 D-Glucan Complex:
           Amount Per Serving: 200
           unit: mg
           daily_value_append: '**'
@@ -210,7 +233,7 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Glucosamine Hydrochloride Green Grown:
+        Glucosamine Hydrochloride:
           Amount Per Serving: 1500
           unit: mg
           daily_value_append: '**'
@@ -236,26 +259,26 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Milk Thistle PE (Seed)(Sylibum marianum):
+        Milk Thistle Seed Extract:
           Amount Per Serving: 200
           unit: mg
           daily_value_append: '**'
-        Artichoke PE (Leaf)(Cynara scolymus):
+        Artichoke Leaf Extract:
           Amount Per Serving: 200
           unit: mg
           daily_value_append: '**'
       Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
-  Men's Vitality:
+  Lung Care:
       basic:
         Calories:
           Amount Per Serving: 3.56
         Total Carbohydrate:
-          Amount Per Serving: 1.70
+          Amount Per Serving: 1.52
           unit: g
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 1.61
+              Amount Per Serving: 1.47
               unit: g
               daily_value_append: '*'
             Sugars:
@@ -266,23 +289,53 @@ functions:
           unit: mg
           '% Daily Value': 0
       extra:
-        Tongkat Ali (Root)(Eurycoma Longifolia):
-          Amount Per Serving: 100
+        Boswellia serrata Gum Extract and Aegle marmelos Fruit Extract:
+          Amount Per Serving: 200
+          unit: mg
+          daily_value_append: '**'
+      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+  Men's Vitality:
+      basic:
+        Calories:
+          Amount Per Serving: 2.89
+        Total Carbohydrate:
+          Amount Per Serving: 1.28
+          unit: g
+          daily_value_append: '*'
+          carbohydrate:
+            Dietary Fiber:
+              Amount Per Serving: 1.23
+              unit: g
+              daily_value_append: '*'
+            Sugars:
+              Amount Per Serving: 0
+              unit: g
+        Sodium:
+          Amount Per Serving: 0
+          unit: mg
+          '% Daily Value': 0
+      extra:
+        Grape and Apple Skin Extract:
+          Amount Per Serving: 250
+          unit: mg
+          daily_value_append: '**'
+        Aswagandha Root Extract:
+          Amount Per Serving: 250
           unit: mg
           daily_value_append: '**'
       Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Sleep Support:
       basic:
         Calories:
-          Amount Per Serving: 5
+          Amount Per Serving: 3.59
         Total Carbohydrate:
-          Amount Per Serving: 2
+          Amount Per Serving: 1.70
           unit: g
           '% Daily Value': 1
           daily_value_append: '*'
           carbohydrate:
             Dietary Fiber:
-              Amount Per Serving: 2
+              Amount Per Serving: 1.65
               unit: g
               '% Daily Value': 7
               daily_value_append: '*'
@@ -295,7 +348,7 @@ functions:
           '% Daily Value': 0
       extra:
         Melatonin:
-          Amount Per Serving: 6
+          Amount Per Serving: 5
           unit: mg
           daily_value_append: '**'
       Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.

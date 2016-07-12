@@ -2,11 +2,11 @@
 
 
 ============================================================
-<%= Spree.t('order_mailer.confirm_promoter_email.summary') %> <%= @credit_amount/2.5 %>
+<%= Spree.t('order_mailer.confirm_promoter_email.summary') %> $<%= @credit_amount/2.5 %>
 
 <%= Spree.t('confirm_promoter_parent_email.from') %> <%= @promoter.first_name %><%= @promoter.last_name %>
 
-<%= Spree.t('order_mailer.confirm_promoter_email.store_credit_total') %> <%= @promoter.parent.store_credit %>
+<%= Spree.t('order_mailer.confirm_promoter_email.store_credit_total') %> $<%= @promoter.parent.store_credit %>
 ============================================================
 
 <%= Spree.t('confirm_promoter_parent_email.thanks') %>
