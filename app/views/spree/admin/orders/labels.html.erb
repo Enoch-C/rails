@@ -46,6 +46,14 @@
 
   <% end %>
 
+  <% container = 1 %>
+  <% if line_item.variant.sku[3, 1] == 'm' %>
+  <% container = 30 %>
+  <% elsif line_item.variant.sku[3, 1] == 'w' %>
+  <% container = 7 %>
+  <% end %>
+
+
   <% sku = [line_item.variant.sku[6, 2], line_item.variant.sku[8, 2], line_item.variant.sku[10, 2]].map { |e| e.to_i } %>
   <% sku.delete(0) %>
   <% hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"].sort %>
@@ -60,13 +68,12 @@
             <img src="<%= asset_path "home/icon-" + hash[x] + "@2x.png" -%>">
           <% end -%>
           <div class="detail"><%= func_option.join(' + ') %></div>
-          <div class="lot">LOT <%= @order.completed_at.year-2000 %><%= @order.completed_at.yday() %></div>
         </div>
         <div class="box">
           <table>
             <caption>
               <div class="title">Supplement Facts</div>
-              <div class="sub">Serving Size 1 Packet (<%= supplement_facts['Serving Size 1 Packet'] %>g)<br>Servings Per Container <%= supplement_facts['Servings Per Container'] %></div>
+              <div class="sub">Serving Size 1 Packet (<%= supplement_facts['Serving Size 1 Packet'] %>g)<br>Servings Per Container <%=  container %></div>
             </caption>
             <thead>
               <tr>
@@ -91,11 +98,6 @@
                 <td><%= dietary_Fiber_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
                 <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(0).to_s.chomp('.0')+'%*' %></td>
               </tr>
-              <tr>
-                <td class="total">Sugars</td>
-                <td><%= sugars_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
-                <td></td>
-              </tr>
               <% if protein_Amount_Per_Serving > 0 %>
               <tr>
                 <td>Protein</td>
@@ -103,11 +105,6 @@
                 <td></td>
               </tr>
               <% end %>
-              <tr>
-                <td>Sodium</td>
-                <td><%= sodium_Amount_Per_Serving.round(0).to_s.chomp('.0') %> mg</td>
-                <td><%= sodium_Daily_Value.round(0).to_s.chomp('.0')+'%' %></td>
-              </tr>
             </tbody>
             <tbody class="super">
               <% extra.keys.each do |key| %>
@@ -126,7 +123,7 @@
           </table>
         </div>
         <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
-        <div class="ingredients"><span class="title">MIXING INSTRUCTIONS</span>: Pour contents of packet into 4 fl oz (120 ml) of water. Mix and enjoy!</div>
+        <div class="ingredients"><span class="title">SUGGESTED USE</span>: Mix contents of packet into 4 fl oz (120 ml) of water. Mix and enjoy!</div>
       </div>
     </div>
   <% end %>

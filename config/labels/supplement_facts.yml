@@ -1,380 +1,380 @@
-Serving Size 1 Packet: 6.0
+Serving Size 1 Packet: 6
 Servings Per Container: 30
 # daily_value_append:
 #   '*: Percent Daily Values are based on a 2,000 calorie diet.
 #   '**': Daily Value not established.
 functions:
   Anti-Aging:
-      basic:
-        Calories:
-          Amount Per Serving: 3.76
-        Total Carbohydrate:
-          Amount Per Serving: 1.78
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.65
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Superoxide Dismutase:
-          Amount Per Serving: 10
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.76
+      Total Carbohydrate:
+        Amount Per Serving: 1.78
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.65
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Superoxide Dismutase:
+        Amount Per Serving: 10
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Beauty:
-      basic:
-        Calories:
-          Amount Per Serving: 5.98
-        Total Carbohydrate:
-          Amount Per Serving: 0.69
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 0.56
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Hydrolyzed Collagen:
-          Amount Per Serving: 1000
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 5.98
+      Total Carbohydrate:
+        Amount Per Serving: 0.69
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 0.56
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Hydrolyzed Collagen:
+        Amount Per Serving: 1000
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Brain Care:
-      basic:
-        Calories:
-          Amount Per Serving: 3.29
-        Total Carbohydrate:
-          Amount Per Serving: 1.56
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.48
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Citicoline:
-          Amount Per Serving: 250
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.29
+      Total Carbohydrate:
+        Amount Per Serving: 1.56
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.48
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Citicoline:
+        Amount Per Serving: 250
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Digestive Care:
-      basic:
-        Calories:
-          Amount Per Serving: 3.65
-        Total Carbohydrate:
-          Amount Per Serving: 1.73
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.60
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Bacillus coagulans:
-          Amount Per Serving: 67
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.65
+      Total Carbohydrate:
+        Amount Per Serving: 1.73
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.60
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Bacillus coagulans 1 billion spores per serving:
+        Amount Per Serving: 67
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Energy:
-      basic:
-        Calories:
-          Amount Per Serving: 2.99
-        Total Carbohydrate:
-          Amount Per Serving: 1.26
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.21
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Ashwagandha Root Extract:
-          Amount Per Serving: 500
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 2.99
+      Total Carbohydrate:
+        Amount Per Serving: 1.26
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.21
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Ashwagandha Root Extract:
+        Amount Per Serving: 500
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Eye Care:
-      basic:
-        Calories:
-          Amount Per Serving: 3.54
-        Total Carbohydrate:
-          Amount Per Serving: 1.67
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.54
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Lutein & Zeaxanthin:
-          Amount Per Serving: 6
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.54
+      Total Carbohydrate:
+        Amount Per Serving: 1.67
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.54
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Lutein & Zeaxanthin (from Tagetes erecta flower extract):
+        Amount Per Serving: 6
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Heart Care:
-      basic:
-        Calories:
-          Amount Per Serving: 3.53
-        Total Carbohydrate:
-          Amount Per Serving: 1.67
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.53
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Coenzyme Q10:
-          Amount Per Serving: 50
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.53
+      Total Carbohydrate:
+        Amount Per Serving: 1.67
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.53
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Coenzyme Q10:
+        Amount Per Serving: 50
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Immune Care:
-      basic:
-        Calories:
-          Amount Per Serving: 3.42
-        Total Carbohydrate:
-          Amount Per Serving: 1.61
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.48
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Beta 1,3 D-Glucan Complex:
-          Amount Per Serving: 200
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.42
+      Total Carbohydrate:
+        Amount Per Serving: 1.61
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.48
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Beta 1,3 D-Glucan Complex:
+        Amount Per Serving: 200
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Joint Care:
-      basic:
-        Calories:
-          Amount Per Serving: 0.81
-        Total Carbohydrate:
-          Amount Per Serving: 0.31
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 0.17
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Glucosamine Hydrochloride:
-          Amount Per Serving: 1500
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 0.81
+      Total Carbohydrate:
+        Amount Per Serving: 0.31
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 0.17
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Glucosamine Hydrochloride:
+        Amount Per Serving: 1500
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Liver Care:
-      basic:
-        Calories:
-          Amount Per Serving: 2.99
-        Total Carbohydrate:
-          Amount Per Serving: 1.41
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.32
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Milk Thistle Seed Extract:
-          Amount Per Serving: 200
-          unit: mg
-          daily_value_append: '**'
-        Artichoke Leaf Extract:
-          Amount Per Serving: 200
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 2.99
+      Total Carbohydrate:
+        Amount Per Serving: 1.41
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.32
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Milk Thistle Seed Extract:
+        Amount Per Serving: 200
+        unit: mg
+        daily_value_append: '**'
+      Artichoke Leaf Extract:
+        Amount Per Serving: 200
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Lung Care:
-      basic:
-        Calories:
-          Amount Per Serving: 3.56
-        Total Carbohydrate:
-          Amount Per Serving: 1.52
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.47
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Boswellia serrata Gum Extract and Aegle marmelos Fruit Extract:
-          Amount Per Serving: 200
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.56
+      Total Carbohydrate:
+        Amount Per Serving: 1.52
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.47
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Boswellia serrata Gum Extract and Aegle marmelos Fruit Extract:
+        Amount Per Serving: 200
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Men's Vitality:
-      basic:
-        Calories:
-          Amount Per Serving: 2.89
-        Total Carbohydrate:
-          Amount Per Serving: 1.28
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.23
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Grape and Apple Skin Extract:
-          Amount Per Serving: 250
-          unit: mg
-          daily_value_append: '**'
-        Aswagandha Root Extract:
-          Amount Per Serving: 250
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 2.89
+      Total Carbohydrate:
+        Amount Per Serving: 1.28
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.23
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Grape and Apple Skin Extract:
+        Amount Per Serving: 250
+        unit: mg
+        daily_value_append: '**'
+      Aswagandha Root Extract:
+        Amount Per Serving: 250
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Sleep Support:
-      basic:
-        Calories:
-          Amount Per Serving: 3.59
-        Total Carbohydrate:
-          Amount Per Serving: 1.70
-          unit: g
-          '% Daily Value': 1
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.65
-              unit: g
-              '% Daily Value': 7
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        Melatonin:
-          Amount Per Serving: 5
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
-  Stress Management:
-      basic:
-        Calories:
-          Amount Per Serving: 3.59
-        Total Carbohydrate:
-          Amount Per Serving: 1.70
-          unit: g
-          daily_value_append: '*'
-          carbohydrate:
-            Dietary Fiber:
-              Amount Per Serving: 1.56
-              unit: g
-              daily_value_append: '*'
-            Sugars:
-              Amount Per Serving: 0
-              unit: g
-        Sodium:
-          Amount Per Serving: 0
-          unit: mg
-          '% Daily Value': 0
-      extra:
-        L-Theanine:
-          Amount Per Serving: 100
-          unit: mg
-          daily_value_append: '**'
-      Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+    basic:
+      Calories:
+        Amount Per Serving: 3.59
+      Total Carbohydrate:
+        Amount Per Serving: 1.70
+        unit: g
+        '% Daily Value': 1
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.65
+            unit: g
+            '% Daily Value': 7
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      Melatonin:
+        Amount Per Serving: 5
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
+  Stress Relief:
+    basic:
+      Calories:
+        Amount Per Serving: 3.59
+      Total Carbohydrate:
+        Amount Per Serving: 1.70
+        unit: g
+        daily_value_append: '*'
+        carbohydrate:
+          Dietary Fiber:
+            Amount Per Serving: 1.56
+            unit: g
+            daily_value_append: '*'
+          Sugars:
+            Amount Per Serving: 0
+            unit: g
+      Sodium:
+        Amount Per Serving: 0
+        unit: mg
+        '% Daily Value': 0
+    extra:
+      L-Theanine:
+        Amount Per Serving: 100
+        unit: mg
+        daily_value_append: '**'
+    Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
