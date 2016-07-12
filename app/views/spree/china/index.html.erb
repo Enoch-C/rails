@@ -96,6 +96,15 @@
   </div>
   <div style="height:100px; background:#f7f8fa">
   </div>
+  <div class="overlay" v-show="androidWechatTipShowing" @click="androidWechatTipShowing = false">
+    <div class="subtitle">由于支付接口在安卓微信浏览器上存在问题</div>
+    <div class="title">
+      请点击右上角，使用浏览器打开本页
+      <br>
+      否则可能无法完成支付
+    </div>
+    <img src="https://basaio.b0.upaiyun.com/coolchoice/images/arrow.png" class="arrow" width="33" height="48">
+  </div>
 </div>
 
 
@@ -178,7 +187,8 @@
         },
       },
       mutuallyExclusives: [[5, 12], [5, 13]],
-      disabledFeatures: []
+      disabledFeatures: [],
+      androidWechatTipShowing: false
     },
     computed: {
       types: function() {
@@ -280,6 +290,10 @@
       },
     },
     ready: function() {
+      var ua = window.navigator.userAgent.toLowerCase();
+      if (/mqqbrowser/.test(ua) && /micromessenger/.test(ua)) {
+        this.androidWechatTipShowing = true
+      }
     }
   })
 </script>
