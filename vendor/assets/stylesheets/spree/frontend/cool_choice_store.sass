@@ -118,7 +118,7 @@ textarea
         padding: 19px 0
     tbody
       tr
-        border-top: .5px solid #dedede
+        border-top: 1px solid #dedede
       td
         padding: 30px 0
 .summary-table
@@ -143,7 +143,7 @@ textarea
       padding: 15px 0
       font-size: 20px
       font-weight: 500
-      border-bottom: .5px solid #dedede
+      border-bottom: 1px solid #dedede
       margin-bottom: 10px
       @media (max-width: 768px)
         padding: 10px 0
@@ -648,14 +648,14 @@ input.button
         background: #fff
         color: #474c5d
         &:hover
-          border: solid 0.5px #678fc9
+          border: solid 1px #678fc9
         &.active
-          border: solid 0.5px #678fc9
+          border: solid 1px #678fc9
         .picture
           position: absolute
           left: 0
           bottom: 0
-          height: 169px
+          height: 168px
           z-index: 1
         .name
           position: relative
@@ -668,6 +668,9 @@ input.button
           position: relative
           z-index: 2
           font-size: 16px
+          text-transform: lowercase
+          &:first-letter
+            text-transform: uppercase
         .more
           position: absolute
           z-index: 2
@@ -686,17 +689,22 @@ input.button
         padding: 1.5% 1%
       @media (max-width: 991px)
         .inner
+          height: 125px
           .name
             font-size: 14px
           .detail
             font-size: 12px
+            line-height: 1.1
           .more
             font-size: 12px
-      @media (max-width: 991px)
-        .inner
-          height: 125px
+            bottom: 10px
           .picture
-            height: 125px
+            height: 124px
+      @media (max-width: 768px)
+        .inner
+          padding-top: 15px
+          .more
+            bottom: 5px
 #order_summary
   .order-number
     font-size: 18px
@@ -771,7 +779,7 @@ input.button
         float: left
       .order-num
         padding: 10px 0
-        border-bottom: solid .5px #dedede
+        border-bottom: solid 1px #dedede
         a
           color: #00b9ee
           font-size: 16px
@@ -821,7 +829,7 @@ input.button
       width: 100%
       background: #fff
       text-align: center
-      z-index: 1
+      z-index: 11
       box-shadow: 0 1px 1px rgba(0,0,0,.1)
       a
         display: block
@@ -1288,7 +1296,45 @@ input.button
             height: 35px
             line-height: 35px
             margin: 20px 15px 10px
-
+#cart
+  h1
+    font-size: 30px
+    color: #474c5d
+    text-align: center
+    @media (max-width: 768px)
+      font-size: 22px
+  .border-table
+    .math
+      display: inline-block
+      width: 20px
+      text-align: center
+      &:hover
+        cursor: pointer
+    .delete
+      float: right
+      &:hover
+        cursor: pointer
+      img
+        margin: 5px
+        width: 22px
+        height: auto
+  .item
+    .delete
+      position: absolute
+      right: 8px
+      top: 35%
+      img
+        width: 20px
+  .summary-table
+    float: right
+    @media (max-width: 768px)
+      float: none
+      margin: 20px auto
+    .button
+      width: 150px
+      @media (max-width: 768px)
+        width: 120px
+        font-size: 12px
 #cool-choice-home.china
   .state-inform
     .customize
