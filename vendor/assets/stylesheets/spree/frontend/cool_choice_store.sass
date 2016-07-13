@@ -609,28 +609,6 @@ input.button
 #ingredient
   background: #f7f8fa
   font-weight: 300
-  .banner
-    background: image-url("home/bj3@2x.png") center no-repeat
-    background-size: cover
-    width: 100%
-    height: 500px
-    text-align: center
-    color: #fff
-    .banner-container
-      top: 150px
-      padding-left: 150px
-      height: 100%
-      position: relative
-      .logo
-        height: 57px
-        margin: 160px auto 40px
-      .title
-        font-size: 60px
-        line-height: 0.5
-      .sub-title
-        font-size: 30px
-        font-weight: 300
-        margin: 22px auto 0
   >.container
     padding-bottom: 100px
     text-align: center
@@ -639,42 +617,63 @@ input.button
       margin-top: 58px
       font-size: 20px
       color: #00b9ee
+      @media (max-width: 768px)
+        font-size: 14px
+        margin: 22px -15px 0
       .line
         display: inline-block
         width: 40px
         height: 2px
         margin: 0 40px 8px
         background: #dedede
+        @media (max-width: 768px)
+          width: 15px
+          margin: 0 7px 4px
     .sub-title
       margin-bottom: 35px
       font-size: 14px
       color: #A6A4A4
+      @media (max-width: 768px)
+        font-size: 12px
+        margin: 5px auto 20px
     .function
-      padding: 1.5% 1%
+      padding: 1.5% 6%
       text-align: left
-      .active
-        border: solid 0.5px #678fc9
       .inner
         position: relative
-        padding: 20px
-        height: 180px
-        border-radius: 3px
+        padding: 20px 20px 20px 35%
+        height: 169px
+        border-radius: 10px
+        border: solid 1px #dedede
         background: #fff
+        color: #474c5d
+        &:hover
+          border: solid 0.5px #678fc9
+        &.active
+          border: solid 0.5px #678fc9
+        .picture
+          position: absolute
+          left: 0
+          bottom: 0
+          height: 169px
+          z-index: 1
         .name
+          position: relative
+          z-index: 2
           line-height: 1.4
-          font-size: 20px
-          color: #678fc9
+          font-size: 18px
           .ingredient
             font-weight: 500
         .detail
-          font-size: 18px
-          color: #474c5d
+          position: relative
+          z-index: 2
+          font-size: 16px
         .more
           position: absolute
-          left: 20px
+          z-index: 2
+          left: 35%
           bottom: 20px
           font-size: 16px
-          color: #474c5d
           img
             width: 13px
             margin-left: 7px
@@ -682,9 +681,22 @@ input.button
           position: absolute
           bottom: 0
           right: 0
-          width: 85px
-
-
+          width: 70px
+      @media (max-width: 1170px)
+        padding: 1.5% 1%
+      @media (max-width: 991px)
+        .inner
+          .name
+            font-size: 14px
+          .detail
+            font-size: 12px
+          .more
+            font-size: 12px
+      @media (max-width: 991px)
+        .inner
+          height: 125px
+          .picture
+            height: 125px
 #order_summary
   .order-number
     font-size: 18px
