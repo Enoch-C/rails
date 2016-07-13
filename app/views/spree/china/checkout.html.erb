@@ -3,7 +3,7 @@
 <% @body_id = 'Address' %>
 <div id="china-checkout">
   <div class="container" >
-    <form id="checkout-form" method="get" action="<%= spree.china_pay_path %>" accept-charset="UTF-8">
+    <form id="checkout-form" method="post" action="<%= spree.china_pay_path %>" accept-charset="UTF-8">
     <div class="china-address">
       <input name="promoter_email" value="<%= @promoter_email %>" hidden="hidden" />
       <input name="sku" value="<%= @sku %>" hidden="hidden" />
