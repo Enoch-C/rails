@@ -1,28 +1,5 @@
 <% self.title = "Ingredient" %>
-<style type="text/css" media="screen">
-   @font-face { font-family: Face; src: url(<%= URI::parse(image_url("home/KomikaTitle-Paint.ttf")).path.html_safe %>); }
-   .dots{
-     position: absolute;
-     bottom: -25px;
-     display: block;
-     width: 100%;
-     padding: 0;
-     margin: 0;
-     list-style: none;
-     text-align: center;
-   }
-   .dots li button {
-      display: block;
-      width: 10px;
-      height: 10px;
-      padding: 0;
-      cursor: pointer;
-      color: transparent;
-      border: 0;
-      outline: none;
-      background-color: white;
-   }
-</style>
+
 <div id="ingredient">
   <% if false %>
   <div class="banner">
@@ -43,8 +20,9 @@
     </div>
     <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
     <% function_list.each do |function| %>
-      <div class="col-sm-4 function <%= function %>">
+      <div class="col-sm-6 function <%= function %>">
         <div class="inner">
+          <img src="<%= asset_path 'ingredient/'.concat(function).concat('.png') %>" class="picture">
           <div class="name">
             <%= Spree.t('ingredient.function_' + function) %> - <span class="ingredient"><%= Spree.t('ingredient.ingredient_' + function) %></span>
           </div>
