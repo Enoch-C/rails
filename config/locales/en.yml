@@ -107,7 +107,6 @@ en:
         get: Get My Gift
     gift: Gift
     GIFT: GIVE AS A GIFT
-    INGREDIENT: INGREDIENTS
     ABOUT: ABOUT
     logout: LOGOUT
     signin: SIGN IN
@@ -285,7 +284,7 @@ en:
       contains_Liver_Care: "Each serving contains 400 milligrams of combined milk thistle and artichoke extracts."
       contains_Lung_Care: "Each serving contains 200 milligrams of AlvioLife®."
       contains_Mens_Vitality: "Each serving contains 250 mg of full spectrum Ashwagandha Root Extract KSM-66® and 250 mg ViNitrox™, Grape and Apple Extracts"
-      contains_Sleep_Support: "Each serving contains 6 milligrams of melatonin."
+      contains_Sleep_Support: "Each serving contains 5 milligrams of melatonin."
       contains_Stress_Management: "Each serving contains 100 milligrams of pure Suntheanine® from green tea."
       more1_Anti-Aging: "SOD B Extramel® is clinically proven to promote a sense of well-being through the maintenance of optimal mental and physical performances. "
       more1_Beauty: "Natural aging processes, stress, pollution, UV radiation, harmful chemicals, and poor nutrition all contribute to loss of skin firmness, moisture, and elasticity, resulting in wrinkles and dryness. Verisol® helps reduce skin wrinkles and improve skin elasticity."
