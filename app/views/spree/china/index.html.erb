@@ -291,7 +291,7 @@
     },
     ready: function() {
       var ua = window.navigator.userAgent.toLowerCase();
-      if (/mqqbrowser/.test(ua)) {
+      if ((/mqqbrowser/.test(ua) && /micromessenger/.test(ua)) || (/android/.test(ua) && /micromessenger/.test(ua))) {
         this.androidWechatTipShowing = true
       }
     }
