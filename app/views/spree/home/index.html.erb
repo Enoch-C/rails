@@ -119,7 +119,9 @@
       <div class="customize">
         <div class="func">
           <div class="title"><%= Spree.t(:"homepage.bar_choose") %></div>
-          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box"><%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %></div>
+          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box">
+            <%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %>
+          </div>
         </div>
         <div class="qty">
           <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
