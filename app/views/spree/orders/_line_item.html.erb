@@ -1,47 +1,55 @@
 <% variant = line_item.variant %>
-
-<%= order_form.fields_for :line_items, line_item do |item_form| %>
-  <tr><td colspan=5><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
-  <tr style="height: 190px">
-    <td data-hook="cart_item_image" class="item-image" style="padding: 0 20px;">
-      <div style="line-height: 100%;vertical-align: middle;">
-        <!-- <input type="checkbox" style="display: inline-block"/> -->
-        <div style="display: inline-block; margin: 0 24px;">
-          <% if variant.images.length == 0 %>
-            <%= small_image(variant.product) %>
-          <% else %>
-            <%= image_tag(variant.images.first.attachment.url(:small)) %>
-          <% end %>
+<div class="hidden-xs">
+  <%= order_form.fields_for :line_items, line_item do |item_form| %>
+    <tr class="stock-item">
+      <td data-hook="order_item_image" class="item-image">
+        <% if variant.images.length == 0 %>
+          <%= small_image(variant.product) %>
+        <% else %>
+          <%= image_tag(variant.images.first.attachment.url(:small)) %>
+        <% end %>
+      </td>
+      <td data-hook="order_item_description">
+        <h4><%= line_item.name %></h4>
+        <%= variant.options_text %>
+      </td>
+      <td data-hook="order_item_price"><span>{{ prices[<%= line_item_counter %>].single }}</span></td>
+      <td data-hook="order_item_qty">
+        <span v-on:click="minus(<%= line_item_counter %>)" class="math">-</span>
+        <select name="tier" id="tier" v-model="selected[<%= line_item_counter %>]" @input="changeItem(<%= line_item_counter %>, $event)">
+          <option v-for="option in options[<%= line_item_counter %>]" v-bind:value="option.value">{{ option.text }}</option>
+        </select>
+        <span v-on:click="plus(<%= line_item_counter %>)" class="math">+</span>
+      </td>
+      <td data-hook="order_item_total" style="color: #474c4d; font-weight: 500">
+        ${{ prices[<%= line_item_counter %>].total.toFixed(2) }}
+        <div v-on:click="deleteLineItem(<%= line_item_counter %>)"  class="delete">
+          <img src="<%= asset_path 'checkout/button-delete@2x.png' %>">
         </div>
-        <div style="display: inline-block; width: 340px; vertical-align: middle">
-          <div class="cool_choice_label"><%= line_item.name %></div>
-          <div class="cool_choice_titles"><%= variant.options_text %></div>
+      </td>
+    </tr>
+  <% end %>
+</div>
+<div class="visible-xs-block">
+  <%= order_form.fields_for :line_items, line_item do |item_form| %>
+    <div class="item clearfix">
+      <div class="item-image">
+        <% if variant.images.length == 0 %>
+          <%= small_image(variant.product) %>
+        <% else %>
+          <%= image_tag(variant.images.first.attachment.url(:small)) %>
+        <% end %>
+      </div>
+      <div class="item-detail">
+        <div class="text"><%= line_item.name %><br><span class="func"><%= variant.options_text %></span></div>
+        <div class="price">{{ prices[<%= line_item_counter %>].single }}</div>
+        <div class="qty">
+          {{ selected[<%= line_item_counter %>].replace('.', ' ') }}
+        </div>
+        <div v-on:click="deleteLineItem(<%= line_item_counter %>)"  class="delete">
+          <img src="<%= asset_path 'checkout/button-delete@2x.png' %>">
         </div>
       </div>
-    </td>
-    <td data-hook="cart_item_description">
-      <div class="price">{{ prices[<%= line_item_counter %>].single }}</div>
-      <% if false #line_item.insufficient_stock? %>
-        <span class="out-of-stock">
-          <%= Spree.t(:out_of_stock) %>&nbsp;&nbsp;<br />
-        </span>
-      <% end %>
-    </td>
-    <td data-hook="cart_item_price">
-      <button type='button' class="minus_plus" v-on:click="minus(<%= line_item_counter %>)">-</button>
-
-      <select name="tier" id="tier" v-model="selected[<%= line_item_counter %>]" @input="changeItem(<%= line_item_counter %>, $event)">
-        <option v-for="option in options[<%= line_item_counter %>]" v-bind:value="option.value">{{ option.text }}</option>
-      </select>
-
-      <button type='button' class="minus_plus" v-on:click="plus(<%= line_item_counter %>)">+</button>
-      <%#= item_form.number_field :quantity, min: 0, class: "form-control line_item_quantity", size: 5 %>
-    </td>
-    <td class="total_price" data-hook="cart_item_total">
-      ${{ prices[<%= line_item_counter %>].total.toFixed(2) }}
-    </td>
-    <td class="cart-item-delete" data-hook="cart_item_delete">
-      <button type='button' class="glyphicon glyphicon-minus-sign" style="border: none; background-color: transparent"  v-on:click="deleteLineItem(<%= line_item_counter %>)"></button>
-    </td>
-  </tr>
-<% end %>
+    </div>
+  <% end %>
+</div>

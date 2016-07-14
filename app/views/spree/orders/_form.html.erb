@@ -1,47 +1,45 @@
 <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
-<div style="width: 1100px; margin: auto">
-  <table class="table" id="cart-detail" data-hook style="width: 1100px;border:1px solid #dedede">
-    <thead style="height: 60px">
-      <tr style="height: 60px" data-hook="cart_items_headers">
-        <th style="padding: 0 0 0 60px; width: 550px"><%= Spree.t(:cart_tableHeader_details)%></th>
+<div class="border-table hidden-xs">
+  <table id="cart-detail" data-hook>
+    <thead>
+      <tr data-hook="cart_items_headers">
+        <th colspan="2"><%= Spree.t(:cart_tableHeader_details)%></th>
         <th><%= Spree.t(:cart_tableHeader_price)%></th>
         <th><%= Spree.t(:cart_tableHeader_quantity)%></th>
         <th><%= Spree.t(:cart_tableHeader_totalPrice)%></th>
-        <th></th>
       </tr>
     </thead>
     <tbody id="line_items" data-hook>
       <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
     </tbody>
   </table>
+</div>
+<div class="row visible-xs-block xs-border-table">
+  <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
+</div>
 
-  <table style="width: 396px;float:right;border:1px solid #dedede;margin-top:10px">
-    <tr><td colspan=2 class="cart_summary_big" style="height:58px"><div><%= Spree.t(:cart_summary_title)%></div></td></tr>
-    <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
-    <tr>
-      <td class="cart_summary_dt"><%= Spree.t(:cart_summary_subtotal)%></td>
-      <td class="cart_summary_dd">${{ price_total.toFixed(2) }}</td>
-    </tr>
-    <% if false %>
-    <tr>
-    <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
-      <%= render "spree/orders/adjustments" %>
-    <% end %>
-    <tr>
-      <td class="cart_summary_dt"><%= Spree.t(:cart_summary_shipping)%></td>
-      <td class="cart_summary_dd">$0.00</td>
-    </tr>
-      <td class="cart_summary_dt"><%= Spree.t(:cart_summary_tax)%></td>
-      <td class="cart_summary_dd">0.00</td>
-    </tr>
-    <tr><td colspan=2><div style="border-top: solid 1px #dedede;margin:0 20px"></div></td></tr>
-    </tr>
-      <td class="cart_summary_dt" style="height: 54px"><%= Spree.t(:cart_summary_total)%></td>
-      <td class="cart_summary_dt" style="text-align: right; padding-right:20px">{{ price_total.toFixed(2) }}</td>
-    </tr>
-    <% end %>
-    <tr>
-      <td style="height: 85px" colspan=2><div style="width: 50%; display: inline-block;"><div style="text-align: center"><%= link_to Spree.t(:cart_summary_keepShopping), '/', class: 'roundButton'%></div></div><div style="width: 50%; display: inline-block;"><div style="text-align: center"><%= button_tag class: 'roundButton b1', id: 'checkout-link', name: 'checkout' do %><%= Spree.t(:cart_summary_checkout) %><% end %></div></div></td>
-    </tr>
+
+<div class="summary-table">
+  <table>
+    <col width="50%">
+    <col width="50%">
+
+    <caption><%= Spree.t(:cart_summary_title)%></caption>
+    <tbody>
+      <tr>
+        <td><b><%= Spree.t(:cart_summary_subtotal)%></b></td>
+        <td>${{ price_total.toFixed(2) }}</td>
+      </tr>
+      <tr>
+        <td >
+          <a href="<%= spree.root_path %>" class="button" style="border: 1px solid #3acced; color: #787878; background: transparent"><%= Spree.t(:cart_summary_keepShopping) %></a>
+        </td>
+        <td>
+          <%= button_tag class: 'button', id: 'checkout-link', name: 'checkout' do %>
+          <%= Spree.t(:cart_summary_checkout) %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </div>
