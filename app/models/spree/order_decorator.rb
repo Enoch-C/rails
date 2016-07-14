@@ -26,12 +26,6 @@ Spree::Order.class_eval do
       post = Net::HTTP::Post.new(url.path)
       post.basic_auth("api", "b1dbcd0613567b4dd3ab8f69acb4e71f")
       mobile = "#{email[2, email.size - 17]}"
-      puts mobile
-      puts mobile
-      puts mobile
-      puts mobile
-      puts mobile
-      puts mobile
       post.set_form_data({
         mobile: mobile,
         message: "您已在Cool Choice美国成功定制私人保健品,稍后您的私人健康管家(微信号coolchoice11)会加您微信,为您提供VIP服务!【Cool Choice】"
@@ -40,7 +34,8 @@ Spree::Order.class_eval do
       https = Net::HTTP.new(url.host, url.port)
       https.use_ssl = true
       response = https.start {|socket| socket.request(post)}
-      JSON.parse response.body
+      r = JSON.parse response.body
+      puts r
     end
     Spree::OrderMailer.confirm_email(id).deliver_later
     Spree::OrderMailer.confirm_email_to_staff(id).deliver_later
