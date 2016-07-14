@@ -75,8 +75,8 @@
       </div>
       <a class="why" href="<%= spree.why_path %>">
         <img src="<%= asset_path 'home/icon-bulb@2x.png'%>" class="bulb">
-        <div class="why-bar hidden-xs"><%= Spree.t(:"homepage.button_1") %></div>
-        <div class="why-bar visible-xs-block"><%= Spree.t(:"WHY_COOL_CHOICE") %></div>
+        <div class="why-bar hidden-xs hidden-sm"><%= Spree.t(:"homepage.button_1") %></div>
+        <div class="why-bar visible-xs-block visible-sm-block"><%= Spree.t(:"WHY_COOL_CHOICE") %></div>
       </a>
       <div class="content clearfix">
         <template v-for="feature in feature_list">
@@ -224,7 +224,6 @@
     <% end %>
   </div>
 </div>
-
 
 <script>
   Array.prototype.clone = function() {
