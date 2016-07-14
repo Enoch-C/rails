@@ -25,10 +25,11 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Superoxide Dismutase:
-        Amount Per Serving: 10
-        unit: mg
+      Extramel® Superoxide Dismutase French Melon juice Concentrate:
+        Amount Per Serving: 140
+        unit: IU
         daily_value_append: '**'
+        footer: EXTRAMEL® is a trademark of BIONOV.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Beauty:
     basic:
@@ -77,10 +78,11 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Citicoline:
+      Cognizin® Citicoline:
         Amount Per Serving: 250
         unit: mg
         daily_value_append: '**'
+        footer: Cognizin® is a registered trademark of the KYOWA HAKKO BIO CO. LTD..
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Digestive Care:
     basic:
@@ -103,7 +105,7 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Bacillus coagulans 1 billion spores per serving:
+      Bacillus coagulans MTCC 5856 (1 billion spores per serving):
         Amount Per Serving: 67
         unit: mg
         daily_value_append: '**'
@@ -129,10 +131,11 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Ashwagandha Root Extract:
+      KSM-66® Ashwagandha (Withania somnifera) Root Extract:
         Amount Per Serving: 500
         unit: mg
         daily_value_append: '**'
+        footer: KSM-66® is a registered trademark of Ixoreal Biomed Inc.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Eye Care:
     basic:
@@ -155,10 +158,11 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Lutein & Zeaxanthin (from Tagetes erecta flower extract):
+      Lutein & Zeaxanthin Lutemax 2020™ (Tagetes erecta flower extract):
         Amount Per Serving: 6
         unit: mg
         daily_value_append: '**'
+        footer: Lutemax 2020™ is a trademark of OmniActive Health Technologies.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Heart Care:
     basic:
@@ -233,10 +237,11 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Glucosamine Hydrochloride:
+      Glucosamine Hydrochloride GreenGrown® (vegetable source):
         Amount Per Serving: 1500
         unit: mg
         daily_value_append: '**'
+        footer: GreenGrown® is a registered trademark of Ethical Naturals, Inc.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Liver Care:
     basic:
@@ -289,10 +294,11 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Boswellia serrata Gum Extract and Aegle marmelos Fruit Extract:
+      AlvioLife® Boswellia serrata Gum Extract & Quince Fruit Extract:
         Amount Per Serving: 200
         unit: mg
         daily_value_append: '**'
+        footer: AlvioLife® is a registered trademark of PL Thomas - Laila Nutra, LLC.  International Patents Pending.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Men's Vitality:
     basic:
@@ -315,14 +321,16 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      Grape and Apple Skin Extract:
+      ViNitrox™ Grape and Apple Skin Extract:
         Amount Per Serving: 250
         unit: mg
         daily_value_append: '**'
-      Aswagandha Root Extract:
+        footer: ViNitrox™ is a trademark of Nexira.
+      KSM-66® Ashwagandha (Withania somnifera) Root Extract:
         Amount Per Serving: 250
         unit: mg
         daily_value_append: '**'
+        footer: KSM-66® is a registered trademark of Ixoreal Biomed Inc.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.
   Sleep Support:
     basic:
@@ -373,8 +381,9 @@ functions:
         unit: mg
         '% Daily Value': 0
     extra:
-      L-Theanine:
+      Suntheanine® L-theanine:
         Amount Per Serving: 100
         unit: mg
         daily_value_append: '**'
+        footer: Suntheanine® is a registered trademark of Taiyo International.
     Other Ingredients: Non GMO Soluble Corn Fiber, Natural Flavors, Citric Acid, Monk Fruit Concentrate.

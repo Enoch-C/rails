@@ -18,6 +18,7 @@
 
   <% extra = {} %>
   <% other_Ingredients = '' %>
+  <% footers = [] %>
 
   <% line_item.variant.option_values.each do |option_value| %>
     <% calories_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Calories']['Amount Per Serving'] %>
@@ -35,6 +36,9 @@
         <% extra[key]['Amount Per Serving'] += supplement_facts['functions'][option_value.name]['extra'][key]['Amount Per Serving'] %>
       <% else %>
         <% extra[key] = supplement_facts['functions'][option_value.name]['extra'][key] %>
+      <% end %>
+      <% if supplement_facts['functions'][option_value.name]['extra'][key].has_key?('footer') %>
+        <% footers.push(supplement_facts['functions'][option_value.name]['extra'][key]['footer']) %>
       <% end %>
     <% end %>
 
@@ -124,6 +128,11 @@
         </div>
         <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
         <div class="ingredients"><span class="title">SUGGESTED USE</span>: Mix contents of packet into 4 fl oz (120 ml) of water. Mix and enjoy!</div>
+        <% if footers.size > 0 %>
+          <% footers.each do |footer| %>
+            <div class="ingredients"><%= footer %></div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>

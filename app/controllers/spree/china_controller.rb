@@ -8,12 +8,28 @@ module Spree
     end
 
     def checkout
+      unless params[:line_item][:sku]
+        redirect_to :back
+        return
+      end
+      if params[:line_item][:sku].empty?
+        redirect_to :back
+        return
+      end
       @promoter_email = params["p"]
       @sku = params[:line_item][:sku]
       @num = params[:line_item][:quantity]
     end
 
     def pay
+      unless params["mobile"] || params["name"] || params["province"] || params["city"] || params["street"]
+        redirect_to :back
+        return
+      end
+      if params["mobile"].empty? || params["name"].empty? || params["province"].empty? || params["city"].empty? || params["street"].empty?
+        redirect_to :back
+        return
+      end
       @order = Spree::Order.new
       @order.generate_order_number
       @order.save!
@@ -41,7 +57,7 @@ module Spree
       address.firstname = (name[1,name.size-1] == '' ? name[0] : name[1,name.size-1])
       address.lastname = name[0]
       address.address1 = params["street"]
-      address.address2 = params["sub"]
+      address.address2 = params["sub"] if params["sub"]
       address.phone = @order.user.email[0, @order.user.email.size - 15]
       address.city = params["city"]
       address.zipcode = "110000"
@@ -88,48 +104,6 @@ module Spree
       end
 
       @order.next
-
-
-      # @shipment = @order.shipments.create(stock_location_id: Spree::StockLocation.first.id)
-      # @order.contents.add(variant, params["num"], {shipment: @shipment})
-      # @shipment.reload
-      # @shipmdent.save!
-
-      # @shipment.address = @order.ship_address
-
-      # shipment[selected_shipping_rate_id]=162&shipment[unlock]=yes
-      #
-      # if params[:shipment] && !params[:shipment].empty?
-      #   params.require(:shipment).permit(permitted_shipment_attributes)
-      # else
-      #   {}
-      # end
-      # @shipment.update_attributes_and_order(shipment_params)
-
-      # @order.send(:ensure_available_shipping_rates)
-      # @order.set_shipments_cost
-      # @order.apply_free_shipping_promotions
-      # @shipment.save!
-
-
-      # packages = @order.shipments.map(&:to_package)
-      # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
-      # @ord1er.state = "delivery"
-      # @order.create_proposed_shipments
-      # @order.send(:ensure_available_shipping_rates)
-      # @order.set_shipments_cost
-      # @order.apply_free_shipping_promotions
-
-      # packages = @order.shipments.map(&:to_package)
-      # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
-      # @differentiator.missing.each do |variant, quantity|
-      #   @order.contents.remove(variant, quantity)
-      # end
-      # @order.state = "payment"
-      # @order.update_totals
-      # @order.persist_totals
-      # @order.ensure_line_item_variants_are_not_discontinued
-      # @order.ensure_line_items_are_in_stock
       @order.save!
     end
 
@@ -155,29 +129,6 @@ module Spree
 
       @order.save!
       redirect_to :controller => 'china', :action => 'complete', :order_id => @order.id
-
-
-
-      # if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
-      #   unless @order.next
-      #     flash[:error] = @order.errors.full_messages.join("\n")
-      #     redirect_to(china_pay_path) && return
-      #   end
-      #
-      #   if @order.completed?
-      #     @order.state = "complete"
-      #     @order.save!
-      #     @current_order = nil
-      #     flash.notice = Spree.t(:order_processed_successfully)
-      #     flash['order_completed'] = true
-      #   else
-      #     flash[:error] = @order.errors.full_messages.join("\n")
-      #     redirect_to(china_pay_path) && return
-      #   end
-      # else
-      #   flash[:error] = @order.errors.full_messages.join("\n")
-      #   redirect_to(china_pay_path) && return
-      # end
     end
 
 
