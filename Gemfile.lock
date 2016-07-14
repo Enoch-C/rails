@@ -1,13 +1,4 @@
 GIT
-  remote: git://github.com/RuanShan/spree_alipay.git
-  revision: b3bc76bc56e2dbd5211f6aa506766b4de8de494b
-  specs:
-    spree_alipay (3.1.0)
-      alipay (~> 0.10.0)
-      ruby-hmac
-      spree_core (~> 3.1.0.rc3)
-
-GIT
   remote: git://github.com/spree-contrib/better_spree_paypal_express.git
   revision: 750aa730ff347fa6416178c3ac40e9b62f511af2
   specs:
@@ -187,7 +178,6 @@ GEM
     akami (1.2.2)
       gyoku (>= 0.4.0)
       nokogiri
-    alipay (0.10.0)
     arel (6.0.3)
     autoprefixer-rails (6.3.6.1)
       execjs
@@ -417,7 +407,6 @@ GEM
     routing-filter (0.5.1)
       actionpack (~> 4.2)
       activesupport (~> 4.2)
-    ruby-hmac (0.4.0)
     ruby-ole (1.2.12)
     rubyntlm (0.3.4)
     sass (3.4.22)
@@ -472,10 +461,6 @@ GEM
     truncate_html (0.9.3)
     turbolinks (2.5.3)
       coffee-rails
-    twilio-ruby (4.11.1)
-      builder (>= 2.1.2)
-      jwt (~> 1.0)
-      multi_json (>= 1.3.0)
     twitter_cldr (3.3.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0.0)
@@ -523,7 +508,6 @@ DEPENDENCIES
   spreadsheet
   spree!
   spree_admin_roles_and_access!
-  spree_alipay!
   spree_auth_devise!
   spree_gateway!
   spree_i18n!
@@ -533,7 +517,6 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
-  twilio-ruby (~> 4.11.1)
   uglifier (>= 1.3.0)
   unicorn
   web-console (~> 2.0)

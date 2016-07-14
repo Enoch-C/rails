@@ -96,7 +96,7 @@
         # sheet1[10,5] = sheet1[5,8]/3
         # sheet1[11,5] = sheet1[5,8]/3
 
-        filepath = "report/#{key} - #{Time.now.to_date}.xls"
+        filepath = "report/daily/#{key} - #{Time.now.to_date}.xls"
         File.delete(filepath) if File.exist?(filepath)
         book.write filepath
       # end
