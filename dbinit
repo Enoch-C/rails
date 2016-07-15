@@ -20,6 +20,9 @@ rails g spree_i18n:install
 rails g spree_social:install
 rails g spree_tax_cloud:install
 rails g spree_paypal_express:install
+rails g spree_admin_roles_and_access:install
+rake spree_roles:permissions:populate
+rake spree_roles:permissions:populate_other_roles
 rake database_init:load
 M`;
 

@@ -37,9 +37,13 @@ module Spree
       @order.promoter = Spree::Promoter.find_by_email(params["promoter_email"])
 
       phone = "86" + params["mobile"]
-      user = Spree::User.find_or_create_by("email": "#{phone}@coolchoice.com")
-      user.password = user.email + "3?~0vo"
-      user.save!
+
+      begin
+        user = Spree::User.create_with(password: "#{phone}@coolchoice.com3?~0vo").find_or_create_by("email": "#{phone}@coolchoice.com")
+      rescue ActiveRecord::RecordNotUnique
+        retry
+      end
+
       @order.associate_user!(user)
 
       variant = Spree::Variant.find_by_sku(params["sku"])
