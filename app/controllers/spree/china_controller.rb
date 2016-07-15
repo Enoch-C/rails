@@ -38,8 +38,8 @@ module Spree
 
       phone = "86" + params["mobile"]
       user = Spree::User.find_or_create_by("email": "#{phone}@coolchoice.com")
-      # user.password = user.email + "3?~0vo"
-      # user.save!
+      user.password = user.email + "3?~0vo"
+      user.save!
       @order.associate_user!(user)
 
       variant = Spree::Variant.find_by_sku(params["sku"])
