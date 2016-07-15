@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module CoolChoiceStore
   class Application < Rails::Application
-
+    config.time_zone = "Pacific Time (US & Canada)"
     config.customer_service_names = ["青青"]
     config.customer_service_wechat = ["Coolchoice11"]
     config.customer_service_wechat_icon = ["https://basaio.b0.upaiyun.com/coolchoice/images/head_qingqing@2x.png"]
