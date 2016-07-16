@@ -76,29 +76,29 @@ module Spree
       # @order.create_tax_charge!
       # @order.persist_user_address!
       params[:order] = {
-    :bill_address_attributes=>{
-      :firstname=>address.firstname,
-      :lastname=>address.lastname,
-      :address1=>address.address1,
-      :address2=>address.address2,
-      :city=>address.city,
-      :phone=>address.phone,
-      :zipcode=>address.zipcode,
-      :state_id=>address.state_id,
-      :country_id=>address.country_id
-    },
-    :ship_address_attributes=>{
-      :firstname=>address.firstname,
-      :lastname=>address.lastname,
-      :address1=>address.address1,
-      :address2=>address.address2,
-      :city=>address.city,
-      :phone=>address.phone,
-      :zipcode=>address.zipcode,
-      :state_id=>address.state_id,
-      :country_id=>address.country_id
-    }
-  }
+        :bill_address_attributes=>{
+          :firstname=>address.firstname,
+          :lastname=>address.lastname,
+          :address1=>address.address1,
+          :address2=>address.address2,
+          :city=>address.city,
+          :phone=>address.phone,
+          :zipcode=>address.zipcode,
+          :state_id=>address.state_id,
+          :country_id=>address.country_id
+        },
+        :ship_address_attributes=>{
+          :firstname=>address.firstname,
+          :lastname=>address.lastname,
+          :address1=>address.address1,
+          :address2=>address.address2,
+          :city=>address.city,
+          :phone=>address.phone,
+          :zipcode=>address.zipcode,
+          :state_id=>address.state_id,
+          :country_id=>address.country_id
+        }
+      }
       if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
         # packages = @order.shipments.map(&:to_package)
         # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
@@ -106,7 +106,6 @@ module Spree
       else
         invalid_resource!(@order)
       end
-
       @order.next
       @order.save!
     end
@@ -116,9 +115,7 @@ module Spree
     end
 
     def processpay
-
       @order = Spree::Order.find(params[:id])
-
       if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
         if @order.completed? || @order.next
           puts "here paid!!! #{@order.state}"
@@ -126,15 +123,16 @@ module Spree
             puts "after_#{@order.state}"
             @order.send(:"after_#{@order.state}")
           end
+          @order.save!
+          redirect_to :controller => 'china', :action => 'complete', :order_id => @order.id
+        else
+          flash.now[:error] = @order.errors.full_messages.join("\n")+" => 信用卡被拒绝，或支付宝无法完成扣款、余额不足"
+          render :pay
         end
       else
         invalid_resource!(@order)
       end
-
-      @order.save!
-      redirect_to :controller => 'china', :action => 'complete', :order_id => @order.id
     end
-
 
     private
 

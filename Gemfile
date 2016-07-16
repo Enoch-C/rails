@@ -11,6 +11,7 @@ gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express'
 gem 'spree_admin_roles_and_access', github: 'vinsol-spree-contrib/spree_admin_roles_and_access', branch: '3-1-stable'
 gem 'spreadsheet'
 gem 'zip-zip'
+gem 'prawn'
 
 # gem 'twilio-ruby', '~> 4.11.1'
 # gem 'spree_alipay', :github => "RuanShan/spree_alipay"

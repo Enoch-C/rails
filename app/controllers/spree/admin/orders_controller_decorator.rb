@@ -44,11 +44,17 @@
       # e.g. SELECT  DISTINCT DISTINCT "spree_orders".id, "spree_orders"."created_at" AS alias_0 FROM "spree_orders"
       # see https://github.com/spree/spree/pull/3919
 
+      @labels = false
       if params["xls"]
         @orders = @search.result(distinct: true).
           page(params[:page]).
           per("9999999")
         combined_line_items
+      elsif params["labels"]
+        @labels = true
+        @orders = @search.result(distinct: true).
+          page(params[:page]).
+          per("9999999")
       else
         @orders = @search.result(distinct: true).
           page(params[:page]).
@@ -61,17 +67,29 @@
 
     def combined_line_items
       combined_line_items = {}
+      dir = "report/daily"
+
+      pdf = Prawn::Document.new(
+      :margin => 0,
+      :page_layout => :landscape
+      )
+
+      FileUtils.mkdir_p(dir) unless File.directory?(dir)
       shipbook = Spreadsheet.open 'report/template_shipping.xls'
       shipsheet = shipbook.worksheet 0
-      @orders.each do |order|
+      @orders.each_with_index do |order, index|
+        if order.ship_address.country.name == "China"
+          pdf.start_new_page unless index == 0
+          pdf.image "report/letter.jpg", :width => 792, :height => 612
+          pdf.font("report/Lantinghei-SC-Demibold.ttf", :size => 8) do
+            pdf.draw_text order.ship_address.firstname + order.ship_address.lastname, :at => [86, 415]
+          end
+          pdf.font("report/Lantinghei-SC-Demibold.ttf", :size => 7) do
+            pdf.draw_text Rails.application.config.customer_service_wechat[0], :at => [287, 305]
+          end
+        end
         shipsheet[0,4] = order.completed_at.in_time_zone('America/Los_Angeles').to_date.to_s
         shipsheet[1,0] = "Order #{order.number}"
-
-        shipsheet[4,0] = "Cool Choice"
-        shipsheet[5,0] = "1376 E. Valencia Drive"
-        shipsheet[6,0] = "Fullerton, CA, 92831"
-        shipsheet[7,0] = "US"
-
         ship_address = order.ship_address
         shipsheet[4,1] = "#{ship_address.firstname} #{ship_address.lastname}"
         shipsheet[5,1] = "#{ship_address.address1}"
@@ -114,6 +132,8 @@
         shipbook.write filepath
       end
 
+
+      pdf.render_file "#{dir}/letters.pdf"
       retains = [4, 1, 0]
       book = Spreadsheet.open 'report/template_blend.xls'
       sheet1 = book.worksheet 0
@@ -152,7 +172,6 @@
 
       filename = "#{Time.now.to_date}.zip"
       temp_file = Tempfile.new(filename)
-      dir = "report/daily"
       begin
         Zip::OutputStream.open(temp_file) { |zos| }
         Zip::File.open(temp_file.path, Zip::File::CREATE) do |zip|
@@ -166,7 +185,7 @@
       ensure
         temp_file.close
         temp_file.unlink
-        FileUtils.rm_rf(Dir.glob('dir/*'))
+        FileUtils.rm_rf(Dir.glob("#{dir}/*"))
       end
     end
 
