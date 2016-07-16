@@ -73,20 +73,22 @@
       :margin => 0,
       :page_layout => :landscape
       )
+      first_page = true
 
       FileUtils.mkdir_p(dir) unless File.directory?(dir)
       shipbook = Spreadsheet.open 'report/template_shipping.xls'
       shipsheet = shipbook.worksheet 0
-      @orders.each_with_index do |order, index|
+      @orders.each do |order|
         if order.ship_address.country.name == "China"
-          pdf.start_new_page unless index == 0
+          pdf.start_new_page unless first_page
           pdf.image "report/letter.jpg", :width => 792, :height => 612
           pdf.font("report/Lantinghei-SC-Demibold.ttf", :size => 8) do
-            pdf.draw_text order.ship_address.firstname + order.ship_address.lastname, :at => [86, 415]
+            pdf.draw_text order.ship_address.lastname + order.ship_address.firstname, :at => [86, 415]
           end
           pdf.font("report/Lantinghei-SC-Demibold.ttf", :size => 7) do
             pdf.draw_text Rails.application.config.customer_service_wechat[0], :at => [287, 305]
           end
+          first_page = false
         end
         shipsheet[0,4] = order.completed_at.in_time_zone('America/Los_Angeles').to_date.to_s
         shipsheet[1,0] = "Order #{order.number}"
