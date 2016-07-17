@@ -78,6 +78,11 @@
       FileUtils.mkdir_p(dir) unless File.directory?(dir)
       shipbook = Spreadsheet.open 'report/template_shipping.xls'
       shipsheet = shipbook.worksheet 0
+      addressbook = Spreadsheet::Workbook.new
+      addresssheet = addressbook.create_worksheet
+      addresssheet_row = 0
+      addresssheet.row(addresssheet_row).push "申报品名", "品牌", "数量", "运单号", "重量", "收货人", "电话", "国家", "省份", "城市", "地址"
+
       @orders.each do |order|
         if order.ship_address.country.name == "China"
           pdf.start_new_page unless first_page
@@ -89,6 +94,9 @@
             pdf.draw_text Rails.application.config.customer_service_wechat[0], :at => [287, 305]
           end
           first_page = false
+
+          addresssheet_row += 1
+          addresssheet.row(addresssheet_row).push "Cool Choice 30-Pack", "Cool Choice", "#{order.item_count}", "#{order.number}", "#{order.item_count * 0.5}", "#{order.ship_address.lastname}#{order.ship_address.firstname}", "#{order.ship_address.phone}", "#{order.ship_address.country.name}", "#{order.ship_address.state.name}", "#{order.ship_address.city}", "#{order.ship_address.address2}#{order.ship_address.address1}"
         end
         shipsheet[0,4] = order.completed_at.in_time_zone('America/Los_Angeles').to_date.to_s
         shipsheet[1,0] = "Order #{order.number}"
@@ -134,8 +142,8 @@
         shipbook.write filepath
       end
 
-
-      pdf.render_file "#{dir}/letters.pdf"
+      addressbook.write "#{dir}/addresses-#{Time.now.to_date}.xls"
+      pdf.render_file "#{dir}/letters-#{Time.now.to_date}.pdf"
       retains = [4, 1, 0]
       book = Spreadsheet.open 'report/template_blend.xls'
       sheet1 = book.worksheet 0
