@@ -111,7 +111,12 @@ module Spree
     end
 
     def complete
-      @order
+      @order = Spree::Order.find(params["order_id"])
+      unless @order.state == "complete"
+        flash.now[:error] = @order.errors.full_messages.join("\n")+" => 该订单存在无法被处理，请重新下单。"
+        render :index
+        return
+      end
     end
 
     def processpay
