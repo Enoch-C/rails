@@ -2,12 +2,30 @@
   <%= render partial: 'spree/shared/google_checkout.js', locals: { order: @order, step_number: (@order.checkout_steps.index(@order.state) + 1) } %>
 <% end %>
 
+<% if @order.state == "payment" %>
+<script>
+history.replaceState(null, document.title, location.pathname+"#!/history");
+history.pushState(null, document.title, location.pathname);
+(function(window, location) {
+window.addEventListener("popstate", function() {
+  if(location.hash === "#!/history") {
+    history.replaceState(null, document.title, location.pathname);
+    setTimeout(function(){
+      location.replace("<%= checkout_state_path("address") %>");
+    },0);
+  }
+}, false);
+}(window, location));
+</script>
+<% end %>
+
 <div id="checkout" data-hook>
   <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
 
   <div class="" data-hook="checkout_header">
     <div class="checkout-nav clearfix hidden-xs">
       <% states = @order.checkout_steps %>
+      <% states.delete("delivery") %>
       <% items = states.each_with_index.map do |state, i| %>
         <% style = '' %>
         <% unless i == 0 %>
@@ -36,6 +54,7 @@
     </div>
     <div class="checkout-nav clearfix visible-xs-block">
       <% states = @order.checkout_steps %>
+      <% states.delete("delivery") %>
       <% items = states.each_with_index.map do |state, i| %>
         <% style = '' %>
         <% unless i == 0 %>

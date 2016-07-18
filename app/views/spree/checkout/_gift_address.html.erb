@@ -91,7 +91,7 @@
         h["phone"] = this.phone
         h["city"] = this.city
         h["country_id"] = this.special_instructions_hash["country_id"]
-        h["state_id"] = 0 
+        h["state_id"] = 0
         h["zipcode"] = this.zip
         return h
       },
@@ -135,25 +135,8 @@
             alert(data.responseJSON["errors"].join("\n") )
           },
           success: function(data) {
-            $.ajax({
-              type: "PUT",
-              url: '/api/v1/checkouts/' + that.order_number + '?order_token=' + that.order_token,
-
-              error: function(data) {
-              },
-              success: function(data) {
-                that.proceed2()
-              },
-              data: {
-                "order": {
-                  "1": {
-                    "selected_shipping_rate_id": "2",
-                    "id": "2"
-                  }
-                }
-              }
-            })
-          },
+            that.proceed2()
+        },
           data: this.json
         })
       }

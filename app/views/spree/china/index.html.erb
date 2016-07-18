@@ -65,7 +65,6 @@
           <div class="title" v-if="result.length === 3">你的选择</div>
           <div v-for="(i, func) in result" class="box">
             <img class="icon" :src="'https://basaio.b0.upaiyun.com/coolchoice/images/icon-' + func + '@2x.png'">
-            <img src="https://basaio.b0.upaiyun.com/coolchoice/images/icon_delet@2x.png" class="delete" @click="result.splice(i, 1)">
           </div>
           <div v-for="i in (3 - result.length)" class="box empty">
           </div>

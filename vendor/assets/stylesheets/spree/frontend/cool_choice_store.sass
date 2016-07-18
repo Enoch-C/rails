@@ -188,6 +188,8 @@ textarea
     margin: 25px 0 10px
     font-size: 16px
 .form-content
+  label.error
+    color: #ff3333
   label
     display: block
     margin: 20px 0 10px
@@ -846,6 +848,22 @@ input.button
         line-height: 66px
 #cool-choice-home
   // visibility: hidden
+  .state-inform
+    >.container
+      .customize
+        width: 100% !important
+        .func
+          width: 100% !important
+          text-align: center
+          @media (max-width: 768px)
+            .box
+              width: 40px
+              height: 40px
+              margin-right: 30px
+            .title
+              font-size: 16px
+        .qty, .total
+          display: none
   .banner
     .carousel-control
       background: none

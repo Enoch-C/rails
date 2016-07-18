@@ -2,6 +2,11 @@ module Spree
   Spree::CheckoutController.class_eval do
     before_action :ensure_stripe_checkout, only: [:update]
 
+    # def before_delivery
+    #   @order.next
+    #   redirect_to checkout_state_path(@order.state)
+    # end
+
     private
 
     def ensure_stripe_checkout

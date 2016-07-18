@@ -1,9 +1,10 @@
 Spree::Api::V1::OrdersController.class_eval do
     def update
-
       if params[:order][:dummy_ship_address]
         country = Spree::Country.find(params[:order][:ship_address_attributes][:country_id].to_i)
-        zip = TwitterCldr::Shared::PostalCodes.for_territory(country.iso).sample(1).first
+        temp_iso = country.iso.downcase.to_s.to_sym
+        zip = "0"
+        zip = TwitterCldr::Shared::PostalCodes.for_territory(temp_iso).sample(1).first if TwitterCldr::Shared::PostalCodes.territories.include?(temp_iso)
         state = country.states.first
         params[:order][:ship_address_attributes][:state_id] = state.id.to_s
         params[:order][:ship_address_attributes][:zipcode] = zip
