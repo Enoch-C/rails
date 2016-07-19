@@ -14,6 +14,8 @@ en-AU:
       GIFT: Send a Gift
       INGREDIENTS: What's in Cool Choice
     footer_bar:
+      please_choose: Please choose
+      choose_more: more
       contact: Contact
       contact_us: Contact Us
       call_us: Call us
@@ -28,9 +30,9 @@ en-AU:
       para2: "Supplements have upper limits(UL) that should not be exceeded to avoiding potentially threatening side effects, Cool Choice guards against over supplementation to achieve the desired beneficial effects safely."
       title3: "NO FILLERS, CHEMICALS AND CAPSULE ITSELF…"
       para3: Tablets and capsules contain excipients and chemicals that prevent dispersion and breakdown—which are not what your body needs.
-      para3_2: Cool Choice comes in a fresh and clean powder form, providing your body with exactly what it needs for optimum health.
-      title4: "FRESHLY MADE TO ORDER…"
-      para4: "Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is freshly made, especially for you!"
+      para3_2: Cool Choice comes in a clean powder form, providing your body with exactly what it needs for optimum health.
+      title4: "PREPARED JUST FOR YOU…"
+      para4: "Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is prepared especially for you!"
       title5: "NATURAL…"
       para5: "Cool Choice is made with natural ingredients and contains no preservatives, questionable additives, artificial colors, artificial flavors, or artificial sweeteners."
     gift_message_error1: Please enter recipient name.
@@ -42,7 +44,7 @@ en-AU:
     you_have_signed_in_with_these_services: 'You Have Signed In With:'
     sign_in_through_one_of_these_services: 'Sign in with'
     home: Cool Choice Home
-    thank_you_for_your_order: Thank you for your purchase. Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is freshly made, especially for you!
+    thank_you_for_your_order: Thank you for your purchase. Supplements are sensitive to light, heat, and moisture, and lose effectiveness over time. Every Cool Choice order is prepared especially for you!
     ok: OK
     message: Message
     site_name: Cool Choice
@@ -94,7 +96,7 @@ en-AU:
     order_mailer:
       confirm_reg_email:
         instructions: This is to confirm that your account is now created.
-        thanks: Thank you for being a Cool Choice customer! We provides you with the safe, fresh, and natural supplements your body deserves… minus the hassle.
+        thanks: Thank you for being a Cool Choice customer! We provides you with the safe and high-quality supplements your body deserves… minus the hassle.
       confirm_email:
         thanks: Thanks for purchasing Cool Choice! Our hope is that you fall in love with your Personalized Nutritional Supplements.
       confirm_promoter_email:
@@ -156,7 +158,7 @@ en-AU:
       cool_care_line: Give a gift to
       cool_care_line_2: someone special
       cool_ingredients: Cool Ingredients
-      cool_ingredients_line: Freshly made-to-order
+      cool_ingredients_line: Prepared just for you
       cool_ingredients_line_2: No unnecessary ingredients
       bar_choose: Your choice
       bar_qty: QTY
@@ -194,7 +196,7 @@ en-AU:
       message: Add your message here (up to 100 characters)
       yourname: Your Name
       congrat: Congratulations
-      after_congrat: Your gift is preparing! Every Cool Choice order is freshly made, especially for you!
+      after_congrat: Your gift is preparing! Every Cool Choice order is prepared especially for you!
     message:
       this: Dear
       add: Add your message here (up to 100 characters)

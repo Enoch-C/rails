@@ -83,6 +83,27 @@
       addresssheet_row = 0
       addresssheet.row(addresssheet_row).push "申报品名", "品牌", "数量", "运单号", "重量", "收货人", "电话", "国家", "省份", "城市", "地址"
 
+      # func1_id = Spree::OptionType.find_by_name!("func1").id
+      # func2_id = Spree::OptionType.find_by_name!("func2").id
+      # func3_id = Spree::OptionType.find_by_name!("func3").id
+      # stockbook = Spreadsheet::Workbook.new
+      # stocksheet = stockbook.create_worksheet
+      # stocksheet_row = 0
+      #   Rails.application.config.function_list.combination(3).each_with_index do |funcs, index|
+      #     cost_price = 0
+      #     sku = format('%02d', Rails.application.config.function_list.index(funcs[0])+1) + format('%02d', Rails.application.config.function_list.index(funcs[1])+1) + format('%02d', Rails.application.config.function_list.index(funcs[2])+1)
+      #     name1=Spree::OptionValue.find_by_name_and_option_type_id!(funcs[0], func1_id).name
+      #     name2=Spree::OptionValue.find_by_name_and_option_type_id!(funcs[1], func2_id).name
+      #     name3=Spree::OptionValue.find_by_name_and_option_type_id!(funcs[2], func3_id).name
+      #     names = [name1, name2, name3]
+      #     next if names.include?("Energy") && names.include?("Men's Vitality")
+      #     next if names.include?("Energy") && names.include?("Sleep Support")
+      #     stocksheet.row(stocksheet_row).push sku,  name1 + " + " + name2 +" + " + name3
+      #     stocksheet_row += 1
+      #   end
+      #   stockbook.write "#{dir}/stock-#{Time.now.to_date}.xls"
+
+
       @orders.each do |order|
         if order.ship_address.country.name == "China"
           pdf.start_new_page unless first_page
