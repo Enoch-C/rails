@@ -1,0 +1,15 @@
+<form id="label-form" method="get" action="<%= spree.labelgen_labels_path %>" accept-charset="UTF-8">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  Product Code:
+  <input name="sku" />
+  <br>
+  Quantity:
+  <input name="quantity" />
+  <div class="next-step" data-hook="buttons">
+    <%= submit_tag 'Generate' %>
+  </div>
+</form>
