@@ -1,0 +1,142 @@
+<%= stylesheet_link_tag 'print_label.css',  :media => 'all' %>
+
+<div>
+  <a onclick="window.print()" class="button" style="font-size: 16px">print</a>
+</div>
+<% supplement_facts = YAML.load_file('config/labels/supplement_facts.yml') %>
+
+<% @order.line_items.each do |line_item| %>
+
+  <% calories_Amount_Per_Serving = 0 %>
+  <% total_Carbohydrate_Amount_Per_Serving = 0 %>
+  <% dietary_Fiber_Amount_Per_Serving = 0 %>
+  <% sugars_Amount_Per_Serving = 0 %>
+  <% sodium_Amount_Per_Serving = 0 %>
+  <% sodium_Daily_Value = 0 %>
+  <% protein_Amount_Per_Serving = 0 %>
+  <% func_option = [] %>
+
+  <% extra = {} %>
+  <% other_Ingredients = '' %>
+  <% footers = [] %>
+
+  <% line_item.variant.option_values.each do |option_value| %>
+    <% calories_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Calories']['Amount Per Serving'] %>
+    <% total_Carbohydrate_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['Amount Per Serving'] %>
+    <% dietary_Fiber_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['carbohydrate']['Dietary Fiber']['Amount Per Serving'] %>
+    <% sugars_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Total Carbohydrate']['carbohydrate']['Sugars']['Amount Per Serving'] %>
+    <% sodium_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Sodium']['Amount Per Serving'] %>
+    <% sodium_Daily_Value += supplement_facts['functions'][option_value.name]['basic']['Sodium']['% Daily Value'] %>
+    <% if supplement_facts['functions'][option_value.name]['basic']['Protein'] %>
+      <% protein_Amount_Per_Serving += supplement_facts['functions'][option_value.name]['basic']['Protein']['Amount Per Serving'] %>
+    <% end %>
+
+    <% supplement_facts['functions'][option_value.name]['extra'].keys.each do |key| %>
+      <% if extra.has_key?(key) %>
+        <% extra[key]['Amount Per Serving'] += supplement_facts['functions'][option_value.name]['extra'][key]['Amount Per Serving'] %>
+      <% else %>
+        <% extra[key] = supplement_facts['functions'][option_value.name]['extra'][key] %>
+      <% end %>
+      <% if supplement_facts['functions'][option_value.name]['extra'][key].has_key?('footer') %>
+        <% footers.push(supplement_facts['functions'][option_value.name]['extra'][key]['footer']) %>
+      <% end %>
+    <% end %>
+
+    <% if supplement_facts['functions'][option_value.name]['Other Ingredients'].size > other_Ingredients.size %>
+      <% other_Ingredients = supplement_facts['functions'][option_value.name]['Other Ingredients'] %>
+    <% end %>
+
+    <% func_option.push(option_value.name) %>
+
+  <% end %>
+
+  <% container = 1 %>
+  <% if line_item.variant.sku[3, 1] == 'm' %>
+  <% container = 30 %>
+  <% elsif line_item.variant.sku[3, 1] == 'w' %>
+  <% container = 7 %>
+  <% end %>
+
+
+  <% sku = [line_item.variant.sku[6, 2], line_item.variant.sku[8, 2], line_item.variant.sku[10, 2]].map { |e| e.to_i } %>
+  <% sku.delete(0) %>
+  <% hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"].sort %>
+
+  <% num = line_item.quantity %>
+  <% while num > 0  do %>
+    <% num = num - 1 %>
+    <div id="label">
+      <div class="print">
+        <div class="func">
+          <% sku.each do |x| -%>
+            <img src="<%= asset_path "home/icon-" + hash[x] + "@2x.png" -%>">
+          <% end -%>
+          <div class="detail"><%= func_option.join(' + ') %></div>
+        </div>
+        <div class="box">
+          <table>
+            <caption>
+              <div class="title">Supplement Facts</div>
+              <div class="sub">Serving Size 1 Packet (<%= supplement_facts['Serving Size 1 Packet'] %>g)<br>Servings Per Container <%=  container %></div>
+            </caption>
+            <thead>
+              <tr>
+                <th width="66%"></th>
+                <th width="20%">Amount Per Serving</th>
+                <th width="15%">% Daily Value</th>
+              </tr>
+            </thead>
+            <tbody class="basic">
+              <tr>
+                <td>Calories</td>
+                <td><%= calories_Amount_Per_Serving.round(0).to_s.chomp('.0') %></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Total Carbohydrate</td>
+                <td><%= total_Carbohydrate_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
+                <td><%= (total_Carbohydrate_Amount_Per_Serving/300*100).round(0).to_s.chomp('.0')+'%*' %></td>
+              </tr>
+              <tr>
+                <td class="total">Dietary Fiber</td>
+                <td><%= dietary_Fiber_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
+                <td><%= (dietary_Fiber_Amount_Per_Serving/25*100).round(0).to_s.chomp('.0')+'%*' %></td>
+              </tr>
+              <% if protein_Amount_Per_Serving > 0 %>
+              <tr>
+                <td>Protein</td>
+                <td><%= protein_Amount_Per_Serving.round(0).to_s.chomp('.0') %> g</td>
+                <td></td>
+              </tr>
+              <% end %>
+            </tbody>
+            <tbody class="super">
+              <% extra.keys.each do |key| %>
+              <tr>
+                <td><%= key %></td>
+                <td><%= extra[key]['Amount Per Serving'].round(0).to_s.chomp('.0') %> <%= extra[key]['unit'] %></td>
+                <td class="last-child">**</td>
+              </tr>
+              <% end %>
+            </tbody>
+            <tbody>
+              <tr>
+                <td colspan="3" class="memo">* Percent Daily Values are based on a 2,000 calorie diet.<br>** Daily Value not established.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="ingredients"><span class="title">OTHER INGREDIENTS</span>: <%= other_Ingredients %></div>
+        <div class="ingredients"><span class="title">SUGGESTED USE</span>: Mix contents of packet into 4 fl oz (120 ml) of water. Mix and enjoy!</div>
+        <% if footers.size > 0 %>
+          <% footers.each do |footer| %>
+            <div class="ingredients"><%= footer %></div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+<% end %>
+
+<!-- <script>x=<%= @order.to_json.html_safe%></script> -->

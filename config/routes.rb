@@ -84,6 +84,8 @@ Spree::Core::Engine.add_routes do
   get 'terms', to: 'terms#index'
   get 'privacy', to: 'privacy#index'
   get 'return', to: 'return#index'
+  get '/labelgen', to: 'labelgen#index'
+  get '/labelgen/labels', to: 'labelgen#labels'
 
   namespace :admin, path: Spree.admin_path do
     resources :promoters do

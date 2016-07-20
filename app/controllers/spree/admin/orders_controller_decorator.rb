@@ -86,6 +86,27 @@
       # func1_id = Spree::OptionType.find_by_name!("func1").id
       # func2_id = Spree::OptionType.find_by_name!("func2").id
       # func3_id = Spree::OptionType.find_by_name!("func3").id
+      # batchbook = Spreadsheet.open 'report/Batch Record template 071916.xls'
+      # batchsheet1 = batchbook.worksheet 0
+      # batchsheet2 = batchbook.worksheet 0
+      #   Rails.application.config.function_list.combination(3).each_with_index do |funcs, index|
+      #     name1=Spree::OptionValue.find_by_name_and_option_type_id!(funcs[0], func1_id).name
+      #     name2=Spree::OptionValue.find_by_name_and_option_type_id!(funcs[1], func2_id).name
+      #     name3=Spree::OptionValue.find_by_name_and_option_type_id!(funcs[2], func3_id).name
+      #     names = [name1, name2, name3]
+      #     next if names.include?("Energy") && names.include?("Men's Vitality")
+      #     next if names.include?("Energy") && names.include?("Sleep Support")
+      #     sku = format('%02d', Rails.application.config.function_list.index(funcs[0])+1) + format('%02d', Rails.application.config.function_list.index(funcs[1])+1) + format('%02d', Rails.application.config.function_list.index(funcs[2])+1)
+      #     batchsheet1[2, 5] = sku
+      #     batchsheet1[9,1] = "BP0#{sku[0,2]}"
+      #     batchsheet1[10,1] = "BP0#{sku[2,2]}"
+      #     batchsheet1[11,1] = "BP0#{sku[4,2]}"
+      #     batchsheet1[9,2] = Rails.application.config.function_list[sku[0,2].to_i-1] + " Blend"
+      #     batchsheet1[10,2] = Rails.application.config.function_list[sku[2,2].to_i-1] + " Blend"
+      #     batchsheet1[11,2] = Rails.application.config.function_list[sku[4,2].to_i-1] + " Blend"
+      #     batchsheet2[2, 5] = sku
+      #     batchbook.write "#{dir}/#{sku}-Batch Record.xls"
+      #   end
       # stockbook = Spreadsheet::Workbook.new
       # stocksheet = stockbook.create_worksheet
       # stocksheet_row = 0
@@ -102,7 +123,6 @@
       #     stocksheet_row += 1
       #   end
       #   stockbook.write "#{dir}/stock-#{Time.now.to_date}.xls"
-
 
       @orders.each do |order|
         if order.ship_address.country.name == "China"
@@ -141,18 +161,18 @@
           shipsheet[row,3] = line_item.single_money.to_html
           shipsheet[row,4] = line_item.display_amount.to_html
           row += 1
-          key = line_item.sku.split(//).last(6).join
-          unless combined_line_items.has_key?(key)
-          combined_line_items[key] = [0,0,0]
-          end
-          case line_item.sku[3]
-          when 'm'
-            combined_line_items[key][0] += line_item.quantity
-          when 'w'
-            combined_line_items[key][1] += line_item.quantity
-          when 'd'
-            combined_line_items[key][2] += line_item.quantity
-          end
+          # key = line_item.sku.split(//).last(6).join
+          # unless combined_line_items.has_key?(key)
+          # combined_line_items[key] = [0,0,0]
+          # end
+          # case line_item.sku[3]
+          # when 'm'
+          #   combined_line_items[key][0] += line_item.quantity
+          # when 'w'
+          #   combined_line_items[key][1] += line_item.quantity
+          # when 'd'
+          #   combined_line_items[key][2] += line_item.quantity
+          # end
         end
 
         shipsheet[31,4] = Spree::Money.new(order.shipments.to_a.sum(&:cost), currency: order.currency).to_html
@@ -165,41 +185,41 @@
 
       addressbook.write "#{dir}/addresses-#{Time.now.to_date}.xls"
       pdf.render_file "#{dir}/letters-#{Time.now.to_date}.pdf"
-      retains = [4, 1, 0]
-      book = Spreadsheet.open 'report/template_blend.xls'
-      sheet1 = book.worksheet 0
-      sheet2 = book.worksheet 1
-      sheet3 = book.worksheet 2
-      sheet4 = book.worksheet 3
-
-      combined_line_items.keys.each do |key|
-        sheet1[3,3] = Time.now.to_date.to_s
-        sheet2[3,3] = Time.now.to_date.to_s
-        sheet3[3,3] = Time.now.to_date.to_s
-        sheet4[3,3] = Time.now.to_date.to_s
-        sheet1[5,3] = key
-        sheet2[5,3] = key
-        sheet3[5,3] = key
-        sheet4[5,3] = key
-        sheet1[5,8] = 6 * (combined_line_items[key][0] * (30+retains[0]) + combined_line_items[key][1] * (7+retains[1]) + combined_line_items[key][2] * (1+retains[2]))
-        sheet2[5,8] = 6 * (combined_line_items[key][0] * (30+retains[0]))
-        sheet3[5,8] = 6 * (combined_line_items[key][1] * (7+retains[1]))
-        sheet4[5,8] = 6 * (combined_line_items[key][2] * (1+retains[2]))
-        sheet1[6,8] = "#{combined_line_items[key][0]}m + #{combined_line_items[key][1]}w + #{combined_line_items[key][2]}d"
-        sheet2[6,8] = combined_line_items[key][0].to_i
-        sheet3[6,8] = combined_line_items[key][1].to_i
-        sheet4[6,8] = combined_line_items[key][2].to_i
-        sheet1[9,1] = "BP0#{key[0,2]}"
-        sheet1[10,1] = "BP0#{key[2,2]}"
-        sheet1[11,1] = "BP0#{key[4,2]}"
-        sheet1[9,2] = Rails.application.config.function_list[key[0,2].to_i-1] + " Blend"
-        sheet1[10,2] = Rails.application.config.function_list[key[2,2].to_i-1] + " Blend"
-        sheet1[11,2] = Rails.application.config.function_list[key[4,2].to_i-1] + " Blend"
-
-        filepath = "report/daily/#{key}-#{Time.now.to_date}.xls"
-        File.delete(filepath) if File.exist?(filepath)
-        book.write filepath
-      end
+      # retains = [4, 1, 0]
+      # book = Spreadsheet.open 'report/template_blend.xls'
+      # sheet1 = book.worksheet 0
+      # sheet2 = book.worksheet 1
+      # sheet3 = book.worksheet 2
+      # sheet4 = book.worksheet 3
+      #
+      # combined_line_items.keys.each do |key|
+      #   sheet1[3,3] = Time.now.to_date.to_s
+      #   sheet2[3,3] = Time.now.to_date.to_s
+      #   sheet3[3,3] = Time.now.to_date.to_s
+      #   sheet4[3,3] = Time.now.to_date.to_s
+      #   sheet1[5,3] = key
+      #   sheet2[5,3] = key
+      #   sheet3[5,3] = key
+      #   sheet4[5,3] = key
+      #   sheet1[5,8] = 6 * (combined_line_items[key][0] * (30+retains[0]) + combined_line_items[key][1] * (7+retains[1]) + combined_line_items[key][2] * (1+retains[2]))
+      #   sheet2[5,8] = 6 * (combined_line_items[key][0] * (30+retains[0]))
+      #   sheet3[5,8] = 6 * (combined_line_items[key][1] * (7+retains[1]))
+      #   sheet4[5,8] = 6 * (combined_line_items[key][2] * (1+retains[2]))
+      #   sheet1[6,8] = "#{combined_line_items[key][0]}m + #{combined_line_items[key][1]}w + #{combined_line_items[key][2]}d"
+      #   sheet2[6,8] = combined_line_items[key][0].to_i
+      #   sheet3[6,8] = combined_line_items[key][1].to_i
+      #   sheet4[6,8] = combined_line_items[key][2].to_i
+      #   sheet1[9,1] = "BP0#{key[0,2]}"
+      #   sheet1[10,1] = "BP0#{key[2,2]}"
+      #   sheet1[11,1] = "BP0#{key[4,2]}"
+      #   sheet1[9,2] = Rails.application.config.function_list[key[0,2].to_i-1] + " Blend"
+      #   sheet1[10,2] = Rails.application.config.function_list[key[2,2].to_i-1] + " Blend"
+      #   sheet1[11,2] = Rails.application.config.function_list[key[4,2].to_i-1] + " Blend"
+      #
+      #   filepath = "report/daily/#{key}-#{Time.now.to_date}.xls"
+      #   File.delete(filepath) if File.exist?(filepath)
+      #   book.write filepath
+      # end
 
       filename = "#{Time.now.to_date}.zip"
       temp_file = Tempfile.new(filename)
