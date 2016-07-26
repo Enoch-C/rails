@@ -56,7 +56,7 @@
   </div>
 
 
-  <div class="section-4" v-show="result.length" :class="{ 'state-inform': result.length < 3 }">
+  <div class="section-4" style="z-index: 998" v-show="result.length" :class="{ 'state-inform': result.length < 3 }">
     <div class="container">
       <% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
       <div class="customize">
@@ -87,6 +87,7 @@
       </div>
       <div v-show="result.length == 3" class="buy">
         <div class="cart">
+          <a v-on:click='action_addToCart' class="button_hollow"><%= Spree.t(:"homepage.bar_cart") %></a>
           <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
         </div>
 
@@ -104,6 +105,12 @@
     </div>
     <img src="https://basaio.b0.upaiyun.com/coolchoice/images/arrow.png" class="arrow" width="33" height="48">
   </div>
+  <div v-on:click='action_cart_switch' style='position:fixed; width: 38px; height: 38px; opacity: 0.6; background-color: #474c5d; right:13px; top:19px; border-radius: 19px'></div>
+  <div style='position:fixed; width: 38px; height: 14px; opacity: 0.6; right:4px; top:16px;text-align: center;'>
+  <div style='border-radius: 7px;font-size:10px;background-color:red;color:white;display:inline-block;padding:0 4px'>{{ cart_total }}</div>
+  </div>
+
+  <div id='cart' style="visibility:hidden;position:fixed;left:20px;right:20px;top:50px;bottom: 59px;background-color: white; box-shadow: 0px 0px 4px rgba(0,0,0,0.2);z-index: 999"></div>
 </div>
 
 
@@ -154,9 +161,16 @@
     "<%= 'https://basaio.b0.upaiyun.com/coolchoice/images/icon-Stress_Management@2x.png' %>"
   ]
 
+  var LineItem = function() {
+    this.sku = ''
+    this.quantity = 0
+  }
+
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
       feature_list: ["Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"],
       num: 1,
       type: 'month',
@@ -165,6 +179,8 @@
       t: t,
       img_path: path,
       processing: false,
+      cartVisible: false,
+      cartItems: [],
       mutuallyExclusiveItems: {
         5: {
           on_image: "<%= image_url("https://basaio.b0.upaiyun.com/coolchoice/images/icon-Energy@2x.png") %>",
@@ -190,6 +206,13 @@
       androidWechatTipShowing: false
     },
     computed: {
+      cart_total: function() {
+        var sum = 0
+        this.cartItems.forEach(function(obj){
+          sum += obj.quantity
+        })
+        return sum
+      },
       types: function() {
         return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
       },
@@ -242,6 +265,19 @@
             that.enableItem(item)
           }
         })
+      },
+      cartVisible: function() {
+        var cart = document.getElementById('cart')
+        cart.style.visibility = this.cartVisible ? 'visible' : 'hidden'
+        if (this.cartVisible) {
+          cart.innerHTML = ""
+          for (var i=0;i<this.cartItems.length; i++) {
+            var e = document.createElement('div')
+            var item = this.cartItems[i]
+            e.innerHTML = item.sku + ' ' + item.quantity
+            cart.appendChild(e)
+          }
+        }
       }
     },
     methods: {
@@ -278,6 +314,27 @@
           return false
         }
         return this.sku.slice(6) != '000000'
+      },
+      action_cart_switch: function() {
+        if (this.cartItems.length == 0) return
+        this.cartVisible = !this.cartVisible
+        
+      },
+      action_addToCart: function(event) {
+        var found = false
+        for (var i=0;i<this.cartItems.length;i++) {
+          var lineItem = this.cartItems[i]
+          if (this.sku == lineItem.sku) {
+            found = true
+            lineItem.quantity += 1
+          }
+        }
+        if (!found) {
+          var lineItem = new LineItem
+          lineItem.quantity = 1
+          lineItem.sku = this.sku
+          this.cartItems.push(lineItem)
+        }
       },
       action_checkout: function(event) {
         if (this.validate()) {

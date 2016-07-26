@@ -7,6 +7,10 @@ module Spree
       @promoter_email = params["p"]
     end
 
+    def cart
+      
+    end
+
     def checkout
       unless params[:line_item][:sku]
         redirect_to :back

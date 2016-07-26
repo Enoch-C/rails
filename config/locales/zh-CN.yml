@@ -213,7 +213,7 @@ zh-CN:
       bar_total: 合计
       bar_sign: $
       bar_unit: usd
-      bar_cart: 增加到购物车
+      bar_cart: 加入购物车
       bar_checkout: 结算
       trial_pack: 免邮费包裹
       trial_pack_desc:  '* 仅限美国 & 航运适用'
