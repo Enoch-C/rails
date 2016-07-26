@@ -326,12 +326,12 @@
           var lineItem = this.cartItems[i]
           if (this.sku == lineItem.sku) {
             found = true
-            lineItem.quantity += 1
+            lineItem.quantity += this.num
           }
         }
         if (!found) {
           var lineItem = new LineItem
-          lineItem.quantity = 1
+          lineItem.quantity = this.num
           lineItem.sku = this.sku
           this.cartItems.push(lineItem)
         }
