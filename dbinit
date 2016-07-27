@@ -8,7 +8,7 @@ echoo () {
 
 IFS=$'\n'
 commands=`cat <<'M'
-rake db:drop
+bundle exec rake db:drop
 bin/spring stop
 bundle exec rake railties:install:migrations
 bundle exec rake db:migrate
@@ -21,9 +21,9 @@ rails g spree_social:install
 rails g spree_tax_cloud:install
 rails g spree_paypal_express:install
 rails g spree_admin_roles_and_access:install
-rake spree_roles:permissions:populate
-rake spree_roles:permissions:populate_other_roles
-rake database_init:load
+bundle exec rake spree_roles:permissions:populate
+bundle exec rake spree_roles:permissions:populate_other_roles
+bundle exec rake database_init:load
 M`;
 
 n=1
