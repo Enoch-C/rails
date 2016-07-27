@@ -1,0 +1,9 @@
+<%= form_tag admin_promoters_import_path, method: "post", multipart: true do %>
+  <p>
+  Import promoters excel file:<br>
+  <%= file_field_tag "file" %>
+  </p>
+  <div>
+    <%= submit_tag "import" %>
+  </div>
+<% end %>
