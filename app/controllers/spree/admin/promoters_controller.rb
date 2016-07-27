@@ -4,6 +4,62 @@ module Spree
       # http://spreecommerce.com/blog/2010/11/02/json-hijacking-vulnerability/
       before_action :check_json_authenticity, only: :index
 
+      def import
+        uploaded_io = params[:file]
+        filepath = Rails.root.join('public', 'uploads', uploaded_io.original_filename)
+        File.open(filepath, 'wb') do |file|
+          file.write(uploaded_io.read)
+        end
+        book = Spreadsheet.open "public/uploads/" + uploaded_io.original_filename
+        sheet = book.worksheet 0
+        @import_errors = []
+        sheet.each_with_index do |row, index|
+          unless index == 0
+            promoter = Spree::Promoter.new
+            if row[1] && row[1].strip =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+              promoter.email = row[1].strip
+            else
+              @import_errors.push "Line #{index+1} format error: Email"
+              next
+            end
+            if row[2] && row[2].to_s.strip.chomp('.0') =~ /\d{11}\z/
+              promoter.phone = row[2].to_s.strip.chomp('.0')
+            else
+              @import_errors.push "Line #{index+1} format error: Phone"
+              next
+            end
+            if row[3]
+              promoter.first_name = row[3].to_s.chomp('.0')
+            end
+            if row[4]
+              promoter.last_name = row[4].to_s.chomp('.0')
+            end
+            if row[6]
+              promoter.identity = row[6].to_s.chomp('.0')
+            end
+            if row[7]
+              promoter.payment = row[7].to_s.chomp('.0')
+            end
+            if row[8] && row[8].strip =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+              promoter.parent_email = row[8].strip
+            else
+              @import_errors.push "Line #{index+1} format error: Parent(upper level) Email"
+              next
+            end
+            if row[9]
+              promoter.note = row[9].to_s.chomp('.0')
+            end
+            promoter.save
+
+            @import_errors.push "Line #{index+1}: #{promoter.errors.messages}"
+          end
+        end
+
+        File.delete(filepath) if File.exist?(filepath)
+
+        render :text => "<ul>#{@import_errors}</ul>".html_safe
+      end
+
       def index
         respond_with(@collection) do |format|
           format.html
