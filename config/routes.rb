@@ -93,6 +93,8 @@ Spree::Core::Engine.add_routes do
   get '/labelgen/labels', to: 'labelgen#labels'
 
   namespace :admin, path: Spree.admin_path do
+    post '/promoters/import', to: 'promoters#import'
+
     resources :promoters do
       collection do
         post :excelimport
