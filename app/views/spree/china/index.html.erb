@@ -22,7 +22,54 @@
       border: 0;
       outline: none;
       background-color: white;
-   }
+    }
+
+
+      .iPhone5_18 {
+        font-size: 18px;
+      }
+      .iPhone5_16 {
+        font-size: 16px;
+      }
+
+      .iPhone5_14 {
+        font-size: 14px;
+      }
+
+      .iPhone5_12 {
+        font-size: 12px;
+      }
+
+      .width_100px {
+        width:100px;
+      }
+
+
+
+@media screen 
+	and (max-width: 320px) {
+    
+      .iPhone5_18 {
+        font-size: 16px;
+      }
+      .iPhone5_16 {
+        font-size: 14px;
+      }
+      .iPhone5_14 {
+        font-size: 12px;
+      }
+
+      .iPhone5_12 {
+        font-size: 10px;
+      }
+
+      .width_100px {
+        width:80px;
+      }
+
+    }
+
+
 </style>
 <% self.title = "Home" %>
 <% @body_id = 'home' %>
@@ -116,8 +163,8 @@
       </table>
     </div>
     <div style="position:absolute; height: 60px; bottom: 0; border-top: 1px solid #dedede;width:100%; line-height: 60px">
-    <div style="float: left;height:100%"><span style="margin-left:20px;font-size:18px; font-weight:bold">总计: </span><span style="font-size:18px;font-weight:bold;color:#474c5d">${{ cart_total_price }}</span><span style="margin-left: 20px; font-size:12px; color: #787878">不含邮费</span></div>
-      <div v-on:click='action_cart_checkout' style="float: right;width:100px;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px"><%= Spree.t(:"homepage.bar_checkout") %></div>
+    <div style="float: left;height:100%"><span style="margin-left:20px;font-weight:bold" class="iPhone5_18">总计: </span><span  class="iPhone5_18" style="font-weight:bold;color:#474c5d">${{ cart_total_price }}</span><span style="margin-left: 20px; color: #787878" class="iPhone5_12">不含邮费</span></div>
+      <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px"><%= Spree.t(:"homepage.bar_checkout") %></div>
     </div>
   </div>
 </div>
@@ -125,12 +172,12 @@
     <tbody>
     <tr id="item_tmpl" style="height:140px"><td><div class='bordered' style="height:140px; border-bottom: 1px solid #dedede;padding: 30px 0; overflow: hidden;">
       <div class='remover' style="float:left;margin-left:10px; width: 20px; height: 80px; vertical-align:middle;text-align:center;line-height:80px"><img width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"></div>
-      <img style="float:left; width: 80px; height:80px; margin: 0 10px; background-color:#eee"/>
+      <%= image_tag("china/package.png", :style=>"float:left; width: 80px; height:80px; margin: 0 10px;")%>
       <div style="position:relative; min-height:80px; overflow: hidden;">
-        <div class='item_ph1'>cms2009002</div><div class='item_ph2'>6g/包 * 30包 * 1盒</div>
+        <div class='item_ph1 iPhone5_14'>cms2009002</div><div class='item_ph2 iPhone5_14'>6g/包 * 30包 * 1盒</div>
       <div style="position:absolute; bottom:0; width:100%">
-        <div class='item_ph3' style="float: left">$39.99 x 1</div>
-        <div class='item_ph4' style="float: right; padding: 0 12px 0 0; font-size:16px; font-weight:bold">$39.99</div>
+        <div class='item_ph3 iPhone5_14' style="float: left">$39.99 x 1</div>
+        <div class='item_ph4 iPhone5_14' style="float: right; padding: 0 12px 0 0;font-weight:bold">$39.99</div>
       </div>
       </div>
     </div></td></tr>
