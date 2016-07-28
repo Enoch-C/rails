@@ -105,9 +105,9 @@
     </div>
     <img src="https://basaio.b0.upaiyun.com/coolchoice/images/arrow.png" class="arrow" width="33" height="48">
   </div>
-  <div v-on:click='action_cart_switch' style='position:fixed; width: 38px; height: 38px; opacity: 0.6; background-color: #474c5d; right:13px; top:19px; border-radius: 19px'></div>
+  <div v-on:click='action_cart_switch' style='position:fixed; width: 38px; height: 38px; opacity: 0.6; background-color: #474c5d; right:13px; top:19px; border-radius: 19px;text-align:center;line-height:38px'><img src="https://basaio.b0.upaiyun.com/coolchoice/images/button-cart@2x.png" height="26" width="20" style='display:inline-block'/></div>
   <div style='position:fixed; width: 38px; height: 14px; opacity: 0.6; right:4px; top:16px;text-align: center;'>
-  <div style='border-radius: 7px;font-size:10px;background-color:red;color:white;display:inline-block;padding:0 4px'>{{ cart_total }}</div>
+    <div style='border-radius: 7px;font-size:10px;background-color:red;color:white;display:inline-block;padding:0 4px'>{{ cart_total }}</div>
   </div>
 
   <div id='cart' style="visibility:hidden;position:fixed;left:20px;right:20px;top:50px;bottom: 10px;background-color: white; box-shadow: 0px 0px 4px rgba(0,0,0,0.2);z-index: 999;">
@@ -117,14 +117,14 @@
     </div>
     <div style="position:absolute; height: 60px; bottom: 0; border-top: 1px solid #dedede;width:100%; line-height: 60px">
     <div style="float: left;height:100%"><span style="margin-left:20px;font-size:18px; font-weight:bold">总计: </span><span style="font-size:18px;font-weight:bold;color:#474c5d">${{ cart_total_price }}</span><span style="margin-left: 20px; font-size:12px; color: #787878">不含邮费</span></div>
-      <div style="float: right;width:100px;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px"><%= Spree.t(:"homepage.bar_checkout") %></div>
+      <div v-on:click='action_cart_checkout' style="float: right;width:100px;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px"><%= Spree.t(:"homepage.bar_checkout") %></div>
     </div>
   </div>
 </div>
   <table style="display:none;">
     <tbody>
     <tr id="item_tmpl" style="height:140px"><td><div class='bordered' style="height:140px; border-bottom: 1px solid #dedede;padding: 30px 0; overflow: hidden;">
-      <div class='remover' style="float:left;margin-left:10px; width: 20px; height: 80px; vertical-align:middle;text-align:center;line-height:80px">x</div>
+      <div class='remover' style="float:left;margin-left:10px; width: 20px; height: 80px; vertical-align:middle;text-align:center;line-height:80px"><img width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"></div>
       <img style="float:left; width: 80px; height:80px; margin: 0 10px; background-color:#eee"/>
       <div style="position:relative; min-height:80px; overflow: hidden;">
         <div class='item_ph1'>cms2009002</div><div class='item_ph2'>6g/包 * 30包 * 1盒</div>
@@ -238,7 +238,7 @@
         return sum
       },
       cart_total_price: function() {
-        return this.cart_total * 39.99
+        return (this.cart_total * 39.99).toFixed(2)
       },
       types: function() {
         return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
@@ -318,7 +318,7 @@
             text1.innerHTML = this.code2verbal(item.sku)
             text2.innerHTML = '6g/包 * 30包 * '+ item.quantity + '盒'
             text3.innerHTML = '$39.99 x ' + item.quantity + ''
-            text4.innerHTML = '$' + 39.99 * item.quantity
+            text4.innerHTML = '$' + (39.99 * item.quantity).toFixed(2)
 
             var remover = t.getElementsByClassName('remover')[0]
             var that = this
@@ -406,6 +406,19 @@
           this.processing = true
           var that = this
           window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
+          that.processing = false
+        }
+      },
+      action_cart_checkout: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var skus = []
+          var quantities = []
+          this.cartItems.forEach(function(obj){
+            skus.push(obj.sku)
+            quantities.push(obj.quantity)
+          })
+          window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + skus.join(' ') + '&line_item[quantity]=' + quantities.join(' ') + '&p=<%= @promoter_email %>'
           that.processing = false
         }
       },

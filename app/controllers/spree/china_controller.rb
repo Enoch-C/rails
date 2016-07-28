@@ -50,12 +50,15 @@ module Spree
 
       @order.associate_user!(user)
 
-      variant = Spree::Variant.find_by_sku(params["sku"])
-      @line_item = @order.contents.add(
-          variant,
-          params["num"] || 1,
-          {}
-      )
+      quantities = params["num"].split(' ')
+      params["sku"].split(' ').each_with_index {|sku, idx|
+        variant = Spree::Variant.find_by_sku(sku)
+        @line_item = @order.contents.add(
+            variant,
+            (quantities[idx] rescue nil) || 1,
+            {}
+        )
+      }
 
       @order.next!
 
