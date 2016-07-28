@@ -110,15 +110,21 @@
   <div style='border-radius: 7px;font-size:10px;background-color:red;color:white;display:inline-block;padding:0 4px'>{{ cart_total }}</div>
   </div>
 
-  <div id='cart' style="visibility:hidden;position:fixed;left:20px;right:20px;top:50px;bottom: 59px;background-color: white; box-shadow: 0px 0px 4px rgba(0,0,0,0.2);z-index: 999;overflow-y: auto">
-  <table id='cartTable' style="width:100%;">
-  </table>
+  <div id='cart' style="visibility:hidden;position:fixed;left:20px;right:20px;top:50px;bottom: 10px;background-color: white; box-shadow: 0px 0px 4px rgba(0,0,0,0.2);z-index: 999;">
+    <div style="position:absolute; bottom:60px; width: 100%; top:0;overflow-y: auto">
+      <table id='cartTable' style="width:100%;">
+      </table>
+    </div>
+    <div style="position:absolute; height: 60px; bottom: 0; border-top: 1px solid #dedede;width:100%; line-height: 60px">
+    <div style="float: left;height:100%"><span style="margin-left:20px;font-size:18px; font-weight:bold">总计: </span><span style="font-size:18px;font-weight:bold;color:#474c5d">${{ cart_total_price }}</span><span style="margin-left: 20px; font-size:12px; color: #787878">不含邮费</span></div>
+      <div style="float: right;width:100px;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px"><%= Spree.t(:"homepage.bar_checkout") %></div>
+    </div>
   </div>
 </div>
   <table style="display:none;">
     <tbody>
-    <tr id="item_tmpl" style="height:140px"><td><div style="height:140px; border-bottom: 1px solid #dedede;padding: 30px 0; overflow: hidden;">
-      <div style="float:left; width: 20px; height: 80px"></div>
+    <tr id="item_tmpl" style="height:140px"><td><div class='bordered' style="height:140px; border-bottom: 1px solid #dedede;padding: 30px 0; overflow: hidden;">
+      <div class='remover' style="float:left;margin-left:10px; width: 20px; height: 80px; vertical-align:middle;text-align:center;line-height:80px">x</div>
       <img style="float:left; width: 80px; height:80px; margin: 0 10px; background-color:#eee"/>
       <div style="position:relative; min-height:80px; overflow: hidden;">
         <div class='item_ph1'>cms2009002</div><div class='item_ph2'>6g/包 * 30包 * 1盒</div>
@@ -231,6 +237,9 @@
         })
         return sum
       },
+      cart_total_price: function() {
+        return this.cart_total * 39.99
+      },
       types: function() {
         return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
       },
@@ -285,13 +294,20 @@
         })
       },
       cartVisible: function() {
+        this.switch_cart()
+      }
+    },
+    methods: {
+      switch_cart: function() {
+        console.log('visibility')
         var cart = document.getElementById('cart')
         cart.style.visibility = this.cartVisible ? 'visible' : 'hidden'
         var cartTable = document.getElementById('cartTable')
         if (this.cartVisible) {
           cartTable.innerHTML = ""
+          var t = null;
           for (var i=0;i<this.cartItems.length; i++) {
-            var t = document.getElementById('item_tmpl').cloneNode(true)
+            t = document.getElementById('item_tmpl').cloneNode(true)
             t.style.display = 'table-row'
             var item = this.cartItems[i]
             var text1 = t.getElementsByClassName('item_ph1')[0]
@@ -303,12 +319,25 @@
             text2.innerHTML = '6g/包 * 30包 * '+ item.quantity + '盒'
             text3.innerHTML = '$39.99 x ' + item.quantity + ''
             text4.innerHTML = '$' + 39.99 * item.quantity
+
+            var remover = t.getElementsByClassName('remover')[0]
+            var that = this
+            remover.tag = i
+            remover.onclick = function(){
+              that.cartItems.splice(this.tag, 1)
+              that.cartVisible = false
+              that.switch_cart()
+              if (that.cartItems.length > 0) {
+                that.cartVisible = true
+                that.switch_cart()
+              }
+            }
+
             cartTable.appendChild(t)
           }
+          
         }
-      }
-    },
-    methods: {
+      },
       code2verbal: function(sku) {
         var a = [sku.slice(6,8), sku.slice(8,10), sku.slice(10,12)]
         var ta = []
