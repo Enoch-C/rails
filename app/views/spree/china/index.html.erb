@@ -129,7 +129,7 @@
         </div>
         <div class="total">
           <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
-          <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
+          <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }}</div>
         </div>
       </div>
       <div v-show="result.length == 3" class="buy">
@@ -162,9 +162,12 @@
       <table id='cartTable' style="width:100%;">
       </table>
     </div>
-    <div style="position:absolute; height: 60px; bottom: 0; border-top: 1px solid #dedede;width:100%; line-height: 60px">
-    <div style="float: left;height:100%"><span style="margin-left:20px;font-weight:bold" class="iPhone5_18">总计: </span><span  class="iPhone5_18" style="font-weight:bold;color:#474c5d">${{ cart_total_price }}</span><span style="margin-left: 20px; color: #787878" class="iPhone5_12">不含邮费</span></div>
-      <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px"><%= Spree.t(:"homepage.bar_checkout") %></div>
+    <div style="position:absolute; height: 60px; bottom: 0; border-top: 1px solid #dedede;width:100%;">
+      <div style="float: left;height:100%">
+      <div style="margin:8px 0 2px 23px; color: #787878" class="iPhone5_12">邮费：${{ shippingUnits * 9 }}（{{ (shippingUnits - 1)*3  + 1 }}至{{  (shippingUnits - 1)*3  + 1 + 2 }}盒）</div>
+        <div><span style="margin-left:20px;font-weight:bold" class="iPhone5_18">总计: </span><span  class="iPhone5_18" style="font-weight:bold;color:#474c5d">${{ cart_total_price }}</span></div>
+      </div>
+      <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px; line-height: 60px"><%= Spree.t(:"homepage.bar_checkout") %></div>
     </div>
   </div>
 </div>
@@ -277,6 +280,9 @@
       androidWechatTipShowing: false
     },
     computed: {
+      shippingUnits: function() {
+        return Math.floor((this.cart_total - 1) / 3) + 1
+      },
       cart_total: function() {
         var sum = 0
         this.cartItems.forEach(function(obj){
@@ -285,7 +291,7 @@
         return sum
       },
       cart_total_price: function() {
-        return (this.cart_total * 39.99).toFixed(2)
+        return (this.cart_total * 39.99 + this.shippingUnits * 9).toFixed(2)
       },
       types: function() {
         return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
