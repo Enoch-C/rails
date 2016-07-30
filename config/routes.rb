@@ -88,9 +88,10 @@ Spree::Core::Engine.add_routes do
   get 'return', to: 'return#index'
 
   namespace :admin, path: Spree.admin_path do
-    post '/promoters/import', to: 'promoters#import'
-
     resources :promoters do
+      collection do
+        post :excelimport
+      end
       member do
         # get :addresses
         # put :addresses

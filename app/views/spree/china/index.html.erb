@@ -167,7 +167,7 @@
       <div style="margin:8px 0 2px 23px; color: #787878" class="iPhone5_12">邮费：${{ shippingUnits * 7 }}（{{ (shippingUnits - 1)*3  + 1 }}至{{  (shippingUnits - 1)*3  + 1 + 2 }}盒）</div>
         <div><span style="margin-left:20px;font-weight:bold" class="iPhone5_18">总计: </span><span  class="iPhone5_18" style="font-weight:bold;color:#474c5d">${{ cart_total_price }}</span></div>
       </div>
-      <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px; line-height: 60px"><%= Spree.t(:"homepage.bar_checkout") %></div>
+      <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px; line-height: 60px"><%= Spree.t(:"homepage.bar_cartcheckout") %></div>
     </div>
   </div>
 </div>
@@ -243,8 +243,6 @@
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
-      order_number: "<%= current_order.number %>",
-      order_token: "<%= current_order.guest_token %>",
       feature_list: ["Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"],
       num: 1,
       type: 'month',

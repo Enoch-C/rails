@@ -14,6 +14,8 @@ en-NZ:
       GIFT: Send a Gift
       INGREDIENTS: What's in Cool Choice
     footer_bar:
+      please_choose: Please choose
+      choose_more: more
       contact: Contact
       contact_us: Contact Us
       call_us: Call us
@@ -52,6 +54,7 @@ en-NZ:
     binding_users: Binding Users
     items_cannot_be_shipped: Sorry, there is at least one product in your cart which can ONLY be shipped to USA address.
     shipping_flat_rate_per_two_items: Flat rate per two package items
+    shipping_flat_rate_per_three_items: Flat rate per three package items
     phone: Phone
     promoter: Promoter
     promoters: Promoters
@@ -174,6 +177,7 @@ en-NZ:
       bar_unit: USD
       bar_cart: Add to Cart
       bar_checkout: Checkout
+      bar_cartcheckout: Checkout
       trial_pack: Free Trial Pack
       trial_pack_desc: '* US only & shipping applies'
       your_wish: MY WISH

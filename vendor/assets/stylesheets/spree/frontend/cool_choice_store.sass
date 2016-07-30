@@ -404,36 +404,38 @@ input.button
   padding: 15px 20px 18px
   background: #f8f8f8
   font-size: 14px
-  .item-image
-    float: left
-    width: 30%
-    height: 80px
-    img
-      width: 80px
-      max-width: 100%
-  .item-details
-    position: relative
-    float: left
-    width: 69%
-    height: 80px
-    .func
-      position: absolute
-      left: 0
-      top: 0
-    .qty
-      position: absolute
-      right: 60%
-      bottom: 0
-    .price
-      position: absolute
-      left: 0
-      bottom: 0
-    .total
-      position: absolute
-      right: 0
-      bottom: 0
-      font-size: 16px
-      font-weight: 500
+  .item-row
+    margin-top: 15px
+    .item-image
+      float: left
+      width: 30%
+      height: 80px
+      img
+        width: 80px
+        max-width: 100%
+    .item-details
+      position: relative
+      float: left
+      width: 69%
+      height: 80px
+      .func
+        position: absolute
+        left: 0
+        top: 0
+      .qty
+        position: absolute
+        right: 60%
+        bottom: 0
+      .price
+        position: absolute
+        left: 0
+        bottom: 0
+      .total
+        position: absolute
+        right: 0
+        bottom: 0
+        font-size: 16px
+        font-weight: 500
 #china-checkout
   .china-address
     padding-bottom: 300px
@@ -498,6 +500,12 @@ input.button
   p
     font-size: 13px
 #china-pay
+  .unpaid
+    position: fixed
+    bottom: 60px
+    top: 0px
+    overflow-y: scroll
+    overflow-x: hidden
   color: #474c5d
   .then
     text-align: center

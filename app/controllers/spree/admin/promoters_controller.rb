@@ -4,7 +4,7 @@ module Spree
       # http://spreecommerce.com/blog/2010/11/02/json-hijacking-vulnerability/
       before_action :check_json_authenticity, only: :index
 
-      def import
+      def excelimport
         uploaded_io = params[:file]
         filepath = Rails.root.join('public', 'uploads', uploaded_io.original_filename)
         File.open(filepath, 'wb') do |file|
@@ -130,11 +130,16 @@ module Spree
                               .limit(params[:limit] || 100)
           else
             @search = @collection.ransack(params[:q])
+
             @collection = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
           end
         end
 
       private
+
+      def model_class
+        Spree::Promoter
+      end
 
       def promoter_params
         params.require(:promoter).permit(:phone, :secret, :email, :first_name, :last_name, :percent, :parent_id, :payment, :note, :identity, :parent_email)

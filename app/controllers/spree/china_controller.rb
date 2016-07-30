@@ -8,7 +8,7 @@ module Spree
     end
 
     def cart
-      
+
     end
 
     def checkout
@@ -107,9 +107,9 @@ module Spree
         }
       }
       if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
-        # packages = @order.shipments.map(&:to_package)
-        # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
         @order.next
+        packages = @order.shipments.map(&:to_package)
+        @differentiator = Spree::Stock::Differentiator.new(@order, packages)
       else
         invalid_resource!(@order)
       end

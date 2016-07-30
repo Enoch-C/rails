@@ -1,5 +1,18 @@
 zh-TW:
   spree:
+    confirm_promoter_parent_email:
+      subject1: 您的大使
+      subject2: 收到獎勵
+      subject3: 的大使
+      thanks: 在此衷心感謝您的有效推廣，讓我們共同努力把最好的健康帶給每個人！
+      dear_customer1: "親愛的 Cool Choice 健康大使:"
+      dear_customer2: "親愛的 Cool Choice 健康合夥人:"
+      from: "此筆訂單的直接推廣方是您的大使:"
+    order_processed_successfully: 已成功定制
+    subtotal: 商品金額
+    summary_table:
+      shipping_method: 配送方式
+      shipping: 運費
     footer_bar:
       contact: Contact
       contact_us: Contact Us
@@ -12,14 +25,14 @@ zh-TW:
       title1: 定制如此簡單
       para1: "在超過500種的功能組合中，您所要做的，就是選擇三項所需健康功能，Cool Choice排除了所有可能沖突的組合，定制如此簡單！"
       title2: "過量危及健康"
-      para2: "保健品中的營養成分都有每日服用的上限，超出了會對身體造成危害及可能產生的副作用。Cool Choice個性化配方，確保每一種組合的營養成分均不超標，為您的健康補充安全適度的營養。"
+      para2: "保健品中的營養成分都有每日服用的上限，超出了會對身體造成危害及可能產生的副作用。Cool Choice個性化配方，確保每壹種組合的營養成分均不超標，為您的健康補充安全適度的營養。"
       title3: "無膠囊、無化學添加、無填充劑"
       para3: 常見的片劑和膠囊，含有人體所不需要的輔料及化學物質，長期服用不利於健康。
       para3_2: Cool Choice選擇最健康的纖維基沖劑形式，為您的身體提供最健康的營養補充。
       title4: "新鮮定制"
       para4: "保健品中的有效成分會受光線、熱度、潮濕等因素的影響，逐漸失效。Cool Choice按定單生產，新鮮更健康！"
       title5: "天然原料"
-      para5: "Cool Choice使用純天然原料，不含防腐劑、人工色素、甜味劑等，一切都是天然的選擇，只為您的健康！"
+      para5: "Cool Choice使用純天然原料，不含防腐劑、人工色素、甜味劑等，壹切都是天然的選擇，只為您的健康！"
     gift_message_error1: Please enter recipient name.
     gift_message_error2: Please leave a message up to 100 characters.
     gift_message_error3: Please enter your name.
@@ -143,7 +156,7 @@ zh-TW:
       banner_3_title: 您的健康
       banner_1_sub_title: 選取三種所需功能
       banner_2_sub_title: Cool Choice為您量身定做
-      banner_3_sub_title: 每日一包，盡享美味健康
+      banner_3_sub_title: 每日壹包，盡享美味健康
       button_1: 選擇的理由
       button_2: 開始定制
       content_function_wish: 我的心願
@@ -158,11 +171,11 @@ zh-TW:
       give_as_a_gift: 作為禮物贈送
       learn_more: 了解更多
       title_proud: 自豪使命
-      title_introduce: 介紹個性化的補充品
+      title_introduce: 介紹私人定制保健品
       title_free: 美國免運費
       title_worldwide: 全球運送
-      content_title_magic: 量身定制天然保健品
-      content_title_choose: 選擇您所需的三種功能
+      content_title_magic: 美國私人定制保健品
+      content_title_choose: 點擊圖標選擇您所需的三種功能
       content_function_Anti-Aging: 延緩衰老
       content_function_Beauty: 美容養顏
       content_function_Brain_Care: 益智健腦
@@ -179,11 +192,11 @@ zh-TW:
       content_function_Stress_Management: 舒緩壓力
       cool_simply: Cool Choice
       cool_simply_line: 3種補充品
-      cool_simply_line_2: 一個簡單包裹
-      cool_care: 一流的關心/特別關心
+      cool_simply_line_2: 壹個簡單包裹
+      cool_care: 壹流的關心/特別關心
       cool_care_line: 把禮物送與
       cool_care_line_2: 特別的人
-      cool_ingredients: 一流的原料
+      cool_ingredients: 壹流的原料
       cool_ingredients_line: 100% 純天然
       cool_ingredients_line_2: 新鮮出爐-to-定制
       bar_choose: 您的選擇
@@ -200,12 +213,13 @@ zh-TW:
       bar_total: 合計
       bar_sign: $
       bar_unit: usd
-      bar_cart: 增加到購物車
-      bar_checkout: 結算
+      bar_cart: 加入購物車
+      bar_checkout: 立即購買
+      bar_cartcheckout: 結算
       trial_pack: 免郵費包裹
       trial_pack_desc:  '* 僅限美國 & 航運適用'
-      your_wish: 你的願望清單
-      we_are: 我們會持續研發新的補充品. 告訴我們你最想要什麽.
+      your_wish: 妳的願望清單
+      we_are: 我們會持續研發新的補充品. 告訴我們妳最想要什麽.
       submit: 提交
     head_bar:
       WHY_COOL_CHOICE: 選擇的理由
@@ -256,57 +270,57 @@ zh-TW:
       help_Mens_Vitality: '天然“偉哥”，提升男性魅力'
       help_Sleep_Support: 調節睡眠，提高睡眠質量
       help_Stress_Management: 提神醒腦，輕松緩壓
-      detail_Anti-Aging: '人體是由數以百萬計的細胞一起工作，以便我們能完成所有的日常職能。當我們年輕的時候，我們的身體細胞正處於生長發育期，處於最佳狀態。隨著我們年齡的增長，我們體內的細胞進入了一個衰老的過程，它表現在身體機能和機能的各個方面的下降。超氧化物歧化酶(SOD)，是一種強大的抗衰老補充成分，有助於保護和修復細胞的損傷和快速老化。'
+      detail_Anti-Aging: '人體是由數以百萬計的細胞壹起工作，以便我們能完成所有的日常職能。當我們年輕的時候，我們的身體細胞正處於生長發育期，處於最佳狀態。隨著我們年齡的增長，我們體內的細胞進入了壹個衰老的過程，它表現在身體機能和機能的各個方面的下降。超氧化物歧化酶(SOD)，是壹種強大的抗衰老補充成分，有助於保護和修復細胞的損傷和快速老化。'
       detail_Beauty: '皮膚是身體最大的器官，每天我們的皮膚會直接或間接接觸: 化學物質——乳液、化妝、古龍香水;汙染物，汽車尾氣，香煙的煙霧;有害的紫外線輻射。壓力和營養不良也會影響皮膚的健康。'
-      detail_Brain_Care: '當我們年輕時，我們的大腦就像一塊海綿，能夠輕易吸收我們能找到的所有信息並儲存在我們的記憶中。我們一次性學習幾種語言，適合在很年輕的時候，這就是一個眾所周知的事實。當我們變老，我們開始越來越難記住一些名字或事情，我們記憶或回憶信息的能力下降是大腦老化的其中一種表現。我們記憶信息的能力隨著歲月的流逝而逐漸衰退。大腦細胞通信(大腦信號)通過一系列稱為神經元的網絡來傳遞信息。隨著年齡增長，大腦神經元傳遞信息的能力減弱。這時，大腦就需要一種能量，以幫助迅速啟動腦細胞並保持神經元的工作效率。'
-      detail_Digestive_Care: '我們的腸道內有許多有益的微生物，它們被稱為益生菌。它們在腸道中能夠促進食物被良好地消化，也幫助我們的身體抵抗疾病的能力，提高我們的免疫力。不良的飲食習慣和疾病，尤其是我們有時不得不服用的抗生素，會大大減少我們腸道內益生菌的數量，導致一些胃腸不適，以及因免疫力下降而使我們更容易受到病菌侵襲。'
-      detail_Energy: '現代社會的工作、學習、運動等等日常活動都會耗費我們的精力，常常會讓我們感到筋疲力盡，疲累不堪。在這時，我們就會去咖啡店買杯咖啡，或者花時間去泡一杯濃茶，以此來提神醒腦、補充精力。
+      detail_Brain_Care: '當我們年輕時，我們的大腦就像壹塊海綿，能夠輕易吸收我們能找到的所有信息並儲存在我們的記憶中。我們壹次性學習幾種語言，適合在很年輕的時候，這就是壹個眾所周知的事實。當我們變老，我們開始越來越難記住壹些名字或事情，我們記憶或回憶信息的能力下降是大腦老化的其中壹種表現。我們記憶信息的能力隨著歲月的流逝而逐漸衰退。大腦細胞通信(大腦信號)通過壹系列稱為神經元的網絡來傳遞信息。隨著年齡增長，大腦神經元傳遞信息的能力減弱。這時，大腦就需要壹種能量，以幫助迅速啟動腦細胞並保持神經元的工作效率。'
+      detail_Digestive_Care: '我們的腸道內有許多有益的微生物，它們被稱為益生菌。它們在腸道中能夠促進食物被良好地消化，也幫助我們的身體抵抗疾病的能力，提高我們的免疫力。不良的飲食習慣和疾病，尤其是我們有時不得不服用的抗生素，會大大減少我們腸道內益生菌的數量，導致壹些胃腸不適，以及因免疫力下降而使我們更容易受到病菌侵襲。'
+      detail_Energy: '現代社會的工作、學習、運動等等日常活動都會耗費我們的精力，常常會讓我們感到筋疲力盡，疲累不堪。在這時，我們就會去咖啡店買杯咖啡，或者花時間去泡壹杯濃茶，以此來提神醒腦、補充精力。
 南非醉茄提取物其實是更好的選擇。只要每日補充南非醉茄，就能時時充滿能量，省去花在咖啡店和泡茶上的時間，用更多的時間去完成自己的生活列表。'
       detail_Eye_Care: '我們日常常用的設備，如手機、ipad、電腦，遊戲設備如X-BOX、遊戲基地、任天堂遊戲機等已經成為我們最好的朋友。無論我們去哪裏，我們都會隨身攜帶它們，我們不斷的與它們保持在線互動，我們的生活中已經不能沒有它們。然而，這些設備發出藍色的光，會損害我們的眼睛，導致我們最終視力低下。'
       detail_Heart_Care: '心臟需要能量才能正常工作。隨著年齡的增長，精力的下降會引起各種心血管疾病。'
-      detail_Immune_Support: '隨著我們的成長，我們的身體不斷暴露在微生物環境中，這會使我們生病。一個正常健康的身體免疫力的發展，幫助擊退這些疾病的致病微生物。不良的飲食、壓力和感染會使我們身體的免疫系統變得虛弱。為了消除這些免疫隱患，Cool Choice推出了β葡聚糖免疫保健產品。'
-      detail_Joint_Care: '人體就像一個汽車引擎，我們需要定期更換機油，以保證汽車發動機的運轉，使其能夠有效地潤滑運動部件，使它們平穩地運動，並對零件沒有任何壓力。沒有潤滑，引擎將失去性能，並終將崩潰。人體有許多運動器官，其中，關節的摩擦和壓力是最大的。跑步、散步、和任何形式的活動，都容易損傷我們的關節。如果我們無法定期正確地潤滑關節，與關節相關的許多疾病，包括關節炎等，最終會找上我們。為了解決這個問題，Cool Choice推薦您選擇氨基葡萄糖進行關節護理。'
+      detail_Immune_Support: '隨著我們的成長，我們的身體不斷暴露在微生物環境中，這會使我們生病。壹個正常健康的身體免疫力的發展，幫助擊退這些疾病的致病微生物。不良的飲食、壓力和感染會使我們身體的免疫系統變得虛弱。為了消除這些免疫隱患，Cool Choice推出了β葡聚糖免疫保健產品。'
+      detail_Joint_Care: '人體就像壹個汽車引擎，我們需要定期更換機油，以保證汽車發動機的運轉，使其能夠有效地潤滑運動部件，使它們平穩地運動，並對零件沒有任何壓力。沒有潤滑，引擎將失去性能，並終將崩潰。人體有許多運動器官，其中，關節的摩擦和壓力是最大的。跑步、散步、和任何形式的活動，都容易損傷我們的關節。如果我們無法定期正確地潤滑關節，與關節相關的許多疾病，包括關節炎等，最終會找上我們。為了解決這個問題，Cool Choice推薦您選擇氨基葡萄糖進行關節護理。'
       detail_Liver_Care: '過度飲酒，某些類型的病毒，以及攝入過多的脂肪和不良的飲食習慣都會給肝臟造成很大壓力。這些因素最終傷害肝臟，導致肝臟停止正常運作。如果不糾正的話，肝臟可能最終停止運作、衰敗。假如沒有適當的飲食和運動來保持肝臟功能健康，某些補充劑也可以幫助消除這些毒素。'
       detail_Lung_Care: '我們的肺就好像身體的空氣凈化器，吸入氧氣，把空氣中的灰塵、汙垢等臟物過濾。
 空氣凈化器需要定期更換濾網或者清洗，否則就容易積攢灰塵，影響機器的運行性能。
 肺也是如此。Cool Choice專有的有機草本配方，能夠需對肺泡進行清潔和更新，保證肺部的健康，確保肺部良好的工作能力。'
       detail_Mens_Vitality: ' '
-      detail_Sleep_Support: '我們不能認為，身體僅僅需要一個完整的6到8小時高質量的睡眠，這樣我們就可以在白天正常工作。這是不夠的，身體所需足夠的睡眠時間，但保證睡眠質量也是非常重要的。你有沒有經歷過有時醒來，仍然感覺疲倦不堪？這是因為你的身體沒有得到所需要的高質量的睡眠。這可能是因為你擔心第二天的考試，你與愛人在睡前的親密，或者你因為第二天一早有事，害怕睡過頭遲到。不管原因是什麽，它都會影響你一天的工作質量，影響你最佳水平的發揮。'
+      detail_Sleep_Support: '我們不能認為，身體僅僅需要壹個完整的6到8小時高質量的睡眠，這樣我們就可以在白天正常工作。這是不夠的，身體所需足夠的睡眠時間，但保證睡眠質量也是非常重要的。妳有沒有經歷過有時醒來，仍然感覺疲倦不堪？這是因為妳的身體沒有得到所需要的高質量的睡眠。這可能是因為妳擔心第二天的考試，妳與愛人在睡前的親密，或者妳因為第二天壹早有事，害怕睡過頭遲到。不管原因是什麽，它都會影響妳壹天的工作質量，影響妳最佳水平的發揮。'
       detail_Stress_Management: '這個世界充滿了壓力。要努力完成學業，準備考試，要去面試工作，交通駕駛、限期完成工作，或者限期交繳賬單等等，都是現代生活帶來的許多壓力。恒定的壓力會影響我們的身體，在許多不同的方面使我們的免疫力低下，導致生病、體重增加、精神抑郁等。'
       contains_Anti-Aging: '每份Cool Choice抗衰老補充產品含有10毫克從甜瓜中提取的超氧化物歧化酶(SOD)。'
       contains_Beauty: '這些有害的影響使我們的皮膚失去原有年輕的堅固，水分和彈性，導致皺紋和細紋。膠原蛋白生物活性肽有助於減少皺紋和細紋，幫助修復和恢復皮膚的正常水分，堅固，和彈性。我們使用的是1000mg從牛肉中提取的膠原蛋白生物活性肽。'
-      contains_Brain_Care: '每份Cool Choice腦元保健產品含250毫克胞二磷膽堿，有助於在這一過程中通過幫助支持大腦信號，提高記憶功能健康。'
+      contains_Brain_Care: '每份Cool Choice腦元保健產品含250毫克胞二磷膽堿，有助於在這壹過程中通過幫助支持大腦信號，提高記憶功能健康。'
       contains_Digestive_Care: '為了幫助促進健康的腸道，每67毫克就包含10億耐儲存的活性益生菌結芽孢桿菌，幫助支持健康的腸道。'
       contains_Energy: '每份Cool Choice能量保健品含有500毫克的南非醉茄提取物。'
-      contains_Eye_Care: '每天7毫克從萬壽菊中提取的的葉黃素和玉米黃質混合物，就能作為一個過濾器，阻擋從這些設備中發射的有害光線，有助於保護和修復我們受損的眼睛。'
+      contains_Eye_Care: '每天7毫克從萬壽菊中提取的的葉黃素和玉米黃質混合物，就能作為壹個過濾器，阻擋從這些設備中發射的有害光線，有助於保護和修復我們受損的眼睛。'
       contains_Heart_Care: '每份Cool Choice中含有250毫克自然發酵的輔酶q，有助於心血管健康的支持，為心臟提供能量的來源。'
       contains_Immune_Support: '250毫克的β葡聚糖，能夠在人體內自然發酵，它可以幫助調節人體的免疫防禦，幫助增強人體抵抗疾病的能力或縮短其發病的持續時間。'
       contains_Joint_Care: '純植物提取的1500毫克氨基葡萄糖，有助於保護我們的關節功能，有效地幫助生產或修復軟骨組織。軟骨組織能夠幫助緩沖人體運動中關節所承受的壓力與摩擦。'
       contains_Liver_Care: '550毫克的奶薊草和洋薊提取物有助於消除有害的毒素，也能幫助修復肝損傷。'
       contains_Lung_Care: '每份Cool Choice含有250毫克專有的有機草本配方，其中包含：麥冬、五味子、黃芪、人身、幹姜厚樸、甘草。'
-      contains_Mens_Vitality: '這是一種采用最天然的提高性能的方式，采用的是從人參中提取的100毫克的東革成分。'
+      contains_Mens_Vitality: '這是壹種采用最天然的提高性能的方式，采用的是從人參中提取的100毫克的東革成分。'
       contains_Sleep_Support: '6毫克的褪黑激素就能幫助、提高睡眠質量。'
       contains_Stress_Management: '每份Cool Choice減壓保健品含100毫克提取自綠茶的純茶氨酸，它有助於提升學習效率、集中力、提神醒腦，並有助於減輕壓力、緩解精神緊張與煩躁、改善易怒。'
       more1_Anti-Aging: 'Cool Choice抗衰老補充產品是從自然界中含SOD量最高的(SOD，14000 IU / g)甜瓜中提取的。'
       more1_Beauty: 'Cool Choice美容護理提供了健康、年輕的皮膚生物活性，以及優化的膠原蛋白多肽。'
       more1_Brain_Care: 'Cool Choice大腦保健產品提供胞二磷膽堿，它是對大腦健康和提高記憶力必不可少的化合物。'
       more1_Digestive_Care: '每份Cool Choice腸道消化保健產品，提供10億耐儲存的活性益生菌結芽孢桿菌，有助於體內環境的健康與平衡，促進腸道的健康消化功能。'
-      more1_Energy: 'Cool Choice能量保健品濃縮南非醉茄精華於每一小包中。'
-      more1_Eye_Care: 'Cool Choice眼部護理產品提供了天然類胡蘿蔔素：從萬壽菊提取的混合物中，葉黃素和玉米黃質以5:1的比例存在，這是在自然界中發現的支持眼睛健康的天然成分。葉黃素和玉米黃質是唯一的位於眼睛的類胡蘿蔔素(黃斑)。'
+      more1_Energy: 'Cool Choice能量保健品濃縮南非醉茄精華於每壹小包中。'
+      more1_Eye_Care: 'Cool Choice眼部護理產品提供了天然類胡蘿蔔素：從萬壽菊提取的混合物中，葉黃素和玉米黃質以5:1的比例存在，這是在自然界中發現的支持眼睛健康的天然成分。葉黃素和玉米黃質是唯壹的位於眼睛的類胡蘿蔔素(黃斑)。'
       more1_Heart_Care: 'Cool Choice心臟護理包含可溶性輔酶Q10(Co-Q10)來幫助支持心臟健康。隨著年齡的增長，輔酶Q10在體內的含量下降。補充Cool Choice心臟護理可以增加體內輔酶Q10的含量水平。'
       more1_Immune_Support: 'Cool Choice免疫保健產品中含發酵的高純度、高生物利用度的1，3葡聚糖免疫支持。'
       more1_Joint_Care: 'Cool Choice關節護理取自於優質的、USP級純植物的氨基葡萄糖。葡萄糖胺液能夠緩沖關節，促進軟骨的修復和形成。'
       more1_Liver_Care: 'Cool Choice肝臟護理產品包含牛奶薊，提取自無害的化學物，能夠幫助保護和維護肝臟健康。'
-      more1_Lung_Care: 'Cool Choice肺部保健品利用一種能夠支持人體更好地吸氧，促進呼吸更有效的特制草本混合物，使我們的呼吸更加健康。這種草本混合物具有抗菌和抗發炎的特性，有助於保持肺部濕潤，以減少呼吸時的咳嗽及其他癥狀。'
+      more1_Lung_Care: 'Cool Choice肺部保健品利用壹種能夠支持人體更好地吸氧，促進呼吸更有效的特制草本混合物，使我們的呼吸更加健康。這種草本混合物具有抗菌和抗發炎的特性，有助於保持肺部濕潤，以減少呼吸時的咳嗽及其他癥狀。'
       more1_Mens_Vitality: 'Cool Choice男性保健品中含有東革阿裏提取物(Tonkat阿裏或馬來西亞人參)，這是生長在東南亞的，極具生機與活力的天然罕見藥草。'
       more1_Sleep_Support: 'Cool Choice睡眠保健品的褪黑素能幫助開啟健康的睡眠模式。褪黑素是松果體釋放的，能夠實現睡眠調節功能。'
-      more1_Stress_Management: 'Cool Choice減壓保健品含有純粹、天然的L-茶氨酸，它能緩解壓力、釋放幸福感，使人精神放松，精神專註，不嗜睡。它是被證實的GRAS（一般公認安全），是由FDA批準的能用於食品和飲料的。'
+      more1_Stress_Management: 'Cool Choice減壓保健品含有純粹、天然的L-茶氨酸，它能緩解壓力、釋放幸福感，使人精神放松，精神專註，不嗜睡。它是被證實的GRAS（壹般公認安全），是由FDA批準的能用於食品和飲料的。'
       more2_Anti-Aging: '臨床證明，SOD B Extramel®通過維護、優化人的心理和生理機能表現，促進幸福感。'
       more2_Beauty: '自然衰老過程，壓力、汙染、紫外線輻射和營養不良都會導致的皮膚失去緊致、水分和彈性，導致皺紋和幹燥。'
       more2_Brain_Care: '胞二磷膽堿能提供大腦保持敏銳活躍所需的能量，促進大腦健康。'
       more2_Digestive_Care: '益生菌有助於促進健康的腸道消化功能。'
       more2_Energy: '南非醉茄包含甾內酯，生物堿，脂肪酸，膽堿，和氨基酸，以幫助提高能量和濃度，並盡量減少疲勞。'
-      more2_Eye_Care: '發藍光的電子設備(電腦、高清電視、智能手機、平板電腦等)會給眼睛造成極大壓力。美國人平均暴露在一天中大約有10 - 12小時暴露在這種有害光線下。葉黃素和玉米黃質能夠有效過濾、阻擋這些有害藍光，減緩、防止氧化應激和炎癥。'
+      more2_Eye_Care: '發藍光的電子設備(電腦、高清電視、智能手機、平板電腦等)會給眼睛造成極大壓力。美國人平均暴露在壹天中大約有10 - 12小時暴露在這種有害光線下。葉黃素和玉米黃質能夠有效過濾、阻擋這些有害藍光，減緩、防止氧化應激和炎癥。'
       more2_Heart_Care: '研究表明，輔酶Q10有助於保護心臟健康，並能降低藥物的負面副作用，如他汀類藥物。'
       more2_Immune_Support: '葡聚糖能自然調節人體的免疫反應，幫助保持整體健康和健康。'
       more2_Joint_Care: '研究表明，氨基葡萄糖有助於減少骨關節炎癥狀。'
@@ -315,7 +329,7 @@ zh-TW:
       more2_Mens_Vitality: '東革阿裏提取物中含有名為eurypeptides的成分，它能用來增強能量，提升性能、耐力和性欲。用戶的反饋報告指出，它能增加能量以及耐力。'
       more2_Sleep_Support: '褪黑素實現恢復正常的睡眠模式，調節晝夜規律，並保護免疫系統免受壓力。隨著年齡增長，褪黑素的自然釋放水平下降，因此會擾亂正常的睡眠模式。'
       more2_Stress_Management: '研究表明，L-茶氨酸有助於提高學習成績，集中註意力，使思維清晰，提高睡眠質量，減少正常的PMS癥狀，減少咖啡因的副作用，有助於身體免疫系統。'
-      more3_Anti-Aging: '臨床研究表明，通過一個月補充SOD B Extramel®，能通過改善緩解壓力，睡眠質量，顯著提高日常認知功能和身體狀況。'
+      more3_Anti-Aging: '臨床研究表明，通過壹個月補充SOD B Extramel®，能通過改善緩解壓力，睡眠質量，顯著提高日常認知功能和身體狀況。'
       more3_Beauty: '膠原蛋白肽有助於減少皮膚皺紋，提高皮膚彈性。膠原蛋白肽也有助於保持和增加皮膚水分，減緩皺紋的形成。'
       more3_Brain_Care: '胞二磷膽堿支持大腦信號傳遞，大腦DNA合成和修復。'
       more3_Digestive_Care: '益生菌支持免疫功能和蛋白質的利用率。'
@@ -324,10 +338,10 @@ zh-TW:
       more3_Heart_Care: '輔酶Q10能為心臟細胞提供能量。它可以幫助降低心臟血壓，增強心臟功能。'
       more3_Immune_Support: '葡聚糖也有助於穩定細胞膜，促進人體蛋白質合成。'
       more3_Joint_Care: '葡萄糖胺也有抗炎作用。'
-      more3_Liver_Care: '洋薊葉提取物富含活性生物化合物，它作為一種抗氧化劑，能夠幫助清除肝臟毒素。'
-      more3_Lung_Care: 'Cool Choice肺部保健品是一種抗氧化劑和抗炎劑，能抑制血管通透性，改善肺部整體活力。'
+      more3_Liver_Care: '洋薊葉提取物富含活性生物化合物，它作為壹種抗氧化劑，能夠幫助清除肝臟毒素。'
+      more3_Lung_Care: 'Cool Choice肺部保健品是壹種抗氧化劑和抗炎劑，能抑制血管通透性，改善肺部整體活力。'
       more3_Mens_Vitality: '它還有助於提高身體的自然的睪丸激素水平。'
-      more3_Sleep_Support: '褪黑素是一種天然的抗氧化劑，幫助身體對抗會造成損害的自由基。'
+      more3_Sleep_Support: '褪黑素是壹種天然的抗氧化劑，幫助身體對抗會造成損害的自由基。'
       more3_Stress_Management: 'L-茶氨酸促進意識放松，減輕壓力和不安，有助於緩解緊張和煩躁，緩緩釋放緊張情緒。它的工作原理是抑制糖皮質激素這種會給身體和心靈產生“壓力”感的物質。'
       more4_Lung_Care: 'Cool Choice肺部保健品是經過認證的有機草本配方，有助於支持氧氣的攝入量，並確保呼吸系統的有效利用。'
       caution1_Sleep_Support: '*  Cool Choice 建議只能在睡前食用褪黑激素增補產品.'
@@ -343,14 +357,14 @@ zh-TW:
       title_cool: 關愛之選
       title_do: 為愛，贈予健康
       send_a_gift: 為愛贈禮
-      order: 為愛的人購買一份禮物
+      order: 為愛的人購買壹份禮物
       email: 對方收到郵件，定制自己所需的功能
       gift: 我們為您送達心意
       recipient_name: 收件人姓名
       message: 這裏填寫您的信息 (不超過100字符)
       yourname: 您的姓名
       congrat: 祝福
-      after_congrat: 您的禮物正在準備! 每一個 Cool Choice 訂購都新鮮出爐，精心定制, 尤其是你!
+      after_congrat: 您的禮物正在準備! 每壹個 Cool Choice 訂購都新鮮出爐，精心定制, 尤其是妳!
     message:
       this: 親愛的
       add: 這裏填寫您的信息 (不超過100個字符)
@@ -388,11 +402,11 @@ zh-TW:
         instructions: 確認您的賬目已經生成.
         thanks: 謝謝您成為 Cool Choice的顧客! 我們將為您提供身體所需的健康、新鮮、自然的補充，盡量減少麻煩.
       confirm_email:
-        thanks: 感謝購買Cool Choice! 我們希望您愛上這個性化的營養補充.
+        thanks: 感謝購買Cool Choice! 我們希望您愛上私人定制保健品.
       confirm_promoter_email:
-        subject: 你剛剛通過大使計劃收到傭金
-        store_credit_total: 總傭金
-        summary: 結算
+        subject: 您剛剛通過大使計劃收到獎勵
+        store_credit_total: 您的歷史推廣獎勵總計
+        summary: 我們高興的通知您，由於您的努力推廣，您剛剛獲得壹筆推廣獎勵，金額為
       confirm_gift_email:
         subject: 您收到禮物，來自
         instructions: '請找到下面的鏈接來得到您的禮物:'
@@ -403,19 +417,19 @@ zh-TW:
     alert_mutual_exclusive: 我們不建議把這個選擇和之前您的選擇混合，所以出於您的健康考慮，請選擇其它功能。
     cart_empty: 您的購物車是空的
     cart_empty_detail: 只需幾步就可以完成訂制。還在等什麽? 開始訂制吧!
-    you_have_signed_in_with_these_services: '你已經使用以下方式登錄：'
+    you_have_signed_in_with_these_services: '妳已經使用以下方式登錄：'
     sign_in_through_one_of_these_services: '登錄通過：'
     home: Cool Choice 首頁
-    thank_you_for_your_order: "謝謝你的購買. 請註意光照、溫度、濕度以及保存日期等條件.每一個 Cool Choice 訂購都新鮮出爐，精心定制, 尤其是你!"
+    thank_you_for_your_order: "我們將在48小時內為您新鮮定制，並通過國際物流空運給您，敬請期待！"
     ok: ok
     message: 信息
     site_name: Cool Choice
-    payment_pop_desc: 個性化的營養補充
+    payment_pop_desc: 私人定制保健品
     apply: 使用
     coupon_code: 優惠券碼
     binding_users: 綁定用戶
-    items_cannot_be_shipped: 對不起，購物車裏的商品，有至少一個是只能被運送到美國的.
-    shipping_flat_rate_per_two_items: 每兩個商品統一收取費用
+    items_cannot_be_shipped: 對不起，購物車裏的商品，有至少壹個是只能被運送到美國的.
+    shipping_flat_rate_per_two_items: 每兩個商品統壹收取費用
     phone: '手機/電話'
     promoter: 大使
     promoters: 大使
@@ -435,7 +449,7 @@ zh-TW:
     cart_tableheader_quantity: 數量
     cart_tableheader_totalprice: 數量
     cart_summary_title: 購物車總計
-    cart_summary_subtotal: 小計
+    cart_summary_subtotal: 商品金額
     cart_summary_shipping: 運送
     cart_summary_tax: 費用
     cart_summary_total: 合計
@@ -443,7 +457,7 @@ zh-TW:
     cart_summary_checkout: 結賬
     address_verification_failed: 地址認證失敗
     cart_item_cannot_be_made: TaxCloud::CartItem cannot be made from this item.
-    ensure_one_valid_stock_location: 請確保您購買的商品有一個有效地址以便確定您稅費的由來.
+    ensure_one_valid_stock_location: 請確保您購買的商品有壹個有效地址以便確定您稅費的由來.
     standard_taxcloud_tic: 應該采用Tax Cloud TIC 標準的五位數格式
     tax_cloud: Tax Cloud
     tax_cloud_settings: TaxCloud 運行
@@ -475,7 +489,7 @@ zh-TW:
         connection_failed: "不能連接到PayPal."
         generic_error: "PayPal 支付失敗. %{reasons}"
     payment_has_been_cancelled: 支付已被取消
-    complete_skrill_checkout: 在進行下一步之前請先進行skrill認證
+    complete_skrill_checkout: 在進行下壹步之前請先進行skrill認證
     skrill: Skrill
     skrill_transaction: 交易
     skrill_customer_id: 顧客 ID
@@ -503,23 +517,23 @@ zh-TW:
         address_zip_check: 郵編地址驗證
     environment: 運行環境
     user_was_not_valid: 用戶無效.
-    add_another_service: ":增加另外一種登陸方式"
+    add_another_service: ":增加另外壹種登陸方式"
     authentications:
       destroy: '驗證方式被完全毀壞.'
     back_to_authentication_methods_list: "返回驗證方式列表"
     edit_social_method: "編輯社交驗證方式"
     new_social_method: 新的驗證方式"
     no_authentication_methods_found: "沒有發現驗證方式"
-    one_more_step: '只差最後一步來完成通過 %{kind} 註冊'
+    one_more_step: '只差最後壹步來完成通過 %{kind} 註冊'
     remove_authentication_option_confirmation: "確定要移除該驗證方式嗎?"
     sign_into_account: "您可以登陸到該賬戶"
-    sign_in_through_one_of_these_services: "通過以下幫助中的一個進行登陸"
+    sign_in_through_one_of_these_services: "通過以下幫助中的壹個進行登陸"
     social_api_key: "密鑰"
     social_api_secret: "密鑰"
     social_authentication_methods: "社交驗證方式"
     social_authentication_methods_description: "設置認證方式"
     social_provider: "Social Provider"
-    please_confirm_your_email: "請確認郵件地址進行下一步"
+    please_confirm_your_email: "請確認郵件地址進行下壹步"
     sign_in_with: "登陸 %{provider}"
     you_have_signed_in_with_these_services: "您已經通過以下幫助進行進行登陸"
     admin_login: "管理員登陸"
@@ -529,7 +543,7 @@ zh-TW:
       success: "成功使用 %{kind} 登錄."
     confirmations:
       confirmed: 您的賬戶被確認之後會成功登陸.
-      send_instructions: 您會在幾分鐘之內會收到一份電子郵件來確認賬戶.
+      send_instructions: 您會在幾分鐘之內會收到壹份電子郵件來確認賬戶.
     failure:
       inactive: 現在您的賬戶仍然沒有被激活.
       invalid: 無效的郵件或密碼.
@@ -556,7 +570,7 @@ zh-TW:
     passwords:
       spree_user:
         cannot_be_blank: 密碼不能為空.
-        no_token: "如果沒有收到密碼重置郵件您將不能訪問該頁面.如果您收到了密碼重置郵件，那麽請確認你使用網址鏈接的完整性."
+        no_token: "如果沒有收到密碼重置郵件您將不能訪問該頁面.如果您收到了密碼重置郵件，那麽請確認妳使用網址鏈接的完整性."
         send_instruction: 幾分鐘之內，您將收到關於重置密碼指令的郵件.
         updated: 密碼已成功修改，現在您已登陸.
       destroyed: 您的賬戶已被成功取消，希望下次再見.

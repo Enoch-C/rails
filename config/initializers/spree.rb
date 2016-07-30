@@ -20,4 +20,5 @@ Spree.user_class = "Spree::User"
 config = Rails.application.config
 config.after_initialize do
   config.spree.calculators.shipping_methods << Spree::Calculator::Shipping::PerTwoItems
+  config.spree.calculators.shipping_methods << Spree::Calculator::Shipping::PerThreeItems
 end

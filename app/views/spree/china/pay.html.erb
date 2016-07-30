@@ -4,26 +4,34 @@
 
 <div id="china-pay">
   <div class="unpaid">
-  <% @order.line_items.each do |line_item| %>
-    <div class="china-item clearfix">
+
+
+
+
+  <div class="china-item row">
+    <% @order.line_items.each do |line_item| %>
+    <div class="clearfix item-row">
       <div class="item-image">
         <%= image_tag("china/package.png")%>
       </div>
       <div class="item-details">
-        <div class="fun"><%= line_item.variant.options_text_cn unless @order.line_items[0].variant.option_values.empty? %> <br>6g/包 * 30包 * 1盒</div>
+        <div class="fun"><%= line_item.variant.options_text_cn %> <br>6g/包 * 30包 * 1盒</div>
         <div class="qty">x<%= line_item.quantity %></div>
-        <div class="price">$<%= line_item.price %></div>
-        <div class="total">$<%= line_item.quantity * line_item.price %></div>
+        <div class="price">$<%= line_item.quantity * line_item.price %></div>
       </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
+
+
+
     <div class="delivery">
       <div class="left">配送方式</div>
       <div class="right">美国直邮</div>
     </div>
     <div class="delivery">
       <div class="left">邮费</div>
-      <div class="right"><%= Spree::Money.new(@order.shipments.to_a.sum(&:cost), currency: @order.currency).to_html %></div>
+      <div class="right"><%= Spree::Money.new(@order.shipments.to_a.sum(&:cost), currency: @order.currency).to_html %><%= "（#{((@order.item_count-1)/3+1)*3-2}至#{((@order.item_count-1)/3+1)*3}盒）"%></div>
     </div>
     <div class="delivery">
       <div class="left">总计</div>

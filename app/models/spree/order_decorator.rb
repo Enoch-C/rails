@@ -24,7 +24,7 @@ Spree::Order.class_eval do
   end
 
   def generate_order_number
-   self.number = "R#{Time.now.to_i}#{Array.new(5){rand(9)}.join}" if self.number.blank?
+   self.number = "R#{(Time.now.to_f * 10000).to_i}#{Array.new(1){rand(9)}.join}" if self.number.blank?
    self.number
   end
 

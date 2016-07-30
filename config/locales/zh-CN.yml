@@ -214,7 +214,8 @@ zh-CN:
       bar_sign: $
       bar_unit: usd
       bar_cart: 加入购物车
-      bar_checkout: 结算
+      bar_checkout: 立即购买
+      bar_cartcheckout: 结算
       trial_pack: 免邮费包裹
       trial_pack_desc:  '* 仅限美国 & 航运适用'
       your_wish: 你的愿望清单
