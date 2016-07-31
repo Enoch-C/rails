@@ -1,5 +1,5 @@
-<div id="fblogin" class="nav-bar">
-  <% if current_spree_user %>
+<div id="fblogin" class="navbar-collapse collapse nav-bar">
+<% if current_spree_user %>
   <%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; width: 30px"}), spree.account_path %>
   <%= link_to Spree.t(:logout), spree.logout_path %>
   <% else %>
@@ -22,9 +22,10 @@
   <% if SpreeI18n::Config.available_locales.many? %>
   <a href="<%= spree.localization_path %>"><%= image_tag('home/icon_earth@2x.png', {:style => "width: 32px"}) %></a>
   <% end %>
-  <div id='dropMenu'><%= image_tag 'logo/button_menu@2x.png' %></div>
 </div>
-
+<a class="navbar-toggle" data-toggle="collapse" data-target="#coolchoice-header .nav-bar">
+<i class="glyphicon glyphicon-menu-hamburger"></i>
+</a>
 <script>
   var vmFB = new Vue({
     el: '#fblogin',
