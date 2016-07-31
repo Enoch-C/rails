@@ -169,6 +169,7 @@
       </div>
       <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px; line-height: 60px"><%= Spree.t(:"homepage.bar_cartcheckout") %></div>
     </div>
+    <img width="30" height="30" src="<%= asset_path 'logo/close-button.png' %>" style="position:absolute; right: -9px; top: -15px" v-on:click='action_cart_switch'>
   </div>
 </div>
   <table style="display:none;">
@@ -453,6 +454,7 @@
         }
 
         this.action_cart_switch()
+        this.result = []
       },
       action_checkout: function(event) {
         if (this.validate()) {
