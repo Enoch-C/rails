@@ -79,6 +79,7 @@ Spree::Core::Engine.add_routes do
   post '/index/wish', to: 'home#wish'
 
   get '/ingredient', to: 'ingredient#index'
+  get '/shop', to: 'shop#index'
 
   get 'localization', to: 'localization#index'
 
