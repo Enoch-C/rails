@@ -122,7 +122,7 @@
 .slick-dots
 {
     position: absolute;
-    bottom: -25px;
+    bottom: -45px;
 
     display: block;
 
@@ -165,7 +165,7 @@
     outline: none;
     background: transparent;
     border-radius: 5px;
-    border: 2px solid white;
+    border: 1px solid #979797;
 }
 .slick-dots li button:hover,
 .slick-dots li button:focus
@@ -192,11 +192,11 @@
     content: '';
     text-align: center;
 
-    opacity: 0.1;
+    opacity: 0.0;
     color: black;
 
     border-radius: 5px;
-    background-color: white;
+    background-color: #F6605F;
 
 
 }
