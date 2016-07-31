@@ -1,11 +1,14 @@
-<div class="navbar-collapse collapse nav-bar">
-  <%= link_to Spree.t(:'head_bar.WHY_COOL_CHOICE'), spree.why_path %>
-  <%= link_to Spree.t(:'head_bar.INGREDIENTS'), spree.ingredient_path %>
+<div id="fblogin" class="nav-bar">
   <% if current_spree_user %>
   <%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; width: 30px"}), spree.account_path %>
   <%= link_to Spree.t(:logout), spree.logout_path %>
   <% else %>
-  <%= link_to Spree.t(:signin), spree.login_path %>
+  <a v-on:click="action_fbLogIn"><%= Spree.t(:signin) %></a>
+  <div id="fbLogInWindow">
+    <img v-on:click="action_closeFBLogIn" class="fbclose" width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"/>
+    <div class='fbtitle'><%= Spree.t(:signin) %></div>
+    <div class='fbcaption'><a href="<%= "#{Rails.application.config.webhost}/users/auth/facebook" %>"><%= Spree.t(:sign_in_through_one_of_these_services) %> Facebook</a></div>
+  </div>
   <% end %>
   <% if !(current_order.special_instructions != nil || current_order.line_items.first.variant.sku.slice(3,1) == 'd' rescue false) %>
   <a style="cursor: pointer; position: relative; text-decoration: none" href="<%= spree.cart_path %>">
@@ -19,7 +22,30 @@
   <% if SpreeI18n::Config.available_locales.many? %>
   <a href="<%= spree.localization_path %>"><%= image_tag('home/icon_earth@2x.png', {:style => "width: 32px"}) %></a>
   <% end %>
+  <div id='dropMenu'><%= image_tag 'logo/button_menu@2x.png' %></div>
 </div>
-<a class="navbar-toggle" data-toggle="collapse" data-target="#coolchoice-header .nav-bar">
-  <i class="glyphicon glyphicon-menu-hamburger"></i>
-</a>
+
+<script>
+  var vmFB = new Vue({
+    el: '#fblogin',
+    data: {
+      loginVisible: false,
+    },
+    watch: {
+      loginVisible: function() {
+        this.renderFBLogIn()
+      }
+    },
+    methods: {
+      action_fbLogIn: function() {
+        this.loginVisible = true
+      },
+      renderFBLogIn: function() {
+        $('#fbLogInWindow')[0].style.display = this.loginVisible ? "block" : "none"
+      },
+      action_closeFBLogIn: function() {
+        this.loginVisible = false
+      }
+    }
+  })
+</script>
