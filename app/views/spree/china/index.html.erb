@@ -457,16 +457,9 @@
         this.result = []
       },
       action_checkout: function(event) {
-        if (this.validate()) {
-          this.processing = true
-          var that = this
-          window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
-          that.processing = false
-        }
+        window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
       },
       action_cart_checkout: function(event) {
-        if (this.validate()) {
-          this.processing = true
           var skus = []
           var quantities = []
           this.cartItems.forEach(function(obj){
@@ -474,8 +467,6 @@
             quantities.push(obj.quantity)
           })
           window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + skus.join(' ') + '&line_item[quantity]=' + quantities.join(' ') + '&p=<%= @promoter_email %>'
-          that.processing = false
-        }
       },
     },
     ready: function() {
