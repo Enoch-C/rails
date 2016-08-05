@@ -180,6 +180,7 @@
     <% end %>
   </div>
 </div>
+<div id="fbLogInWindow2"></div>
 
 <script>
   Array.prototype.clone = function() {
@@ -231,6 +232,7 @@
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
+      loggedIn: <%= current_spree_user ? "true" : "false" %>,
       feature_list: ["Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"],
       num: 1,
       type: 'month',
@@ -370,6 +372,13 @@
         return [+this.sku.slice(6,8), +this.sku.slice(8,10), +this.sku.slice(10,12)]
       },
       validate: function(event) {
+        if (!this.loggedIn) {
+          this.presentFBLogIn(true)
+          return false
+        } else{
+          this.presentFBLogIn(false)
+        }
+
         if (this.processing) {
           return false
         }
@@ -431,6 +440,21 @@
             }
           })
         }
+      },
+      presentFBLogIn: function(show) {
+        vmFB.action_closeFBLogIn()
+         
+        var window = $('#fbLogInWindow2')[0]
+        var login = $('#fbLogInWindow')[0].cloneNode(true)
+        login.style.display = 'block'
+        login.className = "fbLogInWindow centered"
+        var that = this
+        login.getElementsByClassName('fbclose')[0].onclick = function() {
+          window.removeChild(login)
+          window.style.visibility = "hidden"
+        }
+        window.appendChild(login)
+        window.style.visibility = show ? "visible" : "hidden"
       },
     }
   })

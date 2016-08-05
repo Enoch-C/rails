@@ -1,17 +1,18 @@
+  <div id="fbLogInWindow" class="fbLogInWindow">
+    <img onclick="vmFB.action_closeFBLogIn()" class="fbclose" width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"/>
+    <div class='fbtitle'><%= Spree.t(:signin) %></div>
+    <div class='fbcaption'><a class="inLoginWindow" href="<%= "#{Rails.application.config.webhost}/users/auth/facebook" %>"><%= Spree.t(:sign_in_through_one_of_these_services) %> Facebook</a></div>
+  </div>
+
 <div id="fblogin" class="navbar-collapse collapse nav-bar">
 <% if current_spree_user %>
   <%= link_to image_tag('home/icon_avatar@2x.png', {:style => "cursor: pointer; width: 30px"}), spree.account_path %>
   <%= link_to Spree.t(:logout), spree.logout_path %>
   <% else %>
   <a v-on:click="action_fbLogIn"><%= Spree.t(:signin) %></a>
-  <div id="fbLogInWindow">
-    <img v-on:click="action_closeFBLogIn" class="fbclose" width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"/>
-    <div class='fbtitle'><%= Spree.t(:signin) %></div>
-    <div class='fbcaption'><a href="<%= "#{Rails.application.config.webhost}/users/auth/facebook" %>"><%= Spree.t(:sign_in_through_one_of_these_services) %> Facebook</a></div>
-  </div>
   <% end %>
   <% if !(current_order.special_instructions != nil || current_order.line_items.first.variant.sku.slice(3,1) == 'd' rescue false) %>
-  <a style="cursor: pointer; position: relative; text-decoration: none" href="<%= spree.cart_path %>">
+  <a v-on:click="action_cart" style="cursor: pointer; position: relative; text-decoration: none" >
     <%= image_tag 'home/button_cart@2x.png', {:style => "width: 25px"} %>
     <% count = current_order.line_items.inject(0){|s, x| s+=x.quantity;s} rescue 0 ; if count != 0 && current_order.special_instructions == nil %>
     <span class="cart-num"><%= count %></span>
@@ -29,6 +30,7 @@
 <script>
   var vmFB = new Vue({
     el: '#fblogin',
+    loggedIn: <%= current_spree_user ? "true" : "false" %>,
     data: {
       loginVisible: false,
     },
@@ -46,6 +48,13 @@
       },
       action_closeFBLogIn: function() {
         this.loginVisible = false
+      },
+      action_cart: function() {
+        if (this.loggedIn) {
+          window.location = "<%= spree.cart_path %>"
+        } else {
+          this.action_fbLogIn()
+        }
       }
     }
   })

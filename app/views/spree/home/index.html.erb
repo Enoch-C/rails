@@ -2,12 +2,12 @@
 <% @body_id = 'home' %>
 <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-<meta name="viewport" content="width=1260">
+<meta name="viewport" content="width=1440">
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <div id="cool-choice-home-v2">
   <div class="banner">
     <div class="intro"><%= raw Spree.t(:"home_introduce") %>
-    <div class="go"><%= Spree.t(:personalize_now) %><%= image_tag("logo/icon_arrow@2x.png") %></div>
+    <div class="go"><a href="<%= shop_path %>"><%= Spree.t(:personalize_now) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
     </div>
   </div>
   <div id=section-1>
@@ -18,7 +18,7 @@
           <p class='text title'><%=raw Spree.t(:homepage_text_1_title) %></p>
           <p class='text'><%= raw Spree.t(:homepage_text_1) %></p>
         </div>
-        <div class='more'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div>
+        <div class='more'><a href="<%= why_personalized_supplements_path %>"><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
       </div>
     </div>
     <div class='box right bg2'>
@@ -28,7 +28,7 @@
           <p class='text title right'><%=raw Spree.t(:homepage_text_2_title) %></p>
           <p class='text'><%= raw Spree.t(:homepage_text_2) %></p>
         </div>
-        <div class='more right'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div>
+        <div class='more right'><a href="<%= ingredient_path %>"><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
       </div>
     </div>
     <div class='box bg3'>
@@ -38,7 +38,7 @@
           <p class='text title'><%=raw Spree.t(:homepage_text_3_title) %></p>
           <p class='text'><%= raw Spree.t(:homepage_text_3) %></p>
         </div>
-        <div class='more'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div>
+        <div class='more'><a href="<%= ingredient_path %>"><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
       </div>
     </div>
   </div>
@@ -71,19 +71,19 @@
     <div class='box2'>
       <p class='title'><%= Spree.t(:"qlinks") %></p>
       <ul>
-        <li><%= Spree.t(:"faq") %></li>
-        <li><%= Spree.t(:"return.name") %></li>
-        <li><%= Spree.t(:"privacy.name") %></li>
-        <li><%= Spree.t(:"tANDc.name") %></li>
+        <li><a href="<%= spree.faq_path %>"><%= Spree.t(:"faq") %></a></li>
+        <li><a href="<%= spree.return_path %>"><%= Spree.t(:"return.name") %></a></li>
+        <li><a href="<%= spree.privacy_path %>"><%= Spree.t(:"privacy.name") %></a></li>
+        <li><a href="<%= spree.terms_path %>"><%= Spree.t(:"tANDc.name") %></a></li>
       </ul>
     </div>
     <div class='box3'>
       <p><%= Spree.t(:"sayhello") %></p>
       <div class='grid'>
-        <a><%= image_tag("logo/button_facebook@2x.png") %></a>
-        <a><%= image_tag("logo/button_tweet@2x.png") %></a>
-        <a><%= image_tag("logo/button_ins@2x.png") %></a>
-        <a><%= image_tag("logo/button_email@2x.png") %></a>
+        <a href="https://www.facebook.com/MyCoolChoice"><%= image_tag("logo/button_facebook@2x.png") %></a>
+        <a href="https://twitter.com/mycoolchoice"><%= image_tag("logo/button_tweet@2x.png") %></a>
+        <a href="http://instagram.com/mycoolchoice"><%= image_tag("logo/button_ins@2x.png") %></a>
+        <a href="mailto:help@coolchoice.com"><%= image_tag("logo/button_email@2x.png") %></a>
         <a><%= image_tag("logo/button_phone@2x.png") %></a>
       </div>
     </div>
