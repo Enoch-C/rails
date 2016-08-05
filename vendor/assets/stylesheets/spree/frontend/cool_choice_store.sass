@@ -404,36 +404,38 @@ input.button
   padding: 15px 20px 18px
   background: #f8f8f8
   font-size: 14px
-  .item-image
-    float: left
-    width: 30%
-    height: 80px
-    img
-      width: 80px
-      max-width: 100%
-  .item-details
-    position: relative
-    float: left
-    width: 69%
-    height: 80px
-    .func
-      position: absolute
-      left: 0
-      top: 0
-    .qty
-      position: absolute
-      right: 60%
-      bottom: 0
-    .price
-      position: absolute
-      left: 0
-      bottom: 0
-    .total
-      position: absolute
-      right: 0
-      bottom: 0
-      font-size: 16px
-      font-weight: 500
+  .item-row
+    margin-top: 15px
+    .item-image
+      float: left
+      width: 30%
+      height: 80px
+      img
+        width: 80px
+        max-width: 100%
+    .item-details
+      position: relative
+      float: left
+      width: 69%
+      height: 80px
+      .func
+        position: absolute
+        left: 0
+        top: 0
+      .qty
+        position: absolute
+        right: 60%
+        bottom: 0
+      .price
+        position: absolute
+        left: 0
+        bottom: 0
+      .total
+        position: absolute
+        right: 0
+        bottom: 0
+        font-size: 16px
+        font-weight: 500
 #china-checkout
   .china-address
     padding-bottom: 300px
@@ -498,6 +500,12 @@ input.button
   p
     font-size: 13px
 #china-pay
+  .unpaid
+    position: fixed
+    bottom: 60px
+    top: 0px
+    overflow-y: scroll
+    overflow-x: hidden
   color: #474c5d
   .then
     text-align: center
@@ -620,7 +628,7 @@ input.button
     .title
       margin-top: 58px
       font-size: 20px
-      color: #00b9ee
+      color: #F6605F
       @media (max-width: 768px)
         font-size: 14px
         margin: 22px -15px 0
@@ -846,6 +854,297 @@ input.button
         display: block
         height: 66px
         line-height: 66px
+#coolchoice-header-v2
+  position: relative
+  height: 80px
+  .container
+    height: 100%
+    width: 100%
+    margin: 0
+    padding: 0
+    .logo
+      margin-left: 135px
+      img
+        width: 151px
+    #fblogin
+      float: right
+      height: 100%
+      a
+        text-decoration: none
+        margin-right: 20px
+      #dropMenu
+        display: inline-block
+  .cart-num
+    position: relative
+    right: 11px
+    top: -17px
+    display: inline-block
+    width: 16px
+    height: 16px
+    line-height: 16px
+    border-radius: 8px
+    text-align: center
+    font-size: 12px
+    font-weight: 500
+    color: #fff
+    background: #eb5b4a
+button
+  &.slick-next
+    &.slick-arrow
+      right: -130px
+      width: 44px
+      height: 104px
+      background: image-url("logo/button_right@2x.png") center no-repeat
+      background-size: 44px 104px
+button
+  &.slick-prev
+    &.slick-arrow
+      left: -130px
+      width: 44px
+      height: 104px
+      background: image-url("logo/button_left@2x.png") center no-repeat
+      background-size: 44px 104px
+#cool-choice-home-v2
+  a
+    text-decoration: none
+    color: inherit
+  .banner
+    height: 600px
+    width: 100%
+    background: image-url("logo/banner_bg.png") center no-repeat
+    .intro
+      position: absolute
+      font-size: 40px
+      text-transform: uppercase
+      color: white
+      width: 760px
+      left: 50%
+      margin: 225px 0 0 -605px
+      text-shadow: 0 2px 2px #AC9B84
+    .go
+      text-shadow: none
+      text-transform: none
+      width: 231px
+      height: 50px
+      font-size: 20px
+      color: white
+      margin-top: 20px
+      background-color: #F97676
+      line-height: 50px
+      padding-left: 25px
+      cursor: pointer
+      img
+        width: 10px
+        height: 12px
+        margin-left: 20px
+  #section-1
+    padding-top: 20px
+    padding-bottom: 81px
+    .box
+      position: relative
+      margin: 60px 0 0 -583px
+      border: 1px solid #fff
+      left: 50%
+      width: 937px
+      height: 400px
+      &.right
+        margin-left: -353px
+      &.bg1
+        background: image-url("logo/box_bg1@2x.png") no-repeat top left
+        background-size: 400px 400px
+      &.bg2
+        background: image-url("logo/box_bg2@2x.png") no-repeat top left
+        background-size: 400px 400px
+        &.right
+          background: image-url("logo/box_bg2@2x.png") no-repeat top right
+          background-size: 400px 400px
+      &.bg3
+        background: image-url("logo/box_bg3@2x.png") no-repeat top left
+        background-size: 400px 400px
+    .box_contents
+      width: 897px
+      height: 320px
+      margin: 40px 0 40px 40px
+      border: 1px solid #F6605F
+      position: relative
+      &.right
+        margin: 40px 0 40px 0
+      .textbox
+        margin: 50px 0 0 400px
+        width: 460px
+        &.right
+          margin: 50px 0 0 40px
+        .probe
+          width: 30px
+          height: 1px
+          background-color: #F6605F
+          margin-bottom: 10px
+          &.right
+            margin-left: 430px
+        .text
+          font-size: 18px
+          &.title
+            font-size: 25px
+            text-transform: uppercase
+            &.right
+              text-align: right
+      .more
+        width: 180px
+        height: 50px
+        font-size: 20px
+        color: white
+        margin-top: 20px
+        background-color: #F97676
+        line-height: 50px
+        padding-left: 25px
+        cursor: pointer
+        position: absolute
+        right: 0px
+        bottom: 0px
+        img
+          width: 10px
+          height: 12px
+          margin: 20px
+        &.right
+          left: 0px
+          right: auto
+  #section-2
+    height: 836px
+    width: 100%
+    background-color: #F7F8FA
+    padding: 59px 135px 0
+    .textbox
+      margin-bottom: 60px
+      .probe
+        width: 30px
+        height: 1px
+        background-color: #F6605F
+        margin-bottom: 10px
+      .text
+        font-size: 18px
+        &.title
+          font-size: 40px
+          text-transform: uppercase
+          color: #F6605F
+    .carousel-cards
+      width: 1088px
+      margin-left: -544px
+      left: 50%
+      .card
+        cursor: pointer
+        width: 320px
+        height: 494px
+        &.c1
+          background: image-url("logo/c1@2x.png") no-repeat center
+          background-size: 320px 494px
+        &.c2
+          background: image-url("logo/c2@2x.png") no-repeat center
+          background-size: 320px 494px
+        &.c3
+          background: image-url("logo/c3@2x.png") no-repeat center
+          background-size: 320px 494px
+        &.c4
+          background: image-url("logo/c4@2x.png") no-repeat center
+          background-size: 320px 494px
+        &.c5
+          background: image-url("logo/c5@2x.png") no-repeat center
+          background-size: 320px 494px
+        &.c6
+          background: image-url("logo/c6@2x.png") no-repeat center
+          background-size: 320px 494px
+          
+
+  #section-3
+    width: 100%
+    height: 400px
+    padding-top: 75px
+    background: image-url("logo/homepage_section_3_bg@2x.png") no-repeat center
+    background-size: 1440px 400px
+    .contentbox
+      width: 590px
+      height: 250px
+      left: 50%
+      margin-left: -295px
+      border: 1px solid #F6605F
+      position: relative
+      .more
+        width: 180px
+        height: 50px
+        font-size: 20px
+        color: white
+        margin-top: 20px
+        background-color: #F97676
+        line-height: 50px
+        padding-left: 25px
+        cursor: pointer
+        position: absolute
+        right: 0px
+        bottom: 0px
+        img
+          width: 10px
+          height: 12px
+          margin: 20px
+    .textbox
+      margin-top: 40px
+      .text
+        padding: 0 45px
+        color: #fff
+        font-size: 18px
+        &.title
+          text-align: center
+          font-size: 40px
+          text-transform: uppercase
+  #section-4
+    height: 428px
+    .box1
+      float: left
+      background: image-url("logo/logo_homepage_bottom@2x.png") no-repeat top left
+      background-size: 151px 48px
+      margin: 60px 0 0 135px
+      width: 262px
+      height: 310px
+    .box2
+      float: left
+      margin: 60px 0
+      width: 338px
+      height: 310px
+      vertical-align: top
+      p
+        font-size: 18px
+        color: #474C5D
+        &.title
+          font-size: 30px
+      ul
+        list-style-type: none
+        padding-left: 0
+        line-height: 24px
+        li
+          cursor: pointer
+    .box3
+      float: left
+      margin: 60px 0
+      width: 370px
+      height: 310px
+      p
+        font-size: 30px
+        color: #474C5D
+      .grid
+        font-size: 0
+        a
+          margin: 0
+          padding: 0
+          cursor: pointer
+          img
+            width: 70px
+            height: 70px
+    .copyright
+      clear: both
+      font-size: 16px
+      color: #474C5D
+      text-align: center
+      padding-bottom: 58px
+        
+
 #cool-choice-home
   // visibility: hidden
   .state-inform
@@ -1337,6 +1636,23 @@ input.button
           .line-below
             font-weight: 100
             font-size: 10px
+        .button_hollow
+          background-color: white
+          border: 1px solid #3acced
+          display: inline-block
+          text-align: center
+          width: 150px
+          height: 40px
+          line-height: 40px
+          border-radius: 25px
+          margin: 0 0 10px
+          font-size: 20px
+          @media (max-width: 992px)
+            font-size: 14px
+            width: 120px
+            height: 35px
+            line-height: 35px
+            margin: 20px 15px 10px
         .button
           width: 150px
           height: 40px
@@ -1558,6 +1874,60 @@ input.button
           max-width: 118px
           margin-top: 10px
           font-size: 12px
+#about
+  font-family: 'Quicksand', sans-serif
+  .section
+    height: 1023px
+    background: image-url("about/bj_about.jpg") center no-repeat
+    background-size: cover
+    .title
+      margin: 120px auto 30px
+      font-size: 40px
+      font-weight: bold
+      text-align: center
+      color: #f6605f
+    p
+      width: 723px
+      margin: 40px auto 20px
+      text-align: justify
+      line-height: 1.4
+      letter-spacing: -0.6px
+      font-size: 18px
+      color: #474c5d
+      &.last
+        margin-top: 20px
+        letter-spacing: -0.4px
+        font-size: 14px
+        color: #a6a4a4
+  .footer
+    height: 400px
+    padding: 60px 0 30px
+    background: #f6f6f6
+    color: #474c5d
+    position: relative
+    .logo
+      width: 151px
+    .title
+      margin-bottom: 30px
+      font-size: 30px
+      font-weight: bold
+      letter-spacing: -0.5px
+    .links
+      height: 290px
+      .inner-links>a
+        display: block
+        margin-bottom: 10px
+        line-height: 1.1
+        font-size: 18px
+        color: #474c5d
+      .outer-links>a
+        display: inline-block
+        float: left
+        img
+          width: 70px
+    .copyright
+      font-size: 16px
+      text-align: center
 #why
   .section
     background: #f7f8fa
@@ -1830,3 +2200,243 @@ input.button
 
 [v-cloak]
   display: none
+
+#fblogin
+  cursor: pointer
+  #dropMenu
+    img
+      width: 80px
+      height: 80px
+
+.fbLogInWindow
+  cursor: auto
+  position: absolute
+  top: 75px
+  right: 170px
+  width: 345px
+  height: 195px
+  background-color: white
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.2)
+  z-index: 999
+  border-radius: 3px
+  text-align: center
+  display: none
+  .fbtitle
+    color: #474c5d
+    font-size: 23px
+    font-weight: 300
+    margin-top: 40px
+  .fbcaption
+    cursor: pointer
+    height: 50px
+    width: 305px
+    margin: 30px 20px 0
+    border-radius: 25px
+    vertical-align: middle
+    background-color: #678fc9
+    @media (max-width: 767px)
+      width: 245px
+    a
+      color: white !important
+      font-size: 16px !important
+      text-decoration: none !important
+      text-transform: none !important
+      line-height: 50px !important
+  .fbclose
+    cursor: pointer
+    position: absolute
+    right: 20px
+    top: 27px
+  @media (max-width: 767px)
+    position: fixed
+    width: 280px
+    left: 50%
+    right: auto
+    margin-left: -140px
+#fbLogInWindow2
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background-color: rgba(0,0,0,0.5)
+  visibility: hidden
+  z-index: 9999
+  .fbLogInWindow
+    &.centered
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-left: -172px
+      margin-top: -98px
+
+
+#cool-choice-why-personalized
+  .banner
+    background: image-url("logo/why_p_banner@2x.png") center no-repeat
+    background-size: 1440px 500px
+    width: 100%
+    height: 500px
+    &.why_cool_choice
+      background: image-url("logo/why_cc_banner@2x.png") center no-repeat
+      background-size: 1440px 500px
+    .textbox
+      background-color: rgba(255,255,255,0.6)
+      position: absolute
+      width: 830px
+      height: 306px
+      left: 50%
+      margin: 100px 0 0 -415px
+      border: 1px solid #F6605F
+      .text
+        text-align: center
+        font-size: 18px
+        &.title
+          text-transform: uppercase
+          margin-top: 100px
+          margin-bottom: 20px
+          font-size: 40px
+          color: #F6605F
+  #section-1
+    padding-top: 10px
+    padding-bottom: 81px
+    .box
+      position: relative
+      margin: 60px 0 0 -590px
+      border: 1px solid #fff
+      left: 50%
+      width: 937px
+      height: 460px
+      &.right
+        margin-left: -353px
+      &.bg1
+        background: image-url("logo/why_p_1@2x.png") no-repeat top left
+        background-size: 400px 400px
+        &.cc
+          background: image-url("logo/why_cc_1@2x.png") no-repeat top left
+          background-size: 400px 400px
+      &.bg2
+        &.right
+          background: image-url("logo/why_p_2@2x.png") no-repeat top right
+          background-size: 400px 400px
+          &.cc
+            background: image-url("logo/why_cc_2@2x.png") no-repeat top right
+            background-size: 400px 400px
+      &.bg3
+        &.cc
+          background: image-url("logo/why_cc_3@2x.png") no-repeat top left
+          background-size: 400px 400px
+      &.bg4
+        &.right
+          &.cc
+            background: image-url("logo/why_cc_4@2x.png") no-repeat top right
+            background-size: 400px 400px
+      &.bg5
+        &.cc
+          background: image-url("logo/why_cc_5@2x.png") no-repeat top left
+          background-size: 400px 400px
+    .box_contents
+      width: 887px
+      height: 420px
+      margin: 40px 0 40px 40px
+      border: 1px solid #F6605F
+      position: relative
+      &.right
+        margin: 40px 0 40px 0
+      .textbox
+        margin: 40px 0 0 400px
+        width: 460px
+        &.right
+          margin: 40px 0 0 40px
+        .probe
+          width: 30px
+          height: 1px
+          background-color: #F6605F
+          margin-bottom: 10px
+          &.right
+            margin-left: 430px
+        .text
+          font-size: 16px
+          line-height: 20px
+          &.title
+            font-size: 16px
+            text-transform: uppercase
+            color: #F6605F
+            &.right
+              text-align: right
+          &.subTitle
+            font-size: 25px
+            text-transform: uppercase
+            line-height: 30px
+            &.right
+              text-align: right
+      .more
+        width: 180px
+        height: 50px
+        font-size: 20px
+        color: white
+        margin-top: 20px
+        background-color: #F97676
+        line-height: 50px
+        padding-left: 25px
+        cursor: pointer
+        position: absolute
+        right: 0px
+        bottom: 0px
+        img
+          width: 10px
+          height: 12px
+          margin: 20px
+        &.right
+          left: 0px
+          right: auto
+  #section-4
+    background-color: #F6F6F6
+    .box1
+      float: left
+      background: image-url("logo/logo_homepage_bottom@2x.png") no-repeat top left
+      background-size: 151px 48px
+      margin: 60px 0 0 135px
+      width: 262px
+      height: 310px
+    .box2
+      float: left
+      margin: 60px 0
+      width: 338px
+      height: 310px
+      vertical-align: top
+      p
+        font-size: 18px
+        color: #474C5D
+        &.title
+          font-size: 30px
+      ul
+        list-style-type: none
+        padding-left: 0
+        line-height: 24px
+        li
+          cursor: pointer
+    .box3
+      float: left
+      margin: 60px 0
+      width: 370px
+      height: 310px
+      p
+        font-size: 30px
+        color: #474C5D
+      .grid
+        font-size: 0
+        a
+          margin: 0
+          padding: 0
+          cursor: pointer
+          img
+            width: 70px
+            height: 70px
+    .copyright
+      clear: both
+      font-size: 16px
+      color: #474C5D
+      text-align: center
+      padding-bottom: 58px
+      background-color: inherit

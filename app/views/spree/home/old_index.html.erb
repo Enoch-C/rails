@@ -1,0 +1,486 @@
+<% if current_order == nil%>
+  <% current_order(create_order_if_necessary: true) %>
+<% elsif current_order.special_instructions%>
+  <% current_order.empty!  %>
+  <% current_order.update_attributes({:special_instructions => nil})%>
+<% else %>
+<% sku = current_order.line_items.first.sku rescue nil %>
+  <% if sku && sku.slice(3, 1) == 'd' %>
+    <% current_order.empty! %>
+  <% end %>
+<% end %>
+
+<style type="text/css" media="screen">
+   @font-face { font-family: Face; src: url(<%= URI::parse(image_url("home/KomikaTitle-Paint.ttf")).path.html_safe %>); }
+</style>
+<% self.title = "Personalized / Customized Nutritional Supplements" %>
+<% @body_id = 'home' %>
+<div id="cool-choice-home"  v-cloak>
+  <div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active bg1">
+          <div class="carousel-caption">
+            <div class="num">1</div>
+            <div class="title"><%= Spree.t(:"homepage.banner_1_title") %></div>
+            <div class="sub-title"><%= Spree.t(:"homepage.banner_1_sub_title") %></div>
+            <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
+          </div>
+        </div>
+        <div class="item bg2">
+          <div class="carousel-caption">
+            <div class="num">2</div>
+            <div class="title"><%= Spree.t(:"homepage.banner_2_title") %></div>
+            <div class="sub-title"><%= Spree.t(:"homepage.banner_2_sub_title") %></div>
+            <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
+          </div>
+        </div>
+        <div class="item bg3">
+          <div class="carousel-caption">
+            <div class="num">3</div>
+            <div class="title"><%= Spree.t(:"homepage.banner_3_title") %></div>
+            <div class="sub-title"><%= Spree.t(:"homepage.banner_3_sub_title") %></div>
+            <a href="#section-1" class="button"><%= Spree.t(:"homepage.button_2") %></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="section-1" class="section-1">
+    <div class="container">
+      <div class="title"><%= Spree.t(:"homepage.content_title_magic") %></div>
+      <div class="sub-title">
+        <div class="line"></div><%= Spree.t(:"homepage.content_title_choose") %>
+        <div class="line"></div>
+      </div>
+      <a class="why" href="<%= spree.why_path %>">
+        <img src="<%= asset_path 'home/icon-bulb@2x.png'%>" class="bulb">
+        <div class="why-bar hidden-xs hidden-sm"><%= Spree.t(:"homepage.button_1") %></div>
+        <div class="why-bar visible-xs-block visible-sm-block"><%= Spree.t(:"WHY_COOL_CHOICE") %></div>
+      </a>
+      <div class="content clearfix">
+        <template v-for="feature in feature_list">
+          <div :class="['choose-box', feature]" @click="tick_or_not(feature)">
+            <div :class="['choose-label', {'selected': ~result.indexOf(feature)}]">
+              <%= image_tag("home/tick.png", class: "check") %>
+              <img :src="img_path[$index]" class="img" :id="'image_' + ($index + 1)">
+              <div class="text" :id="'text_' + ($index + 1)">
+                {{t[$index]}}
+              </div>
+            </div>
+            <img src="<%= asset_path 'home/i@2x.png'%>" class="information" @click.stop="show(feature)">
+            <input type="checkbox" :id="feature" :value="feature" class="checkbox" :class="'cb_' + ($index + 1)"/>
+          </div>
+        </template>
+        <% function_list = ['Anti-Aging', 'Beauty', 'Brain Care', 'Digestive Care', 'Energy', 'Eye Care', 'Heart Care', 'Immune Support', 'Joint Care', 'Liver Care', 'Lung Care', 'Men\'s Vitality', 'Sleep Support', 'Stress Management'].map { |e| e.sub('\'', '').sub(/\s/, '_') } %>
+
+        <div class="choose-box wish">
+          <label for="wish_box" class="choose-label" @click="open_wish"><%= image_tag("home/icon-wish@2x.png", class: "img") %>
+            <div class="text"><%= Spree.t(:"homepage.content_function_wish") %></div>
+          </label>
+          <!-- <input type="checkbox" id="wish_box" value="wish" class="checkbox" style="display: none" /> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% if false %>
+  <div class="small-banner">
+    <div class="container">
+      <div class="text">
+        <div class="title"><%= Spree.t(:"homepage.page2_title") %></div>
+        <div class="sub-title"><%= Spree.t(:"homepage.page2_title2") %></div>
+        <a href="<%= spree.gift_path %>" class="button"><%= Spree.t(:"homepage.give_as_a_gift") %></a>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <div class="section-4" v-show="result.length" :class="{ 'state-inform': result.length < 3 }">
+    <div class="container">
+      <% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
+      <div class="customize">
+        <div class="func">
+          <div class="title" v-if="result.length < 3"><%= Spree.t(:"footer_bar.please_choose") %><span> {{3 - result.length}} </span><%= Spree.t(:"footer_bar.choose_more") %></div>
+          <div class="title" v-if="result.length == 3"><%= Spree.t(:"homepage.bar_choose") %></div>
+          <div v-for="n in 3" :class="[result[n] ? 'bg-'.concat(result[n], ' hover') : '']" class="box">
+            <%= image_tag("home/icon_delet@2x.png", {class: "delete", "@click"=>"result.splice(n, 1)"}) %>
+          </div>
+        </div>
+        <div class="qty">
+          <div class="title"><%= Spree.t(:"homepage.bar_qty") %></div>
+          <div class="select"><span @click="num &gt; 1 ? num-- : ''" class="math">-</span>
+            <select v-model="type" class="type">
+              <!-- <option value="day">{{ num }} <%= Spree.t(:"homepage.bar_day") %></option> -->
+              <option value="week">{{ num + ' ' + types[0] }}</option>
+              <option value="month">{{ num + ' ' + types[1] }}</option>
+            </select>
+            <span @click="num++" class="math"> +</span>
+          </div>
+          <!-- <div v-if="type == 'day'" class="detail"><%= Spree.t(:"homepage.bar_pack_1") %></div> -->
+          <div v-show="type == 'week'" class="detail"><%= Spree.t(:"homepage.bar_pack_2") %></div>
+          <div v-show="type == 'month'" class="detail"><%= Spree.t(:"homepage.bar_pack_3") %></div>
+        </div>
+        <div class="total">
+          <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
+          <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
+        </div>
+      </div>
+      <div v-show="result.length == 3" class="buy">
+        <div class="cart">
+          <a v-on:click='action_addToCart' style="border: 1px solid #3acced; color: #3acced; background: transparent" class="button"><%= Spree.t(:"homepage.bar_cart") %></a>
+          <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
+        </div>
+        <div @click="action_trial" class="trail">
+          <div class="hidden-xs">
+            <div class="line">
+              <span><%= Spree.t(:"homepage.trial_pack") %></span>
+            </div>
+            <div class="line-below">
+              <span><%= Spree.t(:"homepage.trial_pack_desc") %></span>
+            </div>
+          </div>
+          <div class="visible-xs-block">
+            <div class="line">
+              <span><%= Spree.t(:"homepage.trial_pack") %></span>
+              <span class="line-below"><%= Spree.t(:"homepage.trial_pack_desc") %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render partial: 'spree/shared/footer' %>
+
+  <!-- popup wish list -->
+  <div class="wish-lay">
+    <div class="wish-list">
+      <form id="wish-list" action="/index/wish" accept-charset="UTF-8" method="POST" novalidate="novalidate">
+        <div class="title"><%= Spree.t(:"homepage.your_wish") %></div>
+        <div class="sub-title"><%= Spree.t(:"homepage.we_are") %></div>
+        <div class="wish-content">
+          <textarea name="wish"></textarea>
+          <button type="submit" class="button"><%= Spree.t(:"homepage.submit") %></button>
+        </div>
+        <a class="close" @click="close_wish"><%= image_tag("ingredient/button-off@2x.png") %></a>
+      </form>
+    </div>
+  </div>
+  <!-- popup ingredient details -->
+  <div class="more-overlay">
+    <div class="close" @click="close"></div>
+    <% url_list = [
+      ['SOD-B-Cell-Aging-Prevention.pdf'], nil,
+      ['2016 Cognizin Overview Brochur.pdf'], nil,
+      ['KSM-66_Benefits_Applications.pdf','SCIENTIFIC STUDIES_KSM-66.pdf'], nil, nil,
+      ['Beta Glucan Study - Enhanced P.pdf','Beta Glucan Study -Quantificat.pdf','BetaGlucanDecreasesEpisodesofCommonChildhoodIllness.pdf'],
+      ['GreenGrown-Developing_Loyal_.pdf','Joint Health and Glucosamine.pdf'], nil,
+      ['D16 literature review.pdf'], ['KSM-66_Summary description.pdf', 'ViNitrox Clinical Study.pdf'],
+      ['melatonin.pdf'], nil] %>
+      <% function_list.each_with_index do |function, index| %>
+      <div id="<%= 'ingredient_' + function %>" class="view">
+        <a class="close" @click="close"><%= image_tag("ingredient/button-off@2x.png") %></a>
+        <img src="<%= asset_path 'home/icon-'.concat(function).concat('@2x.png') %>" class="icon">
+        <div class="title"><%= Spree.t('ingredient.function_' + function) %></div>
+        <div class="sub-title"><%= Spree.t('ingredient.help_' + function) %></div>
+        <p><%= Spree.t('ingredient.detail_' + function) %></p>
+        <p><%= Spree.t('ingredient.contains_' + function) %></p>
+        <ul>
+          <li><%= Spree.t('ingredient.more1_' + function) %></li>
+          <li><%= Spree.t('ingredient.more2_' + function) %></li>
+          <% unless Spree.t('ingredient.more3_' + function) == ' ' %>
+          <li><%= "#{Spree.t('ingredient.more3_' + function)}" %></li>
+          <% end %>
+        </ul>
+        <% if url_list[index] %>
+        <p>
+        <% url_list[index].each_with_index do |pdf, index| %>
+          <a style="margin: 0 10px" href="<%= "#{Rails.application.config.webhost}/slick/pdfs/#{pdf}" %>" target="_blank"><%= Spree.t('studies_and_reports.clinic_study') + " " + (index+1).to_s %></a>
+        <% end %>
+        </p>
+        <% end %>
+        <% unless Spree.t('ingredient.trademark_' + function) == ' ' %>
+          <p style="font-size: 12px"><%= Spree.t('ingredient.trademark_' + function) %></p>
+        <% end %>
+        <% if function == 'Sleep_Support' %>
+          <p style="font-size: 12px"><%= Spree.t('ingredient.caution1_' + function) %><br><%= Spree.t('ingredient.caution2_' + function) %></p>
+        <% end %>
+        <p style="font-size: 10px; border: 1px solid"><%= Spree.t('ingredient.warning1') %></p><p style="font-size: 10px;"><%= Spree.t('ingredient.warning2') %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  Array.prototype.clone = function() {
+    return this.slice(0)
+  }
+  Array.prototype.and = function(a) {
+    var t = this.clone()
+    a.forEach(function(item){
+      if (!(t.indexOf(item) > -1)) {
+        t.push(item)
+      }
+    })
+    return t
+  }
+
+  var t = [
+    <%= Spree.t(:'homepage.content_function_Anti-Aging').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Beauty').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Brain_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Digestive_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Energy').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Eye_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Heart_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Immune_Support').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Joint_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Liver_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Lung_Care').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Mens_Vitality').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Sleep_Support').to_json.html_safe %>,
+    <%= Spree.t(:'homepage.content_function_Stress_Management').to_json.html_safe %>
+  ]
+  var path =[
+    "<%= asset_path 'home/icon-Anti-Aging@2x.png' %>",
+    "<%= asset_path 'home/icon-Beauty@2x.png' %>",
+    "<%= asset_path 'home/icon-Brain_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Digestive_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Energy@2x.png' %>",
+    "<%= asset_path 'home/icon-Eye_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Heart_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Immune_Support@2x.png' %>",
+    "<%= asset_path 'home/icon-Joint_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Liver_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Lung_Care@2x.png' %>",
+    "<%= asset_path 'home/icon-Mens_Vitality@2x.png' %>",
+    "<%= asset_path 'home/icon-Sleep_Support@2x.png' %>",
+    "<%= asset_path 'home/icon-Stress_Management@2x.png' %>"
+  ]
+
+  var vm = new Vue({
+    el: '#cool-choice-home',
+    data: {
+      feature_list: ["Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"],
+      num: 1,
+      type: 'month',
+      sum: 39.99,
+      result: [],
+      t: t,
+      img_path: path,
+      processing: false,
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
+      mutuallyExclusiveItems: {
+        5: {
+          on_image: "<%= image_url("home/icon-Energy@2x.png") %>",
+          on_color: "#62c0ef",
+          off_image: "<%= image_url("home/icon_energy_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+        12: {
+          on_image: "<%= image_url("home/icon-Mens_Vitality@2x.png") %>",
+          on_color: "#5979C3",
+          off_image: "<%= image_url("home/icon_sex_gray@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+        13: {
+          on_image: "<%= image_url("home/icon-Sleep_Support@2x.png") %>",
+          on_color: "#7fadf0",
+          off_image: "<%= image_url("home/icon_sleep_grey@2x.png") %>",
+          off_color: "#e4e4e4",
+        },
+      },
+      mutuallyExclusives: [[5, 12], [5, 13]],
+      disabledFeatures: []
+    },
+    computed: {
+      types: function() {
+        return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
+      },
+      sum: function() {
+        var price = {
+          day: 3.99,
+          week: 13.99,
+          month: 39.99
+        }
+        return (price[this.type] * this.num).toFixed(2)
+      },
+      sku: function() {
+        var hash = ["", "Anti-Aging", "Beauty", "Brain_Care", "Digestive_Care", "Energy", "Eye_Care", "Heart_Care", "Immune_Support", "Joint_Care", "Liver_Care", "Lung_Care", "Mens_Vitality", "Sleep_Support", "Stress_Management"]
+
+        var num = this.result.slice().sort().map(function (x) { var index = hash.indexOf(x); return index < 10 ? '0' + index : index }).join('')
+        return 'ccs' + this.type[0] + this.result.length + 'f'+ new Array(6 - num.length + 1).join('0') + num
+      }
+    },
+
+    watch: {
+      sku: function(value, oldValue) {
+        var a1 = this.features()
+        var tDisabledFeatures = []
+        for (var i=0; i<this.mutuallyExclusives.length; i++){
+          var a2 = this.mutuallyExclusives[i].clone()
+          loop:
+          for (var j=0; j<a1.length; j++) {
+            var t = a1[j]
+            var index = a2.indexOf(t)
+            if (index > -1) {
+              a2.splice(index, 1)
+              tDisabledFeatures = tDisabledFeatures.and(a2)
+              // console.log(tDisabledFeatures)
+              break loop
+            }
+          }
+        }
+        this.disabledFeatures = tDisabledFeatures
+      },
+      disabledFeatures: function() {
+        var that = this
+        var a = []
+        this.mutuallyExclusives.forEach(function(ta){
+          a = a.and(ta)
+        })
+        a.forEach(function(item){
+          if (that.disabledFeatures.indexOf(item) > -1) {
+            that.disableItem(item)
+          } else {
+            that.enableItem(item)
+          }
+        })
+      }
+    },
+    methods: {
+      tick_or_not: function(feature) {
+        var index = this.feature_list.indexOf(feature) + 1
+        if (this.disabledFeatures.indexOf(index) > -1) {
+          alert("<%= Spree.t(:alert_mutual_exclusive) %>")
+          return
+        }
+
+        if (~this.result.indexOf(feature)) {
+          this.result.$remove(feature)
+        }
+        else if ( this.result.length < 3 ) {
+          this.result.push(feature)
+        }
+      },
+      show: function(feature) {
+        $("body").append($(".more-overlay"))
+        $("body").css("overflow","hidden")
+
+        $(".more-overlay>.close").show()
+        $("#ingredient_" + feature).show()
+        $("body>.more-overlay").show()
+        $(".more-overlay>.close").height(document.getElementById("ingredient_" + feature).offsetHeight)
+      },
+      close: function() {
+        $(".more-overlay").hide()
+        $(".more-overlay>div").hide()
+        $(".function>.inner").removeClass('active')
+        $("body").css("overflow","auto")
+      },
+      close_wish: function() {
+        $(".wish-lay").hide()
+      },
+      open_wish: function() {
+        $(".wish-lay").show()
+      },
+      disableItem: function(index) {
+        document.getElementById("image_"+index).src = this.mutuallyExclusiveItems[index].off_image
+        document.getElementById("text_"+index).style.color = this.mutuallyExclusiveItems[index].off_color
+        document.getElementsByClassName("cb_"+index)[0].disabled = true
+
+      },
+      enableItem: function(index) {
+        document.getElementById("image_"+index).src = this.mutuallyExclusiveItems[index].on_image
+        document.getElementById("text_"+index).style.color = this.mutuallyExclusiveItems[index].on_color
+        document.getElementsByClassName("cb_"+index)[0].disabled = false
+      },
+      features: function(s) {
+        return [+this.sku.slice(6,8), +this.sku.slice(8,10), +this.sku.slice(10,12)]
+      },
+      validate: function(event) {
+        if (this.processing) {
+          return false
+        }
+        return this.sku.slice(6) != '000000'
+      },
+      action_addToCart: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var that = this
+          $.ajax({
+            type: 'POST',
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
+            success: function(data) {
+              window.location.href = '<%= cart_path %>'
+            },
+            complete: function() {
+              // console.log(that.processing)
+              that.processing = false
+            }
+          })
+        }
+      },
+      action_checkout: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var that = this
+          $.ajax({
+            type: 'POST',
+            url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&order_token=' + this.order_token,
+            success: function(data) {
+              window.location.href = '<%= checkout_path %>'
+            },
+            complete: function() {
+              that.processing = false
+            }
+          })
+        }
+      },
+      action_trial: function(event) {
+        if (this.validate()) {
+          this.processing = true
+          var that = this
+          var sku = this.sku
+          sku = sku.slice(0, 3) + 'd' + sku.slice(4)
+          $.ajax({
+            type: 'PUT',
+            url: '/api/v1/orders/' + this.order_number + '/empty' + '?order_token=' + this.order_token,
+            success: function(data) {
+              $.ajax({
+                type: 'POST',
+                url: '/api/v1/orders/' + that.order_number + '/line_items?line_item[sku]=' + sku + '&line_item[quantity]=' + that.num + '&order_token=' + that.order_token,
+                success: function(data) {
+                  window.location.href = '<%= checkout_path %>'
+                },
+                complete: function() {
+                  that.processing = false
+                }
+              })
+            }
+          })
+        }
+      },
+    }
+  })
+</script>

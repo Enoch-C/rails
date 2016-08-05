@@ -21,9 +21,12 @@
       <%= form_for [:admin, @promoter], as: :promoter, url: spree.admin_promoter_url(@promoter), method: :put do |f| %>
         <%= render partial: 'form', locals: { f: f } %>
 
+        <% if spree_current_user.has_spree_role?("admin") %>
         <div data-hook="admin_promoter_edit_form_button">
           <%= render partial: 'spree/admin/shared/edit_resource_links', locals: { collection_url: spree.admin_promoters_url } %>
         </div>
+        <% end %>
+
       <% end %>
     </div>
   </div>

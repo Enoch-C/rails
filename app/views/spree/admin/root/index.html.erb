@@ -1,4 +1,5 @@
-<%= form_tag admin_promoters_import_path, method: "post", multipart: true do %>
+<% if spree_current_user.has_spree_role?("admin") %>
+<%= form_tag excelimport_admin_promoters_path, method: "post", multipart: true do %>
   <p>
   Import promoters excel file:<br>
   <%= file_field_tag "file" %>
@@ -6,4 +7,5 @@
   <div>
     <%= submit_tag "import" %>
   </div>
+<% end %>
 <% end %>

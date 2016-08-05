@@ -69,7 +69,10 @@ Spree::Core::Engine.add_routes do
   # get '/china/pay', to: 'china#pay'
   patch '/china/processpay', to: 'china#processpay'
   get '/china/complete', to: 'china#complete'
+  get '/china/cart', to: 'china#cart'
+
   get '/why', to: 'why#index'
+  get '/why_personalized_supplements', to: 'why#why_personalized'
   get '/gift', to: 'gift#index'
   get '/gift/my_gift', to: 'gift#my_gift'
   get '/gift/my_address', to: 'gift#my_gift_shipping_address'
@@ -77,6 +80,7 @@ Spree::Core::Engine.add_routes do
   post '/index/wish', to: 'home#wish'
 
   get '/ingredient', to: 'ingredient#index'
+  get '/shop', to: 'shop#index'
 
   get 'localization', to: 'localization#index'
 
@@ -86,11 +90,15 @@ Spree::Core::Engine.add_routes do
   get 'return', to: 'return#index'
   get '/labelgen', to: 'labelgen#index'
   get '/labelgen/labels', to: 'labelgen#labels'
+  get 'about', to: 'about#index'
 
   namespace :admin, path: Spree.admin_path do
     post '/promoters/import', to: 'promoters#import'
 
     resources :promoters do
+      collection do
+        post :excelimport
+      end
       member do
         # get :addresses
         # put :addresses

@@ -1,0 +1,56 @@
+<% self.title = Spree.t(:why_personalized_title) %>
+<% @body_id = 'home' %>
+<meta name="viewport" content="width=1440">
+<div id="why_personalized">
+</div>
+<div id="cool-choice-why-personalized">
+  <div class="banner">
+    <div class='textbox'>
+      <p class="text title"><%=raw Spree.t(:why_personalized_title) %></p>
+      <p class="text"><%=raw Spree.t(:why_personalized_text) %></p>
+    </div>
+  </div>
+  <div id=section-1>
+    <div class="box bg1">
+      <div class="box_contents">
+        <div class="textbox">
+          <p class='text title'><%= raw Spree.t(:why_personalized_title_1) %></p>
+          <p class='text subTitle'><%= raw Spree.t(:why_personalized_subTitle_1) %></p>
+          <p class='text'><%= raw Spree.t(:why_personalized_text_1) %></p>
+        </div>
+      </div>
+    </div>
+    <div class="box right bg2">
+      <div class="box_contents right">
+        <div class="textbox right">
+          <p class='text title right'><%= raw Spree.t(:why_personalized_title_2) %></p>
+          <p class='text subTitle right'><%= raw Spree.t(:why_personalized_subTitle_2) %></p>
+          <p class='text'><%= raw Spree.t(:why_personalized_text_2) %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id=section-4>
+    <div class='box1'></div>
+    <div class='box2'>
+      <p class='title'><%= Spree.t(:"qlinks") %></p>
+      <ul>
+        <li><a href="<%= spree.faq_path %>"><%= Spree.t(:"faq_link") %></a></li>
+        <li><a href="<%= spree.return_path %>"><%= Spree.t(:"return.name") %></a></li>
+        <li><a href="<%= spree.privacy_path %>"><%= Spree.t(:"privacy.name") %></a></li>
+        <li><a href="<%= spree.terms_path %>"><%= Spree.t(:"tANDc.name") %></a></li>
+      </ul>
+    </div>
+    <div class='box3'>
+      <p><%= Spree.t(:"sayhello") %></p>
+      <div class='grid'>
+        <a href="https://www.facebook.com/MyCoolChoice"><%= image_tag("logo/button_facebook@2x.png") %></a>
+        <a href="https://twitter.com/mycoolchoice"><%= image_tag("logo/button_tweet@2x.png") %></a>
+        <a href="http://instagram.com/mycoolchoice"><%= image_tag("logo/button_ins@2x.png") %></a>
+        <a href="mailto:help@coolchoice.com"><%= image_tag("logo/button_email@2x.png") %></a>
+        <a><%= image_tag("logo/button_phone@2x.png") %></a>
+      </div>
+    </div>
+    <div class='copyright'><%= Spree.t(:copyright) %></div>
+  </div>
+</div>

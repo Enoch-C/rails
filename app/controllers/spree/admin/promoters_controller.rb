@@ -4,7 +4,7 @@ module Spree
       # http://spreecommerce.com/blog/2010/11/02/json-hijacking-vulnerability/
       before_action :check_json_authenticity, only: :index
 
-      def import
+      def excelimport
         uploaded_io = params[:file]
         filepath = Rails.root.join('public', 'uploads', uploaded_io.original_filename)
         File.open(filepath, 'wb') do |file|
@@ -22,11 +22,13 @@ module Spree
               @import_errors.push "Line #{index+1} format error: Email"
               next
             end
-            if row[2] && row[2].to_s.strip.chomp('.0') =~ /\d{11}\z/
-              promoter.phone = row[2].to_s.strip.chomp('.0')
-            else
-              @import_errors.push "Line #{index+1} format error: Phone"
-              next
+            if row[2]
+              if row[2].to_s.strip.chomp('.0') =~ /\d{11}\z/
+                promoter.phone = row[2].to_s.strip.chomp('.0')
+              else
+                @import_errors.push "Line #{index+1} format error: Phone"
+                next
+              end
             end
             if row[3]
               promoter.first_name = row[3].to_s.chomp('.0')
@@ -40,11 +42,13 @@ module Spree
             if row[7]
               promoter.payment = row[7].to_s.chomp('.0')
             end
-            if row[8] && row[8].strip =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-              promoter.parent_email = row[8].strip
-            else
-              @import_errors.push "Line #{index+1} format error: Parent(upper level) Email"
-              next
+            if row[8]
+              if row[8].strip =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+                promoter.parent_email = row[8].strip
+              else
+                @import_errors.push "Line #{index+1} format error: Parent(upper level) Email"
+                next
+              end
             end
             if row[9]
               promoter.note = row[9].to_s.chomp('.0')
@@ -130,11 +134,16 @@ module Spree
                               .limit(params[:limit] || 100)
           else
             @search = @collection.ransack(params[:q])
+
             @collection = @search.result.page(params[:page]).per(Spree::Config[:admin_products_per_page])
           end
         end
 
       private
+
+      def model_class
+        Spree::Promoter
+      end
 
       def promoter_params
         params.require(:promoter).permit(:phone, :secret, :email, :first_name, :last_name, :percent, :parent_id, :payment, :note, :identity, :parent_email)

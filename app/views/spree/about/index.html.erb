@@ -1,0 +1,41 @@
+<meta name="viewport" content="width=1200">
+<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet" type="text/css">
+<div id="about">
+  <div class="section">
+    <div class="container">
+      <div class="title"><%= Spree.t(:"about.title") %></div>
+      <p><%= Spree.t(:"about.para_1") %></p>
+      <p>
+        <%= Spree.t(:"about.para_2_1") %>
+        <b> (949) 297-6716</b>
+        <%= Spree.t(:"about.para_2_2") %>
+      </p>
+      <p class="last"><%= Spree.t(:"about.para_3") %></p>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="links clearfix">
+        <div class="col-sm-3">
+          <%= image_tag("logo/logo_now.png", class: "logo") %>
+        </div>
+        <div class="inner-links col-sm-3">
+          <div class="title"><%= Spree.t(:"qlinks") %></div>
+          <a href="<%= spree.faq_path %>"><%= Spree.t(:"faq") %></a>
+          <a href="<%= spree.return_path %>"><%= Spree.t(:"return.name") %></a>
+          <a href="<%= spree.privacy_path %>"><%= Spree.t(:"privacy.name") %></a>
+          <a href="<%= spree.terms_path %>"><%= Spree.t(:"tANDc.name") %></a>
+        </div>
+        <div class="outer-links col-sm-6">
+          <div class="title"><%= Spree.t(:"sayhello") %></div>
+          <a href="https://www.facebook.com/MyCoolChoice"><%= image_tag("logo/button_facebook@2x.png") %></a>
+          <a href="https://twitter.com/mycoolchoice"><%= image_tag("logo/button_tweet@2x.png") %></a>
+          <a href="http://instagram.com/mycoolchoice"><%= image_tag("logo/button_ins@2x.png") %></a>
+          <a href="mailto:help@coolchoice.com"><%= image_tag("logo/button_email@2x.png") %></a>
+          <a><%= image_tag("logo/button_phone@2x.png") %></a>
+        </div>
+      </div>
+      <div class="copyright"><%= Spree.t(:copyright) %></div>
+    </div>
+  </div>
+</div>

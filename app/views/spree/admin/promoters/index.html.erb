@@ -2,8 +2,10 @@
   <%= Spree.t(:promoters) %>
 <% end %>
 
+<% if spree_current_user.has_spree_role?("admin") %>
 <% content_for :page_actions do %>
   <%= button_link_to Spree.t(:new_promoter), new_admin_promoter_url, :class => "btn-success", :icon => 'add', :id => 'admin_new_promoter_link' %>
+<% end %>
 <% end %>
 
 <% content_for :table_filter_title do %>
@@ -68,7 +70,12 @@
   <tbody>
     <% @promoters.each do |promoter|%>
       <tr id="<%= spree_dom_id promoter %>" data-hook="admin_promoters_index_rows">
-        <td class='user_email'><%=link_to promoter.email, edit_admin_promoter_url(promoter) %></td>
+        <% if spree_current_user.has_spree_role?("admin") %>
+          <td class='user_email'><%=link_to promoter.email, edit_admin_promoter_url(promoter) %></td>
+        <% else %>
+          <td class='user_email'><%=link_to promoter.email[0,5] + "*******", edit_admin_promoter_url(promoter) %></td>
+        <% end %>
+
         <td><%= promoter.store_credit %></td>
         <td data-hook="admin_promoters_index_row_actions" class="actions actions-2 text-right">
           <%= link_to_edit promoter, :no_text => true %>

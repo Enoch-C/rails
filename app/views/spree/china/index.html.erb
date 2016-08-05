@@ -22,7 +22,54 @@
       border: 0;
       outline: none;
       background-color: white;
-   }
+    }
+
+
+      .iPhone5_18 {
+        font-size: 18px;
+      }
+      .iPhone5_16 {
+        font-size: 16px;
+      }
+
+      .iPhone5_14 {
+        font-size: 14px;
+      }
+
+      .iPhone5_12 {
+        font-size: 12px;
+      }
+
+      .width_100px {
+        width:100px;
+      }
+
+
+
+@media screen
+	and (max-width: 320px) {
+
+      .iPhone5_18 {
+        font-size: 16px;
+      }
+      .iPhone5_16 {
+        font-size: 14px;
+      }
+      .iPhone5_14 {
+        font-size: 12px;
+      }
+
+      .iPhone5_12 {
+        font-size: 10px;
+      }
+
+      .width_100px {
+        width:80px;
+      }
+
+    }
+
+
 </style>
 <% self.title = "Home" %>
 <% @body_id = 'home' %>
@@ -56,7 +103,7 @@
   </div>
 
 
-  <div class="section-4" v-show="result.length" :class="{ 'state-inform': result.length < 3 }">
+  <div class="section-4" style="z-index: 998" v-show="result.length" :class="{ 'state-inform': result.length < 3 }">
     <div class="container">
       <% if false %><%= image_tag("home/product@2x.png", class: "bar") %><% end %>
       <div class="customize">
@@ -82,11 +129,12 @@
         </div>
         <div class="total">
           <div class="title"><%= Spree.t(:"homepage.bar_total") %></div>
-          <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }} <%= Spree.t(:"homepage.bar_unit") %></div>
+          <div class="usd"><%= Spree.t(:"homepage.bar_sign") %>{{ sum }}</div>
         </div>
       </div>
       <div v-show="result.length == 3" class="buy">
         <div class="cart">
+          <a v-on:click='action_addToCart' class="button_hollow"><%= Spree.t(:"homepage.bar_cart") %></a>
           <a v-on:click='action_checkout' class="button"><%= Spree.t(:"homepage.bar_checkout") %></a>
         </div>
 
@@ -104,7 +152,41 @@
     </div>
     <img src="https://basaio.b0.upaiyun.com/coolchoice/images/arrow.png" class="arrow" width="33" height="48">
   </div>
+  <div v-on:click='action_cart_switch' style='position:fixed; width: 38px; height: 38px; opacity: 0.6; background-color: #474c5d; right:13px; top:19px; border-radius: 19px;text-align:center;line-height:38px'><img src="https://basaio.b0.upaiyun.com/coolchoice/images/button-cart@2x.png" height="26" width="20" style='display:inline-block'/></div>
+  <div style='position:fixed; width: 38px; height: 14px; opacity: 0.6; right:4px; top:16px;text-align: center;'>
+    <div v-on:click='action_cart_switch' style='border-radius: 7px;font-size:10px;background-color:red;color:white;display:inline-block;padding:0 4px'>{{ cart_total }}</div>
+  </div>
+
+  <div id='cart' style="visibility:hidden;position:fixed;left:20px;right:20px;top:50px;bottom: 10px;background-color: white; box-shadow: 0px 0px 4px rgba(0,0,0,0.2);z-index: 999;">
+    <div style="position:absolute; bottom:60px; width: 100%; top:0;overflow-y: auto">
+      <table id='cartTable' style="width:100%;">
+      </table>
+    </div>
+    <div style="position:absolute; height: 60px; bottom: 0; border-top: 1px solid #dedede;width:100%;">
+      <div style="float: left;height:100%">
+      <div style="margin:8px 0 2px 23px; color: #787878" class="iPhone5_12">邮费：${{ shippingUnits * 7 }}（{{ (shippingUnits - 1)*3  + 1 }}至{{  (shippingUnits - 1)*3  + 1 + 2 }}盒）</div>
+        <div><span style="margin-left:20px;font-weight:bold" class="iPhone5_18">总计: </span><span  class="iPhone5_18" style="font-weight:bold;color:#474c5d">${{ cart_total_price }}</span></div>
+      </div>
+      <div v-on:click='action_cart_checkout' class="width_100px"style="float: right;height:100%;text-align: center; color:white; background-color:#00b9ee; font-size:18px; line-height: 60px"><%= Spree.t(:"homepage.bar_cartcheckout") %></div>
+    </div>
+    <img width="30" height="30" src="<%= asset_path 'logo/close-button.png' %>" style="position:absolute; right: -9px; top: -15px" v-on:click='action_cart_switch'>
+  </div>
 </div>
+  <table style="display:none;">
+    <tbody>
+    <tr id="item_tmpl" style="height:140px"><td><div class='bordered' style="height:140px; border-bottom: 1px solid #dedede;padding: 30px 0; overflow: hidden;">
+      <div class='remover' style="float:left;margin-left:10px; width: 20px; height: 80px; vertical-align:middle;text-align:center;line-height:80px"><img width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"></div>
+      <%= image_tag("china/package.png", :style=>"float:left; width: 80px; height:80px; margin: 0 10px;")%>
+      <div style="position:relative; min-height:80px; overflow: hidden;">
+        <div class='item_ph1 iPhone5_14'>cms2009002</div><div class='item_ph2 iPhone5_14'>6g/包 * 30包 * 1盒</div>
+      <div style="position:absolute; bottom:0; width:100%">
+        <div class='item_ph3 iPhone5_14' style="float: left">$39.99 x 1</div>
+        <div class='item_ph4 iPhone5_14' style="float: right; padding: 0 12px 0 0;font-weight:bold">$39.99</div>
+      </div>
+      </div>
+    </div></td></tr>
+    </tbody>
+  </table>
 
 
 <script>
@@ -154,6 +236,11 @@
     "<%= 'https://basaio.b0.upaiyun.com/coolchoice/images/icon-Stress_Management@2x.png' %>"
   ]
 
+  var LineItem = function() {
+    this.sku = ''
+    this.quantity = 0
+  }
+
   var vm = new Vue({
     el: '#cool-choice-home',
     data: {
@@ -165,6 +252,8 @@
       t: t,
       img_path: path,
       processing: false,
+      cartVisible: false,
+      cartItems: [],
       mutuallyExclusiveItems: {
         5: {
           on_image: "<%= image_url("https://basaio.b0.upaiyun.com/coolchoice/images/icon-Energy@2x.png") %>",
@@ -190,6 +279,19 @@
       androidWechatTipShowing: false
     },
     computed: {
+      shippingUnits: function() {
+        return Math.floor((this.cart_total - 1) / 3) + 1
+      },
+      cart_total: function() {
+        var sum = 0
+        this.cartItems.forEach(function(obj){
+          sum += obj.quantity
+        })
+        return sum
+      },
+      cart_total_price: function() {
+        return (this.cart_total * 39.99 + this.shippingUnits * 7).toFixed(2)
+      },
       types: function() {
         return this.num > 1 ? ['<%= Spree.t(:"homepage.bar_weeks") %>', '<%= Spree.t(:"homepage.bar_months") %>'] : ['<%= Spree.t(:"homepage.bar_week") %>', '<%= Spree.t(:"homepage.bar_month") %>']
       },
@@ -242,9 +344,60 @@
             that.enableItem(item)
           }
         })
+      },
+      cartVisible: function() {
+        this.switch_cart()
       }
     },
     methods: {
+      switch_cart: function() {
+        console.log('visibility')
+        var cart = document.getElementById('cart')
+        cart.style.visibility = this.cartVisible ? 'visible' : 'hidden'
+        var cartTable = document.getElementById('cartTable')
+        if (this.cartVisible) {
+          cartTable.innerHTML = ""
+          var t = null;
+          for (var i=0;i<this.cartItems.length; i++) {
+            t = document.getElementById('item_tmpl').cloneNode(true)
+            t.style.display = 'table-row'
+            var item = this.cartItems[i]
+            var text1 = t.getElementsByClassName('item_ph1')[0]
+            var text2 = t.getElementsByClassName('item_ph2')[0]
+            var text3 = t.getElementsByClassName('item_ph3')[0]
+            var text4 = t.getElementsByClassName('item_ph4')[0]
+
+            text1.innerHTML = this.code2verbal(item.sku)
+            text2.innerHTML = '6g/包 * 30包 * '+ item.quantity + '盒'
+            text3.innerHTML = '$39.99 x ' + item.quantity + ''
+            text4.innerHTML = '$' + (39.99 * item.quantity).toFixed(2)
+
+            var remover = t.getElementsByClassName('remover')[0]
+            var that = this
+            remover.tag = i
+            remover.onclick = function(){
+              that.cartItems.splice(this.tag, 1)
+              that.cartVisible = false
+              that.switch_cart()
+              if (that.cartItems.length > 0) {
+                that.cartVisible = true
+                that.switch_cart()
+              }
+            }
+
+            cartTable.appendChild(t)
+          }
+
+        }
+      },
+      code2verbal: function(sku) {
+        var a = [sku.slice(6,8), sku.slice(8,10), sku.slice(10,12)]
+        var ta = []
+        a.forEach(function(obj){
+          ta.push(t[+obj])
+        })
+        return ta.join(' ')
+      },
       tick_or_not: function(feature) {
         var index = this.feature_list.indexOf(feature) + 1
         if (this.disabledFeatures.indexOf(index) > -1) {
@@ -279,13 +432,41 @@
         }
         return this.sku.slice(6) != '000000'
       },
-      action_checkout: function(event) {
-        if (this.validate()) {
-          this.processing = true
-          var that = this
-          window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
-          that.processing = false
+      action_cart_switch: function() {
+        if (this.cartItems.length == 0) return
+        this.cartVisible = !this.cartVisible
+
+      },
+      action_addToCart: function(event) {
+        var found = false
+        for (var i=0;i<this.cartItems.length;i++) {
+          var lineItem = this.cartItems[i]
+          if (this.sku == lineItem.sku) {
+            found = true
+            lineItem.quantity += this.num
+          }
         }
+        if (!found) {
+          var lineItem = new LineItem
+          lineItem.quantity = this.num
+          lineItem.sku = this.sku
+          this.cartItems.push(lineItem)
+        }
+
+        this.action_cart_switch()
+        this.result = []
+      },
+      action_checkout: function(event) {
+        window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + this.sku + '&line_item[quantity]=' + this.num + '&p=<%= @promoter_email %>'
+      },
+      action_cart_checkout: function(event) {
+          var skus = []
+          var quantities = []
+          this.cartItems.forEach(function(obj){
+            skus.push(obj.sku)
+            quantities.push(obj.quantity)
+          })
+          window.location.href = '<%= "#{china_checkout_path}" %>' + '?line_item[sku]=' + skus.join(' ') + '&line_item[quantity]=' + quantities.join(' ') + '&p=<%= @promoter_email %>'
       },
     },
     ready: function() {

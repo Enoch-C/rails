@@ -7,6 +7,10 @@ module Spree
       @promoter_email = params["p"]
     end
 
+    def cart
+
+    end
+
     def checkout
       unless params[:line_item][:sku]
         redirect_to :back
@@ -46,12 +50,15 @@ module Spree
 
       @order.associate_user!(user)
 
-      variant = Spree::Variant.find_by_sku(params["sku"])
-      @line_item = @order.contents.add(
-          variant,
-          params["num"] || 1,
-          {}
-      )
+      quantities = params["num"].split(' ')
+      params["sku"].split(' ').each_with_index {|sku, idx|
+        variant = Spree::Variant.find_by_sku(sku)
+        @line_item = @order.contents.add(
+            variant,
+            (quantities[idx] rescue nil) || 1,
+            {}
+        )
+      }
 
       @order.next!
 
@@ -100,9 +107,9 @@ module Spree
         }
       }
       if @order.update_from_params(params, permitted_checkout_attributes, request.headers.env)
-        # packages = @order.shipments.map(&:to_package)
-        # @differentiator = Spree::Stock::Differentiator.new(@order, packages)
         @order.next
+        packages = @order.shipments.map(&:to_package)
+        @differentiator = Spree::Stock::Differentiator.new(@order, packages)
       else
         invalid_resource!(@order)
       end
