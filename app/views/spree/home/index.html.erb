@@ -12,6 +12,7 @@
 
 <% self.title = "Personalized / Customized Nutritional Supplements" %>
 <% @body_id = 'home' %>
+<link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 <meta name="viewport" content="width=1440">
@@ -75,7 +76,7 @@
         <p class="text title"><%=raw Spree.t(:homepage_text_5_title) %></p>
         <p class="text"><%=raw Spree.t(:homepage_text_5) %></p>
       </div>
-      <div class='more'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div>
+      <a href="<%= about_path %>"><div class='more'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div></a>
     </div>
   </div>
   <div id=section-4>
@@ -83,7 +84,7 @@
     <div class='box2'>
       <p class='title'><%= Spree.t(:"qlinks") %></p>
       <ul>
-        <li><a href="<%= spree.faq_path %>"><%= Spree.t(:"faq") %></a></li>
+        <li><a href="<%= spree.faq_path %>"><%= Spree.t(:"faq_link") %></a></li>
         <li><a href="<%= spree.return_path %>"><%= Spree.t(:"return.name") %></a></li>
         <li><a href="<%= spree.privacy_path %>"><%= Spree.t(:"privacy.name") %></a></li>
         <li><a href="<%= spree.terms_path %>"><%= Spree.t(:"tANDc.name") %></a></li>
