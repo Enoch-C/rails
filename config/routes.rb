@@ -72,6 +72,7 @@ Spree::Core::Engine.add_routes do
   get '/china/cart', to: 'china#cart'
 
   get '/why', to: 'why#index'
+  get '/why_personalized_supplements', to: 'why#why_personalized'
   get '/gift', to: 'gift#index'
   get '/gift/my_gift', to: 'gift#my_gift'
   get '/gift/my_address', to: 'gift#my_gift_shipping_address'

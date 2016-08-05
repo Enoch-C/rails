@@ -888,7 +888,26 @@ input.button
     font-weight: 500
     color: #fff
     background: #eb5b4a
+button
+  &.slick-next
+    &.slick-arrow
+      right: -130px
+      width: 44px
+      height: 104px
+      background: image-url("logo/button_right@2x.png") center no-repeat
+      background-size: 44px 104px
+button
+  &.slick-prev
+    &.slick-arrow
+      left: -130px
+      width: 44px
+      height: 104px
+      background: image-url("logo/button_left@2x.png") center no-repeat
+      background-size: 44px 104px
 #cool-choice-home-v2
+  a
+    text-decoration: none
+    color: inherit
   .banner
     height: 600px
     width: 100%
@@ -995,6 +1014,7 @@ input.button
     background-color: #F7F8FA
     padding: 59px 135px 0
     .textbox
+      margin-bottom: 60px
       .probe
         width: 30px
         height: 1px
@@ -2133,7 +2153,7 @@ input.button
       width: 80px
       height: 80px
 
-#fbLogInWindow
+.fbLogInWindow
   cursor: auto
   position: absolute
   top: 75px
@@ -2159,17 +2179,41 @@ input.button
     border-radius: 25px
     vertical-align: middle
     background-color: #678fc9
+    @media (max-width: 767px)
+      width: 245px
     a
-      color: white
-      font-size: 16px
-      text-decoration: none
-      text-transform: none
-      line-height: 50px
+      color: white !important
+      font-size: 16px !important
+      text-decoration: none !important
+      text-transform: none !important
+      line-height: 50px !important
   .fbclose
     cursor: pointer
     position: absolute
     right: 20px
     top: 27px
+  @media (max-width: 767px)
+    position: fixed
+    width: 280px
+    left: 50%
+    right: auto
+    margin-left: -140px
+#fbLogInWindow2
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background-color: rgba(0,0,0,0.5)
+  visibility: hidden
+  z-index: 9999
+  .fbLogInWindow
+    &.centered
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-left: -172px
+      margin-top: -98px
 
 
 
