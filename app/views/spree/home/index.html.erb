@@ -1,3 +1,15 @@
+<% if current_order == nil%>
+  <% current_order(create_order_if_necessary: true) %>
+<% elsif current_order.special_instructions%>
+  <% current_order.empty!  %>
+  <% current_order.update_attributes({:special_instructions => nil})%>
+<% else %>
+  <% sku = current_order.line_items.first.sku rescue nil %>
+  <% if sku && sku.slice(3, 1) == 'd' %>
+    <% current_order.empty! %>
+  <% end %>
+<% end %>
+
 <% self.title = "Personalized / Customized Nutritional Supplements" %>
 <% @body_id = 'home' %>
 <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
@@ -18,7 +30,7 @@
           <p class='text title'><%=raw Spree.t(:homepage_text_1_title) %></p>
           <p class='text'><%= raw Spree.t(:homepage_text_1) %></p>
         </div>
-        <div class='more'><a href="<%= why_personalized_supplements_path %>"><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
+        <a href="<%= why_personalized_supplements_path %>"><div class='more'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div></a>
       </div>
     </div>
     <div class='box right bg2'>
@@ -28,7 +40,7 @@
           <p class='text title right'><%=raw Spree.t(:homepage_text_2_title) %></p>
           <p class='text'><%= raw Spree.t(:homepage_text_2) %></p>
         </div>
-        <div class='more right'><a href="<%= why_path %>"><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
+        <a href="<%= why_path %>"><div class='more right'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div></a>
       </div>
     </div>
     <div class='box bg3'>
@@ -38,7 +50,7 @@
           <p class='text title'><%=raw Spree.t(:homepage_text_3_title) %></p>
           <p class='text'><%= raw Spree.t(:homepage_text_3) %></p>
         </div>
-        <div class='more'><a href="<%= ingredient_path %>"><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></a></div>
+        <a href="<%= ingredient_path %>"><div class='more'><%= Spree.t(:read_more) %><%= image_tag("logo/icon_arrow@2x.png") %></div></a>
       </div>
     </div>
   </div>
@@ -49,12 +61,12 @@
       <p class="text"><%=raw Spree.t(:homepage_text_4) %></p>
     </div>
     <div class='carousel-cards'>
-      <div class='card c1'></div>
-      <div class='card c2'></div>
-      <div class='card c3'></div>
-      <div class='card c4'></div>
-      <div class='card c5'></div>
-      <div class='card c6'></div>
+      <div v-on:click="action_buy(1)" class='card c1'></div>
+      <div v-on:click="action_buy(2)" class='card c2'></div>
+      <div v-on:click="action_buy(3)" class='card c3'></div>
+      <div v-on:click="action_buy(4)" class='card c4'></div>
+      <div v-on:click="action_buy(5)" class='card c5'></div>
+      <div v-on:click="action_buy(6)" class='card c6'></div>
     </div>
   </div>
   <div id=section-3>
@@ -90,6 +102,7 @@
     <div class='copyright'><%= Spree.t(:copyright) %></div>
   </div>
 </div>
+<div id="fbLogInWindow2"></div>
 
 <script>
   Array.prototype.clone = function() {
@@ -113,4 +126,68 @@
     dots: true,
   });
 
+  var cards = [
+    "ccsm3f011314",
+    "ccsm3f081314",
+    "ccsm3f030506",
+    "ccsm3f010408",
+    "ccsm3f010203",
+    "ccsm3f050709",
+  ];
+
+  var vm = new Vue({
+    el: '#cool-choice-home-v2',
+    data: {
+      loggedIn: <%= current_spree_user ? "true" : "false" %>,
+      processing: false,
+      order_number: "<%= current_order.number %>",
+      order_token: "<%= current_order.guest_token %>",
+    },
+    watch: {
+      loginVisible: function() {
+        this.renderFBLogIn()
+      }
+    },
+    methods: {
+      action_buy: function(t) {
+        console.log(this.loggedIn)
+        if (this.loggedIn) {
+          this.presentFBLogIn(false)
+          this.addToCart(t)
+        } else {
+          this.presentFBLogIn(true)
+        }
+      },
+      addToCart: function(t){
+        this.processing = true
+        var that = this
+        $.ajax({
+          type: 'POST',
+          url: '/api/v1/orders/' + this.order_number + '/line_items?line_item[sku]=' + cards[t] + '&line_item[quantity]=' + 1 + '&order_token=' + this.order_token,
+          success: function(data) {
+            window.location.href = '<%= cart_path %>'
+          },
+          complete: function() {
+            // console.log(that.processing)
+            that.processing = false
+          }
+        })
+      },
+      presentFBLogIn: function(show) {
+        vmFB.action_closeFBLogIn()
+         
+        var window = $('#fbLogInWindow2')[0]
+        var login = $('#fbLogInWindow')[0].cloneNode(true)
+        login.style.display = 'block'
+        login.className = "fbLogInWindow centered"
+        var that = this
+        login.getElementsByClassName('fbclose')[0].onclick = function() {
+          window.removeChild(login)
+          window.style.visibility = "hidden"
+        }
+        window.appendChild(login)
+        window.style.visibility = show ? "visible" : "hidden"
+      },
+    }
+  })
 </script>
