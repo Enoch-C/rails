@@ -49,7 +49,7 @@ Spree::Order.class_eval do
       puts r
     end
     Spree::OrderMailer.confirm_email(id).deliver_later
-    Spree::OrderMailer.confirm_email_to_staff(id).deliver_later
+    # Spree::OrderMailer.confirm_email_to_staff(id).deliver_later
     update_column(:confirmation_delivered, true)
 
     order_promoter = self.promoter

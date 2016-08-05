@@ -22,11 +22,13 @@ module Spree
               @import_errors.push "Line #{index+1} format error: Email"
               next
             end
-            if row[2] && row[2].to_s.strip.chomp('.0') =~ /\d{11}\z/
-              promoter.phone = row[2].to_s.strip.chomp('.0')
-            else
-              @import_errors.push "Line #{index+1} format error: Phone"
-              next
+            if row[2]
+              if row[2].to_s.strip.chomp('.0') =~ /\d{11}\z/
+                promoter.phone = row[2].to_s.strip.chomp('.0')
+              else
+                @import_errors.push "Line #{index+1} format error: Phone"
+                next
+              end
             end
             if row[3]
               promoter.first_name = row[3].to_s.chomp('.0')
@@ -40,11 +42,13 @@ module Spree
             if row[7]
               promoter.payment = row[7].to_s.chomp('.0')
             end
-            if row[8] && row[8].strip =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-              promoter.parent_email = row[8].strip
-            else
-              @import_errors.push "Line #{index+1} format error: Parent(upper level) Email"
-              next
+            if row[8]
+              if row[8].strip =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+                promoter.parent_email = row[8].strip
+              else
+                @import_errors.push "Line #{index+1} format error: Parent(upper level) Email"
+                next
+              end
             end
             if row[9]
               promoter.note = row[9].to_s.chomp('.0')

@@ -1,10 +1,16 @@
-<% if current_order == nil%>
+<% if current_order == nil %>
   <% current_order(create_order_if_necessary: true) %>
-<% elsif current_order.special_instructions%>
+  <% if cookies[:cc_p] %>
+    <% promoter = Spree::Promoter.find_by_email(cookies[:cc_p]) %>
+    <% if promoter %>
+      <% current_order.update_attributes({:promoter_id => promoter.id}) %>
+    <% end %>
+  <% end %>
+<% elsif current_order.special_instructions %>
   <% current_order.empty!  %>
-  <% current_order.update_attributes({:special_instructions => nil})%>
+  <% current_order.update_attributes({:special_instructions => nil}) %>
 <% else %>
-<% sku = current_order.line_items.first.sku rescue nil %>
+  <% sku = current_order.line_items.first.sku rescue nil %>
   <% if sku && sku.slice(3, 1) == 'd' %>
     <% current_order.empty! %>
   <% end %>
