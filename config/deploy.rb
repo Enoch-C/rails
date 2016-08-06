@@ -2,7 +2,7 @@ require "bundler/capistrano"
 load "deploy/assets"
 
 set :application, "cool_choice_store"
-set :repository,  "ssh://git@gitlab.snapfit.me:2224/tian/cool_choice_store.git"
+set :repository,  "git@github.com:coolchoice/cool_choice_store.git"
 
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
