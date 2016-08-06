@@ -30,8 +30,8 @@
 <script>
   var vmFB = new Vue({
     el: '#fblogin',
-    loggedIn: <%= current_spree_user ? "true" : "false" %>,
     data: {
+      loggedIn: <%= current_spree_user ? "true" : "false" %>,
       loginVisible: false,
     },
     watch: {
