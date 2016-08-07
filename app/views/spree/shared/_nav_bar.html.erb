@@ -2,6 +2,7 @@
     <img onclick="vmFB.action_closeFBLogIn()" class="fbclose" width="22" height="22" src="<%= asset_path 'checkout/button-delete@2x.png' %>"/>
     <div class='fbtitle'><%= Spree.t(:signin) %></div>
     <div class='fbcaption'><a class="inLoginWindow" href="<%= "#{Rails.application.config.webhost}/users/auth/facebook" %>"><%= Spree.t(:sign_in_through_one_of_these_services) %> Facebook</a></div>
+    <div class="sign_in_w_email"><a href="<%= login_path %>"><%= Spree.t(:sign_in_w_email) %></a></div>
   </div>
 
 <div id="fblogin" class="navbar-collapse collapse nav-bar">
